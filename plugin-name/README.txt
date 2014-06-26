@@ -2,8 +2,8 @@
 Contributors: (this should be a list of wordpress.org userids)
 Donate link: http://example.com/
 Tags: comments, spam
-Requires at least: 3.5.1
-Tested up to: 3.6
+Requires at least: 3.9
+Tested up to: 3.9
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -110,4 +110,3 @@ plugins where more information needs to be conveyed that doesn't fit into the ca
 == Updates ==
 
 The basic structure of this plugin was cloned from the [WordPress-Plugin-Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate) project.
-This plugin supports the [GitHub Updater](https://github.com/afragen/github-updater) plugin, so if you install that, this plugin becomes automatically updateable direct from GitHub. Any submission to WP.org repo will make this redundant.

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name.
  *
@@ -55,8 +56,8 @@ class Plugin_Name_Admin {
 		 * - Uncomment following lines if the admin class should only be available for super admins
 		 */
 		/* if( ! is_super_admin() ) {
-			return;
-		} */
+		  return;
+		  } */
 
 		/*
 		 * Call $plugin_slug from public plugin class.
@@ -79,6 +80,28 @@ class Plugin_Name_Admin {
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
+		
+		/* @TODO:
+		 * 
+		 * - Choose the Custom Meta Box Library and remove the other
+		 * 
+		 *  Custom meta Boxes by HumanMade
+		 *	https://github.com/humanmade/Custom-Meta-Boxes/		
+		 *	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMB/custom-meta-boxes.php' );
+		 *	}
+		 * 
+		 *  Custom Metabox and Fields for Wordpress
+		 *	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+		 *	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMBF/init.php' );
+		 *	}
+		 * 
+		 * Filter is the same
+		 * Check on the official site of library for example
+		 * add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
+		 *
+		 */
 
 		/*
 		 * Define custom functionality.
@@ -88,7 +111,6 @@ class Plugin_Name_Admin {
 		 */
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-
 	}
 
 	/**
@@ -106,8 +128,8 @@ class Plugin_Name_Admin {
 		 * - Uncomment following lines if the admin class should only be available for super admins
 		 */
 		/* if( ! is_super_admin() ) {
-			return;
-		} */
+		  return;
+		  } */
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
@@ -130,15 +152,14 @@ class Plugin_Name_Admin {
 	 */
 	public function enqueue_admin_styles() {
 
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
+		if ( !isset( $this->plugin_screen_hook_suffix ) ) {
 			return;
 		}
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), Plugin_Name::VERSION );
+			wp_enqueue_style( $this->plugin_slug . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), Plugin_Name::VERSION );
 		}
-
 	}
 
 	/**
@@ -154,7 +175,7 @@ class Plugin_Name_Admin {
 	 */
 	public function enqueue_admin_scripts() {
 
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
+		if ( !isset( $this->plugin_screen_hook_suffix ) ) {
 			return;
 		}
 
@@ -162,7 +183,6 @@ class Plugin_Name_Admin {
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Plugin_Name::VERSION );
 		}
-
 	}
 
 	/**
@@ -187,13 +207,8 @@ class Plugin_Name_Admin {
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Page Title', $this->plugin_slug ),
-			__( 'Menu Text', $this->plugin_slug ),
-			'manage_options',
-			$this->plugin_slug,
-			array( $this, 'display_plugin_admin_page' )
+				__( 'Page Title', $this->plugin_slug ), __( 'Menu Text', $this->plugin_slug ), 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' )
 		);
-
 	}
 
 	/**
@@ -213,12 +228,10 @@ class Plugin_Name_Admin {
 	public function add_action_links( $links ) {
 
 		return array_merge(
-			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
-			),
-			$links
+				array(
+			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
+				), $links
 		);
-
 	}
 
 	/**

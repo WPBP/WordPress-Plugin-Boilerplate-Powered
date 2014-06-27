@@ -9,6 +9,7 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 * Shortcode example code
 * Contain https://github.com/jtsternberg/CPT_Core
 * Contain https://github.com/jtsternberg/Taxonomy_Core
+* Contain https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress or https://github.com/humanmade/Custom-Meta-Boxes
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).
@@ -21,7 +22,8 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 
 ###Extra
 
-If you want the support for a custom use of Wordpress Media Picker: https://github.com/thomasgriffin/New-Media-Image-Uploader
+* Support for a custom use of Wordpress Media Picker: https://github.com/thomasgriffin/New-Media-Image-Uploader  
+* WP Code Generator http://generatewp.com/
 
 ## Contents
 

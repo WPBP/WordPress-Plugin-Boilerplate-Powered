@@ -4,3 +4,9 @@
 [submodule "plugin-name/public/includes/Taxonomy_Core"]
 	path = plugin-name/public/includes/Taxonomy_Core
 	url = https://github.com/jtsternberg/Taxonomy_Core
+[submodule "plugin-name/public/includes/CMBF"]
+	path = plugin-name/public/includes/CMBF
+	url = https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/
+[submodule "plugin-name/public/includes/CMB"]
+	path = plugin-name/public/includes/CMB
+	url = https://github.com/humanmade/Custom-Meta-Boxes

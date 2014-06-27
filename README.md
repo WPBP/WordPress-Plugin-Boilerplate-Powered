@@ -5,6 +5,10 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 ## Features
 
 * Plugin Boilerplate Powered is based on Plugin Boilerplate
+* deploy.sh script for simple upload on Wordpress.Org SVN
+* Shortcode example code
+
+###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).
 * Uses [PHPDoc](http://en.wikipedia.org/wiki/PHPDoc) conventions to document the code.
 * Example values are given, so you can see what needs to be changed.

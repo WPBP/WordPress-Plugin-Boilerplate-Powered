@@ -4,3 +4,4 @@
 * Added deploy.sh (https://github.com/ericrallen/wp-base-plugin/blob/master/deploy.sh)
 * Added Shortcode base code
 * Added CPT_Core and Taxonomy_Core
+* Added Custom-Metaboxes-and-Fields-for-WordPress and Custom-Meta-Boxes

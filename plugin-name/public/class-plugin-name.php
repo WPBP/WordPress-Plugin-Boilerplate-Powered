@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name.
  *
@@ -71,6 +72,16 @@ class Plugin_Name {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
+		//Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
+		register_via_cpt_core(
+				array( 'Demo', 'Demos', 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
+		);
+
+		//Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
+		register_via_taxonomy_core(
+				array( 'Demo Section', 'Demo Sections', 'demo-section' ), array( 'public' => true ), array( 'demo' )
+		);
+
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -80,10 +91,9 @@ class Plugin_Name {
 		 */
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-		
+
 		/* Define Custom Shortcode */
 		add_shortcode( '@TODO', array( $this, 'shortcode_method_name' ) );
-
 	}
 
 	/**
@@ -128,7 +138,7 @@ class Plugin_Name {
 
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 
-			if ( $network_wide  ) {
+			if ( $network_wide ) {
 
 				// Get all blog ids
 				$blog_ids = self::get_blog_ids();
@@ -140,15 +150,12 @@ class Plugin_Name {
 
 					restore_current_blog();
 				}
-
 			} else {
 				self::single_activate();
 			}
-
 		} else {
 			self::single_activate();
 		}
-
 	}
 
 	/**
@@ -176,17 +183,13 @@ class Plugin_Name {
 					self::single_deactivate();
 
 					restore_current_blog();
-
 				}
-
 			} else {
 				self::single_deactivate();
 			}
-
 		} else {
 			self::single_deactivate();
 		}
-
 	}
 
 	/**
@@ -205,7 +208,6 @@ class Plugin_Name {
 		switch_to_blog( $blog_id );
 		self::single_activate();
 		restore_current_blog();
-
 	}
 
 	/**
@@ -228,7 +230,6 @@ class Plugin_Name {
 			AND deleted = '0'";
 
 		return $wpdb->get_col( $sql );
-
 	}
 
 	/**
@@ -261,7 +262,6 @@ class Plugin_Name {
 
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
-
 	}
 
 	/**
@@ -307,10 +307,10 @@ class Plugin_Name {
 	public function filter_method_name() {
 		// @TODO: Define your filter hook callback here
 	}
-	
+
 	/**
 	 * NOTE:  Shortcode simple set of functions for creating macro codes for use
-	 *		  in post content.
+	 * 		  in post content.
 	 *
 	 *        Reference:  http://codex.wordpress.org/Shortcode_API
 	 *

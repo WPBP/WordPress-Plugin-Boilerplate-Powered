@@ -69,7 +69,22 @@ class Plugin_Name_Admin {
 		 */
 		$plugin = Plugin_Name::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
-
+		$this->version = $plugin->get_plugin_version();
+		
+		//Search update
+		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/TGM-Updater/updater/init.php' );
+		$args = array(
+			'plugin_name' => 'Soliloquy', // Your plugin name (e.g. "Soliloquy" or "Jetpack")
+			'plugin_slug' => $this->plugin_slug, // Your plugin slug (typically the plugin folder name, e.g. "soliloquy")
+			'plugin_path' => plugin_basename( __FILE__ ), // The plugin basename (e.g. plugin_basename( __FILE__ ))
+			'plugin_url' => WP_PLUGIN_URL . '/plugin-name', // The HTTP URL to the plugin (e.g. WP_PLUGIN_URL . '/soliloquy')
+			'version' => $this->version, // The current version of your plugin
+			'remote_url' => 'http://soliloquywp.com/', // The remote API URL that should be pinged when retrieving plugin update info
+			'time' => 42300						 // The amount of time between update checks (defaults to 12 hours)
+		);
+		$config = new TGM_Updater_Config( $args );
+		$namespace_updater = new TGM_Updater( $config ); // Be sure to replace "namespace" with your own custom namespace
+		$namespace_updater->update_plugins();			// Be sure to replace "namespace" with your own custom namespace
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -80,23 +95,23 @@ class Plugin_Name_Admin {
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-		
+
 		/* @TODO:
 		 * 
 		 * - Choose the Custom Meta Box Library and remove the other
 		 * 
 		 *  Custom meta Boxes by HumanMade | PS: include natively Select2 for select box
-		 *	https://github.com/humanmade/Custom-Meta-Boxes/		
-		 *	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
-		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMB/custom-meta-boxes.php' );
-		 *	}
+		 * 	https://github.com/humanmade/Custom-Meta-Boxes/		
+		 * 	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+		 * 		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/CMB/custom-meta-boxes.php' );
+		 * 	}
 		 * 
 		 *  Custom Metabox and Fields for Wordpress
-		 *	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
-		 *	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
-		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMBF/init.php' );
-		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMBF-Select2/cmb-field-select2.php' );
-		 *	}
+		 * 	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+		 * 	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+		 * 		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/CMBF/init.php' );
+		 * 		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/CMBF-Select2/cmb-field-select2.php' );
+		 * 	}
 		 * 
 		 * Filter is the same
 		 * Check on the official site of library for example

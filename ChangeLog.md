@@ -3,3 +3,4 @@
 * Based on WordPress Plugin Boilerplate 2.6.2 (9 May 2014)
 * Added deploy.sh (https://github.com/ericrallen/wp-base-plugin/blob/master/deploy.sh)
 * Added Shortcode base code
+* Added CPT_Core and Taxonomy_Core

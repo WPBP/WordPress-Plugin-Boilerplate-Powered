@@ -7,6 +7,8 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 * Plugin Boilerplate Powered is based on Plugin Boilerplate
 * deploy.sh script for simple upload on Wordpress.Org SVN
 * Shortcode example code
+* Contain https://github.com/jtsternberg/CPT_Core
+* Contain https://github.com/jtsternberg/Taxonomy_Core
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).
@@ -16,6 +18,10 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 * Note that this boilerplate includes a `.pot` as a starting translation file.
 * Notes on managing assets prior to deployment are covered below
 * Tools used for translation are below
+
+###Extra
+
+If you want the support for a custom use of Wordpress Media Picker: https://github.com/thomasgriffin/New-Media-Image-Uploader
 
 ## Contents
 

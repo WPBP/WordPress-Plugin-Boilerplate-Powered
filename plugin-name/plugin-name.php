@@ -35,6 +35,14 @@ if ( ! defined( 'WPINC' ) ) {
  *----------------------------------------------------------------------------*/
 
 /*
+ * Load library for simple and fast creation of Taxonomy and Custom Post Type
+ *
+ */
+
+require_once 'public/includes/Taxonomy_Core/Taxonomy_Core.php';
+require_once 'public/includes/CPT_Core/CPT_Core.php';
+
+/*
  * @TODO:
  *
  * - replace `class-plugin-name.php` with the name of the plugin's class file

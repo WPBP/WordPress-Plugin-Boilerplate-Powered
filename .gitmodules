@@ -1,0 +1,6 @@
+[submodule "plugin-name/public/includes/CPT_Core"]
+	path = plugin-name/public/includes/CPT_Core
+	url = https://github.com/jtsternberg/CPT_Core
+[submodule "plugin-name/public/includes/Taxonomy_Core"]
+	path = plugin-name/public/includes/Taxonomy_Core
+	url = https://github.com/jtsternberg/Taxonomy_Core

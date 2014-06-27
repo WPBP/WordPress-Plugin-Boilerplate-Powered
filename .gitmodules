@@ -13,3 +13,6 @@
 [submodule "plugin-name/admin/includes/CMBF-Select2"]
 	path = plugin-name/admin/includes/CMBF-Select2
 	url = https://github.com/mustardBees/cmb-field-select2
+[submodule "plugin-name/admin/includes/TGM-Updater"]
+	path = plugin-name/admin/includes/TGM-Updater
+	url = https://github.com/thomasgriffin/TGM-Updater

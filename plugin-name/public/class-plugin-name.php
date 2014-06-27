@@ -106,6 +106,17 @@ class Plugin_Name {
 	public function get_plugin_slug() {
 		return $this->plugin_slug;
 	}
+	
+	/**
+	 * Return the version
+	 *
+	 * @since    1.0.0
+	 *
+	 * @return    Version const.
+	 */
+	public function get_plugin_version() {
+		return $this->VERSION;
+	}
 
 	/**
 	 * Return an instance of this class.

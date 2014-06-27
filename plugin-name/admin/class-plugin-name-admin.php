@@ -85,7 +85,7 @@ class Plugin_Name_Admin {
 		 * 
 		 * - Choose the Custom Meta Box Library and remove the other
 		 * 
-		 *  Custom meta Boxes by HumanMade
+		 *  Custom meta Boxes by HumanMade | PS: include natively Select2 for select box
 		 *	https://github.com/humanmade/Custom-Meta-Boxes/		
 		 *	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
 		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMB/custom-meta-boxes.php' );
@@ -95,6 +95,7 @@ class Plugin_Name_Admin {
 		 *	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
 		 *	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
 		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMBF/init.php' );
+		 *		require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CMBF-Select2/cmb-field-select2.php' );
 		 *	}
 		 * 
 		 * Filter is the same

@@ -80,6 +80,9 @@ class Plugin_Name {
 		 */
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+		
+		/* Define Custom Shortcode */
+		add_shortcode( '@TODO', array( $this, 'shortcode_method_name' ) );
 
 	}
 
@@ -303,6 +306,18 @@ class Plugin_Name {
 	 */
 	public function filter_method_name() {
 		// @TODO: Define your filter hook callback here
+	}
+	
+	/**
+	 * NOTE:  Shortcode simple set of functions for creating macro codes for use
+	 *		  in post content.
+	 *
+	 *        Reference:  http://codex.wordpress.org/Shortcode_API
+	 *
+	 * @since    1.0.0
+	 */
+	public function shortcode_method_name() {
+		// @TODO: Define your shortcode here
 	}
 
 }

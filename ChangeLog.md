@@ -7,3 +7,4 @@
 * Added Custom-Metaboxes-and-Fields-for-WordPress (with cmb-field-select2) and Custom-Meta-Boxes
 * Added TGM Updater
 * Added plugin settings link in plugins list
+* Added Dashicon as dependence of admin stylesheet

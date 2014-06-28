@@ -176,7 +176,7 @@ class Plugin_Name_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_style( $this->plugin_slug . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), Plugin_Name::VERSION );
+			wp_enqueue_style( $this->plugin_slug . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), Plugin_Name::VERSION );
 		}
 	}
 
@@ -229,8 +229,13 @@ class Plugin_Name_Admin {
 		);
 	}
 
+	/**
+	 * Register the setting link for this plugin into the Plugin lists.
+	 *
+	 * @since    1.0.0
+	 */
 	function add_plugin_settings_link( $links ) {
-		$settings_link = '<a href="options-general.php?page='.$this->plugin_slug.'">' . __( 'Settings', $this->plugin_slug ) . '</a>';
+		$settings_link = '<a href="options-general.php?page=' . $this->plugin_slug . '">' . __( 'Settings', $this->plugin_slug ) . '</a>';
 		array_push( $links, $settings_link );
 		return $links;
 	}

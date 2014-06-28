@@ -48,6 +48,20 @@ class Plugin_Name {
 	 * @var      string
 	 */
 	protected $plugin_slug = 'plugin-name';
+	
+	/**
+	 * @TODO - Rename "Plugin Name" to the name of your plugin
+	 *
+	 * Unique identifier for your plugin.
+	 *
+	 *
+	 * The variable name is used for TGM Updater
+	 *
+	 * @since    1.0.0
+	 *
+	 * @var      string
+	 */
+	protected $plugin_name = 'Plugin Name';
 
 	/**
 	 * Instance of this class.
@@ -105,6 +119,17 @@ class Plugin_Name {
 	 */
 	public function get_plugin_slug() {
 		return $this->plugin_slug;
+	}
+	
+	/**
+	 * Return the plugin name.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @return    Plugin name variable.
+	 */
+	public function get_plugin_name() {
+		return $this->plugin_name;
 	}
 	
 	/**

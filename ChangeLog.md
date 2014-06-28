@@ -6,3 +6,4 @@
 * Added CPT_Core and Taxonomy_Core
 * Added Custom-Metaboxes-and-Fields-for-WordPress (with cmb-field-select2) and Custom-Meta-Boxes
 * Added TGM Updater
+* Added plugin settings link in plugins list

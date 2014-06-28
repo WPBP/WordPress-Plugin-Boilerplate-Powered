@@ -42,6 +42,12 @@ The WordPress Plugin Boilerplate Powered includes the following files:
 
 This will activate the WordPress Plugin Boilerplate. Because the Boilerplate has no real functionality, nothing will be added to WordPress; however, this demonstrates exactly how your plugin should behave while you're working with the Boilerplate.
 
+###Git Clone
+	
+	git clone https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered
+	cd WordPress-Plugin-Boilerplate-Powered
+	git submodule update --init --recursive
+
 ## Recommended Tools
 
 ### Localization Tools

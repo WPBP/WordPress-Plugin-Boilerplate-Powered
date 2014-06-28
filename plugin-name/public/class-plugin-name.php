@@ -115,7 +115,7 @@ class Plugin_Name {
 	 * @return    Version const.
 	 */
 	public function get_plugin_version() {
-		return $this->VERSION;
+		return self::VERSION;
 	}
 
 	/**

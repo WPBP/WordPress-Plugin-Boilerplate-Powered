@@ -72,7 +72,7 @@ class Plugin_Name_Admin {
 		$this->version = $plugin->get_plugin_version();
 		
 		//Search update
-		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/TGM-Updater/updater/init.php' );
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/TGM-Updater/updater/init.php' );
 		$args = array(
 			'plugin_name' => 'Soliloquy', // Your plugin name (e.g. "Soliloquy" or "Jetpack")
 			'plugin_slug' => $this->plugin_slug, // Your plugin slug (typically the plugin folder name, e.g. "soliloquy")

@@ -10,7 +10,6 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 * Contain https://github.com/jtsternberg/CPT_Core
 * Contain https://github.com/jtsternberg/Taxonomy_Core
 * Contain https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress & https://github.com/humanmade/Custom-Meta-Boxes
-* Contain https://github.com/thomasgriffin/TGM-Updater
 * Settings link in the plugins list
 * Dashicon as dependence of admin stylesheet
 

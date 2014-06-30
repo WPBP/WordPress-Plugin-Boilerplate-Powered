@@ -71,20 +71,6 @@ class Plugin_Name_Admin {
 		$this->plugin_slug = $plugin->get_plugin_slug();
 		$this->version = $plugin->get_plugin_version();
 
-		//Check update of plugin
-		require_once( plugin_dir_path( __FILE__ ) . '/includes/TGM-Updater/updater/init.php' );
-		$args = array(
-			'plugin_name' => $plugin->get_plugin_name(), // Your plugin name (e.g. "Soliloquy" or "Jetpack")
-			'plugin_slug' => $this->plugin_slug, // Your plugin slug (typically the plugin folder name, e.g. "soliloquy")
-			'plugin_path' => plugin_basename( __FILE__ ), // The plugin basename (e.g. plugin_basename( __FILE__ ))
-			'plugin_url' => WP_PLUGIN_URL . $this->plugin_slug, // The HTTP URL to the plugin (e.g. WP_PLUGIN_URL . '/soliloquy')
-			'version' => $this->version, // The current version of your plugin
-			'remote_url' => 'plugin-domain-url.dev', // The remote API URL that should be pinged when retrieving plugin update info
-			'time' => 42300 // The amount of time between update checks (defaults to 12 hours)
-		);
-		$config = new TGM_Updater_Config( $args );
-		$namespace_updater = new TGM_Updater( $config ); // Be sure to replace "namespace" with your own custom namespace
-		$namespace_updater->update_plugins();   // Be sure to replace "namespace" with your own custom namespace
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );

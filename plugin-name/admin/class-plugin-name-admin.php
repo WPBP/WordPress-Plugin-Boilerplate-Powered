@@ -283,8 +283,8 @@ class Plugin_Name_Admin {
 	}
 
 	/**
-	 * Add the counter of your CPTs in At Glance widget in the dashboard
-	 * NOTE: add in $post_types your cpts, remember to edit the css style (admin/assets/css/admin.css) for change the dashicon
+	 * Add the counter of your CPTs in At Glance widget in the dashboard<br>
+	 * NOTE: add in $post_types your cpts, remember to edit the css style (admin/assets/css/admin.css) for change the dashicon<br>
 	 *
 	 *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
 	 *

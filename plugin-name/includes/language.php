@@ -1,7 +1,14 @@
 <?php
+
 // By Mte90 - www.mte90.net
 
-// Return the language 2 letters code
+/**
+ * Return the language 2 letters code
+ *
+ * @since   1.0.0
+ *
+ * @var     string
+ */
 function get_language() {
 	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
 		return ICL_LANGUAGE_CODE;
@@ -15,7 +22,13 @@ function get_language() {
 	}
 }
 
-// Add registration for string (contain hook)
+/**
+ * Add registration for string (contain hook)
+ *
+ * @since   1.0.0
+ *
+ * @var     string
+ */
 function register_string( $plugin_name_human_format, $string_name, $value ) {
 	if ( function_exists( 'icl_register_string' ) ) {
 		icl_register_string( $plugin_name_human_format, $string_name, $value );
@@ -32,7 +45,13 @@ function register_string( $plugin_name_human_format, $string_name, $value ) {
 	}
 }
 
-// Unregister string, Polylang not have this feature
+/**
+ * Unregister string, Polylang not have this feature
+ *
+ * @since   1.0.0
+ *
+ * @var     string
+ */
 function deregister_string( $plugin_name_human_format, $string_name ) {
 	if ( function_exists( 'icl_unregister_string' ) ) {
 		icl_unregister_string( $plugin_name_human_format, $string_name );
@@ -42,7 +61,13 @@ function deregister_string( $plugin_name_human_format, $string_name ) {
 	}
 }
 
-// Get string
+/**
+ * Get string
+ *
+ * @since   1.0.0
+ *
+ * @var     string
+ */
 function get_string( $plugin_name_human_format, $string_name, $value ) {
 	if ( function_exists( 'icl_t' ) ) {
 		return icl_t( $plugin_name_human_format, $string_name, $value );

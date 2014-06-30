@@ -38,7 +38,6 @@ if ( !defined( 'WPINC' ) ) {
  * Load library for simple and fast creation of Taxonomy and Custom Post Type
  *
  */
-
 require_once( plugin_dir_path( __FILE__ ) . 'includes/Taxonomy_Core/Taxonomy_Core.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
 
@@ -52,15 +51,26 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
 
 /*
  * Load template system
- *
  */
 require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
 
 /*
  * Load Widget boilerplate
- *
  */
 require_once( plugin_dir_path( __FILE__ ) . 'includes/Widget-Boilerplate/widget-boilerplate/plugin.php' );
+
+/*
+ * Load Fake Page class
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'includes/fake-page.php' );
+
+new Fake_Page(
+		array(
+	'slug' => 'fake_slug',
+	'post_title' => 'Fake Page Title',
+	'post content' => 'This is the fake page content'
+		)
+);
 
 /*
  * Register hooks that are fired when the plugin is activated or deactivated.

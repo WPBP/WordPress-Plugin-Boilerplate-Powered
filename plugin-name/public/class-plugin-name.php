@@ -48,7 +48,7 @@ class Plugin_Name {
 	 * @var      string
 	 */
 	protected $plugin_slug = 'plugin-name';
-	
+
 	/**
 	 * @TODO - Rename "Plugin Name" to the name of your plugin
 	 *
@@ -84,12 +84,12 @@ class Plugin_Name {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		//Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
+		// Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
 		register_via_cpt_core(
 				array( 'Demo', 'Demos', 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
 		);
 
-		//Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
+		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
 				array( 'Demo Section', 'Demo Sections', 'demo-section' ), array( 'public' => true ), array( 'demo' )
 		);
@@ -118,7 +118,7 @@ class Plugin_Name {
 	public function get_plugin_slug() {
 		return $this->plugin_slug;
 	}
-	
+
 	/**
 	 * Return the plugin name.
 	 *
@@ -129,7 +129,7 @@ class Plugin_Name {
 	public function get_plugin_name() {
 		return $this->plugin_name;
 	}
-	
+
 	/**
 	 * Return the version
 	 *
@@ -353,5 +353,6 @@ class Plugin_Name {
 	public function shortcode_method_name() {
 		// @TODO: Define your shortcode here
 	}
+	
 
 }

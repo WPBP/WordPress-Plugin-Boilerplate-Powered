@@ -2,6 +2,7 @@
 
 /**
  * Load template file of the plugin, create a new filter pn_get_template_part
+ * Based on WooCommerce function
  * NOTE: change the prefix of the function 
  *
  * @since    1.0.0

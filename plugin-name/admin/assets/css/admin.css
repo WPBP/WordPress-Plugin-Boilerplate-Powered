@@ -1,1 +1,5 @@
 /* This stylesheet is used to style the admin option form of the plugin. */
+
+#dashboard_right_now a.demo-count:before {
+  content: "\f115";
+}

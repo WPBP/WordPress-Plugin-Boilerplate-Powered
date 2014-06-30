@@ -55,8 +55,6 @@ class Plugin_Name {
 	 * Unique identifier for your plugin.
 	 *
 	 *
-	 * The variable name is used for TGM Updater
-	 *
 	 * @since    1.0.0
 	 *
 	 * @var      string

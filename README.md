@@ -14,7 +14,7 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 * Settings link in the plugins list
 * Dashicon as dependence of admin stylesheet
 * Support for your CPTs in At glance widget in dashboard
-* Support for CMB in the options page
+* Support for CMBF in the options page
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).

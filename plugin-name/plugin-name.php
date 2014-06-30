@@ -51,6 +51,12 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CPT_Core/CPT_Core.p
 require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
 
 /*
+ * Load Widget boilerplate
+ *
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'public/includes/Widget-Boilerplate/widget-boilerplate/plugin.php' );
+
+/*
  * Register hooks that are fired when the plugin is activated or deactivated.
  * When the plugin is deleted, the uninstall.php file is loaded.
  *

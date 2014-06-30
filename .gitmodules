@@ -1,9 +1,3 @@
-[submodule "plugin-name/public/includes/CPT_Core"]
-	path = plugin-name/public/includes/CPT_Core
-	url = https://github.com/jtsternberg/CPT_Core
-[submodule "plugin-name/public/includes/Taxonomy_Core"]
-	path = plugin-name/public/includes/Taxonomy_Core
-	url = https://github.com/jtsternberg/Taxonomy_Core
 [submodule "plugin-name/admin/includes/CMBF"]
 	path = plugin-name/admin/includes/CMBF
 	url = https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
@@ -13,6 +7,12 @@
 [submodule "plugin-name/admin/includes/CMBF-Select2"]
 	path = plugin-name/admin/includes/CMBF-Select2
 	url = https://github.com/mustardBees/cmb-field-select2
-[submodule "plugin-name/public/includes/Widget-Boilerplate"]
-	path = plugin-name/public/includes/Widget-Boilerplate
-	url = https://github.com/tommcfarlin/WordPress-Widget-Boilerplate.git
+[submodule "plugin-name/includes/CPT_Core"]
+	path = plugin-name/includes/CPT_Core
+	url = https://github.com/jtsternberg/CPT_Core
+[submodule "plugin-name/includes/Taxonomy_Core"]
+	path = plugin-name/includes/Taxonomy_Core
+	url = https://github.com/jtsternberg/Taxonomy_Core
+[submodule "plugin-name/includes/Widget-Boilerplate"]
+	path = plugin-name/includes/Widget-Boilerplate
+	url = https://github.com/tommcfarlin/WordPress-Widget-Boilerplate

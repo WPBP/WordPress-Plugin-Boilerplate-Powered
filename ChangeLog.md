@@ -10,3 +10,4 @@
 * Added Dashicon as dependence of admin stylesheet
 * Support for CPTs in At glance widget in dashboard
 * Support for CMBF in options page
+* Added function for custom template (like WooCommerce)

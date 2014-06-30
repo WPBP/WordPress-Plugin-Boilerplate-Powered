@@ -39,8 +39,8 @@ if ( !defined( 'WPINC' ) ) {
  *
  */
 
-require_once( plugin_dir_path( __FILE__ ) . 'public/includes/Taxonomy_Core/Taxonomy_Core.php' );
-require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CPT_Core/CPT_Core.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/Taxonomy_Core/Taxonomy_Core.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
 
 /*
  * @TODO:
@@ -51,10 +51,16 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/includes/CPT_Core/CPT_Core.p
 require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
 
 /*
+ * Load template system
+ *
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
+
+/*
  * Load Widget boilerplate
  *
  */
-require_once( plugin_dir_path( __FILE__ ) . 'public/includes/Widget-Boilerplate/widget-boilerplate/plugin.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/Widget-Boilerplate/widget-boilerplate/plugin.php' );
 
 /*
  * Register hooks that are fired when the plugin is activated or deactivated.

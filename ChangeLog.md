@@ -12,3 +12,4 @@
 * Support for CMBF in options page
 * Added function for custom template (like WooCommerce)
 * Added Fake Page class
+* Added language function wrapper for WPML/Ceceppa Multilingua/Polylang

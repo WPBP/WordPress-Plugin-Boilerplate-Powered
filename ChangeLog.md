@@ -9,3 +9,4 @@
 * Added plugin settings link in plugins list
 * Added Dashicon as dependence of admin stylesheet
 * Support for CPTs in At glance widget in dashboard
+* Support for CMB in options page

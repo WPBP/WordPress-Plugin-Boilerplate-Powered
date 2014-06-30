@@ -94,23 +94,25 @@ class Plugin_Name_Admin {
 		 * - Choose the Custom Meta Box Library and remove the other
 		 * 
 		 *  Custom meta Boxes by HumanMade | PS: include natively Select2 for select box
+		 *  NOTE: Actually not support options page, there is a branch cmb-anywhere-2 in developing
 		 * 	https://github.com/humanmade/Custom-Meta-Boxes/		
-		 * 	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
-		 * 		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/CMB/custom-meta-boxes.php' );
-		 * 	}
-		 * 
+		  if ( !class_exists( 'cmb_Meta_Box' ) ) {
+		  require_once( plugin_dir_path( __FILE__ ) . 'includes/CMB/custom-meta-boxes.php' );
+		  }
 		 *  Custom Metabox and Fields for Wordpress
 		 * 	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
-		 * 	if ( ! class_exists( 'cmb_Meta_Box' ) ) {
-		 * 		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/CMBF/init.php' );
-		 * 		require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/CMBF-Select2/cmb-field-select2.php' );
-		 * 	}
-		 * 
-		 * Filter is the same
-		 * Check on the official site of library for example
-		 * add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
-		 *
 		 */
+		add_action( 'init', function() {
+			if ( !class_exists( 'cmb_Meta_Box' ) ) {
+				require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF/init.php' );
+				require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF-Select2/cmb-field-select2.php' );
+			}
+		}, 9999 );
+
+		/*
+		 * Filter is the same
+		 */
+		add_filter( 'cmb_meta_boxes', array( $this, 'cmb_demo_metaboxes' ) );
 
 		/*
 		 * Define custom functionality.
@@ -166,7 +168,7 @@ class Plugin_Name_Admin {
 		}
 
 		$screen = get_current_screen();
-		if ( $this->plugin_screen_hook_suffix == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
+		if ( $this->plugin_screen_hook_suffix == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
 			wp_enqueue_style( $this->plugin_slug . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), Plugin_Name::VERSION );
 		}
 	}
@@ -307,6 +309,37 @@ class Plugin_Name_Admin {
 			}
 		}
 		return $items;
+	}
+
+	/**
+	 * NOTE:     Your metabox on Demo CPT
+	 *
+	 * @since    1.0.0
+	 */
+	public function cmb_demo_metaboxes( array $meta_boxes ) {
+		$meta_boxes[ 'test_metabox' ] = array(
+			'id' => 'test_metabox',
+			'title' => __( 'Test Metabox', $this->plugin_slug ),
+			'pages' => array( 'demo', ), // Post type
+			'context' => 'normal',
+			'priority' => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => __( 'Test Text', $this->plugin_slug ),
+					'desc' => __( 'field description (optional)', $this->plugin_slug ),
+					'id' => $this->plugin_slug . '_test_text',
+					'type' => 'text',
+				),
+				array(
+					'name' => __( 'Test Text Small', $this->plugin_slug ),
+					'desc' => __( 'field description (optional)', $this->plugin_slug ),
+					'id' => $this->plugin_slug . '_test_textsmall',
+					'type' => 'text_small',
+				), ),
+		);
+
+		return $meta_boxes;
 	}
 
 }

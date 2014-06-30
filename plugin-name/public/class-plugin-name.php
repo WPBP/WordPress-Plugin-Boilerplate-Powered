@@ -354,5 +354,4 @@ class Plugin_Name {
 		// @TODO: Define your shortcode here
 	}
 	
-
 }

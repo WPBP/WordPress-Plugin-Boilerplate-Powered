@@ -5,5 +5,7 @@
 * Added Shortcode base code
 * Added CPT_Core and Taxonomy_Core
 * Added Custom-Metaboxes-and-Fields-for-WordPress (with cmb-field-select2) and Custom-Meta-Boxes
+* Added Widget Boilerplate
 * Added plugin settings link in plugins list
 * Added Dashicon as dependence of admin stylesheet
+* Support for CPTs in At glance widget in dashboard

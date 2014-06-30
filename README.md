@@ -10,8 +10,10 @@ The WordPress Plugin Boilerplate Powered serves as a powered foundation and aims
 * Contain https://github.com/jtsternberg/CPT_Core
 * Contain https://github.com/jtsternberg/Taxonomy_Core
 * Contain https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress & https://github.com/humanmade/Custom-Meta-Boxes
+* Contain https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
 * Settings link in the plugins list
 * Dashicon as dependence of admin stylesheet
+* Support for your CPTs in At glance widget in dashboard
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).

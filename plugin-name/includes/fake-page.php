@@ -5,17 +5,17 @@
 if ( !class_exists( 'Fake_Page' ) ) {
 
 	/**
-	 * Fake_Page
-	 * @author Ohad Raz
+	 * Fake_Page<br>
+	 * Class to create pages "On the FLY"<br>
+	 * Usage: <br>
+	 *   $args = array(<br>
+	 *       'slug' => 'fake_slug',<br>
+	 *       'post_title' => 'Fake Page Title',<br>
+	 *       'post content' => 'This is the fake page content'<br>
+	 *   );<br>
+	 *   new Fake_Page($args);<br>
+	 * @author Ohad Raz & Mte90
 	 * @since 0.1
-	 * Class to create pages "On the FLY"
-	 * Usage: 
-	 *   $args = array(
-	 *       'slug' => 'fake_slug',
-	 *       'post_title' => 'Fake Page Title',
-	 *       'post content' => 'This is the fake page content'
-	 *   );
-	 *   new Fake_Page($args);
 	 */
 	class Fake_Page {
 
@@ -23,25 +23,26 @@ if ( !class_exists( 'Fake_Page' ) ) {
 		public $args = array();
 
 		/**
-		 * __construct
-		 * <a href="/param">@param</a> array $arg post to create on the fly
+		 * __construct<br>
+		 * initialize the Fake Page
+		 * @param array $args
 		 * @author Ohad Raz 
 		 * 
 		 */
 		function __construct( $args ) {
-			add_filter( 'the_posts', array( $this, 'fly_page' ) );
+			add_filter( 'the_posts', array( $this, 'fake_page_filter' ) );
 			$this->args = $args;
 			$this->slug = $args[ 'slug' ];
 		}
 
 		/**
-		 * fly_page 
-		 * the Money function that catches the request and returns the page as if it was retrieved from the database
-		 * <a href="/param">@param</a>  array $posts 
+		 * fake_page_filter<br>
+		 * Catches the request and returns the page as if it was retrieved from the database
+		 * @param  array $posts 
 		 * @return array 
-		 * @author Ohad Raz
+		 * @author Ohad Raz & Mte90
 		 */
-		public function fly_page( $posts ) {
+		public function fake_page_filter( $posts ) {
 			global $wp, $wp_query;
 			$page_slug = $this->slug;
 

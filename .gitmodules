@@ -15,4 +15,4 @@
 	url = https://github.com/jtsternberg/Taxonomy_Core
 [submodule "plugin-name/includes/Widget-Boilerplate"]
 	path = plugin-name/includes/Widget-Boilerplate
-	url = https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
+	url = git@github.com:Mte90/WordPress-Widget-Boilerplate.git

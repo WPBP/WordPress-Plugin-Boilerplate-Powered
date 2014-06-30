@@ -74,6 +74,11 @@ class Plugin_Name_Admin {
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+		// Load admin style in dashboard for the At glance widget
+		add_action( 'admin_head-index.php', array( $this, 'enqueue_admin_styles' ) );
+
+		// At Glance Dashboard widget for your cpts
+		add_filter( 'dashboard_glance_items', array( $this, 'cpt_dashboard_support' ), 10, 1 );
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -161,7 +166,7 @@ class Plugin_Name_Admin {
 		}
 
 		$screen = get_current_screen();
-		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
+		if ( $this->plugin_screen_hook_suffix == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
 			wp_enqueue_style( $this->plugin_slug . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), Plugin_Name::VERSION );
 		}
 	}
@@ -273,6 +278,35 @@ class Plugin_Name_Admin {
 	 */
 	public function filter_method_name() {
 		// @TODO: Define your filter hook callback here
+	}
+
+	/**
+	 * Add the counter of your CPTs in At Glance widget in the dashboard
+	 * NOTE: add in $post_types your cpts, remember to edit the css style (admin/assets/css/admin.css) for change the dashicon
+	 *
+	 *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
+	 *
+	 * @since    1.0.0
+	 */
+	public function cpt_dashboard_support( $items = array() ) {
+		$post_types = array( 'demo' );
+		foreach ( $post_types as $type ) {
+			if ( !post_type_exists( $type ) )
+				continue;
+			$num_posts = wp_count_posts( $type );
+			if ( $num_posts ) {
+				$published = intval( $num_posts->publish );
+				$post_type = get_post_type_object( $type );
+				$text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, $this->plugin_slug );
+				$text = sprintf( $text, number_format_i18n( $published ) );
+				if ( current_user_can( $post_type->cap->edit_posts ) ) {
+					$items[] = '<a class="' . $post_type->name . '-count" href="edit.php?post_type=' . $post_type->name . '">' . sprintf( '%2$s', $type, $text ) . "</a>\n";
+				} else {
+					$items[] = sprintf( '%2$s', $type, $text ) . "\n";
+				}
+			}
+		}
+		return $items;
 	}
 
 }

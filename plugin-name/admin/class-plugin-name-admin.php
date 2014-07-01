@@ -89,9 +89,10 @@ class Plugin_Name_Admin {
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
-		/* @TODO:
+		/* 
+		 * Choose the Custom Meta Box Library and remove the other
 		 * 
-		 * - Choose the Custom Meta Box Library and remove the other
+		 * @TODO:
 		 * 
 		 *  Custom meta Boxes by HumanMade | PS: include natively Select2 for select box
 		 *  NOTE: Actually not support options page, there is a branch cmb-anywhere-2 in developing

@@ -57,6 +57,11 @@ This will activate the WordPress Plugin Boilerplate. Because the Boilerplate has
 
 ## Recommended Tools
 
+### Generator Tool
+
+WordPress Plugin Boilerplate Powered have a Yeoman generator that allows you to choose the libraries you need with a small customization.  
+Link to repo: [https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/blob/master/README.md](https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/blob/master/README.md)
+
 ### Localization Tools
 
 The WordPress Plugin Boilerplate uses a variable to store the text domain used when internationalizing strings throughout the Boilerplate. To take advantage of this method,

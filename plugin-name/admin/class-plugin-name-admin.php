@@ -320,20 +320,20 @@ class Plugin_Name_Admin {
 	public function cmb_demo_metaboxes( array $meta_boxes ) {
 		$meta_boxes[ 'test_metabox' ] = array(
 			'id' => 'test_metabox',
-			'title' => __( 'Test Metabox', $this->plugin_slug ),
+			'title' => __( 'Demo Metabox', $this->plugin_slug ),
 			'pages' => array( 'demo', ), // Post type
 			'context' => 'normal',
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
 				array(
-					'name' => __( 'Test Text', $this->plugin_slug ),
+					'name' => __( 'Text', $this->plugin_slug ),
 					'desc' => __( 'field description (optional)', $this->plugin_slug ),
 					'id' => $this->plugin_slug . '_test_text',
 					'type' => 'text',
 				),
 				array(
-					'name' => __( 'Test Text Small', $this->plugin_slug ),
+					'name' => __( 'Text Small', $this->plugin_slug ),
 					'desc' => __( 'field description (optional)', $this->plugin_slug ),
 					'id' => $this->plugin_slug . '_test_textsmall',
 					'type' => 'text_small',

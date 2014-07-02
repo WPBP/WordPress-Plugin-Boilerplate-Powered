@@ -27,13 +27,13 @@
 		'show_names' => true,
 		'fields' => array(
 			array(
-				'name' => __( 'Test Text', $this->plugin_slug ),
+				'name' => __( 'Text', $this->plugin_slug ),
 				'desc' => __( 'field description (optional)', $this->plugin_slug ),
 				'id' => $this->plugin_slug . '_text',
 				'type' => 'text',
 			),
 			array(
-				'name' => __( 'Test Color Picker', $this->plugin_slug ),
+				'name' => __( 'Color Picker', $this->plugin_slug ),
 				'desc' => __( 'field description (optional)', $this->plugin_slug ),
 				'id' => $this->plugin_slug . '_colorpicker',
 				'type' => 'colorpicker',

@@ -82,8 +82,6 @@ class Plugin_Name_Admin {
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-		//Add the plugin settings link in the plugins list page
-		add_filter( 'plugin_action_links_' . $this->plugin_slug . '.php', 'add_plugin_settings_link' );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
@@ -224,17 +222,6 @@ class Plugin_Name_Admin {
 	}
 
 	/**
-	 * Register the setting link for this plugin into the Plugin lists.
-	 *
-	 * @since    1.0.0
-	 */
-	function add_plugin_settings_link( $links ) {
-		$settings_link = '<a href="options-general.php?page=' . $this->plugin_slug . '">' . __( 'Settings', $this->plugin_slug ) . '</a>';
-		array_push( $links, $settings_link );
-		return $links;
-	}
-
-	/**
 	 * Render the settings page for this plugin.
 	 *
 	 * @since    1.0.0
@@ -249,7 +236,6 @@ class Plugin_Name_Admin {
 	 * @since    1.0.0
 	 */
 	public function add_action_links( $links ) {
-
 		return array_merge(
 				array(
 			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'

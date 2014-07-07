@@ -22,6 +22,7 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 * Support for your CPTs in At glance widget in dashboard
 * Support for CMBF in the options page
 * Added class in frontend body with the slug of plugin
+* Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).

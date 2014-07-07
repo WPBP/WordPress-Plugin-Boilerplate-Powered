@@ -23,7 +23,7 @@
 	
 	$option_fields = array(
 		'id' => $this->plugin_slug . '_options',
-		'show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug . '-settings', ), ),
+		'cmb_show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug . '-settings', ), ),
 		'show_names' => true,
 		'fields' => array(
 			array(

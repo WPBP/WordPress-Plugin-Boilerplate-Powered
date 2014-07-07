@@ -2,6 +2,7 @@
 
 * Added Class on all the frontend page
 * Fix __() in CPT/Tax Core
+* Fix in admin view because the field are not showed
 
 ## 1.0.0
 
@@ -11,7 +12,6 @@
 * Added CPT_Core and Taxonomy_Core
 * Added Custom-Metaboxes-and-Fields-for-WordPress (with cmb-field-select2) and Custom-Meta-Boxes
 * Added Widget Boilerplate
-* Added plugin settings link in plugins list
 * Added Dashicon as dependence of admin stylesheet
 * Support for CPTs in At glance widget in dashboard
 * Support for CMBF in options page

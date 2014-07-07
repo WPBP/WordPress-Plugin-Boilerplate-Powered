@@ -94,6 +94,8 @@ class Plugin_Name {
 				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array( 'public' => true ), array( 'demo' )
 		);
 
+		add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );
+
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -314,6 +316,11 @@ class Plugin_Name {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+	}
+
+	public function add_pn_class( $classes ) {
+		$classes[] = $this->plugin_slug;
+		return $classes;
 	}
 
 	/**

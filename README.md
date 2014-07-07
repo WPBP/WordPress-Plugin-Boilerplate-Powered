@@ -18,10 +18,10 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 ### Snippet included
 
 * Shortcode example code
-* Settings link in the plugins list
 * Dashicon as dependence of admin stylesheet
 * Support for your CPTs in At glance widget in dashboard
 * Support for CMBF in the options page
+* Added class in frontend body with the slug of plugin
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).

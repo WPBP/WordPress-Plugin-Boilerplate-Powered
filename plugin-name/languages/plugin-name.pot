@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TODO 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/plugins/plugin-name\n"
-"POT-Creation-Date: 2014-07-02 16:46+0100\n"
-"PO-Revision-Date: 2014-07-02 16:47+0100\n"
+"POT-Creation-Date: 2014-07-07 18:51+0100\n"
+"PO-Revision-Date: 2014-07-07 18:52+0100\n"
 "Last-Translator: Mte90 <mte90net@gmail.com>\n"
 "Language-Team: LANGUAGE <translations@example.com >\n"
 "MIME-Version: 1.0\n"
@@ -18,39 +18,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-plugin-name-admin.php:222
+#: admin/class-plugin-name-admin.php:220
 msgid "Page Title"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:222
+#: admin/class-plugin-name-admin.php:220
 msgid "Menu Text"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:232 admin/class-plugin-name-admin.php:255
+#: admin/class-plugin-name-admin.php:241
 msgid "Settings"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:303
+#: admin/class-plugin-name-admin.php:290
 #, php-format
 msgid "%s "
 msgid_plural "%s "
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/class-plugin-name-admin.php:323
+#: admin/class-plugin-name-admin.php:310
 msgid "Demo Metabox"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:330 admin/views/admin.php:30
+#: admin/class-plugin-name-admin.php:317 admin/views/admin.php:30
 msgid "Text"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:331 admin/class-plugin-name-admin.php:337
+#: admin/class-plugin-name-admin.php:318 admin/class-plugin-name-admin.php:324
 #: admin/views/admin.php:31 admin/views/admin.php:37
 msgid "field description (optional)"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:336
+#: admin/class-plugin-name-admin.php:323
 msgid "Text Small"
 msgstr ""
 
@@ -310,4 +310,20 @@ msgstr ""
 
 #: includes/Widget-Boilerplate/widget-boilerplate/plugin.php:69
 msgid "Short description of the widget goes here."
+msgstr ""
+
+#: public/class-plugin-name.php:89
+msgid "Demo"
+msgstr ""
+
+#: public/class-plugin-name.php:89
+msgid "Demos"
+msgstr ""
+
+#: public/class-plugin-name.php:94
+msgid "Demo Section"
+msgstr ""
+
+#: public/class-plugin-name.php:94
+msgid "Demo Sections"
 msgstr ""

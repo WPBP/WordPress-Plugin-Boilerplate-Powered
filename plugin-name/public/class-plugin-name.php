@@ -86,12 +86,12 @@ class Plugin_Name {
 
 		// Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
 		register_via_cpt_core(
-				array( 'Demo', 'Demos', 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
+				array( __( 'Demo', $this->plugin_slug ), __( 'Demos', $this->plugin_slug ), 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
 		);
 
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
-				array( 'Demo Section', 'Demo Sections', 'demo-section' ), array( 'public' => true ), array( 'demo' )
+				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array( 'public' => true ), array( 'demo' )
 		);
 
 		// Load public-facing style sheet and JavaScript.
@@ -353,5 +353,5 @@ class Plugin_Name {
 	public function shortcode_method_name() {
 		// @TODO: Define your shortcode here
 	}
-	
+
 }

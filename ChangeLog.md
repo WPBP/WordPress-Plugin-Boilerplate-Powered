@@ -3,6 +3,7 @@
 * Added Class on all the frontend page
 * Fix __() in CPT/Tax Core
 * Fix in admin view because the field are not showed
+* Integrated DOM-Based Routing of Roots Template
 
 ## 1.0.0
 

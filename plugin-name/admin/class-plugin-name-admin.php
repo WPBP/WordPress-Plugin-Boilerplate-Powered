@@ -89,7 +89,7 @@ class Plugin_Name_Admin {
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
-		/* 
+		/*
 		 * Choose the Custom Meta Box Library and remove the other
 		 * 
 		 * @TODO:
@@ -294,8 +294,9 @@ class Plugin_Name_Admin {
 	public function cpt_dashboard_support( $items = array() ) {
 		$post_types = array( 'demo' );
 		foreach ( $post_types as $type ) {
-			if ( !post_type_exists( $type ) )
+			if ( !post_type_exists( $type ) ) {
 				continue;
+			}
 			$num_posts = wp_count_posts( $type );
 			if ( $num_posts ) {
 				$published = intval( $num_posts->publish );

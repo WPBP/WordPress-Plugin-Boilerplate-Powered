@@ -16,6 +16,8 @@ function pn_get_template_part( $slug, $name = '' ) {
 	// Look in yourtheme/slug-name.php and yourtheme/plugin-name/slug-name.php
 	if ( $name ) {
 		$template = locate_template( array( "{$slug}-{$name}.php", $plugin_slug . "{$slug}-{$name}.php" ) );
+	} else {
+		$template = locate_template( array( "{$slug}.php", $plugin_slug . "{$slug}.php" ) );
 	}
 	
 	// Get default slug-name.php

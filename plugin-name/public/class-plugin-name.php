@@ -69,7 +69,7 @@ class Plugin_Name {
 	 * @var      object
 	 */
 	protected static $instance = null;
-	
+
 	/**
 	 * Array of cpts of the plugin
 	 *
@@ -77,7 +77,7 @@ class Plugin_Name {
 	 *
 	 * @var      object
 	 */
-	protected $cpts = array('demo');
+	protected $cpts = array( 'demo' );
 
 	/**
 	 * Initialize the plugin by setting localization and loading public scripts
@@ -97,13 +97,16 @@ class Plugin_Name {
 		register_via_cpt_core(
 				array( __( 'Demo', $this->plugin_slug ), __( 'Demos', $this->plugin_slug ), 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
 		);
-		
+
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
 				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array( 'public' => true ), array( 'demo' )
 		);
 
 		add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );
+
+		//Ovveride the template hierachy for load /templates/content-demo.php
+		add_filter( 'template_include', array( $this, 'load_content_demo' ) );
 
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
@@ -151,7 +154,7 @@ class Plugin_Name {
 	public function get_plugin_version() {
 		return self::VERSION;
 	}
-	
+
 	/**
 	 * Return the cpts
 	 *
@@ -338,9 +341,27 @@ class Plugin_Name {
 		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 	}
 
+	/**
+	 * Add class in the body on the frontend
+	 *
+	 * @since    1.0.0
+	 */
 	public function add_pn_class( $classes ) {
 		$classes[] = $this->plugin_slug;
 		return $classes;
+	}
+
+	/**
+	 * Example for override the template system on the frontend
+	 *
+	 * @since    1.0.0
+	 */
+	public function load_content_demo( $original_template ) {
+		if ( is_singular('demo') && in_the_loop() ) {
+			return pn_get_template_part( 'content', 'demo', false );
+		} else {
+			return $original_template;
+		}
 	}
 
 	/**

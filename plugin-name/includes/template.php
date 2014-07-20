@@ -7,7 +7,7 @@
  *
  * @since    1.0.0
  */
-function pn_get_template_part( $slug, $name = '' ) {
+function pn_get_template_part( $slug, $name = '', $include = true ) {
 	$template = '';
 	$path = plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . 'templates/';
 	$plugin = Plugin_Name::get_instance();
@@ -33,7 +33,9 @@ function pn_get_template_part( $slug, $name = '' ) {
 	// Allow 3rd party plugin filter template file from their plugin
 	$template = apply_filters( 'pn_get_template_part', $template, $slug, $name );
 
-	if ( $template ) {
+	if ( $template && $include === true ) {
 		load_template( $template, false );
+	} else if($template && $include === false ) {
+		return $template;
 	}
 }

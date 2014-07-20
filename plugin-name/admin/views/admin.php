@@ -23,35 +23,70 @@
 <div class="wrap">
 
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1"><?php _e( 'Settings' ); ?></a></li>
+			<li><a href="#tabs-2"><?php _e( 'Settings 2', $this->plugin_slug ); ?></a></li>
+		</ul>
+		<div id="tabs-1">
+			<?php
+			// NOTE:Code for CMBF!
 
-	<?php
-	
-	// NOTE:Code for CMBF!
-	
-	$option_fields = array(
-		'id' => $this->plugin_slug . '_options',
-		'cmb_show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug . '-settings', ), ),
-		'show_names' => true,
-		'fields' => array(
-			array(
-				'name' => __( 'Text', $this->plugin_slug ),
-				'desc' => __( 'field description (optional)', $this->plugin_slug ),
-				'id' => $this->plugin_slug . '_text',
-				'type' => 'text',
-			),
-			array(
-				'name' => __( 'Color Picker', $this->plugin_slug ),
-				'desc' => __( 'field description (optional)', $this->plugin_slug ),
-				'id' => $this->plugin_slug . '_colorpicker',
-				'type' => 'colorpicker',
-				'default' => '#ffffff'
-			),
-		),
-	);
+			$option_fields = array(
+				'id' => $this->plugin_slug . '_options',
+				'cmb_show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug . '-settings', ), ),
+				'show_names' => true,
+				'fields' => array(
+					array(
+						'name' => __( 'Text', $this->plugin_slug ),
+						'desc' => __( 'field description (optional)', $this->plugin_slug ),
+						'id' => $this->plugin_slug . '_text',
+						'type' => 'text',
+					),
+					array(
+						'name' => __( 'Color Picker', $this->plugin_slug ),
+						'desc' => __( 'field description (optional)', $this->plugin_slug ),
+						'id' => $this->plugin_slug . '_colorpicker',
+						'type' => 'colorpicker',
+						'default' => '#ffffff'
+					),
+				),
+			);
 
-	cmb_metabox_form( $option_fields, $this->plugin_slug . '-settings' );
-	?>
+			cmb_metabox_form( $option_fields, $this->plugin_slug . '-settings' );
+			?>
 
-	<!-- @TODO: Provide other markup for your options page here. -->
+			<!-- @TODO: Provide other markup for your options page here. -->
+		</div>
+		<div id="tabs-2">
+			<?php
+			// NOTE:Code for CMBF!
 
+			$option_fields = array(
+				'id' => $this->plugin_slug . '_options',
+				'cmb_show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug . '-settings', ), ),
+				'show_names' => true,
+				'fields' => array(
+					array(
+						'name' => __( 'Text2', $this->plugin_slug ),
+						'desc' => __( 'field description (optional)', $this->plugin_slug ),
+						'id' => $this->plugin_slug . '_text2',
+						'type' => 'text',
+					),
+					array(
+						'name' => __( 'Color Picker2', $this->plugin_slug ),
+						'desc' => __( 'field description (optional)', $this->plugin_slug ),
+						'id' => $this->plugin_slug . '_colorpicker2',
+						'type' => 'colorpicker',
+						'default' => '#ffffff'
+					),
+				),
+			);
+
+			cmb_metabox_form( $option_fields, $this->plugin_slug . '-settings2' );
+			?>
+
+			<!-- @TODO: Provide other markup for your options page here. -->
+		</div>
+	</div>
 </div>

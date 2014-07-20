@@ -1,6 +1,12 @@
 ## 1.0.1
 
 * Added Class on all the frontend page
+* Added Multi CMB in settings page
+* Added tabs in settings page
+* Added bubble notification on cpt
+* Added override system for templates
+* Fix text-domain wrong
+* Fix pn_get_template_part now support a undefined 2 parameter
 * Fix __() in CPT/Tax Core
 * Fix in admin view because the field are not showed
 * Integrated DOM-Based Routing of Roots Template

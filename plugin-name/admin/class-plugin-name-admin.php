@@ -70,6 +70,7 @@ class Plugin_Name_Admin {
 		$plugin = Plugin_Name::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 		$this->version = $plugin->get_plugin_version();
+		$this->cpts = $plugin->get_cpts();
 
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
@@ -280,7 +281,7 @@ class Plugin_Name_Admin {
 	 * @since    1.0.0
 	 */
 	public function cpt_dashboard_support( $items = array() ) {
-		$post_types = array( 'demo' );
+		$post_types = $this->cpts;
 		foreach ( $post_types as $type ) {
 			if ( !post_type_exists( $type ) ) {
 				continue;
@@ -312,7 +313,7 @@ class Plugin_Name_Admin {
 	function pending_cpt_bubble() {
 		global $menu;
 
-		$post_types = array( 'demo' );
+		$post_types = $this->cpts;
 		foreach ( $post_types as $type ) {
 			if ( !post_type_exists( $type ) ) {
 				continue;

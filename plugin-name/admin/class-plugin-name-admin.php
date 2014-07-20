@@ -82,6 +82,8 @@ class Plugin_Name_Admin {
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
+		//Add bubble notification for cpt pending
+		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble'), 999 );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
@@ -238,7 +240,7 @@ class Plugin_Name_Admin {
 	public function add_action_links( $links ) {
 		return array_merge(
 				array(
-			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
+			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings' ) . '</a>'
 				), $links
 		);
 	}
@@ -297,6 +299,61 @@ class Plugin_Name_Admin {
 			}
 		}
 		return $items;
+	}
+
+	/**
+	 * Bubble Notification for pending cpt<br>
+	 * NOTE: add in $post_types your cpts<br>
+	 *
+	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 *
+	 * @since    1.0.0
+	 */
+	function pending_cpt_bubble() {
+		global $menu;
+
+		$post_types = array( 'demo' );
+		foreach ( $post_types as $type ) {
+			if ( !post_type_exists( $type ) ) {
+				continue;
+			}
+			// Count posts
+			$cpt_count = wp_count_posts( $type );
+
+			if ( $cpt_count->pending ) {
+				// Menu link suffix, Post is different from the rest
+				$suffix = ( 'post' == $type ) ? '' : "?post_type=$type";
+
+				// Locate the key of 
+				$key = self::recursive_array_search_php( "edit.php$suffix", $menu );
+
+				// Not found, just in case 
+				if ( !$key )
+					return;
+
+				// Modify menu item
+				$menu[ $key ][ 0 ] .= sprintf(
+						'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
+				);
+			}
+		}
+	}
+
+	/**
+	 * Required for the bubble notification<br>
+	 *
+	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 *
+	 * @since    1.0.0
+	 */
+	private function recursive_array_search_php( $needle, $haystack ) {
+		foreach ( $haystack as $key => $value ) {
+			$current_key = $key;
+			if ( $needle === $value OR ( is_array( $value ) && self::recursive_array_search_php( $needle, $value ) !== false) ) {
+				return $current_key;
+			}
+		}
+		return false;
 	}
 
 	/**

@@ -69,6 +69,15 @@ class Plugin_Name {
 	 * @var      object
 	 */
 	protected static $instance = null;
+	
+	/**
+	 * Array of cpts of the plugin
+	 *
+	 * @since    1.0.0
+	 *
+	 * @var      object
+	 */
+	protected $cpts = array('demo');
 
 	/**
 	 * Initialize the plugin by setting localization and loading public scripts
@@ -88,7 +97,7 @@ class Plugin_Name {
 		register_via_cpt_core(
 				array( __( 'Demo', $this->plugin_slug ), __( 'Demos', $this->plugin_slug ), 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
 		);
-
+		
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
 				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array( 'public' => true ), array( 'demo' )
@@ -141,6 +150,17 @@ class Plugin_Name {
 	 */
 	public function get_plugin_version() {
 		return self::VERSION;
+	}
+	
+	/**
+	 * Return the cpts
+	 *
+	 * @since    1.0.0
+	 *
+	 * @return    Cpts array
+	 */
+	public function get_cpts() {
+		return $this->cpts;
 	}
 
 	/**

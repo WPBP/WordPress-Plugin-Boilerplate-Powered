@@ -33,7 +33,7 @@
 		<div id="tabs-1">
 			<?php
 			// NOTE:Code for CMBF!
-print_r(get_option( $this->plugin_slug. '-settings' ));
+
 			$option_fields = array(
 				'id' => $this->plugin_slug . '_options',
 				'cmb_show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug ), ),
@@ -63,7 +63,7 @@ print_r(get_option( $this->plugin_slug. '-settings' ));
 		<div id="tabs-2">
 			<?php
 			// NOTE:Code for CMBF!
-print_r(get_option( $this->plugin_slug. '-settings-second' ));
+
 			$option_fields_second = array(
 				'id' => $this->plugin_slug . '_options-second',
 				'cmb_show_on' => array( 'key' => 'options-page', 'value' => array( $this->plugin_slug ), ),

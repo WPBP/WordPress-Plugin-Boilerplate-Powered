@@ -10,6 +10,7 @@
 * Fix __() in CPT/Tax Core
 * Fix in admin view because the field are not showed
 * Integrated DOM-Based Routing of Roots Template
+* Integrated import/export settings system
 
 ## 1.0.0
 

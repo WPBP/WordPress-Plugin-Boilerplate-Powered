@@ -405,7 +405,7 @@ class Plugin_Name_Admin {
 			return;
 
 		$settings[ 0 ] = get_option( $this->plugin_slug . '-settings' );
-		$settings[ 1 ] = get_option( $this->plugin_slug . '-settings2' );
+		$settings[ 1 ] = get_option( $this->plugin_slug . '-settings-second' );
 
 		ignore_user_abort( true );
 
@@ -446,9 +446,9 @@ class Plugin_Name_Admin {
 
 		// Retrieve the settings from the file and convert the json object to an array.
 		$settings = ( array ) json_decode( file_get_contents( $import_file ) );
-
-		update_option( $this->plugin_slug . '-settings', $settings[ 0 ] );
-		update_option( $this->plugin_slug . '-settings2', $settings[ 1 ] );
+		
+		update_option( $this->plugin_slug . '-settings', get_object_vars($settings[ 0 ]) );
+		update_option( $this->plugin_slug . '-settings-second', get_object_vars($settings[ 1 ]) );
 
 		wp_safe_redirect( admin_url( 'options-general.php?page=' . $this->plugin_slug ) );
 		exit;

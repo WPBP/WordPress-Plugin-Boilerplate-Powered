@@ -84,7 +84,7 @@ class Plugin_Name_Admin {
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 		//Add bubble notification for cpt pending
-		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble'), 999 );
+		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
@@ -124,6 +124,11 @@ class Plugin_Name_Admin {
 		 */
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+
+		//Add the export settings method
+		add_action( 'admin_init', array( $this, 'pn_process_settings_export' ) );
+		//Add the import settings method
+		add_action( 'admin_init', array( $this, 'pn_process_settings_import' ) );
 	}
 
 	/**
@@ -386,6 +391,67 @@ class Plugin_Name_Admin {
 		);
 
 		return $meta_boxes;
+	}
+
+	function pn_process_settings_export() {
+
+		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' != $_POST[ 'pn_action' ] )
+			return;
+
+		if ( !wp_verify_nonce( $_POST[ 'pn_export_nonce' ], 'pn_export_nonce' ) )
+			return;
+
+		if ( !current_user_can( 'manage_options' ) )
+			return;
+
+		$settings[ 0 ] = get_option( $this->plugin_slug . '-settings' );
+		$settings[ 1 ] = get_option( $this->plugin_slug . '-settings2' );
+
+		ignore_user_abort( true );
+
+		nocache_headers();
+		header( 'Content-Type: application/json; charset=utf-8' );
+		header( 'Content-Disposition: attachment; filename=pn-settings-export-' . date( 'm-d-Y' ) . '.json' );
+		header( "Expires: 0" );
+
+		echo json_encode( $settings );
+		exit;
+	}
+
+	/**
+	 * Process a settings import from a json file
+	 */
+	function pn_process_settings_import() {
+
+		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' != $_POST[ 'pn_action' ] )
+			return;
+
+		if ( !wp_verify_nonce( $_POST[ 'pn_import_nonce' ], 'pn_import_nonce' ) )
+			return;
+
+		if ( !current_user_can( 'manage_options' ) )
+			return;
+
+		$extension = end( explode( '.', $_FILES[ 'import_file' ][ 'name' ] ) );
+
+		if ( $extension != 'json' ) {
+			wp_die( __( 'Please upload a valid .json file', $this->plugin_slug ) );
+		}
+
+		$import_file = $_FILES[ 'import_file' ][ 'tmp_name' ];
+
+		if ( empty( $import_file ) ) {
+			wp_die( __( 'Please upload a file to import', $this->plugin_slug ) );
+		}
+
+		// Retrieve the settings from the file and convert the json object to an array.
+		$settings = ( array ) json_decode( file_get_contents( $import_file ) );
+
+		update_option( $this->plugin_slug . '-settings', $settings[ 0 ] );
+		update_option( $this->plugin_slug . '-settings2', $settings[ 1 ] );
+
+		wp_safe_redirect( admin_url( 'options-general.php?page=' . $this->plugin_slug ) );
+		exit;
 	}
 
 }

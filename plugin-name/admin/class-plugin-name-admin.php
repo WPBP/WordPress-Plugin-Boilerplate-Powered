@@ -246,7 +246,8 @@ class Plugin_Name_Admin {
 	public function add_action_links( $links ) {
 		return array_merge(
 				array(
-			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings' ) . '</a>'
+			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings' ) . '</a>',
+			'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', $this->plugin_slug ) . '</a>'
 				), $links
 		);
 	}
@@ -446,9 +447,9 @@ class Plugin_Name_Admin {
 
 		// Retrieve the settings from the file and convert the json object to an array.
 		$settings = ( array ) json_decode( file_get_contents( $import_file ) );
-		
-		update_option( $this->plugin_slug . '-settings', get_object_vars($settings[ 0 ]) );
-		update_option( $this->plugin_slug . '-settings-second', get_object_vars($settings[ 1 ]) );
+
+		update_option( $this->plugin_slug . '-settings', get_object_vars( $settings[ 0 ] ) );
+		update_option( $this->plugin_slug . '-settings-second', get_object_vars( $settings[ 1 ] ) );
 
 		wp_safe_redirect( admin_url( 'options-general.php?page=' . $this->plugin_slug ) );
 		exit;

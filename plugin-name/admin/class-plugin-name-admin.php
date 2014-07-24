@@ -69,6 +69,7 @@ class Plugin_Name_Admin {
 		 */
 		$plugin = Plugin_Name::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
+		$this->plugin_name = $plugin->get_plugin_name();
 		$this->version = $plugin->get_plugin_version();
 		$this->cpts = $plugin->get_cpts();
 
@@ -129,6 +130,13 @@ class Plugin_Name_Admin {
 		add_action( 'admin_init', array( $this, 'pn_process_settings_export' ) );
 		//Add the import settings method
 		add_action( 'admin_init', array( $this, 'pn_process_settings_import' ) );
+
+		/*
+		 * Debug mode
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
+		$debug = new Pn_Debug( $this );
+		$debug->log(__( 'Plugin Loaded', $this->plugin_slug ));
 	}
 
 	/**

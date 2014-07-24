@@ -14,6 +14,7 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 * Added function for custom template (like WooCommerce) in `includes/template.php`
 * Added Fake Page class in `includes/language.php` in `includes/fake-page.php`
 * Added language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
+* Added [modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
 
 ### Snippet included
 

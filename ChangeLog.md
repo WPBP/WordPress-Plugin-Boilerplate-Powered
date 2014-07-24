@@ -11,6 +11,7 @@
 * Fix in admin view because the field are not showed
 * Integrated DOM-Based Routing of Roots Template
 * Integrated import/export settings system
+* Integrated debug system
 
 ## 1.0.0
 

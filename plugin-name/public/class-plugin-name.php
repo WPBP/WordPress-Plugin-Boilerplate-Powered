@@ -108,7 +108,6 @@ class Plugin_Name {
 	 * @since     1.0.0
 	 */
 	private function __construct() {
-
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
@@ -117,12 +116,24 @@ class Plugin_Name {
 
 		// Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
 		register_via_cpt_core(
-				array( __( 'Demo', $this->plugin_slug ), __( 'Demos', $this->plugin_slug ), 'demo' ), array( 'taxonomies' => array( 'demo-section' ) )
+				array( __( 'Demo', $this->plugin_slug ), __( 'Demos', $this->plugin_slug ), 'demo' ), array(
+			'taxonomies' => array( 'demo-section' ),
+			'capabilities' => array(
+				'edit_post' => 'edit_demo',
+				'edit_others_posts' => 'edit_other_demo',
+			),
+			'map_meta_cap' => true
+				)
 		);
 
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
-				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array( 'public' => true ), array( 'demo' )
+				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array(
+			'public' => true,
+			'capabilities' => array(
+				'assign_terms' => 'edit_posts',
+			)
+				), array( 'demo' )
 		);
 
 		add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );

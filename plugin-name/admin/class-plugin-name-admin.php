@@ -127,16 +127,16 @@ class Plugin_Name_Admin {
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
 
 		//Add the export settings method
-		add_action( 'admin_init', array( $this, 'pn_process_settings_export' ) );
+		add_action( 'admin_init', array( $this, 'settings_export' ) );
 		//Add the import settings method
-		add_action( 'admin_init', array( $this, 'pn_process_settings_import' ) );
+		add_action( 'admin_init', array( $this, 'settings_import' ) );
 
 		/*
 		 * Debug mode
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
 		$debug = new Pn_Debug( $this );
-		$debug->log(__( 'Plugin Loaded', $this->plugin_slug ));
+		$debug->log( __( 'Plugin Loaded', $this->plugin_slug ) );
 	}
 
 	/**
@@ -402,17 +402,19 @@ class Plugin_Name_Admin {
 		return $meta_boxes;
 	}
 
-	function pn_process_settings_export() {
+	function settings_export() {
 
-		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' != $_POST[ 'pn_action' ] )
+		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' != $_POST[ 'pn_action' ] ) {
 			return;
-
-		if ( !wp_verify_nonce( $_POST[ 'pn_export_nonce' ], 'pn_export_nonce' ) )
+		}
+		
+		if ( !wp_verify_nonce( $_POST[ 'pn_export_nonce' ], 'pn_export_nonce' ) ) {
 			return;
-
-		if ( !current_user_can( 'manage_options' ) )
+		}
+		
+		if ( !current_user_can( 'manage_options' ) ) {
 			return;
-
+		}
 		$settings[ 0 ] = get_option( $this->plugin_slug . '-settings' );
 		$settings[ 1 ] = get_option( $this->plugin_slug . '-settings-second' );
 
@@ -430,17 +432,19 @@ class Plugin_Name_Admin {
 	/**
 	 * Process a settings import from a json file
 	 */
-	function pn_process_settings_import() {
+	function settings_import() {
 
-		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' != $_POST[ 'pn_action' ] )
+		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' != $_POST[ 'pn_action' ] ) {
 			return;
-
-		if ( !wp_verify_nonce( $_POST[ 'pn_import_nonce' ], 'pn_import_nonce' ) )
+		}
+		
+		if ( !wp_verify_nonce( $_POST[ 'pn_import_nonce' ], 'pn_import_nonce' ) ) {
 			return;
-
-		if ( !current_user_can( 'manage_options' ) )
+		}
+		
+		if ( !current_user_can( 'manage_options' ) ) {
 			return;
-
+		}
 		$extension = end( explode( '.', $_FILES[ 'import_file' ][ 'name' ] ) );
 
 		if ( $extension != 'json' ) {

@@ -80,6 +80,28 @@ class Plugin_Name {
 	protected $cpts = array( 'demo' );
 
 	/**
+	 * Array of capabilities by roles
+	 * 
+	 * @since 1.0.0
+	 * 
+	 * @var array
+	 */
+	protected static $plugin_roles = array(
+		'editor' => array(
+			'edit_demo' => true,
+			'edit_others_demo' => true,
+		),
+		'author' => array(
+			'edit_demo' => true,
+			'edit_others_demo' => false,
+		),
+		'subscriber' => array(
+			'edit_demo' => false,
+			'edit_others_demo' => false,
+		),
+	);
+
+	/**
 	 * Initialize the plugin by setting localization and loading public scripts
 	 * and styles.
 	 *
@@ -298,6 +320,23 @@ class Plugin_Name {
 	 */
 	private static function single_activate() {
 		// @TODO: Define activation functionality here
+		global $wp_roles;
+		if ( !isset( $wp_roles ) ) {
+			$wp_roles = new WP_Roles;
+		}
+
+		foreach ( $wp_roles->role_names as $role => $label ) {
+			//if the role is a standard role, map the default caps, otherwise, map as a subscriber
+			$caps = ( array_key_exists( $role, self::$plugin_roles ) ) ? self::$plugin_roles[ $role ] : self::$plugin_roles[ 'subscriber' ];
+
+			//loop and assign
+			foreach ( $caps as $cap => $grant ) {
+				//check to see if the user already has this capability, if so, don't re-add as that would override grant
+				if ( !isset( $wp_roles->roles[ $role ][ 'capabilities' ][ $cap ] ) ) {
+					$wp_roles->add_cap( $role, $cap, $grant );
+				}
+			}
+		}
 	}
 
 	/**
@@ -357,7 +396,7 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 */
 	public function load_content_demo( $original_template ) {
-		if ( is_singular('demo') && in_the_loop() ) {
+		if ( is_singular( 'demo' ) && in_the_loop() ) {
 			return pn_get_template_part( 'content', 'demo', false );
 		} else {
 			return $original_template;

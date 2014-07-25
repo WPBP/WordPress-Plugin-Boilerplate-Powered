@@ -12,6 +12,7 @@
 * Integrated DOM-Based Routing of Roots Template
 * Integrated import/export settings system
 * Integrated debug system
+* Added capabilities creator function
 
 ## 1.0.0
 

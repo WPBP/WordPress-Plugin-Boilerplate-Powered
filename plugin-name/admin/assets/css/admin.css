@@ -35,6 +35,10 @@
 	background: rgb(239, 239, 239) !important;
 }
 
+.postbox h3 {
+	padding-left: 10px;
+}
+
 #dashboard_right_now a.demo-count:before {
   content: "\f115";
 }

@@ -343,9 +343,10 @@ class Plugin_Name_Admin {
 				$key = self::recursive_array_search_php( "edit.php$suffix", $menu );
 
 				// Not found, just in case 
-				if ( !$key )
+				if ( !$key ) {
 					return;
-
+				}
+				
 				// Modify menu item
 				$menu[ $key ][ 0 ] .= sprintf(
 						'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending

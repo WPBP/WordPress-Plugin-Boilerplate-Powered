@@ -105,12 +105,9 @@ class Plugin_Name_Admin {
 		 *  Custom Metabox and Fields for Wordpress
 		 * 	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
 		 */
-		add_action( 'init', function() {
-			if ( !class_exists( 'cmb_Meta_Box' ) ) {
-				require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF/init.php' );
-				require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF-Select2/cmb-field-select2.php' );
-			}
-		}, 9999 );
+		if ( !class_exists( 'cmb_Meta_Box' ) ) {
+			add_action( 'init', array( $this, 'add_cmb_Meta_Box_class' ), 9999 );
+		}
 
 		/*
 		 * Filter is the same
@@ -346,7 +343,7 @@ class Plugin_Name_Admin {
 				if ( !$key ) {
 					return;
 				}
-				
+
 				// Modify menu item
 				$menu[ $key ][ 0 ] .= sprintf(
 						'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
@@ -370,6 +367,16 @@ class Plugin_Name_Admin {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Load CMBF
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_cmb_Meta_Box_class() {
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF/init.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF-Select2/cmb-field-select2.php' );
 	}
 
 	/**
@@ -408,11 +415,11 @@ class Plugin_Name_Admin {
 		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' != $_POST[ 'pn_action' ] ) {
 			return;
 		}
-		
+
 		if ( !wp_verify_nonce( $_POST[ 'pn_export_nonce' ], 'pn_export_nonce' ) ) {
 			return;
 		}
-		
+
 		if ( !current_user_can( 'manage_options' ) ) {
 			return;
 		}
@@ -438,11 +445,11 @@ class Plugin_Name_Admin {
 		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' != $_POST[ 'pn_action' ] ) {
 			return;
 		}
-		
+
 		if ( !wp_verify_nonce( $_POST[ 'pn_import_nonce' ], 'pn_import_nonce' ) ) {
 			return;
 		}
-		
+
 		if ( !current_user_can( 'manage_options' ) ) {
 			return;
 		}

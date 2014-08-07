@@ -138,7 +138,7 @@ class Plugin_Name {
 
 		add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );
 
-		//Ovveride the template hierachy for load /templates/content-demo.php
+		//Override the template hierachy for load /templates/content-demo.php
 		add_filter( 'template_include', array( $this, 'load_content_demo' ) );
 
 		// Load public-facing style sheet and JavaScript.
@@ -348,6 +348,7 @@ class Plugin_Name {
 				}
 			}
 		}
+		
 	}
 
 	/**

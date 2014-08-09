@@ -5,14 +5,15 @@
 * Added tabs in settings page
 * Added bubble notification on cpt
 * Added override system for templates
+* Added capabilities creator function
 * Fix text-domain wrong
 * Fix pn_get_template_part now support a undefined 2 parameter
 * Fix __() in CPT/Tax Core
 * Fix in admin view because the field are not showed
+* Fix support for PHP < 5.3
 * Integrated DOM-Based Routing of Roots Template
 * Integrated import/export settings system
 * Integrated debug system
-* Added capabilities creator function
 
 ## 1.0.0
 

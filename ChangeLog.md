@@ -14,6 +14,7 @@
 * Integrated DOM-Based Routing of Roots Template
 * Integrated import/export settings system
 * Integrated debug system
+* Support for PHPCompatInfo that confirm the minimum version PHP 5.2
 
 ## 1.0.0
 

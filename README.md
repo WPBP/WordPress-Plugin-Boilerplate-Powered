@@ -8,6 +8,7 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 ### Library integrated
 
 * Plugin Boilerplate Powered is based on Plugin Boilerplate
+* Checked the minimum version required with PHPCompatInfo (PHP 5.2)
 * [CPT Core](https://github.com/jtsternberg/CPT_Core) and [Taxonomy Core](https://github.com/jtsternberg/Taxonomy_Core) integrated
 * [CMBF + Select2](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress) and [CMB](https://github.com/humanmade/Custom-Meta-Boxes)
 * [Widget Boilerplate](https://github.com/Mte90/WordPress-Widget-Boilerplate) based on https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
@@ -26,6 +27,7 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
 * Added bubble notification on cpts
 * Import/export settings
+* Custom capabilities with cpts and taxonomy support
 
 ###WordPress Plugin Boilerplate Feature
 * The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).

@@ -134,6 +134,16 @@ class Plugin_Name_Admin {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
 		$debug = new Pn_Debug( $this );
 		$debug->log( __( 'Plugin Loaded', $this->plugin_slug ) );
+
+		/*
+		 * Load Wp_Contextual_Help
+		 */
+		add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
+		add_filter( 'wp_contextual_help_docs_url', array( $this, 'help_docs_url' ) );
+		if ( !class_exists( 'WP_Contextual_Help' ) ) {
+			require_once( plugin_dir_path( __FILE__ ) . 'includes/WP-Contextual-Help/wp-contextual-help.php' );
+		}
+		add_action( 'init', array( $this, 'contextual_help' ) );
 	}
 
 	/**
@@ -410,6 +420,10 @@ class Plugin_Name_Admin {
 		return $meta_boxes;
 	}
 
+	/**
+	 * Process a settings export from config
+	 * @since    1.0.0
+	 */
 	function settings_export() {
 
 		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' != $_POST[ 'pn_action' ] ) {
@@ -439,6 +453,7 @@ class Plugin_Name_Admin {
 
 	/**
 	 * Process a settings import from a json file
+	 * @since    1.0.0
 	 */
 	function settings_import() {
 
@@ -473,6 +488,53 @@ class Plugin_Name_Admin {
 
 		wp_safe_redirect( admin_url( 'options-general.php?page=' . $this->plugin_slug ) );
 		exit;
+	}
+
+	/*
+	 * Filter for change the folder of Contextual Help
+	 * 
+	 * @since     1.0.0
+	 *
+	 * @return    string    the path
+	 */
+	public function help_docs_dir() {
+		return plugin_dir_path( __FILE__ ) . '../help-docs/';
+	}
+
+	/*
+	 * Filter for change the folder image of Contextual Help
+	 * 
+	 * @since     1.0.0
+	 *
+	 * @return    string    the path
+	 */
+	public function help_docs_url() {
+		return plugin_dir_path( __FILE__ ) . '../help-docs/img';
+	}
+
+	/*
+	 * Contextual Help, docs in /help-docs folter
+	 * Documentation https://github.com/voceconnect/wp-contextual-help
+	 * 
+	 * @since    1.0.0 
+	 */
+	public function contextual_help() {
+		if ( !class_exists( 'WP_Contextual_Help' ) ) {
+			return;
+		}
+
+		// Only display on the pages - post.php and post-new.php, but only on the `demo` post_type
+		WP_Contextual_Help::register_tab( 'demo-example', __( 'Demo Management', $this->plugin_slug ), array(
+			'page' => array( 'post.php', 'post-new.php' ),
+			'post_type' => 'demo',
+			'wpautop' => true
+		) );
+
+		// Add to a custom plugin settings page
+		WP_Contextual_Help::register_tab( 'pn_settings', __( 'Boilerplate Settings', $this->plugin_slug ), array(
+			'page' => 'settings_page_' . $this->plugin_slug,
+			'wpautop' => true
+		) );
 	}
 
 }

@@ -12,6 +12,7 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 * [CPT Core](https://github.com/jtsternberg/CPT_Core) and [Taxonomy Core](https://github.com/jtsternberg/Taxonomy_Core) integrated
 * [CMBF + Select2](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress) and [CMB](https://github.com/humanmade/Custom-Meta-Boxes)
 * [Widget Boilerplate](https://github.com/Mte90/WordPress-Widget-Boilerplate) based on https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
+* [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * Added function for custom template (like WooCommerce) in `includes/template.php`
 * Added Fake Page class in `includes/language.php` in `includes/fake-page.php`
 * Added language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`

@@ -1,6 +1,10 @@
 <?php
 
-// Based on https://coderwall.com/p/fwea7g
+/*
+ * Simple class that generate a fake page on the fly
+ * Based on https://coderwall.com/p/fwea7g
+ * by Mte90
+ */
 
 if ( !class_exists( 'Fake_Page' ) ) {
 

@@ -47,7 +47,7 @@ class Plugin_Name {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_slug = 'plugin-name';
+	protected static $plugin_slug = 'plugin-name';
 
 	/**
 	 * @TODO - Rename "Plugin Name" to the name of your plugin
@@ -59,7 +59,7 @@ class Plugin_Name {
 	 *
 	 * @var      string
 	 */
-	protected $plugin_name = 'Plugin Name';
+	protected static $plugin_name = 'Plugin Name';
 
 	/**
 	 * Instance of this class.
@@ -116,7 +116,7 @@ class Plugin_Name {
 
 		// Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
 		register_via_cpt_core(
-				array( __( 'Demo', $this->plugin_slug ), __( 'Demos', $this->plugin_slug ), 'demo' ), array(
+				array( __( 'Demo', $this->get_plugin_slug() ), __( 'Demos', $this->get_plugin_slug() ), 'demo' ), array(
 			'taxonomies' => array( 'demo-section' ),
 			'capabilities' => array(
 				'edit_post' => 'edit_demo',
@@ -128,7 +128,7 @@ class Plugin_Name {
 
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
-				array( __( 'Demo Section', $this->plugin_slug ), __( 'Demo Sections', $this->plugin_slug ), 'demo-section' ), array(
+				array( __( 'Demo Section', $this->get_plugin_slug() ), __( 'Demo Sections', $this->get_plugin_slug() ), 'demo-section' ), array(
 			'public' => true,
 			'capabilities' => array(
 				'assign_terms' => 'edit_posts',
@@ -163,7 +163,7 @@ class Plugin_Name {
 	 * @return    Plugin slug variable.
 	 */
 	public function get_plugin_slug() {
-		return $this->plugin_slug;
+		return self::$plugin_slug;
 	}
 
 	/**
@@ -174,7 +174,7 @@ class Plugin_Name {
 	 * @return    Plugin name variable.
 	 */
 	public function get_plugin_name() {
-		return $this->plugin_name;
+		return self::$plugin_name;
 	}
 
 	/**
@@ -330,7 +330,14 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 */
 	private static function single_activate() {
+		//Requirements Detection System - read the doc in the library file
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/requirements.php' );
+		new Plugin_Requirements( self::$plugin_name, self::$plugin_slug, array(
+			'WP' => new WordPress_Requirement( '3.9.0' ),
+		) );
+
 		// @TODO: Define activation functionality here
+
 		global $wp_roles;
 		if ( !isset( $wp_roles ) ) {
 			$wp_roles = new WP_Roles;
@@ -348,7 +355,6 @@ class Plugin_Name {
 				}
 			}
 		}
-		
 	}
 
 	/**
@@ -367,7 +373,7 @@ class Plugin_Name {
 	 */
 	public function load_plugin_textdomain() {
 
-		$domain = $this->plugin_slug;
+		$domain = $this->get_plugin_slug();
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
@@ -380,7 +386,7 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_style( $this->get_plugin_slug() . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), self::VERSION );
 	}
 
 	/**
@@ -389,7 +395,7 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		wp_enqueue_script( $this->get_plugin_slug() . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 	}
 
 	/**
@@ -398,7 +404,7 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 */
 	public function add_pn_class( $classes ) {
-		$classes[] = $this->plugin_slug;
+		$classes[] = $this->get_plugin_slug();
 		return $classes;
 	}
 

@@ -17,6 +17,7 @@ Look in Recommended tools section of this readme for the Yeoman Generator.
 * Added Fake Page class in `includes/language.php` in `includes/fake-page.php`
 * Added language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
 * Added [modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
+* Added [very modified requirements check on activation](https://github.com/dsawardekar/wp-requirements) in `public/includes/requirements.php`
 
 ### Snippet included
 

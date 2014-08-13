@@ -1,0 +1,31 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugin requirements\n"
+"POT-Creation-Date: 2014-08-13 14:47+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mte90 <mte90net@gmail.com>\n"
+"Language-Team:  <mte90net@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../public/includes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: requirements.php:177 requirements.php:226
+msgid " Required, Detected "
+msgstr ""
+
+#: requirements.php:290
+msgid "PHP Extensions Not Found: "
+msgstr ""
+
+#: requirements.php:356
+msgid " Required"
+msgstr ""
+
+#: requirements.php:461
+msgid "Minimum System Requirements not satisfied for: "
+msgstr ""

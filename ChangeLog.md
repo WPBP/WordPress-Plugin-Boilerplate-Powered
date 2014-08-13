@@ -1,4 +1,4 @@
-## 1.0.1
+## 1.2.0
 
 * Added Class on all the frontend page
 * Added Multi CMB in settings page
@@ -15,6 +15,7 @@
 * Integrated import/export settings system
 * Integrated debug system
 * Integrated WP Contextual Help for help tabs
+* Integrated Requirements library
 * Support for PHPCompatInfo that confirm the minimum version PHP 5.2
 
 ## 1.0.0

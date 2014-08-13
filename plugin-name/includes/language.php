@@ -4,11 +4,11 @@
 // example use https://gist.github.com/Mte90/fe687ceed408ab743238
 
 /**
- * Return the language 2 letters code
+ * Return the language 2-4 letters code
  *
  * @since   1.0.0
  *
- * @var     string
+ * @return     string 4 letters cod of the locale
  */
 function get_language() {
 	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
@@ -18,7 +18,7 @@ function get_language() {
 	} elseif ( function_exists( 'pll_current_language' ) ) {
 		return pll_current_language();
 	} else {
-		//return a 4 letters code
+		//return a 2-4 letters code
 		return get_locale();
 	}
 }
@@ -28,7 +28,9 @@ function get_language() {
  *
  * @since   1.0.0
  *
- * @var     string
+ * @param     string   $plugin_name_human_format  The Plugin name 
+ * @param     string   $string_name               The name of the string
+ * @param     string   $value					  The value
  */
 function register_string( $plugin_name_human_format, $string_name, $value ) {
 	if ( function_exists( 'icl_register_string' ) ) {
@@ -51,7 +53,8 @@ function register_string( $plugin_name_human_format, $string_name, $value ) {
  *
  * @since   1.0.0
  *
- * @var     string
+ * @param     string   $plugin_name_human_format  The Plugin name 
+ * @param     string   $string_name               The name of the string
  */
 function deregister_string( $plugin_name_human_format, $string_name ) {
 	if ( function_exists( 'icl_unregister_string' ) ) {
@@ -67,7 +70,9 @@ function deregister_string( $plugin_name_human_format, $string_name ) {
  *
  * @since   1.0.0
  *
- * @var     string
+ * @param     string   $plugin_name_human_format  The Plugin name 
+ * @param     string   $string_name               The name of the string
+ * @param     string   $value					  The value
  */
 function get_string( $plugin_name_human_format, $string_name, $value ) {
 	if ( function_exists( 'icl_t' ) ) {

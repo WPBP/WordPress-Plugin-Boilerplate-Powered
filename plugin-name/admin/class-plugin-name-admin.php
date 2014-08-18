@@ -184,7 +184,6 @@ class Plugin_Name_Admin {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-
 		if ( !isset( $this->plugin_screen_hook_suffix ) ) {
 			return;
 		}
@@ -207,7 +206,6 @@ class Plugin_Name_Admin {
 	 * @return    null    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_scripts() {
-
 		if ( !isset( $this->plugin_screen_hook_suffix ) ) {
 			return;
 		}
@@ -242,6 +240,11 @@ class Plugin_Name_Admin {
 		$this->plugin_screen_hook_suffix = add_options_page(
 				__( 'Page Title', $this->plugin_slug ), __( 'Menu Text', $this->plugin_slug ), 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' )
 		);
+        /*
+         * Settings page in the menu
+         * 
+         */
+        $this->plugin_screen_hook_suffix = add_menu_page( __( 'Page Title', $this->plugin_slug ), __( 'Menu Text', $this->plugin_slug ), 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
 
 	/**

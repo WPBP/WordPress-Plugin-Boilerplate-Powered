@@ -36,7 +36,7 @@
     // Add additional events for more control over timing e.g. a finalize event
     var UTIL = {
       fire: function(func, funcname, args) {
-        var namespace = Roots;
+        var namespace = Plugin_Name;
         funcname = (funcname === undefined) ? 'init' : funcname;
         if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
           namespace[func][funcname](args);
@@ -53,6 +53,9 @@
 
     $(document).ready(UTIL.loadEvents);
 
+    // Write in console log the PHP value passed in enqueue_js_vars in public/class-plugin-name.php
+    console.log( pn_js_vars.alert );
+    
     // Place your public-facing JavaScript here
 
   });

@@ -356,6 +356,8 @@ class Plugin_Name {
                 }
             }
         }
+        //Clear the permalinks
+        flush_rewrite_rules();
     }
 
     /**
@@ -365,6 +367,9 @@ class Plugin_Name {
      */
     private static function single_deactivate() {
         // @TODO: Define deactivation functionality here
+        
+        //Clear the permalinks
+        flush_rewrite_rules();
     }
 
     /**

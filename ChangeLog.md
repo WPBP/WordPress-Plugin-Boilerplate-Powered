@@ -1,4 +1,4 @@
-## 1.2.0
+## 1.1.0
 
 * Added Class on all the frontend page
 * Added Multi CMB in settings page
@@ -6,6 +6,8 @@
 * Added bubble notification on cpt
 * Added override system for templates
 * Added capabilities creator function
+* Added wp_localize_script for PHP var to javascript in frontend
+* Added menu page example
 * Fix text-domain wrong
 * Fix pn_get_template_part now support a undefined 2 parameter
 * Fix __() in CPT/Tax Core

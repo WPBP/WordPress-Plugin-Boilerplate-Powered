@@ -18,6 +18,7 @@
 * Integrated debug system
 * Integrated WP Contextual Help for help tabs
 * Integrated Requirements library
+* Integrated Wp Admin Notice
 * Support for PHPCompatInfo that confirm the minimum version PHP 5.2
 
 ## 1.0.0

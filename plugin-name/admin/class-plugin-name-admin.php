@@ -500,8 +500,9 @@ class Plugin_Name_Admin {
 	 *
 	 * @return    string    the path
 	 */
-	public function help_docs_dir() {
-		return plugin_dir_path( __FILE__ ) . '../help-docs/';
+	public function help_docs_dir($paths) {
+		$paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/';
+        return $paths;
 	}
 
 	/*
@@ -511,8 +512,9 @@ class Plugin_Name_Admin {
 	 *
 	 * @return    string    the path
 	 */
-	public function help_docs_url() {
-		return plugin_dir_path( __FILE__ ) . '../help-docs/img';
+	public function help_docs_url($paths) {
+		$paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/img';
+        return $paths;
 	}
 
 	/*

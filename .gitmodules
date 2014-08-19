@@ -16,7 +16,7 @@
 [submodule "plugin-name/includes/Widget-Boilerplate"]
 	path = plugin-name/includes/Widget-Boilerplate
 	url = git@github.com:Mte90/WordPress-Widget-Boilerplate.git
-[submodule "plugin-name/admin/includes/WP-Contextual-Help"]
+[submodule "WP-Contextual-Help"]
 	path = plugin-name/admin/includes/WP-Contextual-Help
 	url = https://github.com/Mte90/wp-contextual-help.git
 [submodule "plugin-name/admin/includes/WP-Admin-Notice"]

@@ -42,14 +42,6 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/Taxonomy_Core/Taxonomy_Cor
 require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
 
 /*
- * @TODO:
- *
- * - replace `class-plugin-name.php` with the name of the plugin's class file
- *
- */
-require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
-
-/*
  * Load template system
  */
 require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
@@ -76,6 +68,14 @@ new Fake_Page(
  * Load Language wrapper function for WPML/Ceceppa Multilingua/Polylang
  */
 require_once( plugin_dir_path( __FILE__ ) . 'includes/language.php' );
+
+/*
+ * @TODO:
+ *
+ * - replace `class-plugin-name.php` with the name of the plugin's class file
+ *
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
 
 /*
  * Register hooks that are fired when the plugin is activated or deactivated.

@@ -10,12 +10,9 @@ return Symfony\CS\Config\Config::create()
 		array(
 			'encoding',
 			'linefeed',
-			'trailing_spaces',
 			'short_tag',
 			'php_closing_tag',
 			'extra_empty_lines',
-			'function_declaration',
-			'controls_spaces',
 			'standardize_not_equal'
 			)
 )

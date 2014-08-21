@@ -8,6 +8,7 @@
 * Added capabilities creator function
 * Added wp_localize_script for PHP var to javascript in frontend
 * Added menu page example
+* Added wp-boilerplate-version.sh, change the version in the plugins file with a command!
 * Fix text-domain wrong
 * Fix pn_get_template_part now support a undefined 2 parameter
 * Fix __() in CPT/Tax Core

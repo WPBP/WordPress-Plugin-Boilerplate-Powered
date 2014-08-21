@@ -44,6 +44,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 ###Extra
 
 * deploy.sh script for simple upload on Wordpress.Org SVN
+* wp-boilerplate-version.sh, change the version in the plugins file with a command!
 * phpcompatinfo.json for [PHP Compat Info](https://github.com/llaville/php-compat-info)
 * .php_cs for [PHP-CS-Fixer](https://github.com/fabpot/PHP-CS-Fixer)
 

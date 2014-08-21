@@ -44,9 +44,23 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 ###Extra
 
 * deploy.sh script for simple upload on Wordpress.Org SVN
-* wp-boilerplate-version.sh, change the version in the plugins file with a command!
+* wp-boilerplate-version.sh (check below)
 * phpcompatinfo.json for [PHP Compat Info](https://github.com/llaville/php-compat-info)
 * .php_cs for [PHP-CS-Fixer](https://github.com/fabpot/PHP-CS-Fixer)
+
+####wp-boilerplate-version
+
+USE:
+
+```
+wp-boilerplate-version /path/my-new-plugin/ 1.1.1
+```
+Change the version in README.txt, plugin-slug.php and public/class-plugin-slug.php
+
+Download the script, move in /usr/local/bin and set the permission 
+```
+wget -O /usr/local/bin/wp-boilerplate-version https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/wp-boilerplate-version.sh | chmod +x /usr/local/bin/wp-boilerplate-version
+```
 
 ###Note
 

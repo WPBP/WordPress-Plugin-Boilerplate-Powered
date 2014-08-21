@@ -138,7 +138,7 @@ class Plugin_Name {
 
         add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );
 
-        //Override the template hierachy for load /templates/content-demo.php
+        //Override the template hierarchy for load /templates/content-demo.php
         add_filter( 'template_include', array( $this, 'load_content_demo' ) );
 
         // Load public-facing style sheet and JavaScript.
@@ -146,13 +146,12 @@ class Plugin_Name {
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_js_vars' ) );
 
-        /* Define custom functionality.
+        /* 
+         * Define custom functionality.
          * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
          */
         add_action( '@TODO', array( $this, 'action_method_name' ) );
         add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-
-        /* Define Custom Shortcode */
         add_shortcode( '@TODO', array( $this, 'shortcode_method_name' ) );
     }
 

@@ -2,7 +2,7 @@
 ![Logo](./plugin-name/assets/icon-256x256.png)
 
 The WordPress Plugin Boilerplate Powered is a complete foundation (without framework only wrapper) for building your WordPress plugins.  
-* Look in Recommended tools section of this readme for the Yeoman Generator.*   
+*Look in Recommended tools section of this readme for the Yeoman Generator.*   
 Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other info.
 
 ##Features
@@ -16,21 +16,21 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * [Widget Boilerplate](https://github.com/Mte90/WordPress-Widget-Boilerplate) based on https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [Wp Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
-* Added function for custom template (like WooCommerce) in `includes/template.php`
-* Added Fake Page class in `includes/language.php` in `includes/fake-page.php`
-* Added language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
-* Added [modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
-* Added [very modified requirements check on activation](https://github.com/dsawardekar/wp-requirements) in `public/includes/requirements.php`
+* Function for custom template (like WooCommerce) in `includes/template.php`
+* Fake Page class in `includes/language.php` in `includes/fake-page.php`
+* Language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
+* [Modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
+* [Very modified requirements detection on activation](https://github.com/dsawardekar/wp-requirements) in `public/includes/requirements.php`
 
 ###Snippet included
 
 * Shortcode example code
 * Dashicon as dependence of admin stylesheet
-* Added bubble notification on cpts
-* Import/export settings
+* Bubble notification on pending cpts
+* Import/Export settings
 * Custom capabilities with cpts and taxonomy support
-* wp_localize_dscript for pass PHP var to JS in the frontend
-* Added class in frontend body with the slug of plugin
+* wp_localize_script for pass PHP var to JS in the frontend
+* Class in frontend body with the slug of plugin
 * Support for your CPTs in At glance widget in dashboard
 * Support for CMBF in the options page
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)

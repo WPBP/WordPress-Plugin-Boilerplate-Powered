@@ -1,7 +1,8 @@
 # WordPress Plugin Boilerplate Powered
+![Logo](./plugin-name/assets/icon-256x256.png)
 
-The WordPress Plugin Boilerplate Powered is a complete powered foundation for building your WordPress plugins.  
-Look in Recommended tools section of this readme for the Yeoman Generator.  
+The WordPress Plugin Boilerplate Powered is a complete foundation (without framework only wrapper) for building your WordPress plugins.  
+* Look in Recommended tools section of this readme for the Yeoman Generator.*   
 Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other info.
 
 ##Features
@@ -47,6 +48,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * wp-boilerplate-version.sh (check below)
 * phpcompatinfo.json for [PHP Compat Info](https://github.com/llaville/php-compat-info)
 * .php_cs for [PHP-CS-Fixer](https://github.com/fabpot/PHP-CS-Fixer)
+* apigen.sh script for generate a docs folder with the documentation
 
 ####wp-boilerplate-version
 

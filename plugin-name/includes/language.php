@@ -1,7 +1,15 @@
 <?php
 
-// By Mte90 - www.mte90.net
-// example use https://gist.github.com/Mte90/fe687ceed408ab743238
+/**
+ * Function wrapper for register,unregister,get language and get string for WPML, Polylang and Ceceppa Multilingua
+ * 
+ * example use https://gist.github.com/Mte90/fe687ceed408ab743238
+ * 
+ * @package   Plugin_Name
+ * @author Mte90 <mte90net@gmail.com>
+ * @license   GPL-2.0+
+ * @copyright 2014 
+*/
 
 /**
  * Return the language 2-4 letters code
@@ -24,7 +32,7 @@ function get_language() {
 }
 
 /**
- * Add registration for string (contain hook)
+ * Add registration for multilanguage string (contain hook)
  *
  * @since   1.0.0
  *
@@ -49,7 +57,7 @@ function register_string( $plugin_name_human_format, $string_name, $value ) {
 }
 
 /**
- * Unregister string, Polylang not have this feature
+ * Unregister multilanguage string, Polylang missing support of this feature
  *
  * @since   1.0.0
  *
@@ -66,7 +74,7 @@ function deregister_string( $plugin_name_human_format, $string_name ) {
 }
 
 /**
- * Get string
+ * Get multilanguage string
  *
  * @since   1.0.0
  *

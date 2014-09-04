@@ -67,7 +67,8 @@ wget -O /usr/local/bin/wp-boilerplate-version https://raw.githubusercontent.com/
 * Make Wordpress Core Handbook http://make.wordpress.org/core/handbook/
 * Plugin Developer Handbook http://make.wordpress.org/docs/plugin-developer-handbook/
 * Theme Developer Handbook https://make.wordpress.org/docs/theme-developer-handbook/
-* Support for a custom use of Wordpress Media Picker: https://github.com/thomasgriffin/New-Media-Image-Uploader  
+* Custom use of Wordpress Media Picker: https://github.com/thomasgriffin/New-Media-Image-Uploader  
+* Useful snippet for wordpress development: https://github.com/richjenks/wp-utils
 * WP Code Generator http://generatewp.com/
 
 ##Installation

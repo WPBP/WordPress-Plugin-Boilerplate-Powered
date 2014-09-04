@@ -1,10 +1,15 @@
 <?php
 
+// NOTE: change the prefix of the function
+
 /**
- * Load template file of the plugin, create a new filter pn_get_template_part<br>
+ * Load template files of the plugin also include a filter pn_get_template_part<br>
  * Based on WooCommerce function<br>
- * NOTE: change the prefix of the function<br>
  *
+ * @package   Plugin_Name
+ * @author  Mte90 <mte90net@gmail.com>
+ * @license   GPL-2.0+
+ * @copyright 2014 
  * @since    1.0.0
  */
 function pn_get_template_part( $slug, $name = '', $include = true ) {

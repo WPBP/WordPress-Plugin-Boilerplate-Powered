@@ -504,39 +504,36 @@ class Plugin_Name_Admin {
         exit;
     }
 
-    /*
+    /**
      * Filter for change the folder of Contextual Help
      * 
      * @since     1.0.0
      *
      * @return    string    the path
      */
-
     public function help_docs_dir( $paths ) {
         $paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/';
         return $paths;
     }
 
-    /*
+    /**
      * Filter for change the folder image of Contextual Help
      * 
      * @since     1.0.0
      *
      * @return    string    the path
      */
-
     public function help_docs_url( $paths ) {
         $paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/img';
         return $paths;
     }
 
-    /*
+    /**
      * Contextual Help, docs in /help-docs folter
      * Documentation https://github.com/voceconnect/wp-contextual-help
      * 
      * @since    1.0.0 
      */
-
     public function contextual_help() {
         if ( !class_exists( 'WP_Contextual_Help' ) ) {
             return;

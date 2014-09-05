@@ -91,6 +91,10 @@ Because the Boilerplate has no real functionality, nothing will be added to Word
 	cd WordPress-Plugin-Boilerplate-Powered/plugin-name
 	git submodule update --init --recursive
 
+##Git update submodule
+
+    git submodule foreach git pull origin
+
 ##Recommended Tools
 
 ###Generator Tool

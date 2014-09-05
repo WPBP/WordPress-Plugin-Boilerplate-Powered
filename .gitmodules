@@ -1,24 +1,24 @@
 [submodule "plugin-name/admin/includes/CMBF"]
 	path = plugin-name/admin/includes/CMBF
-	url = https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+	url = git@github.com:WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress.git
 [submodule "plugin-name/admin/includes/CMB"]
 	path = plugin-name/admin/includes/CMB
-	url = https://github.com/humanmade/Custom-Meta-Boxes
+	url = git@github.com:humanmade/Custom-Meta-Boxes.git
 [submodule "plugin-name/admin/includes/CMBF-Select2"]
 	path = plugin-name/admin/includes/CMBF-Select2
-	url = https://github.com/mustardBees/cmb-field-select2
+	url = git@github.com:mustardBees/cmb-field-select2.git
 [submodule "plugin-name/includes/CPT_Core"]
 	path = plugin-name/includes/CPT_Core
-	url = https://github.com/jtsternberg/CPT_Core
+	url = git@github.com:WebDevStudios/CPT_Core.git
 [submodule "plugin-name/includes/Taxonomy_Core"]
 	path = plugin-name/includes/Taxonomy_Core
-	url = https://github.com/jtsternberg/Taxonomy_Core
+	url = git@github.com:WebDevStudios/Taxonomy_Core.git
 [submodule "plugin-name/includes/Widget-Boilerplate"]
 	path = plugin-name/includes/Widget-Boilerplate
 	url = git@github.com:Mte90/WordPress-Widget-Boilerplate.git
 [submodule "plugin-name/admin/includes/WP-Admin-Notice"]
 	path = plugin-name/admin/includes/WP-Admin-Notice
-	url = https://github.com/nathanielks/wordpress-admin-notice
+	url = git@github.com:nathanielks/wordpress-admin-notice.git
 [submodule "plugin-name/admin/includes/WP-Contextual-Help"]
 	path = plugin-name/admin/includes/WP-Contextual-Help
-	url = https://github.com/voceconnect/wp-contextual-help
+	url = git@github.com:voceconnect/wp-contextual-help.git

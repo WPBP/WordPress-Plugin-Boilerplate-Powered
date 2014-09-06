@@ -42,9 +42,10 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Uses a strict file organization scheme to make sure the assets are easily maintainable.
 * Note that this boilerplate includes a `.pot` as a starting translation file.
 
-###Extra
+##Shell Script & Tools
 
-* deploy.sh script for simple upload on Wordpress.Org SVN
+###Included
+
 * wp-boilerplate-version.sh (check below)
 * phpcompatinfo.json for [PHP Compat Info](https://github.com/llaville/php-compat-info)
 * .php_cs for [PHP-CS-Fixer](https://github.com/fabpot/PHP-CS-Fixer)
@@ -63,6 +64,18 @@ Download the script, move in /usr/local/bin and set the permission
 ```
 wget -O /usr/local/bin/wp-boilerplate-version https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/wp-boilerplate-version.sh | chmod +x /usr/local/bin/wp-boilerplate-version
 ```
+
+
+
+###Suggestion
+
+On [https://github.com/sudar/wp-plugin-in-github](https://github.com/sudar/wp-plugin-in-github) there is many useful snippet for the deploy.  
+
+    clone-from-svn-to-git.sh - Use this script to clone your WordPress Plugins from SVN into git/github
+    deploy-plugin.sh - Use this script to push your WordPress Plugin updates to SVN from git/github
+    readme-converter.sh - Use this script to convert readme files between Github markdown and WordPress repo markdown format
+    create-archive.sh - Use this script to create a zip archive of the Plugin
+    update-version.sh - Use this script to update version string in all the files of the Plugin
 
 ###Note
 

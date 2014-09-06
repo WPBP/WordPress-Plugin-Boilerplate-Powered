@@ -21,6 +21,7 @@
 * Integrated Requirements library
 * Integrated Wp Admin Notice
 * Support for PHPCompatInfo that confirm the minimum version PHP 5.2
+* Removed deploy.sh (read the readme for useful alternative)
 
 ## 1.0.0
 

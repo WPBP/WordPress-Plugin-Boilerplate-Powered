@@ -106,6 +106,7 @@ Because the Boilerplate has no real functionality, nothing will be added to Word
 
 ##Git update submodule
 
+    git submodule update --recursive
     git submodule foreach git pull origin
 
 ##Recommended Tools

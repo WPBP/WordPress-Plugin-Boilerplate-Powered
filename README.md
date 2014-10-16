@@ -65,8 +65,6 @@ Download the script, move in /usr/local/bin and set the permission
 wget -O /usr/local/bin/wp-boilerplate-version https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/wp-boilerplate-version.sh | chmod +x /usr/local/bin/wp-boilerplate-version
 ```
 
-
-
 ###Suggestion
 
 On [https://github.com/sudar/wp-plugin-in-github](https://github.com/sudar/wp-plugin-in-github) there is many useful snippet for the deploy.  
@@ -107,7 +105,7 @@ Because the Boilerplate has no real functionality, nothing will be added to Word
 ##Git update submodule
 
     git submodule update --recursive
-    git submodule foreach git pull origin
+    git submodule foreach git pull origin master
 
 ##Recommended Tools
 

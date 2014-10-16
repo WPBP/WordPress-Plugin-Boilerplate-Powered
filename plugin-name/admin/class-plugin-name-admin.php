@@ -460,8 +460,11 @@ class Plugin_Name_Admin {
         header( 'Content-Type: application/json; charset=utf-8' );
         header( 'Content-Disposition: attachment; filename=pn-settings-export-' . date( 'm-d-Y' ) . '.json' );
         header( "Expires: 0" );
-
-        echo json_encode( $settings );
+        if ( version_compare(PHP_VERSION, '5.4.0', '>=') ) {
+            echo json_encode( $settings, JSON_PRETTY_PRINT );
+        } else {
+            echo json_encode( $settings );
+        }
         exit;
     }
 

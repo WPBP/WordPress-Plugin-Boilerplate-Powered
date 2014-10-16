@@ -4,7 +4,7 @@
  * Provides interface for debugging variables with Debug Bar
  * 
  * @package   Plugin_Name_Admin
- * @author Benjamin J. Balter <ben@balter.com> & Mte90 <mte90net@gmail.com>
+ * @author    Benjamin J. Balter <ben@balter.com> & Mte90 <mte90net@gmail.com>
  * @license   GPL-2.0+
  * @copyright 2014 
  *
@@ -19,7 +19,6 @@ class Pn_Debug {
      * @param class $parent the parent class
      */
     function __construct( &$parent ) {
-
         $this->parent = &$parent;
 
         add_action( 'init', array( $this, 'init' ), 5 );
@@ -29,7 +28,6 @@ class Pn_Debug {
      * Check user cap and WP_DEBUG on init to see if class should continue loading
      */
     function init() {
-
         if ( !current_user_can( 'manage_options' ) || !WP_DEBUG ) {
             return;
         }
@@ -47,15 +45,16 @@ class Pn_Debug {
      * @return unknown
      */
     function log( $var, $die = false, $function = 'var_dump' ) {
-
         if ( !current_user_can( 'manage_options' ) || !WP_DEBUG ) {
             return;
         }
 
         ob_start();
-        echo "<!-- BEGIN DEBUG OUTPUT --><PRE>\n";
-        call_user_func( $function, $var );
-        echo "\n</PRE><!-- END DEBUG OUTPUT -->\n";
+        if ( is_string( $var ) ) {
+            echo "- ".$var."\n";
+        } else {
+            call_user_func( $function, $var );
+        }
 
         if ( $die ) {
             die();
@@ -85,7 +84,6 @@ class Pn_Debug {
      * @return array passback the original panels
      */
     function init_panel( $panels ) {
-
         $init = create_function( '', 'class Pn_Debug_Panel extends Debug_Bar_Panel {
 			protected $history;
 
@@ -95,9 +93,11 @@ class Pn_Debug {
 			}
 
 			function render() {
+				echo "<pre>";
 				foreach ( $this->history as $debug ) {
-					echo "<pre>$debug</pre>";
+					echo $debug;
 				}
+                echo "</pre>";
 			}
 
 			function prerender() {

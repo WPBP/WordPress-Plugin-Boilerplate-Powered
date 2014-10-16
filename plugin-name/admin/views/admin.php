@@ -90,9 +90,9 @@
 
 			<!-- @TODO: Provide other markup for your options page here. -->
 		</div>
-		<div id="tabs-3">
+		<div id="tabs-3" class="metabox-holder">
 			<div class="postbox">
-				<h3><span><?php _e( 'Export Settings', $this->plugin_slug ); ?></span></h3>
+				<h3 class="hndle"><span><?php _e( 'Export Settings', $this->plugin_slug ); ?></span></h3>
 				<div class="inside">
 					<p><?php _e( 'Export the plugin settings for this site as a .json file. This allows you to easily import the configuration into another site.', $this->plugin_slug ); ?></p>
 					<form method="post">
@@ -106,7 +106,7 @@
 			</div>
 
 			<div class="postbox">
-				<h3><span><?php _e( 'Import Settings', $this->plugin_slug ); ?></span></h3>
+				<h3 class="hndle"><span><?php _e( 'Import Settings', $this->plugin_slug ); ?></span></h3>
 				<div class="inside">
 					<p><?php _e( 'Import the plugin settings from a .json file. This file can be obtained by exporting the settings on another site using the form above.', $this->plugin_slug ); ?></p>
 					<form method="post" enctype="multipart/form-data">

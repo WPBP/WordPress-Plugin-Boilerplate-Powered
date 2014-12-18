@@ -1,0 +1,44 @@
+// This stylesheet is used to style the admin option form of the plugin.
+
+// Tabs
+
+.ui-state-default {
+	display: inline;
+	border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(241, 241, 241);
+	border-width: 1px;
+	border-style:solid;
+	padding: 10px;
+	background: none repeat scroll 0% 0% rgb(228, 228, 228);
+}
+
+.ui-tabs-nav {
+	padding-bottom: 7px;
+	padding-left: 10px;
+	border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.ui-tabs-anchor {
+	text-decoration: none;
+	color:black;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 24px;
+	color: rgb(127, 127, 127);
+}
+
+.ui-tabs-anchor:hover,.ui-state-active a {
+	color:black;
+}
+
+.ui-tabs-active, .ui-tabs-active:hover, .ui-tabs-active:active {
+	color: rgb(0, 0, 0);
+	background: rgb(239, 239, 239) !important;
+}
+
+.postbox h3 {
+	padding-left: 10px;
+}
+
+#dashboard_right_now a.demo-count:before {
+	content: "\f115";
+}

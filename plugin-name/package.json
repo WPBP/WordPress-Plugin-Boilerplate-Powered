@@ -1,0 +1,10 @@
+{
+	"name": "WBP-Grunt",
+	"version": "0.1.0",
+	"description": "",
+	"author": "Mte90 <mte90net@gmail.com>",
+	"devDependencies": {
+		"grunt-contrib-watch": "*",
+		"grunt-contrib-compass": "*"
+	}
+} 

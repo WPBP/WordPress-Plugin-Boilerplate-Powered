@@ -1,5 +1,6 @@
 ## 1.1.0
 
+* Sass support for the css with Grunt
 * Added Class on all the frontend page
 * Added Multi CMB in settings page
 * Added tabs in settings page

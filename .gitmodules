@@ -22,3 +22,6 @@
 [submodule "plugin-name/admin/includes/WP-Contextual-Help"]
 	path = plugin-name/admin/includes/WP-Contextual-Help
 	url = git@github.com:voceconnect/wp-contextual-help.git
+[submodule "plugin-name/admin/includes/PointerPlus"]
+	path = plugin-name/admin/includes/PointerPlus
+	url = git@github.com:Mte90/pointerplus.git

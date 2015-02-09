@@ -1,12 +1,6 @@
-[submodule "plugin-name/admin/includes/CMBF"]
-	path = plugin-name/admin/includes/CMBF
-	url = git@github.com:WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress.git
-[submodule "plugin-name/admin/includes/CMB"]
-	path = plugin-name/admin/includes/CMB
-	url = git@github.com:humanmade/Custom-Meta-Boxes.git
-[submodule "plugin-name/admin/includes/CMBF-Select2"]
-	path = plugin-name/admin/includes/CMBF-Select2
-	url = git@github.com:mustardBees/cmb-field-select2.git
+[submodule "plugin-name/admin/includes/CMB2"]
+	path = plugin-name/admin/includes/CMB2
+	url = git@github.com:WebDevStudios/CMB2.git
 [submodule "plugin-name/includes/CPT_Core"]
 	path = plugin-name/includes/CPT_Core
 	url = git@github.com:WebDevStudios/CPT_Core.git

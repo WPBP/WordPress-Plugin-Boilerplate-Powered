@@ -13,13 +13,6 @@
  */
 ?>
 
-<script>
-	//Required for multi CMB2 form
-	jQuery(document).ready(function($) {
-		jQuery('.cmb-form #wp_meta_box_nonce').appendTo('.cmb-form');
-	});
-</script>
-
 <div class="wrap">
 
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>

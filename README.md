@@ -13,7 +13,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Checked the minimum version required with PHPCompatInfo (PHP 5.2)
 * Sass support with Compass and Grunt
 * [CPT Core](https://github.com/jtsternberg/CPT_Core) and [Taxonomy Core](https://github.com/jtsternberg/Taxonomy_Core) integrated
-* [CMBF + Select2](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress) and [CMB](https://github.com/humanmade/Custom-Meta-Boxes)
+* [CMB2 + Shortcode Button](https://github.com/humanmade/CMB2)
 * [Widget Boilerplate](https://github.com/Mte90/WordPress-Widget-Boilerplate) based on https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [Wp Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated

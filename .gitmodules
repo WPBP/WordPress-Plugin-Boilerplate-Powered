@@ -19,3 +19,6 @@
 [submodule "plugin-name/admin/includes/PointerPlus"]
 	path = plugin-name/admin/includes/PointerPlus
 	url = git@github.com:Mte90/pointerplus.git
+[submodule "plugin-name/admin/includes/CMB2-Shortcode"]
+	path = plugin-name/admin/includes/CMB2-Shortcode
+	url = git@github.com:jtsternberg/Shortcode_Button.git

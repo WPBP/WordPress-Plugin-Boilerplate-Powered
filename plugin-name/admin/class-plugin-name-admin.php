@@ -94,9 +94,12 @@ class Plugin_Name_Admin {
 		/*
 		 * CMB 2 for metabox and many other cool things!
 		 * https://github.com/WebDevStudios/CMB2
+		 * Also CMB2 Shortcode support 
+		 * Check on the repo for the example and documentation 
+		 * https://github.com/jtsternberg/Shortcode_Button
 		 */
-
-		require_once plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php';
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php' );
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-Shortcode/shortcode-button.php' );
 
 		/*
 		 * Add metabox

@@ -473,6 +473,8 @@ class Plugin_Name {
      */
     public function shortcode_method_name() {
         // @TODO: Define your shortcode here
+		// Check for the CMB2 Shortcode Button
+		// In bundle with the boilerplate https://github.com/jtsternberg/Shortcode_Button
     }
 
 }

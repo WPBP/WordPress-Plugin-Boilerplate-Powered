@@ -92,27 +92,16 @@ class Plugin_Name_Admin {
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
 		/*
-		 * Choose the Custom Meta Box Library and remove the other
-		 * 
-		 * @TODO:
-		 * 
-		 *  Custom meta Boxes by HumanMade | PS: include natively Select2 for select box
-		 *  NOTE: Actually not support options page, there is a branch cmb-anywhere-2 in developing
-		 * 	https://github.com/humanmade/Custom-Meta-Boxes/		
-		  if ( !class_exists( 'cmb_Meta_Box' ) ) {
-		  require_once( plugin_dir_path( __FILE__ ) . 'includes/CMB/custom-meta-boxes.php' );
-		  }
-		 *  Custom Metabox and Fields for Wordpress
-		 * 	https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+		 * CMB 2 for metabox and many other cool things!
+		 * https://github.com/WebDevStudios/CMB2
 		 */
-		if ( !class_exists( 'cmb_Meta_Box' ) ) {
-			add_action( 'init', array( $this, 'add_cmb_Meta_Box_class' ), 9999 );
-		}
+
+		require_once plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php';
 
 		/*
-		 * Filter is the same
+		 * Add metabox
 		 */
-		add_filter( 'cmb_meta_boxes', array( $this, 'cmb_demo_metaboxes' ) );
+		add_filter( 'cmb2_meta_boxes', array( $this, 'cmb_demo_metaboxes' ) );
 
 		/*
 		 * Define custom functionality.
@@ -407,16 +396,6 @@ class Plugin_Name_Admin {
 	}
 
 	/**
-	 * Load CMBF
-	 *
-	 * @since    1.0.0
-	 */
-	public function add_cmb_Meta_Box_class() {
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF/init.php' );
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/CMBF-Select2/cmb-field-select2.php' );
-	}
-
-	/**
 	 * NOTE:     Your metabox on Demo CPT
 	 *
 	 * @since    1.0.0
@@ -425,7 +404,7 @@ class Plugin_Name_Admin {
 		$meta_boxes[ 'test_metabox' ] = array(
 			'id' => 'test_metabox',
 			'title' => __( 'Demo Metabox', $this->plugin_slug ),
-			'pages' => array( 'demo', ), // Post type
+			'object_types' => array( 'demo', ), // Post type
 			'context' => 'normal',
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left

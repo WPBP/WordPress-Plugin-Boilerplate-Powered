@@ -66,6 +66,15 @@ Download the script, move in /usr/local/bin and set the permission
 wget -O /usr/local/bin/wp-boilerplate-version https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/wp-boilerplate-version.sh | chmod +x /usr/local/bin/wp-boilerplate-version
 ```
 
+####phpcompatinfo
+
+```
+phpcompatinfo analyser:run . --php=">= 5.2"
+```
+
+Check if the plugin can work on PHP 5.2 (minimum requirement for WordPress).  
+There may be a false positive for ```JSON_PRETTY_PRINT``` but in the code there is a version check for this.
+
 ###Suggestion
 
 On [https://github.com/sudar/wp-plugin-in-github](https://github.com/sudar/wp-plugin-in-github) there is many useful snippet for the deploy.  

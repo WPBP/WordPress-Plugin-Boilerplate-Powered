@@ -14,7 +14,7 @@
 ?>
 
 <script>
-	//Required for multi CMB form
+	//Required for multi CMB2 form
 	jQuery(document).ready(function($) {
 		jQuery('.cmb-form #wp_meta_box_nonce').appendTo('.cmb-form');
 	});
@@ -32,7 +32,6 @@
 		</ul>
 		<div id="tabs-1">
 			<?php
-			// NOTE:Code for CMBF!
 
 			$option_fields = array(
 				'id' => $this->plugin_slug . '_options',
@@ -55,14 +54,13 @@
 				),
 			);
 
-			cmb_metabox_form( $option_fields, $this->plugin_slug . '-settings' );
+			cmb2_metabox_form( $option_fields, $this->plugin_slug . '-settings' );
 			?>
 
 			<!-- @TODO: Provide other markup for your options page here. -->
 		</div>
 		<div id="tabs-2">
 			<?php
-			// NOTE:Code for CMBF!
 
 			$option_fields_second = array(
 				'id' => $this->plugin_slug . '_options-second',
@@ -85,7 +83,7 @@
 				),
 			);
 
-			cmb_metabox_form( $option_fields_second, $this->plugin_slug . '-settings-second' );
+			cmb2_metabox_form( $option_fields_second, $this->plugin_slug . '-settings-second' );
 			?>
 
 			<!-- @TODO: Provide other markup for your options page here. -->

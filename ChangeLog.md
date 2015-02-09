@@ -1,3 +1,11 @@
+## 1.1.1
+
+* Added CMB2
+* Added CMB2 Shortcode Button
+* Added PointerPlus
+* Removed CMBF
+* Removed CMB
+
 ## 1.1.0
 
 * Sass support for the css with Grunt

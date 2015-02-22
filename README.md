@@ -2,7 +2,7 @@
 ![Logo](./plugin-name/assets/icon-256x256.png)
 
 The WordPress Plugin Boilerplate Powered is a complete foundation (without framework only wrapper) for building your WordPress plugins.  
-*Look in Recommended tools section of this readme for the Yeoman Generator.*   
+*Look in Recommended tools section of this readme for the Yeoman Generator and Vagrant.*   
 Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other info.
 
 ##Features
@@ -123,6 +123,10 @@ Because the Boilerplate has no real functionality, nothing will be added to Word
 
 For WordPress Plugin Boilerplate Powered exist a Yeoman generator that allows you to choose the libraries you need with a small customization.  
 Link to repo: [https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/](https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/)
+
+###Vagrant
+
+Exist also a VVV modded version (Vagrant configuration) called [VVVWPBP](https://github.com/Mte90/VVVWPBP) that contain Compass, PHPCompatInfo, ApiGen and Yeoman for a fast development (the missing tool from the original VVV).
 
 ###Localization Tools
 

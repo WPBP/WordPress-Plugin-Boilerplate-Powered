@@ -16,7 +16,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * [CMB2 + Shortcode Button](https://github.com/WebDevStudios/CMB2)
 * [Widget Boilerplate](https://github.com/Mte90/WordPress-Widget-Boilerplate) based on https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
-* [Wp Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
+* [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
 * [PointerPlus](https://github.com/Mte90/pointerplus) integrated
 * Function for custom template (like WooCommerce) in `includes/template.php`
 * Fake Page class in `includes/language.php` in `includes/fake-page.php`

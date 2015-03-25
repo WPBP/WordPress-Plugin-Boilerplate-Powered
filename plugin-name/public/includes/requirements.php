@@ -263,9 +263,9 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         }
 
         /**
-         * Check the PHP extension 
+         * Check the PHP extension if available
          * 
-         * @return array list of extension not founded
+         * @return bool return the available of the extension
          */
         function check() {
             $result = true;

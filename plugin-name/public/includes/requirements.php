@@ -223,8 +223,8 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
          * @return string The warning message
          */
         function message() {
-            $version = $this->getWordPressVersion();
-            return 'WordPress <b>' . $this->minimumVersion . '+</b>' . __( ' Required, Detected ', 'requirements' ) . '<b>' . $version . '</b>';
+            global $wp_version;
+            return 'WordPress <b>' . $this->minimumVersion . '+</b>' . __( ' Required, Detected ', 'requirements' ) . '<b>' . $wp_version . '</b>';
         }
 
     }

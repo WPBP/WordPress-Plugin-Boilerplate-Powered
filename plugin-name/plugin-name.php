@@ -50,6 +50,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
  * Load Widget boilerplate
  */
 require_once( plugin_dir_path( __FILE__ ) . 'includes/Widget-Boilerplate/widget-boilerplate/plugin.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/widgets/sample.php' );
 
 /*
  * Load Fake Page class

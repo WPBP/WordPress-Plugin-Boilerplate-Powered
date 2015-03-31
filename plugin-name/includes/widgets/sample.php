@@ -10,15 +10,12 @@ class My_Recent_Posts_Widget extends WPH_Widget {
 
 		// Configure widget array
 		$args = array(
-			// Widget Backend label
 			'label' => __( 'My Recent Posts', $this->plugin_slug ),
-			// Widget Backend Description								
 			'description' => __( 'My Recent Posts Widget Description', $this->plugin_slug ),
 		);
 
 		// Configure the widget fields
 		// Example for: Title ( text ) and Amount of posts to show ( select box )
-		// fields array
 		$args[ 'fields' ] = array(
 			// Title field
 			array(
@@ -137,7 +134,6 @@ class My_Recent_Posts_Widget extends WPH_Widget {
 	function widget( $args, $instance ) {
 
 		// And here do whatever you want
-
 		$out = $args[ 'before_title' ];
 		$out .= $instance[ 'title' ];
 		$out .= $args[ 'after_title' ];
@@ -152,13 +148,12 @@ class My_Recent_Posts_Widget extends WPH_Widget {
 
 }
 
-// class
 // Register widget
 if ( !function_exists( 'my_register_widget' ) ) {
 
-	function mv_my_register_widget() {
+	function my_register_widget() {
 		register_widget( 'My_Recent_Posts_Widget' );
 	}
 
-	add_action( 'widgets_init', 'mv_my_register_widget', 1 );
+	add_action( 'widgets_init', 'my_register_widget', 1 );
 }

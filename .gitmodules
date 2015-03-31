@@ -7,9 +7,6 @@
 [submodule "plugin-name/includes/Taxonomy_Core"]
 	path = plugin-name/includes/Taxonomy_Core
 	url = git@github.com:WebDevStudios/Taxonomy_Core.git
-[submodule "plugin-name/includes/Widget-Boilerplate"]
-	path = plugin-name/includes/Widget-Boilerplate
-	url = git@github.com:Mte90/WordPress-Widget-Boilerplate.git
 [submodule "plugin-name/admin/includes/WP-Admin-Notice"]
 	path = plugin-name/admin/includes/WP-Admin-Notice
 	url = git@github.com:nathanielks/wordpress-admin-notice.git
@@ -22,3 +19,6 @@
 [submodule "plugin-name/admin/includes/CMB2-Shortcode"]
 	path = plugin-name/admin/includes/CMB2-Shortcode
 	url = git@github.com:jtsternberg/Shortcode_Button.git
+[submodule "plugin-name/includes/Widgets-Helper"]
+	path = plugin-name/includes/Widgets-Helper
+	url = git@github.com:jabga/WordPress-Widgets-Helper-Class.git

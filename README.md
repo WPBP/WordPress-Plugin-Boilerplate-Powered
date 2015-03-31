@@ -109,9 +109,8 @@ Because the Boilerplate has no real functionality, nothing will be added to Word
 
 ###Git Clone
 	
-	git clone https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered
+	git clone --recursive https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered
 	cd WordPress-Plugin-Boilerplate-Powered/plugin-name
-	git submodule update --init --recursive
 
 ##Git update submodule
 

@@ -480,13 +480,13 @@ class Plugin_Name_Admin {
 		if ( !current_user_can( 'manage_options' ) ) {
 			return;
 		}
-		$extension = end( explode( '.', $_FILES[ 'import_file' ][ 'name' ] ) );
+		$extension = end( explode( '.', $_FILES[ 'pn_import_file' ][ 'name' ] ) );
 
 		if ( $extension != 'json' ) {
 			wp_die( __( 'Please upload a valid .json file', $this->plugin_slug ) );
 		}
 
-		$import_file = $_FILES[ 'import_file' ][ 'tmp_name' ];
+		$import_file = $_FILES[ 'pn_import_file' ][ 'tmp_name' ];
 
 		if ( empty( $import_file ) ) {
 			wp_die( __( 'Please upload a file to import', $this->plugin_slug ) );

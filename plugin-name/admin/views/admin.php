@@ -102,7 +102,7 @@
 					<p><?php _e( 'Import the plugin settings from a .json file. This file can be obtained by exporting the settings on another site using the form above.', $this->plugin_slug ); ?></p>
 					<form method="post" enctype="multipart/form-data">
 						<p>
-							<input type="file" name="import_file"/>
+							<input type="file" name="pn_import_file"/>
 						</p>
 						<p>
 							<input type="hidden" name="pn_action" value="import_settings" />

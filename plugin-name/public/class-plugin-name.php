@@ -126,6 +126,8 @@ class Plugin_Name {
 				)
 		);
 
+		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
+
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
 				array( __( 'Demo Section', $this->get_plugin_slug() ), __( 'Demo Sections', $this->get_plugin_slug() ), 'demo-section' ), array(
@@ -301,6 +303,22 @@ class Plugin_Name {
 		self::single_activate();
 		restore_current_blog();
 	}
+	
+	/**
+	 * Add support for custom CPT on the search box
+	 *
+	 * @since    1.0.0
+	 *
+	 * @param    object    $query   
+	 */
+	public function filter_search( $query ) {
+		if ( $query->is_search ) {
+			//Mantain support for post
+			$this->cpts[] = 'post';
+			$query->set( 'post_type', $this->cpts );
+		};
+		return $query;
+	}
 
 	/**
 	 * Get all blog ids of blogs in the current network that are:
@@ -334,7 +352,7 @@ class Plugin_Name {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/requirements.php' );
 		new Plugin_Requirements( self::$plugin_name, self::$plugin_slug, array(
 			'WP' => new WordPress_Requirement( '4.1.0' )
-		) );
+				) );
 
 		// @TODO: Define activation functionality here
 

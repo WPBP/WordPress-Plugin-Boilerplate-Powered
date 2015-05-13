@@ -1,3 +1,9 @@
+## 1.1.## 
+
+* New code of CMB2 with all of the examples in the settings
+* Better example reference for requirements.php
+* Add custom ctps on the search
+
 ## 1.1.1
 
 * Added CMB2

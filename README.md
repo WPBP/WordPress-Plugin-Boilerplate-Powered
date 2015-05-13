@@ -91,7 +91,7 @@ On [https://github.com/sudar/wp-plugin-in-github](https://github.com/sudar/wp-pl
 * Make Wordpress Core Handbook http://make.wordpress.org/core/handbook/
 * Plugin Developer Handbook http://make.wordpress.org/docs/plugin-developer-handbook/
 * Theme Developer Handbook https://make.wordpress.org/docs/theme-developer-handbook/
-* Custom use of Wordpress Media Picker: https://github.com/thomasgriffin/New-Media-Image-Uploader  
+* JS library for uploads file with Media Picker: https://github.com/Apiki/wp-upload-file
 * Useful snippet for wordpress development: https://github.com/richjenks/wp-utils
 * WP Code Generator http://generatewp.com/
 

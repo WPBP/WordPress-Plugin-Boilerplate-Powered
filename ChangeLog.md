@@ -1,8 +1,9 @@
-## 1.1.## 
+## 1.1.2 
 
 * New code of CMB2 with all of the examples in the settings
 * Better example reference for requirements.php
 * Add custom ctps on the search
+* change the text for the settings page with the plugin name
 
 ## 1.1.1
 

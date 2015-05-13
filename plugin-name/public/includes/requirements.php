@@ -89,7 +89,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
             }
 
             if ( !isset( $requirements[ 'WP' ] ) ) {
-                $requirements[ 'WP' ] = new WordPress_Requirement( '3.8.0' );
+                $requirements[ 'WP' ] = new WordPress_Requirement( '4.0.0' );
             }
 
             if ( !isset( $requirements[ 'Extension' ] ) ) {

@@ -104,7 +104,7 @@ class Plugin_Name_Admin {
 		/*
 		 * Add metabox
 		 */
-		add_filter( 'cmb2_meta_boxes', array( $this, 'cmb_demo_metaboxes' ) );
+		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 
 		/*
 		 * Define custom functionality.
@@ -403,30 +403,33 @@ class Plugin_Name_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function cmb_demo_metaboxes( array $meta_boxes ) {
-		$meta_boxes[ 'test_metabox' ] = array(
-			'id' => 'test_metabox',
+	public function cmb_demo_metaboxes() {
+		// Start with an underscore to hide fields from custom fields list
+		$prefix = '_demo_';
+
+		$cmb_demo = new_cmb2_box( array(
+			'id' => $prefix . 'metabox',
 			'title' => __( 'Demo Metabox', $this->plugin_slug ),
 			'object_types' => array( 'demo', ), // Post type
 			'context' => 'normal',
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left
-			'fields' => array(
-				array(
-					'name' => __( 'Text', $this->plugin_slug ),
-					'desc' => __( 'field description (optional)', $this->plugin_slug ),
-					'id' => $this->plugin_slug . '_test_text',
-					'type' => 'text',
-				),
-				array(
-					'name' => __( 'Text Small', $this->plugin_slug ),
-					'desc' => __( 'field description (optional)', $this->plugin_slug ),
-					'id' => $this->plugin_slug . '_test_textsmall',
-					'type' => 'text_small',
-				), ),
-		);
+				) );
+		
+		$cmb_demo->add_field( array(
+			'name' => __( 'Text', $this->plugin_slug ),
+			'desc' => __( 'field description (optional)', $this->plugin_slug ),
+			'id' => $prefix . $this->plugin_slug . '_text',
+			'type' => 'text'
+		) );
+		
+		$cmb_demo->add_field( array(
+			'name' => __( 'Text Small', $this->plugin_slug ),
+			'desc' => __( 'field description (optional)', $this->plugin_slug ),
+			'id' => $prefix . $this->plugin_slug . '_textsmall',
+			'type' => 'text_small'
+		) );
 
-		return $meta_boxes;
 	}
 
 	/**

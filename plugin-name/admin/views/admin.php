@@ -17,7 +17,7 @@
 
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
-	<div id="tabs">
+	<div id="tabs" class="settings-tab">
 		<ul>
 			<li><a href="#tabs-1"><?php _e( 'Settings' ); ?></a></li>
 			<li><a href="#tabs-2"><?php _e( 'Settings 2', $this->plugin_slug ); ?></a></li>
@@ -99,7 +99,7 @@
 				'desc' => __( 'field description (optional)', $this->plugin_slug ),
 				'id' => $this->plugin_slug . '_textmoney',
 				'type' => 'text_money',
-					 'before_field' => '€', // override '$' symbol if needed
+				'before_field' => '€', // override '$' symbol if needed
 			) );
 			$cmb->add_field( array(
 				'name' => __( 'Test Text Area', $this->plugin_slug ),
@@ -302,6 +302,13 @@
 					</form>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="right-column-settings-page postbox">
+		<h3 class="hndle"><span><?php _e( 'Plugin Name', $this->plugin_slug ); ?></span></h3>
+		<div class="inside">
+			<a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered"><img src="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/raw/master/plugin-name/assets/icon-256x256.png" alt=""></a>
 		</div>
 	</div>
 </div>

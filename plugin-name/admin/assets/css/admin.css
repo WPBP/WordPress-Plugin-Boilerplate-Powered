@@ -35,10 +35,30 @@
 	background: rgb(239, 239, 239) !important;
 }
 
+.settings-tab {
+	width:65%;
+	float:left;
+}
+
+.right-column-settings-page {
+	float:right;
+	padding: 10px;
+	padding-right: 0;
+}
+
+.right-column-settings-page .hndle {
+	margin:0;
+	padding-bottom:5px;
+}
+
+.right-column-settings-page .inside {
+	padding:0;
+}
+
 .postbox h3 {
 	padding-left: 10px;
 }
 
 #dashboard_right_now a.demo-count:before {
-  content: "\f115";
+	content: "\f115";
 }

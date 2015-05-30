@@ -316,7 +316,7 @@ class Plugin_Name {
 			//Mantain support for post
 			$this->cpts[] = 'post';
 			$query->set( 'post_type', $this->cpts );
-		};
+		}
 		return $query;
 	}
 

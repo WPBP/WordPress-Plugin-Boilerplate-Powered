@@ -47,7 +47,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
 
 /*
- * Load Widget boilerplate
+ * Load Widgets Helper
  */
 require_once( plugin_dir_path( __FILE__ ) . 'includes/Widgets-Helper/wph-widget-class.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/widgets/sample.php' );

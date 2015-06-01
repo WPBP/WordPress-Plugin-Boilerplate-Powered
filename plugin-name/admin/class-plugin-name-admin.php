@@ -160,6 +160,26 @@ class Plugin_Name_Admin {
 		//With this you can reset all the pointer with your prefix
 		//$pointerplus->reset_pointer();
 		add_filter( 'pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
+
+		/*
+		 * Load CPT_Columns
+		 * 
+		 * Check the file for example
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Columns.php' );
+		$post_columns = new CPT_columns( 'demo' );
+		$post_columns->add_column( 'cmb2_field', array(
+			'label' => __( 'CMB2 Field' ),
+			'type' => 'post_meta',
+			'meta_key' => '_demo_' . $this->plugin_slug . '_text', 
+			'orderby' => 'meta_value',
+			'sortable' => true,
+			'prefix' => "<b>",
+			'suffix' => "</b>",
+			'def' => "Not defined", // default value in case post meta not found
+			'order' => "-1"
+				)
+		);
 	}
 
 	/**
@@ -415,21 +435,20 @@ class Plugin_Name_Admin {
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left
 				) );
-		
+
 		$cmb_demo->add_field( array(
 			'name' => __( 'Text', $this->plugin_slug ),
 			'desc' => __( 'field description (optional)', $this->plugin_slug ),
 			'id' => $prefix . $this->plugin_slug . '_text',
 			'type' => 'text'
 		) );
-		
+
 		$cmb_demo->add_field( array(
 			'name' => __( 'Text Small', $this->plugin_slug ),
 			'desc' => __( 'field description (optional)', $this->plugin_slug ),
 			'id' => $prefix . $this->plugin_slug . '_textsmall',
 			'type' => 'text_small'
 		) );
-
 	}
 
 	/**

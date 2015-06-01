@@ -23,6 +23,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
 * [Modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
 * [Very modified requirements detection on activation](https://github.com/dsawardekar/wp-requirements) in `public/includes/requirements.php`
+* [Modified CPT_Columns](https://en.bainternet.info/custom-post-types-columns/) Class for CPTs columns in `admin/includes/CPT_Columns.php`
 
 ###Snippet included
 

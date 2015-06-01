@@ -5,6 +5,7 @@
 * Add custom ctps on the search
 * Change the text for the settings page with the plugin name
 * Right box for custom image or banner in settings page
+* Added CPT_Columns class with new feature
 
 ## 1.1.1
 

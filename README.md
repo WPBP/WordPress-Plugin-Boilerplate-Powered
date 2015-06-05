@@ -1,8 +1,11 @@
-# WordPress Plugin Boilerplate Powered
+#WordPress Plugin Boilerplate Powered
+<p align="center">
 ![Logo](./plugin-name/assets/icon-256x256.png)
+</p>
 
-The WordPress Plugin Boilerplate Powered is a complete foundation (without framework only wrapper) for building your WordPress plugins.  
+**WordPress Plugin Boilerplate Powered** is a complete foundation (without frameworks with many independent libaries ) for building your WordPress plugins.  
 *Look in Recommended tools section of this readme for the Yeoman Generator and Vagrant.*   
+You want to see which plugins have been made with this boilerplate or add them to the list? Check [here](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
 Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other info.
 
 ##Features
@@ -144,14 +147,3 @@ Any of the above tools should provide you with the proper tooling to localize th
 ##License
 
 The WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
-
-> This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License, version 2, as
-published by the Free Software Foundation.
-
-> This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04/licensing-note-apache-and-gpl/) that covers the Apache 2.0 License used by [Bootstrap](http://twitter.github.io/bootstrap/).

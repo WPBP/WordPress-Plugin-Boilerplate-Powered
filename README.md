@@ -1,6 +1,6 @@
 #WordPress Plugin Boilerplate Powered
 <p align="center">
-![Logo](./plugin-name/assets/icon-256x256.png)
+<img src="./plugin-name/assets/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation (without frameworks with many independent libaries ) for building your WordPress plugins.  

@@ -97,6 +97,8 @@ On [https://github.com/sudar/wp-plugin-in-github](https://github.com/sudar/wp-pl
 * Theme Developer Handbook https://make.wordpress.org/docs/theme-developer-handbook/
 * JS library for uploads file with Media Picker: https://github.com/Apiki/wp-upload-file
 * Useful snippet for wordpress development: https://github.com/richjenks/wp-utils
+* WP Combine Queries - PHP 5.4+: https://github.com/birgire/wp-combine-queries
+* WP_List_Table Example: http://www.sitepoint.com/using-wp_list_table-to-create-wordpress-admin-tables/
 * WP Code Generator http://generatewp.com/
 
 ##Installation

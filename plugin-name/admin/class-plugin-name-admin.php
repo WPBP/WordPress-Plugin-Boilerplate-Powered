@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name.
  *
@@ -171,7 +170,7 @@ class Plugin_Name_Admin {
 		$post_columns->add_column( 'cmb2_field', array(
 			'label' => __( 'CMB2 Field' ),
 			'type' => 'post_meta',
-			'meta_key' => '_demo_' . $this->plugin_slug . '_text', 
+			'meta_key' => '_demo_' . $this->plugin_slug . '_text',
 			'orderby' => 'meta_value',
 			'sortable' => true,
 			'prefix' => "<b>",

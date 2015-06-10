@@ -10,6 +10,7 @@
 //  New features by Mte90:
 //    Fix for def value
 //    New order columns value
+//    Custom callback for the value
 //Check the example!
 
 /* Example
@@ -50,6 +51,19 @@
   'prefix' => "$",
   'suffix' => "",
   'def' => "", // default value in case post meta not found
+  'order' => "-1" //before the date column
+  )
+  );
+  //custom callback column
+  $post_columns->add_column('price',
+  array(
+  'label'    => __('Custom Callback'),
+  'type'     => 'custom_value',
+  'meta_key' => 'your_callback_function', // array( $this, 'your_callback_method')in a class
+  'orderby' => 'meta_value', //meta_value,meta_value_num
+  'sortable' => true,
+  'prefix' => "$",
+  'suffix' => "",
   'order' => "-1" //before the date column
   )
   );
@@ -264,6 +278,13 @@ if ( !class_exists( 'CPT_columns' ) ) {
 						echo '';
 					}
 					break;
+				case 'custom_value':
+					if ( is_callable( $column[ 'callback' ] ) ) {
+						echo call_user_func( $column[ 'callback' ], $post_id );
+					} else {
+						echo $column[ 'callback' ] . ' is not a callable object!';
+					}
+					break;
 			}//end switch
 			if ( in_array( $column[ 'type' ], array( 'text', 'thumb', 'post_meta', 'custom_tax' ) ) ) {
 				echo $column[ 'suffix' ];
@@ -307,17 +328,17 @@ if ( !class_exists( 'CPT_columns' ) ) {
 		 */
 		function add_column( $key, $args ) {
 			$def = array(
-				'label' => 'column label',
-				'size' => array( '80', '80' ),
-				'taxonomy' => '',
-				'meta_key' => '',
-				'sortable' => false,
-				'text' => '',
-				'type' => 'native', //'native','post_meta','custom_tax',text
-				'orderby' => 'meta_value',
-				'prefix' => '',
-				'suffix' => '',
-				'def' => '',
+			    'label' => 'column label',
+			    'size' => array( '80', '80' ),
+			    'taxonomy' => '',
+			    'meta_key' => '',
+			    'sortable' => false,
+			    'text' => '',
+			    'type' => 'native', //'native','post_meta','custom_tax',text
+			    'orderby' => 'meta_value',
+			    'prefix' => '',
+			    'suffix' => '',
+			    'def' => '',
 			);
 			$this->cpt_columns[ $key ] = array_merge( $def, $args );
 

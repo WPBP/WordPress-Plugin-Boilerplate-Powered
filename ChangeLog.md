@@ -6,6 +6,7 @@
 * Change the text for the settings page with the plugin name
 * Right box for custom image or banner in settings page
 * Added CPT_Columns class with new feature
+* Improvement and fix to fake-page.php
 
 ## 1.1.1
 

@@ -43,7 +43,7 @@ if ( !class_exists( 'Fake_Page' ) ) {
 			$page_slug = $this->slug;
 
 			//check if user is requesting our fake page
-			if ( count( $posts ) == 0 && (strtolower( $wp->request ) == $page_slug || $wp->query_vars[ 'page_id' ] == $page_slug) ) {
+			if ( count( $posts ) == 0 && (strtolower( $wp->request ) == $page_slug || isset($wp->query_vars[ 'page_id' ]) && $wp->query_vars[ 'page_id' ] == $page_slug) ) {
 				//create a fake post
 				$post = new stdClass;
 				$post->ID = '-1';

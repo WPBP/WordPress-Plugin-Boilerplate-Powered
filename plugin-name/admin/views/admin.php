@@ -9,7 +9,7 @@
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
- * @copyright 2014 Your Name or Company Name
+ * @copyright 2015 Your Name or Company Name
  */
 ?>
 
@@ -306,7 +306,7 @@
 	</div>
 
 	<div class="right-column-settings-page postbox">
-		<h3 class="hndle"><span><?php _e( 'Plugin Name', $this->plugin_slug ); ?></span></h3>
+		<h3 class="hndle"><span><?php _e( 'Plugin Name.', $this->plugin_slug ); ?></span></h3>
 		<div class="inside">
 			<a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered"><img src="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/raw/master/plugin-name/assets/icon-256x256.png" alt=""></a>
 		</div>

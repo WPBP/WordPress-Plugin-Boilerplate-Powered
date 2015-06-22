@@ -10,7 +10,7 @@
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
- * @copyright 2014 Your Name or Company Name
+ * @copyright 2015 Your Name or Company Name
  *
  * @wordpress-plugin
  * Plugin Name:       @TODO
@@ -23,7 +23,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * WordPress-Plugin-Boilerplate-Powered: v1.1.0
+ * WordPress-Plugin-Boilerplate-Powered: v1.1.2
  */
 // If this file is called directly, abort.
 if ( !defined( 'WPINC' ) ) {

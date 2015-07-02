@@ -89,6 +89,7 @@ function get_string( $plugin_name_human_format, $string_name, $value ) {
 		return CMLTranslations::get( CMLLanguage::get_current_id(), $string_name, str_replace( ' ', '-', $plugin_name_human_format ) );
 	} elseif ( function_exists( 'pll__' ) ) {
 		return pll__( $string_name );
-	}else
+	}else{
 		return $value;
+	}
 }

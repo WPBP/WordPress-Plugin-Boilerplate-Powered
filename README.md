@@ -17,7 +17,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Sass support with Compass and Grunt
 * [CPT Core](https://github.com/jtsternberg/CPT_Core) and [Taxonomy Core](https://github.com/jtsternberg/Taxonomy_Core) integrated
 * [CMB2 + Shortcode Button](https://github.com/WebDevStudios/CMB2)
-* [Widget Boilerplate](https://github.com/Mte90/WordPress-Widget-Boilerplate) based on https://github.com/tommcfarlin/WordPress-Widget-Boilerplate
+* [WordPress Widgets Helper Class](https://github.com/jabga/WordPress-Widgets-Helper-Class) 
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
 * [PointerPlus](https://github.com/Mte90/pointerplus) integrated

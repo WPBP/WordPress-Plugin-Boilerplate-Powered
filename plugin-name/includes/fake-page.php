@@ -1,18 +1,18 @@
 <?php
+/**
+ * Simple class that generate a fake page on the fly
+ *
+ * @package   Plugin_Name
+ * @author    Ohad Raz & Mte90 <mte90net@gmail.com>
+ * @license   GPL-2.0+
+ * @copyright 2014-2015
+ */
 
 //Based on https://coderwall.com/p/fwea7g
 //Update to work on last Wordpress versione
 
 if ( !class_exists( 'Fake_Page' ) ) {
 
-	/**
-	 * Simple class that generate a fake page on the fly
-	 *
-	 * @package   Plugin_Name
-	 * @author    Ohad Raz & Mte90 <mte90net@gmail.com>
-	 * @license   GPL-2.0+
-	 * @copyright 2014-2015
-	 */
 	class Fake_Page {
 
 		public $slug = '';
@@ -43,7 +43,7 @@ if ( !class_exists( 'Fake_Page' ) ) {
 			$page_slug = $this->slug;
 
 			//check if user is requesting our fake page
-			if ( count( $posts ) == 0 && (strtolower( $wp->request ) == $page_slug || isset($wp->query_vars[ 'page_id' ]) && $wp->query_vars[ 'page_id' ] == $page_slug) ) {
+			if ( count( $posts ) == 0 && (strtolower( $wp->request ) == $page_slug || isset( $wp->query_vars[ 'page_id' ] ) && $wp->query_vars[ 'page_id' ] == $page_slug) ) {
 				//create a fake post
 				$post = new stdClass;
 				$post->ID = '-1';
@@ -89,7 +89,7 @@ if ( !class_exists( 'Fake_Page' ) ) {
 				$wp_query->queried_object_id = $post->ID;
 				$wp_query->current_post = $post->ID;
 			}
-			
+
 			return $posts;
 		}
 

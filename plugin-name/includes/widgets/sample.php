@@ -132,9 +132,9 @@ class My_Recent_Posts_Widget extends WPH_Widget {
 	// Output function
 
 	function widget( $args, $instance ) {
-
+                $out = $args[ 'before_widget' ];
 		// And here do whatever you want
-		$out = $args[ 'before_title' ];
+		$out .= $args[ 'before_title' ];
 		$out .= $instance[ 'title' ];
 		$out .= $args[ 'after_title' ];
 
@@ -143,7 +143,8 @@ class My_Recent_Posts_Widget extends WPH_Widget {
 
 		$out .= '<p>Hey There! </p>';
 
-		echo apply_filters( 'widget_text', $out );
+		$out .= $args[ 'after_widget' ];
+		echo $out;
 	}
 
 }

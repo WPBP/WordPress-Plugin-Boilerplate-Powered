@@ -1,7 +1,4 @@
 <?php
-
-// NOTE: change the prefix of the function
-
 /**
  * Load template files of the plugin also include a filter pn_get_template_part<br>
  * Based on WooCommerce function<br>
@@ -12,6 +9,8 @@
  * @copyright 2014-2015
  * @since    1.0.0
  */
+
+// NOTE: change the prefix of the function
 function pn_get_template_part( $slug, $name = '', $include = true ) {
 	$template = '';
 	$path = plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . 'templates/';

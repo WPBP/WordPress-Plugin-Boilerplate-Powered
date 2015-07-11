@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Provides interface for debugging variables with Debug Bar
  * 
@@ -9,6 +8,7 @@
  * @copyright 2014-2015 
  *
  */
+
 class Pn_Debug {
 
 	public $history = array();

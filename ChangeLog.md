@@ -1,3 +1,8 @@
+## 1.1.3
+
+* Fix on language.php from overclockk
+* Improvment on PHPDoc
+
 ## 1.1.2 
 
 * New code of CMB2 with all of the examples in the settings

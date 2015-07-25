@@ -36,6 +36,7 @@ if ( !defined( 'WPINC' ) ) {
  * Public-Facing Functionality
  * ------------------------------------------------------------------------------
  */
+require_once( plugin_dir_path( __FILE__ ) . 'includes/load_textdomain.php' );
 
 /*
  * Load library for simple and fast creation of Taxonomy and Custom Post Type

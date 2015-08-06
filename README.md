@@ -98,18 +98,6 @@ Link to repo: [https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/
 
 Exist also a VVV modded version (Vagrant configuration) called [VVVWPBP](https://github.com/Mte90/VVVWPBP) that contain Compass, PHPCompatInfo, ApiGen and Yeoman for a fast development (the missing tool from the original VVV).
 
-###Localization Tools
-
-The WordPress Plugin Boilerplate uses a variable to store the text domain used when internationalizing strings throughout the Boilerplate. To take advantage of this method,
-there are tools that are recommended for providing correct, translatable files:
-
-* [Poedit](http://www.poedit.net/)
-* [makepot](http://i18n.svn.wordpress.org/tools/trunk/)
-* [i18n](https://github.com/grappler/i18n)
-* [grunt-wp-i18n](https://github.com/blazersix/grunt-wp-i18n)
-
-Any of the above tools should provide you with the proper tooling to localize the plugin.
-
 ##License
 
 The WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.

@@ -1,7 +1,7 @@
 <?php
 
 // Create custom widget class extending WPH_Widget
-class My_Recent_Posts_Widget extends WPH_Widget {
+class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 
 	function __construct() {
 		

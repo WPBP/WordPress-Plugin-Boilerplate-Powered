@@ -59,49 +59,11 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * .php_cs for [PHP-CS-Fixer](https://github.com/fabpot/PHP-CS-Fixer)
 * apigen.sh script for generate a docs folder with the documentation
 
-####wp-boilerplate-version
+Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-to-the-Script-and-CLI-tool) for discover how to use this script!
 
-USE:
+###Useful resources or code examples
 
-```
-wp-boilerplate-version /path/my-new-plugin/ 1.1.1
-```
-Change the version in README.txt, plugin-slug.php and public/class-plugin-slug.php
-
-Download the script, move in /usr/local/bin and set the permission 
-```
-wget -O /usr/local/bin/wp-boilerplate-version https://raw.githubusercontent.com/Mte90/WordPress-Plugin-Boilerplate-Powered/master/wp-boilerplate-version.sh | chmod +x /usr/local/bin/wp-boilerplate-version
-```
-
-####phpcompatinfo
-
-```
-phpcompatinfo analyser:run . --php=">= 5.2"
-```
-
-Check if the plugin can work on PHP 5.2 (minimum requirement for WordPress).  
-There may be a false positive for ```JSON_PRETTY_PRINT``` but in the code there is a version check for this.
-
-###Suggestion
-
-On [https://github.com/sudar/wp-plugin-in-github](https://github.com/sudar/wp-plugin-in-github) there is many useful snippet for the deploy.  
-
-    clone-from-svn-to-git.sh - Use this script to clone your WordPress Plugins from SVN into git/github
-    deploy-plugin.sh - Use this script to push your WordPress Plugin updates to SVN from git/github
-    readme-converter.sh - Use this script to convert readme files between Github markdown and WordPress repo markdown format
-    create-archive.sh - Use this script to create a zip archive of the Plugin
-    update-version.sh - Use this script to update version string in all the files of the Plugin
-
-###Note
-
-* Make Wordpress Core Handbook http://make.wordpress.org/core/handbook/
-* Plugin Developer Handbook http://make.wordpress.org/docs/plugin-developer-handbook/
-* Theme Developer Handbook https://make.wordpress.org/docs/theme-developer-handbook/
-* JS library for uploads file with Media Picker: https://github.com/Apiki/wp-upload-file
-* Useful snippet for wordpress development: https://github.com/richjenks/wp-utils
-* WP Combine Queries - PHP 5.4+: https://github.com/birgire/wp-combine-queries
-* WP_List_Table Example: http://www.sitepoint.com/using-wp_list_table-to-create-wordpress-admin-tables/
-* WP Code Generator http://generatewp.com/
+Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Useful-resources-or-code-examples)!
 
 ##Installation
 

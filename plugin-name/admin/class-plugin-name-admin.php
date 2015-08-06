@@ -93,12 +93,20 @@ class Plugin_Name_Admin {
 		/*
 		 * CMB 2 for metabox and many other cool things!
 		 * https://github.com/WebDevStudios/CMB2
-		 * Also CMB2 Shortcode support 
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php' );
+		/*
+		 * CMB2 Shortcode support 
 		 * Check on the repo for the example and documentation 
 		 * https://github.com/jtsternberg/Shortcode_Button
 		 */
-		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php' );
 		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-Shortcode/shortcode-button.php' );
+		/*
+		 * CMB2 Grid 
+		 * Check on the repo for the example and documentation 
+		 * https://github.com/origgami/CMB2-grid
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-grid/Cmb2GridPlugin.php' );
 
 		/*
 		 * Add metabox
@@ -425,7 +433,6 @@ class Plugin_Name_Admin {
 	public function cmb_demo_metaboxes() {
 		// Start with an underscore to hide fields from custom fields list
 		$prefix = '_demo_';
-
 		$cmb_demo = new_cmb2_box( array(
 			'id' => $prefix . 'metabox',
 			'title' => __( 'Demo Metabox', $this->plugin_slug ),
@@ -434,20 +441,22 @@ class Plugin_Name_Admin {
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left
 				) );
-
-		$cmb_demo->add_field( array(
+		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid($cmb_demo);
+		$row = $cmb2Grid->addRow();
+		$field1 = $cmb_demo->add_field( array(
 			'name' => __( 'Text', $this->plugin_slug ),
 			'desc' => __( 'field description (optional)', $this->plugin_slug ),
 			'id' => $prefix . $this->plugin_slug . '_text',
 			'type' => 'text'
 		) );
 
-		$cmb_demo->add_field( array(
+		$field2 = $cmb_demo->add_field( array(
 			'name' => __( 'Text Small', $this->plugin_slug ),
 			'desc' => __( 'field description (optional)', $this->plugin_slug ),
 			'id' => $prefix . $this->plugin_slug . '_textsmall',
 			'type' => 'text_small'
 		) );
+		$row->addColumns(array($field1, $field2));
 	}
 
 	/**

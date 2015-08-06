@@ -23,7 +23,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * WordPress-Plugin-Boilerplate-Powered: v1.1.2
+ * WordPress-Plugin-Boilerplate-Powered: v1.1.4
  */
 
 // If this file is called directly, abort.
@@ -136,7 +136,6 @@ add_action( 'plugins_loaded', array( 'Plugin_Name', 'get_instance' ), 9999 );
  */
 
 if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
-
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-plugin-name-admin.php' );
 	add_action( 'plugins_loaded', array( 'Plugin_Name_Admin', 'get_instance' ) );
 }

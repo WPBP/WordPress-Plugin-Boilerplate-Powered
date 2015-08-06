@@ -4,6 +4,7 @@
 * Pluggable functions added in language.php
 * TextDomain in a dedicated file for better priority
 * Correct parameter for Apigen
+* Integrated CMB2-Grid
 
 ## 1.1.3
 

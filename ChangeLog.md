@@ -5,6 +5,7 @@
 * TextDomain in a dedicated file for better priority
 * Correct parameter for Apigen
 * Integrated CMB2-Grid
+* Removed folder public/views
 
 ## 1.1.3
 

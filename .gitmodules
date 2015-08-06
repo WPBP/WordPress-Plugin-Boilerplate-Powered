@@ -22,3 +22,6 @@
 [submodule "plugin-name/includes/Widgets-Helper"]
 	path = plugin-name/includes/Widgets-Helper
 	url = git@github.com:jabga/WordPress-Widgets-Helper-Class.git
+[submodule "plugin-name/admin/includes/CMB2-grid"]
+	path = plugin-name/admin/includes/CMB2-grid
+	url = git@github.com:origgami/CMB2-grid.git

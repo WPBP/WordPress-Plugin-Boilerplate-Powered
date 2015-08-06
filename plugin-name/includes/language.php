@@ -52,7 +52,7 @@ if ( !function_exists( 'register_string' ) ) {
 			add_filter( 'cml_my_translations', create_function( "$groups, $plugin_name_human_format", "
             $plugin_name_human_format_replaced = str_replace( ' ', '-', $plugin_name_human_format );
             CMLTranslations:add( $string_name, $value, $plugin_name_human_format );
-            $groups[   $plugin_name_human_format_replaced ] = $plugin_name_human_format;
+            $groups[$plugin_name_human_format_replaced] = $plugin_name_human_format;
             return $groups;"
 			) );
 		} elseif ( function_exists( 'pll_register_string' ) ) {

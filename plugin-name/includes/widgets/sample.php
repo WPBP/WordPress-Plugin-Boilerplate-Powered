@@ -153,8 +153,8 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 if ( !function_exists( 'pl_my_register_widget' ) ) {
 
 	function pl_my_register_widget() {
-		register_widget( 'pl_My_Recent_Posts_Widget' );
+		register_widget( 'Pl_My_Recent_Posts_Widget' );
 	}
 
-	add_action( 'widgets_init', 'Pl_my_register_widget', 1 );
+	add_action( 'widgets_init', 'pl_my_register_widget', 1 );
 }

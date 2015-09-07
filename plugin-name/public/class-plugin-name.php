@@ -87,6 +87,10 @@ class Plugin_Name {
 	 * @var array
 	 */
 	protected static $plugin_roles = array(
+		'administrator' => array(
+			'edit_demo' => true,
+			'edit_others_demo' => true,
+		),
 		'editor' => array(
 			'edit_demo' => true,
 			'edit_others_demo' => true,
@@ -117,7 +121,7 @@ class Plugin_Name {
 			'taxonomies' => array( 'demo-section' ),
 			'capabilities' => array(
 				'edit_post' => 'edit_demo',
-				'edit_others_posts' => 'edit_other_demo',
+				'edit_others_posts' => 'edit_others_demo',
 			),
 			'map_meta_cap' => true
 				)

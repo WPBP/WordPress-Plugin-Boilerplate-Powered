@@ -68,7 +68,7 @@ new Fake_Page(
 	array(
     'slug' => 'fake_slug',
     'post_title' => 'Fake Page Title',
-    'post content' => 'This is the fake page content'
+    'post_content' => 'This is the fake page content'
 	)
 );
 

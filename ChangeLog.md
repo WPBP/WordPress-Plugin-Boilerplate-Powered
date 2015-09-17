@@ -1,3 +1,9 @@
+## 1.1.5
+
+* Moved Export/Import code in a class
+* Fix in Fake Page example by jmarceli
+* Bump Wordpress version in Readme
+
 ## 1.1.4 
 
 * Better comment in the code 

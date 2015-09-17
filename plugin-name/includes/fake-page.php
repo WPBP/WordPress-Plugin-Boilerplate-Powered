@@ -17,6 +17,7 @@ if ( !class_exists( 'Fake_Page' ) ) {
 
 		public $slug = '';
 		public $args = array();
+		public $id;
 
 		/**
 		 * __construct<br>
@@ -29,6 +30,7 @@ if ( !class_exists( 'Fake_Page' ) ) {
 			add_filter( 'the_posts', array( $this, 'fake_page_filter' ) );
 			$this->args = $args;
 			$this->slug = $args[ 'slug' ];
+			$this->id = '-1';
 		}
 
 		/**
@@ -40,13 +42,16 @@ if ( !class_exists( 'Fake_Page' ) ) {
 		 */
 		public function fake_page_filter( $posts ) {
 			global $wp, $wp_query;
-			$page_slug = $this->slug;
 
 			//check if user is requesting our fake page
-			if ( count( $posts ) == 0 && (strtolower( $wp->request ) == $page_slug || isset( $wp->query_vars[ 'page_id' ] ) && $wp->query_vars[ 'page_id' ] == $page_slug) ) {
+			if (
+				count( $posts ) === 0 &&
+				(strtolower( $wp->request ) === $this->slug ||
+				isset( $wp->query_vars[ 'page_id' ] ) && $wp->query_vars[ 'page_id' ] === $this->slug )
+			) {
 				//create a fake post
 				$post = new stdClass;
-				$post->ID = '-1';
+				$post->ID = $this->id;
 				$post->post_author = 1;
 				//dates may need to be overwritten if you have a "recent posts" widget or similar - set to whatever you want
 				$post->post_date = current_time( 'mysql' );
@@ -55,22 +60,31 @@ if ( !class_exists( 'Fake_Page' ) ) {
 				$post->post_content = $this->args[ 'post_content' ];
 				$post->comment_status = 'closed';
 				$post->ping_status = 'closed';
+				$post->post_parent = 0;
+				$post->menu_item_parent = 0;
 				$post->post_password = '';
-				$post->post_name = $page_slug;
+				$post->post_name = $this->slug;
 				$post->to_ping = '';
 				$post->pinged = '';
 				$post->modified = $post->post_date;
 				$post->modified_gmt = $post->post_date_gmt;
-				$post->guid = get_bloginfo( 'wpurl' . '/' . $page_slug );
+				$post->guid = get_bloginfo( 'wpurl' . '/' . $this->slug );
+				$post->url = get_bloginfo( 'wpurl' . '/' . $this->slug );
 				$post->menu_order = 0;
 				$post->post_type = 'page';
 				$post->post_status = 'publish';
 				$post->post_mime_type = '';
 				$post->comment_count = 0;
+				$post->description = '';
+				$post->filter = 'raw';
 				$post->ancestors = array();
 
 				$post = ( object ) array_merge( ( array ) $post, ( array ) $this->args );
 
+				if ( is_admin() ) {
+					$post = new WP_Post( $post );
+				}
+				$GLOBALS[ 'post' ] = $post;
 				$posts = array( $post );
 
 				$wp_query->is_page = true;

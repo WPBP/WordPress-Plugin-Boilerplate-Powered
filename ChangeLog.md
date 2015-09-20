@@ -1,3 +1,7 @@
+## 1.1.6
+
+* Support for activity dashboard widget
+
 ## 1.1.5
 
 * Moved Export/Import code in a class

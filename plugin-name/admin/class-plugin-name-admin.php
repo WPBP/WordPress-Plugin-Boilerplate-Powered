@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name.
  *
@@ -79,7 +80,9 @@ class Plugin_Name_Admin {
 		add_action( 'admin_head-index.php', array( $this, 'enqueue_admin_styles' ) );
 
 		// At Glance Dashboard widget for your cpts
-		add_filter( 'dashboard_glance_items', array( $this, 'cpt_dashboard_support' ), 10, 1 );
+		add_filter( 'dashboard_glance_items', array( $this, 'cpt_glance_dashboard_support' ), 10, 1 );
+		// Activity Dashboard widget for your cpts
+		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -121,7 +124,7 @@ class Plugin_Name_Admin {
 		 */
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-		
+
 		/*
 		 * Import Export settings
 		 */
@@ -176,16 +179,16 @@ class Plugin_Name_Admin {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Columns.php' );
 		$post_columns = new CPT_columns( 'demo' );
 		$post_columns->add_column( 'cmb2_field', array(
-			'label' => __( 'CMB2 Field' ),
-			'type' => 'post_meta',
-			'meta_key' => '_demo_' . $this->plugin_slug . '_text',
-			'orderby' => 'meta_value',
-			'sortable' => true,
-			'prefix' => "<b>",
-			'suffix' => "</b>",
-			'def' => "Not defined", // default value in case post meta not found
-			'order' => "-1"
-				)
+		    'label' => __( 'CMB2 Field' ),
+		    'type' => 'post_meta',
+		    'meta_key' => '_demo_' . $this->plugin_slug . '_text',
+		    'orderby' => 'meta_value',
+		    'sortable' => true,
+		    'prefix' => "<b>",
+		    'suffix' => "</b>",
+		    'def' => "Not defined", // default value in case post meta not found
+		    'order' => "-1"
+			)
 		);
 	}
 
@@ -281,7 +284,7 @@ class Plugin_Name_Admin {
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-				__( 'Page Title', $this->plugin_slug ), $this->plugin_name, 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' )
+			__( 'Page Title', $this->plugin_slug ), $this->plugin_name, 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' )
 		);
 		/*
 		 * Settings page in the menu
@@ -306,10 +309,10 @@ class Plugin_Name_Admin {
 	 */
 	public function add_action_links( $links ) {
 		return array_merge(
-				array(
-			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings' ) . '</a>',
-			'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', $this->plugin_slug ) . '</a>'
-				), $links
+			array(
+		    'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings' ) . '</a>',
+		    'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', $this->plugin_slug ) . '</a>'
+			), $links
 		);
 	}
 
@@ -347,7 +350,7 @@ class Plugin_Name_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function cpt_dashboard_support( $items = array() ) {
+	public function cpt_glance_dashboard_support( $items = array() ) {
 		$post_types = $this->cpts;
 		foreach ( $post_types as $type ) {
 			if ( !post_type_exists( $type ) ) {
@@ -367,6 +370,21 @@ class Plugin_Name_Admin {
 			}
 		}
 		return $items;
+	}
+
+	/**
+	 * Add the recents post type in the activity widget<br>
+	 * NOTE: add in $post_types your cpts
+	 *
+	 * @since    1.0.0
+	 */
+	function cpt_activity_dashboard_support( $query_args ) {
+		if ( !is_array( $query_args[ 'post_type' ] ) ) {
+			//Set default post type
+			$query_args[ 'post_type' ] = array( 'page' );
+		}
+		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], $this->cpts );
+		return $query_args;
 	}
 
 	/**
@@ -402,7 +420,7 @@ class Plugin_Name_Admin {
 
 				// Modify menu item
 				$menu[ $key ][ 0 ] .= sprintf(
-						'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
+					'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
 				);
 			}
 		}
@@ -434,29 +452,29 @@ class Plugin_Name_Admin {
 		// Start with an underscore to hide fields from custom fields list
 		$prefix = '_demo_';
 		$cmb_demo = new_cmb2_box( array(
-			'id' => $prefix . 'metabox',
-			'title' => __( 'Demo Metabox', $this->plugin_slug ),
-			'object_types' => array( 'demo', ), // Post type
-			'context' => 'normal',
-			'priority' => 'high',
-			'show_names' => true, // Show field names on the left
-				) );
-		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid($cmb_demo);
+		    'id' => $prefix . 'metabox',
+		    'title' => __( 'Demo Metabox', $this->plugin_slug ),
+		    'object_types' => array( 'demo', ), // Post type
+		    'context' => 'normal',
+		    'priority' => 'high',
+		    'show_names' => true, // Show field names on the left
+			) );
+		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
 		$row = $cmb2Grid->addRow();
 		$field1 = $cmb_demo->add_field( array(
-			'name' => __( 'Text', $this->plugin_slug ),
-			'desc' => __( 'field description (optional)', $this->plugin_slug ),
-			'id' => $prefix . $this->plugin_slug . '_text',
-			'type' => 'text'
-		) );
+		    'name' => __( 'Text', $this->plugin_slug ),
+		    'desc' => __( 'field description (optional)', $this->plugin_slug ),
+		    'id' => $prefix . $this->plugin_slug . '_text',
+		    'type' => 'text'
+			) );
 
 		$field2 = $cmb_demo->add_field( array(
-			'name' => __( 'Text Small', $this->plugin_slug ),
-			'desc' => __( 'field description (optional)', $this->plugin_slug ),
-			'id' => $prefix . $this->plugin_slug . '_textsmall',
-			'type' => 'text_small'
-		) );
-		$row->addColumns(array($field1, $field2));
+		    'name' => __( 'Text Small', $this->plugin_slug ),
+		    'desc' => __( 'field description (optional)', $this->plugin_slug ),
+		    'id' => $prefix . $this->plugin_slug . '_textsmall',
+		    'type' => 'text_small'
+			) );
+		$row->addColumns( array( $field1, $field2 ) );
 	}
 
 	/**
@@ -496,15 +514,15 @@ class Plugin_Name_Admin {
 
 		// Only display on the pages - post.php and post-new.php, but only on the `demo` post_type
 		WP_Contextual_Help::register_tab( 'demo-example', __( 'Demo Management', $this->plugin_slug ), array(
-			'page' => array( 'post.php', 'post-new.php' ),
-			'post_type' => 'demo',
-			'wpautop' => true
+		    'page' => array( 'post.php', 'post-new.php' ),
+		    'post_type' => 'demo',
+		    'wpautop' => true
 		) );
 
 		// Add to a custom plugin settings page
 		WP_Contextual_Help::register_tab( 'pn_settings', __( 'Boilerplate Settings', $this->plugin_slug ), array(
-			'page' => 'settings_page_' . $this->plugin_slug,
-			'wpautop' => true
+		    'page' => 'settings_page_' . $this->plugin_slug,
+		    'wpautop' => true
 		) );
 	}
 
@@ -519,15 +537,15 @@ class Plugin_Name_Admin {
 	 */
 	function custom_initial_pointers( $pointers, $prefix ) {
 		return array_merge( $pointers, array(
-			$prefix . '_contextual_tab' => array(
-				'selector' => '#contextual-help-link',
-				'title' => __( 'PBoilerplate Help', $this->plugin_slug ),
-				'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', $this->plugin_slug ),
-				'edge' => 'top',
-				'align' => 'right',
-				'icon_class' => 'dashicons-welcome-learn-more',
-			)
-				) );
+		    $prefix . '_contextual_tab' => array(
+			'selector' => '#contextual-help-link',
+			'title' => __( 'PBoilerplate Help', $this->plugin_slug ),
+			'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', $this->plugin_slug ),
+			'edge' => 'top',
+			'align' => 'right',
+			'icon_class' => 'dashicons-welcome-learn-more',
+		    )
+			) );
 	}
 
 }

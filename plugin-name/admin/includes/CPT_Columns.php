@@ -4,13 +4,14 @@
 //Some info:
 //  The classes read the meta field of the CPT ID and enable the sorting
 //  Is possible remove other column
-//  Support 4 type of object natively: Title, Thumbnail, Custom taxonomy, Custom Field
+//  Support 5 type of object natively: Title, Thumbnail, Author, Custom taxonomy, Custom Field
 //  Add a filter cpt_columns_text_{column_name_id} in Title type
 //  prefix/suffix values are for all the objects except post_thumb
 //  New features by Mte90:
 //    Fix for def value
 //    New order columns value
 //    Custom callback for the value
+//    Support for author type
 //Check the example!
 
 /* Example
@@ -263,6 +264,11 @@ if ( !class_exists( 'CPT_columns' ) ) {
 				case 'post_meta':
 					$tmp = get_post_meta( $post_id, $column[ 'meta_key' ], true );
 					echo (!empty( $tmp )) ? $tmp : $column[ 'def' ];
+					break;
+				case 'author':
+					$author_id = get_post_field( 'post_author', $post_id );
+					$post_type = get_post_type( $post_id );
+					echo '<a href="' . admin_url() . 'edit.php?post_type=' . $post_type . '&author=' . $author_id . '">' . get_the_author_meta( 'user_nicename', $author_id ) . '</a>';
 					break;
 				case 'custom_tax':
 					$post_type = get_post_type( $post_id );

@@ -1,5 +1,8 @@
+
+
 ## 1.1.6
 
+* New Debug system for Debug Bar
 * Support for activity dashboard widget
 
 ## 1.1.5

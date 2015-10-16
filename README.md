@@ -19,7 +19,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * [CMB2](https://github.com/WebDevStudios/CMB2)
 * [CMB2-Shortcode](https://github.com/jtsternberg/Shortcode_Button)
 * [CMB2-grid](https://github.com/origgami/CMB2-grid)
-* [WordPress Widgets Helper Class](https://github.com/jabga/WordPress-Widgets-Helper-Class) 
+* [WordPress Widgets Helper Class](https://github.com/sksmatt/WordPress-Widgets-Helper-Class/) with improvements
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
 * [PointerPlus](https://github.com/Mte90/pointerplus) integrated

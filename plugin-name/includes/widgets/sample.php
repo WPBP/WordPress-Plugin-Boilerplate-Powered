@@ -25,7 +25,7 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 			'desc' => __( 'Enter the widget title.', $this->plugin_slug ),
 			// field id		
 			'id' => 'title',
-			// field type ( text, checkbox, textarea, select, select-group, taxonomy, pages, hidden )
+			// field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
 			'type' => 'text',
 			// class, rows, cols								
 			'class' => 'widefat',

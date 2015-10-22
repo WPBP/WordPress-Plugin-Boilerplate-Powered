@@ -3,6 +3,7 @@
 * New Debug system for Debug Bar
 * Support for activity dashboard widget
 * New fields for Widgets Helper Class by riesurya
+* Added CronPlus
 
 ## 1.1.5
 

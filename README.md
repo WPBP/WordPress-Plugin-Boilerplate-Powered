@@ -23,6 +23,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
 * [PointerPlus](https://github.com/Mte90/pointerplus) integrated
+* [CronPlus](https://github.com/Mte90/CronPlus) integrated
 * Function for custom template (like WooCommerce) in `includes/template.php`
 * Fake Page class in `includes/language.php` in `includes/fake-page.php`
 * Language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`

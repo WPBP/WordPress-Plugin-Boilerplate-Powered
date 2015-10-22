@@ -22,3 +22,6 @@
 [submodule "plugin-name/admin/includes/CMB2-grid"]
 	path = plugin-name/admin/includes/CMB2-grid
 	url = git@github.com:origgami/CMB2-grid.git
+[submodule "plugin-name/admin/includes/CronPlus"]
+	path = plugin-name/admin/includes/CronPlus
+	url = git@github.com:Mte90/CronPlus.git

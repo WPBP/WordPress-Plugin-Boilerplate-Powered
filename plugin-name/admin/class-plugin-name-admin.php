@@ -161,7 +161,7 @@ class Plugin_Name_Admin {
 		/*
 		 * Load PointerPlus for the Wp Pointer
 		 * 
-		 * Unique paramter is the prefix
+		 * Unique parameter is the prefix
 		 */
 		if ( !class_exists( 'PointerPlus' ) ) {
 			require_once( plugin_dir_path( __FILE__ ) . 'includes/PointerPlus/class-pointerplus.php' );
@@ -170,6 +170,27 @@ class Plugin_Name_Admin {
 		//With this you can reset all the pointer with your prefix
 		//$pointerplus->reset_pointer();
 		add_filter( 'pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
+
+		/*
+		 * Load CronPlus 
+		 * 
+		 */
+		if ( !class_exists( 'CronPlus' ) ) {
+			require_once( plugin_dir_path( __FILE__ ) . 'includes/CronPlus/class-cronplus.php' );
+		}
+		$args = array(
+		    'recurrence' => 'hourly',
+		    'schedule' => 'schedule',
+		    'name' => 'cronplusexample',
+		    'cb' => 'cronplus_example'
+		);
+
+		function cronplus_example() {
+			echo 123;
+		}
+
+		$cronplus = new CronPlus( $args );
+		$cronplus->schedule_event();
 
 		/*
 		 * Load CPT_Columns

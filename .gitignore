@@ -18,6 +18,7 @@ Thumbs.db
 .settings
 .tmproj
 *.esproj
+.netbeans.xml
 nbproject
 *.sublime-project
 *.sublime-workspace

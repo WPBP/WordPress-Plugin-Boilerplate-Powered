@@ -4,6 +4,7 @@
 * Support for activity dashboard widget
 * New fields for Widgets Helper Class by riesurya
 * Added CronPlus
+* CPT_Columns support the sort for custom_value
 
 ## 1.1.5
 

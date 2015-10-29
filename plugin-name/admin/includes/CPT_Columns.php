@@ -12,6 +12,7 @@
 //    New order columns value
 //    Custom callback for the value
 //    Support for author type
+//    Support for sort for custom_value
 //Check the example!
 
 /* Example
@@ -60,7 +61,8 @@
   array(
   'label'    => __('Custom Callback'),
   'type'     => 'custom_value',
-  'meta_key' => 'your_callback_function', // array( $this, 'your_callback_method')in a class
+  'meta_key'  => 'your_meta_value',
+  'callback' => 'your_callback_function', // array( $this, 'your_callback_method')in a class
   'orderby' => 'meta_value', //meta_value,meta_value_num
   'sortable' => true,
   'prefix' => "$",
@@ -312,12 +314,29 @@ if ( !class_exists( 'CPT_columns' ) ) {
 			}
 
 			$orderby = $query->get( 'orderby' );
-			$keys = array_keys( ( array ) $this->cpt_sortable_columns );
-			if ( in_array( $orderby, $keys ) ) {
-				//order by meta
-				if ( 'post_meta' == $this->cpt_sortable_columns[ $orderby ][ 'type' ] ) {
-					$query->set( 'meta_key', $orderby );
-					$query->set( 'orderby', $this->cpt_sortable_columns[ $orderby ][ 'orderby' ] );
+			if ( (!empty( $orderby ) && isset( $this->cpt_sortable_columns[ $orderby ] )) && $this->cpt_sortable_columns[ $orderby ][ 'type' ] === 'custom_value' ) {
+				$query->set( 'orderby', 'meta_value' );
+				//$query->set( 'meta_key', $this->cpt_sortable_columns[ $orderby ][ 'meta_key' ] );
+				$query->set( 'meta_query', array(
+				    'relation' => 'OR',
+				    array(
+					'key' => $this->cpt_sortable_columns[ $orderby ][ 'meta_key' ],
+					'compare' => 'NOT EXISTS',
+					'value' => ''
+				    ),
+				    array(
+					'key' => $this->cpt_sortable_columns[ $orderby ][ 'meta_key' ],
+					'compare' => 'EXISTS',
+				    )
+				) );
+			} else {
+				$keys = array_keys( ( array ) $this->cpt_sortable_columns );
+				if ( in_array( $orderby, $keys ) ) {
+					//order by meta
+					if ( 'post_meta' == $this->cpt_sortable_columns[ $orderby ][ 'type' ] ) {
+						$query->set( 'meta_key', $orderby );
+						$query->set( 'orderby', $this->cpt_sortable_columns[ $orderby ][ 'orderby' ] );
+					}
 				}
 			}
 		}

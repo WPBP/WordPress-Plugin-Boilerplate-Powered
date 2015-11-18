@@ -15,7 +15,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Plugin Boilerplate Powered is based on Plugin Boilerplate by Tom McFarlin
 * Checked the minimum version required with PHPCompatInfo (PHP 5.2)
 * Sass support with Compass and Grunt
-* [CPT Core](https://github.com/jtsternberg/CPT_Core) and [Taxonomy Core](https://github.com/jtsternberg/Taxonomy_Core) integrated
+* [CPT Core](https://github.com/WebDevStudios/CPT_Core) and [Taxonomy Core](https://github.com/WebDevStudios/Taxonomy_Core) integrated
 * [CMB2](https://github.com/WebDevStudios/CMB2)
 * [CMB2-Shortcode](https://github.com/jtsternberg/Shortcode_Button)
 * [CMB2-grid](https://github.com/origgami/CMB2-grid)
@@ -57,10 +57,10 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 
 * wp-boilerplate-version.sh (check below)
 * phpcompatinfo.json for [PHP Compat Info](https://github.com/llaville/php-compat-info)
-* .php_cs for [PHP-CS-Fixer](https://github.com/fabpot/PHP-CS-Fixer)
+* .php_cs for [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 * apigen.sh script for generate a docs folder with the documentation
 
-Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-to-the-Script-and-CLI-tool) for discover how to use this script!
+Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) for discover how to use this script!
 
 ###Useful resources or code examples
 
@@ -94,10 +94,6 @@ Because the Boilerplate has no real functionality, nothing will be added to Word
 
 For WordPress Plugin Boilerplate Powered exist a Yeoman generator that allows you to choose the libraries you need with a small customization.  
 Link to repo: [https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/](https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/)
-
-###Vagrant
-
-Exist also a VVV modded version (Vagrant configuration) called [VVVWPBP](https://github.com/Mte90/VVVWPBP) that contain Compass, PHPCompatInfo, ApiGen and Yeoman for a fast development (the missing tool from the original VVV).
 
 ##License
 

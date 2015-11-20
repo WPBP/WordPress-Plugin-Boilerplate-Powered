@@ -56,7 +56,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 ###Included
 
 * wp-boilerplate-version.sh (check below)
-* phpcompatinfo.json for [PHP Compat Info](https://github.com/llaville/php-compat-info)
+* .compatinfomin.php for [PHP Compat Info](https://github.com/llaville/php-compat-info) check on [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools)
 * .php_cs for [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 * apigen.sh script for generate a docs folder with the documentation
 

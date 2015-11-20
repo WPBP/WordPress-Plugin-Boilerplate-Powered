@@ -5,6 +5,7 @@
 * New fields for Widgets Helper Class by riesurya
 * Added CronPlus
 * CPT_Columns support the sort for custom_value
+* Update instructions for PHP CompatInfo 4.x
 
 ## 1.1.5
 

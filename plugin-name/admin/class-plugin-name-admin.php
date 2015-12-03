@@ -182,10 +182,10 @@ class Plugin_Name_Admin {
 		    'recurrence' => 'hourly',
 		    'schedule' => 'schedule',
 		    'name' => 'cronplusexample',
-		    'cb' => 'cronplus_example'
+		    'cb' => 'cronplus_example_cb'
 		);
 
-		function cronplus_example() {
+		function cronplus_example_cb() {
 			echo 123;
 		}
 

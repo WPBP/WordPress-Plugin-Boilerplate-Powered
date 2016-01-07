@@ -6,7 +6,7 @@
  * example use https://gist.github.com/Mte90/fe687ceed408ab743238
  * 
  * @package   Plugin_Name
- * @author Mte90 <mte90net@gmail.com>
+ * @author    Mte90 <mte90net@gmail.com>
  * @license   GPL-2.0+
  * @copyright 2014-2015
  */
@@ -27,7 +27,7 @@ if ( !function_exists( 'get_language' ) ) {
 		} elseif ( function_exists( 'pll_current_language' ) ) {
 			return pll_current_language();
 		} else {
-			//return a 2-4 letters code
+			// Return a 2-4 letters code
 			return get_locale();
 		}
 	}
@@ -39,9 +39,9 @@ if ( !function_exists( 'get_language' ) ) {
  *
  * @since   1.0.0
  *
- * @param     string   $plugin_name_human_format  The Plugin name 
- * @param     string   $string_name               The name of the string
- * @param     string   $value					  The value
+ * @param string $plugin_name_human_format The Plugin name .
+ * @param string $string_name The name of the string.
+ * @param string $value The value.
  */
 if ( !function_exists( 'register_string' ) ) {
 
@@ -68,8 +68,8 @@ if ( !function_exists( 'register_string' ) ) {
  *
  * @since   1.0.0
  *
- * @param     string   $plugin_name_human_format  The Plugin name 
- * @param     string   $string_name               The name of the string
+ * @param string $plugin_name_human_format The Plugin name.
+ * @param string $string_name The name of the string.
  */
 if ( !function_exists( 'deregister_string' ) ) {
 
@@ -89,9 +89,10 @@ if ( !function_exists( 'deregister_string' ) ) {
  *
  * @since   1.0.0
  *
- * @param     string   $plugin_name_human_format  The Plugin name 
- * @param     string   $string_name               The name of the string
- * @param     string   $value					  The value
+ * @param string $plugin_name_human_format The Plugin name.
+ * @param string $string_name The name of the string.
+ * @param string $value	The value.
+ * @return string The string
  */
 if ( !function_exists( 'get_string' ) ) {
 

@@ -41,7 +41,8 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * wp_localize_script for pass PHP var to JS in the frontend
 * Class in frontend body with the slug of plugin
 * Support for your CPTs in At glance widget in dashboard
-* Support for CMBF in the options page
+* Support for CMB in the options page
+* Support for email template with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
 
 ###WordPress Plugin Boilerplate Feature

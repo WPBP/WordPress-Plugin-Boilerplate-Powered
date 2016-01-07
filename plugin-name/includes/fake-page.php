@@ -1,6 +1,8 @@
 <?php
 /**
  * Simple class that generate a fake page on the fly
+ * Based on https://coderwall.com/p/fwea7g
+ * Update to work on last Wordpress version
  *
  * @package   Plugin_Name
  * @author    Ohad Raz & Mte90 <mte90net@gmail.com>
@@ -8,8 +10,6 @@
  * @copyright 2014-2015
  */
 
-//Based on https://coderwall.com/p/fwea7g
-//Update to work on last Wordpress versione
 
 if ( !class_exists( 'Fake_Page' ) ) {
 
@@ -43,17 +43,17 @@ if ( !class_exists( 'Fake_Page' ) ) {
 		public function fake_page_filter( $posts ) {
 			global $wp, $wp_query;
 
-			//check if user is requesting our fake page
+			// Check if user is requesting our fake page
 			if (
 				count( $posts ) === 0 &&
 				(strtolower( $wp->request ) === $this->slug ||
 				isset( $wp->query_vars[ 'page_id' ] ) && $wp->query_vars[ 'page_id' ] === $this->slug )
 			) {
-				//create a fake post
+				// Create a fake post
 				$post = new stdClass;
 				$post->ID = $this->id;
 				$post->post_author = 1;
-				//dates may need to be overwritten if you have a "recent posts" widget or similar - set to whatever you want
+				// Dates may need to be overwritten if you have a "recent posts" widget or similar - set to whatever you want
 				$post->post_date = current_time( 'mysql' );
 				$post->post_date_gmt = current_time( 'mysql', 1 );
 				$post->post_title = $this->args[ 'post_title' ];

@@ -1,3 +1,7 @@
+## 1.1.7
+
+* Support for email template with language detection
+
 ## 1.1.6
 
 * New Debug system for Debug Bar

@@ -73,6 +73,17 @@ if ( is_multisite() ) {
 			  }
 			  rmdir($directory);
 			  }
+			  // Delete post meta data
+			  $posts = get_posts(array('posts_per_page' => -1));
+			  foreach ($posts as $post) {
+			    $post_meta = get_post_meta($post->ID);
+			    delete_post_meta($post->ID, 'your-post-meta');
+			  }
+			  // Delete user meta data
+			  $users = get_users();
+			  foreach ($users as $user) {
+			    delete_user_meta($user->ID, 'your-user-meta');
+			  }
 			  //info: remove and optimize tables
 			  $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
 			  $GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
@@ -110,6 +121,17 @@ if ( is_multisite() ) {
 	  unlink($v);
 	  }
 	  rmdir($directory);
+	  }
+	  // Delete post meta data
+	  $posts = get_posts(array('posts_per_page' => -1));
+	  foreach ($posts as $post) {
+	      $post_meta = get_post_meta($post->ID);
+	      delete_post_meta($post->ID, 'your-post-meta');
+	  }
+	  // Delete user meta data
+	  $users = get_users();
+	  foreach ($users as $user) {
+	    delete_user_meta($user->ID, 'your-user-meta');
 	  }
 	  //info: remove and optimize tables
 	  $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");

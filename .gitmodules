@@ -22,3 +22,6 @@
 [submodule "plugin-name/admin/includes/CronPlus"]
 	path = plugin-name/admin/includes/CronPlus
 	url = git@github.com:Mte90/CronPlus.git
+[submodule "plugin-name/admin/includes/CMB2-Google-Maps"]
+	path = plugin-name/admin/includes/CMB2-Google-Maps
+	url = git@github.com:mustardBees/cmb_field_map.git

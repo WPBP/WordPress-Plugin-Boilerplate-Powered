@@ -99,11 +99,11 @@ class Plugin_Name_Admin {
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php' );
 		/*
-		 * CMB2 Shortcode support 
+		 * CMB2 CMB2-Google-Maps support 
 		 * Check on the repo for the example and documentation 
-		 * https://github.com/jtsternberg/Shortcode_Button
+		 * https://github.com/mustardBees/cmb_field_map
 		 */
-		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-Shortcode/shortcode-button.php' );
+		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-Google-Maps/cmb-field-map.php' );
 		/*
 		 * CMB2 Grid 
 		 * Check on the repo for the example and documentation 

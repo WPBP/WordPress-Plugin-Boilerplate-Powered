@@ -7,7 +7,7 @@
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
- * @copyright 2015 Your Name or Company Name
+ * @copyright 2016 Your Name or Company Name
  */
 
 /**
@@ -182,12 +182,8 @@ class Plugin_Name_Admin {
 		    'recurrence' => 'hourly',
 		    'schedule' => 'schedule',
 		    'name' => 'cronplusexample',
-		    'cb' => 'cronplus_example_cb'
+			//'cb' => 'cronplus_example_cb'
 		);
-
-		function cronplus_example_cb() {
-			echo 123;
-		}
 
 		$cronplus = new CronPlus( $args );
 		$cronplus->schedule_event();
@@ -205,10 +201,10 @@ class Plugin_Name_Admin {
 		    'meta_key' => '_demo_' . $this->plugin_slug . '_text',
 		    'orderby' => 'meta_value',
 		    'sortable' => true,
-		    'prefix' => "<b>",
-		    'suffix' => "</b>",
-		    'def' => "Not defined", // default value in case post meta not found
-		    'order' => "-1"
+		    'prefix' => '<b>',
+		    'suffix' => '</b>',
+		    'def' => 'Not defined', // default value in case post meta not found
+		    'order' => '-1'
 			)
 		);
 	}
@@ -429,10 +425,10 @@ class Plugin_Name_Admin {
 
 			if ( $cpt_count->pending ) {
 				// Menu link suffix, Post is different from the rest
-				$suffix = ( 'post' == $type ) ? '' : "?post_type=$type";
+				$suffix = ( 'post' == $type ) ? '' : '?post_type=' . $type;
 
 				// Locate the key of 
-				$key = self::recursive_array_search_php( "edit.php$suffix", $menu );
+				$key = self::recursive_array_search_php( 'edit.php' . $suffix, $menu );
 
 				// Not found, just in case 
 				if ( !$key ) {

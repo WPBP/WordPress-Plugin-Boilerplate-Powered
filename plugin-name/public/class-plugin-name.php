@@ -7,7 +7,7 @@
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
- * @copyright 2015 Your Name or Company Name
+ * @copyright 2016 Your Name or Company Name
  */
 
 /**
@@ -87,22 +87,22 @@ class Plugin_Name {
 	 * @var array
 	 */
 	protected static $plugin_roles = array(
-		'administrator' => array(
-			'edit_demo' => true,
-			'edit_others_demo' => true,
-		),
-		'editor' => array(
-			'edit_demo' => true,
-			'edit_others_demo' => true,
-		),
-		'author' => array(
-			'edit_demo' => true,
-			'edit_others_demo' => false,
-		),
-		'subscriber' => array(
-			'edit_demo' => false,
-			'edit_others_demo' => false,
-		),
+	    'administrator' => array(
+		'edit_demo' => true,
+		'edit_others_demo' => true,
+	    ),
+	    'editor' => array(
+		'edit_demo' => true,
+		'edit_others_demo' => true,
+	    ),
+	    'author' => array(
+		'edit_demo' => true,
+		'edit_others_demo' => false,
+	    ),
+	    'subscriber' => array(
+		'edit_demo' => false,
+		'edit_others_demo' => false,
+	    ),
 	);
 
 	/**
@@ -117,26 +117,26 @@ class Plugin_Name {
 
 		// Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
 		register_via_cpt_core(
-				array( __( 'Demo', $this->get_plugin_slug() ), __( 'Demos', $this->get_plugin_slug() ), 'demo' ), array(
-			'taxonomies' => array( 'demo-section' ),
-			'capabilities' => array(
-				'edit_post' => 'edit_demo',
-				'edit_others_posts' => 'edit_others_demo',
-			),
-			'map_meta_cap' => true
-				)
+			array( __( 'Demo', $this->get_plugin_slug() ), __( 'Demos', $this->get_plugin_slug() ), 'demo' ), array(
+		    'taxonomies' => array( 'demo-section' ),
+		    'capabilities' => array(
+			'edit_post' => 'edit_demo',
+			'edit_others_posts' => 'edit_others_demo',
+		    ),
+		    'map_meta_cap' => true
+			)
 		);
 
 		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
 
 		// Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
 		register_via_taxonomy_core(
-				array( __( 'Demo Section', $this->get_plugin_slug() ), __( 'Demo Sections', $this->get_plugin_slug() ), 'demo-section' ), array(
-			'public' => true,
-			'capabilities' => array(
-				'assign_terms' => 'edit_posts',
-			)
-				), array( 'demo' )
+			array( __( 'Demo Section', $this->get_plugin_slug() ), __( 'Demo Sections', $this->get_plugin_slug() ), 'demo-section' ), array(
+		    'public' => true,
+		    'capabilities' => array(
+			'assign_terms' => 'edit_posts',
+		    )
+			), array( 'demo' )
 		);
 
 		add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );
@@ -296,7 +296,7 @@ class Plugin_Name {
 		self::single_activate();
 		restore_current_blog();
 	}
-	
+
 	/**
 	 * Add support for custom CPT on the search box
 	 *
@@ -324,12 +324,11 @@ class Plugin_Name {
 	 * @return   array|false    The blog ids, false if no matches.
 	 */
 	private static function get_blog_ids() {
-
 		global $wpdb;
 
 		// get an array of blog ids
-		$sql = "SELECT blog_id FROM $wpdb->blogs
-			WHERE archived = '0' AND spam = '0'
+		$sql = 'SELECT blog_id FROM ' . $wpdb->blogs .
+			" WHERE archived = '0' AND spam = '0'
 			AND deleted = '0'";
 
 		return $wpdb->get_col( $sql );
@@ -344,13 +343,12 @@ class Plugin_Name {
 		//Requirements Detection System - read the doc/example in the library file
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/requirements.php' );
 		new Plugin_Requirements( self::$plugin_name, self::$plugin_slug, array(
-			'WP' => new WordPress_Requirement( '4.1.0' )
-				) );
+		    'WP' => new WordPress_Requirement( '4.1.0' )
+			) );
 
 		// @TODO: Define activation functionality here
-		
 		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
-		
+
 		global $wp_roles;
 		if ( !isset( $wp_roles ) ) {
 			$wp_roles = new WP_Roles;
@@ -408,8 +406,8 @@ class Plugin_Name {
 	 */
 	public function enqueue_js_vars() {
 		wp_localize_script( $this->get_plugin_slug() . '-plugin-script', 'pn_js_vars', array(
-			'alert' => __( 'Hey! You have clicked the button!', $this->get_plugin_slug() )
-				)
+		    'alert' => __( 'Hey! You have clicked the button!', $this->get_plugin_slug() )
+			)
 		);
 	}
 
@@ -472,8 +470,6 @@ class Plugin_Name {
 	 */
 	public function shortcode_method_name() {
 		// @TODO: Define your shortcode here
-		// Check for the CMB2 Shortcode Button
-		// In bundle with the boilerplate https://github.com/jtsternberg/Shortcode_Button
 	}
 
 }

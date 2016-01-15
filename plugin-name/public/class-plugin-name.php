@@ -230,9 +230,7 @@ class Plugin_Name {
 	 */
 	public static function activate( $network_wide ) {
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-
 			if ( $network_wide ) {
-
 				// Get all blog ids
 				$blog_ids = self::get_blog_ids();
 
@@ -263,9 +261,7 @@ class Plugin_Name {
 	 */
 	public static function deactivate( $network_wide ) {
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-
 			if ( $network_wide ) {
-
 				// Get all blog ids
 				$blog_ids = self::get_blog_ids();
 
@@ -352,6 +348,8 @@ class Plugin_Name {
 				) );
 
 		// @TODO: Define activation functionality here
+		
+		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
 		
 		global $wp_roles;
 		if ( !isset( $wp_roles ) ) {

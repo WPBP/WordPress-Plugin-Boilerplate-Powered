@@ -49,12 +49,7 @@ if ( !function_exists( 'register_string' ) ) {
 		if ( function_exists( 'icl_register_string' ) ) {
 			icl_register_string( $plugin_name_human_format, $string_name, $value );
 		} elseif ( has_filter( 'cml_my_translations' ) ) {
-			add_filter( 'cml_my_translations', create_function( "$groups, $plugin_name_human_format", "
-            $plugin_name_human_format_replaced = str_replace( ' ', '-', $plugin_name_human_format );
-            CMLTranslations:add( $string_name, $value, $plugin_name_human_format );
-            $groups[$plugin_name_human_format_replaced] = $plugin_name_human_format;
-            return $groups;"
-			) );
+			CMLTranslations::add( $string_name, $value, str_replace( ' ', '-', $plugin_name_human_format ) );
 		} elseif ( function_exists( 'pll_register_string' ) ) {
 			$plugin_name_human_format_replaced = str_replace( ' ', '-', $plugin_name_human_format );
 			pll_register_string( $plugin_name_human_format_replaced, $string_name );
@@ -100,7 +95,7 @@ if ( !function_exists( 'get_string' ) ) {
 		if ( function_exists( 'icl_t' ) ) {
 			return icl_t( $plugin_name_human_format, $string_name, $value );
 		} elseif ( has_filter( 'cml_my_translations' ) ) {
-			return CMLTranslations::get( CMLLanguage::get_current_id(), $string_name, str_replace( ' ', '-', $plugin_name_human_format ) );
+			return CMLTranslations::get( CMLLanguage::get_current_id(), strtolower( $string_name ), str_replace( ' ', '-', $plugin_name_human_format, $true ) );
 		} elseif ( function_exists( 'pll__' ) ) {
 			return pll__( $string_name );
 		} else {

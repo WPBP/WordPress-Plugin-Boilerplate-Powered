@@ -9,9 +9,8 @@
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com
- * @copyright 2015 Your Name or Company Name
+ * @copyright 2016 Your Name or Company Name
  */
-
 ?>
 
 <div class="wrap">
@@ -167,21 +166,21 @@
 		'id' => $this->plugin_slug . '_text_taxonomy_radio',
 		'type' => 'taxonomy_radio',
 		'taxonomy' => 'category', // Taxonomy Slug
-		// 'inline'  => true, // Toggles display to inline
+		    // 'inline'  => true, // Toggles display to inline
 	    ) );
 	    $cmb->add_field( array(
 		'name' => __( 'Test Taxonomy Select', $this->plugin_slug ),
 		'desc' => __( 'field description (optional)', $this->plugin_slug ),
 		'id' => $this->plugin_slug . '_taxonomy_select',
 		'type' => 'taxonomy_select',
-		'taxonomy' => 'category',// Taxonomy Slug
+		'taxonomy' => 'category', // Taxonomy Slug
 	    ) );
 	    $cmb->add_field( array(
 		'name' => __( 'Test Taxonomy Multi Checkbox', $this->plugin_slug ),
 		'desc' => __( 'field description (optional)', $this->plugin_slug ),
 		'id' => $this->plugin_slug . '_multitaxonomy',
 		'type' => 'taxonomy_multicheck',
-		'taxonomy' => 'category',// Taxonomy Slug
+		'taxonomy' => 'category', // Taxonomy Slug
 	    ) );
 	    $cmb->add_field( array(
 		'name' => __( 'Test Checkbox', $this->plugin_slug ),
@@ -218,7 +217,7 @@
 		'desc' => __( 'Upload or add multiple images/attachments.', $this->plugin_slug ),
 		'id' => $this->plugin_slug . '_file_list',
 		'type' => 'file_list',
-		'preview_size' => array( 100, 100 ),// Default: array( 50, 50 )
+		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	    ) );
 	    $cmb->add_field( array(
 		'name' => __( 'oEmbed', $this->plugin_slug ),
@@ -230,7 +229,7 @@
 		'name' => 'Testing Field Parameters',
 		'id' => $this->plugin_slug . '_parameters',
 		'type' => 'text',
-		'before_row' => '<p>before_row_if_2</p>',// Callback
+		'before_row' => '<p>before_row_if_2</p>', // Callback
 		'before' => '<p>Testing <b>"before"</b> parameter</p>',
 		'before_field' => '<p>Testing <b>"before_field"</b> parameter</p>',
 		'after_field' => '<p>Testing <b>"after_field"</b> parameter</p>',
@@ -306,10 +305,12 @@
 	</div>
     </div>
 
-    <div class="right-column-settings-page postbox">
-	<h3 class="hndle"><span><?php _e( 'Plugin Name.', $this->plugin_slug ); ?></span></h3>
-	<div class="inside">
-	    <a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered"><img src="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/raw/master/plugin-name/assets/icon-256x256.png" alt=""></a>
+    <div class="right-column-settings-page metabox-holder">
+	<div class="postbox">
+	    <h3 class="hndle"><span><?php _e( 'Plugin Name.', $this->plugin_slug ); ?></span></h3>
+	    <div class="inside">
+		<a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered"><img src="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/raw/master/plugin-name/assets/icon-256x256.png" alt=""></a>
+	    </div>
 	</div>
     </div>
 </div>

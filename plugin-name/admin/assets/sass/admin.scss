@@ -1,14 +1,13 @@
 // This stylesheet is used to style the admin option form of the plugin.
 
 // Tabs
-
 .ui-state-default {
 	display: inline;
 	border-color: rgb(204, 204, 204);
 	border-width: 1px;
 	border-style:solid;
 	border-bottom-width: 0px;
-	padding: 11px 0px;
+	padding: 12px 0px;
 	background: none repeat scroll 0% 0% rgb(228, 228, 228);
 }
 
@@ -37,9 +36,26 @@
 	background: rgb(239, 239, 239) !important;
 }
 
-.postbox h3 {
-	padding-left: 10px;
+// Settings page
+.metabox-holder {
+	.postbox {
+		max-width:100%;
+		h3 {
+			padding-left: 10px;
+		}
+	}
 }
+
+.settings-tab {
+	float:left;
+}
+
+.right-column-settings-page {
+	max-width:270px;
+	float:right;
+}
+
+// Dashboard
 
 #dashboard_right_now a.demo-count:before {
 	content: "\f115";

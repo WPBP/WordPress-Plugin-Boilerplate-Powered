@@ -1,6 +1,9 @@
 ## 1.1.7
 
 * Support for email template with language detection
+* Added CMB2 GOogle Maps field
+* Remove CMB2 Shortcode
+* Fix in admin settings CSS
 
 ## 1.1.6
 

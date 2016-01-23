@@ -25,3 +25,9 @@
 [submodule "plugin-name/admin/includes/CMB2-Google-Maps"]
 	path = plugin-name/admin/includes/CMB2-Google-Maps
 	url = git@github.com:mustardBees/cmb_field_map.git
+[submodule "plugin-name/includes/freemius"]
+	path = plugin-name/includes/freemius
+	url = git@github.com:Freemius/wordpress-sdk.git
+[submodule "plugin-name/includes/wp-background-processing"]
+	path = plugin-name/includes/wp-background-processing
+	url = git@github.com:A5hleyRich/wp-background-processing.git

@@ -113,6 +113,7 @@ if ( is_multisite() ) {
 	/* @TODO: delete all transient, options and files you may have added
 	  delete_transient( 'TRANSIENT_NAME' );
 	  delete_option('OPTION_NAME');
+	  remove_role('advanced');
 	  //info: remove custom file directory for main site
 	  $upload_dir = wp_upload_dir();
 	  $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;

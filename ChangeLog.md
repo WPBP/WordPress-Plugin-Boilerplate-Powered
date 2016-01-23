@@ -2,6 +2,8 @@
 
 * Support for email template with language detection
 * Added CMB2 Google Maps field
+* Added Freemius SDK
+* Added WP Background Processing
 * Remove CMB2 Shortcode
 * Fix in admin settings CSS
 * Improved uninstall.php page

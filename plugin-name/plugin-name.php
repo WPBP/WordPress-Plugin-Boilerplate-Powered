@@ -51,6 +51,34 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
 
+// Create a helper function for easy SDK access.
+function pn_fs() {
+    global $pn_fs;
+
+    if ( ! isset( $pn_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/includes/freemius/start.php';
+
+        $pn_fs = fs_dynamic_init( array(
+            'id'                => '',
+            'slug'              => 'plugin-name',
+            'public_key'        => '',
+            'is_live'           => false,
+            'is_premium'        => true,
+            'has_addons'        => false,
+            'has_paid_plans'    => true,
+            'menu'              => array(
+                'slug'       => 'plugin-name'
+            ),
+        ) );
+    }
+
+    return $pn_fs;
+}
+
+// Init Freemius.
+pn_fs();
+
 /*
  * Load Widgets Helper
  */

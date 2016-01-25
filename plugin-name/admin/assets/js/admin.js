@@ -1,10 +1,6 @@
 (function($) {
-  "use strict";
-
+  'use strict';
   $(function() {
     $('#tabs').tabs();
-    // Place your administration-specific JavaScript here
-
   });
-
-}(jQuery));
+})(jQuery);

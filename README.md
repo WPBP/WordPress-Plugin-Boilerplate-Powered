@@ -15,16 +15,19 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Plugin Boilerplate Powered is based on Plugin Boilerplate by Tom McFarlin
 * Checked the minimum version required with PHPCompatInfo (PHP 5.2)
 * Sass support with Compass and Grunt
+* CoffeeScript support Grunt (not mandatory with the Yeoman generator)
 * [CPT Core](https://github.com/WebDevStudios/CPT_Core) and [Taxonomy Core](https://github.com/WebDevStudios/Taxonomy_Core) integrated
-* [CMB2](https://github.com/WebDevStudios/CMB2)
-* [CMB2-Shortcode](https://github.com/jtsternberg/Shortcode_Button)
-* [CMB2-grid](https://github.com/origgami/CMB2-grid)
+* [CMB2](https://github.com/WebDevStudios/CMB2) integrated
+* [CMB2-Google-Maps](https://github.com/mustardBees/cmb_field_map) integrated
+* [CMB2-Grid](https://github.com/origgami/CMB2-grid) integrated
 * [WordPress Widgets Helper Class](https://github.com/sksmatt/WordPress-Widgets-Helper-Class/) with improvements
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
 * [PointerPlus](https://github.com/Mte90/pointerplus) integrated
 * [CronPlus](https://github.com/Mte90/CronPlus) integrated
-* Function for custom template (like WooCommerce) in `includes/template.php`
+* [WP Background Processing](https://github.com/A5hleyRich/wp-background-processing) integrated
+* [Freemius SDK](https://github.com/Freemius/wordpress-sdk) integrated
+* Function for custom template (like WooCommerce) also for email with multilanguage in `includes/template.php`
 * Fake Page class in `includes/language.php` in `includes/fake-page.php`
 * Language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
 * [Modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
@@ -41,6 +44,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * wp_localize_script for pass PHP var to JS in the frontend
 * Class in frontend body with the slug of plugin
 * Support for your CPTs in At glance widget in dashboard
+* Support for your CPTs in Activity widget in dashboard
 * Support for CMB in the options page
 * Support for email template with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)

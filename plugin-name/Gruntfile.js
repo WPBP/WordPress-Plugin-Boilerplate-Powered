@@ -27,7 +27,8 @@ module.exports = function (grunt) {
           sassDir: 'public/assets/sass',
           cssDir: 'public/assets/css',
           outputStyle: 'expanded',
-          relativeAssets: true
+          relativeAssets: true,
+          sourcemap: true
         }
       },
       publicDev: {
@@ -38,7 +39,8 @@ module.exports = function (grunt) {
           sassDir: 'public/assets/sass',
           cssDir: 'public/assets/css',
           outputStyle: 'expanded',
-          relativeAssets: true
+          relativeAssets: true,
+          sourcemap: true
         }
       }
     },

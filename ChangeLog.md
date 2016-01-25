@@ -5,7 +5,7 @@
 * Added Freemius SDK
 * Added WP Background Processing
 * Added CoffeeScript files and Grunt configuration
-* Remove CMB2 Shortcode
+* Removed CMB2 Shortcode
 * Fix in admin settings CSS
 * Improved uninstall.php page
 

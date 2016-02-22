@@ -21,15 +21,16 @@ class Pn_ImpExp {
 		$plugin = Plugin_Name::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 		$this->plugin_name = $plugin->get_plugin_name();
-		//Add the export settings method
+		// Add the export settings method
 		add_action( 'admin_init', array( $this, 'settings_export' ) );
-		//Add the import settings method
+		// Add the import settings method
 		add_action( 'admin_init', array( $this, 'settings_import' ) );
 	}
 	
 	/**
 	 * Process a settings export from config
 	 * @since    1.0.0
+       * @return void
 	 */
 	public function settings_export() {
 
@@ -64,6 +65,7 @@ class Pn_ImpExp {
 	/**
 	 * Process a settings import from a json file
 	 * @since    1.0.0
+       * @return void
 	 */
 	public function settings_import() {
 

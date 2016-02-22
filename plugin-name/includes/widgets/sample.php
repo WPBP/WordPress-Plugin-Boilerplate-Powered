@@ -19,21 +19,20 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		$args[ 'fields' ] = array(
 		    // Title field
 		    array(
-			// field name/label									
+			// Field name/label									
 			'name' => __( 'Title', $this->plugin_slug ),
-			// field description					
+			// Field description					
 			'desc' => __( 'Enter the widget title.', $this->plugin_slug ),
-			// field id		
+			// Field id		
 			'id' => 'title',
-			// field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
+			// Field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
 			'type' => 'text',
-			// class, rows, cols								
+			// Class, rows, cols								
 			'class' => 'widefat',
-			// default value						
+			// Default value						
 			'std' => __( 'Recent Posts', $this->plugin_slug ),
 			/*
 			  Set the field validation type/s
-			  ///////////////////////////////
 
 			  'alpha_dash'
 			  Returns FALSE if the value contains anything other than alpha-numeric characters, underscores or dashes.
@@ -64,7 +63,6 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 			/*
 
 			  Filter data before entering the DB
-			  //////////////////////////////////
 
 			  strip_tags ( default )
 			  wp_strip_all_tags
@@ -77,52 +75,52 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    ),
 		    // Taxonomy Field
 		    array(
-			// field name/label									
+			// Field name/label									
 			'name' => __( 'Taxonomy', $this->plugin_slug ),
-			// field description					
+			// Field description					
 			'desc' => __( 'Set the taxonomy.', $this->plugin_slug ),
-			// field id		
+			// Field id		
 			'id' => 'taxonomy',
 			'type' => 'taxonomy',
-			// class, rows, cols								
+			// Class, rows, cols								
 			'class' => 'widefat',
 		    ),
 		    // Taxonomy Field
 		    array(
-			// field name/label									
+			// Field name/label									
 			'name' => __( 'Taxonomy terms', $this->plugin_slug ),
-			// field description					
+			// Field description					
 			'desc' => __( 'Set the taxonomy terms.', $this->plugin_slug ),
-			// field id		
+			// Field id		
 			'id' => 'taxonomyterm',
 			'type' => 'taxonomyterm',
 			'taxonomy' => 'category',
-			// class, rows, cols								
+			// Class, rows, cols								
 			'class' => 'widefat',
 		    ),
 		    // Pages Field
 		    array(
-			// field name/label									
+			// Field name/label									
 			'name' => __( 'Pages', $this->plugin_slug ),
-			// field description					
+			// Field description					
 			'desc' => __( 'Set the page.', $this->plugin_slug ),
-			// field id		
+			// Field id		
 			'id' => 'pages',
 			'type' => 'pages',
-			// class, rows, cols								
+			// Class, rows, cols								
 			'class' => 'widefat',
 		    ),
 		    // Post type Field
 		    array(
-			// field name/label									
+			// Field name/label									
 			'name' => __( 'Post type', $this->plugin_slug ),
-			// field description					
+			// Field description					
 			'desc' => __( 'Set the post type.', $this->plugin_slug ),
-			// field id		
+			// Field id		
 			'id' => 'posttype',
 			'type' => 'posttype',
 			'posttype' => 'post',
-			// class, rows, cols								
+			// Class, rows, cols								
 			'class' => 'widefat',
 		    ),
 		    // Amount Field
@@ -131,12 +129,12 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 			'desc' => __( 'Select how many posts to show.', $this->plugin_slug ),
 			'id' => 'amount',
 			'type' => 'select',
-			// selectbox fields			
+			// Selectbox fields			
 			'fields' => array(
 			    array(
-				// option name
+				// Option name
 				'name' => __( '1 Post', $this->plugin_slug ),
-				// option value			
+				// Option value			
 				'value' => '1'
 			    ),
 			    array(
@@ -148,7 +146,7 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 				'value' => '3'
 			    )
 
-			// add more options
+			// Add more options
 			),
 			'validate' => 'my_custom_validation',
 			'filter' => 'strip_tags|esc_attr',
@@ -159,18 +157,22 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 			'desc' => __( 'Wraps posts with the <li> tag.', $this->plugin_slug ),
 			'id' => 'list',
 			'type' => 'checkbox',
-			// checked by default: 
+			// Checked by default: 
 			'std' => 1, // 0 or 1
 			'filter' => 'strip_tags|esc_attr',
 		    ),
-			// add more fields
-		); // fields array
-		// create widget
+			// Add more fields
+		); // Fields array
+		// Create widget
 		$this->create_widget( $args );
 	}
 
-	// Custom validation for this widget 
-
+	/**
+       * Custom validation for this widget 
+       * 
+       * @param string $value
+       * @return boolean 
+       */
 	function my_custom_validation( $value ) {
 		if ( strlen( $value ) > 1 ) {
 			return false;
@@ -179,8 +181,12 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		}
 	}
 
-	// Output function
-
+      /**
+       * Output function
+       * 
+       * @param array $args
+       * @param array $instance
+       */
 	function widget( $args, $instance ) {
 		$out = $args[ 'before_widget' ];
 		// And here do whatever you want
@@ -188,7 +194,7 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		$out .= $instance[ 'title' ];
 		$out .= $args[ 'after_title' ];
 
-		// here you would get the most recent posts based on the selected amount: $instance['amount'] 
+		// Here you would get the most recent posts based on the selected amount: $instance['amount'] 
 		// Then return those posts on the $out variable ready for the output
 
 		$out .= '<p>Hey There! </p>';

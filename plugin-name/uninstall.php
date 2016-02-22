@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Fired when the plugin is uninstalled.
  *
@@ -20,139 +21,139 @@
  */
 // If uninstall not called from WordPress, then exit
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	exit;
+    exit;
 }
 
 global $wpdb, $wp_roles;
 
 $plugin_roles = array(
-	'editor' => array(
-		'edit_demo' => true,
-		'edit_others_demo' => true,
-	),
-	'author' => array(
-		'edit_demo' => true,
-		'edit_others_demo' => false,
-	),
-	'subscriber' => array(
-		'edit_demo' => false,
-		'edit_others_demo' => false,
-	),
+    'editor' => array(
+        'edit_demo' => true,
+        'edit_others_demo' => true,
+    ),
+    'author' => array(
+        'edit_demo' => true,
+        'edit_others_demo' => false,
+    ),
+    'subscriber' => array(
+        'edit_demo' => false,
+        'edit_others_demo' => false,
+    ),
 );
 
 if ( is_multisite() ) {
 
-	$blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
-	/* @TODO: delete all transient, options and files you may have added
-	  delete_transient( 'TRANSIENT_NAME' );
-	  delete_option('OPTION_NAME');
-	  //info: remove custom file directory for main site
-	  $upload_dir = wp_upload_dir();
-	  $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;
-	  if (is_dir($directory)) {
-	  foreach(glob($directory.'*.*') as $v){
-	  unlink($v);
-	  }
-	  rmdir($directory);
-	  }
-	 */
-	if ( $blogs ) {
+    $blogs = $wpdb->get_results( "SELECT blog_id FROM {$wpdb->blogs}", ARRAY_A );
+    /* @TODO: delete all transient, options and files you may have added
+      delete_transient( 'TRANSIENT_NAME' );
+      delete_option('OPTION_NAME');
+      //info: remove custom file directory for main site
+      $upload_dir = wp_upload_dir();
+      $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;
+      if (is_dir($directory)) {
+      foreach(glob($directory.'*.*') as $v){
+      unlink($v);
+      }
+      rmdir($directory);
+      }
+     */
+    if ( $blogs ) {
 
-		foreach ( $blogs as $blog ) {
-			switch_to_blog( $blog[ 'blog_id' ] );
-			/* @TODO: delete all transient, options and files you may have added
-			  delete_transient( 'TRANSIENT_NAME' );
-			  delete_option('OPTION_NAME');
-			  remove_role( 'advanced' );
-			  //info: remove custom file directory for main site
-			  $upload_dir = wp_upload_dir();
-			  $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;
-			  if (is_dir($directory)) {
-			  foreach(glob($directory.'*.*') as $v){
-			  unlink($v);
-			  }
-			  rmdir($directory);
-			  }
-			  // Delete post meta data
-			  $posts = get_posts(array('posts_per_page' => -1));
-			  foreach ($posts as $post) {
-			    $post_meta = get_post_meta($post->ID);
-			    delete_post_meta($post->ID, 'your-post-meta');
-			  }
-			  // Delete user meta data
-			  $users = get_users();
-			  foreach ($users as $user) {
-			    delete_user_meta($user->ID, 'your-user-meta');
-			  }
-			  //info: remove and optimize tables
-			  $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
-			  $GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
-			 */
+        foreach ( $blogs as $blog ) {
+            switch_to_blog( $blog[ 'blog_id' ] );
+            /* @TODO: delete all transient, options and files you may have added
+              delete_transient( 'TRANSIENT_NAME' );
+              delete_option('OPTION_NAME');
+              remove_role( 'advanced' );
+              //info: remove custom file directory for main site
+              $upload_dir = wp_upload_dir();
+              $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;
+              if (is_dir($directory)) {
+              foreach(glob($directory.'*.*') as $v){
+              unlink($v);
+              }
+              rmdir($directory);
+              }
+              // Delete post meta data
+              $posts = get_posts(array('posts_per_page' => -1));
+              foreach ($posts as $post) {
+              $post_meta = get_post_meta($post->ID);
+              delete_post_meta($post->ID, 'your-post-meta');
+              }
+              // Delete user meta data
+              $users = get_users();
+              foreach ($users as $user) {
+              delete_user_meta($user->ID, 'your-user-meta');
+              }
+              //info: remove and optimize tables
+              $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
+              $GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
+             */
 
-			if ( !isset( $wp_roles ) ) {
-				$wp_roles = new WP_Roles;
-			}
+            if ( !isset( $wp_roles ) ) {
+                $wp_roles = new WP_Roles;
+            }
 
-			foreach ( $wp_roles->role_names as $role => $label ) {
-				//if the role is a standard role, map the default caps, otherwise, map as a subscriber
-				$caps = ( array_key_exists( $role, $plugin_roles ) ) ? $plugin_roles[ $role ] : $plugin_roles[ 'subscriber' ];
+            foreach ( $wp_roles->role_names as $role => $label ) {
+                // If the role is a standard role, map the default caps, otherwise, map as a subscriber
+                $caps = ( array_key_exists( $role, $plugin_roles ) ) ? $plugin_roles[ $role ] : $plugin_roles[ 'subscriber' ];
 
-				//loop and assign
-				foreach ( $caps as $cap => $grant ) {
-					//check to see if the user already has this capability, if so, don't re-add as that would override grant
-					if ( !isset( $wp_roles->roles[ $role ][ 'capabilities' ][ $cap ] ) ) {
-						$wp_roles->remove_cap( $cap );
-					}
-				}
-			}
+                // Loop and assign
+                foreach ( $caps as $cap => $grant ) {
+                    // Check to see if the user already has this capability, if so, don't re-add as that would override grant
+                    if ( !isset( $wp_roles->roles[ $role ][ 'capabilities' ][ $cap ] ) ) {
+                        $wp_roles->remove_cap( $cap );
+                    }
+                }
+            }
 
-			restore_current_blog();
-		}
-	}
+            restore_current_blog();
+        }
+    }
 } else {
-	/* @TODO: delete all transient, options and files you may have added
-	  delete_transient( 'TRANSIENT_NAME' );
-	  delete_option('OPTION_NAME');
-	  remove_role('advanced');
-	  //info: remove custom file directory for main site
-	  $upload_dir = wp_upload_dir();
-	  $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;
-	  if (is_dir($directory)) {
-	  foreach(glob($directory.'*.*') as $v){
-	  unlink($v);
-	  }
-	  rmdir($directory);
-	  }
-	  // Delete post meta data
-	  $posts = get_posts(array('posts_per_page' => -1));
-	  foreach ($posts as $post) {
-	      $post_meta = get_post_meta($post->ID);
-	      delete_post_meta($post->ID, 'your-post-meta');
-	  }
-	  // Delete user meta data
-	  $users = get_users();
-	  foreach ($users as $user) {
-	    delete_user_meta($user->ID, 'your-user-meta');
-	  }
-	  //info: remove and optimize tables
-	  $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
-	  $GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
-	 */
+    /* @TODO: delete all transient, options and files you may have added
+      delete_transient( 'TRANSIENT_NAME' );
+      delete_option('OPTION_NAME');
+      remove_role('advanced');
+      //info: remove custom file directory for main site
+      $upload_dir = wp_upload_dir();
+      $directory = $upload_dir['basedir'] . DIRECTORY_SEPARATOR . "CUSTOM_DIRECTORY_NAME" . DIRECTORY_SEPARATOR;
+      if (is_dir($directory)) {
+      foreach(glob($directory.'*.*') as $v){
+      unlink($v);
+      }
+      rmdir($directory);
+      }
+      // Delete post meta data
+      $posts = get_posts(array('posts_per_page' => -1));
+      foreach ($posts as $post) {
+      $post_meta = get_post_meta($post->ID);
+      delete_post_meta($post->ID, 'your-post-meta');
+      }
+      // Delete user meta data
+      $users = get_users();
+      foreach ($users as $user) {
+      delete_user_meta($user->ID, 'your-user-meta');
+      }
+      //info: remove and optimize tables
+      $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
+      $GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
+     */
 
-	if ( !isset( $wp_roles ) ) {
-		$wp_roles = new WP_Roles;
-	}
+    if ( !isset( $wp_roles ) ) {
+        $wp_roles = new WP_Roles;
+    }
 
-	foreach ( $wp_roles->role_names as $role => $label ) {
-		//if the role is a standard role, map the default caps, otherwise, map as a subscriber
-		$caps = ( array_key_exists( $role, $plugin_roles ) ) ? $plugin_roles[ $role ] : $plugin_roles[ 'subscriber' ];
+    foreach ( $wp_roles->role_names as $role => $label ) {
+        // If the role is a standard role, map the default caps, otherwise, map as a subscriber
+        $caps = ( array_key_exists( $role, $plugin_roles ) ) ? $plugin_roles[ $role ] : $plugin_roles[ 'subscriber' ];
 
-		//loop and assign
-		foreach ( $caps as $cap => $grant ) {
-			//check to see if the user already has this capability, if so, don't re-add as that would override grant
-			if ( !isset( $wp_roles->roles[ $role ][ 'capabilities' ][ $cap ] ) ) {
-				$wp_roles->remove_cap( $cap );
-			}
-		}
-	}
+        // Loop and assign
+        foreach ( $caps as $cap => $grant ) {
+            // Check to see if the user already has this capability, if so, don't re-add as that would override grant
+            if ( !isset( $wp_roles->roles[ $role ][ 'capabilities' ][ $cap ] ) ) {
+                $wp_roles->remove_cap( $cap );
+            }
+        }
+    }
 }

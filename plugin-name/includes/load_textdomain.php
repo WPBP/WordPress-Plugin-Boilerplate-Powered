@@ -4,6 +4,12 @@
  * Load the plugin text domain for translation.
  *
  * @since    1.0.0
+ * @package   Plugin_Name
+ * @author  Mte90 <mte90net@gmail.com>
+ * @license   GPL-2.0+
+ * @copyright 2014-2015
+ * 
+ * @return void
  */
 function pn_load_plugin_textdomain() {
 	$plugin = Plugin_Name::get_instance();

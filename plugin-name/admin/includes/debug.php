@@ -14,9 +14,9 @@ class Pn_Debug {
 	/**
 	 * Instance of this class.
 	 *
-	 * @since    1.0.0
-	 *
 	 * @var      object
+	 *
+	 * @since    1.0.0
 	 */
 	protected static $instance = null;
 
@@ -34,10 +34,10 @@ class Pn_Debug {
 	/**
 	 * Debugs a variable
 	 * Only visible to admins if WP_DEBUG is on
-	 * @param mixed $var the var to debug
-	 * @param bool $die (optional) whether to die after outputting
-	 * @param string $function (optional) the function to call, usually either print_r or var_dump, but can be anything
-	 * @return unknown
+	 * @param mixed  $var      The var to debug.
+	 * @param bool   $die      Whether to die after outputting.
+	 * @param string $function The function to call, usually either print_r or var_dump, but can be anything.
+	 * @return mixed
 	 */
 	function log( $var, $die = false, $function = 'var_dump' ) {
 		if ( !current_user_can( 'manage_options' ) || !WP_DEBUG ) {
@@ -59,14 +59,14 @@ class Pn_Debug {
 
 		$GLOBALS['YAD_Debug'][] = $debug;
 
-		//allow this to be used as a filter
+		// Allow this to be used as a filter
 		return $var;
 	}
 	
 	/**
 	 * Extend Debug_Bar_Panel
-	 * @param array $panels the default panels
-	 * @return array passback the original panels
+	 * @param array $panels The default panels.
+	 * @return array passback The original panels.
 	 */
 	function init_panel( $panels ) {
 		if ( !class_exists( 'PN_Debug_Panel' ) ) {

@@ -12,7 +12,6 @@
  * @link      http://example.com
  * @copyright 2016 Your Name or Company Name
  *
- * @wordpress-plugin
  * Plugin Name:       @TODO
  * Plugin URI:        @TODO
  * Description:       @TODO
@@ -51,7 +50,12 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
 
-// Create a helper function for easy SDK access.
+/** 
+ * Create a helper function for easy SDK access.
+ * 
+ * @global type $pn_fs
+ * @return object
+ */
 function pn_fs() {
     global $pn_fs;
 

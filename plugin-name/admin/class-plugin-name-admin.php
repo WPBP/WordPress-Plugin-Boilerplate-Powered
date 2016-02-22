@@ -1,16 +1,6 @@
 <?php
 
 /**
- * Plugin Name.
- *
- * @package   Plugin_Name_Admin
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
- */
-
-/**
  * Plugin class. This class should ideally be used to work with the
  * administrative side of the WordPress site.
  *
@@ -19,26 +9,30 @@
  *
  * @TODO: Rename this class to a proper name for your plugin.
  *
- * @package Plugin_Name_Admin
- * @author  Your Name <email@example.com>
+ * @package   Plugin_Name_Admin
+ * @author    Your Name <email@example.com>
+ * @license   GPL-2.0+
+ * @link      http://example.com
+ * @copyright 2016 Your Name or Company Name
  */
+
 class Plugin_Name_Admin {
 
 	/**
 	 * Instance of this class.
 	 *
-	 * @since    1.0.0
-	 *
 	 * @var      object
+	 *
+	 * @since    1.0.0
 	 */
 	protected static $instance = null;
 
 	/**
 	 * Slug of the plugin screen.
 	 *
-	 * @since    1.0.0
-	 *
 	 * @var      string
+	 *
+	 * @since    1.0.0
 	 */
 	protected $plugin_screen_hook_suffix = null;
 
@@ -57,7 +51,8 @@ class Plugin_Name_Admin {
 		 */
 		/* if( ! is_super_admin() ) {
 		  return;
-		  } */
+		  } 
+             */
 
 		/*
 		 * Call $plugin_slug from public plugin class.
@@ -86,7 +81,7 @@ class Plugin_Name_Admin {
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-		//Add bubble notification for cpt pending
+		// Add bubble notification for cpt pending
 		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
 
 		// Add an action link pointing to the options page.
@@ -167,8 +162,8 @@ class Plugin_Name_Admin {
 			require_once( plugin_dir_path( __FILE__ ) . 'includes/PointerPlus/class-pointerplus.php' );
 		}
 		$pointerplus = new PointerPlus( array( 'prefix' => $this->plugin_slug ) );
-		//With this you can reset all the pointer with your prefix
-		//$pointerplus->reset_pointer();
+		// With this you can reset all the pointer with your prefix
+		// $pointerplus->reset_pointer();
 		add_filter( 'pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 
 		/*
@@ -182,7 +177,7 @@ class Plugin_Name_Admin {
 		    'recurrence' => 'hourly',
 		    'schedule' => 'schedule',
 		    'name' => 'cronplusexample',
-			//'cb' => 'cronplus_example_cb'
+			// 'cb' => 'cronplus_example_cb'
 		);
 
 		$cronplus = new CronPlus( $args );
@@ -203,7 +198,7 @@ class Plugin_Name_Admin {
 		    'sortable' => true,
 		    'prefix' => '<b>',
 		    'suffix' => '</b>',
-		    'def' => 'Not defined', // default value in case post meta not found
+		    'def' => 'Not defined', // Default value in case post meta not found
 		    'order' => '-1'
 			)
 		);
@@ -225,7 +220,8 @@ class Plugin_Name_Admin {
 		 */
 		/* if( ! is_super_admin() ) {
 		  return;
-		  } */
+		  } 
+             */
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
@@ -244,7 +240,7 @@ class Plugin_Name_Admin {
 	 *
 	 * @since     1.0.0
 	 *
-	 * @return    null    Return early if no settings page is registered.
+	 * @return    mixed    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
 		if ( !isset( $this->plugin_screen_hook_suffix ) ) {
@@ -266,7 +262,7 @@ class Plugin_Name_Admin {
 	 *
 	 * @since     1.0.0
 	 *
-	 * @return    null    Return early if no settings page is registered.
+	 * @return    mixed    Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_scripts() {
 		if ( !isset( $this->plugin_screen_hook_suffix ) ) {
@@ -283,6 +279,8 @@ class Plugin_Name_Admin {
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
 	 * @since    1.0.0
+       * 
+       * @return void
 	 */
 	public function add_plugin_admin_menu() {
 
@@ -323,6 +321,8 @@ class Plugin_Name_Admin {
 	 * Add settings action link to the plugins page.
 	 *
 	 * @since    1.0.0
+       * @param array $links
+       * @return array
 	 */
 	public function add_action_links( $links ) {
 		return array_merge(
@@ -366,6 +366,7 @@ class Plugin_Name_Admin {
 	 *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
 	 *
 	 * @since    1.0.0
+       * @return array
 	 */
 	public function cpt_glance_dashboard_support( $items = array() ) {
 		$post_types = $this->cpts;
@@ -394,10 +395,11 @@ class Plugin_Name_Admin {
 	 * NOTE: add in $post_types your cpts
 	 *
 	 * @since    1.0.0
+       * @return array
 	 */
 	function cpt_activity_dashboard_support( $query_args ) {
 		if ( !is_array( $query_args[ 'post_type' ] ) ) {
-			//Set default post type
+			// Set default post type
 			$query_args[ 'post_type' ] = array( 'page' );
 		}
 		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], $this->cpts );
@@ -411,6 +413,7 @@ class Plugin_Name_Admin {
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @since    1.0.0
+       * @return void
 	 */
 	function pending_cpt_bubble() {
 		global $menu;
@@ -449,6 +452,10 @@ class Plugin_Name_Admin {
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @since    1.0.0
+       * @param array $needle
+       * @param array $needle
+       * 
+       * @return mixed
 	 */
 	private function recursive_array_search_php( $needle, $haystack ) {
 		foreach ( $haystack as $key => $value ) {
@@ -464,6 +471,8 @@ class Plugin_Name_Admin {
 	 * NOTE:     Your metabox on Demo CPT
 	 *
 	 * @since    1.0.0
+       * 
+       * @return void
 	 */
 	public function cmb_demo_metaboxes() {
 		// Start with an underscore to hide fields from custom fields list
@@ -498,8 +507,9 @@ class Plugin_Name_Admin {
 	 * Filter for change the folder of Contextual Help
 	 * 
 	 * @since     1.0.0
+       * @param string $paths
 	 *
-	 * @return    string    the path
+	 * @return string The path.
 	 */
 	public function help_docs_dir( $paths ) {
 		$paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/';
@@ -510,8 +520,9 @@ class Plugin_Name_Admin {
 	 * Filter for change the folder image of Contextual Help
 	 * 
 	 * @since     1.0.0
+       * @param string $paths
 	 *
-	 * @return    string    the path
+	 * @return string the path
 	 */
 	public function help_docs_url( $paths ) {
 		$paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/img';
@@ -523,6 +534,7 @@ class Plugin_Name_Admin {
 	 * Documentation https://github.com/voceconnect/wp-contextual-help
 	 * 
 	 * @since    1.0.0 
+       * @return void
 	 */
 	public function contextual_help() {
 		if ( !class_exists( 'WP_Contextual_Help' ) ) {
@@ -547,8 +559,8 @@ class Plugin_Name_Admin {
 	 * Add pointers.
 	 * Check on https://github.com/Mte90/pointerplus/blob/master/pointerplus.php for examples
 	 *
-	 * @param $pointers
-	 * @param $prefix for your pointers
+	 * @param array $pointers The list of pointers.
+	 * @param array $prefix For your pointers.
 	 *
 	 * @return mixed
 	 */

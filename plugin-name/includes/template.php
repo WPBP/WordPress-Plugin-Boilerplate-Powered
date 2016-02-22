@@ -1,14 +1,22 @@
 <?php
 
 /**
- * Load template files of the plugin also include a filter pn_get_template_part<br>
- * Based on WooCommerce function<br>
  *
  * @package   Plugin_Name
  * @author  Mte90 <mte90net@gmail.com>
  * @license   GPL-2.0+
  * @copyright 2014-2015
  * @since    1.0.0
+ */
+
+/**
+ * Load template files of the plugin also include a filter pn_get_template_part<br>
+ * Based on WooCommerce function<br>
+ * 
+ * @param string $slug
+ * @param string $name
+ * @param string $include
+ * @return string
  */
 function pn_get_template_part( $slug, $name = '', $include = true ) {
 	$template = '';
@@ -45,12 +53,10 @@ function pn_get_template_part( $slug, $name = '', $include = true ) {
 
 /**
  * Load email template files of the plugin also include a filter pn_get_email_template<br>
- *
- * @package   Plugin_Name
- * @author  Mte90 <mte90net@gmail.com>
- * @license   GPL-2.0+
- * @copyright 2014-2015
- * @since    1.0.0
+ * 
+ * @param string $name
+ * @param string $prefix
+ * @return string
  */
 function pn_get_email_template( $name, $prefix = '' ) {
 	$template = '';

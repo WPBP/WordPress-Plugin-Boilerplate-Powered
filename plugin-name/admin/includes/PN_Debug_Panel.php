@@ -6,12 +6,14 @@ class Pn_Debug_Panel extends Debug_Bar_Panel {
 
 	/**
 	 * Register with WordPress API on construct
-	 * @param class $parent the parent class
 	 */
 	function __construct(  ) {
 		$this->title( 'Plugin Name Debug' );
 	}
 
+      /**
+       * @return void
+       */
 	function render() {
 		echo "<pre>";
 		foreach ( $GLOBALS['PN_Debug'] as $debug ) {
@@ -20,6 +22,10 @@ class Pn_Debug_Panel extends Debug_Bar_Panel {
 		echo "</pre>";
 	}
 
+      /**
+       * 
+       * @return void
+       */
 	function prerender() {
 		if ( empty( $GLOBALS['PN_Debug'] ) ) {
 			$this->set_visible( false );

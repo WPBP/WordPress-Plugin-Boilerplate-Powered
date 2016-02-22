@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * Little but powerful library to easily handle detection of minimum system requirements in WordPress plugins.
  * Based on https://github.com/dsawardekar/wp-requirements 0.3 version
  * 
@@ -13,8 +13,11 @@
  * Plugin_Requirements: only required the declaration, check the minimum value inserted, call directly the warning
  * Plugin_requirements: support multiple plugin
  * Requirement_Error: compacted code, better css, added deactivation of the plugin
+ * 
+ * @package Plugin_Name
+ * @author  Mte90 and dsawardekar
+ * 
  */
-
 if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
@@ -33,8 +36,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
      *   ) )
      * 	) );
      *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class Plugin_Requirements {
 
@@ -65,9 +66,9 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Initialize the library 
          * 
-         * @param    string    $pluginname The Plugin Name used for the warning
-         * @param    string    $pluginslug The Plugin slug used for the deactivation
-         * @param    array    $args The subclasses
+         * @param string $pluginname The Plugin Name used for the warning.
+         * @param string $pluginslug The Plugin slug used for the deactivation.
+         * @param array  $args       The subclasses.
          */
         function __construct( $pluginname, $pluginslug, $args ) {
             $this->requirements = $args;
@@ -79,7 +80,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Load and check the missing default requirements
          * 
-         * @return array Array of Sub-Classes
+         * @return array Array of Sub-Classes.
          */
         function getRequirements() {
             $requirements = $this->requirements;
@@ -135,9 +136,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
      * Check the PHP environment, for example go to Plugin_Requirements documentation
-     *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class PHP_Requirement {
 
@@ -152,7 +150,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Initialize the library 
          * 
-         * @param    string    $minversion The minimum version of PHP
+         * @param string $minversion The minimum version of PHP.
          */
         function __construct( $minversion ) {
             $this->minimumVersion = $minversion;
@@ -161,7 +159,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Check the requirement
          * 
-         * @return true|false Succesful
+         * @return true|false Successful.
          */
         function check() {
             return version_compare(
@@ -172,7 +170,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Return the message warning 
          * 
-         * @return string The warning message
+         * @return string The warning message.
          */
         function message() {
             return 'PHP <b>' . $this->minimumVersion . '+</b>' . __( " Required, Detected ", 'requirements' ) . '<b>' . phpversion() . '</b>';
@@ -182,9 +180,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
      * Check the Wordpress environment, for example go to Plugin_Requirements documentation
-     *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class WordPress_Requirement {
 
@@ -199,7 +194,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Initialize the library 
          * 
-         * @param    string    $minversion The minimum version of WP
+         * @param string $minversion The minimum version of WP.
          */
         function __construct( $minversion ) {
             $this->minimumVersion = $minversion;
@@ -208,7 +203,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Check the requirement
          * 
-         * @return true|false Succesful
+         * @return true|false Successful
          */
         function check() {
             global $wp_version;
@@ -220,7 +215,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Return the message warning 
          * 
-         * @return string The warning message
+         * @return string The warning message.
          */
         function message() {
             global $wp_version;
@@ -231,9 +226,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
      * Check the PHP extension, for example go to Plugin_Requirements documentation
-     *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class PHP_Extension_Requirement {
 
@@ -256,7 +248,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Initialize the library 
          * 
-         * @param    array    $extensions The extension list
+         * @param array $extensions The extension list.
          */
         function __construct( $extensions ) {
             $this->extensions = $extensions;
@@ -265,7 +257,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Check the PHP extension if available
          * 
-         * @return bool return the available of the extension
+         * @return bool Return the available of the extension.
          */
         function check() {
             $result = true;
@@ -295,9 +287,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
      * Check the plugin required, for example go to Plugin_Requirements documentation
-     *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class Plugin_Requirement {
 
@@ -320,7 +309,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Initialize the library 
          * 
-         * @param    array    $plugins The plugins to check
+         * @param array $plugins The plugins to check.
          */
         function __construct( $plugins ) {
             $this->plugins = $plugins;
@@ -329,7 +318,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Check the requirement
          * 
-         * @return true|false Succesful
+         * @return true|false Successful.
          */
         function check() {
             $result = true;
@@ -349,7 +338,7 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Return the message warning 
          * 
-         * @return string The warning message
+         * @return string The warning message.
          */
         function message() {
             $plugins = implode( ', ', $this->notFound );
@@ -360,9 +349,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
      * Generate the exception that stop the activation of the plugin
-     *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class Plugin_Requirements_Exception extends \Exception {
         
@@ -370,9 +356,6 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
     /**
      * Generate the warning error and deactivate the plugin
-     *
-     * @package Plugin_Name
-     * @author  Mte90 and dsawardekar
      */
     class Requirement_Error {
 
@@ -403,9 +386,9 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Initialize the library 
          * 
-         * @param    string    $pluginName The mplugin name
-         * @param	 string    $pluginSlug The plugin slug
-         * @param	 array	   $results	   Array of requirements missing
+         * @param string $pluginName The mplugin name.
+         * @param	string $pluginSlug The plugin slug.
+         * @param	array  $results    Array of requirements missing.
          */
         function __construct( $pluginName, $pluginSlug, $results ) {
             $this->pluginName = $pluginName;
@@ -417,7 +400,9 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
         /**
          * Show the error 
          * 
-         * @param    string    $message The HTML with the warnings
+         * @param string $message The HTML with the warnings.
+         * @throws Plugin_Requirements_Exception The exception.
+         * @return void
          */
         function showError( $message ) {
             if ( $this->isErrorScraper() ) {
@@ -430,6 +415,8 @@ if ( class_exists( 'Plugin_Requirements' ) === false ) {
 
         /**
          * Check is PHPunit and deactivate the plugin 
+         * 
+         * @return void
          */
         function quit() {
             if ( !defined( 'PHPUNIT_RUNNER' ) ) {

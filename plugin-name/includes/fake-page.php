@@ -10,13 +10,26 @@
  * @copyright 2014-2015
  */
 
-
 if ( !class_exists( 'Fake_Page' ) ) {
 
 	class Fake_Page {
-
+          
+            /**
+             *
+             * @var string 
+             */
 		public $slug = '';
+            
+            /**
+             *
+             * @var array 
+             */
 		public $args = array();
+            
+            /**
+             *
+             * @var integer
+             */
 		public $id;
 
 		/**
@@ -24,6 +37,8 @@ if ( !class_exists( 'Fake_Page' ) ) {
 		 * initialize the Fake Page
 		 * @param array $args
 		 * @author Ohad Raz 
+             * 
+             * @param array $args
 		 * 
 		 */
 		function __construct( $args ) {

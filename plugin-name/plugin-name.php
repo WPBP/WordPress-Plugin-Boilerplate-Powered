@@ -22,7 +22,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * WordPress-Plugin-Boilerplate-Powered: v1.1.7
+ * WordPress-Plugin-Boilerplate-Powered: v1.1.8
  */
 
 // If this file is called directly, abort.

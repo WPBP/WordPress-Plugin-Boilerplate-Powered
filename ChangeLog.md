@@ -1,3 +1,8 @@
+## 1.1.8
+
+* Unit test
+* Improved PHPDoc comment 
+
 ## 1.1.7
 
 * Support for email template with language detection

@@ -568,7 +568,7 @@ class Plugin_Name_Admin {
 		return array_merge( $pointers, array(
 		    $prefix . '_contextual_tab' => array(
 			'selector' => '#contextual-help-link',
-			'title' => __( 'PBoilerplate Help', $this->plugin_slug ),
+			'title' => __( 'Boilerplate Help', $this->plugin_slug ),
 			'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', $this->plugin_slug ),
 			'edge' => 'top',
 			'align' => 'right',

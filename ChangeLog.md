@@ -2,6 +2,8 @@
 
 * Unit test
 * Improved PHPDoc comment 
+* Fixed Apigen and [git hook](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Hook-for-generate-doc-and-pushing)
+* Moved code in class-admin-plugin-name.php in dedicated files
 
 ## 1.1.7
 

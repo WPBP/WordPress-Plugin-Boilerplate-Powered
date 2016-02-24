@@ -74,42 +74,17 @@ class Plugin_Name_Admin {
 		// Load admin style in dashboard for the At glance widget
 		add_action( 'admin_head-index.php', array( $this, 'enqueue_admin_styles' ) );
 
-		// At Glance Dashboard widget for your cpts
-		add_filter( 'dashboard_glance_items', array( $this, 'cpt_glance_dashboard_support' ), 10, 1 );
-		// Activity Dashboard widget for your cpts
-		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
-
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-		// Add bubble notification for cpt pending
-		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-
+            
 		/*
-		 * CMB 2 for metabox and many other cool things!
-		 * https://github.com/WebDevStudios/CMB2
+		 * Load CMB
 		 */
-		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2/init.php' );
-		/*
-		 * CMB2 CMB2-Google-Maps support 
-		 * Check on the repo for the example and documentation 
-		 * https://github.com/mustardBees/cmb_field_map
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-Google-Maps/cmb-field-map.php' );
-		/*
-		 * CMB2 Grid 
-		 * Check on the repo for the example and documentation 
-		 * https://github.com/origgami/CMB2-grid
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . '/includes/CMB2-grid/Cmb2GridPlugin.php' );
-
-		/*
-		 * Add metabox
-		 */
-		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_CMB.php' );
 
 		/*
 		 * Define custom functionality.
@@ -123,7 +98,11 @@ class Plugin_Name_Admin {
 		/*
 		 * Import Export settings
 		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/impexp.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ImpExp.php' );
+		/*
+		 * Contextual Help
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ContextualHelp.php' );
 
 		/*
 		 * Debug mode
@@ -131,16 +110,6 @@ class Plugin_Name_Admin {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
 		$debug = new Pn_Debug( );
 		$debug->log( __( 'Plugin Loaded', $this->plugin_slug ) );
-
-		/*
-		 * Load Wp_Contextual_Help for the help tabs
-		 */
-		add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
-		add_filter( 'wp_contextual_help_docs_url', array( $this, 'help_docs_url' ) );
-		if ( !class_exists( 'WP_Contextual_Help' ) ) {
-			require_once( plugin_dir_path( __FILE__ ) . 'includes/WP-Contextual-Help/wp-contextual-help.php' );
-		}
-		add_action( 'init', array( $this, 'contextual_help' ) );
 
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend
@@ -152,19 +121,11 @@ class Plugin_Name_Admin {
 		}
 		new WP_Admin_Notice( __( 'Updated Messages' ), 'updated' );
 		new WP_Admin_Notice( __( 'Error Messages' ), 'error' );
-
+            
 		/*
-		 * Load PointerPlus for the Wp Pointer
-		 * 
-		 * Unique parameter is the prefix
+		 * All the pointers
 		 */
-		if ( !class_exists( 'PointerPlus' ) ) {
-			require_once( plugin_dir_path( __FILE__ ) . 'includes/PointerPlus/class-pointerplus.php' );
-		}
-		$pointerplus = new PointerPlus( array( 'prefix' => $this->plugin_slug ) );
-		// With this you can reset all the pointer with your prefix
-		// $pointerplus->reset_pointer();
-		add_filter( 'pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Pointers.php' );
 
 		/*
 		 * Load CronPlus 
@@ -202,6 +163,11 @@ class Plugin_Name_Admin {
 		    'order' => '-1'
 			)
 		);
+            
+		/*
+		 * All the extras functions
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Extras.php' );
 	}
 
 	/**
@@ -358,223 +324,5 @@ class Plugin_Name_Admin {
 	public function filter_method_name() {
 		// @TODO: Define your filter hook callback here
 	}
-
-	/**
-	 * Add the counter of your CPTs in At Glance widget in the dashboard<br>
-	 * NOTE: add in $post_types your cpts, remember to edit the css style (admin/assets/css/admin.css) for change the dashicon<br>
-	 *
-	 *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
-	 *
-	 * @since    1.0.0
-       * @return array
-	 */
-	public function cpt_glance_dashboard_support( $items = array() ) {
-		$post_types = $this->cpts;
-		foreach ( $post_types as $type ) {
-			if ( !post_type_exists( $type ) ) {
-				continue;
-			}
-			$num_posts = wp_count_posts( $type );
-			if ( $num_posts ) {
-				$published = intval( $num_posts->publish );
-				$post_type = get_post_type_object( $type );
-				$text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, $this->plugin_slug );
-				$text = sprintf( $text, number_format_i18n( $published ) );
-				if ( current_user_can( $post_type->cap->edit_posts ) ) {
-					$items[] = '<a class="' . $post_type->name . '-count" href="edit.php?post_type=' . $post_type->name . '">' . sprintf( '%2$s', $type, $text ) . "</a>\n";
-				} else {
-					$items[] = sprintf( '%2$s', $type, $text ) . "\n";
-				}
-			}
-		}
-		return $items;
-	}
-
-	/**
-	 * Add the recents post type in the activity widget<br>
-	 * NOTE: add in $post_types your cpts
-	 *
-	 * @since    1.0.0
-       * @return array
-	 */
-	function cpt_activity_dashboard_support( $query_args ) {
-		if ( !is_array( $query_args[ 'post_type' ] ) ) {
-			// Set default post type
-			$query_args[ 'post_type' ] = array( 'page' );
-		}
-		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], $this->cpts );
-		return $query_args;
-	}
-
-	/**
-	 * Bubble Notification for pending cpt<br>
-	 * NOTE: add in $post_types your cpts<br>
-	 *
-	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
-	 *
-	 * @since    1.0.0
-       * @return void
-	 */
-	function pending_cpt_bubble() {
-		global $menu;
-
-		$post_types = $this->cpts;
-		foreach ( $post_types as $type ) {
-			if ( !post_type_exists( $type ) ) {
-				continue;
-			}
-			// Count posts
-			$cpt_count = wp_count_posts( $type );
-
-			if ( $cpt_count->pending ) {
-				// Menu link suffix, Post is different from the rest
-				$suffix = ( 'post' == $type ) ? '' : '?post_type=' . $type;
-
-				// Locate the key of 
-				$key = self::recursive_array_search_php( 'edit.php' . $suffix, $menu );
-
-				// Not found, just in case 
-				if ( !$key ) {
-					return;
-				}
-
-				// Modify menu item
-				$menu[ $key ][ 0 ] .= sprintf(
-					'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
-				);
-			}
-		}
-	}
-
-	/**
-	 * Required for the bubble notification<br>
-	 *
-	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
-	 *
-	 * @since    1.0.0
-       * @param array $needle
-       * @param array $needle
-       * 
-       * @return mixed
-	 */
-	private function recursive_array_search_php( $needle, $haystack ) {
-		foreach ( $haystack as $key => $value ) {
-			$current_key = $key;
-			if ( $needle === $value OR ( is_array( $value ) && self::recursive_array_search_php( $needle, $value ) !== false) ) {
-				return $current_key;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * NOTE:     Your metabox on Demo CPT
-	 *
-	 * @since    1.0.0
-       * 
-       * @return void
-	 */
-	public function cmb_demo_metaboxes() {
-		// Start with an underscore to hide fields from custom fields list
-		$prefix = '_demo_';
-		$cmb_demo = new_cmb2_box( array(
-		    'id' => $prefix . 'metabox',
-		    'title' => __( 'Demo Metabox', $this->plugin_slug ),
-		    'object_types' => array( 'demo', ), // Post type
-		    'context' => 'normal',
-		    'priority' => 'high',
-		    'show_names' => true, // Show field names on the left
-			) );
-		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
-		$row = $cmb2Grid->addRow();
-		$field1 = $cmb_demo->add_field( array(
-		    'name' => __( 'Text', $this->plugin_slug ),
-		    'desc' => __( 'field description (optional)', $this->plugin_slug ),
-		    'id' => $prefix . $this->plugin_slug . '_text',
-		    'type' => 'text'
-			) );
-
-		$field2 = $cmb_demo->add_field( array(
-		    'name' => __( 'Text Small', $this->plugin_slug ),
-		    'desc' => __( 'field description (optional)', $this->plugin_slug ),
-		    'id' => $prefix . $this->plugin_slug . '_textsmall',
-		    'type' => 'text_small'
-			) );
-		$row->addColumns( array( $field1, $field2 ) );
-	}
-
-	/**
-	 * Filter for change the folder of Contextual Help
-	 * 
-	 * @since     1.0.0
-       * @param string $paths
-	 *
-	 * @return string The path.
-	 */
-	public function help_docs_dir( $paths ) {
-		$paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/';
-		return $paths;
-	}
-
-	/**
-	 * Filter for change the folder image of Contextual Help
-	 * 
-	 * @since     1.0.0
-       * @param string $paths
-	 *
-	 * @return string the path
-	 */
-	public function help_docs_url( $paths ) {
-		$paths[] = plugin_dir_path( __FILE__ ) . '../help-docs/img';
-		return $paths;
-	}
-
-	/**
-	 * Contextual Help, docs in /help-docs folter
-	 * Documentation https://github.com/voceconnect/wp-contextual-help
-	 * 
-	 * @since    1.0.0 
-       * @return void
-	 */
-	public function contextual_help() {
-		if ( !class_exists( 'WP_Contextual_Help' ) ) {
-			return;
-		}
-
-		// Only display on the pages - post.php and post-new.php, but only on the `demo` post_type
-		WP_Contextual_Help::register_tab( 'demo-example', __( 'Demo Management', $this->plugin_slug ), array(
-		    'page' => array( 'post.php', 'post-new.php' ),
-		    'post_type' => 'demo',
-		    'wpautop' => true
-		) );
-
-		// Add to a custom plugin settings page
-		WP_Contextual_Help::register_tab( 'pn_settings', __( 'Boilerplate Settings', $this->plugin_slug ), array(
-		    'page' => 'settings_page_' . $this->plugin_slug,
-		    'wpautop' => true
-		) );
-	}
-
-	/**
-	 * Add pointers.
-	 * Check on https://github.com/Mte90/pointerplus/blob/master/pointerplus.php for examples
-	 *
-	 * @param array $pointers The list of pointers.
-	 * @param array $prefix For your pointers.
-	 *
-	 * @return mixed
-	 */
-	function custom_initial_pointers( $pointers, $prefix ) {
-		return array_merge( $pointers, array(
-		    $prefix . '_contextual_tab' => array(
-			'selector' => '#contextual-help-link',
-			'title' => __( 'Boilerplate Help', $this->plugin_slug ),
-			'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', $this->plugin_slug ),
-			'edge' => 'top',
-			'align' => 'right',
-			'icon_class' => 'dashicons-welcome-learn-more',
-		    )
-			) );
-	}
-
+     
 }

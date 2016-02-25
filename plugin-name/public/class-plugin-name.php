@@ -468,8 +468,9 @@ class Plugin_Name {
      *
      * @since    1.0.0
      */
-    public function filter_method_name() {
+    public function filter_method_name( $param ) {
         // @TODO: Define your filter hook callback here
+        return $param;
     }
 
     /**
@@ -480,7 +481,11 @@ class Plugin_Name {
      *
      * @since    1.0.0
      */
-    public function shortcode_method_name() {
+    public function shortcode_method_name( $atts ) {
+        //With this you can define the default proprietary for your shortcode
+        $atts = shortcode_atts( array(
+            'number' => '1',
+                ), $atts );
         // @TODO: Define your shortcode here
     }
 

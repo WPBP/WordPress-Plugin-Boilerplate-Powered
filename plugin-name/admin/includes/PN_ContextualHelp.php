@@ -39,7 +39,7 @@ class Pn_ContextualHelp {
      * @return string The path.
      */
     public function help_docs_dir( $paths ) {
-        $paths[] = plugin_dir_path( __FILE__ ) . '../../help-docs/';
+        $paths[] = plugin_dir_path( __FILE__ ) . 'help-docs/';
         return $paths;
     }
 
@@ -52,7 +52,7 @@ class Pn_ContextualHelp {
      * @return string the path
      */
     public function help_docs_url( $paths ) {
-        $paths[] = plugin_dir_path( __FILE__ ) . '../../help-docs/img';
+        $paths[] = plugin_dir_path( __FILE__ ) . 'help-docs/img';
         return $paths;
     }
 

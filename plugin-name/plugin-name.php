@@ -22,7 +22,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * WordPress-Plugin-Boilerplate-Powered: v1.1.8
+ * WordPress-Plugin-Boilerplate-Powered: v1.2.0
  */
 
 // If this file is called directly, abort.
@@ -118,6 +118,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/language.php' );
  */
 
 require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'public/includes/PN_ActDeact.php' );
 
 /*
  * Register hooks that are fired when the plugin is activated or deactivated.
@@ -129,8 +130,8 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
  *   `class-plugin-name.php`
  */
 
-register_activation_hook( __FILE__, array( 'Plugin_Name', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Plugin_Name', 'deactivate' ) );
+register_activation_hook( __FILE__, array( 'Pn_ActDeact', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'Pn_ActDeact', 'deactivate' ) );
 
 /*
  * @TODO:

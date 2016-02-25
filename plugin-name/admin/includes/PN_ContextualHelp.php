@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This class contain aThe contextual help code.
+ * This class contain the contextual help code.
  *
- * @package   Pn_Extras
+ * @package   Plugin_Name
  * @author    Your Name <email@example.com>
  * @license   GPL-2.0+
  * @link      http://example.com

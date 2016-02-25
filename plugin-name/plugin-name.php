@@ -81,7 +81,7 @@ function pn_fs() {
 }
 
 // Init Freemius.
-pn_fs();
+// pn_fs();
 
 /*
  * Load Widgets Helper

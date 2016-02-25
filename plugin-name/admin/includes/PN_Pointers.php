@@ -12,8 +12,7 @@
 class Pn_Pointers {
 
     /**
-     * Initialize the plugin by loading admin scripts & styles and adding a
-     * settings page and menu.
+     * Initialize the Pointers.
      *
      * @since     1.0.0
      */

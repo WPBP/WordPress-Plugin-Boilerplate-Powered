@@ -12,7 +12,7 @@
 class Pn_Extras {
 
     /**
-     * RInitialize the snippet
+     * Initialize the snippet
      */
     function __construct() {
         $plugin = Plugin_Name::get_instance();

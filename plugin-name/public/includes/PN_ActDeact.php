@@ -12,7 +12,7 @@
 class Pn_ActDeact {
 
     /**
-     * RInitialize the snippet
+     * Initialize the Act/Deact
      */
     function __construct() {
         $plugin = Plugin_Name::get_instance();
@@ -127,9 +127,13 @@ class Pn_ActDeact {
      * @return void
      */
     private static function single_activate() {
+        $plugin = Plugin_Name::get_instance();
+        $plugin_slug = $plugin->get_plugin_slug();
+        $plugin_name = $plugin->get_plugin_name();
+        $plugin_roles = $plugin->get_plugin_roles();
         // Requirements Detection System - read the doc/example in the library file
         require_once( plugin_dir_path( __FILE__ ) . 'requirements.php' );
-        new Plugin_Requirements( $this->plugin_name, $this->plugin_slug, array(
+        new Plugin_Requirements( $plugin_name, $plugin_slug, array(
             'WP' => new WordPress_Requirement( '4.1.0' )
                 ) );
 
@@ -143,7 +147,7 @@ class Pn_ActDeact {
 
         foreach ( $wp_roles->role_names as $role => $label ) {
             // If the role is a standard role, map the default caps, otherwise, map as a subscriber
-            $caps = ( array_key_exists( $role, self::$this->plugin_roles ) ) ? $this->plugin_roles[ $role ] : $this->plugin_roles[ 'subscriber' ];
+            $caps = ( array_key_exists( $role, $plugin_roles ) ) ? $plugin_roles[ $role ] : $plugin_roles[ 'subscriber' ];
 
             // Loop and assign
             foreach ( $caps as $cap => $grant ) {

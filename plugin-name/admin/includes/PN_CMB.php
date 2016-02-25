@@ -12,8 +12,7 @@
 class Pn_CMB {
 
     /**
-     * Initialize the plugin by loading admin scripts & styles and adding a
-     * settings page and menu.
+     * Initialize CMB2.
      *
      * @since     1.0.0
      */

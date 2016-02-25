@@ -2,8 +2,10 @@
 
 * Unit test
 * Improved PHPDoc comment 
+* Improved code for shortcode and filter
 * Fixed Apigen and [git hook](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Hook-for-generate-doc-and-pushing)
 * Moved code in class-admin-plugin-name.php in dedicated files
+* Added example for transient with external request
 
 ## 1.1.7
 

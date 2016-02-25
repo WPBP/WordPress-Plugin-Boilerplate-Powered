@@ -12,7 +12,7 @@
 class Pn_ContextualHelp {
 
     /**
-     * RInitialize the snippet
+     * Initialize the Contextual Help
      */
     function __construct() {
         $plugin = Plugin_Name::get_instance();

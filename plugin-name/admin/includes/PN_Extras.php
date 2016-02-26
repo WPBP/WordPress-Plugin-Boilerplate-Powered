@@ -150,7 +150,7 @@ class Pn_Extras {
             $response = wp_remote_get( "http://www.siteapi.org/api/v1/projects?page=1" );
             if ( is_wp_error( $response ) ) {
                 // In case API is down we return the last successful count
-                return get_option( $key );
+                return;
             } else {
                 // If everything's okay, parse the body and json_decode it
                 $json_output = json_decode( wp_remote_retrieve_body( $response ) );

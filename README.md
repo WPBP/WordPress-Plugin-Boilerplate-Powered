@@ -17,9 +17,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Sass support with Compass and Grunt
 * CoffeeScript support Grunt (not mandatory with the Yeoman generator)
 * [CPT Core](https://github.com/WebDevStudios/CPT_Core) and [Taxonomy Core](https://github.com/WebDevStudios/Taxonomy_Core) integrated
-* [CMB2](https://github.com/WebDevStudios/CMB2) integrated
-* [CMB2-Google-Maps](https://github.com/mustardBees/cmb_field_map) integrated
-* [CMB2-Grid](https://github.com/origgami/CMB2-grid) integrated
+* [CMB2](https://github.com/WebDevStudios/CMB2), [CMB2-Google-Maps](https://github.com/mustardBees/cmb_field_map) and [CMB2-Grid](https://github.com/origgami/CMB2-grid) integrated
 * [WordPress Widgets Helper Class](https://github.com/sksmatt/WordPress-Widgets-Helper-Class/) with improvements
 * [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
 * [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
@@ -43,8 +41,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Custom capabilities with cpts and taxonomy support
 * wp_localize_script for pass PHP var to JS in the frontend
 * Class in frontend body with the slug of plugin
-* Support for your CPTs in At glance widget in dashboard
-* Support for your CPTs in Activity widget in dashboard
+* Support for your CPTs in At Glance widget/Activity widget in dashboard
 * Support for CMB in the options page
 * Support for email template with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)

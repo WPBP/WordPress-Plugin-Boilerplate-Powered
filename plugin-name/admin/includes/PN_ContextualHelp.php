@@ -17,7 +17,6 @@ class Pn_ContextualHelp {
     function __construct() {
         $plugin = Plugin_Name::get_instance();
         $this->plugin_slug = $plugin->get_plugin_slug();
-        $this->cpts = $plugin->get_cpts();
 
         /*
          * Load Wp_Contextual_Help for the help tabs

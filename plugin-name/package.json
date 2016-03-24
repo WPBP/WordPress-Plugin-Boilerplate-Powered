@@ -4,6 +4,7 @@
 	"description": "",
 	"author": "Your Name <email@example.com>",
 	"devDependencies": {
+		"grunt": "*",
 		"grunt-contrib-watch": "*",
 		"grunt-contrib-compass": "*",
 		"grunt-contrib-coffee": "*"

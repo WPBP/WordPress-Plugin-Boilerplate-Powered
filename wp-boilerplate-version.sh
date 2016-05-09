@@ -10,7 +10,8 @@ if [ "$1" == "-h" ] || [ $# -eq 0 ]; then
 	echo "-h: this help"
 	exit 0
 fi
-slug=`basename $1`
+
+slug=`basename $(readlink -f $1)`
 
 LINE=`sed -n '/Stable tag: /{=}' README.txt`
 sed -i "${LINE}s/.*/Stable tag: ${2}/" README.txt

@@ -4,14 +4,10 @@
 class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 
 	function __construct() {
-
-		$plugin = Plugin_Name::get_instance();
-		$this->plugin_slug = $plugin->get_plugin_slug();
-
 		// Configure widget array
 		$args = array(
-		    'label' => __( 'My Recent Posts Example', $this->plugin_slug ),
-		    'description' => __( 'My Recent Posts Widget Description', $this->plugin_slug ),
+		    'label' => __( 'My Recent Posts Example', PN_TEXTDOMAIN ),
+		    'description' => __( 'My Recent Posts Widget Description', PN_TEXTDOMAIN ),
 		);
 
 		// Configure the widget fields
@@ -20,9 +16,9 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    // Title field
 		    array(
 			// Field name/label									
-			'name' => __( 'Title', $this->plugin_slug ),
+			'name' => __( 'Title', PN_TEXTDOMAIN ),
 			// Field description					
-			'desc' => __( 'Enter the widget title.', $this->plugin_slug ),
+			'desc' => __( 'Enter the widget title.', PN_TEXTDOMAIN ),
 			// Field id		
 			'id' => 'title',
 			// Field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
@@ -30,7 +26,7 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 			// Class, rows, cols								
 			'class' => 'widefat',
 			// Default value						
-			'std' => __( 'Recent Posts', $this->plugin_slug ),
+			'std' => __( 'Recent Posts', PN_TEXTDOMAIN ),
 			/*
 			  Set the field validation type/s
 
@@ -76,9 +72,9 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    // Taxonomy Field
 		    array(
 			// Field name/label									
-			'name' => __( 'Taxonomy', $this->plugin_slug ),
+			'name' => __( 'Taxonomy', PN_TEXTDOMAIN ),
 			// Field description					
-			'desc' => __( 'Set the taxonomy.', $this->plugin_slug ),
+			'desc' => __( 'Set the taxonomy.', PN_TEXTDOMAIN ),
 			// Field id		
 			'id' => 'taxonomy',
 			'type' => 'taxonomy',
@@ -88,9 +84,9 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    // Taxonomy Field
 		    array(
 			// Field name/label									
-			'name' => __( 'Taxonomy terms', $this->plugin_slug ),
+			'name' => __( 'Taxonomy terms', PN_TEXTDOMAIN ),
 			// Field description					
-			'desc' => __( 'Set the taxonomy terms.', $this->plugin_slug ),
+			'desc' => __( 'Set the taxonomy terms.', PN_TEXTDOMAIN ),
 			// Field id		
 			'id' => 'taxonomyterm',
 			'type' => 'taxonomyterm',
@@ -101,9 +97,9 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    // Pages Field
 		    array(
 			// Field name/label									
-			'name' => __( 'Pages', $this->plugin_slug ),
+			'name' => __( 'Pages', PN_TEXTDOMAIN ),
 			// Field description					
-			'desc' => __( 'Set the page.', $this->plugin_slug ),
+			'desc' => __( 'Set the page.', PN_TEXTDOMAIN ),
 			// Field id		
 			'id' => 'pages',
 			'type' => 'pages',
@@ -113,9 +109,9 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    // Post type Field
 		    array(
 			// Field name/label									
-			'name' => __( 'Post type', $this->plugin_slug ),
+			'name' => __( 'Post type', PN_TEXTDOMAIN ),
 			// Field description					
-			'desc' => __( 'Set the post type.', $this->plugin_slug ),
+			'desc' => __( 'Set the post type.', PN_TEXTDOMAIN ),
 			// Field id		
 			'id' => 'posttype',
 			'type' => 'posttype',
@@ -126,23 +122,23 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    // Amount Field
 		    array(
 			'name' => __( 'Amount' ),
-			'desc' => __( 'Select how many posts to show.', $this->plugin_slug ),
+			'desc' => __( 'Select how many posts to show.', PN_TEXTDOMAIN ),
 			'id' => 'amount',
 			'type' => 'select',
 			// Selectbox fields			
 			'fields' => array(
 			    array(
 				// Option name
-				'name' => __( '1 Post', $this->plugin_slug ),
+				'name' => __( '1 Post', PN_TEXTDOMAIN ),
 				// Option value			
 				'value' => '1'
 			    ),
 			    array(
-				'name' => __( '2 Posts', $this->plugin_slug ),
+				'name' => __( '2 Posts', PN_TEXTDOMAIN ),
 				'value' => '2'
 			    ),
 			    array(
-				'name' => __( '3 Posts', $this->plugin_slug ),
+				'name' => __( '3 Posts', PN_TEXTDOMAIN ),
 				'value' => '3'
 			    )
 
@@ -153,8 +149,8 @@ class Pl_My_Recent_Posts_Widget extends WPH_Widget {
 		    ),
 		    // Output type checkbox
 		    array(
-			'name' => __( 'Output as list', $this->plugin_slug ),
-			'desc' => __( 'Wraps posts with the <li> tag.', $this->plugin_slug ),
+			'name' => __( 'Output as list', PN_TEXTDOMAIN ),
+			'desc' => __( 'Wraps posts with the <li> tag.', PN_TEXTDOMAIN ),
 			'id' => 'list',
 			'type' => 'checkbox',
 			// Checked by default: 

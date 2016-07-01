@@ -15,9 +15,6 @@ class Pn_ContextualHelp {
      * Initialize the Contextual Help
      */
     function __construct() {
-        $plugin = Plugin_Name::get_instance();
-        $this->plugin_slug = $plugin->get_plugin_slug();
-
         /*
          * Load Wp_Contextual_Help for the help tabs
          */
@@ -68,15 +65,15 @@ class Pn_ContextualHelp {
         }
 
         // Only display on the pages - post.php and post-new.php, but only on the `demo` post_type
-        WP_Contextual_Help::register_tab( 'demo-example', __( 'Demo Management', $this->plugin_slug ), array(
+        WP_Contextual_Help::register_tab( 'demo-example', __( 'Demo Management', PN_TEXTDOMAIN ), array(
             'page' => array( 'post.php', 'post-new.php' ),
             'post_type' => 'demo',
             'wpautop' => true
         ) );
 
         // Add to a custom plugin settings page
-        WP_Contextual_Help::register_tab( 'pn_settings', __( 'Boilerplate Settings', $this->plugin_slug ), array(
-            'page' => 'settings_page_' . $this->plugin_slug,
+        WP_Contextual_Help::register_tab( 'pn_settings', __( 'Boilerplate Settings', PN_TEXTDOMAIN ), array(
+            'page' => 'settings_page_' . PN_TEXTDOMAIN,
             'wpautop' => true
         ) );
     }

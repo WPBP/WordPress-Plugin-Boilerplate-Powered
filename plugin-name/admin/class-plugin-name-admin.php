@@ -63,9 +63,7 @@ class Plugin_Name_Admin {
 		 *
 		 */
 		$plugin = Plugin_Name::get_instance();
-		$this->plugin_slug = $plugin->get_plugin_slug();
 		$this->plugin_name = $plugin->get_plugin_name();
-		$this->version = $plugin->get_plugin_version();
 		$this->cpts = $plugin->get_cpts();
 
 		// Load admin style sheet and JavaScript.
@@ -78,7 +76,7 @@ class Plugin_Name_Admin {
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		// Add an action link pointing to the options page.
-		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_slug . '.php' );
+		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
             
 		/*
@@ -109,7 +107,7 @@ class Plugin_Name_Admin {
 		 */
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
 		$debug = new Pn_Debug( );
-		$debug->log( __( 'Plugin Loaded', $this->plugin_slug ) );
+		$debug->log( __( 'Plugin Loaded', PN_TEXTDOMAIN ) );
 
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend
@@ -154,7 +152,7 @@ class Plugin_Name_Admin {
 		$post_columns->add_column( 'cmb2_field', array(
 		    'label' => __( 'CMB2 Field' ),
 		    'type' => 'post_meta',
-		    'meta_key' => '_demo_' . $this->plugin_slug . '_text',
+		    'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
 		    'orderby' => 'meta_value',
 		    'sortable' => true,
 		    'prefix' => '<b>',
@@ -215,7 +213,7 @@ class Plugin_Name_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
-			wp_enqueue_style( $this->plugin_slug . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), Plugin_Name::VERSION );
+			wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
 		}
 	}
 
@@ -237,7 +235,7 @@ class Plugin_Name_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs' ), Plugin_Name::VERSION );
+			wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
 		}
 	}
 
@@ -265,13 +263,13 @@ class Plugin_Name_Admin {
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Page Title', $this->plugin_slug ), $this->plugin_name, 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' )
+			__( 'Page Title', PN_TEXTDOMAIN ), $this->plugin_name, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
 		);
 		/*
 		 * Settings page in the menu
 		 * 
 		 */
-		$this->plugin_screen_hook_suffix = add_menu_page( __( 'Page Title', $this->plugin_slug ), $this->plugin_name, 'manage_options', $this->plugin_slug, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
+		$this->plugin_screen_hook_suffix = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), $this->plugin_name, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
 
 	/**
@@ -293,8 +291,8 @@ class Plugin_Name_Admin {
 	public function add_action_links( $links ) {
 		return array_merge(
 			array(
-		    'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings' ) . '</a>',
-		    'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', $this->plugin_slug ) . '</a>'
+		    'settings' => '<a href="' . admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) . '">' . __( 'Settings' ) . '</a>',
+		    'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', PN_TEXTDOMAIN ) . '</a>'
 			), $links
 		);
 	}

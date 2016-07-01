@@ -17,9 +17,6 @@ class Pn_CMB {
      * @since     1.0.0
      */
     public function __construct() {
-        $plugin = Plugin_Name::get_instance();
-        $this->plugin_slug = $plugin->get_plugin_slug();
-
         /*
          * CMB 2 for metabox and many other cool things!
          * https://github.com/WebDevStudios/CMB2
@@ -56,28 +53,28 @@ class Pn_CMB {
         $prefix = '_demo_';
         $cmb_demo = new_cmb2_box( array(
             'id' => $prefix . 'metabox',
-            'title' => __( 'Demo Metabox', $this->plugin_slug ),
+            'title' => __( 'Demo Metabox', PN_TEXTDOMAIN ),
             'object_types' => array( 'demo', ), // Post type
             'context' => 'normal',
             'priority' => 'high',
             'show_names' => true, // Show field names on the left
                 ) );
-        $cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
-        $row = $cmb2Grid->addRow();
+        //$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
+        //$row = $cmb2Grid->addRow();
         $field1 = $cmb_demo->add_field( array(
-            'name' => __( 'Text', $this->plugin_slug ),
-            'desc' => __( 'field description (optional)', $this->plugin_slug ),
-            'id' => $prefix . $this->plugin_slug . '_text',
+            'name' => __( 'Text', PN_TEXTDOMAIN ),
+            'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+            'id' => $prefix . PN_TEXTDOMAIN . '_text',
             'type' => 'text'
                 ) );
 
         $field2 = $cmb_demo->add_field( array(
-            'name' => __( 'Text Small', $this->plugin_slug ),
-            'desc' => __( 'field description (optional)', $this->plugin_slug ),
-            'id' => $prefix . $this->plugin_slug . '_textsmall',
+            'name' => __( 'Text Small', PN_TEXTDOMAIN ),
+            'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+            'id' => $prefix . PN_TEXTDOMAIN . '_textsmall',
             'type' => 'text_small'
                 ) );
-        $row->addColumns( array( $field1, $field2 ) );
+        //$row->addColumns( array( $field1, $field2 ) );
     }
 
 }

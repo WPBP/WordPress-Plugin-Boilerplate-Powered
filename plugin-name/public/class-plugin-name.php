@@ -23,16 +23,6 @@
  * @author  Your Name <email@example.com>
  */
 class Plugin_Name {
-
-    /**
-     * Plugin version, used for cache-busting of style and script file references.
-     *
-     * @since   1.0.0
-     *
-     * @var     string
-     */
-    const VERSION = '1.0.0';
-
     /**
      * @TODO - Rename "plugin-name" to the name of your plugin
      *
@@ -113,7 +103,7 @@ class Plugin_Name {
     private function __construct() {
         // Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
         register_via_cpt_core(
-                array( __( 'Demo', $this->get_plugin_slug() ), __( 'Demos', $this->get_plugin_slug() ), 'demo' ), array(
+                array( __( 'Demo', PN_TEXTDOMAIN ), __( 'Demos', PN_TEXTDOMAIN ), 'demo' ), array(
             'taxonomies' => array( 'demo-section' ),
             'capabilities' => array(
                 'edit_post' => 'edit_demo',
@@ -127,7 +117,7 @@ class Plugin_Name {
 
         // Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
         register_via_taxonomy_core(
-                array( __( 'Demo Section', $this->get_plugin_slug() ), __( 'Demo Sections', $this->get_plugin_slug() ), 'demo-section' ), array(
+                array( __( 'Demo Section', PN_TEXTDOMAIN ), __( 'Demo Sections', PN_TEXTDOMAIN ), 'demo-section' ), array(
             'public' => true,
             'capabilities' => array(
                 'assign_terms' => 'edit_posts',
@@ -174,17 +164,6 @@ class Plugin_Name {
      */
     public function get_plugin_name() {
         return self::$plugin_name;
-    }
-
-    /**
-     * Return the version
-     *
-     * @since    1.0.0
-     *
-     * @return    Version const.
-     */
-    public function get_plugin_version() {
-        return self::VERSION;
     }
 
     /**
@@ -249,7 +228,7 @@ class Plugin_Name {
      * @return void
      */
     public function enqueue_styles() {
-        wp_enqueue_style( $this->get_plugin_slug() . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), self::VERSION );
+        wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), self::VERSION );
     }
 
     /**
@@ -259,7 +238,7 @@ class Plugin_Name {
      * @return void
      */
     public function enqueue_scripts() {
-        wp_enqueue_script( $this->get_plugin_slug() . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+        wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
     }
 
     /**
@@ -269,8 +248,8 @@ class Plugin_Name {
      * @return void
      */
     public function enqueue_js_vars() {
-        wp_localize_script( $this->get_plugin_slug() . '-plugin-script', 'pn_js_vars', array(
-            'alert' => __( 'Hey! You have clicked the button!', $this->get_plugin_slug() )
+        wp_localize_script( PN_TEXTDOMAIN . '-plugin-script', 'pn_js_vars', array(
+            'alert' => __( 'Hey! You have clicked the button!', PN_TEXTDOMAIN )
                 )
         );
     }
@@ -283,7 +262,7 @@ class Plugin_Name {
      * @return array
      */
     public function add_pn_class( $classes ) {
-        $classes[] = $this->get_plugin_slug();
+        $classes[] = PN_TEXTDOMAIN;
         return $classes;
     }
 

@@ -16,7 +16,6 @@ class Pn_Extras {
      */
     function __construct() {
         $plugin = Plugin_Name::get_instance();
-        $this->plugin_slug = $plugin->get_plugin_slug();
         $this->cpts = $plugin->get_cpts();
 
         // At Glance Dashboard widget for your cpts
@@ -46,7 +45,7 @@ class Pn_Extras {
             if ( $num_posts ) {
                 $published = intval( $num_posts->publish );
                 $post_type = get_post_type_object( $type );
-                $text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, $this->plugin_slug );
+                $text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, PN_TEXTDOMAIN );
                 $text = sprintf( $text, number_format_i18n( $published ) );
                 if ( current_user_can( $post_type->cap->edit_posts ) ) {
                     $items[] = '<a class="' . $post_type->name . '-count" href="edit.php?post_type=' . $post_type->name . '">' . sprintf( '%2$s', $type, $text ) . "</a>\n";

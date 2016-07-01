@@ -16,7 +16,6 @@ class Pn_ActDeact {
      */
     function __construct() {
         $plugin = Plugin_Name::get_instance();
-        $this->plugin_slug = $plugin->get_plugin_slug();
         $this->plugin_name = $plugin->get_plugin_name();
         $this->plugin_roles = $plugin->get_plugin_roles();
         // Activate plugin when new blog is added

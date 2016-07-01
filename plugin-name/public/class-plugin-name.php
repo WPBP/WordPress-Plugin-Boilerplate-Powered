@@ -24,33 +24,6 @@
  */
 class Plugin_Name {
     /**
-     * @TODO - Rename "plugin-name" to the name of your plugin
-     *
-     * Unique identifier for your plugin.
-     *
-     *
-     * The variable name is used as the text domain when internationalizing strings
-     * of text. Its value should match the Text Domain file header in the main
-     * plugin file.
-     *
-     * @var      string
-     *
-     * @since    1.0.0
-     */
-    protected static $plugin_slug = 'plugin-name';
-
-    /**
-     * @TODO - Rename "Plugin Name" to the name of your plugin
-     *
-     * Unique identifier for your plugin.
-     *
-     * @var      string
-     *
-     * @since    1.0.0
-     */
-    protected static $plugin_name = 'Plugin Name';
-
-    /**
      * Instance of this class.
      *
      * @var      object
@@ -142,28 +115,6 @@ class Plugin_Name {
         add_action( '@TODO', array( $this, 'action_method_name' ) );
         add_filter( '@TODO', array( $this, 'filter_method_name' ) );
         add_shortcode( '@TODO', array( $this, 'shortcode_method_name' ) );
-    }
-
-    /**
-     * Return the plugin slug.
-     *
-     * @since    1.0.0
-     *
-     * @return    Plugin slug variable.
-     */
-    public function get_plugin_slug() {
-        return self::$plugin_slug;
-    }
-
-    /**
-     * Return the plugin name.
-     *
-     * @since    1.0.0
-     *
-     * @return    Plugin name variable.
-     */
-    public function get_plugin_name() {
-        return self::$plugin_name;
     }
 
     /**

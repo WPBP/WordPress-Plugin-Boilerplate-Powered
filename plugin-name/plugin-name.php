@@ -32,6 +32,7 @@ if ( !defined( 'WPINC' ) ) {
 
 define('PN_VERSION', '1.0.0');
 define('PN_TEXTDOMAIN', 'plugin-name');
+define('PN_NAME', 'Plugin Name');
 
 /*
  * ------------------------------------------------------------------------------

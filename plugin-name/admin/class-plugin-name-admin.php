@@ -17,7 +17,6 @@
  */
 
 class Plugin_Name_Admin {
-
 	/**
 	 * Instance of this class.
 	 *
@@ -63,7 +62,6 @@ class Plugin_Name_Admin {
 		 *
 		 */
 		$plugin = Plugin_Name::get_instance();
-		$this->plugin_name = $plugin->get_plugin_name();
 		$this->cpts = $plugin->get_cpts();
 
 		// Load admin style sheet and JavaScript.
@@ -263,13 +261,13 @@ class Plugin_Name_Admin {
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 		 */
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Page Title', PN_TEXTDOMAIN ), $this->plugin_name, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
+			__( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
 		);
 		/*
 		 * Settings page in the menu
 		 * 
 		 */
-		$this->plugin_screen_hook_suffix = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), $this->plugin_name, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
+		$this->plugin_screen_hook_suffix = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
 
 	/**

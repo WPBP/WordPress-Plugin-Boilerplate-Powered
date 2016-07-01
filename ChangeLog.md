@@ -1,3 +1,7 @@
+## 2.0.0
+
+* Moved slug, plugin name and version as constants
+
 ## 1.2.0
 
 * Added Unit test

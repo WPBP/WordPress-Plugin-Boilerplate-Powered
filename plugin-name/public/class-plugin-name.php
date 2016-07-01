@@ -1,16 +1,6 @@
 <?php
 
 /**
- * Plugin Name.
- *
- * @package   Plugin_Name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
- */
-
-/**
  * Plugin class. This class should ideally be used to work with the
  * public-facing side of the WordPress site.
  *
@@ -19,9 +9,13 @@
  *
  * @TODO: Rename this class to a proper name for your plugin.
  *
- * @package Plugin_Name
- * @author  Your Name <email@example.com>
+ * @package   Plugin_Name
+ * @author    Your Name <email@example.com>
+ * @license   GPL-2.0+
+ * @link      http://example.com
+ * @copyright 2016 Your Name or Company Name
  */
+
 class Plugin_Name {
     /**
      * Instance of this class.
@@ -30,7 +24,7 @@ class Plugin_Name {
      *
      * @since    1.0.0
      */
-    protected static $instance = null;
+    private static $instance;
 
     /**
      * Array of cpts of the plugin
@@ -149,7 +143,7 @@ class Plugin_Name {
     public static function get_instance() {
         // If the single instance hasn't been set, set it now.
         if ( null == self::$instance ) {
-            self::$instance = new self;
+            self::$instance = new self();
         }
 
         return self::$instance;

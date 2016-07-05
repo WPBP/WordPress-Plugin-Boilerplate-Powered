@@ -39,7 +39,11 @@ define('PN_NAME', 'Plugin Name');
  * Public-Facing Functionality
  * ------------------------------------------------------------------------------
  */
-require_once( plugin_dir_path( __FILE__ ) . 'includes/load_textdomain.php' );
+function pn_load_plugin_textdomain() {
+	load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
 /*
  * Load library for simple and fast creation of Taxonomy and Custom Post Type

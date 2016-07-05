@@ -1,6 +1,7 @@
 ## 2.0.0
 
 * Moved slug, plugin name and version as constants
+* File renamed and new positions
 
 ## 1.2.0
 

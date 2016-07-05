@@ -114,40 +114,8 @@ new Fake_Page(
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/language.php' );
 
-/*
- * @TODO:
- *
- * - replace `class-plugin-name.php` with the name of the plugin's class file
- *
- */
-
-require_once( plugin_dir_path( __FILE__ ) . 'public/class-plugin-name.php' );
-require_once( plugin_dir_path( __FILE__ ) . 'public/includes/PN_ActDeact.php' );
-
-/*
- * Register hooks that are fired when the plugin is activated or deactivated.
- * When the plugin is deleted, the uninstall.php file is loaded.
- *
- * @TODO:
- *
- * - replace Plugin_Name with the name of the class defined in
- *   `class-plugin-name.php`
- */
-
-register_activation_hook( __FILE__, array( 'Pn_ActDeact', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Pn_ActDeact', 'deactivate' ) );
-
-/*
- * @TODO:
- *
- * - replace Plugin_Name with the name of the class defined in
- *   `class-plugin-name.php`
- * - 9999 is used for load the plugin as last for resolve some
- *   problems when the plugin use API of other plugins, remove
- *   if you don' want this
- */
-
-add_action( 'plugins_loaded', array( 'Plugin_Name', 'get_instance' ), 9999 );
+require_once( plugin_dir_path( __FILE__ ) . 'public/Plugin_Name.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );
 
 /*
  * -----------------------------------------------------------------------------
@@ -156,12 +124,6 @@ add_action( 'plugins_loaded', array( 'Plugin_Name', 'get_instance' ), 9999 );
 */
 
 /*
- * @TODO:
- *
- * - replace `class-plugin-name-admin.php` with the name of the plugin's admin file
- * - replace Plugin_Name_Admin with the name of the class defined in
- *   `class-plugin-name-admin.php`
- *
  * If you want to include Ajax within the dashboard, change the following
  * conditional to:
  *
@@ -173,6 +135,5 @@ add_action( 'plugins_loaded', array( 'Plugin_Name', 'get_instance' ), 9999 );
  */
 
 if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-plugin-name-admin.php' );
-	add_action( 'plugins_loaded', array( 'Plugin_Name_Admin', 'get_instance' ) );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
 }

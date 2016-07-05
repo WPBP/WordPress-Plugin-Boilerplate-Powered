@@ -12,9 +12,6 @@
  * @return void
  */
 function pn_load_plugin_textdomain() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
-
-	load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_LANG_DIR ) . PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
 	load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 }
 

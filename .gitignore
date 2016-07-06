@@ -9,6 +9,7 @@
 *.vi
 *~
 *.sass-cache
+*.lock
 
 # OS or Editor folders
 .DS_Store
@@ -24,14 +25,6 @@ nbproject
 *.sublime-workspace
 node_modules
 
-# Dreamweaver added files
-_notes
-dwsync.xml
-
-# Komodo
-*.komodoproject
-.komodotools
-
 # Folders to ignore
 .hg
 .svn
@@ -39,3 +32,7 @@ dwsync.xml
 intermediate
 .idea
 cache
+vendor
+public/includes/lib
+admin/includes/lib
+includes/lib

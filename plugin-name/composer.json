@@ -17,8 +17,7 @@
         "origgami/cmb2-grid": "dev-master",
         "webdevstudios/cpt-core": "1.0.1",
         "webdevstudios/taxonomy_core": "0.2.4",
-        "freemius/wordpress-sdk": "1.7.4",
-        "a5hleyrich/wp-background-processing": "dev-master"
+        "freemius/wordpress-sdk": "1.7.4"
     },
     "repositories": [
     {
@@ -28,15 +27,11 @@
     {
         "url": "git@github.com:origgami/CMB2-grid.git",
         "type": "git"
-    },
-    {
-        "url": "git@github.com:A5hleyRich/wp-background-processing.git",
-        "type": "git"
     }
     ],
     "extra": {
         "installer-paths": {
-            "./includes/lib/{$name|F}": ["wpbp/language","wpbp/cronplus", "wpbp/fakepage","wpbp/template","wpbp/requirements","wpbp/debug","webdevstudios/cpt-core","webdevstudios/taxonomy_core","freemius/wordpress-sdk","a5hleyrich/wp-background-processing"],
+            "./includes/lib/{$name|F}": ["wpbp/language","wpbp/cronplus", "wpbp/fakepage","wpbp/template","wpbp/requirements","wpbp/debug","webdevstudios/cpt-core","webdevstudios/taxonomy_core","freemius/wordpress-sdk"],
             "./public/includes/lib/{$name|F}": ["wpbp/widgets-helper"],
             "./admin/includes/lib/{$name|F}": ["wpbp/pointerplus","wpbp/cpt_columns","webdevstudios/cmb2","origgami/cmb2-grid","voceconnect/wp-contextual-help","nathanielks/wp-admin-notice"]
         }

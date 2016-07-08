@@ -33,4 +33,7 @@ intermediate
 .idea
 cache
 vendor
-**includes/lib/*
+/plugin-name/public/includes/lib/
+/plugin-name/admin/includes/lib/
+/plugin-name/includes/lib/
+/plugin-name/composer/

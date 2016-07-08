@@ -20,9 +20,7 @@ class Pn_ContextualHelp {
          */
         add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
         add_filter( 'wp_contextual_help_docs_url', array( $this, 'help_docs_url' ) );
-        if ( !class_exists( 'WP_Contextual_Help' ) ) {
-            require_once( plugin_dir_path( __FILE__ ) . 'WP-Contextual-Help/wp-contextual-help.php' );
-        }
+	  
         add_action( 'init', array( $this, 'contextual_help' ) );
     }
 

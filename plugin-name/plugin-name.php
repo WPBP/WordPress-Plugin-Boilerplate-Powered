@@ -42,21 +42,9 @@ define('PN_NAME', 'Plugin Name');
 function pn_load_plugin_textdomain() {
 	load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 }
-
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
-/*
- * Load library for simple and fast creation of Taxonomy and Custom Post Type
- */
-
-require_once( plugin_dir_path( __FILE__ ) . 'includes/Taxonomy_Core/Taxonomy_Core.php' );
-require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Core/CPT_Core.php' );
-
-/*
- * Load template system
- */
-
-require_once( plugin_dir_path( __FILE__ ) . 'includes/template.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'composer/autoload.php' );
 
 /** 
  * Create a helper function for easy SDK access.
@@ -68,9 +56,6 @@ function pn_fs() {
     global $pn_fs;
 
     if ( ! isset( $pn_fs ) ) {
-        // Include Freemius SDK.
-        require_once dirname(__FILE__) . '/includes/freemius/start.php';
-
         $pn_fs = fs_dynamic_init( array(
             'id'                => '',
             'slug'              => 'plugin-name',
@@ -91,19 +76,6 @@ function pn_fs() {
 // Init Freemius.
 // pn_fs();
 
-/*
- * Load Widgets Helper
- */
-
-require_once( plugin_dir_path( __FILE__ ) . 'includes/Widgets-Helper/wph-widget-class.php' );
-require_once( plugin_dir_path( __FILE__ ) . 'includes/widgets/sample.php' );
-
-/*
- * Load Fake Page class
- */
-
-require_once( plugin_dir_path( __FILE__ ) . 'includes/fake-page.php' );
-
 new Fake_Page(
 	array(
     'slug' => 'fake_slug',
@@ -111,12 +83,6 @@ new Fake_Page(
     'post_content' => 'This is the fake page content'
 	)
 );
-
-/*
- * Load Language wrapper function for WPML/Ceceppa Multilingua/Polylang
- */
-
-require_once( plugin_dir_path( __FILE__ ) . 'includes/language.php' );
 
 require_once( plugin_dir_path( __FILE__ ) . 'public/Plugin_Name.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );

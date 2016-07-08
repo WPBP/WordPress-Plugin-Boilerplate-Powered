@@ -18,7 +18,6 @@ class Pn_ImpExp {
 	 * @since     1.0.0
 	 */
 	public function __construct() {
-		$plugin = Plugin_Name::get_instance();
 		// Add the export settings method
 		add_action( 'admin_init', array( $this, 'settings_export' ) );
 		// Add the import settings method

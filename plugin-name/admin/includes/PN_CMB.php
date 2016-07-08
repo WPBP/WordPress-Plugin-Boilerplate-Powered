@@ -18,24 +18,6 @@ class Pn_CMB {
      */
     public function __construct() {
         /*
-         * CMB 2 for metabox and many other cool things!
-         * https://github.com/WebDevStudios/CMB2
-         */
-        require_once( plugin_dir_path( __FILE__ ) . '/CMB2/init.php' );
-        /*
-         * CMB2 CMB2-Google-Maps support 
-         * Check on the repo for the example and documentation 
-         * https://github.com/mustardBees/cmb_field_map
-         */
-        require_once( plugin_dir_path( __FILE__ ) . '/CMB2-Google-Maps/cmb-field-map.php' );
-        /*
-         * CMB2 Grid 
-         * Check on the repo for the example and documentation 
-         * https://github.com/origgami/CMB2-grid
-         */
-        require_once( plugin_dir_path( __FILE__ ) . '/CMB2-grid/Cmb2GridPlugin.php' );
-
-        /*
          * Add metabox
          */
         add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
@@ -59,8 +41,8 @@ class Pn_CMB {
             'priority' => 'high',
             'show_names' => true, // Show field names on the left
                 ) );
-        //$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
-        //$row = $cmb2Grid->addRow();
+        $cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
+        $row = $cmb2Grid->addRow();
         $field1 = $cmb_demo->add_field( array(
             'name' => __( 'Text', PN_TEXTDOMAIN ),
             'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
@@ -74,7 +56,7 @@ class Pn_CMB {
             'id' => $prefix . PN_TEXTDOMAIN . '_textsmall',
             'type' => 'text_small'
                 ) );
-        //$row->addColumns( array( $field1, $field2 ) );
+        $row->addColumns( array( $field1, $field2 ) );
     }
 
 }

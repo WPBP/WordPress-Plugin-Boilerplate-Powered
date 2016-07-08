@@ -17,15 +17,6 @@ class Pn_Pointers {
      * @since     1.0.0
      */
     public function __construct() {
-        $plugin = Plugin_Name::get_instance();
-        /*
-         * Load PointerPlus for the Wp Pointer
-         * 
-         * Unique parameter is the prefix
-         */
-        if ( !class_exists( 'PointerPlus' ) ) {
-            require_once( plugin_dir_path( __FILE__ ) . 'PointerPlus/class-pointerplus.php' );
-        }
         new PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
         add_filter( PN_TEXTDOMAIN . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
     }

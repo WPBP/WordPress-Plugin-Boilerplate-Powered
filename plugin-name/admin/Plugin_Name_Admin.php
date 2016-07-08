@@ -103,8 +103,7 @@ class Plugin_Name_Admin {
 		/*
 		 * Debug mode
 		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/debug.php' );
-		$debug = new Pn_Debug( );
+		$debug = new WPBP_Debug( );
 		$debug->log( __( 'Plugin Loaded', PN_TEXTDOMAIN ) );
 
 		/*
@@ -112,9 +111,6 @@ class Plugin_Name_Admin {
 		 * 
 		 * First parameter the HTML, the second is the css class
 		 */
-		if ( !class_exists( 'WP_Admin_Notice' ) ) {
-			require_once( plugin_dir_path( __FILE__ ) . 'includes/WP-Admin-Notice/WP_Admin_Notice.php' );
-		}
 		new WP_Admin_Notice( __( 'Updated Messages' ), 'updated' );
 		new WP_Admin_Notice( __( 'Error Messages' ), 'error' );
             
@@ -127,9 +123,6 @@ class Plugin_Name_Admin {
 		 * Load CronPlus 
 		 * 
 		 */
-		if ( !class_exists( 'CronPlus' ) ) {
-			require_once( plugin_dir_path( __FILE__ ) . 'includes/CronPlus/class-cronplus.php' );
-		}
 		$args = array(
 		    'recurrence' => 'hourly',
 		    'schedule' => 'schedule',
@@ -145,7 +138,6 @@ class Plugin_Name_Admin {
 		 * 
 		 * Check the file for example
 		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/CPT_Columns.php' );
 		$post_columns = new CPT_columns( 'demo' );
 		$post_columns->add_column( 'cmb2_field', array(
 		    'label' => __( 'CMB2 Field' ),

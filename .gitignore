@@ -33,6 +33,4 @@ intermediate
 .idea
 cache
 vendor
-public/includes/lib/
-admin/includes/lib/
-includes/lib/
+**includes/lib/*

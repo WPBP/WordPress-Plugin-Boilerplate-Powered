@@ -2,6 +2,7 @@
     "require": {
         "php": ">=5.3",
         "idct/composer-custom-directory": "dev-master",
+        "composer/installers": "~1.0",
         "wpbp/pointerplus": "dev-master",
         "wpbp/cronplus": "dev-master",
         "wpbp/widgets-helper": "dev-master",
@@ -31,9 +32,12 @@
     ],
     "extra": {
         "installer-paths": {
-            "./includes/lib/{$name|F}": ["wpbp/language","wpbp/cronplus", "wpbp/fakepage","wpbp/template","wpbp/requirements","wpbp/debug","webdevstudios/cpt-core","webdevstudios/taxonomy_core","freemius/wordpress-sdk"],
+            "./includes/lib/{$name|F}": ["wpbp/language","wpbp/cronplus", "wpbp/fakepage","wpbp/template","wpbp/requirements","wpbp/debug","webdevstudios/cpt-core","webdevstudios/taxonomy_core"],
+            "./includes/lib/{$name}": ["webdevstudios/cpt-core"],
+            "./includes/lib/Freemius": ["freemius/wordpress-sdk"],
             "./public/includes/lib/{$name|F}": ["wpbp/widgets-helper"],
-            "./admin/includes/lib/{$name|F}": ["wpbp/pointerplus","wpbp/cpt_columns","webdevstudios/cmb2","origgami/cmb2-grid","voceconnect/wp-contextual-help","nathanielks/wp-admin-notice"]
+            "./admin/includes/lib/{$name}": ["webdevstudios/cmb2"],
+            "./admin/includes/lib/{$name|F}": ["wpbp/pointerplus","wpbp/cpt_columns","origgami/cmb2-grid","voceconnect/wp-contextual-help","nathanielks/wp-admin-notice"]
         }
     }
 }

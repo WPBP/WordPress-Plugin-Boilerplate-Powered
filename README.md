@@ -1,14 +1,16 @@
 #WordPress Plugin Boilerplate Powered
 <p align="center">
-<img src="./plugin-name/assets/icon-256x256.png" alt="Logo" title="Logo">
+<img src="./assets/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
-**WordPress Plugin Boilerplate Powered** is a complete foundation (without frameworks with many independent libaries ) for building your WordPress plugins.  
-*Look in Recommended tools section of this readme for the Yeoman Generator and Vagrant.*   
-You want to see which plugins have been made with this boilerplate or add them to the list? Check [here](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
-Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other info.
+**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.  
+You want to see which plugins have been made with this boilerplate or add them to the list? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
+Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
 
 ##Features
+
+The mainly purpose of this boilerplate that you can get a library and the boilerpalte contain already the example for use it without need a copy&paste manual way.
+*Look in Recommended tools section of this readme for the Yeoman Generator that clean the boilerplate from the stuff that you don't need.*   
 
 ###Library integrated
 
@@ -16,21 +18,7 @@ Check the [Wiki](https://github.com/sudar/wp-plugin-in-github/wiki) for other in
 * Checked the minimum version required with PHPCompatInfo (PHP 5.2)
 * Sass support with Compass and Grunt
 * CoffeeScript support Grunt (not mandatory with the Yeoman generator)
-* [CPT Core](https://github.com/WebDevStudios/CPT_Core) and [Taxonomy Core](https://github.com/WebDevStudios/Taxonomy_Core) integrated
-* [CMB2](https://github.com/WebDevStudios/CMB2), [CMB2-Google-Maps](https://github.com/mustardBees/cmb_field_map) and [CMB2-Grid](https://github.com/origgami/CMB2-grid) integrated
-* [WordPress Widgets Helper Class](https://github.com/sksmatt/WordPress-Widgets-Helper-Class/) with improvements
-* [WP Contextual Help](https://github.com/voceconnect/wp-contextual-help) integrated
-* [WP Admin Notice](https://github.com/nathanielks/wordpress-admin-notice) integrated
-* [PointerPlus](https://github.com/Mte90/pointerplus) integrated
-* [CronPlus](https://github.com/Mte90/CronPlus) integrated
-* [WP Background Processing](https://github.com/A5hleyRich/wp-background-processing) integrated
-* [Freemius SDK](https://github.com/Freemius/wordpress-sdk) integrated
-* Function for custom template (like WooCommerce) also for email with multilanguage in `includes/template.php`
-* Fake Page class in `includes/language.php` in `includes/fake-page.php`
-* Language function wrapper for WPML/Ceceppa Multilingua/Polylang in `includes/language.php`
-* [Modified Debug system](https://github.com/benbalter/wordpress-plugin-boilerplate-classes) in `admin/includes/debug.php`
-* [Very modified requirements detection on activation](https://github.com/dsawardekar/wp-requirements) in `public/includes/requirements.php`
-* [Modified CPT_Columns](https://en.bainternet.info/custom-post-types-columns/) Class for CPTs columns in `admin/includes/CPT_Columns.php`
+* Many libraries already avalaible in composer.json (with the yeoman generator you can choose)
 
 ###Snippet included
 
@@ -79,16 +67,6 @@ PS: Use the Yeoman generator in the Generator Tool is better and simple!
 
 This will activate the WordPress Plugin Boilerplate Powered.  
 Because the Boilerplate has no real functionality, nothing will be added to WordPress; however, this demonstrates exactly how your plugin should behave while you're working with the Boilerplate.
-
-###Git Clone
-	
-	git clone --recursive git@github.com:Mte90/WordPress-Plugin-Boilerplate-Powered.git
-	cd WordPress-Plugin-Boilerplate-Powered/plugin-name
-
-##Git update submodule
-
-    git submodule update --recursive
-    git submodule foreach git pull origin master
 
 ##Recommended Tools
 

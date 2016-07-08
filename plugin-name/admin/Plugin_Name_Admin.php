@@ -113,6 +113,7 @@ class Plugin_Name_Admin {
 		 */
 		new WP_Admin_Notice( __( 'Updated Messages' ), 'updated' );
 		new WP_Admin_Notice( __( 'Error Messages' ), 'error' );
+		dnh_register_notice( 'my_demo_notice', 'updated', __( 'This is my dismissible notice' ) );
             
 		/*
 		 * All the pointers

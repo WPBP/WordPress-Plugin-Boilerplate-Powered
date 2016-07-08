@@ -2,6 +2,8 @@
 
 * Moved slug, plugin name and version as constants
 * File renamed and new positions
+* Moved all the libraries to composer
+* Added Posts 2 Posts
 
 ## 1.2.0
 

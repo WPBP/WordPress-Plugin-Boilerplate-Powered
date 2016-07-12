@@ -33,7 +33,7 @@ class Plugin_Name_Admin {
    *
    * @since    1.0.0
    */
-  protected $plugin_screen_hook_suffix = null;
+  protected $admin_view_page = null;
 
   /**
    * Initialize the plugin by loading admin scripts & styles and adding a
@@ -202,12 +202,12 @@ class Plugin_Name_Admin {
    * @return    mixed    Return early if no settings page is registered.
    */
   public function enqueue_admin_styles() {
-    if ( !isset( $this->plugin_screen_hook_suffix ) ) {
+    if ( !isset( $this->admin_view_page ) ) {
 	return;
     }
 
     $screen = get_current_screen();
-    if ( $this->plugin_screen_hook_suffix == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
+    if ( $this->admin_view_page == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
 	wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
     }
   }
@@ -224,12 +224,12 @@ class Plugin_Name_Admin {
    * @return    mixed    Return early if no settings page is registered.
    */
   public function enqueue_admin_scripts() {
-    if ( !isset( $this->plugin_screen_hook_suffix ) ) {
+    if ( !isset( $this->admin_view_page ) ) {
 	return;
     }
 
     $screen = get_current_screen();
-    if ( $this->plugin_screen_hook_suffix == $screen->id ) {
+    if ( $this->admin_view_page == $screen->id ) {
 	wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
     }
   }
@@ -257,14 +257,14 @@ class Plugin_Name_Admin {
      * - Change 'manage_options' to the capability you see fit
      *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
      */
-    $this->plugin_screen_hook_suffix = add_options_page(
+    $this->admin_view_page = add_options_page(
 		__( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
     );
     /*
      * Settings page in the menu
      * 
      */
-    $this->plugin_screen_hook_suffix = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
+    $this->admin_view_page = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
   }
 
   /**

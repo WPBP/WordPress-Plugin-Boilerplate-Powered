@@ -33,6 +33,7 @@ class Pn_Extras {
      *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
      *
      * @since    1.0.0
+     * @param array $items The content of the widget.
      * @return array
      */
     public function cpt_glance_dashboard_support( $items = array() ) {
@@ -62,6 +63,7 @@ class Pn_Extras {
      * NOTE: add in $post_types your cpts
      *
      * @since    1.0.0
+     * @param array $query_args The content of the widget.
      * @return array
      */
     function cpt_activity_dashboard_support( $query_args ) {
@@ -164,7 +166,7 @@ class Pn_Extras {
         echo '<div class="siteapi-bridge-container">';
         foreach ( $json_output->projects as &$value ) {
             echo '<div class="siteapi-bridge-single">';
-            //json_output is an object so use -> to call children
+            // json_output is an object so use -> to call children
             echo '</div>';
         }
         echo '</div>';

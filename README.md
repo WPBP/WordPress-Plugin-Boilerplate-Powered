@@ -4,21 +4,40 @@
 </p>
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.  
-You want to see which plugins have been made with this boilerplate or add them to the list? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
+DO you want to see which plugins have been made with this boilerplate or add them to the list? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
 Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
 
 ##Features
 
-The mainly purpose of this boilerplate that you can get a library and the boilerpalte contain already the example for use it without need a copy&paste manual way.
-*Look in Recommended tools section of this readme for the Yeoman Generator that clean the boilerplate from the stuff that you don't need.*   
+The mainly purpose of this boilerplate: you choose a library and the boilerpalte contain already the example for use it without need a manual copy&paste way.  
+*Look in Recommended tools section of this readme for the Yeoman Generator that clean the boilerplate from the stuff that you don't need.*
 
 ###Library integrated
 
-* Plugin Boilerplate Powered is based on Plugin Boilerplate by Tom McFarlin
-* Checked the minimum version required with PHPCompatInfo (PHP 5.2)
 * Sass support with Compass and Grunt
-* CoffeeScript support Grunt (not mandatory with the Yeoman generator)
-* Many libraries already avalaible in composer.json (with the yeoman generator you can choose)
+* CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
+* Custom folder for Composer libraries
+* Many libraries already avalaible (with starter code) in composer.json (with the yeoman generator you can choose)
+	* [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)
+	* [WPBP/CronPlus](https://github.com/WPBP/CronPlus)
+	* [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)
+	* [WPBP/FakePage](https://github.com/WPBP/FakePage)
+	* [WPBP/Template](https://github.com/WPBP/Template)
+	* [WPBP/Debug](https://github.com/WPBP/Debug)
+	* [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)
+	* [WPBP/Requirements](https://github.com/WPBP/Requirements)
+	* [WPBP/Language](https://github.com/WPBP/Language)
+	* [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)
+	* [voceconnect/wp-contextual-help](https://github.com/voceconnect/wp-contextual-help)
+	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
+	* [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)
+	* [WebDevStudios/CPT_Core](https://github.com/WebDevStudios/CPT_Core)
+	* [WebDevStudios/Taxonomy_Core](https://github.com/WebDevStudios/Taxonomy_Core)
+	* [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
+	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
+	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
+	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
+
 
 ###Snippet included
 
@@ -34,21 +53,13 @@ The mainly purpose of this boilerplate that you can get a library and the boiler
 * Support for email template with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
 
-###WordPress Plugin Boilerplate Feature
-* The Plugin Boilerplate Powered is fully-based on the WordPress [Plugin API](http://codex.wordpress.org/Plugin_API).
-* Uses [PHPDoc](http://en.wikipedia.org/wiki/PHPDoc) conventions to document the code.
-* Example values are given, so you can see what needs to be changed.
-* Uses a strict file organization scheme to make sure the assets are easily maintainable.
-* Note that this boilerplate includes a `.pot` as a starting translation file.
-
 ##Shell Script & Tools
 
 ###Included
 
 * wp-boilerplate-version.sh (check below)
-* .compatinfomin.php for [PHP Compat Info](https://github.com/llaville/php-compat-info) check on [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools)
-* .php_cs for [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 * apigen.sh script for generate a docs folder with the documentation
+* .php_cs for [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 
 Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) for discover how to use this script!
 

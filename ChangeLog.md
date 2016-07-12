@@ -4,6 +4,7 @@
 * File renamed and new positions
 * Moved all the libraries to composer
 * Added Posts 2 Posts
+* Composer way
 
 ## 1.2.0
 

@@ -274,8 +274,6 @@ class Plugin_Name {
 /*
  * @TODO:
  *
- * - replace Plugin_Name with the name of the class defined in
- *   `class-plugin-name.php`
  * - 9999 is used for load the plugin as last for resolve some
  *   problems when the plugin use API of other plugins, remove
  *   if you don' want this

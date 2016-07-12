@@ -17,9 +17,6 @@ class Pn_CMB {
      * @since     1.0.0
      */
     public function __construct() {
-        /*
-         * Add metabox
-         */
         add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
     }
 

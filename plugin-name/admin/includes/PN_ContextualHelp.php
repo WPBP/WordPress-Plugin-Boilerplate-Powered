@@ -15,12 +15,8 @@ class Pn_ContextualHelp {
      * Initialize the Contextual Help
      */
     function __construct() {
-        /*
-         * Load Wp_Contextual_Help for the help tabs
-         */
         add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
         add_filter( 'wp_contextual_help_docs_url', array( $this, 'help_docs_url' ) );
-	  
         add_action( 'init', array( $this, 'contextual_help' ) );
     }
 

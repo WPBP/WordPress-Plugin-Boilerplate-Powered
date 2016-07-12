@@ -33,12 +33,6 @@ define( 'PN_VERSION', '1.0.0' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', 'Plugin Name' );
 
-/*
- * ------------------------------------------------------------------------------
- * Public-Facing Functionality
- * ------------------------------------------------------------------------------
- */
-
 function pn_load_plugin_textdomain() {
   load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 }
@@ -92,12 +86,6 @@ new Fake_Page(
 
 require_once( plugin_dir_path( __FILE__ ) . 'public/Plugin_Name.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );
-
-/*
- * -----------------------------------------------------------------------------
- * Dashboard and Administrative Functionality
- * -----------------------------------------------------------------------------
- */
 
 /*
  * If you want to include Ajax within the dashboard, change the following

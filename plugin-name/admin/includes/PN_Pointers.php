@@ -26,7 +26,7 @@ class Pn_Pointers {
      * Check on https://github.com/Mte90/pointerplus/blob/master/pointerplus.php for examples
      *
      * @param array $pointers The list of pointers.
-     * @param array $prefix For your pointers.
+     * @param array $prefix   For your pointers.
      *
      * @return mixed
      */

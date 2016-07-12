@@ -47,20 +47,11 @@ class Plugin_Name_Admin {
      * @TODO :
      *
      * - Uncomment following lines if the admin class should only be available for super admins
-     */
-    /* if( ! is_super_admin() ) {
-      return;
+      if( ! is_super_admin() ) {
+	  return;
       }
      */
 
-    /*
-     * Call $plugin_slug from public plugin class.
-     *
-     * @TODO:
-     *
-     * - Rename "Plugin_Name" to the name of your initial plugin class
-     *
-     */
     $plugin = Plugin_Name::get_instance();
     $this->cpts = $plugin->get_cpts();
 
@@ -186,10 +177,9 @@ class Plugin_Name_Admin {
      * @TODO :
      *
      * - Uncomment following lines if the admin class should only be available for super admins
-     */
-    /* if( ! is_super_admin() ) {
-      return;
-      }
+     if( ! is_super_admin() ) {
+	  return;
+     }
      */
 
     // If the single instance hasn't been set, set it now.

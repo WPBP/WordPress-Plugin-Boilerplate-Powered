@@ -136,20 +136,7 @@ function pn_uninstall_hook() {
 function pn_uninstall() {
   global $wp_roles;
 
-  $plugin_roles = array(
-	'editor' => array(
-	    'edit_demo' => true,
-	    'edit_others_demo' => true,
-	),
-	'author' => array(
-	    'edit_demo' => true,
-	    'edit_others_demo' => false,
-	),
-	'subscriber' => array(
-	    'edit_demo' => false,
-	    'edit_others_demo' => false,
-	),
-  );
+  $plugin_roles = Plugin_Name::get_plugin_roles();
 
   /* 
     @TODO

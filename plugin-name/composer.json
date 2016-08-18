@@ -58,8 +58,7 @@
         "wpbp/debug",
         "webdevstudios/taxonomy_core",
         "athlan/custom-fields-permalink-plugin",
-        "wpackagist-plugin/posts-to-posts",
-        "mozilla/wp-web-push"
+        "wpackagist-plugin/posts-to-posts"
       ],
       "./includes/lib/Freemius": [
         "freemius/wordpress-sdk"

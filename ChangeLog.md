@@ -3,7 +3,8 @@
 * Moved slug, plugin name and version as constants
 * File renamed and new positions
 * Moved all the libraries to composer
-* Added Posts 2 Posts
+* Added Posts 2 Posts, Custom Fields Permalink, Wp Review Me, WP Dismissible Notice
+* New snippet for use the browser push notification by Web Push plugin
 * Composer way
 
 ## 1.2.0

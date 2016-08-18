@@ -54,7 +54,7 @@ class Plugin_Name_Admin {
 
     $plugin = Plugin_Name::get_instance();
     $this->cpts = $plugin->get_cpts();
-
+    
     // Load admin style sheet and JavaScript.
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -127,7 +127,6 @@ class Plugin_Name_Admin {
 
     /*
      * Load CronPlus 
-     * 
      */
     $args = array(
 	  'recurrence' => 'hourly',
@@ -244,24 +243,20 @@ class Plugin_Name_Admin {
   public function add_plugin_admin_menu() {
 
     /*
-     * Add a settings page for this plugin to the Settings menu.
-     *
-     * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
-     *
-     *        Administration Menus: http://codex.wordpress.org/Administration_Menus
+     * Add a settings page for this plugin to the Settings menu
      *
      * @TODO:
      *
-     * - Change 'Page Title' to the title of your plugin admin page
-     * - Change '$this->plugin_name' to the text for menu item for the plugin settings page
      * - Change 'manage_options' to the capability you see fit
      *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
-     */
+     
     $this->admin_view_page = add_options_page(
 		__( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
     );
+     * 
+     */
     /*
-     * Settings page in the menu
+     * Add a settings page for this plugin to the main menu
      * 
      */
     $this->admin_view_page = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );

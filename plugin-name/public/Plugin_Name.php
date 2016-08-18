@@ -110,7 +110,7 @@ class Plugin_Name {
     add_filter( '@TODO', array( $this, 'filter_method_name' ) );
     add_shortcode( '@TODO', array( $this, 'shortcode_method_name' ) );
 
-    require_once( plugin_dir_path( __FILE__ ) . 'includes/widget/sample.php' );
+    require_once( plugin_dir_path( __FILE__ ) . 'widgets/sample.php' );
   }
 
   /**

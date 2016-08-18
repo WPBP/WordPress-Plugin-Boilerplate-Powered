@@ -2,7 +2,7 @@
   "require": {
     "php": ">=5.3",
     "idct/composer-custom-directory": "dev-master",
-    "composer/installers": "1.0.6",
+    "composer/installers": "1.1.0",
     "wpbp/pointerplus": "1.0.0",
     "wpbp/cronplus": "1.0.0",
     "wpbp/widgets-helper": "1.0.0",
@@ -23,9 +23,13 @@
     "julien731/wp-review-me": "2.0.0",
     "wpackagist-plugin/posts-to-posts": "*",
     "mozilla/wp-web-push": "dev-master",
-    "athlan/custom-fields-permalink-plugin": "dev-master"
+    "athlan/custom-fields-permalink-plugin": "1.0.2"
   },
   "repositories": [
+    {
+      "url": "https://github.com/WPBP/installers",
+      "type": "vcs"
+    },
     {
       "url": "git@github.com:nathanielks/wordpress-admin-notice.git",
       "type": "git"
@@ -57,10 +61,8 @@
   "minimum-stability": "dev",
   "extra": {
     "installer-paths": {
-      "./includes/lib/{$name}": [
-        "webdevstudios/cpt-core"
-      ],
       "./includes/lib/{$name|F}": [
+        "webdevstudios/cpt-core",
         "wpbp/language",
         "wpbp/cronplus",
         "wpbp/fakepage",
@@ -68,9 +70,19 @@
         "wpbp/requirements",
         "wpbp/debug",
         "webdevstudios/taxonomy_core",
+        "athlan/custom-fields-permalink-plugin",
         "wpackagist-plugin/posts-to-posts",
-        "mozilla/wp-web-push",
-        "athlan/custom-fields-permalink-plugin"
+        "mozilla/wp-web-push"
+      ],
+      "./includes/lib/composer-deps/{$name|F}": [
+        "mozilla/wp-sw-manager",
+        "lcobucci/jwt",
+        "fgrosse/phpasn1",
+        "mdanter/ecc",
+        "spomky-labs/base64url",
+        "paragonie/random_compat",
+        "marco-c/wp_serve_file",
+        "marco-c/wp-web-app-manifest-generator"
       ],
       "./includes/lib/Freemius": [
         "freemius/wordpress-sdk"
@@ -78,13 +90,11 @@
       "./public/includes/lib/{$name|F}": [
         "wpbp/widgets-helper"
       ],
-      "./admin/includes/lib/{$name}": [
-        "webdevstudios/cmb2"
-      ],
       "./admin/includes/lib/{$name|F}": [
+        "webdevstudios/cmb2",
+        "origgami/cmb2-grid",
         "wpbp/pointerplus",
         "wpbp/cpt_columns",
-        "origgami/cmb2-grid",
         "voceconnect/wp-contextual-help",
         "nathanielks/wp-admin-notice",
         "julien731/wp-dismissible-notices-handler",
@@ -94,9 +104,9 @@
   },
   "autoload": {
     "files": [
-      "./admin/includes/lib/cmb2/init.php",
+      "./admin/includes/lib/Cmb2/init.php",
       "./admin/includes/lib/Cmb2-grid/Cmb2GridPlugin.php",
-      "./includes/lib/posts-to-posts/posts-to-posts.php"
+      "./includes/lib/Posts-to-posts/posts-to-posts.php"
     ]
   }
 }

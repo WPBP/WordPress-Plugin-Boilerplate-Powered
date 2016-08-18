@@ -37,7 +37,7 @@ The mainly purpose of this boilerplate: you choose a library and the boilerpalte
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
-
+	* [athlan/custom-fields-permalink-plugin](https://github.com/athlan/wordpress-custom-fields-permalink-plugin)
 
 ###Snippet included
 

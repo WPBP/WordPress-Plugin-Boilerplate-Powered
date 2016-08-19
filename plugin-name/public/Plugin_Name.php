@@ -156,9 +156,13 @@ class Plugin_Name {
    */
   public function filter_search( $query ) {
     if ( $query->is_search ) {
-	// Mantain support for post
-	$this->cpts[] = 'post';
-	$query->set( 'post_type', $this->cpts );
+	$post_types = $query->get( 'post_type' );
+	if ( $post_types === 'post' ) {
+	  $post_types = array();
+	} elseif ( !is_array( $post_types ) && !empty( $post_types ) ) {
+	  $post_types = explode( ',', $post_types );
+	}
+	$query->set( 'post_type', array_push( $post_types, $this->cpts ) );
     }
     return $query;
   }

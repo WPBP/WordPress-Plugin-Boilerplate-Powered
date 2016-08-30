@@ -1,25 +1,26 @@
 <?php
 
 /**
+  //WPBPGen{{#unless author_name}}
  * The WordPress Plugin Boilerplate.
  *
  * A foundation off of which to build well-documented WordPress plugins that
  * also follow WordPress Coding Standards and PHP best practices.
- *
+  //{{/unless}}
  * @package   Plugin_Name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  *
  * Plugin Name:       @TODO
  * Plugin URI:        @TODO
  * Description:       @TODO
- * Version:           1.0.0
+ * Version:           {{plugin_version}}
  * Author:            @TODO
  * Author URI:        @TODO
  * Text Domain:       plugin-name
- * License:           GPL-2.0+
+ * License:           {{author_license}}
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
  * WordPress-Plugin-Boilerplate-Powered: v2.0.0
@@ -29,9 +30,9 @@ if ( !defined( 'WPINC' ) ) {
   die;
 }
 
-define( 'PN_VERSION', '1.0.0' );
+define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
-define( 'PN_NAME', 'Plugin Name' );
+define( 'PN_NAME', '{{plugin_name}}' );
 
 function pn_load_plugin_textdomain() {
   load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
@@ -41,6 +42,7 @@ add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
 require_once( plugin_dir_path( __FILE__ ) . 'composer/autoload.php' );
 
+//WPBPGen{{#unless libraries_freemius_wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.
  * 
@@ -70,13 +72,22 @@ function pn_fs() {
 
 // Init Freemius.
 // pn_fs();
+//{{/unless}}
 
 require_once( plugin_dir_path( __FILE__ ) . 'public/Plugin_Name.php' );
+//WPBPGen{{#unless act-deact_actdeact}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );
+//{{/unless}}
+//WPBPGen{{#unless act-deact_uninstall}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Uninstall.php' );
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpackagist-plugin_posts-to-posts}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_P2P.php' );
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpbp_fakepage}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
-
+//{{/unless}}
+//WPBPGen{{#unless admin-page}}
 /*
  * If you want to include Ajax within the dashboard, change the following
  * conditional to:
@@ -91,3 +102,4 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
 if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
   require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
 }
+//{{/unless}}

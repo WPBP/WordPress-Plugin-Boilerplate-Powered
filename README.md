@@ -3,20 +3,17 @@
 <img src="./assets/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
-**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.  
-DO you want to see which plugins have been made with this boilerplate or add them to the list? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
-Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
+**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins. 
+The mainly purpose of this boilerplate: choose a library or a snippet and the boilerplate contain already the example for use it without need a manual copy&paste way or look on internet.  
 
 ##Features
-
-The mainly purpose of this boilerplate: you choose a library and the boilerpalte contain already the example for use it without need a manual copy&paste way.  
-*Look in Recommended tools section of this readme for the Yeoman Generator that clean the boilerplate from the stuff that you don't need.*
 
 ###Library integrated
 
 * Sass support with Compass and Grunt
 * CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
 * Custom folder for Composer libraries
+* [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool)
 * Many libraries already avalaible (with starter code) in composer.json (with the yeoman generator you can choose)
 	* [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)
 	* [WPBP/CronPlus](https://github.com/WPBP/CronPlus)
@@ -52,6 +49,11 @@ The mainly purpose of this boilerplate: you choose a library and the boilerpalte
 * Support for CMB in the options page
 * Support for email template with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
+* Transient examples with caching
+* Support for [Web Push](https://wordpress.org/plugins/web-push/)
+
+Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
+Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
 
 ##Shell Script & Tools
 
@@ -67,23 +69,11 @@ Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powere
 
 Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Useful-resources-or-code-examples)!
 
-##Installation
-
-PS: Use the Yeoman generator in the Generator Tool is better and simple!
-
-1. Copy the `plugin-name` directory into your `wp-content/plugins` directory
-2. Navigate to the *Plugins* dashboard page
-3. Locate the menu item that reads *TODO*
-4. Click on *Activate*
-
-This will activate the WordPress Plugin Boilerplate Powered.  
-Because the Boilerplate has no real functionality, nothing will be added to WordPress; however, this demonstrates exactly how your plugin should behave while you're working with the Boilerplate.
-
 ##Recommended Tools
 
 ###Generator Tool
 
-For WordPress Plugin Boilerplate Powered exist a Yeoman generator that allows you to choose the libraries you need with a small customization.  
+For WordPress Plugin Boilerplate Powered exist a code generator that allows you to choose the libraries you need with a small customization.  
 Link to repo: [https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/](https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/)
 
 ##License

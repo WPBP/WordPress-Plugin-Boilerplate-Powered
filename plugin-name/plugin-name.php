@@ -42,7 +42,7 @@ add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
 require_once( plugin_dir_path( __FILE__ ) . 'composer/autoload.php' );
 
-//WPBPGen{{#unless libraries_freemius_wordpress-sdk}}
+//WPBPGen{{#unless libraries_freemius.wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.
  * 
@@ -81,10 +81,10 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );
 //WPBPGen{{#unless act-deact_uninstall}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Uninstall.php' );
 //{{/unless}}
-//WPBPGen{{#unless libraries_wpackagist-plugin_posts-to-posts}}
+//WPBPGen{{#unless libraries_wpackagist-plugin.posts-to-posts}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_P2P.php' );
 //{{/unless}}
-//WPBPGen{{#unless libraries_wpbp_fakepage}}
+//WPBPGen{{#unless libraries_wpbp.fakepage}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
 //{{/unless}}
 //WPBPGen{{#unless admin-page}}

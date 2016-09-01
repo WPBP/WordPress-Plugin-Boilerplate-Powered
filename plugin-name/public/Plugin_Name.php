@@ -79,8 +79,9 @@ class Plugin_Name {
 		)
     );
     //{{/unless}}
-
+    //WPBPGen{{#unless frontend_cpt-search-support}}
     add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
+    //{{/unless}}
     //WPBPGen{{#unless libraries_webdevstudios__taxonomy_core}}
     // Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
     register_via_taxonomy_core(

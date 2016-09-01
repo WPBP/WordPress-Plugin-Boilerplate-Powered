@@ -3,11 +3,11 @@
 /**
  * This class contain the Posts 2 Posts code
  *
- * @package   Plugin_name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
+ * @package   Plugin_Name
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  */
 class Pn_P2P {
 

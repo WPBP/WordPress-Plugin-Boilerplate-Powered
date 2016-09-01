@@ -4,10 +4,10 @@
  * This class contain the activate and deactive method and relates.
  *
  * @package   Plugin_Name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  */
 class Pn_ActDeact {
 
@@ -130,17 +130,19 @@ class Pn_ActDeact {
   private static function single_activate() {
     $plugin = Plugin_Name::get_instance();
     $plugin_slug = $plugin->get_plugin_slug();
-    $plugin_name = $plugin->get_plugin_name();
+    //WPBPGen{{#unless system_capability-system}}
     $plugin_roles = $plugin->get_plugin_roles();
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_wpbp__requirements}}
     // Requirements Detection System - read the doc/example in the library file
     require_once( plugin_dir_path( __FILE__ ) . 'requirements.php' );
-    new Plugin_Requirements( $plugin_name, $plugin_slug, array(
+    new Plugin_Requirements( PN_NAME, $plugin_slug, array(
 	  'WP' => new WordPress_Requirement( '4.1.0' )
 		) );
-
+    //{{/unless}}
     // @TODO: Define activation functionality here
+    //WPBPGen{{#unless system_capability-system}}
     // add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
-
     global $wp_roles;
     if ( !isset( $wp_roles ) ) {
 	$wp_roles = new WP_Roles;
@@ -158,6 +160,7 @@ class Pn_ActDeact {
 	  }
 	}
     }
+    //{{/unless}}
     // Clear the permalinks
     flush_rewrite_rules();
   }

@@ -5,10 +5,10 @@
  * public-facing side of the WordPress site.
  *
  * @package   Plugin_Name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  */
 class Plugin_Name {
 
@@ -20,7 +20,7 @@ class Plugin_Name {
    * @since    1.0.0
    */
   private static $instance;
-
+  //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
   /**
    * Array of cpts of the plugin
    *
@@ -29,7 +29,8 @@ class Plugin_Name {
    * @since    1.0.0
    */
   protected $cpts = array( 'demo' );
-
+  //{{/unless}}
+  //WPBPGen{{#unless system_capability-system}}
   /**
    * Array of capabilities by roles
    * 
@@ -56,6 +57,8 @@ class Plugin_Name {
 	),
   );
 
+  //{{/unless}}
+
   /**
    * Initialize the plugin by setting localization and loading public scripts
    * and styles.
@@ -63,6 +66,7 @@ class Plugin_Name {
    * @since     1.0.0
    */
   private function __construct() {
+    //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
     // Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
     register_via_cpt_core(
 		array( __( 'Demo', PN_TEXTDOMAIN ), __( 'Demos', PN_TEXTDOMAIN ), 'demo' ), array(
@@ -74,9 +78,10 @@ class Plugin_Name {
 	  'map_meta_cap' => true
 		)
     );
+    //{{/unless}}
 
     add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
-
+    //WPBPGen{{#unless libraries_webdevstudios__taxonomy_core}}
     // Create Custom Taxonomy https://github.com/jtsternberg/Taxonomy_Core/blob/master/README.md
     register_via_taxonomy_core(
 		array( __( 'Demo Section', PN_TEXTDOMAIN ), __( 'Demo Sections', PN_TEXTDOMAIN ), 'demo-section' ), array(
@@ -86,28 +91,43 @@ class Plugin_Name {
 	  )
 		), array( 'demo' )
     );
-
+    //{{/unless}}
+    //WPBPGen{{#unless frontend_body-class}}
     add_filter( 'body_class', array( $this, 'add_pn_class' ), 10, 3 );
-
+    //{{/unless}}
+    //WPBPGen{{#unless frontend_template-system}}
     // Override the template hierarchy for load /templates/content-demo.php
     add_filter( 'template_include', array( $this, 'load_content_demo' ) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless public-assets_css}}
     // Load public-facing style sheet and JavaScript.
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+    //{{/unless}}
+    //WPBPGen{{#unless public-assets_js}}
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+    //{{/unless}}
+    //WPBPGen{{#unless frontend_wp-localize-script}}
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_js_vars' ) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless custom_action}}
     /*
      * Define custom functionality.
      * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
      */
     add_action( '@TODO', array( $this, 'action_method_name' ) );
+    //{{/unless}}
+    //WPBPGen{{#unless custom_filter}}
     add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+    //{{/unless}}
+    //WPBPGen{{#unless custom_shortcode}}
     add_shortcode( '@TODO', array( $this, 'shortcode_method_name' ) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_wpbp__widgets-helper}}
     require_once( plugin_dir_path( __FILE__ ) . 'widgets/sample.php' );
+    //{{/unless}}
   }
 
+  //WPBPGen{{#unless system_capability-system}}
   /**
    * Return the version
    *
@@ -119,6 +139,8 @@ class Plugin_Name {
     return self::$plugin_roles;
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
   /**
    * Return the cpts
    *
@@ -129,6 +151,8 @@ class Plugin_Name {
   public function get_cpts() {
     return $this->cpts;
   }
+
+  //{{/unless}}
 
   /**
    * Return an instance of this class.
@@ -146,6 +170,7 @@ class Plugin_Name {
     return self::$instance;
   }
 
+  //WPBPGen{{#unless frontend_cpt-search-support}}
   /**
    * Add support for custom CPT on the search box
    *
@@ -167,6 +192,8 @@ class Plugin_Name {
     return $query;
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless public-assets_css}}
   /**
    * Register and enqueue public-facing style sheet.
    *
@@ -176,7 +203,8 @@ class Plugin_Name {
   public function enqueue_styles() {
     wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), PN_VERSION );
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless public-assets_js}}
   /**
    * Register and enqueues public-facing JavaScript files.
    *
@@ -186,7 +214,8 @@ class Plugin_Name {
   public function enqueue_scripts() {
     wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless frontend_wp-localize-script}}
   /**
    * Print the PHP var in the HTML of the frontend for access by JavaScript
    *
@@ -199,7 +228,8 @@ class Plugin_Name {
 		)
     );
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless frontend_body-class}}
   /**
    * Add class in the body on the frontend
    *
@@ -211,7 +241,8 @@ class Plugin_Name {
     $classes[] = PN_TEXTDOMAIN;
     return $classes;
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless frontend_template-system}}
   /**
    * Example for override the template system on the frontend
    *
@@ -225,7 +256,8 @@ class Plugin_Name {
     }
     return $original_template;
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless custom_action}}
   /**
    * NOTE:  Actions are points in the execution of a page or process
    *        lifecycle that WordPress fires.
@@ -238,7 +270,8 @@ class Plugin_Name {
   public function action_method_name() {
     // @TODO: Define your action hook callback here
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless custom_filter}}
   /**
    * NOTE:  Filters are points of execution in which WordPress modifies data
    *        before saving it or sending it to the browser.
@@ -252,7 +285,8 @@ class Plugin_Name {
     // @TODO: Define your filter hook callback here
     return $param;
   }
-
+  //{{/unless}}
+  //WPBPGen{{#unless custom_shortcode}}
   /**
    * NOTE:  Shortcode simple set of functions for creating macro codes for use
    * 		  in post content.
@@ -268,6 +302,7 @@ class Plugin_Name {
 		), $atts );
     // @TODO: Define your shortcode here
   }
+  //{{/unless}}
 
 }
 

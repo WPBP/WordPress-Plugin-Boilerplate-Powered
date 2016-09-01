@@ -4,11 +4,11 @@
  * Plugin class. This class should ideally be used to work with the
  * administrative side of the WordPress site.
  *
- * @package   Plugin_Name_Admin
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
+ * @package   Plugin_Name
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  */
 class Plugin_Name_Admin {
 
@@ -43,16 +43,19 @@ class Plugin_Name_Admin {
      *
      * - Uncomment following lines if the admin class should only be available for super admins
       if( ! is_super_admin() ) {
-	  return;
+      return;
       }
      */
 
     $plugin = Plugin_Name::get_instance();
+    //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
     $this->cpts = $plugin->get_cpts();
-    
+    //{{/unless}}
+    //WPBPGen{{#unless admin-page}}
     // Load admin style sheet and JavaScript.
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
+
     // Load admin style in dashboard for the At glance widget
     add_action( 'admin_head-index.php', array( $this, 'enqueue_admin_styles' ) );
 
@@ -62,12 +65,14 @@ class Plugin_Name_Admin {
     // Add an action link pointing to the options page.
     $plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
     add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_webdevstudios__cmb2}}
     /*
      * Load CMB
      */
     require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_CMB.php' );
-
+    //{{/unless}}
+    //WPBPGen{{#unless custom_action}}
     /*
      * Define custom functionality.
      *
@@ -75,23 +80,30 @@ class Plugin_Name_Admin {
      * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
      */
     add_action( '@TODO', array( $this, 'action_method_name' ) );
+    //{{/unless}}
+    //WPBPGen{{#unless custom_filter}}
     add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless backend_impexp-settings}}
     /*
      * Import Export settings
      */
     require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ImpExp.php' );
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_voceconnect__wp-contextual-help}}
     /*
      * Contextual Help
      */
     require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ContextualHelp.php' );
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_wpbp__debug}}
     /*
      * Debug mode
      */
     $debug = new WPBP_Debug( );
     $debug->log( __( 'Plugin Loaded', PN_TEXTDOMAIN ) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
     /*
      * Load Wp_Admin_Notice for the notices in the backend
      * 
@@ -99,10 +111,14 @@ class Plugin_Name_Admin {
      */
     new WP_Admin_Notice( __( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
     new WP_Admin_Notice( __( 'Error Messages', PN_TEXTDOMAIN ), 'error' );
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_julien731__wp-dismissible-notices-handler}}
     /*
      * Dismissible notice
      */
     dnh_register_notice( 'my_demo_notice', 'updated', __( 'This is my dismissible notice', PN_TEXTDOMAIN ) );
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_julien731__wp-review-me}}
     /*
      * Review Me notice
      */
@@ -114,12 +130,14 @@ class Plugin_Name_Admin {
 	  'message' => __( 'Review me!', PN_TEXTDOMAIN ),
 	  'link_label' => __( 'Click here to review', PN_TEXTDOMAIN )
 		) );
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_wpbp__pointerplus}}
     /*
      * All the pointers
      */
     require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Pointers.php' );
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_wpbp__cronplus}}
     /*
      * Load CronPlus 
      */
@@ -132,7 +150,8 @@ class Plugin_Name_Admin {
 
     $cronplus = new CronPlus( $args );
     $cronplus->schedule_event();
-
+    //{{/unless}}
+    //WPBPGen{{#unless libraries_wpbp__cpt_columns}}
     /*
      * Load CPT_Columns
      * 
@@ -151,11 +170,13 @@ class Plugin_Name_Admin {
 	  'order' => '-1'
 		)
     );
-
+    //{{/unless}}
+    //WPBPGen{{#unless backend_bubble-notification-pending-cpt && backend_dashboard-atglance && backend_dashboard-activity && system_push-notification && system_transient-example}}
     /*
      * All the extras functions
      */
     require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Extras.php' );
+    //{{/unless}}
   }
 
   /**
@@ -171,9 +192,9 @@ class Plugin_Name_Admin {
      * @TODO :
      *
      * - Uncomment following lines if the admin class should only be available for super admins
-     if( ! is_super_admin() ) {
-	  return;
-     }
+      if( ! is_super_admin() ) {
+      return;
+      }
      */
 
     // If the single instance hasn't been set, set it now.
@@ -184,6 +205,7 @@ class Plugin_Name_Admin {
     return self::$instance;
   }
 
+  //WPBPGen{{#unless admin-page}}
   /**
    * Register and enqueue admin-specific style sheet.
    *
@@ -236,10 +258,10 @@ class Plugin_Name_Admin {
      *
      * - Change 'manage_options' to the capability you see fit
      *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
-     
-    $this->admin_view_page = add_options_page(
-		__( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
-    );
+
+      $this->admin_view_page = add_options_page(
+      __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
+      );
      * 
      */
     /*
@@ -258,6 +280,8 @@ class Plugin_Name_Admin {
     include_once( 'views/admin.php' );
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless admin-page}}
   /**
    * Add settings action link to the plugins page.
    *
@@ -269,11 +293,15 @@ class Plugin_Name_Admin {
     return array_merge(
 		array(
 	  'settings' => '<a href="' . admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) . '">' . __( 'Settings' ) . '</a>',
+	  //WPBPGen{{#unless backend_donate-link-plugin-list}}
 	  'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', PN_TEXTDOMAIN ) . '</a>'
+		//{{/unless}}
 		), $links
     );
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless custom_action}}
   /**
    * NOTE:     Actions are points in the execution of a page or process
    *           lifecycle that WordPress fires.
@@ -287,6 +315,8 @@ class Plugin_Name_Admin {
     // @TODO: Define your action hook callback here
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless custom_filter}}
   /**
    * NOTE:     Filters are points of execution in which WordPress modifies data
    *           before saving it or sending it to the browser.
@@ -300,6 +330,7 @@ class Plugin_Name_Admin {
     // @TODO: Define your filter hook callback here
   }
 
+  //{{/unless}}
 }
 
 add_action( 'plugins_loaded', array( 'Plugin_Name_Admin', 'get_instance' ) );

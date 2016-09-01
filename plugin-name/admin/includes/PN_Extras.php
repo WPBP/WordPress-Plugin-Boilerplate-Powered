@@ -4,10 +4,10 @@
  * This class contain all the snippet or extra that improve the experience on the backend
  *
  * @package   Plugin_name
- * @author    Your Name <email@example.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2016 Your Name or Company Name
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  */
 class Pn_Extras {
 
@@ -18,14 +18,21 @@ class Pn_Extras {
     $plugin = Plugin_Name::get_instance();
     $this->cpts = $plugin->get_cpts();
 
+    //WPBPGen{{#unless backend_dashboard-atglance}}
     // At Glance Dashboard widget for your cpts
     add_filter( 'dashboard_glance_items', array( $this, 'cpt_glance_dashboard_support' ), 10, 1 );
+    //{{/unless}}
+    //WPBPGen{{#unless bbackend_dashboard-activity}}
     // Activity Dashboard widget for your cpts
     add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
+    //{{/unless}}
+    //WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
     // Add bubble notification for cpt pending
     add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
+    //{{/unless}}
   }
 
+  //WPBPGen{{#unless backend_dashboard-atglance}}
   /**
    * Add the counter of your CPTs in At Glance widget in the dashboard<br>
    * NOTE: add in $post_types your cpts, remember to edit the css style (admin/assets/css/admin.css) for change the dashicon<br>
@@ -58,6 +65,8 @@ class Pn_Extras {
     return $items;
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless backend_dashboard-activity}}
   /**
    * Add the recents post type in the activity widget<br>
    * NOTE: add in $post_types your cpts
@@ -75,6 +84,8 @@ class Pn_Extras {
     return $query_args;
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
   /**
    * Bubble Notification for pending cpt<br>
    * NOTE: add in $post_types your cpts<br>
@@ -136,6 +147,8 @@ class Pn_Extras {
     return false;
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless system_transient-example}}
   /**
    * This method contain an example of code for caching a transient with an external request and parse the results.
    * 
@@ -172,6 +185,8 @@ class Pn_Extras {
     echo '</div>';
   }
 
+  //{{/unless}}
+  //WPBPGen{{#unless system_push-notification}}
   /**
    * Send a Push notification on the users browser using the Web Push plugin for WordPress
    * 
@@ -197,6 +212,7 @@ class Pn_Extras {
     return true;
   }
 
+  //{{/unless}}
 }
 
 new Pn_Extras();

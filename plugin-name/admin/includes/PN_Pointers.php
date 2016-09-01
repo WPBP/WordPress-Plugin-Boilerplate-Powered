@@ -4,10 +4,10 @@
  * All the WP pointers.
  *
  * @package   Plugin_Name
- * @author  Mte90 <mte90net@gmail.com>
- * @license   GPL-2.0+
- * @copyright 2014-2015
- * @since    1.0.0
+ * @author    {{author_name}} <{{author_email}}>
+ * @license   {{author_license}}
+ * @link      {{author_url}}
+ * @copyright {{author_copyright}}
  */
 class Pn_Pointers {
 

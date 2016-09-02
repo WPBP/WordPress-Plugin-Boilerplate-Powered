@@ -48,7 +48,7 @@ class Plugin_Name_Admin {
      */
 
     $plugin = Plugin_Name::get_instance();
-    //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
+    //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
     $this->cpts = $plugin->get_cpts();
     //{{/unless}}
     //WPBPGen{{#unless admin-page}}

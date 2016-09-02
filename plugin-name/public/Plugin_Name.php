@@ -141,7 +141,7 @@ class Plugin_Name {
   }
 
   //{{/unless}}
-  //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
+  //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
   /**
    * Return the cpts
    *

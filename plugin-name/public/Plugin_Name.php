@@ -20,7 +20,7 @@ class Plugin_Name {
    * @since    1.0.0
    */
   private static $instance;
-  //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
+  //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
   /**
    * Array of cpts of the plugin
    *

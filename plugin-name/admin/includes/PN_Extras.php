@@ -22,7 +22,7 @@ class Pn_Extras {
     // At Glance Dashboard widget for your cpts
     add_filter( 'dashboard_glance_items', array( $this, 'cpt_glance_dashboard_support' ), 10, 1 );
     //{{/unless}}
-    //WPBPGen{{#unless bbackend_dashboard-activity}}
+    //WPBPGen{{#unless backend_dashboard-activity}}
     // Activity Dashboard widget for your cpts
     add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
     //{{/unless}}

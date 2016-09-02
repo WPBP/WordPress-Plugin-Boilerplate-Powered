@@ -3,7 +3,7 @@
 <img src="./assets/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
-**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins. 
+**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.   
 The mainly purpose of this boilerplate: choose a library or a snippet and the boilerplate contain already the example for use it without need a manual copy&paste way or look on internet.  
 
 ##Features
@@ -13,7 +13,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 * Sass support with Compass and Grunt
 * CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
 * Custom folder for Composer libraries
-* [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool)
+* [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool) to start to develop <--
 * Many libraries already avalaible (with starter code) in composer.json (with the yeoman generator you can choose)
 	* [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)
 	* [WPBP/CronPlus](https://github.com/WPBP/CronPlus)
@@ -47,7 +47,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 * Class in frontend body with the slug of plugin
 * Support for your CPTs in At Glance widget/Activity widget in dashboard
 * Support for CMB in the options page
-* Support for email template with language detection
+* Support for email template/theme with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
 * Transient examples with caching
 * Support for [Web Push](https://wordpress.org/plugins/web-push/)
@@ -73,8 +73,8 @@ Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powere
 
 ###Generator Tool
 
-For WordPress Plugin Boilerplate Powered exist a code generator that allows you to choose the libraries you need with a small customization.  
-Link to repo: [https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/](https://github.com/Mte90/generator-wp-plugin-boilerplate-powered/)
+The code generator that allows you to choose the libraries you need with many customization.  
+Link to repo: [https://github.com/Mte90/generator](https://github.com/Mte90/generator)
 
 ##License
 

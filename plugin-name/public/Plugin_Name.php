@@ -66,7 +66,7 @@ class Plugin_Name {
    * @since     1.0.0
    */
   private function __construct() {
-    //WPBPGen{{#unless libraries_webdevstudios__cpt_core}}
+    //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
     // Create Custom Post Type https://github.com/jtsternberg/CPT_Core/blob/master/README.md
     register_via_cpt_core(
 		array( __( 'Demo', PN_TEXTDOMAIN ), __( 'Demos', PN_TEXTDOMAIN ), 'demo' ), array(

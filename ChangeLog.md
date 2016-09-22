@@ -5,7 +5,11 @@
 * Moved all the libraries to composer
 * Added Posts 2 Posts, Custom Fields Permalink, Wp Review Me, WP Dismissible Notice
 * New snippet for use the browser push notification by Web Push plugin
-* Composer way
+* New logo
+* Comments inside the code for the new wpbp generator
+* Improved code for the filter by cpt
+* Uninstall moved inside the plugin
+* Improved replace version script
 
 ## 1.2.0
 

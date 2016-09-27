@@ -20,7 +20,7 @@
     "webdevstudios/taxonomy_core": "0.2.4",
     "freemius/wordpress-sdk": "1.7.4",
     "julien731/wp-dismissible-notices-handler": "1.0.0",
-    "julien731/wp-review-me": "2.0.0",
+    "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
     "athlan/custom-fields-permalink-plugin": "1.0.2"
   },

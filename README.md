@@ -74,7 +74,7 @@ Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powere
 ###Generator Tool
 
 The code generator that allows you to choose the libraries you need with many customization.  
-Link to repo: [https://github.com/Mte90/generator](https://github.com/Mte90/generator)
+Link to repo: [https://github.com/wpbp/generator](https://github.com/wpbp/generator)
 
 ##License
 

@@ -17,7 +17,7 @@ class Plugin_Name {
    *
    * @var      object
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   private static $instance;
   //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
@@ -26,7 +26,7 @@ class Plugin_Name {
    *
    * @var      array
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   protected $cpts = array( 'demo' );
   //{{/unless}}
@@ -36,7 +36,7 @@ class Plugin_Name {
    * 
    * @var array
    * 
-   * @since 1.0.0
+   * @since {{plugin_version}}
    */
   protected static $plugin_roles = array(
 	'administrator' => array(
@@ -63,7 +63,7 @@ class Plugin_Name {
    * Initialize the plugin by setting localization and loading public scripts
    * and styles.
    *
-   * @since     1.0.0
+   * @since     {{plugin_version}}
    */
   private function __construct() {
     //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
@@ -132,7 +132,7 @@ class Plugin_Name {
   /**
    * Return the version
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @return    Version const.
    */
@@ -145,7 +145,7 @@ class Plugin_Name {
   /**
    * Return the cpts
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @return    Cpts array
    */
@@ -158,7 +158,7 @@ class Plugin_Name {
   /**
    * Return an instance of this class.
    *
-   * @since     1.0.0
+   * @since     {{plugin_version}}
    *
    * @return    object    A single instance of this class.
    */
@@ -175,7 +175,7 @@ class Plugin_Name {
   /**
    * Add support for custom CPT on the search box
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @param    object    $query   
    * @return object
@@ -196,7 +196,7 @@ class Plugin_Name {
   /**
    * Register and enqueue public-facing style sheet.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @return void
    */
   public function enqueue_styles() {
@@ -207,7 +207,7 @@ class Plugin_Name {
   /**
    * Register and enqueues public-facing JavaScript files.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @return void
    */
   public function enqueue_scripts() {
@@ -218,7 +218,7 @@ class Plugin_Name {
   /**
    * Print the PHP var in the HTML of the frontend for access by JavaScript
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @return void
    */
   public function enqueue_js_vars() {
@@ -232,7 +232,7 @@ class Plugin_Name {
   /**
    * Add class in the body on the frontend
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @param array $classes THe array with all the classes of the page.
    * @return array
    */
@@ -245,7 +245,7 @@ class Plugin_Name {
   /**
    * Example for override the template system on the frontend
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @param string $original_template The original templace HTML.
    * @return string
    */
@@ -264,7 +264,7 @@ class Plugin_Name {
    *        Actions:    http://codex.wordpress.org/Plugin_API#Actions
    *        Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   public function action_method_name() {
     // @TODO: Define your action hook callback here
@@ -278,7 +278,7 @@ class Plugin_Name {
    *        Filters: http://codex.wordpress.org/Plugin_API#Filters
    *        Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   public function filter_method_name( $param ) {
     // @TODO: Define your filter hook callback here
@@ -292,7 +292,7 @@ class Plugin_Name {
    *
    *        Reference:  http://codex.wordpress.org/Shortcode_API
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   public function shortcode_method_name( $atts ) {
     //With this you can define the default proprietary for your shortcode

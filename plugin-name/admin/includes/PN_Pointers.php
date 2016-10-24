@@ -14,7 +14,7 @@ class Pn_Pointers {
     /**
      * Initialize the Pointers.
      *
-     * @since     1.0.0
+     * @since     {{plugin_version}}
      */
     public function __construct() {
         new PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );

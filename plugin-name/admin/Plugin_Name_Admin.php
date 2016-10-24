@@ -17,7 +17,7 @@ class Plugin_Name_Admin {
    *
    * @var      object
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   protected static $instance = null;
 
@@ -26,7 +26,7 @@ class Plugin_Name_Admin {
    *
    * @var      string
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   protected $admin_view_page = null;
 
@@ -34,7 +34,7 @@ class Plugin_Name_Admin {
    * Initialize the plugin by loading admin scripts & styles and adding a
    * settings page and menu.
    *
-   * @since     1.0.0
+   * @since     {{plugin_version}}
    */
   private function __construct() {
 
@@ -182,7 +182,7 @@ class Plugin_Name_Admin {
   /**
    * Return an instance of this class.
    *
-   * @since     1.0.0
+   * @since     {{plugin_version}}
    *
    * @return    object    A single instance of this class.
    */
@@ -209,7 +209,7 @@ class Plugin_Name_Admin {
   /**
    * Register and enqueue admin-specific style sheet.
    *
-   * @since     1.0.0
+   * @since     {{plugin_version}}
    *
    * @return    mixed    Return early if no settings page is registered.
    */
@@ -227,7 +227,7 @@ class Plugin_Name_Admin {
   /**
    * Register and enqueue admin-specific JavaScript.
    *
-   * @since     1.0.0
+   * @since     {{plugin_version}}
    *
    * @return    mixed    Return early if no settings page is registered.
    */
@@ -245,7 +245,7 @@ class Plugin_Name_Admin {
   /**
    * Register the administration menu for this plugin into the WordPress Dashboard menu.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * 
    * @return void
    */
@@ -274,7 +274,7 @@ class Plugin_Name_Admin {
   /**
    * Render the settings page for this plugin.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   public function display_plugin_admin_page() {
     include_once( 'views/admin.php' );
@@ -285,7 +285,7 @@ class Plugin_Name_Admin {
   /**
    * Add settings action link to the plugins page.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @param array $links
    * @return array
    */
@@ -309,7 +309,7 @@ class Plugin_Name_Admin {
    *           Actions:    http://codex.wordpress.org/Plugin_API#Actions
    *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   public function action_method_name() {
     // @TODO: Define your action hook callback here
@@ -324,7 +324,7 @@ class Plugin_Name_Admin {
    *           Filters: http://codex.wordpress.org/Plugin_API#Filters
    *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    */
   public function filter_method_name() {
     // @TODO: Define your filter hook callback here

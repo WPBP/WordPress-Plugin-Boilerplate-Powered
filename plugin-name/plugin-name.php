@@ -13,12 +13,12 @@
  * @link      {{author_url}}
  * @copyright {{author_copyright}}
  *
- * Plugin Name:       @TODO
+ * Plugin Name:       Plugin_Name
  * Plugin URI:        @TODO
  * Description:       @TODO
  * Version:           {{plugin_version}}
- * Author:            @TODO
- * Author URI:        @TODO
+ * Author:            {{author_name}}
+ * Author URI:        {{author_url}}
  * Text Domain:       plugin-name
  * License:           {{author_license}}
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

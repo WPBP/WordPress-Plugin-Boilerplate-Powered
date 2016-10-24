@@ -13,7 +13,7 @@
  * @link      {{author_url}}
  * @copyright {{author_copyright}}
  *
- * Plugin Name:       Plugin_Name
+ * Plugin Name:       {{plugin_name}}
  * Plugin URI:        @TODO
  * Description:       @TODO
  * Version:           {{plugin_version}}
@@ -87,7 +87,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_P2P.php' );
 //WPBPGen{{#unless libraries_wpbp__fakepage}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
 //{{/unless}}
-//WPBPGen{{#unless admin-page}}
+//WPBPGen{{#if admin-page}}
 /*
  * If you want to include Ajax within the dashboard, change the following
  * conditional to:
@@ -102,4 +102,4 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
 if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
   require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
 }
-//{{/unless}}
+//{{/if}}

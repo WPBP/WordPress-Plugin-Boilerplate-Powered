@@ -51,7 +51,7 @@ class Plugin_Name_Admin {
     //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
     $this->cpts = $plugin->get_cpts();
     //{{/unless}}
-    //WPBPGen{{#unless admin-page}}
+    //WPBPGen{{#if admin-page}}
     // Load admin style sheet and JavaScript.
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
     add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
@@ -65,7 +65,7 @@ class Plugin_Name_Admin {
     // Add an action link pointing to the options page.
     $plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
     add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-    //{{/unless}}
+    //{{/if}}
     //WPBPGen{{#unless libraries_webdevstudios__cmb2}}
     /*
      * Load CMB
@@ -205,7 +205,7 @@ class Plugin_Name_Admin {
     return self::$instance;
   }
 
-  //WPBPGen{{#unless admin-page}}
+  //WPBPGen{{#if admin-page}}
   /**
    * Register and enqueue admin-specific style sheet.
    *
@@ -280,8 +280,8 @@ class Plugin_Name_Admin {
     include_once( 'views/admin.php' );
   }
 
-  //{{/unless}}
-  //WPBPGen{{#unless admin-page}}
+  //{{/if}}
+  //WPBPGen{{#if admin-page}}
   /**
    * Add settings action link to the plugins page.
    *
@@ -300,7 +300,7 @@ class Plugin_Name_Admin {
     );
   }
 
-  //{{/unless}}
+  //{{/if}}
   //WPBPGen{{#unless custom_action}}
   /**
    * NOTE:     Actions are points in the execution of a page or process

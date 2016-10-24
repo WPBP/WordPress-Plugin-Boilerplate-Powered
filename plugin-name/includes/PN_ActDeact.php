@@ -27,7 +27,7 @@ class Pn_ActDeact {
   /**
    * Fired when the plugin is activated.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @param boolean $network_wide True if active in a multiste, false if classic site.
    * 
@@ -54,7 +54,7 @@ class Pn_ActDeact {
   /**
    * Fired when the plugin is deactivated.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @param boolean $network_wide True if WPMU superadmin uses
    *                              "Network Deactivate" action, false if
@@ -84,7 +84,7 @@ class Pn_ActDeact {
   /**
    * Fired when a new site is activated with a WPMU environment.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @param integer $blog_id ID of the new blog.
    * 
@@ -106,7 +106,7 @@ class Pn_ActDeact {
    * - not spam
    * - not deleted
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    *
    * @return array|false The blog ids, false if no matches.
    */
@@ -124,7 +124,7 @@ class Pn_ActDeact {
   /**
    * Fired for each blog when the plugin is activated.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @return void
    */
   private static function single_activate() {
@@ -168,7 +168,7 @@ class Pn_ActDeact {
   /**
    * Fired for each blog when the plugin is deactivated.
    *
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @return void
    */
   private static function single_deactivate() {

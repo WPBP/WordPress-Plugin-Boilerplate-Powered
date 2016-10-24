@@ -15,7 +15,7 @@ class Pn_ImpExp {
 	 * Initialize the plugin by loading admin scripts & styles and adding a
 	 * settings page and menu.
 	 *
-	 * @since     1.0.0
+	 * @since     {{plugin_version}}
 	 */
 	public function __construct() {
 		// Add the export settings method
@@ -26,7 +26,7 @@ class Pn_ImpExp {
 	
 	/**
 	 * Process a settings export from config
-	 * @since    1.0.0
+	 * @since    {{plugin_version}}
        * @return void
 	 */
 	public function settings_export() {
@@ -61,7 +61,7 @@ class Pn_ImpExp {
 
 	/**
 	 * Process a settings import from a json file
-	 * @since    1.0.0
+	 * @since    {{plugin_version}}
        * @return void
 	 */
 	public function settings_import() {

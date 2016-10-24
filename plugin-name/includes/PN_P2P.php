@@ -21,7 +21,7 @@ class Pn_P2P {
   /**
    * https://github.com/scribu/wp-posts-to-posts/wiki/Basic-usage
    * 
-   * @since    1.0.0
+   * @since    {{plugin_version}}
    * @return void
    */
   public function my_connection_types() {

@@ -14,7 +14,7 @@ class Pn_CMB {
     /**
      * Initialize CMB2.
      *
-     * @since     1.0.0
+     * @since     {{plugin_version}}
      */
     public function __construct() {
         add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
@@ -23,7 +23,7 @@ class Pn_CMB {
     /**
      * NOTE:     Your metabox on Demo CPT
      *
-     * @since    1.0.0
+     * @since    {{plugin_version}}
      * 
      * @return void
      */

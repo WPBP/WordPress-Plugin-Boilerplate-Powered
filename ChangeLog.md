@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Fixed few bugs with the generator
+
 ## 2.0.0
 
 * Moved slug, plugin name and version as constants

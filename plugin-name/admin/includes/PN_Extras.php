@@ -5,7 +5,7 @@
  *
  * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
- * @license   {{author_license}}
+ * @license    {{author_license}}
  * @link      {{author_url}}
  * @copyright {{author_copyright}}
  */
@@ -16,7 +16,9 @@ class Pn_Extras {
    */
   function __construct() {
     $plugin = Plugin_Name::get_instance();
+    //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
     $this->cpts = $plugin->get_cpts();
+    //{{/unless}}
 
     //WPBPGen{{#unless backend_dashboard-atglance}}
     // At Glance Dashboard widget for your cpts
@@ -31,7 +33,7 @@ class Pn_Extras {
     add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
     //{{/unless}}
   }
-
+  //WPBPGen{{libraries_webdevstudios__cpt-core}}
   //WPBPGen{{#unless backend_dashboard-atglance}}
   /**
    * Add the counter of your CPTs in At Glance widget in the dashboard<br>
@@ -66,6 +68,7 @@ class Pn_Extras {
   }
 
   //{{/unless}}
+  //{{/unless}}
   //WPBPGen{{#unless backend_dashboard-activity}}
   /**
    * Add the recents post type in the activity widget<br>
@@ -85,6 +88,7 @@ class Pn_Extras {
   }
 
   //{{/unless}}
+  //WPBPGen{{libraries_webdevstudios__cpt-core}}
   //WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
   /**
    * Bubble Notification for pending cpt<br>
@@ -147,6 +151,7 @@ class Pn_Extras {
     return false;
   }
 
+  //{{/unless}}
   //{{/unless}}
   //WPBPGen{{#unless system_transient-example}}
   /**

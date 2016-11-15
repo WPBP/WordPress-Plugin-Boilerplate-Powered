@@ -38,8 +38,10 @@ class Pn_CMB {
             'priority' => 'high',
             'show_names' => true, // Show field names on the left
                 ) );
+        //WPBPGen{{#unless libraries_origgami__cmb2-grid}}
         $cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
         $row = $cmb2Grid->addRow();
+        //{{/unless}}
         $field1 = $cmb_demo->add_field( array(
             'name' => __( 'Text', PN_TEXTDOMAIN ),
             'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
@@ -53,7 +55,9 @@ class Pn_CMB {
             'id' => $prefix . PN_TEXTDOMAIN . '_textsmall',
             'type' => 'text_small'
                 ) );
+        //WPBPGen{{#unless libraries_origgami__cmb2-grid}}
         $row->addColumns( array( $field1, $field2 ) );
+        //{{/unless}}
     }
 
 }

@@ -18,8 +18,7 @@ class Pn_Extras {
     $plugin = Plugin_Name::get_instance();
     //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
     $this->cpts = $plugin->get_cpts();
-    //{{/unless}}
-
+    
     //WPBPGen{{#unless backend_dashboard-atglance}}
     // At Glance Dashboard widget for your cpts
     add_filter( 'dashboard_glance_items', array( $this, 'cpt_glance_dashboard_support' ), 10, 1 );
@@ -28,12 +27,13 @@ class Pn_Extras {
     // Activity Dashboard widget for your cpts
     add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
     //{{/unless}}
+    //{{/unless}}
     //WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
     // Add bubble notification for cpt pending
     add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
     //{{/unless}}
   }
-  //WPBPGen{{libraries_webdevstudios__cpt-core}}
+  //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
   //WPBPGen{{#unless backend_dashboard-atglance}}
   /**
    * Add the counter of your CPTs in At Glance widget in the dashboard<br>
@@ -88,7 +88,7 @@ class Pn_Extras {
   }
 
   //{{/unless}}
-  //WPBPGen{{libraries_webdevstudios__cpt-core}}
+  //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
   //WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
   /**
    * Bubble Notification for pending cpt<br>

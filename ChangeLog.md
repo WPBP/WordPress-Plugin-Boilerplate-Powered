@@ -1,3 +1,8 @@
+## 2.0.2
+
+* Fixed few bugs with the generator
+* Remvoed prefix for CMB fields on admin view
+
 ## 2.0.1
 
 * Fixed few bugs with the generator

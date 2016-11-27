@@ -251,7 +251,7 @@ class Plugin_Name {
    */
   public function load_content_demo( $original_template ) {
     if ( is_singular( 'demo' ) && in_the_loop() ) {
-	return pn_get_template_part( 'content', 'demo', false );
+	return wpbp_get_template_part( PN_TEXTDOMAIN, 'content', 'demo', false );
     }
     return $original_template;
   }

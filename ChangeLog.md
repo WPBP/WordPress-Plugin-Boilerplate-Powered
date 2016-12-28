@@ -1,7 +1,13 @@
+## 2.0.3
+
+* Added GrumPHP
+* Added unit test with WP-Browser/Codeception
+* Updated .php_cs
+
 ## 2.0.2
 
 * Fixed few bugs with the generator
-* Remvoed prefix for CMB fields on admin view
+* Removed prefix for CMB fields on admin view
 
 ## 2.0.1
 

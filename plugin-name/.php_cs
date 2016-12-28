@@ -1,6 +1,8 @@
 <?php
 $finder = Symfony\CS\Finder\DefaultFinder::create()
-->exclude('help-docs')
+->exclude('admin/lib')
+->exclude('public/lib')
+->exclude('includes/lib')
 ->exclude('languages')
 ->exclude('assets')
 ->in(__DIR__); 

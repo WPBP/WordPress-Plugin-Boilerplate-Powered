@@ -1,0 +1,29 @@
+parameters:
+    git_dir: .
+    bin_dir: composer/bin
+    ignore_unstaged_changes: false
+    tasks: 
+        composer:
+            with_dependencies: false
+            strict: false
+        phpcs:
+            standard: PHPDoc
+            ignore_patterns: ['/lib/']
+        grunt: ~
+        phpmd: ~
+        codeception:
+            config_file: ~
+            fail_fast: false
+            suite: ~
+            test: ~
+        git_blacklist:
+            keywords:
+                - 'die('
+                - 'print_r('
+                - 'var_dump('
+            triggered_by: [php]
+    testsuites:
+        git_pre_push:
+            tasks: 
+                - codeception
+

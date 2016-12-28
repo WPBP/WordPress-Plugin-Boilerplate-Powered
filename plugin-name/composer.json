@@ -46,6 +46,7 @@
     "vendor-dir": "composer/"
   },
   "require-dev": {
+    "lucatume/wp-browser": "^1.19",
     "phpro/grumphp": "^0.11.0"
   },
   "minimum-stability": "dev",

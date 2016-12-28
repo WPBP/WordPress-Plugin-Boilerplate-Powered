@@ -1,0 +1,7 @@
+# Codeception Test Suite Configuration
+
+# suite for WordPress unit tests.
+# Load WordPress and unit test classes that rely on it.
+class_name: WpunitTester
+modules:
+    enabled: [WPLoader, \Helper\Wpunit]

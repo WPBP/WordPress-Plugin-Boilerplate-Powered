@@ -5,9 +5,9 @@
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
  */
 class Pn_ContextualHelp {
 
@@ -23,7 +23,7 @@ class Pn_ContextualHelp {
     /**
      * Filter for change the folder of Contextual Help
      * 
-     * @since     {{plugin_version}}
+     * @since {{plugin_version}}
      * @param string $paths
      *
      * @return string The path.
@@ -36,7 +36,7 @@ class Pn_ContextualHelp {
     /**
      * Filter for change the folder image of Contextual Help
      * 
-     * @since     {{plugin_version}}
+     * @since {{plugin_version}}
      * @param string $paths
      *
      * @return string the path
@@ -50,7 +50,7 @@ class Pn_ContextualHelp {
      * Contextual Help, docs in /help-docs folter
      * Documentation https://github.com/voceconnect/wp-contextual-help
      * 
-     * @since    {{plugin_version}} 
+     * @since {{plugin_version}} 
      * @return void
      */
     public function contextual_help() {

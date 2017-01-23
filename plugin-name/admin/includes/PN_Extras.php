@@ -5,9 +5,9 @@
  *
  * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
- * @license    {{author_license}}
- * @link      {{author_url}}
  * @copyright {{author_copyright}}
+ * @license   {{author_license}}
+ * @link      {{author_url}}
  */
 class Pn_Extras {
 
@@ -41,7 +41,7 @@ class Pn_Extras {
    *
    *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @param array $items The content of the widget.
    * @return array
    */
@@ -74,7 +74,7 @@ class Pn_Extras {
    * Add the recents post type in the activity widget<br>
    * NOTE: add in $post_types your cpts
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @param array $query_args The content of the widget.
    * @return array
    */
@@ -96,7 +96,7 @@ class Pn_Extras {
    *
    *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @return void
    */
   function pending_cpt_bubble() {
@@ -135,7 +135,7 @@ class Pn_Extras {
    *
    *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @param array $needle
    * @param array $haystack
    * 

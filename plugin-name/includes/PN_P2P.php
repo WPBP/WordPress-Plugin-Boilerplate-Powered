@@ -5,9 +5,9 @@
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
  */
 class Pn_P2P {
 
@@ -21,7 +21,7 @@ class Pn_P2P {
   /**
    * https://github.com/scribu/wp-posts-to-posts/wiki/Basic-usage
    * 
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @return void
    */
   public function my_connection_types() {

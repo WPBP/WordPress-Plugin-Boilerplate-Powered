@@ -5,9 +5,9 @@
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
  */
 class Pn_ActDeact {
 
@@ -27,7 +27,7 @@ class Pn_ActDeact {
   /**
    * Fired when the plugin is activated.
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    *
    * @param boolean $network_wide True if active in a multiste, false if classic site.
    * 
@@ -54,7 +54,7 @@ class Pn_ActDeact {
   /**
    * Fired when the plugin is deactivated.
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    *
    * @param boolean $network_wide True if WPMU superadmin uses
    *                              "Network Deactivate" action, false if
@@ -84,7 +84,7 @@ class Pn_ActDeact {
   /**
    * Fired when a new site is activated with a WPMU environment.
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    *
    * @param integer $blog_id ID of the new blog.
    * 
@@ -106,7 +106,7 @@ class Pn_ActDeact {
    * - not spam
    * - not deleted
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    *
    * @return array|false The blog ids, false if no matches.
    */
@@ -124,7 +124,7 @@ class Pn_ActDeact {
   /**
    * Fired for each blog when the plugin is activated.
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @return void
    */
   private static function single_activate() {
@@ -168,7 +168,7 @@ class Pn_ActDeact {
   /**
    * Fired for each blog when the plugin is deactivated.
    *
-   * @since    {{plugin_version}}
+   * @since {{plugin_version}}
    * @return void
    */
   private static function single_deactivate() {

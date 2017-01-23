@@ -23,7 +23,7 @@
  * License:           {{author_license}}
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * WordPress-Plugin-Boilerplate-Powered: v2.0.0
+ * WordPress-Plugin-Boilerplate-Powered: v2.0.4
  */
 // If this file is called directly, abort.
 if ( !defined( 'WPINC' ) ) {
@@ -104,7 +104,10 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
  * The code below is intended to to give the lightest footprint possible.
  */
 
-if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
+if ( is_admin() &&
+		(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
+		(!defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
+ ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
 }
 //{{/if}}

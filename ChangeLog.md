@@ -1,3 +1,8 @@
+## 2.0.4
+
+* WP CLI example code
+* Improved PHPDoc comments
+
 ## 2.0.3
 
 * Added GrumPHP

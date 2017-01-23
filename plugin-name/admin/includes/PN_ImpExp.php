@@ -4,9 +4,9 @@
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
  */
 
 class Pn_ImpExp {
@@ -26,7 +26,7 @@ class Pn_ImpExp {
 	
 	/**
 	 * Process a settings export from config
-	 * @since    {{plugin_version}}
+	 * @since {{plugin_version}}
        * @return void
 	 */
 	public function settings_export() {
@@ -61,7 +61,7 @@ class Pn_ImpExp {
 
 	/**
 	 * Process a settings import from a json file
-	 * @since    {{plugin_version}}
+	 * @since {{plugin_version}}
        * @return void
 	 */
 	public function settings_import() {

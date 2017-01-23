@@ -5,16 +5,16 @@
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
  */
 class Pn_CMB {
 
     /**
      * Initialize CMB2.
      *
-     * @since     {{plugin_version}}
+     * @since {{plugin_version}}
      */
     public function __construct() {
         add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
@@ -23,7 +23,7 @@ class Pn_CMB {
     /**
      * NOTE:     Your metabox on Demo CPT
      *
-     * @since    {{plugin_version}}
+     * @since {{plugin_version}}
      * 
      * @return void
      */

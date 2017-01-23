@@ -5,9 +5,9 @@
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
  */
 class Pn_Uninstall {
 

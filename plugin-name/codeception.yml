@@ -1,0 +1,53 @@
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        WPBrowser:
+            url: 'http://boilerplate.dev'
+            adminUsername: admin
+            adminPassword: password
+            adminUrl: /wp-admin
+        WPDb:
+            dsn: 'mysql:host=192.168.50.4;dbname=wordpress_unit_tests'
+            user: wp
+            password: wp
+            dump: tests/_data/dump.sql
+            populate: true
+            cleanup: true
+            url: 'http://boilerplate.dev'
+            tablePrefix: wp_
+        WPLoader:
+            wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
+            dbName: wordpress_unit_tests
+            dbHost: 192.168.50.4
+            dbUser: wp
+            dbPassword: wp
+            wpDebug: true
+            dbCharset: utf8
+            dbCollate: ''
+            tablePrefix: wp_
+            domain: boilerplate.dev
+            adminEmail: admin@wp.dev
+            title: 'WP Tests'
+            phpBinary: php
+            language: ''
+            configFile: 'wp-config-test.php'
+            plugins: ["WordPress-Plugin-Boilerplate-Powered/WordPress-Plugin-Boilerplate-Powered.php"]
+            activatePlugins: ["WordPress-Plugin-Boilerplate-Powered/WordPress-Plugin-Boilerplate-Powered.php"]
+        WPWebDriver:
+            url: 'http://boilerplate.dev'
+            browser: phantomjs
+            port: 4444
+            restart: true
+            wait: 2
+            adminUsername: admin
+            adminPassword: password
+            adminUrl: /wp-admin

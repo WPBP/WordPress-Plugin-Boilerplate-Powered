@@ -27,7 +27,7 @@
  */
 // If this file is called directly, abort.
 if ( !defined( 'WPINC' ) ) {
-  die;
+	die;
 }
 
 define( 'PN_VERSION', '{{plugin_version}}' );
@@ -35,7 +35,7 @@ define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 
 function pn_load_plugin_textdomain() {
-  load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
+	load_plugin_textdomain( PN_TEXTDOMAIN, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 }
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
@@ -50,24 +50,24 @@ require_once( plugin_dir_path( __FILE__ ) . 'composer/autoload.php' );
  * @return object
  */
 function pn_fs() {
-  global $pn_fs;
+	global $pn_fs;
 
-  if ( !isset( $pn_fs ) ) {
-    $pn_fs = fs_dynamic_init( array(
-	  'id' => '',
-	  'slug' => 'plugin-name',
-	  'public_key' => '',
-	  'is_live' => false,
-	  'is_premium' => true,
-	  'has_addons' => false,
-	  'has_paid_plans' => true,
-	  'menu' => array(
-		'slug' => 'plugin-name'
-	  ),
-		) );
-  }
+	if ( !isset( $pn_fs ) ) {
+		$pn_fs = fs_dynamic_init( array(
+			'id' => '',
+			'slug' => 'plugin-name',
+			'public_key' => '',
+			'is_live' => false,
+			'is_premium' => true,
+			'has_addons' => false,
+			'has_paid_plans' => true,
+			'menu' => array(
+				'slug' => 'plugin-name'
+			),
+				) );
+	}
 
-  return $pn_fs;
+	return $pn_fs;
 }
 
 // Init Freemius.
@@ -80,6 +80,11 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );
 //{{/unless}}
 //WPBPGen{{#unless act-deact_uninstall}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Uninstall.php' );
+//{{/unless}}
+//WPBPGen{{#unless wpcli}}
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_WPCli.php' );
+}
 //{{/unless}}
 //WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_P2P.php' );
@@ -100,6 +105,6 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
  */
 
 if ( is_admin() && (!defined( 'DOING_AJAX' ) || !DOING_AJAX ) ) {
-  require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
 }
 //{{/if}}

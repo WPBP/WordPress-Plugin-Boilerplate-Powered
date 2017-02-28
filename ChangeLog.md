@@ -1,3 +1,7 @@
+## 2.0.5
+
+* Updated code to load the textdomain using the mo for the last version of WP
+
 ## 2.0.4
 
 * WP CLI example code

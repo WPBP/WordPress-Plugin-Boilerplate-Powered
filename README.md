@@ -1,4 +1,4 @@
-#WordPress Plugin Boilerplate Powered
+# WordPress Plugin Boilerplate Powered
 <p align="center">
 <img src="./assets/icon-256x256.png" alt="Logo" title="Logo">
 </p>
@@ -6,9 +6,9 @@
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.   
 The mainly purpose of this boilerplate: choose a library or a snippet and the boilerplate contain already the example for use it without need a manual copy&paste way or look on internet.  
 
-##Features
+## Features
 
-###Library integrated
+### Library integrated
 
 * Sass support with Compass and Grunt
 * CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
@@ -35,8 +35,10 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
 	* [athlan/custom-fields-permalink-plugin](https://github.com/athlan/wordpress-custom-fields-permalink-plugin)
+	* [wpbp/backbone-modal-view](https://github.com/wpbp/backbone-modal-view)
+	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 
-###Snippet included
+### Snippet included
 
 * Shortcode example code
 * Dashicon as dependence of admin stylesheet
@@ -55,9 +57,9 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
 Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
 
-##Shell Script & Tools
+## Shell Script & Tools
 
-###Included
+### Included
 
 * wp-boilerplate-version.sh (check below)
 * apigen.sh script for generate a docs folder with the documentation
@@ -65,17 +67,17 @@ Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wi
 
 Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) for discover how to use this script!
 
-###Useful resources or code examples
+### Useful resources or code examples
 
 Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Useful-resources-or-code-examples)!
 
-##Recommended Tools
+## Recommended Tools
 
-###Generator Tool
+### Generator Tool
 
 The code generator that allows you to choose the libraries you need with many customization.  
 Link to repo: [https://github.com/wpbp/generator](https://github.com/wpbp/generator)
 
-##License
+## License
 
 The WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.

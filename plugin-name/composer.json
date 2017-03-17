@@ -12,7 +12,7 @@
     "wpbp/cpt_columns": "1.0.0",
     "wpbp/requirements": "1.0.0",
     "wpbp/language": "1.0.0",
-    "wpbp/backbone-modal-view": "1.0.0",
+    "wpbp/backbone-modal-view": "1.0.1",
     "webdevstudios/cmb2": "2.2.2.1",
     "voceconnect/wp-contextual-help": "1.0.2",
     "nathanielks/wp-admin-notice": "dev-master",
@@ -23,7 +23,8 @@
     "julien731/wp-dismissible-notices-handler": "1.0.0",
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
-    "athlan/custom-fields-permalink-plugin": "1.0.2"
+    "athlan/custom-fields-permalink-plugin": "1.0.2",
+    "yoast/i18n-module": "2.0.1"
   },
   "repositories": [
     {

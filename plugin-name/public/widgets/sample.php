@@ -201,11 +201,11 @@ class Pn_My_Recent_Posts_Widget extends WPH_Widget {
 }
 
 // Register widget
-if ( !function_exists( 'pl_my_register_widget' ) ) {
+if ( !function_exists( 'pn_my_register_widget' ) ) {
 
-  function pl_my_register_widget() {
+  function pn_my_register_widget() {
     register_widget( 'Pn_My_Recent_Posts_Widget' );
   }
 
-  add_action( 'widgets_init', 'pl_my_register_widget', 1 );
+  add_action( 'widgets_init', 'pn_my_register_widget', 1 );
 }

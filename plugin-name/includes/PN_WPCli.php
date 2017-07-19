@@ -1,18 +1,24 @@
 <?php
 
 /**
- * This class contain the WP CLI support
+ * Plugin_Name
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
+ * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
- * @copyright {{author_copyright}}
+ */
+
+/**
+ * This class contain the WP CLI support
  */
 class Pn_WPCli {
 
 	/**
 	 * Initialize the snippet
+	 * 
+	 * @return void
 	 */
 	function __construct() {
 		WP_CLI::add_command( 'pn_commandname', array( $this, 'command_example' ) );
@@ -22,7 +28,9 @@ class Pn_WPCli {
 	 * Example command
 	 * API reference: https://wp-cli.org/docs/internal-api/
 	 * 
-	 * @param array $args
+	 * @param array $args The attributes.
+	 * 
+	 * @return void
 	 */
 	public function command_example( $args ) {
 		// Message prefixed with "Success: ".

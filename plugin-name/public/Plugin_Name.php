@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * public-facing side of the WordPress site.
+ * Plugin_Name
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
@@ -10,12 +9,16 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
+/**
+ * This class should ideally be used to work with the public-facing side of the WordPress site.
+ */
 class Plugin_Name {
 
   /**
    * Instance of this class.
    *
-   * @var      object
+   * @var object
    *
    * @since {{plugin_version}}
    */
@@ -24,9 +27,7 @@ class Plugin_Name {
   /**
    * Array of cpts of the plugin
    *
-   * @var      array
-   *
-   * @since {{plugin_version}}
+   * @var array
    */
   protected $cpts = array( 'demo' );
   //{{/unless}}
@@ -35,8 +36,6 @@ class Plugin_Name {
    * Array of capabilities by roles
    * 
    * @var array
-   * 
-   * @since {{plugin_version}}
    */
   protected static $plugin_roles = array(
 	'administrator' => array(
@@ -64,6 +63,8 @@ class Plugin_Name {
    * and styles.
    *
    * @since {{plugin_version}}
+   * 
+   * @return void
    */
   private function __construct() {
     //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
@@ -111,7 +112,7 @@ class Plugin_Name {
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_js_vars' ) );
     //{{/unless}}
     //WPBPGen{{#unless custom_action}}
-    /*
+    /**
      * Define custom functionality.
      * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
      */
@@ -164,7 +165,7 @@ class Plugin_Name {
    */
   public static function get_instance() {
     // If the single instance hasn't been set, set it now.
-    if ( null == self::$instance ) {
+    if ( null === self::$instance ) {
 	self::$instance = new self();
     }
 
@@ -175,9 +176,10 @@ class Plugin_Name {
   /**
    * Add support for custom CPT on the search box
    *
-   * @since {{plugin_version}}
+   * @param object $query Wp_Query.
    *
-   * @param object $query   
+   * @since {{plugin_version}}
+   * 
    * @return object
    */
   public function filter_search( $query ) {
@@ -197,6 +199,7 @@ class Plugin_Name {
    * Register and enqueue public-facing style sheet.
    *
    * @since {{plugin_version}}
+   * 
    * @return void
    */
   public function enqueue_styles() {
@@ -208,6 +211,7 @@ class Plugin_Name {
    * Register and enqueues public-facing JavaScript files.
    *
    * @since {{plugin_version}}
+   * 
    * @return void
    */
   public function enqueue_scripts() {
@@ -219,6 +223,7 @@ class Plugin_Name {
    * Print the PHP var in the HTML of the frontend for access by JavaScript
    *
    * @since {{plugin_version}}
+   * 
    * @return void
    */
   public function enqueue_js_vars() {
@@ -231,9 +236,11 @@ class Plugin_Name {
   //WPBPGen{{#unless frontend_body-class}}
   /**
    * Add class in the body on the frontend
+   * 
+   * @param array $classes THe array with all the classes of the page.
    *
    * @since {{plugin_version}}
-   * @param array $classes THe array with all the classes of the page.
+   * 
    * @return array
    */
   public function add_pn_class( $classes ) {
@@ -244,9 +251,11 @@ class Plugin_Name {
   //WPBPGen{{#unless frontend_template-system}}
   /**
    * Example for override the template system on the frontend
+   * 
+   * @param string $original_template The original templace HTML.
    *
    * @since {{plugin_version}}
-   * @param string $original_template The original templace HTML.
+   * 
    * @return string
    */
   public function load_content_demo( $original_template ) {
@@ -265,6 +274,8 @@ class Plugin_Name {
    *        Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
    *
    * @since {{plugin_version}}
+   * 
+   * @return void
    */
   public function action_method_name() {
     // @TODO: Define your action hook callback here
@@ -277,8 +288,12 @@ class Plugin_Name {
    *
    *        Filters: http://codex.wordpress.org/Plugin_API#Filters
    *        Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
+   * 
+   * @param array $param The paramters.
    *
    * @since {{plugin_version}}
+   * 
+   * @return array
    */
   public function filter_method_name( $param ) {
     // @TODO: Define your filter hook callback here
@@ -291,8 +306,12 @@ class Plugin_Name {
    * 		  in post content.
    *
    *        Reference:  http://codex.wordpress.org/Shortcode_API
+   * 
+   * @param array $atts The paramters.
    *
    * @since {{plugin_version}}
+   * 
+   * @return array
    */
   public function shortcode_method_name( $atts ) {
     //With this you can define the default proprietary for your shortcode

@@ -187,6 +187,11 @@ class Plugin_Name_Admin {
 				)
 		);
 		//{{/unless}}
+		//WPBPGen{{#unless libraries_yoast__whip}}
+		whip_wp_check_versions( array(
+			'php' => '>=5.6',
+		) );
+		//{{/unless}}
 	}
 
 	/**

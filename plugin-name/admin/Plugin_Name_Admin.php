@@ -214,7 +214,7 @@ class Plugin_Name_Admin {
 		return self::$instance;
 	}
 
-	//WPBPGen{{#if admin-page}}
+	//WPBPGen{{#if admin-assets_admin-page}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
@@ -226,11 +226,16 @@ class Plugin_Name_Admin {
 		if ( !isset( $this->admin_view_page ) ) {
 			return;
 		}
-
+		
+		//WPBPGen{{#unless admin-assets_settings-css}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
-			wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
+			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'assets/css/settings.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
 		}
+		//{{/if}}
+		//WPBPGen{{#unless admin-assets_admin-css}}
+		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
+		//{{/if}}
 	}
 
 	/**
@@ -245,10 +250,15 @@ class Plugin_Name_Admin {
 			return;
 		}
 
+		//WPBPGen{{#unless admin-assets_settings-js}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page == $screen->id ) {
-			wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
+			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'assets/js/settings.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
 		}
+		//{{/if}}
+		//WPBPGen{{#unless admin-assets_admin-js}}
+		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
+		//{{/if}}
 	}
 
 	/**

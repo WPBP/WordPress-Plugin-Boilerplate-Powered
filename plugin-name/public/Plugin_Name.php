@@ -87,6 +87,11 @@ class Plugin_Name {
 					'connection' => 'demo_to_pages',
 					'link' => 'edit'
 				),
+				'custom_field' => array(
+					'title' => 'By Lib',
+					'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
+					'cap' => 'manage_options',
+				),
 				'date' => array(
 					'title' => 'Date',
 					'default' => 'ASC',

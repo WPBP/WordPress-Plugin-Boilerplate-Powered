@@ -93,7 +93,8 @@
       "./admin/includes/lib/Cmb2/init.php",
       "./admin/includes/lib/Cmb2-grid/Cmb2GridPlugin.php",
       "./includes/lib/Extended-cpts/extended-cpts.php",
-      "./includes/lib/Extended-taxos/extended-taxos.php"
+      "./includes/lib/Extended-taxos/extended-taxos.php",
+      "./includes/lib/Posts-to-posts/posts-to-posts.php"
     ]
   }
 }

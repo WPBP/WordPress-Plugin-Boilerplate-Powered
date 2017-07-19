@@ -14,12 +14,12 @@
     "wpbp/language": "1.0.0",
     "wpbp/backbone-modal-view": "1.0.2",
     "webdevstudios/cmb2": "2.2.4",
-    "voceconnect/wp-contextual-help": "1.0.2",
+    "kevinlangleyjr/wp-contextual-help": "dev-master",
     "nathanielks/wp-admin-notice": "dev-master",
     "origgami/cmb2-grid": "dev-master",
-    "webdevstudios/cpt-core": "1.0.1",
-    "webdevstudios/taxonomy_core": "0.2.4",
-    "freemius/wordpress-sdk": "1.2.1.6.1",
+    "johnbillion/extended-cpts": "3.2.1",
+    "johnbillion/extended-taxos": "2.0.5",
+    "freemius/wordpress-sdk": "1.2.1.*",
     "julien731/wp-dismissible-notices-handler": "1.0.0",
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
@@ -55,14 +55,14 @@
   "extra": {
     "installer-paths": {
       "./includes/lib/{$name|F}": [
-        "webdevstudios/cpt-core",
+        "johnbillion/extended-cpts",
+        "johnbillion/extended-taxos",
         "wpbp/language",
         "wpbp/cronplus",
         "wpbp/fakepage",
         "wpbp/template",
         "wpbp/requirements",
         "wpbp/debug",
-        "webdevstudios/taxonomy_core",
         "athlan/custom-fields-permalink-plugin",
         "wpackagist-plugin/posts-to-posts"
       ],
@@ -78,18 +78,22 @@
         "wpbp/pointerplus",
         "wpbp/cpt_columns",
         "wpbp/backbone-modal-view",
-        "voceconnect/wp-contextual-help",
+        "kevinlangleyjr/wp-contextual-help",
         "nathanielks/wp-admin-notice",
         "julien731/wp-dismissible-notices-handler",
         "julien731/wp-review-me"
       ]
+    },
+    "autoload-splitter": {
+      "splitter-location": "composer/wp-cli/wp-cli/php/WP_CLI/AutoloadSplitter.php"
     }
   },
   "autoload": {
     "files": [
       "./admin/includes/lib/Cmb2/init.php",
       "./admin/includes/lib/Cmb2-grid/Cmb2GridPlugin.php",
-      "./includes/lib/Posts-to-posts/posts-to-posts.php"
+      "./includes/lib/Extended-cpts/extended-cpts.php",
+      "./includes/lib/Extended-taxos/extended-taxos.php"
     ]
   }
 }

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Provide Import and Export of the settings of the plugin
- *
+ * Plugin_Name
+ * 
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -9,13 +10,14 @@
  * @link      {{author_url}}
  */
 
+/**
+ * Provide Import and Export of the settings of the plugin
+ */
 class Pn_ImpExp {
-		
+
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
 	 * settings page and menu.
-	 *
-	 * @since     {{plugin_version}}
 	 */
 	public function __construct() {
 		// Add the export settings method
@@ -23,15 +25,17 @@ class Pn_ImpExp {
 		// Add the import settings method
 		add_action( 'admin_init', array( $this, 'settings_import' ) );
 	}
-	
+
 	/**
 	 * Process a settings export from config
+	 * 
 	 * @since {{plugin_version}}
-       * @return void
+	 * 
+	 * @return void
 	 */
 	public function settings_export() {
 
-		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' != $_POST[ 'pn_action' ] ) {
+		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' !== $_POST[ 'pn_action' ] ) {
 			return;
 		}
 
@@ -61,12 +65,14 @@ class Pn_ImpExp {
 
 	/**
 	 * Process a settings import from a json file
+	 * 
 	 * @since {{plugin_version}}
-       * @return void
+	 * 
+	 * @return void
 	 */
 	public function settings_import() {
 
-		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' != $_POST[ 'pn_action' ] ) {
+		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' !== $_POST[ 'pn_action' ] ) {
 			return;
 		}
 
@@ -79,7 +85,7 @@ class Pn_ImpExp {
 		}
 		$extension = end( explode( '.', $_FILES[ 'import_file' ][ 'name' ] ) );
 
-		if ( $extension != 'json' ) {
+		if ( $extension !== 'json' ) {
 			wp_die( __( 'Please upload a valid .json file', PN_TEXTDOMAIN ) );
 		}
 
@@ -98,6 +104,7 @@ class Pn_ImpExp {
 		wp_safe_redirect( admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) );
 		exit;
 	}
+
 }
 
 new Pn_ImpExp();

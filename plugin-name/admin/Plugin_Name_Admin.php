@@ -18,9 +18,7 @@ class Plugin_Name_Admin {
 	/**
 	 * Instance of this class.
 	 *
-	 * @var      objec
-	 *
-	 * @since {{plugin_version}}
+	 * @var      object
 	 */
 	protected static $instance = null;
 
@@ -36,6 +34,8 @@ class Plugin_Name_Admin {
 	 * settings page and menu.
 	 *
 	 * @since {{plugin_version}}
+	 * 
+	 * @return void
 	 */
 	private function __construct() {
 
@@ -221,7 +221,7 @@ class Plugin_Name_Admin {
 	 *
 	 * @since {{plugin_version}}
 	 *
-	 * @return mixed    Return early if no settings page is registered.
+	 * @return mixed Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
 		if ( !isset( $this->admin_view_page ) ) {
@@ -244,7 +244,7 @@ class Plugin_Name_Admin {
 	 *
 	 * @since {{plugin_version}}
 	 *
-	 * @return mixed    Return early if no settings page is registered.
+	 * @return mixed Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_scripts() {
 		if ( !isset( $this->admin_view_page ) ) {
@@ -295,6 +295,8 @@ class Plugin_Name_Admin {
 	 * Render the settings page for this plugin.
 	 *
 	 * @since {{plugin_version}}
+	 * 
+	 * @return void
 	 */
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
@@ -306,7 +308,9 @@ class Plugin_Name_Admin {
 	 * Add settings action link to the plugins page.
 	 *
 	 * @since {{plugin_version}}
-	 * @param array $links
+	 * 
+	 * @param array $links Array of links.
+	 * 
 	 * @return array
 	 */
 	public function add_action_links( $links ) {
@@ -330,6 +334,8 @@ class Plugin_Name_Admin {
 	 *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
 	 *
 	 * @since {{plugin_version}}
+	 * 
+	 * @return void
 	 */
 	public function action_method_name() {
 		// @TODO: Define your action hook callback here
@@ -345,6 +351,8 @@ class Plugin_Name_Admin {
 	 *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
 	 *
 	 * @since {{plugin_version}}
+	 * 
+	 * @return void
 	 */
 	public function filter_method_name() {
 		// @TODO: Define your filter hook callback here

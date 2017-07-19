@@ -19,8 +19,6 @@ class Plugin_Name {
    * Instance of this class.
    *
    * @var object
-   *
-   * @since {{plugin_version}}
    */
   private static $instance;
   //WPBPGen{{#unless libraries_webdevstudios__cpt-core}}

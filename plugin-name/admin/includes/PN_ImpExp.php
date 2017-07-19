@@ -56,9 +56,9 @@ class Pn_ImpExp {
 		header( 'Content-Disposition: attachment; filename=pn-settings-export-' . date( 'm-d-Y' ) . '.json' );
 		header( "Expires: 0" );
 		if ( version_compare( PHP_VERSION, '5.4.0', '>=' ) ) {
-			echo json_encode( $settings, JSON_PRETTY_PRINT );
+			echo wp_json_encode( $settings, JSON_PRETTY_PRINT );
 		} else {
-			echo json_encode( $settings );
+			echo wp_json_encode( $settings );
 		}
 		exit;
 	}

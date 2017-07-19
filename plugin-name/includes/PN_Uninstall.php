@@ -25,7 +25,7 @@ class Pn_Uninstall {
 	}
 
 	/**
-	 * 
+	 * Loop for uninstall
 	 * 
 	 * @global type $wpdb
 	 * 
@@ -46,6 +46,13 @@ class Pn_Uninstall {
 		$this->uninstall();
 	}
 
+	/**
+	 * What happen on uninstall?
+	 * 
+	 * @global WP_Roles $wp_roles
+	 * 
+	 * @return void
+	 */
 	function uninstall() {
 		global $wp_roles;
 		$plugin_roles = Plugin_Name::get_plugin_roles();

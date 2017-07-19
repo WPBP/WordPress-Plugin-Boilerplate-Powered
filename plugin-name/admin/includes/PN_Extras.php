@@ -50,10 +50,10 @@ class Pn_Extras {
 	/**
 	 * Add the recents post type in the activity widget<br>
 	 * NOTE: add in $post_types your cpts
-	 *
-	 * @since {{plugin_version}}
 	 * 
 	 * @param array $query_args The content of the widget.
+	 *
+	 * @since {{plugin_version}}
 	 * 
 	 * @return array
 	 */
@@ -92,7 +92,7 @@ class Pn_Extras {
 
 			if ( $cpt_count->pending ) {
 				// Menu link suffix, Post is different from the rest
-				$suffix = ( 'post' == $type ) ? '' : '?post_type=' . $type;
+				$suffix = ( 'post' === $type ) ? '' : '?post_type=' . $type;
 
 				// Locate the key of 
 				$key = self::recursive_array_search_php( 'edit.php' . $suffix, $menu );

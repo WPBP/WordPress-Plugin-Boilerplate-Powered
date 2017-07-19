@@ -1,13 +1,17 @@
 <?php
 
 /**
- * This class contain all the snippet or extra that improve the experience on the backend
- *
+ * Plugin_name
+ * 
  * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
+ */
+
+/**
+ * This class contain all the snippet or extra that improve the experience on the backend
  */
 class Pn_Extras {
 
@@ -19,10 +23,6 @@ class Pn_Extras {
 		//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
 		$this->cpts = $plugin->get_cpts();
 
-		//WPBPGen{{#unless backend_dashboard-atglance}}
-		// At Glance Dashboard widget for your cpts
-		add_filter( 'dashboard_glance_items', array( $this, 'cpt_glance_dashboard_support' ), 10, 1 );
-		//{{/unless}}
 		//WPBPGen{{#unless backend_dashboard-activity}}
 		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
@@ -46,49 +46,15 @@ class Pn_Extras {
 		//{{/unless}}
 	}
 
-	//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
-	//WPBPGen{{#unless backend_dashboard-atglance}}
-	/**
-	 * Add the counter of your CPTs in At Glance widget in the dashboard<br>
-	 * NOTE: add in $post_types your cpts, remember to edit the css style (admin/assets/css/admin.css) for change the dashicon<br>
-	 *
-	 *        Reference:  http://wpsnipp.com/index.php/functions-php/wordpress-post-types-dashboard-at-glance-widget/
-	 *
-	 * @since {{plugin_version}}
-	 * @param array $items The content of the widget.
-	 * @return array
-	 */
-	public function cpt_glance_dashboard_support( $items = array() ) {
-		$post_types = $this->cpts;
-		foreach ( $post_types as $type ) {
-			if ( !post_type_exists( $type ) ) {
-				continue;
-			}
-			$num_posts = wp_count_posts( $type );
-			if ( $num_posts ) {
-				$published = intval( $num_posts->publish );
-				$post_type = get_post_type_object( $type );
-				$text = _n( '%s ' . $post_type->labels->singular_name, '%s ' . $post_type->labels->name, $published, PN_TEXTDOMAIN );
-				$text = sprintf( $text, number_format_i18n( $published ) );
-				if ( current_user_can( $post_type->cap->edit_posts ) ) {
-					$items[] = '<a class="' . $post_type->name . '-count" href="edit.php?post_type=' . $post_type->name . '">' . sprintf( '%2$s', $type, $text ) . "</a>\n";
-				} else {
-					$items[] = sprintf( '%2$s', $type, $text ) . "\n";
-				}
-			}
-		}
-		return $items;
-	}
-
-	//{{/unless}}
-	//{{/unless}}
 	//WPBPGen{{#unless backend_dashboard-activity}}
 	/**
 	 * Add the recents post type in the activity widget<br>
 	 * NOTE: add in $post_types your cpts
 	 *
 	 * @since {{plugin_version}}
+	 * 
 	 * @param array $query_args The content of the widget.
+	 * 
 	 * @return array
 	 */
 	function cpt_activity_dashboard_support( $query_args ) {
@@ -110,6 +76,7 @@ class Pn_Extras {
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @since {{plugin_version}}
+	 * 
 	 * @return void
 	 */
 	function pending_cpt_bubble() {
@@ -149,6 +116,7 @@ class Pn_Extras {
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @since {{plugin_version}}
+	 * 
 	 * @param array $needle
 	 * @param array $haystack
 	 * 

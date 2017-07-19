@@ -25,11 +25,11 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [WPBP/Requirements](https://github.com/WPBP/Requirements)
 	* [WPBP/Language](https://github.com/WPBP/Language)
 	* [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)
-	* [voceconnect/wp-contextual-help](https://github.com/voceconnect/wp-contextual-help)
+	* [kevinlangleyjr/wp-contextual-help](https://github.com/voceconnect/wp-contextual-help)
 	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
 	* [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)
-	* [WebDevStudios/CPT_Core](https://github.com/WebDevStudios/CPT_Core)
-	* [WebDevStudios/Taxonomy_Core](https://github.com/WebDevStudios/Taxonomy_Core)
+	* [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)
+	* [johnbillion/extended-taxos](https://github.com/johnbillion/extended-taxos/)
 	* [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
@@ -37,6 +37,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [athlan/custom-fields-permalink-plugin](https://github.com/athlan/wordpress-custom-fields-permalink-plugin)
 	* [wpbp/backbone-modal-view](https://github.com/wpbp/backbone-modal-view)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
+	* [yoast/whip](https://github.com/yoast/whip)
 
 ### Snippet included
 

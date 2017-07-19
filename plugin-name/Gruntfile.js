@@ -51,7 +51,8 @@ module.exports = function (grunt) {
           join: true
         },
         files: {
-          'admin/assets/js/admin.js': 'admin/assets/coffee/admin.coffee'
+          'admin/assets/js/admin.js': 'admin/assets/coffee/admin.coffee',
+          'admin/assets/js/settings.js': 'admin/assets/coffee/settings.coffee'
         }
       },
       public: {
@@ -70,7 +71,8 @@ module.exports = function (grunt) {
           sourceMap: true
         },
         files: {
-          'admin/assets/js/admin.js': 'admin/assets/coffee/admin.coffee'
+          'admin/assets/js/admin.js': 'admin/assets/coffee/admin.coffee',
+          'admin/assets/js/settings.js': 'admin/assets/coffee/settings.coffee'
         }
       },
       publicDev: {

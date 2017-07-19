@@ -34,6 +34,11 @@ define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 
+/**
+ * Load the textdomain of the plugin
+ * 
+ * @return void
+ */
 function pn_load_plugin_textdomain() {
 	$locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
 	load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );

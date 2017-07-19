@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * administrative side of the WordPress site.
+ * Plugin_Name
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
@@ -10,12 +9,16 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
+/**
+ * This class should ideally be used to work with the administrative side of the WordPress site.
+ */
 class Plugin_Name_Admin {
 
 	/**
 	 * Instance of this class.
 	 *
-	 * @var      object
+	 * @var      objec
 	 *
 	 * @since {{plugin_version}}
 	 */
@@ -25,8 +28,6 @@ class Plugin_Name_Admin {
 	 * Slug of the plugin screen.
 	 *
 	 * @var      string
-	 *
-	 * @since {{plugin_version}}
 	 */
 	protected $admin_view_page = null;
 
@@ -226,7 +227,7 @@ class Plugin_Name_Admin {
 		if ( !isset( $this->admin_view_page ) ) {
 			return;
 		}
-		
+
 		//WPBPGen{{#unless admin-assets_settings-css}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page == $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {

@@ -110,10 +110,15 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
  * The code below is intended to to give the lightest footprint possible.
  */
 
-if ( is_admin() &&
-		(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
-		(!defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
- ) {
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'public/ajax/PN_Ajax.php' );
+
+if ( is_admin() ) {
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/ajax/PN_Ajax_Admin.php' );
+	if (
+			(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
+			(!defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
+	) {
+		require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
+	}
 }
 //{{/if}}

@@ -1,3 +1,13 @@
+## 2.1.0
+
+* New css/js file for all the administration and one for the plugin settings page
+* Split tabs in the plugin settings page in different files
+* Improved the quality code and docs with PHPCS
+* Removed At Glance widget for new library that support that
+* New folder and files for AJAX on admin and front-end
+* Replaced CPT-Core, Taxonomy-Core with Extendend-Cpts, Extendend-Taxos
+* Added Whip by Yoast
+
 ## 2.0.5
 
 * Updated code to load the textdomain using the mo for the last version of WP

@@ -1,4 +1,6 @@
 (function($) {
   'use strict';
-  $(function() {});
+  $(function() {
+    $('#tabs').tabs();
+  });
 })(jQuery);

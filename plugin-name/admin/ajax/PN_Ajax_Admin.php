@@ -19,9 +19,6 @@ class Pn_Ajax_Admin {
 	 * Initialize the class
 	 */
 	function __construct() {
-		$plugin = Plugin_Name_Admin::get_instance();
-		$this->cpts = $plugin->get_cpts();
-
 		// For logged user
 		add_action( 'wp_ajax_{your_method}', array( $this, 'your_method' ) );
 	}

@@ -114,14 +114,14 @@ require_once( plugin_dir_path( __FILE__ ) . 'public/ajax/PN_Ajax.php' );
 //{{/unless}}
 
 if ( is_admin() ) {
-	//WPBPGen{{#unless ajax_admin}}
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/ajax/PN_Ajax_Admin.php' );
-	//{{/unless}}
 	if (
 			(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
 			(!defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
 	) {
 		require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
 	}
+	//WPBPGen{{#unless ajax_admin}}
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/ajax/PN_Ajax_Admin.php' );
+	//{{/unless}}
 }
 //{{/if}}

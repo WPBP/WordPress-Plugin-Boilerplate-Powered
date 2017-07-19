@@ -115,10 +115,11 @@ class Pn_Extras {
 	 *
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
-	 * @since {{plugin_version}}
 	 * 
-	 * @param array $needle
-	 * @param array $haystack
+	 * @param array $needle   First parameter.
+	 * @param array $haystack Second parameter.
+	 *
+	 * @since {{plugin_version}}
 	 * 
 	 * @return mixed
 	 */
@@ -178,10 +179,10 @@ class Pn_Extras {
 	 * 
 	 * PN_Extras->web_push_notification( 'Title', 'Content', 'http://domain.tld');
 	 * 
-	 * @param string $title
-	 * @param string $content
-	 * @param string $url
-	 * @param string $icon
+	 * @param string $title   Title.
+	 * @param string $content Content.
+	 * @param string $url     URL.
+	 * @param string $icon    Icon.
 	 */
 	public function web_push_notification( $title, $content, $url, $icon = '' ) {
 		if ( class_exists( 'WebPush_Main' ) ) {

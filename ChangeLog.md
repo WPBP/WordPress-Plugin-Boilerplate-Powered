@@ -7,6 +7,7 @@
 * New folder and files for AJAX on admin and front-end
 * Replaced CPT-Core, Taxonomy-Core with Extendend-Cpts, Extendend-Taxos
 * Added Whip by Yoast
+* Replace previous package for custom directories with a new one with less dependencies
 
 ## 2.0.5
 

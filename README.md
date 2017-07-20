@@ -25,7 +25,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [WPBP/Requirements](https://github.com/WPBP/Requirements)
 	* [WPBP/Language](https://github.com/WPBP/Language)
 	* [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)
-	* [kevinlangleyjr/wp-contextual-help](https://github.com/voceconnect/wp-contextual-help)
+	* [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)
 	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
 	* [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)
 	* [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)

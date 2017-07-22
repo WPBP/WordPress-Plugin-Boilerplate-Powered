@@ -34,7 +34,6 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
-	* [athlan/custom-fields-permalink-plugin](https://github.com/athlan/wordpress-custom-fields-permalink-plugin)
 	* [wpbp/backbone-modal-view](https://github.com/wpbp/backbone-modal-view)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [yoast/whip](https://github.com/yoast/whip)

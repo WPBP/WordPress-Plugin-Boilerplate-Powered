@@ -22,7 +22,6 @@
     "julien731/wp-dismissible-notices-handler": "1.0.0",
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
-    "athlan/custom-fields-permalink-plugin": "1.0.2",
     "yoast/i18n-module": "2.0.1",
     "yoast/whip": "1.0.2"
   },
@@ -87,11 +86,11 @@
   },
   "autoload": {
     "files": [
-      "./admin/includes/lib/Cmb2/init.php",
-      "./admin/includes/lib/Cmb2-grid/Cmb2GridPlugin.php",
-      "./includes/lib/Extended-cpts/extended-cpts.php",
-      "./includes/lib/Extended-taxos/extended-taxos.php",
-      "./includes/lib/Posts-to-posts/posts-to-posts.php"
+      "./admin/includes/lib/cmb2/init.php",
+      "./admin/includes/lib/cmb2-grid/Cmb2GridPlugin.php",
+      "./includes/lib/extended-cpts/extended-cpts.php",
+      "./includes/lib/extended-taxos/extended-taxos.php",
+      "./includes/lib/posts-to-posts/posts-to-posts.php"
     ]
   }
 }

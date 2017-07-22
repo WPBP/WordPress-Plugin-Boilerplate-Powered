@@ -8,6 +8,7 @@
 * Replaced CPT-Core, Taxonomy-Core with Extendend-Cpts, Extendend-Taxos
 * Added Whip by Yoast
 * Replace previous package for custom directories with a new one with less dependencies
+* Remove athlan/custom-fields-permalink-plugin
 
 ## 2.0.5
 

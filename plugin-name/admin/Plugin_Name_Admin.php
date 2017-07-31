@@ -235,10 +235,10 @@ class Plugin_Name_Admin {
 		if ( $this->admin_view_page === $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
 			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'assets/css/settings.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
 		}
-		//{{/if}}
+		//{{/unless}}
 		//WPBPGen{{#unless admin-assets_admin-css}}
 		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
-		//{{/if}}
+		//{{/unless}}
 	}
 
 	/**

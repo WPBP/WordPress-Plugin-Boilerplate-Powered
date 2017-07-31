@@ -54,7 +54,7 @@ class Pn_ContextualHelp {
 
     /**
      * Contextual Help, docs in /help-docs folter
-     * Documentation https://github.com/voceconnect/wp-contextual-help
+     * Documentation https://github.com/kevinlangleyjr/wp-contextual-help
      * 
      * @since {{plugin_version}} 
 	 * 

@@ -16,6 +16,7 @@
     "kevinlangleyjr/wp-contextual-help": "dev-master",
     "nathanielks/wp-admin-notice": "dev-master",
     "origgami/cmb2-grid": "dev-master",
+    "rubengc/cmb2-tabs": "*",
     "johnbillion/extended-cpts": "3.2.1",
     "johnbillion/extended-taxos": "2.0.5",
     "freemius/wordpress-sdk": "1.2.1.*",
@@ -33,6 +34,18 @@
     {
       "url": "git@github.com:origgami/cmb2-grid.git",
       "type": "git"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "rubengc/cmb2-tabs",
+        "version": "1.0.0",
+        "source": {
+          "url": "https://github.com/rubengc/cmb2-tabs",
+          "type": "git",
+          "reference": "master"
+        }
+      }
     },
     {
       "type": "composer",
@@ -70,6 +83,7 @@
       "./admin/includes/lib/{$name}": [
         "webdevstudios/cmb2",
         "origgami/cmb2-grid",
+        "rubengc/cmb2-tabs",
         "wpbp/pointerplus",
         "wpbp/cpt_columns",
         "wpbp/backbone-modal-view",
@@ -88,6 +102,7 @@
     "files": [
       "./admin/includes/lib/cmb2/init.php",
       "./admin/includes/lib/cmb2-grid/Cmb2GridPlugin.php",
+      "./admin/includes/lib/cmb2-tabs/cmb2-tabs.php",
       "./includes/lib/extended-cpts/extended-cpts.php",
       "./includes/lib/extended-taxos/extended-taxos.php",
       "./includes/lib/posts-to-posts/posts-to-posts.php"

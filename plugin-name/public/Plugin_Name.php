@@ -21,7 +21,7 @@ class Plugin_Name {
 	 * @var object
 	 */
 	private static $instance;
-	//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
+	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	/**
 	 * Array of cpts of the plugin
 	 *
@@ -193,7 +193,7 @@ class Plugin_Name {
 	}
 
 	//{{/unless}}
-	//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
+	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	/**
 	 * Return the cpts
 	 *

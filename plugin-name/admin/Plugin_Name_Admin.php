@@ -217,7 +217,6 @@ class Plugin_Name_Admin {
 		return self::$instance;
 	}
 
-	//WPBPGen{{#if admin-assets_admin-page}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
@@ -264,6 +263,7 @@ class Plugin_Name_Admin {
 		//{{/unless}}
 	}
 
+	//WPBPGen{{#if admin-assets_admin-page}}
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
@@ -303,9 +303,7 @@ class Plugin_Name_Admin {
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
 	}
-
-	//{{/if}}
-	//WPBPGen{{#if admin-page}}
+	
 	/**
 	 * Add settings action link to the plugins page.
 	 *

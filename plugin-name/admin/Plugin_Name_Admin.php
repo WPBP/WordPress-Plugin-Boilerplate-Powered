@@ -258,10 +258,10 @@ class Plugin_Name_Admin {
 		if ( $this->admin_view_page === $screen->id ) {
 			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'assets/js/settings.js', __FILE__ ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
 		}
-		//{{/if}}
+		//{{/unless}}
 		//WPBPGen{{#unless admin-assets_admin-js}}
 		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
-		//{{/if}}
+		//{{/unless}}
 	}
 
 	/**

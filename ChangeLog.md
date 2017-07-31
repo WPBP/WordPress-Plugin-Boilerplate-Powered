@@ -6,7 +6,7 @@
 * Removed At Glance widget for new library that support that
 * New folder and files for AJAX on admin and front-end
 * Replaced CPT-Core, Taxonomy-Core with Extendend-Cpts, Extendend-Taxos
-* Added Whip by Yoast
+* Added Whip by Yoast and CMB2 Tabs for post types
 * Replace previous package for custom directories with a new one with less dependencies
 * Remove athlan/custom-fields-permalink-plugin
 

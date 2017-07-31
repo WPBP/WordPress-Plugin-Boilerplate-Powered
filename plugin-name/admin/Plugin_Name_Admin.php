@@ -57,9 +57,6 @@ class Plugin_Name_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
-		// Load admin style in dashboard for the At glance widget
-		add_action( 'admin_head-index.php', array( $this, 'enqueue_admin_styles' ) );
-
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
@@ -172,7 +169,7 @@ class Plugin_Name_Admin {
 				)
 		);
 		//{{/unless}}
-		//WPBPGen{{#unless backend_bubble-notification-pending-cpt && backend_dashboard-atglance && backend_dashboard-activity && system_push-notification && system_transient-example}}
+		//WPBPGen{{#unless backend_bubble-notification-pending-cpt && backend_dashboard-activity && system_push-notification && system_transient-example}}
 		/*
 		 * All the extras functions
 		 */

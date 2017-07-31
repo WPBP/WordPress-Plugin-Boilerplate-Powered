@@ -21,13 +21,14 @@ class Plugin_Name_Admin {
 	 * @var object
 	 */
 	protected static $instance = null;
-
+	//WPBPGen{{#unless admin-assets_admin-page}}
 	/**
 	 * Slug of the plugin screen.
 	 *
 	 * @var string
 	 */
 	protected $admin_view_page = null;
+	//{{/unless}}
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
@@ -49,21 +50,24 @@ class Plugin_Name_Admin {
 		 */
 
 		$plugin = Plugin_Name::get_instance();
-		//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$this->cpts = $plugin->get_cpts();
 		//{{/unless}}
-		//WPBPGen{{#if admin-page}}
+		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		//{{/unless}}
+		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-
+		//{{/unless}}
+		//WPBPGen{{#unless admin-assets_admin-page}}
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-		//{{/if}}
+		//{{/unless}}
 		//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
 		/*
 		 * Load CMB
@@ -216,7 +220,7 @@ class Plugin_Name_Admin {
 
 		return self::$instance;
 	}
-
+	//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
@@ -239,7 +243,8 @@ class Plugin_Name_Admin {
 		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
 		//{{/unless}}
 	}
-
+	//{{/unless}}
+	//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
@@ -262,8 +267,9 @@ class Plugin_Name_Admin {
 		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
 		//{{/unless}}
 	}
+	//{{/unless}}
 
-	//WPBPGen{{#if admin-assets_admin-page}}
+	//WPBPGen{{#unless admin-assets_admin-page}}
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
@@ -303,7 +309,7 @@ class Plugin_Name_Admin {
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
 	}
-	
+
 	/**
 	 * Add settings action link to the plugins page.
 	 *
@@ -324,7 +330,7 @@ class Plugin_Name_Admin {
 		);
 	}
 
-	//{{/if}}
+	//{{/unless}}
 	//WPBPGen{{#unless custom_action}}
 	/**
 	 * NOTE:     Actions are points in the execution of a page or process

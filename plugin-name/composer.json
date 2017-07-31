@@ -1,7 +1,7 @@
 {
   "require": {
     "php": ">=5.3",
-    "mnsami/composer-custom-directory-installer": "1.1.*",
+    "composer/installers": "1.x",
     "wpbp/pointerplus": "1.0.0",
     "wpbp/cronplus": "1.0.1.2",
     "wpbp/widgets-helper": "1.0.1",
@@ -71,7 +71,6 @@
         "wpbp/template",
         "wpbp/requirements",
         "wpbp/debug",
-        "athlan/custom-fields-permalink-plugin",
         "wpackagist-plugin/posts-to-posts"
       ],
       "./includes/lib/Freemius": [

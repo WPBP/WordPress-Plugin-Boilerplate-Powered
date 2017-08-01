@@ -24,6 +24,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)
 	* [WPBP/Requirements](https://github.com/WPBP/Requirements)
 	* [WPBP/Language](https://github.com/WPBP/Language)
+	* [WPBP/Backbone-Modal-View](https://github.com/WPBP/Backbone-Modal-View)
 	* [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)
 	* [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)
 	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
@@ -35,7 +36,6 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
-	* [wpbp/backbone-modal-view](https://github.com/wpbp/backbone-modal-view)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [yoast/whip](https://github.com/yoast/whip)
 

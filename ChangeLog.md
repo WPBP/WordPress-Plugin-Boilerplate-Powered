@@ -9,6 +9,7 @@
 * Added Whip by Yoast and CMB2 Tabs for post types
 * Replace previous package for custom directories with a new one with less dependencies
 * Remove athlan/custom-fields-permalink-plugin
+* Improving the script `wp-boilerplate-version.sh`
 
 ## 2.0.5
 

@@ -48,7 +48,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 * Custom capabilities with cpts and taxonomy support
 * wp_localize_script for pass PHP var to JS in the frontend
 * Class in frontend body with the slug of plugin
-* Support for your CPTs in At Glance widget/Activity widget in dashboard
+* Support for your CPTs in Activity widget in dashboard
 * Support for CMB in the options page
 * Support for email template/theme with language detection
 * Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)

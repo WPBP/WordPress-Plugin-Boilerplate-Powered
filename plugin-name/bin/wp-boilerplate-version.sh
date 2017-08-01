@@ -23,6 +23,8 @@ fi
 if [ -f 'plugin-name.php' ]; then
 	LINE=`sed -n '/PN_VERSION/{=}' plugin-name.php`
 	sed -i "${LINE}s/.*/define('PN_VERSION', '${1}');/" plugin-name.php
+	LINE=`sed -n '/ * Version:/{=}' plugin-name.php`
+	sed -i "${LINE}s/.*/ * Version:           ${1}/" plugin-name.php
 else
 	echo "Missing plugin-name.php"
 fi

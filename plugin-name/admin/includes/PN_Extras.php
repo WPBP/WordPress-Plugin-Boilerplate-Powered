@@ -20,7 +20,7 @@ class Pn_Extras {
 	 */
 	function __construct() {
 		$plugin = Plugin_Name::get_instance();
-		//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$this->cpts = $plugin->get_cpts();
 
 		//WPBPGen{{#unless backend_dashboard-activity}}
@@ -67,7 +67,7 @@ class Pn_Extras {
 	}
 
 	//{{/unless}}
-	//WPBPGen{{#unless libraries_webdevstudios__cpt-core}}
+	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	//WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
 	/**
 	 * Bubble Notification for pending cpt<br>

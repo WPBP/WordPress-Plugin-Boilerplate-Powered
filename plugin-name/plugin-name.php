@@ -98,7 +98,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_P2P.php' );
 //WPBPGen{{#unless libraries_wpbp__fakepage}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
 //{{/unless}}
-//WPBPGen{{#if admin-page}}
+//WPBPGen{{#unless admin-assets_admin-page}}
 /*
  * If you want to include Ajax within the dashboard, change the following
  * conditional to:
@@ -124,4 +124,4 @@ if ( is_admin() ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/ajax/PN_Ajax_Admin.php' );
 	//{{/unless}}
 }
-//{{/if}}
+//{{/unless}}

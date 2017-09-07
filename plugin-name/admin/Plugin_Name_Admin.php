@@ -28,6 +28,7 @@ class Plugin_Name_Admin {
 	 * @var string
 	 */
 	protected $admin_view_page = null;
+
 	//{{/unless}}
 
 	/**
@@ -147,7 +148,8 @@ class Plugin_Name_Admin {
 			'recurrence' => 'hourly',
 			'schedule' => 'schedule',
 			'name' => 'cronplusexample',
-				// 'cb' => 'cronplus_example_cb'
+				// 'cb' => 'cronplus_example_cb',
+			'plugin_root_file'=> 'plugin-name.php'
 		);
 
 		$cronplus = new CronPlus( $args );
@@ -220,6 +222,7 @@ class Plugin_Name_Admin {
 
 		return self::$instance;
 	}
+
 	//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
@@ -243,6 +246,7 @@ class Plugin_Name_Admin {
 		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array( 'dashicons' ), PN_VERSION );
 		//{{/unless}}
 	}
+
 	//{{/unless}}
 	//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 	/**
@@ -267,8 +271,8 @@ class Plugin_Name_Admin {
 		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
 		//{{/unless}}
 	}
-	//{{/unless}}
 
+	//{{/unless}}
 	//WPBPGen{{#unless admin-assets_admin-page}}
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.

@@ -16,7 +16,7 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 * CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
 * Custom folder for Composer libraries
 * [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool) to start to develop <--
-* Many libraries already avalaible (with starter code) in composer.json (with the yeoman generator you can choose)
+* Many libraries already available (with starter code) in composer.json (with the yeoman generator you can choose)
 	* [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)
 	* [WPBP/CronPlus](https://github.com/WPBP/CronPlus)
 	* [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)

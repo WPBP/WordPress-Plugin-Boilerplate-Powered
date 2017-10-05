@@ -2,9 +2,10 @@
   "require": {
     "php": ">=5.3",
     "composer/installers": "1.x",
+    "mnsami/composer-custom-directory-installer": "1.1.*",
     "wpbp/pointerplus": "1.0.0",
-    "wpbp/cronplus": "1.0.1.2",
-    "wpbp/widgets-helper": "1.0.1",
+    "wpbp/cronplus": "1.0.3",
+    "wpbp/widgets-helper": "1.0.2",
     "wpbp/fakepage": "1.0.0",
     "wpbp/template": "1.0.1",
     "wpbp/debug": "1.0.0",
@@ -12,19 +13,18 @@
     "wpbp/requirements": "1.0.0",
     "wpbp/language": "1.0.0",
     "wpbp/backbone-modal-view": "1.0.2",
-    "webdevstudios/cmb2": "2.2.4",
+    "webdevstudios/cmb2": "2.2.5.3",
     "kevinlangleyjr/wp-contextual-help": "dev-master",
     "nathanielks/wp-admin-notice": "dev-master",
     "origgami/cmb2-grid": "dev-master",
     "rubengc/cmb2-tabs": "*",
-    "johnbillion/extended-cpts": "3.2.1",
-    "johnbillion/extended-taxos": "2.0.5",
-    "freemius/wordpress-sdk": "1.2.1.*",
+    "johnbillion/extended-cpts": "4.0.2",
+    "freemius/wordpress-sdk": "1.2.2.*",
     "julien731/wp-dismissible-notices-handler": "1.0.0",
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
-    "yoast/i18n-module": "2.0.1",
-    "yoast/whip": "1.0.2"
+    "yoast/i18n-module": "3.0.0",
+    "yoast/whip": "1.1.0"
   },
   "repositories": [
     {
@@ -56,15 +56,14 @@
     "vendor-dir": "composer/"
   },
   "require-dev": {
-    "lucatume/wp-browser": "^1.19",
-    "phpro/grumphp": "^0.11.0"
+    "lucatume/wp-browser": "^1.21",
+    "phpro/grumphp": "^0.12.0"
   },
   "minimum-stability": "dev",
   "extra": {
     "installer-paths": {
       "./includes/lib/{$name}": [
         "johnbillion/extended-cpts",
-        "johnbillion/extended-taxos",
         "wpbp/language",
         "wpbp/cronplus",
         "wpbp/fakepage",
@@ -92,9 +91,6 @@
         "julien731/wp-review-me",
         "yoast/whip"
       ]
-    },
-    "autoload-splitter": {
-      "splitter-location": "composer/wp-cli/wp-cli/php/WP_CLI/AutoloadSplitter.php"
     }
   },
   "autoload": {
@@ -103,7 +99,6 @@
       "./admin/includes/lib/cmb2-grid/Cmb2GridPlugin.php",
       "./admin/includes/lib/cmb2-tabs/cmb2-tabs.php",
       "./includes/lib/extended-cpts/extended-cpts.php",
-      "./includes/lib/extended-taxos/extended-taxos.php",
       "./includes/lib/posts-to-posts/posts-to-posts.php"
     ]
   }

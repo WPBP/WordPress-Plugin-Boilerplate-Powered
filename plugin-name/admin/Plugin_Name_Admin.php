@@ -182,7 +182,7 @@ class Plugin_Name_Admin {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Extras.php' );
 		//{{/unless}}
 		//WPBPGen{{#unless libraries_yoast__i18n-module}}
-		new Yoast_I18n_WordPressOrg_v2(
+		new Yoast_I18n_WordPressOrg_v3(
 				array(
 			'textdomain' => PN_TEXTDOMAIN,
 			'plugin_name' => PN_NAME,

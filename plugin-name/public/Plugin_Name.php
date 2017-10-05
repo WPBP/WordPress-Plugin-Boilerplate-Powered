@@ -29,32 +29,6 @@ class Plugin_Name {
 	 */
 	protected $cpts = array( 'demo' );
 	//{{/unless}}
-	//WPBPGen{{#unless system_capability-system}}
-	/**
-	 * Array of capabilities by roles
-	 * 
-	 * @var array
-	 */
-	protected static $plugin_roles = array(
-		'administrator' => array(
-			'edit_demo' => true,
-			'edit_others_demo' => true,
-		),
-		'editor' => array(
-			'edit_demo' => true,
-			'edit_others_demo' => true,
-		),
-		'author' => array(
-			'edit_demo' => true,
-			'edit_others_demo' => false,
-		),
-		'subscriber' => array(
-			'edit_demo' => false,
-			'edit_others_demo' => false,
-		),
-	);
-
-	//{{/unless}}
 
 	/**
 	 * Initialize the plugin by setting localization and loading public scripts
@@ -108,10 +82,7 @@ class Plugin_Name {
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
 			'plural' => __( 'Demos', PN_TEXTDOMAIN ),
 			'slug' => 'demo',
-			'capabilities' => array(
-				'edit_post' => 'edit_demo',
-				'edit_others_posts' => 'edit_others_demo',
-			),
+			'capability_type' => array( 'demo', 'demoes' ),
 				) );
 		//{{/unless}}
 		//WPBPGen{{#unless frontend_cpt-search-support}}
@@ -140,9 +111,14 @@ class Plugin_Name {
 			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
 			'plural' => __( 'Demo Categories', PN_TEXTDOMAIN ),
 			'slug' => 'demo-cat',
+			//WPBPGen{{#unless system_capability-system}}
 			'capabilities' => array(
-				'assign_terms' => 'edit_posts',
+				'manage_terms' => 'manage_demoes',
+				'edit_terms' => 'manage_demoes',
+				'delete_terms' => 'manage_demoes',
+				'assign_terms' => 'read_demo',
 			)
+			//{{/unless}}
 		) );
 		//{{/unless}}
 		//WPBPGen{{#unless frontend_body-class}}
@@ -180,19 +156,6 @@ class Plugin_Name {
 		//{{/unless}}
 	}
 
-	//WPBPGen{{#unless system_capability-system}}
-	/**
-	 * Return the version
-	 *
-	 * @since {{plugin_version}}
-	 *
-	 * @return const
-	 */
-	public function get_plugin_roles() {
-		return self::$plugin_roles;
-	}
-
-	//{{/unless}}
 	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	/**
 	 * Return the cpts

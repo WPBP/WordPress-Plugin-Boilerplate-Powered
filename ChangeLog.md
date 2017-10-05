@@ -1,3 +1,7 @@
+## 2.1.1
+
+* New code for capabilities adding with a upgrade procedure
+
 ## 2.1.0
 
 * New css/js file for all the administration and one for the plugin settings page

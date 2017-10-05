@@ -21,14 +21,32 @@ class Pn_ActDeact {
 	 * @return void
 	 */
 	function __construct() {
-		$plugin = Plugin_Name::get_instance();
-		$this->plugin_roles = $plugin->get_plugin_roles();
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
+		//WPBPGen{{#unless system_upgrade-procedure}}
+		add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
+		//{{/unless}}
 	}
+
+	//WPBPGen{{#unless system_upgrade-procedure}}
+	/**
+	 * Upgrade procedure 
+	 * 
+	 * @return void
+	 */
+	public function upgrade_procedure() {
+		if ( is_admin() ) {
+			$version = get_option( 'plugin-name-version' );
+			if ( version_compare( PN_VERSION, $version, '>' ) ) {
+				update_option( 'plugin-name-version', PN_VERSION );
+				delete_option( PN_TEXTDOMAIN . '_fake-meta' );
+			}
+		}
+	}
+	//{{/unless}}
 
 	/**
 	 * Fired when the plugin is activated.
@@ -102,6 +120,73 @@ class Pn_ActDeact {
 		restore_current_blog();
 	}
 
+	//WPBPGen{{#unless system_capability-system}}
+	/**
+	 * Add admin capabilities
+	 * 
+	 * @return void
+	 */
+	public function add_capabilities() {
+		// Add the capabilites to all the roles
+		$caps = array(
+			'create_plugins',
+			'read_demo',
+			'read_private_demoes',
+			'edit_demo',
+			'edit_demoes',
+			'edit_private_demoes',
+			'edit_published_demoes',
+			'edit_others_demoes',
+			'publish_demoes',
+			'delete_demo',
+			'delete_demoes',
+			'delete_private_demoes',
+			'delete_published_demoes',
+			'delete_others_demoes',
+			'manage_demoes',
+		);
+		$roles = array(
+			get_role( 'administrator' ),
+			get_role( 'editor' ),
+			get_role( 'author' ),
+			get_role( 'contributor' ),
+			get_role( 'subscriber' ),
+		);
+		foreach ( $roles as $role ) {
+			foreach ( $caps as $cap ) {
+				$role->add_cap( $cap );
+			}
+		}
+		// Remove capabilities to specific roles
+		$bad_caps = array(
+			'create_demoes',
+			'read_private_demoes',
+			'edit_demo',
+			'edit_demoes',
+			'edit_private_demoes',
+			'edit_published_demoes',
+			'edit_others_demoes',
+			'publish_demoes',
+			'delete_demo',
+			'delete_demoes',
+			'delete_private_demoes',
+			'delete_published_demoes',
+			'delete_others_demoes',
+			'manage_demoes',
+		);
+		$roles = array(
+			get_role( 'author' ),
+			get_role( 'contributor' ),
+			get_role( 'subscriber' ),
+		);
+		foreach ( $roles as $role ) {
+			foreach ( $bad_caps as $cap ) {
+				$role->remove_cap( $cap );
+			}
+		}
+	}
+	//{{/unless}}
+
 	/**
 	 * Fired for each blog when the plugin is activated.
 	 *
@@ -112,9 +197,6 @@ class Pn_ActDeact {
 	private static function single_activate() {
 		$plugin = Plugin_Name::get_instance();
 		$plugin_slug = $plugin->get_plugin_slug();
-		//WPBPGen{{#unless system_capability-system}}
-		$plugin_roles = $plugin->get_plugin_roles();
-		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__requirements}}
 		// Requirements Detection System - read the doc/example in the library file
 		require_once( plugin_dir_path( __FILE__ ) . 'requirements.php' );
@@ -125,23 +207,10 @@ class Pn_ActDeact {
 		// @TODO: Define activation functionality here
 		//WPBPGen{{#unless system_capability-system}}
 		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
-		global $wp_roles;
-		if ( !isset( $wp_roles ) ) {
-			$wp_roles = new WP_Roles;
-		}
-
-		foreach ( $wp_roles->role_names as $role => $label ) {
-			// If the role is a standard role, map the default caps, otherwise, map as a subscriber
-			$caps = ( array_key_exists( $role, $plugin_roles ) ) ? $plugin_roles[ $role ] : $plugin_roles[ 'subscriber' ];
-
-			// Loop and assign
-			foreach ( $caps as $cap => $grant ) {
-				// Check to see if the user already has this capability, if so, don't re-add as that would override grant
-				if ( !isset( $wp_roles->roles[ $role ][ 'capabilities' ][ $cap ] ) ) {
-					$wp_roles->add_cap( $role, $cap, $grant );
-				}
-			}
-		}
+		$this->add_capabilities();
+		//{{/unless}}
+		//WPBPGen{{#unless system_upgrade-procedure}}
+		$this->upgrade_procedure();
 		//{{/unless}}
 		// Clear the permalinks
 		flush_rewrite_rules();

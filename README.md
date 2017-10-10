@@ -52,7 +52,6 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 * Support for your CPTs in Activity widget in dashboard
 * Support for CMB in the options page
 * Support for email template/theme with language detection
-* Integrated DOM-Based Routing of [Roots Template](https://github.com/roots/roots/blob/master/assets/js/_main.js)
 * Transient examples with caching
 * Support for [Web Push](https://wordpress.org/plugins/web-push/)
 
@@ -61,13 +60,7 @@ Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wi
 
 ## Shell Script & Tools
 
-### Included
-
-* wp-boilerplate-version.sh (check below)
-* apigen.sh script for generate a docs folder with the documentation
-* .php_cs for [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
-
-Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) for discover how to use this script!
+Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) for discover how to use the scripts available!
 
 ### Useful resources or code examples
 

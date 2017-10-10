@@ -22,7 +22,7 @@ class Pn_Extras {
 		$plugin = Plugin_Name::get_instance();
 		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$this->cpts = $plugin->get_cpts();
-
+		//{{/unless}}
 		//WPBPGen{{#unless backend_dashboard-activity}}
 		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );

@@ -79,7 +79,9 @@ function pn_fs() {
 // Init Freemius.
 // pn_fs();
 //{{/unless}}
-
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+require_once(plugin_dir_path( __FILE__ ) . 'includes/PN_PostTypes.php');
+//{{/unless}}
 require_once( plugin_dir_path( __FILE__ ) . 'public/Plugin_Name.php' );
 //WPBPGen{{#unless act-deact_actdeact}}
 require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );

@@ -40,15 +40,12 @@ class Plugin_Name {
 	 * @return void
 	 */
 	public static function initialize() {
-		//WPBPGen{{#unless frontend_body-class}}
-		add_filter( 'body_class', array( __CLASS__, 'add_pn_class' ), 10, 3 );
-		//{{/unless}}
 		//WPBPGen{{#unless public-assets_css && public-assets_js && frontend_wp-localize-script}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Enqueue.php' );
 		//{{/unless}}
+		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Extras.php' );
 		//WPBPGen{{#unless frontend_template-system}}
-		// Override the template hierarchy for load /templates/content-demo.php
-		add_filter( 'template_include', array( __CLASS__, 'load_content_demo' ) );
+		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Template.php' );
 		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
 		require_once( PN_PLUGIN_ROOT . 'public/widgets/sample.php' );
@@ -92,40 +89,6 @@ class Plugin_Name {
 		}
 
 		return self::$instance;
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless frontend_body-class}}
-	/**
-	 * Add class in the body on the frontend
-	 * 
-	 * @param array $classes THe array with all the classes of the page.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return array
-	 */
-	public static function add_pn_class( $classes ) {
-		$classes[] = PN_TEXTDOMAIN;
-		return $classes;
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless frontend_template-system}}
-	/**
-	 * Example for override the template system on the frontend
-	 * 
-	 * @param string $original_template The original templace HTML.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return string
-	 */
-	public static function load_content_demo( $original_template ) {
-		if ( is_singular( 'demo' ) && in_the_loop() ) {
-			return wpbp_get_template_part( PN_TEXTDOMAIN, 'content', 'demo', false );
-		}
-		return $original_template;
 	}
 
 	//{{/unless}}

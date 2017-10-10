@@ -18,7 +18,10 @@ class Pn_Ajax {
 	/**
 	 * Initialize the class
 	 */
-	function __construct() {
+	public function initialize() {
+		if ( !apply_filters( 'plugin_name_pn_ajax_initialize', true ) ) {
+			return;
+		}
 		$plugin = Plugin_Name::get_instance();
 		$this->cpts = $plugin->get_cpts();
 
@@ -45,4 +48,7 @@ class Pn_Ajax {
 
 }
 
-new Pn_Ajax();
+$pn_ajax = new Pn_Ajax();
+$pn_ajax->initialize();
+
+do_action( 'plugin_name_pn_ajax_instance', $pn_ajax );

@@ -114,7 +114,7 @@ class Plugin_Name {
 	 * 
 	 * @return void
 	 */
-	public function enqueue_styles() {
+	public static function enqueue_styles() {
 		wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), PN_VERSION );
 	}
 
@@ -127,7 +127,7 @@ class Plugin_Name {
 	 * 
 	 * @return void
 	 */
-	public function enqueue_scripts() {
+	public static function enqueue_scripts() {
 		wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
 	}
 
@@ -140,7 +140,7 @@ class Plugin_Name {
 	 * 
 	 * @return void
 	 */
-	public function enqueue_js_vars() {
+	public static function enqueue_js_vars() {
 		wp_localize_script( PN_TEXTDOMAIN . '-plugin-script', 'pn_js_vars', array(
 			'alert' => __( 'Hey! You have clicked the button!', PN_TEXTDOMAIN )
 				)
@@ -158,7 +158,7 @@ class Plugin_Name {
 	 * 
 	 * @return array
 	 */
-	public function add_pn_class( $classes ) {
+	public static function add_pn_class( $classes ) {
 		$classes[] = PN_TEXTDOMAIN;
 		return $classes;
 	}
@@ -174,7 +174,7 @@ class Plugin_Name {
 	 * 
 	 * @return string
 	 */
-	public function load_content_demo( $original_template ) {
+	public static function load_content_demo( $original_template ) {
 		if ( is_singular( 'demo' ) && in_the_loop() ) {
 			return wpbp_get_template_part( PN_TEXTDOMAIN, 'content', 'demo', false );
 		}

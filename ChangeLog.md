@@ -1,6 +1,9 @@
-## 2.1.1
+## 2.2.0
 
 * New code for capabilities adding with a upgrade procedure
+* New singleton pattern with filters to disable specific classes and other stuff (in few files no singleton anymore)
+* Removed assets/bin folders from this repo and mvoed to different ones
+* Updated Composer dependences
 
 ## 2.1.0
 

@@ -33,7 +33,6 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 	* [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)
 	* [rubengc/cmb2-tabs](https://github.com/rubengc/cmb2-tabs)
 	* [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)
-	* [johnbillion/extended-taxos](https://github.com/johnbillion/extended-taxos/)
 	* [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)

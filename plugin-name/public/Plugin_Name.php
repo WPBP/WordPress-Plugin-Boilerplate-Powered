@@ -43,22 +43,15 @@ class Plugin_Name {
 		//WPBPGen{{#unless frontend_body-class}}
 		add_filter( 'body_class', array( __CLASS__, 'add_pn_class' ), 10, 3 );
 		//{{/unless}}
+		//WPBPGen{{#unless public-assets_css && public-assets_js && frontend_wp-localize-script}}
+		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Enqueue.php' );
+		//{{/unless}}
 		//WPBPGen{{#unless frontend_template-system}}
 		// Override the template hierarchy for load /templates/content-demo.php
 		add_filter( 'template_include', array( __CLASS__, 'load_content_demo' ) );
 		//{{/unless}}
-		//WPBPGen{{#unless public-assets_css}}
-		// Load public-facing style sheet and JavaScript.
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless public-assets_js}}
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless frontend_wp-localize-script}}
-		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_js_vars' ) );
-		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
-		require_once( plugin_dir_path( __FILE__ ) . 'widgets/sample.php' );
+		require_once( PN_PLUGIN_ROOT . 'public/widgets/sample.php' );
 		//{{/unless}}
 	}
 
@@ -99,47 +92,6 @@ class Plugin_Name {
 		}
 
 		return self::$instance;
-	}
-
-	//WPBPGen{{#unless public-assets_css}}
-	/**
-	 * Register and enqueue public-facing style sheet.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	public static function enqueue_styles() {
-		wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), PN_VERSION );
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless public-assets_js}}
-	/**
-	 * Register and enqueues public-facing JavaScript files.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	public static function enqueue_scripts() {
-		wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), PN_VERSION );
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless frontend_wp-localize-script}}
-	/**
-	 * Print the PHP var in the HTML of the frontend for access by JavaScript
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	public static function enqueue_js_vars() {
-		wp_localize_script( PN_TEXTDOMAIN . '-plugin-script', 'pn_js_vars', array(
-			'alert' => __( 'Hey! You have clicked the button!', PN_TEXTDOMAIN )
-				)
-		);
 	}
 
 	//{{/unless}}

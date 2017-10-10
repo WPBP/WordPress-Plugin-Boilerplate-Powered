@@ -33,6 +33,7 @@ if ( !defined( 'WPINC' ) ) {
 define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
+define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 
 /**
  * Load the textdomain of the plugin
@@ -46,7 +47,7 @@ function pn_load_plugin_textdomain() {
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
-require_once( plugin_dir_path( __FILE__ ) . 'composer/autoload.php' );
+require_once( PN_PLUGIN_ROOT . 'composer/autoload.php' );
 
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**
@@ -80,25 +81,25 @@ function pn_fs() {
 // pn_fs();
 //{{/unless}}
 //WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-require_once(plugin_dir_path( __FILE__ ) . 'includes/PN_PostTypes.php');
+require_once( PN_PLUGIN_ROOT . 'includes/PN_PostTypes.php' );
 //{{/unless}}
-require_once( plugin_dir_path( __FILE__ ) . 'public/Plugin_Name.php' );
+require_once( PN_PLUGIN_ROOT . 'public/Plugin_Name.php' );
 //WPBPGen{{#unless act-deact_actdeact}}
-require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ActDeact.php' );
+require_once( PN_PLUGIN_ROOT . 'includes/PN_ActDeact.php' );
 //{{/unless}}
 //WPBPGen{{#unless act-deact_uninstall}}
-require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Uninstall.php' );
+require_once( PN_PLUGIN_ROOT . 'includes/PN_Uninstall.php' );
 //{{/unless}}
 //WPBPGen{{#unless wpcli}}
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_WPCli.php' );
+	require_once( PN_PLUGIN_ROOT . 'includes/PN_WPCli.php' );
 }
 //{{/unless}}
 //WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
-require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_P2P.php' );
+require_once( PN_PLUGIN_ROOT . 'includes/PN_P2P.php' );
 //{{/unless}}
 //WPBPGen{{#unless libraries_wpbp__fakepage}}
-require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
+require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
 //{{/unless}}
 //WPBPGen{{#unless admin-assets_admin-page}}
 /*
@@ -112,7 +113,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_FakePage.php' );
  * The code below is intended to to give the lightest footprint possible.
  */
 //WPBPGen{{#unless ajax_public}}
-require_once( plugin_dir_path( __FILE__ ) . 'public/ajax/PN_Ajax.php' );
+require_once( PN_PLUGIN_ROOT . 'public/ajax/PN_Ajax.php' );
 //{{/unless}}
 
 if ( is_admin() ) {
@@ -120,10 +121,10 @@ if ( is_admin() ) {
 			(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
 			(!defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
 	) {
-		require_once( plugin_dir_path( __FILE__ ) . 'admin/Plugin_Name_Admin.php' );
+		require_once( PN_PLUGIN_ROOT . 'admin/Plugin_Name_Admin.php' );
 	}
 	//WPBPGen{{#unless ajax_admin}}
-	require_once( plugin_dir_path( __FILE__ ) . 'admin/ajax/PN_Ajax_Admin.php' );
+	require_once( PN_PLUGIN_ROOT . 'admin/ajax/PN_Ajax_Admin.php' );
 	//{{/unless}}
 }
 //{{/unless}}

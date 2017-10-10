@@ -1,6 +1,6 @@
 # WordPress Plugin Boilerplate Powered
 <p align="center">
-<img src="./assets/icon-256x256.png" alt="Logo" title="Logo">
+<img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
 [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)

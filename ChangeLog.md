@@ -4,6 +4,7 @@
 * New singleton pattern with filters to disable specific classes and other stuff (in few files no singleton anymore)
 * Removed assets/bin folders from this repo and mvoed to different ones
 * Updated Composer dependences
+* Removed DOM routing because for plugins is better to create specific files to load by php
 
 ## 2.1.0
 

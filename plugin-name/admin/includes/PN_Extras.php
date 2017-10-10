@@ -19,14 +19,13 @@ class Pn_Extras {
 	 * Initialize the snippet
 	 */
 	function initialize() {
-		$plugin = Plugin_Name::get_instance();
 		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+		$plugin = Plugin_Name::get_instance();
 		$this->cpts = $plugin->get_cpts();
 		//{{/unless}}
 		//WPBPGen{{#unless backend_dashboard-activity}}
 		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
-		//{{/unless}}
 		//{{/unless}}
 		//WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending

@@ -57,19 +57,6 @@ class Plugin_Name {
 		//WPBPGen{{#unless frontend_wp-localize-script}}
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_js_vars' ) );
 		//{{/unless}}
-		//WPBPGen{{#unless custom_action}}
-		/**
-		 * Define custom functionality.
-		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		 */
-		add_action( '@TODO', array( __CLASS__, 'action_method_name' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless custom_filter}}
-		add_filter( '@TODO', array( __CLASS__, 'filter_method_name' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless custom_shortcode}}
-		add_shortcode( '@TODO', array( __CLASS__, 'shortcode_method_name' ) );
-		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
 		require_once( plugin_dir_path( __FILE__ ) . 'widgets/sample.php' );
 		//{{/unless}}
@@ -187,65 +174,6 @@ class Plugin_Name {
 			return wpbp_get_template_part( PN_TEXTDOMAIN, 'content', 'demo', false );
 		}
 		return $original_template;
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless custom_action}}
-	/**
-	 * NOTE:  Actions are points in the execution of a page or process
-	 *        lifecycle that WordPress fires.
-	 *
-	 *        Actions:    http://codex.wordpress.org/Plugin_API#Actions
-	 *        Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	public function action_method_name() {
-		// @TODO: Define your action hook callback here
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless custom_filter}}
-	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
-	 *
-	 *        Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *        Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 * 
-	 * @param array $param The paramters.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return array
-	 */
-	public function filter_method_name( $param ) {
-		// @TODO: Define your filter hook callback here
-		return $param;
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless custom_shortcode}}
-	/**
-	 * NOTE:  Shortcode simple set of functions for creating macro codes for use
-	 * 		  in post content.
-	 *
-	 *        Reference:  http://codex.wordpress.org/Shortcode_API
-	 * 
-	 * @param array $atts The paramters.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return array
-	 */
-	public function shortcode_method_name( $atts ) {
-		//With this you can define the default proprietary for your shortcode
-		$atts = shortcode_atts( array(
-			'number' => '1',
-				), $atts );
-		// @TODO: Define your shortcode here
 	}
 
 	//{{/unless}}

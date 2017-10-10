@@ -70,18 +70,6 @@ class Plugin_Name_Admin {
 		if ( !apply_filters( 'plugin_name_pn_admin_initialize', true ) ) {
 			return;
 		}
-		//WPBPGen{{#unless custom_action}}
-		/*
-		 * Define custom functionality.
-		 *
-		 * Read more about actions and filters:
-		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		 */
-		add_action( '@TODO', array( __CLASS__, 'action_method_name' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless custom_filter}}
-		add_filter( '@TODO', array( __CLASS__, 'filter_method_name' ) );
-		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__debug}}
 		/*
 		 * Debug mode
@@ -342,40 +330,6 @@ class Plugin_Name_Admin {
 				//{{/unless}}
 				), $links
 		);
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless custom_action}}
-	/**
-	 * NOTE:     Actions are points in the execution of a page or process
-	 *           lifecycle that WordPress fires.
-	 *
-	 *           Actions:    http://codex.wordpress.org/Plugin_API#Actions
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	public function action_method_name() {
-		// @TODO: Define your action hook callback here
-	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless custom_filter}}
-	/**
-	 * NOTE:     Filters are points of execution in which WordPress modifies data
-	 *           before saving it or sending it to the browser.
-	 *
-	 *           Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	public function filter_method_name() {
-		// @TODO: Define your filter hook callback here
 	}
 
 	//{{/unless}}

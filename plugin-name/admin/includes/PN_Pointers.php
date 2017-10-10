@@ -21,6 +21,9 @@ class Pn_Pointers {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
+		if ( !apply_filters( 'plugin_name_pn_pointers_initialize', true ) ) {
+			return;
+		}
 		new PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
 		add_filter( PN_TEXTDOMAIN . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}

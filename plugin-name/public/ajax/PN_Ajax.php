@@ -22,8 +22,6 @@ class Pn_Ajax {
 		if ( !apply_filters( 'plugin_name_pn_ajax_initialize', true ) ) {
 			return;
 		}
-		$plugin = Plugin_Name::get_instance();
-		$this->cpts = $plugin->get_cpts();
 
 		// For logged user
 		add_action( 'wp_ajax_{your_method}', array( $this, 'your_method' ) );

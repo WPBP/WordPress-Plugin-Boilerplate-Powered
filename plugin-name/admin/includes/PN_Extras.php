@@ -18,7 +18,7 @@ class Pn_Extras {
 	/**
 	 * Initialize the snippet
 	 */
-	function __construct() {
+	function initialize() {
 		$plugin = Plugin_Name::get_instance();
 		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$this->cpts = $plugin->get_cpts();
@@ -67,8 +67,7 @@ class Pn_Extras {
 	}
 
 	//{{/unless}}
-	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-	//WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
+	//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 	/**
 	 * Bubble Notification for pending cpt<br>
 	 * NOTE: add in $post_types your cpts<br>
@@ -133,7 +132,6 @@ class Pn_Extras {
 		return false;
 	}
 
-	//{{/unless}}
 	//{{/unless}}
 	//WPBPGen{{#unless system_transient-example}}
 	/**
@@ -202,4 +200,7 @@ class Pn_Extras {
 	//{{/unless}}
 }
 
-new Pn_Extras();
+$pn_extras = new Pn_Extras();
+$pn_extras->initialize();
+
+do_action( 'plugin_name_pn_extras_instance', $pn_extras );

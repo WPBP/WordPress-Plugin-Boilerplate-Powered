@@ -18,7 +18,11 @@ class Pn_Ajax_Admin {
 	/**
 	 * Initialize the class
 	 */
-	function __construct() {
+	function initialize() {
+		if ( !apply_filters( 'plugin_name_pn_ajax_admin_initialize', true ) ) {
+			return;
+		}
+		
 		// For logged user
 		add_action( 'wp_ajax_{your_method}', array( $this, 'your_method' ) );
 	}
@@ -40,4 +44,7 @@ class Pn_Ajax_Admin {
 
 }
 
-new Pn_Ajax_Admin();
+$pn_ajax_admin = new Pn_Ajax_Admin();
+$pn_ajax_admin->initialize();
+
+do_action( 'plugin_name_pn_ajax_admin_instance', $pn_ajax_admin );

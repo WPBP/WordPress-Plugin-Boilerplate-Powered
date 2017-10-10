@@ -19,6 +19,9 @@ class Pn_ContextualHelp {
      * Initialize the Contextual Help
      */
     function __construct() {
+		if ( !apply_filters( 'plugin_name_pn_contextualhelp_initialize', true ) ) {
+			return;
+		}
         add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
         add_filter( 'wp_contextual_help_docs_url', array( $this, 'help_docs_url' ) );
         add_action( 'init', array( $this, 'contextual_help' ) );

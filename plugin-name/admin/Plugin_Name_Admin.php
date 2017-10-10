@@ -49,11 +49,6 @@ class Plugin_Name_Admin {
 		  return;
 		  }
 		 */
-
-		$plugin = Plugin_Name::get_instance();
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-		$this->cpts = $plugin->get_cpts();
-		//{{/unless}}
 		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
@@ -69,12 +64,12 @@ class Plugin_Name_Admin {
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 		//{{/unless}}
-		//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
-		/*
-		 * Load CMB
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_CMB.php' );
-		//{{/unless}}
+	}
+
+	public static function initialize() {
+		if ( !apply_filters( 'plugin_name_pn_admin_initialize', true ) ) {
+			return;
+		}
 		//WPBPGen{{#unless custom_action}}
 		/*
 		 * Define custom functionality.
@@ -82,22 +77,10 @@ class Plugin_Name_Admin {
 		 * Read more about actions and filters:
 		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( '@TODO', array( $this, 'action_method_name' ) );
+		add_action( '@TODO', array( __CLASS__, 'action_method_name' ) );
 		//{{/unless}}
 		//WPBPGen{{#unless custom_filter}}
-		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless backend_impexp-settings}}
-		/*
-		 * Import Export settings
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ImpExp.php' );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_kevinlangleyjr__wp-contextual-help}}
-		/*
-		 * Contextual Help
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ContextualHelp.php' );
+		add_filter( '@TODO', array( __CLASS__, 'filter_method_name' ) );
 		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__debug}}
 		/*
@@ -134,12 +117,6 @@ class Plugin_Name_Admin {
 			'link_label' => __( 'Click here to review', PN_TEXTDOMAIN )
 				) );
 		//{{/unless}}
-		//WPBPGen{{#unless libraries_wpbp__pointerplus}}
-		/*
-		 * All the pointers
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Pointers.php' );
-		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__cronplus}}
 		/*
 		 * Load CronPlus 
@@ -148,8 +125,8 @@ class Plugin_Name_Admin {
 			'recurrence' => 'hourly',
 			'schedule' => 'schedule',
 			'name' => 'cronplusexample',
-				// 'cb' => 'cronplus_example_cb',
-			'plugin_root_file'=> 'plugin-name.php'
+			// 'cb' => 'cronplus_example_cb',
+			'plugin_root_file' => 'plugin-name.php'
 		);
 
 		$cronplus = new CronPlus( $args );
@@ -175,12 +152,6 @@ class Plugin_Name_Admin {
 				)
 		);
 		//{{/unless}}
-		//WPBPGen{{#unless backend_bubble-notification-pending-cpt && backend_dashboard-activity && system_push-notification && system_transient-example}}
-		/*
-		 * All the extras functions
-		 */
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Extras.php' );
-		//{{/unless}}
 		//WPBPGen{{#unless libraries_yoast__i18n-module}}
 		new Yoast_I18n_WordPressOrg_v3(
 				array(
@@ -194,6 +165,36 @@ class Plugin_Name_Admin {
 		whip_wp_check_versions( array(
 			'php' => '>=5.6',
 		) );
+		//{{/unless}}
+		//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
+		/*
+		 * Load CMB
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_CMB.php' );
+		//{{/unless}}
+		//WPBPGen{{#unless backend_impexp-settings}}
+		/*
+		 * Import Export settings
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ImpExp.php' );
+		//{{/unless}}
+		//WPBPGen{{#unless libraries_kevinlangleyjr__wp-contextual-help}}
+		/*
+		 * Contextual Help
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_ContextualHelp.php' );
+		//{{/unless}}
+		//WPBPGen{{#unless libraries_wpbp__pointerplus}}
+		/*
+		 * All the pointers
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Pointers.php' );
+		//{{/unless}}
+		//WPBPGen{{#unless backend_bubble-notification-pending-cpt && backend_dashboard-activity && system_push-notification && system_transient-example}}
+		/*
+		 * All the extras functions
+		 */
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/PN_Extras.php' );
 		//{{/unless}}
 	}
 
@@ -217,7 +218,16 @@ class Plugin_Name_Admin {
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			try {
+				self::$instance = new self;
+				self::initialize();
+			} catch ( Exception $err ) {
+				do_action( 'plugin_name_admin_failed', $err );
+
+				if ( WP_DEBUG ) {
+					throw $err->getMessage();
+				}
+			}
 		}
 
 		return self::$instance;

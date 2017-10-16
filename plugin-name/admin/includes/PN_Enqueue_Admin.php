@@ -98,6 +98,7 @@ class Pn_Enqueue_Admin {
 		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'admin/assets/js/admin.js', PN_PLUGIN_ROOT ), array( 'jquery' ), PN_VERSION );
 		//{{/unless}}
 	}
+	//{{/unless}}
 	
 	//WPBPGen{{#unless admin-assets_admin-page}}
 	/**
@@ -159,6 +160,7 @@ class Pn_Enqueue_Admin {
 				), $links
 		);
 	}
+	//{{/unless}}
 
 }
 

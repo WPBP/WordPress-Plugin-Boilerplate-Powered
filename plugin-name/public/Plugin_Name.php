@@ -91,7 +91,6 @@ class Plugin_Name {
 		return self::$instance;
 	}
 
-	//{{/unless}}
 }
 
 /*

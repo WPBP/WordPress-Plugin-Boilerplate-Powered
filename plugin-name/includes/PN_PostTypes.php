@@ -51,7 +51,7 @@ class Pn_PostTypes {
 	 * @return void
 	 */
 	public function load_cpts() {
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
 		$tax = register_extended_post_type( 'demo', array(
 			# Show all posts on the post type archive:
@@ -96,11 +96,11 @@ class Pn_PostTypes {
 			'slug' => 'demo',
 			'capability_type' => array( 'demo', 'demoes' ),
 				) );
-		//{{/unless}}
-		//WPBPGen{{#unless frontend_cpt-search-support}}
+//{{/unless}}
+//WPBPGen{{#unless frontend_cpt-search-support}}
 		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$tax->add_taxonomy( 'demo-section', array(
 			'hierarchical' => false,
 			'show_ui' => false,
@@ -130,9 +130,9 @@ class Pn_PostTypes {
 				'delete_terms' => 'manage_demoes',
 				'assign_terms' => 'read_demo',
 			)
-				//{{/unless}}
+//{{/unless}}
 		) );
-		//{{/unless}}
+//{{/unless}}
 	}
 	//{{/unless}}
 

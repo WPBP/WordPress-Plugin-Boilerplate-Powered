@@ -23,16 +23,16 @@ class Pn_Enqueue {
 			return;
 		}
 
-		//WPBPGen{{#unless public-assets_css}}
+//WPBPGen{{#unless public-assets_css}}
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless public-assets_js}}
+//{{/unless}}
+//WPBPGen{{#unless public-assets_js}}
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless frontend_wp-localize-script}}
+//{{/unless}}
+//WPBPGen{{#unless frontend_wp-localize-script}}
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_js_vars' ) );
-		//{{/unless}}
+//{{/unless}}
 	}
 
 	//WPBPGen{{#unless public-assets_css}}

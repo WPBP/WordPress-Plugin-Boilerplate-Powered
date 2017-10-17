@@ -23,10 +23,10 @@ class Pn_Template {
 			return;
 		}
 		
-		//WPBPGen{{#unless frontend_template-system}}
+//WPBPGen{{#unless frontend_template-system}}
 		// Override the template hierarchy for load /templates/content-demo.php
 		add_filter( 'template_include', array( __CLASS__, 'load_content_demo' ) );
-		//{{/unless}}
+//{{/unless}}
 	}
 
 	//WPBPGen{{#unless frontend_template-system}}

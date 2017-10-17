@@ -31,22 +31,22 @@ class Pn_Enqueue_Admin {
 		if ( !apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {
 			return;
 		}
-		//WPBPGen{{#unless admin-assets_admin-page}}
+//WPBPGen{{#unless admin-assets_admin-page}}
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-		//{{/unless}}
+//{{/unless}}
 
-		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
+//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
+//{{/unless}}
+//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-		//{{/unless}}
+//{{/unless}}
 	}
 
 	
@@ -63,15 +63,15 @@ class Pn_Enqueue_Admin {
 			return;
 		}
 
-		//WPBPGen{{#unless admin-assets_settings-css}}
+//WPBPGen{{#unless admin-assets_settings-css}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page === $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
 			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'admin/assets/css/settings.css', PN_PLUGIN_ROOT ), array( 'dashicons' ), PN_VERSION );
 		}
-		//{{/unless}}
-		//WPBPGen{{#unless admin-assets_admin-css}}
+//{{/unless}}
+//WPBPGen{{#unless admin-assets_admin-css}}
 		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'admin/assets/css/admin.css', PN_PLUGIN_ROOT ), array( 'dashicons' ), PN_VERSION );
-		//{{/unless}}
+//{{/unless}}
 	}
 
 	//{{/unless}}
@@ -88,15 +88,15 @@ class Pn_Enqueue_Admin {
 			return;
 		}
 		
-		//WPBPGen{{#unless admin-assets_settings-js}}
+//WPBPGen{{#unless admin-assets_settings-js}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page === $screen->id ) {
 			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'admin/assets/js/settings.js', PN_PLUGIN_ROOT ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
 		}
-		//{{/unless}}
-		//WPBPGen{{#unless admin-assets_admin-js}}
+//{{/unless}}
+//WPBPGen{{#unless admin-assets_admin-js}}
 		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'admin/assets/js/admin.js', PN_PLUGIN_ROOT ), array( 'jquery' ), PN_VERSION );
-		//{{/unless}}
+//{{/unless}}
 	}
 	//{{/unless}}
 	
@@ -154,9 +154,9 @@ class Pn_Enqueue_Admin {
 		return array_merge(
 				array(
 			'settings' => '<a href="' . admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) . '">' . __( 'Settings' ) . '</a>',
-			//WPBPGen{{#unless backend_donate-link-plugin-list}}
+//WPBPGen{{#unless backend_donate-link-plugin-list}}
 			'donate' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', PN_TEXTDOMAIN ) . '</a>'
-				//{{/unless}}
+//{{/unless}}
 				), $links
 		);
 	}

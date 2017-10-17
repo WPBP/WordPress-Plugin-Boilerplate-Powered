@@ -114,7 +114,6 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
 //WPBPGen{{#unless ajax_public}}
 require_once( PN_PLUGIN_ROOT . 'public/ajax/PN_Ajax.php' );
 //{{/unless}}
-
 //WPBPGen{{#unless admin-assets_admin-page}}
 if ( is_admin() ) {
 	if (
@@ -123,8 +122,8 @@ if ( is_admin() ) {
 	) {
 		require_once( PN_PLUGIN_ROOT . 'admin/Plugin_Name_Admin.php' );
 	}
-	//WPBPGen{{#unless ajax_admin}}
+//WPBPGen{{#unless ajax_admin}}
 	require_once( PN_PLUGIN_ROOT . 'admin/ajax/PN_Ajax_Admin.php' );
-	//{{/unless}}
+//{{/unless}}
 }
 //{{/unless}}

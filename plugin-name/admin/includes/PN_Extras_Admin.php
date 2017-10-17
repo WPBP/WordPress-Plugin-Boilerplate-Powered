@@ -19,14 +19,14 @@ class Pn_Extras_Admin {
 	 * Initialize the snippet
 	 */
 	function initialize() {
-		//WPBPGen{{#unless libraries_wpbp__debug}}
+//WPBPGen{{#unless libraries_wpbp__debug}}
 		/*
 		 * Debug mode
 		 */
 		$debug = new WPBP_Debug( );
 		$debug->log( __( 'Plugin Loaded', PN_TEXTDOMAIN ) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend
 		 * 
@@ -34,14 +34,14 @@ class Pn_Extras_Admin {
 		 */
 		new WP_Admin_Notice( __( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
 		new WP_Admin_Notice( __( 'Error Messages', PN_TEXTDOMAIN ), 'error' );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_julien731__wp-dismissible-notices-handler}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_julien731__wp-dismissible-notices-handler}}
 		/*
 		 * Dismissible notice
 		 */
 		dnh_register_notice( 'my_demo_notice', 'updated', __( 'This is my dismissible notice', PN_TEXTDOMAIN ) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_julien731__wp-review-me}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_julien731__wp-review-me}}
 		/*
 		 * Review Me notice
 		 */
@@ -53,8 +53,8 @@ class Pn_Extras_Admin {
 			'message' => __( 'Review me!', PN_TEXTDOMAIN ),
 			'link_label' => __( 'Click here to review', PN_TEXTDOMAIN )
 				) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_wpbp__cronplus}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpbp__cronplus}}
 		/*
 		 * Load CronPlus 
 		 */
@@ -68,8 +68,8 @@ class Pn_Extras_Admin {
 
 		$cronplus = new CronPlus( $args );
 		$cronplus->schedule_event();
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
 		/*
 		 * Load CPT_Columns
 		 * 
@@ -88,8 +88,8 @@ class Pn_Extras_Admin {
 			'order' => '-1'
 				)
 		);
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_yoast__i18n-module}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_yoast__i18n-module}}
 		new Yoast_I18n_WordPressOrg_v3(
 				array(
 			'textdomain' => PN_TEXTDOMAIN,
@@ -97,25 +97,25 @@ class Pn_Extras_Admin {
 			'hook' => 'admin_notices',
 				)
 		);
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_yoast__whip}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_yoast__whip}}
 		whip_wp_check_versions( array(
 			'php' => '>=5.6',
 		) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$plugin = Plugin_Name::get_instance();
 		$this->cpts = $plugin->get_cpts();
-		//{{/unless}}
+//{{/unless}}
 		//WPBPGen{{#unless backend_dashboard-activity}}
-		// Activity Dashboard widget for your cpts
+// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
-		//{{/unless}}
-		//WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
+//{{/unless}}
+//WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending
 		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_wpbp__backbone-modal-view}}
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpbp__backbone-modal-view}}
 		new BB_Modal_View( array(
 			'id' => 'test', // ID of the modal view
 			'hook' => 'admin_notices', // Where return or print the button
@@ -126,7 +126,7 @@ class Pn_Extras_Admin {
 			'ajax_on_select' => array( $this, 'ajax_posts_selected' ), // Ajax function to execute on Select button
 			'echo_button' => true // Do you want echo the button in the hook chosen or only return?
 		) );
-		//{{/unless}}
+//{{/unless}}
 	}
 
 	//WPBPGen{{#unless backend_dashboard-activity}}

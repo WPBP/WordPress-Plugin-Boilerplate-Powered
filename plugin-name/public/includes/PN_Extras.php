@@ -19,9 +19,9 @@ class Pn_Extras {
 	 * Initialize the snippet
 	 */
 	function initialize() {
-		//WPBPGen{{#unless frontend_body-class}}
+//WPBPGen{{#unless frontend_body-class}}
 		add_filter( 'body_class', array( __CLASS__, 'add_pn_class' ), 10, 3 );
-		//{{/unless}}
+//{{/unless}}
 	}
 
 	//WPBPGen{{#unless frontend_body-class}}

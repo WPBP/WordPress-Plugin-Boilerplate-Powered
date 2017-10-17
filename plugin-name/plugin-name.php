@@ -101,7 +101,6 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_P2P.php' );
 //WPBPGen{{#unless libraries_wpbp__fakepage}}
 require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
 //{{/unless}}
-//WPBPGen{{#unless admin-assets_admin-page}}
 /*
  * If you want to include Ajax within the dashboard, change the following
  * conditional to:
@@ -116,6 +115,7 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
 require_once( PN_PLUGIN_ROOT . 'public/ajax/PN_Ajax.php' );
 //{{/unless}}
 
+//WPBPGen{{#unless admin-assets_admin-page}}
 if ( is_admin() ) {
 	if (
 			(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||

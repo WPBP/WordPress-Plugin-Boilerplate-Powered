@@ -6,7 +6,7 @@
 * Updated Composer dependences
 * Removed DOM routing because for plugins is better to create specific files to load by php
 * Removed Custom actions (hooks, filters, shortcode) beucase is a choice by the dev where to put them
-* New cosntants for the path of the plugin (used for enqueue files)
+* New costants for the path of the plugin (used for load/enqueue files)
 
 ## 2.1.0
 

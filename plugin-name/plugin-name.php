@@ -34,6 +34,7 @@ define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
+define( 'PM_PLUGIN_ABSOLUTE',  __FILE__  );
 
 /**
  * Load the textdomain of the plugin

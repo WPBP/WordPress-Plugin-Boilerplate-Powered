@@ -80,6 +80,7 @@
       ],
       "./admin/includes/lib/{$name}": [
         "webdevstudios/cmb2",
+        "yoast\/i18n-module",
         "origgami/cmb2-grid",
         "rubengc/cmb2-tabs",
         "wpbp/pointerplus",

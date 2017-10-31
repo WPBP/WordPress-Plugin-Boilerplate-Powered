@@ -7,6 +7,6 @@
 		"grunt": "*",
 		"grunt-contrib-watch": "*",
 		"grunt-contrib-compass": "*",
-		"grunt-contrib-coffee": "*"
+		"grunt-contrib-coffee": "2.x"
 	}
-} 
+}

@@ -24,6 +24,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 node_modules
+package-lock.json
 
 # Folders to ignore
 .hg

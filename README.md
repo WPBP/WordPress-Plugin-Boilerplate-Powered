@@ -6,7 +6,8 @@
 [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.   
-The mainly purpose of this boilerplate: choose a library or a snippet and the boilerplate contain already the example for use it without need a manual copy&paste way or look on internet.  
+The mainly purpose of this boilerplate: choose a library or a snippet and the boilerplate will contain already the example for use it without need a manual copy&paste way or look on internet.  
+The [code generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#shell-script--tools) is the most smartiest way to use the boilerplate with a simple command.
 
 ## Features
 
@@ -44,9 +45,9 @@ The mainly purpose of this boilerplate: choose a library or a snippet and the bo
 
 * Shortcode example code
 * Dashicon as dependence of admin stylesheet
-* Bubble notification on pending cpts
+* Bubble notification on pending CPTs
 * Import/Export settings
-* Custom capabilities with cpts and taxonomy support
+* Custom capabilities with CPTs and taxonomy support
 * wp_localize_script for pass PHP var to JS in the frontend
 * Class in frontend body with the slug of plugin
 * Support for your CPTs in Activity widget in dashboard
@@ -70,7 +71,7 @@ Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powere
 
 ### Generator Tool
 
-The code generator that allows you to choose the libraries you need with many customization.  
+The code generator that allows you to choose the libraries you need with many customizations.  
 Link to repo: [https://github.com/wpbp/generator](https://github.com/wpbp/generator)
 
 ## Contributors

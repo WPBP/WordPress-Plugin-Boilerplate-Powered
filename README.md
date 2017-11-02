@@ -6,12 +6,13 @@
 [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.   
-The mainly purpose of this boilerplate: choose a library or a snippet and the boilerplate will contain already the example for use it without need a manual copy&paste way or look on internet.  
-The [code generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#shell-script--tools) is the most smartiest way to use the boilerplate with a simple command.
+Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.  
+This project fit in this dev cases, choose a library or a snippet and the boilerplate will contain already the example for use it without need a manual copy&paste way or look on internet!  
+The [code generator](https://github.com/WPBP/generator) is the most smartiest way to use the boilerplate with a simple command and get ready to work.
 
 ## Features
 
-### Library integrated
+### Libraries and Miscellaneus available
 
 * Sass support with Compass and Grunt
 * CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
@@ -41,7 +42,7 @@ The [code generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powere
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [yoast/whip](https://github.com/yoast/whip)
 
-### Snippet included
+### Snippet available
 
 * Shortcode example code
 * Dashicon as dependence of admin stylesheet
@@ -61,31 +62,22 @@ Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wi
 
 ## Shell Script & Tools
 
-Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) for discover how to use the scripts available!
+Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) to discover how to use the scripts available!
 
 ### Useful resources or code examples
 
 Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Useful-resources-or-code-examples)!
-
-## Recommended Tools
-
-### Generator Tool
-
-The code generator that allows you to choose the libraries you need with many customizations.  
-Link to repo: [https://github.com/wpbp/generator](https://github.com/wpbp/generator)
 
 ## Contributors
 
 This project exists thanks to all the people who contribute.
 <a href="graphs/contributors"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/contributors.svg?width=890" /></a>
 
-
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backer)]
 
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backers" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers.svg?width=890"></a>
-
 
 ## Sponsors
 
@@ -99,9 +91,6 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/5/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/5/avatar.svg"></a>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/6/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/6/avatar.svg"></a>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/7/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/8/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/9/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/9/avatar.svg"></a>
-
 
 
 ## License

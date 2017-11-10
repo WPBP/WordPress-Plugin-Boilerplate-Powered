@@ -23,7 +23,7 @@ class Pn_Extras_Admin {
 		/*
 		 * Debug mode
 		 */
-		$debug = new WPBP_Debug( );
+		$debug = new WPBP_Debug( 'WPBP' );
 		$debug->log( __( 'Plugin Loaded', PN_TEXTDOMAIN ) );
 //{{/unless}}
 //WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}

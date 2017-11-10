@@ -23,30 +23,32 @@ class Pn_ActDeact {
 	function __construct() {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
-
-		register_activation_hook( __FILE__, array( $this, 'activate' ) );
-		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
+		
+		register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'activate' ) );
+		register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'deactivate' ) );
 //WPBPGen{{#unless system_upgrade-procedure}}
 		add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
 //{{/unless}}
 	}
-
-	//WPBPGen{{#unless system_upgrade-procedure}}
+	
 	/**
-	 * Upgrade procedure 
+	 * Fired when a new site is activated with a WPMU environment.
+	 *
+	 * @param integer $blog_id ID of the new blog.
+	 *
+	 * @since {{plugin_version}}
 	 * 
 	 * @return void
 	 */
-	public function upgrade_procedure() {
-		if ( is_admin() ) {
-			$version = get_option( 'plugin-name-version' );
-			if ( version_compare( PN_VERSION, $version, '>' ) ) {
-				update_option( 'plugin-name-version', PN_VERSION );
-				delete_option( PN_TEXTDOMAIN . '_fake-meta' );
-			}
+	public function activate_new_site( $blog_id ) {
+		if ( 1 !== did_action( 'wpmu_new_blog' ) ) {
+			return;
 		}
+
+		switch_to_blog( $blog_id );
+		self::single_activate();
+		restore_current_blog();
 	}
-	//{{/unless}}
 
 	/**
 	 * Fired when the plugin is activated.
@@ -102,31 +104,51 @@ class Pn_ActDeact {
 	}
 
 	/**
-	 * Fired when a new site is activated with a WPMU environment.
-	 *
-	 * @param integer $blog_id ID of the new blog.
+	 * Fired for each blog when the plugin is activated.
 	 *
 	 * @since {{plugin_version}}
 	 * 
 	 * @return void
 	 */
-	public function activate_new_site( $blog_id ) {
-		if ( 1 !== did_action( 'wpmu_new_blog' ) ) {
-			return;
-		}
-
-		switch_to_blog( $blog_id );
-		self::single_activate();
-		restore_current_blog();
+	private static function single_activate() {
+//WPBPGen{{#unless libraries_wpbp__requirements}}
+		// Requirements Detection System - read the doc/example in the library file
+		new Plugin_Requirements( PN_NAME, PN_TEXTDOMAIN, array(
+			'WP' => new WordPress_Requirement( '4.6.0' )
+				) );
+//{{/unless}}
+		// @TODO: Define activation functionality here
+//WPBPGen{{#unless system_capability-system}}
+		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
+		self::add_capabilities();
+//{{/unless}}
+//WPBPGen{{#unless system_upgrade-procedure}}
+		self::upgrade_procedure();
+//{{/unless}}
+		// Clear the permalinks
+		flush_rewrite_rules();
 	}
 
+	/**
+	 * Fired for each blog when the plugin is deactivated.
+	 *
+	 * @since {{plugin_version}}
+	 * 
+	 * @return void
+	 */
+	private static function single_deactivate() {
+		// @TODO: Define deactivation functionality here
+		// Clear the permalinks
+		flush_rewrite_rules();
+	}
+	
 	//WPBPGen{{#unless system_capability-system}}
 	/**
 	 * Add admin capabilities
 	 * 
 	 * @return void
 	 */
-	public function add_capabilities() {
+	public static function add_capabilities() {
 		// Add the capabilites to all the roles
 		$caps = array(
 			'create_plugins',
@@ -185,49 +207,26 @@ class Pn_ActDeact {
 			}
 		}
 	}
+
 	//{{/unless}}
 
+	//WPBPGen{{#unless system_upgrade-procedure}}
 	/**
-	 * Fired for each blog when the plugin is activated.
-	 *
-	 * @since {{plugin_version}}
+	 * Upgrade procedure 
 	 * 
 	 * @return void
 	 */
-	private static function single_activate() {
-		$plugin = Plugin_Name::get_instance();
-		$plugin_slug = $plugin->get_plugin_slug();
-//WPBPGen{{#unless libraries_wpbp__requirements}}
-		// Requirements Detection System - read the doc/example in the library file
-		require_once( plugin_dir_path( __FILE__ ) . 'requirements.php' );
-		new Plugin_Requirements( PN_NAME, $plugin_slug, array(
-			'WP' => new WordPress_Requirement( '4.6.0' )
-				) );
-//{{/unless}}
-		// @TODO: Define activation functionality here
-//WPBPGen{{#unless system_capability-system}}
-		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
-		$this->add_capabilities();
-//{{/unless}}
-//WPBPGen{{#unless system_upgrade-procedure}}
-		$this->upgrade_procedure();
-//{{/unless}}
-		// Clear the permalinks
-		flush_rewrite_rules();
+	public static function upgrade_procedure() {
+		if ( is_admin() ) {
+			$version = get_option( 'plugin-name-version' );
+			if ( version_compare( PN_VERSION, $version, '>' ) ) {
+				update_option( 'plugin-name-version', PN_VERSION );
+				delete_option( PN_TEXTDOMAIN . '_fake-meta' );
+			}
+		}
 	}
 
-	/**
-	 * Fired for each blog when the plugin is deactivated.
-	 *
-	 * @since {{plugin_version}}
-	 * 
-	 * @return void
-	 */
-	private static function single_deactivate() {
-		// @TODO: Define deactivation functionality here
-		// Clear the permalinks
-		flush_rewrite_rules();
-	}
+	//{{/unless}}
 
 }
 

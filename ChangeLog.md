@@ -7,6 +7,9 @@
 * Removed DOM routing because for plugins is better to create specific files to load by php
 * Removed Custom actions (hooks, filters, shortcode) beucase is a choice by the dev where to put them
 * New costants for the path of the plugin (used for load/enqueue files)
+* Support for Grunt CoffeeScript 2.0.0
+* Improved the Act/Deact code
+* Updated logo and links on right sidebar box on settings page
 
 ## 2.1.0
 

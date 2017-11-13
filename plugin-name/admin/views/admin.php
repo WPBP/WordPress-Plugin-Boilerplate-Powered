@@ -77,7 +77,7 @@
 		<div class="postbox">
 			<h3 class="hndle"><span><?php _e( 'Plugin Name.', PN_TEXTDOMAIN ); ?></span></h3>
 			<div class="inside">
-				<a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered"><img src="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/raw/master/plugin-name/assets/icon-256x256.png" alt=""></a>
+				<a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered"><img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt=""></a>
 			</div>
 		</div>
     </div>

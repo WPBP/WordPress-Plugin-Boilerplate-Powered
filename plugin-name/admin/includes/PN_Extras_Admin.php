@@ -125,7 +125,7 @@ class Pn_Extras_Admin {
 			'ajax' => array( $this, 'ajax_posts' ), // Ajax function for the list to show on the modal
 			'ajax_on_select' => array( $this, 'ajax_posts_selected' ), // Ajax function to execute on Select button
 			'echo_button' => true // Do you want echo the button in the hook chosen or only return?
-		) );
+				) );
 //{{/unless}}
 	}
 
@@ -233,15 +233,14 @@ class Pn_Extras_Admin {
 			if ( is_wp_error( $response ) ) {
 				// In case API is down we return the last successful count
 				return;
-			} else {
-				// If everything's okay, parse the body and json_decode it
-				$json_output = json_decode( wp_remote_retrieve_body( $response ) );
-
-				// Store the result in a transient, expires after 1 day
-				// Also store it as the last successful using update_option
-				set_transient( $key, $json_output, DAY_IN_SECONDS );
-				update_option( $key, $json_output );
 			}
+			// If everything's okay, parse the body and json_decode it
+			$json_output = json_decode( wp_remote_retrieve_body( $response ) );
+
+			// Store the result in a transient, expires after 1 day
+			// Also store it as the last successful using update_option
+			set_transient( $key, $json_output, DAY_IN_SECONDS );
+			update_option( $key, $json_output );
 		}
 
 		echo '<div class="siteapi-bridge-container">';

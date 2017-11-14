@@ -50,7 +50,7 @@ class Pn_Template {
 
 }
 
-$pn_enqueue = new Pn_Template();
-$pn_enqueue->initialize();
+$pn_template = new Pn_Template();
+$pn_template->initialize();
 
-do_action( 'plugin_name_pn_template_instance', $pn_enqueue );
+do_action( 'plugin_name_pn_template_instance', $pn_template );

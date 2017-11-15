@@ -47,12 +47,6 @@
 				'type' => 'text_time',
 			) );
 			$cmb->add_field( array(
-				'name' => __( 'Time zone', PN_TEXTDOMAIN ),
-				'desc' => __( 'Time zone', PN_TEXTDOMAIN ),
-				'id' => '_timezone',
-				'type' => 'select_timezone',
-			) );
-			$cmb->add_field( array(
 				'name' => __( 'Test Date Picker', PN_TEXTDOMAIN ),
 				'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
 				'id' => '_textdate',
@@ -82,12 +76,6 @@
 				'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
 				'id' => '_textarea',
 				'type' => 'textarea',
-			) );
-			$cmb->add_field( array(
-				'name' => __( 'Test Text Area Small', PN_TEXTDOMAIN ),
-				'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
-				'id' => '_textareasmall',
-				'type' => 'textarea_small',
 			) );
 			$cmb->add_field( array(
 				'name' => __( 'Test Text Area for Code', PN_TEXTDOMAIN ),

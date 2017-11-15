@@ -15,7 +15,7 @@ class PNTestAdmin extends \Codeception\TestCase\WPTestCase {
   }
 
   public static function setUpBeforeClass() {
-    require_once(  dirname(__FILE__)  . '/../../../../admin/Plugin_Name_Admin.php' );
+    require_once(  dirname(__FILE__)  . '/../../../admin/Plugin_Name_Admin.php' );
     add_action( 'plugins_loaded', array( 'Plugin_Name_Admin', 'get_instance' ) );
   }
 

@@ -12,6 +12,9 @@ class PNTestPublic extends \Codeception\TestCase\WPTestCase {
 
     // your set up methods here
     $this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+	
+	// https://github.com/lucatume/function-mocker
+	FunctionMocker::replace('get_option', []);
   }
 
   public function tearDown() {

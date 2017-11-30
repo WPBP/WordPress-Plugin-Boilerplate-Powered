@@ -1,5 +1,8 @@
 <?php
 
+use tad\FunctionMocker\FunctionMocker;
+FunctionMocker::init();
+
 //WPBPGen{{#unless libraries_wpbp__widgets-helper}}
 class WPH_Widget {
 

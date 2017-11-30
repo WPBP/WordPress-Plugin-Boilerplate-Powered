@@ -11,6 +11,7 @@
 * Improved the Act/Deact code
 * Updated logo and links on right sidebar box on settings page
 * Added FunctionMocker on tests
+* Removed `.php_cs` to switch on a parameter to the generator
 
 ## 2.1.0
 

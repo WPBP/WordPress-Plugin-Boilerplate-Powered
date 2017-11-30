@@ -7,7 +7,7 @@ parameters:
             with_dependencies: false
             strict: false
         phpcs:
-            standard: Codeat
+            standard: ./phpcs.xml
             ignore_patterns: ['/lib/']
         grunt: ~
         phpmd: ~

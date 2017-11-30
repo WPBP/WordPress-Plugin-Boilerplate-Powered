@@ -21,6 +21,9 @@ class Pn_CMB {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
+		require_once( 'lib/cmb2/init.php' );
+		require_once( 'lib/cmb2-grid/Cmb2GridPluginLoad.php' );
+		require_once( 'lib/cmb2-tabs/cmb2-tabs.php' );
 		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}
 
@@ -41,7 +44,7 @@ class Pn_CMB {
 			'context' => 'normal',
 			'priority' => 'high',
 			'show_names' => true, // Show field names on the left
-	//WPBPGen{{#unless libraries_rubengc__cmb2-tabs}}
+			//WPBPGen{{#unless libraries_rubengc__cmb2-tabs}}
 			'vertical_tabs' => true, // Set vertical tabs, default false
 			'tabs' => array(
 				array(
@@ -63,12 +66,12 @@ class Pn_CMB {
 					),
 				),
 			)
-//{{/unless}}
+		//{{/unless}}
 				) );
-//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
+		//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
 		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );
 		$row = $cmb2Grid->addRow();
-//{{/unless}}
+		//{{/unless}}
 		$field1 = $cmb_demo->add_field( array(
 			'name' => __( 'Text', PN_TEXTDOMAIN ),
 			'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
@@ -94,11 +97,11 @@ class Pn_CMB {
 			'id' => $prefix . PN_TEXTDOMAIN . '_textsmall2',
 			'type' => 'text_small'
 				) );
-//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
+		//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
 		$row->addColumns( array( $field1, $field2 ) );
 		$row = $cmb2Grid->addRow();
 		$row->addColumns( array( $field3, $field4 ) );
-//{{/unless}}
+		//{{/unless}}
 	}
 
 }

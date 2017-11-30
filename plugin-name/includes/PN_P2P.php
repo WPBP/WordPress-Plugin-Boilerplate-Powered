@@ -19,6 +19,7 @@ class Pn_P2P {
 	 * Initialize the snippet
 	 */
 	function __construct() {
+		require_once( 'lib/posts-to-posts/posts-to-posts.php' );
 		add_action( 'p2p_init', array( $this, 'my_connection_types' ) );
 	}
 

@@ -16,9 +16,9 @@
     "webdevstudios/cmb2": "2.2.6",
     "kevinlangleyjr/wp-contextual-help": "dev-master",
     "nathanielks/wp-admin-notice": "dev-master",
-    "origgami/cmb2-grid": "dev-master",
+    "mte90/cmb2-grid": "dev-master",
     "rubengc/cmb2-tabs": "*",
-    "johnbillion/extended-cpts": "4.0.2",
+    "johnbillion/extended-cpts": "4.2",
     "freemius/wordpress-sdk": "1.2.2.*",
     "julien731/wp-dismissible-notices-handler": "1.0.0",
     "julien731/wp-review-me": "2.0.1",
@@ -32,8 +32,16 @@
       "type": "git"
     },
     {
-      "url": "git@github.com:origgami/cmb2-grid.git",
-      "type": "git"
+      "type": "package",
+      "package": {
+        "name": "mte90/cmb2-grid",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/mte90/cmb2-grid",
+          "type": "git",
+          "reference": "master"
+        }
+      }
     },
     {
       "type": "package",
@@ -57,7 +65,7 @@
   },
   "require-dev": {
     "lucatume/wp-browser": "^1.21",
-    "phpro/grumphp": "^0.12.0"
+    "phpro/grumphp": "^0.12"
   },
   "minimum-stability": "dev",
   "extra": {
@@ -81,7 +89,7 @@
       "./admin/includes/lib/{$name}": [
         "webdevstudios/cmb2",
         "yoast\/i18n-module",
-        "origgami/cmb2-grid",
+        "mte90/cmb2-grid",
         "rubengc/cmb2-tabs",
         "wpbp/pointerplus",
         "wpbp/cpt_columns",
@@ -93,14 +101,5 @@
         "yoast/whip"
       ]
     }
-  },
-  "autoload": {
-    "files": [
-      "./admin/includes/lib/cmb2/init.php",
-      "./admin/includes/lib/cmb2-grid/Cmb2GridPlugin.php",
-      "./admin/includes/lib/cmb2-tabs/cmb2-tabs.php",
-      "./includes/lib/extended-cpts/extended-cpts.php",
-      "./includes/lib/posts-to-posts/posts-to-posts.php"
-    ]
   }
 }

@@ -10,6 +10,7 @@
 * Support for Grunt CoffeeScript 2.0.0
 * Improved the Act/Deact code
 * Updated logo and links on right sidebar box on settings page
+* Added FunctionMocker on tests
 
 ## 2.1.0
 

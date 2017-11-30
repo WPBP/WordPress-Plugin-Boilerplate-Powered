@@ -65,7 +65,8 @@
   },
   "require-dev": {
     "lucatume/wp-browser": "^1.21",
-    "phpro/grumphp": "^0.12"
+    "phpro/grumphp": "^0.12",
+    "lucatume/function-mocker": "~1.0"
   },
   "minimum-stability": "dev",
   "extra": {

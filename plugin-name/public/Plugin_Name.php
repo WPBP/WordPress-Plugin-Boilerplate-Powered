@@ -40,16 +40,16 @@ class Plugin_Name {
 	 * @return void
 	 */
 	public static function initialize() {
-//WPBPGen{{#unless public-assets_css && public-assets_js && frontend_wp-localize-script}}
+	//WPBPGen{{#unless public-assets_css && public-assets_js && frontend_wp-localize-script}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Enqueue.php' );
-//{{/unless}}
+	//{{/unless}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Extras.php' );
-//WPBPGen{{#unless frontend_template-system}}
+	//WPBPGen{{#unless frontend_template-system}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Template.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
+	//{{/unless}}
+	//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
 		require_once( PN_PLUGIN_ROOT . 'public/widgets/sample.php' );
-//{{/unless}}
+	//{{/unless}}
 	}
 
 	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}

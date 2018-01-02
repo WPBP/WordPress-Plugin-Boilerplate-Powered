@@ -107,7 +107,7 @@ class Pn_Extras_Admin {
 		$plugin = Plugin_Name::get_instance();
 		$this->cpts = $plugin->get_cpts();
 //{{/unless}}
-		//WPBPGen{{#unless backend_dashboard-activity}}
+		//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
 // Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
 //{{/unless}}
@@ -129,7 +129,7 @@ class Pn_Extras_Admin {
 //{{/unless}}
 	}
 
-	//WPBPGen{{#unless backend_dashboard-activity}}
+	//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
 	/**
 	 * Add the recents post type in the activity widget<br>
 	 * NOTE: add in $post_types your cpts

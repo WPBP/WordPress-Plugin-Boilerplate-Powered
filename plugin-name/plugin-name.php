@@ -114,10 +114,10 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
  *
  * The code below is intended to to give the lightest footprint possible.
  */
-//WPBPGen{{#unless ajax_public}}
+//WPBPGen{{#if ajax_public}}
 require_once( PN_PLUGIN_ROOT . 'public/ajax/PN_Ajax.php' );
-//{{/unless}}
-//WPBPGen{{#unless admin-assets_admin-page}}
+//{{/if}}
+//WPBPGen{{#if admin-assets_admin-page}}
 if ( is_admin() ) {
 	if (
 			(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
@@ -125,8 +125,8 @@ if ( is_admin() ) {
 	) {
 		require_once( PN_PLUGIN_ROOT . 'admin/Plugin_Name_Admin.php' );
 	}
-//WPBPGen{{#unless ajax_admin}}
+//WPBPGen{{#if ajax_admin}}
 	require_once( PN_PLUGIN_ROOT . 'admin/ajax/PN_Ajax_Admin.php' );
-//{{/unless}}
+//{{/if}}
 }
-//{{/unless}}
+//{{/if}}

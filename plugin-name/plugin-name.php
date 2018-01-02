@@ -36,7 +36,7 @@ define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE',  __FILE__  );
 
-//WPBPGen{{#unless language-files}}
+//WPBPGen{{#if language-files}}
 /**
  * Load the textdomain of the plugin
  * 
@@ -46,9 +46,9 @@ function pn_load_plugin_textdomain() {
 	$locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
 	load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
 }
-//{{/unless}}
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
+//{{/if}}
 
 require_once( PN_PLUGIN_ROOT . 'composer/autoload.php' );
 
@@ -93,11 +93,11 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_ActDeact.php' );
 //WPBPGen{{#unless act-deact_uninstall}}
 require_once( PN_PLUGIN_ROOT . 'includes/PN_Uninstall.php' );
 //{{/unless}}
-//WPBPGen{{#unless wpcli}}
+//WPBPGen{{#if wpcli}}
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once( PN_PLUGIN_ROOT . 'includes/PN_WPCli.php' );
 }
-//{{/unless}}
+//{{/if}}
 //WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
 require_once( PN_PLUGIN_ROOT . 'includes/PN_P2P.php' );
 //{{/unless}}

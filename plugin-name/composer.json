@@ -13,10 +13,10 @@
     "wpbp/requirements": "1.0.0",
     "wpbp/language": "1.0.0",
     "wpbp/backbone-modal-view": "1.0.2",
-    "webdevstudios/cmb2": "2.2.6",
+    "webdevstudios/cmb2": "2.3.0",
     "kevinlangleyjr/wp-contextual-help": "dev-master",
     "nathanielks/wp-admin-notice": "dev-master",
-    "mte90/cmb2-grid": "dev-master",
+    "origgami/cmb2-grid": "dev-master",
     "rubengc/cmb2-tabs": "*",
     "johnbillion/extended-cpts": "4.2",
     "freemius/wordpress-sdk": "1.2.2.*",
@@ -30,18 +30,6 @@
     {
       "url": "git@github.com:nathanielks/wordpress-admin-notice.git",
       "type": "git"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "mte90/cmb2-grid",
-        "version": "dev-master",
-        "source": {
-          "url": "https://github.com/mte90/cmb2-grid",
-          "type": "git",
-          "reference": "master"
-        }
-      }
     },
     {
       "type": "package",

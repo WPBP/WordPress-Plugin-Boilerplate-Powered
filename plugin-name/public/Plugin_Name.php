@@ -40,9 +40,9 @@ class Plugin_Name {
 	 * @return void
 	 */
 	public static function initialize() {
-	//WPBPGen{{#unless public-assets_css && public-assets_js && frontend_wp-localize-script}}
+	//WPBPGen{{#if public-assets_css && public-assets_js && frontend_wp-localize-script}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Enqueue.php' );
-	//{{/unless}}
+	//{{/if}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Extras.php' );
 	//WPBPGen{{#unless frontend_template-system}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Template.php' );

@@ -23,19 +23,19 @@ class Pn_Enqueue {
 			return;
 		}
 
-//WPBPGen{{#unless public-assets_css}}
+//WPBPGen{{#if public-assets_css}}
 		// Load public-facing style sheet and JavaScript.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ) );
-//{{/unless}}
-//WPBPGen{{#unless public-assets_js}}
+//{{/if}}
+//WPBPGen{{#if public-assets_js}}
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
-//{{/unless}}
-//WPBPGen{{#unless frontend_wp-localize-script}}
+//{{/if}}
+//WPBPGen{{#if frontend_wp-localize-script}}
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_js_vars' ) );
-//{{/unless}}
+//{{/if}}
 	}
 
-	//WPBPGen{{#unless public-assets_css}}
+	//WPBPGen{{#if public-assets_css}}
 	/**
 	 * Register and enqueue public-facing style sheet.
 	 *
@@ -47,8 +47,8 @@ class Pn_Enqueue {
 		wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'public/assets/css/public.css', PM_PLUGIN_ABSOLUTE ), array(), PN_VERSION );
 	}
 
-	//{{/unless}}
-	//WPBPGen{{#unless public-assets_js}}
+	//{{/if}}
+	//WPBPGen{{#if public-assets_js}}
 	/**
 	 * Register and enqueues public-facing JavaScript files.
 	 *
@@ -60,8 +60,8 @@ class Pn_Enqueue {
 		wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'public/assets/js/public.js', PM_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
 	}
 
-	//{{/unless}}
-	//WPBPGen{{#unless frontend_wp-localize-script}}
+	//{{/if}}
+	//WPBPGen{{#if frontend_wp-localize-script}}
 	/**
 	 * Print the PHP var in the HTML of the frontend for access by JavaScript
 	 *
@@ -75,7 +75,7 @@ class Pn_Enqueue {
 				)
 		);
 	}
-	//{{/unless}}
+	//{{/if}}
 
 }
 

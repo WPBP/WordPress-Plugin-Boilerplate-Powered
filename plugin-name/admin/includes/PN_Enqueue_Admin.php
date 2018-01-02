@@ -66,11 +66,11 @@ class Pn_Enqueue_Admin {
 //WPBPGen{{#if admin-assets_settings-css}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page === $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
-			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'admin/assets/css/settings.css', PM_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'admin/assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		}
 //{{/if}}
 //WPBPGen{{#if admin-assets_admin-css}}
-		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'admin/assets/css/admin.css', PM_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'admin/assets/css/admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 //{{/if}}
 	}
 
@@ -91,11 +91,11 @@ class Pn_Enqueue_Admin {
 //WPBPGen{{#if admin-assets_settings-js}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page === $screen->id ) {
-			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'admin/assets/js/settings.js', PM_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
+			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'admin/assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
 		}
 //{{/if}}
 //WPBPGen{{#if admin-assets_admin-js}}
-		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'admin/assets/js/admin.js', PM_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
+		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'admin/assets/js/admin.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
 //{{/if}}
 	}
 	//{{/if}}

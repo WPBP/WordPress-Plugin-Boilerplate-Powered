@@ -78,7 +78,7 @@
       "./admin/includes/lib/{$name}": [
         "webdevstudios/cmb2",
         "yoast\/i18n-module",
-        "mte90/cmb2-grid",
+        "origgami/cmb2-grid",
         "rubengc/cmb2-tabs",
         "wpbp/pointerplus",
         "wpbp/cpt_columns",

@@ -5,7 +5,7 @@
 * Removed assets/bin folders from this repo and moved to different ones
 * Updated Composer dependences
 * Removed DOM routing because for plugins is better to create specific files to load by php
-* Removed Custom actions (hooks, filters, shortcode) beucase is a choice by the dev where to put them
+* Removed Custom actions (hooks, filters, shortcode) because is a choice by the dev where to put them
 * New constants for the path of the plugin (used for load/enqueue files)
 * Support for Grunt CoffeeScript 2.0.0
 * Improved the Act/Deact code

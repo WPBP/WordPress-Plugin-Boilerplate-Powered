@@ -111,7 +111,7 @@ class Pn_Extras_Admin {
 // Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
 //{{/unless}}
-//WPBPGen{{#unless backend_bubble-notification-pending-cpt}}
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending
 		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
 //{{/unless}}

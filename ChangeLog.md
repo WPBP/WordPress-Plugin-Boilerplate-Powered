@@ -2,11 +2,11 @@
 
 * New code for capabilities adding with a upgrade procedure
 * New singleton pattern with filters to disable specific classes and other stuff (in few files no singleton anymore)
-* Removed assets/bin folders from this repo and mvoed to different ones
+* Removed assets/bin folders from this repo and moved to different ones
 * Updated Composer dependences
 * Removed DOM routing because for plugins is better to create specific files to load by php
 * Removed Custom actions (hooks, filters, shortcode) beucase is a choice by the dev where to put them
-* New costants for the path of the plugin (used for load/enqueue files)
+* New constants for the path of the plugin (used for load/enqueue files)
 * Support for Grunt CoffeeScript 2.0.0
 * Improved the Act/Deact code
 * Updated logo and links on right sidebar box on settings page

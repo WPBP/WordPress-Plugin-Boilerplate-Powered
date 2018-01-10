@@ -22,8 +22,12 @@ class Pn_CMB {
 	 */
 	public function __construct() {
 		require_once( 'lib/cmb2/init.php' );
+		//WPBPGen{{#unless libraries_rubengc__cmb2-tabs}}
 		require_once( 'lib/cmb2-grid/Cmb2GridPluginLoad.php' );
+		//{{/unless}}
+		//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
 		require_once( 'lib/cmb2-tabs/cmb2-tabs.php' );
+		//{{/unless}}
 		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}
 

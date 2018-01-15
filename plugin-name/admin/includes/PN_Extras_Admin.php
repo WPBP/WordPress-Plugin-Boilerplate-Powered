@@ -103,10 +103,6 @@ class Pn_Extras_Admin {
 			'php' => '>=5.6',
 		) );
 //{{/unless}}
-//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-		$plugin = Plugin_Name::get_instance();
-		$this->cpts = $plugin->get_cpts();
-//{{/unless}}
 		//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
 // Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
@@ -145,7 +141,7 @@ class Pn_Extras_Admin {
 			// Set default post type
 			$query_args[ 'post_type' ] = array( 'page' );
 		}
-		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], $this->cpts );
+		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], array( 'demo' ) );
 		return $query_args;
 	}
 
@@ -164,7 +160,7 @@ class Pn_Extras_Admin {
 	function pending_cpt_bubble() {
 		global $menu;
 
-		$post_types = $this->cpts;
+		$post_types = array( 'demo' );
 		foreach ( $post_types as $type ) {
 			if ( !post_type_exists( $type ) ) {
 				continue;

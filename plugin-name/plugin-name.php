@@ -1,12 +1,12 @@
 <?php
 
 /**
-  //WPBPGen{{#unless author_name}}
+//WPBPGen{{#unless author_name}}
  * The WordPress Plugin Boilerplate.
  *
  * A foundation off of which to build well-documented WordPress plugins that
  * also follow WordPress Coding Standards and PHP best practices.
-  //{{/unless}}
+//{{/unless}}
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}

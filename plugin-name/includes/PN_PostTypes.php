@@ -22,7 +22,7 @@ class Pn_PostTypes {
 		add_action( 'init', array( $this, 'load_cpts' ) );
 	}
 	
-	//WPBPGen{{#unless frontend_cpt-search-support}}
+//WPBPGen{{#unless frontend_cpt-search-support}}
 	/**
 	 * Add support for custom CPT on the search box
 	 *
@@ -42,9 +42,9 @@ class Pn_PostTypes {
 		}
 		return $query;
 	}
-	//{{/unless}}
+//{{/unless}}
 	
-	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	/**
 	 * Load CPT and Taxonomies on WordPress
 	 * 
@@ -68,11 +68,13 @@ class Pn_PostTypes {
 				'genre' => array(
 					'taxonomy' => 'demo-section'
 				),
+//WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
 				'p2p' => array(
 					'title' => 'Connected Posts',
 					'connection' => 'demo_to_pages',
 					'link' => 'edit'
 				),
+//{{/unless}}
 				'custom_field' => array(
 					'title' => 'By Lib',
 					'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
@@ -134,7 +136,7 @@ class Pn_PostTypes {
 		) );
 //{{/unless}}
 	}
-	//{{/unless}}
+//{{/unless}}
 
 }
 

@@ -21,15 +21,6 @@ class Plugin_Name {
 	 * @var object
 	 */
 	private static $instance;
-	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-	/**
-	 * Array of cpts of the plugin
-	 *
-	 * @var array
-	 */
-	protected $cpts = array( 'demo' );
-
-	//{{/unless}}
 
 	/**
 	 * Initialize the plugin by setting localization and loading public scripts
@@ -51,20 +42,6 @@ class Plugin_Name {
 		require_once( PN_PLUGIN_ROOT . 'public/widgets/sample.php' );
 	//{{/unless}}
 	}
-
-	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-	/**
-	 * Return the cpts
-	 *
-	 * @since {{plugin_version}}
-	 *
-	 * @return array
-	 */
-	public function get_cpts() {
-		return $this->cpts;
-	}
-
-	//{{/unless}}
 
 	/**
 	 * Return an instance of this class.

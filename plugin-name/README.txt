@@ -2,8 +2,8 @@
 Contributors: (this should be a list of wordpress.org userid's) 
 Donate link: http://example.com/
 Tags: comments, spam (maximum 12)
-Requires at least: 4.7
-Tested up to: 4.8
+Requires at least: 4.8
+Tested up to: 4.9
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -87,12 +87,9 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * A change since the previous version.
 * Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
 
 == Upgrade Notice ==
 
@@ -110,4 +107,4 @@ plugins where more information needs to be conveyed that doesn't fit into the ca
 
 == Updates ==
 
-The basic structure of this plugin was cloned from the [WordPress-Plugin-Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate) project.
+The basic structure of this plugin was cloned from the [WordPress-Plugin-Boilerplate-Powered](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered) project.

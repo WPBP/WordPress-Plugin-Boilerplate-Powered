@@ -1,3 +1,7 @@
+## 2.2.1
+
+* Many bugfixes and improvements of code identation
+
 ## 2.2.0
 
 * New code for capabilities adding with a upgrade procedure

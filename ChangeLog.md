@@ -1,6 +1,6 @@
 ## 2.2.1
 
-* Many bugfixes and improvements of code identation
+* Many bugfixes and improvements of code indentation
 
 ## 2.2.0
 

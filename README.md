@@ -44,7 +44,6 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 
 ### Snippet available
 
-* Shortcode example code
 * Dashicon as dependence of admin stylesheet
 * Bubble notification on pending CPTs
 * Import/Export settings

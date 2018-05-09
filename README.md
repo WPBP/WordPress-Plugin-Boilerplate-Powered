@@ -41,6 +41,7 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [yoast/whip](https://github.com/yoast/whip)
+	* [TweetPressFr/WP_Query_Multisite](https://github.com/TweetPressFr/WP_Query_Multisite)
 
 ### Snippet available
 

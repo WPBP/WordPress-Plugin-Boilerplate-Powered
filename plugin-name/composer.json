@@ -24,7 +24,8 @@
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
     "yoast/i18n-module": "3.0.0",
-    "yoast/whip": "1.1.0"
+    "yoast/whip": "1.1.0",
+    "tweetpressfr/wp_query_multisite": "*"
   },
   "repositories": [
     {
@@ -44,6 +45,18 @@
       }
     },
     {
+      "type": "package",
+      "package": {
+        "name": "tweetpressfr/wp_query_multisite",
+        "version": "1.0.0",
+        "source": {
+          "url": "https://github.com/tweetpressfr/wp_query_multisite",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    },
+    {
       "type": "composer",
       "url": "https://wpackagist.org"
     }
@@ -52,8 +65,8 @@
     "vendor-dir": "composer/"
   },
   "require-dev": {
-    "lucatume/wp-browser": "^1.21",
-    "phpro/grumphp": "^0.12",
+    "lucatume/wp-browser": "2.*",
+    "phpro/grumphp": "^0.14",
     "lucatume/function-mocker": "~1.0"
   },
   "minimum-stability": "dev",
@@ -70,7 +83,8 @@
         "wpackagist-plugin/posts-to-posts"
       ],
       "./includes/lib/Freemius": [
-        "freemius/wordpress-sdk"
+        "freemius/wordpress-sdk",
+        "tweetpressfr/wp_query_multisite"
       ],
       "./public/includes/lib/{$name}": [
         "wpbp/widgets-helper"

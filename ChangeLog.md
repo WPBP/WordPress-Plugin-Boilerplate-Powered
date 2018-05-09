@@ -1,3 +1,9 @@
+## 2.3
+
+* Enhancement: Moved PN_Uninstall.php to uninstall.php
+* Added: WP_Query_Multisite library
+* Updated: All the composer dependences
+
 ## 2.2.1
 
 * Many bugfixes and improvements of code indentation

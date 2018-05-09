@@ -83,16 +83,6 @@ class Plugin_Name_Admin {
 	 * @return object A single instance of this class.
 	 */
 	public static function get_instance() {
-
-		/*
-		 * @TODO :
-		 *
-		 * - Uncomment following lines if the admin class should only be available for super admins
-		  if( ! is_super_admin() ) {
-		  return;
-		  }
-		 */
-
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
 			try {

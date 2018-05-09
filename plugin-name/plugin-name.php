@@ -90,9 +90,6 @@ require_once( PN_PLUGIN_ROOT . 'public/Plugin_Name.php' );
 //WPBPGen{{#unless act-deact_actdeact}}
 require_once( PN_PLUGIN_ROOT . 'includes/PN_ActDeact.php' );
 //{{/unless}}
-//WPBPGen{{#unless act-deact_uninstall}}
-require_once( PN_PLUGIN_ROOT . 'includes/PN_Uninstall.php' );
-//{{/unless}}
 //WPBPGen{{#if wpcli}}
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once( PN_PLUGIN_ROOT . 'includes/PN_WPCli.php' );

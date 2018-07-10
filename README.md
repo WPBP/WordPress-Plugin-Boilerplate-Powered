@@ -90,8 +90,12 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/5/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/5/avatar.svg"></a>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/6/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/6/avatar.svg"></a>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/7/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/7/avatar.svg"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=shield"/></a>
 
 
 ## License
 
 The WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered?ref=badge_large)

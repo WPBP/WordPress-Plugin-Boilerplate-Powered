@@ -23,7 +23,7 @@
  * License:           {{author_license}}
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * WordPress-Plugin-Boilerplate-Powered: v2.0.5
+ * WordPress-Plugin-Boilerplate-Powered: v2.3.0
  */
 // If this file is called directly, abort.
 if ( !defined( 'WPINC' ) ) {
@@ -39,7 +39,7 @@ define( 'PN_PLUGIN_ABSOLUTE',  __FILE__  );
 //WPBPGen{{#if language-files}}
 /**
  * Load the textdomain of the plugin
- * 
+ *
  * @return void
  */
 function pn_load_plugin_textdomain() {
@@ -55,7 +55,7 @@ require_once( PN_PLUGIN_ROOT . 'composer/autoload.php' );
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.
- * 
+ *
  * @global type $pn_fs
  * @return object
  */

@@ -112,7 +112,7 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
  * The code below is intended to to give the lightest footprint possible.
  */
 //WPBPGen{{#unless ajax_public}}
-require_once( PN_PLUGIN_ROOT . 'public/ajax/PN_Ajax.php' );
+require_once( PN_PLUGIN_ROOT . 'ajax/PN_Ajax.php' );
 //{{/unless}}
 //WPBPGen{{#if admin-assets_admin-page}}
 if ( is_admin() ) {
@@ -123,7 +123,7 @@ if ( is_admin() ) {
 		require_once( PN_PLUGIN_ROOT . 'admin/Plugin_Name_Admin.php' );
 	}
 //WPBPGen{{#unless ajax_admin}}
-	require_once( PN_PLUGIN_ROOT . 'admin/ajax/PN_Ajax_Admin.php' );
+	require_once( PN_PLUGIN_ROOT . 'ajax/PN_Ajax_Admin.php' );
 //{{/unless}}
 }
 //{{/if}}

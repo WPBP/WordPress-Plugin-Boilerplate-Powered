@@ -72,7 +72,7 @@
   "minimum-stability": "dev",
   "extra": {
     "installer-paths": {
-      "./includes/lib/{$name}": [
+      "./integrations/lib/{$name}": [
         "johnbillion/extended-cpts",
         "wpbp/language",
         "wpbp/cronplus",
@@ -80,18 +80,12 @@
         "wpbp/template",
         "wpbp/requirements",
         "wpbp/debug",
-        "wpackagist-plugin/posts-to-posts"
-      ],
-      "./includes/lib/Freemius": [
+        "wpackagist-plugin/posts-to-posts",
+        "tweetpressfr/wp_query_multisite",
         "freemius/wordpress-sdk",
-        "tweetpressfr/wp_query_multisite"
-      ],
-      "./public/includes/lib/{$name}": [
-        "wpbp/widgets-helper"
-      ],
-      "./admin/includes/lib/{$name}": [
+        "wpbp/widgets-helper",
         "webdevstudios/cmb2",
-        "yoast\/i18n-module",
+        "yoast/i18n-module",
         "origgami/cmb2-grid",
         "rubengc/cmb2-tabs",
         "wpbp/pointerplus",

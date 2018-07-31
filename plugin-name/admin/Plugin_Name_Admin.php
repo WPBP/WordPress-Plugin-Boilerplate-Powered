@@ -27,7 +27,7 @@ class Plugin_Name_Admin {
 	 * settings page and menu.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public static function initialize() {
@@ -45,31 +45,13 @@ class Plugin_Name_Admin {
 //WPBPGen{{#if admin-assets_admin-page}}
 		require_once( PN_PLUGIN_ROOT . 'admin/includes/PN_Enqueue_Admin.php' );
 //{{/if}}
-//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
-		/*
-		 * Load CMB
-		 */
-		require_once( PN_PLUGIN_ROOT . 'admin/includes/PN_CMB.php' );
-//{{/unless}}
 //WPBPGen{{#unless backend_impexp-settings}}
 		/*
 		 * Import Export settings
 		 */
 		require_once( PN_PLUGIN_ROOT . 'admin/includes/PN_ImpExp.php' );
 //{{/unless}}
-//WPBPGen{{#unless libraries_kevinlangleyjr__wp-contextual-help}}
-		/*
-		 * Contextual Help
-		 */
-		require_once( PN_PLUGIN_ROOT . 'admin/includes/PN_ContextualHelp.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_wpbp__pointerplus}}
-		/*
-		 * All the pointers
-		 */
-		require_once( PN_PLUGIN_ROOT . 'admin/includes/PN_Pointers.php' );
-//{{/unless}}
-		/*
+        /*
 		 * All the extras functions
 		 */
 		require_once( PN_PLUGIN_ROOT . 'admin/includes/PN_Extras_Admin.php' );

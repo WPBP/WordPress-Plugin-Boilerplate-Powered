@@ -96,21 +96,36 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 }
 //{{/if}}
 //WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
-require_once( PN_PLUGIN_ROOT . 'includes/PN_P2P.php' );
+require_once( PN_PLUGIN_ROOT . 'integrations/PN_P2P.php' );
 //{{/unless}}
 //WPBPGen{{#unless libraries_wpbp__fakepage}}
-require_once( PN_PLUGIN_ROOT . 'includes/PN_FakePage.php' );
+require_once( PN_PLUGIN_ROOT . 'integrations/PN_FakePage.php' );
 //{{/unless}}
+//WPBPGen{{#unless frontend_template-system}}
+require_once( PN_PLUGIN_ROOT . 'integrations/PN_Template.php' );
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
+require_once( PN_PLUGIN_ROOT . 'integrations/widgets/sample.php' );
+//{{/unless}}
+//WPBPGen{{#unless libraries_kevinlangleyjr__wp-contextual-help}}
 /*
- * If you want to include Ajax within the dashboard, change the following
- * conditional to:
- *
- * if ( is_admin() ) {
- *   ...
- * }
- *
- * The code below is intended to to give the lightest footprint possible.
+ * Contextual Help
  */
+require_once( PN_PLUGIN_ROOT . 'integrations/PN_ContextualHelp.php' );
+//{{/unless}}
+//WPBPGen{{#unless libraries_wpbp__pointerplus}}
+/*
+ * All the pointers
+ */
+require_once( PN_PLUGIN_ROOT . 'integrations/PN_Pointers.php' );
+//{{/unless}}
+//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
+/*
+ * Load CMB
+ */
+require_once( PN_PLUGIN_ROOT . 'integrations/PN_CMB.php' );
+//{{/unless}}
+
 //WPBPGen{{#unless ajax_public}}
 require_once( PN_PLUGIN_ROOT . 'ajax/PN_Ajax.php' );
 //{{/unless}}
@@ -122,6 +137,9 @@ if ( is_admin() ) {
 	) {
 		require_once( PN_PLUGIN_ROOT . 'admin/Plugin_Name_Admin.php' );
 	}
+}
+
+if ( is_user_logged_in() ) {
 //WPBPGen{{#unless ajax_admin}}
 	require_once( PN_PLUGIN_ROOT . 'ajax/PN_Ajax_Admin.php' );
 //{{/unless}}

@@ -27,7 +27,7 @@ class Plugin_Name {
 	 * and styles.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public static function initialize() {
@@ -35,12 +35,6 @@ class Plugin_Name {
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Enqueue.php' );
 	//{{/if}}
 		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Extras.php' );
-	//WPBPGen{{#unless frontend_template-system}}
-		require_once( PN_PLUGIN_ROOT . 'public/includes/PN_Template.php' );
-	//{{/unless}}
-	//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
-		require_once( PN_PLUGIN_ROOT . 'public/widgets/sample.php' );
-	//{{/unless}}
 	}
 
 	/**

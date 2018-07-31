@@ -92,7 +92,7 @@ require_once( PN_PLUGIN_ROOT . 'includes/PN_ActDeact.php' );
 //{{/unless}}
 //WPBPGen{{#if wpcli}}
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	require_once( PN_PLUGIN_ROOT . 'includes/PN_WPCli.php' );
+	require_once( PN_PLUGIN_ROOT . 'cli/PN_WPCli.php' );
 }
 //{{/if}}
 //WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}

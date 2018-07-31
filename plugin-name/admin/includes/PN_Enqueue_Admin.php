@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -49,7 +49,7 @@ class Pn_Enqueue_Admin {
 //{{/if}}
 	}
 
-	
+
 	//WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
@@ -66,11 +66,11 @@ class Pn_Enqueue_Admin {
 //WPBPGen{{#if admin-assets_settings-css}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page === $screen->id || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
-			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'admin/assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		}
 //{{/if}}
 //WPBPGen{{#if admin-assets_admin-css}}
-		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'admin/assets/css/admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 //{{/if}}
 	}
 
@@ -87,25 +87,25 @@ class Pn_Enqueue_Admin {
 		if ( !isset( $this->admin_view_page ) ) {
 			return;
 		}
-		
+
 //WPBPGen{{#if admin-assets_settings-js}}
 		$screen = get_current_screen();
 		if ( $this->admin_view_page === $screen->id ) {
-			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'admin/assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
+			wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
 		}
 //{{/if}}
 //WPBPGen{{#if admin-assets_admin-js}}
-		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'admin/assets/js/admin.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
+		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
 //{{/if}}
 	}
 	//{{/if}}
-	
+
 	//WPBPGen{{#if admin-assets_admin-page}}
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function add_plugin_admin_menu() {
@@ -121,11 +121,11 @@ class Pn_Enqueue_Admin {
 		  $this->admin_view_page = add_options_page(
 		  __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' )
 		  );
-		 * 
+		 *
 		 */
 		/*
 		 * Add a settings page for this plugin to the main menu
-		 * 
+		 *
 		 */
 		$this->admin_view_page = add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
@@ -134,7 +134,7 @@ class Pn_Enqueue_Admin {
 	 * Render the settings page for this plugin.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function display_plugin_admin_page() {
@@ -145,9 +145,9 @@ class Pn_Enqueue_Admin {
 	 * Add settings action link to the plugins page.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @param array $links Array of links.
-	 * 
+	 *
 	 * @return array
 	 */
 	public function add_action_links( $links ) {

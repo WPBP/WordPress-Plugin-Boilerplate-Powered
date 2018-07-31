@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "settings.js",
+  "sourceRoot": "../coffee/",
+  "sources": [
+    "settings.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAC,QAAA,CAAC,CAAD,CAAA;EACC;EACA,CAAA,CAAE,QAAA,CAAA,CAAA;IACA,CAAA,CAAE,OAAF,CAAU,CAAC,IAAX,CAAA;EADA,CAAF,EAFD;;AAAA,CAAD,CAAA,CAOE,MAPF",
+  "sourcesContent": [
+    "(($) ->\n  'use strict'\n  $ ->\n    $('#tabs').tabs()\n    # Place your administration-specific JavaScript here\n    return\n  return\n) jQuery\n"
+  ]
+}

@@ -3,41 +3,21 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     compass: {
-      admin: {
+      css: {
         options: {
-          sassDir: 'admin/assets/sass',
-          cssDir: 'admin/assets/css',
+          sassDir: 'assets/sass',
+          cssDir: 'assets/css',
           environment: 'production',
           relativeAssets: true
         }
       },
-      public: {
-        options: {
-          sassDir: 'public/assets/sass',
-          cssDir: 'public/assets/css',
-          environment: 'production',
-          relativeAssets: true
-        }
-      },
-      adminDev: {
+      cssDev: {
         options: {
           environment: 'development',
           debugInfo: true,
           noLineComments: false,
-          sassDir: 'public/assets/sass',
-          cssDir: 'public/assets/css',
-          outputStyle: 'expanded',
-          relativeAssets: true,
-          sourcemap: true
-        }
-      },
-      publicDev: {
-        options: {
-          environment: 'development',
-          debugInfo: true,
-          noLineComments: false,
-          sassDir: 'public/assets/sass',
-          cssDir: 'public/assets/css',
+          sassDir: 'assets/sass',
+          cssDir: 'assets/css',
           outputStyle: 'expanded',
           relativeAssets: true,
           sourcemap: true
@@ -45,58 +25,39 @@ module.exports = function (grunt) {
       }
     },
     coffee: {
-      admin: {
+      js: {
         options: {
           bare: true,
           join: true
         },
         files: {
-          'admin/assets/js/admin.js': 'admin/assets/coffee/admin.coffee',
-          'admin/assets/js/settings.js': 'admin/assets/coffee/settings.coffee'
+          'assets/js/public.js': 'assets/coffee/public.coffee',
+          'assets/js/admin.js': 'assets/coffee/admin.coffee',
+          'assets/js/settings.js': 'assets/coffee/settings.coffee'
         }
       },
-      public: {
-        options: {
-          bare: true,
-          join: true
-        },
-        files: {
-          'public/assets/js/public.js': 'public/assets/coffee/public.coffee'
-        }
-      },
-      adminDev: {
+      jsDev: {
         options: {
           bare: true,
           join: true,
           sourceMap: true
         },
         files: {
-          'admin/assets/js/admin.js': 'admin/assets/coffee/admin.coffee',
-          'admin/assets/js/settings.js': 'admin/assets/coffee/settings.coffee'
-        }
-      },
-      publicDev: {
-        options: {
-          bare: true,
-          join: true,
-          sourceMap: true
-        },
-        files: {
-          'public/assets/js/public.js': 'public/assets/coffee/public.coffee'
+          'assets/js/public.js': 'assets/coffee/public.coffee',
+          'assets/js/admin.js': 'assets/coffee/admin.coffee',
+          'assets/js/settings.js': 'assets/coffee/settings.coffee'
         }
       }
     },
     watch: {
       compass: {
         files: [
-          'admin/assets/sass/*.scss',
-          'public/assets/sass/*.scss',
-          'admin/assets/coffee/*.coffee',
-          'public/assets/coffee/*.coffee'
+          'assets/sass/*.scss',
+          'assets/coffee/*.coffee'
         ],
         tasks: [
-          'compass:adminDev', 'compass:publicDev',
-          'coffee:adminDev', 'coffee:publicDev'
+          'compass:css', 'compass:cssDev',
+          'coffee:js', 'coffee:jsDev'
         ]
       }
     }
@@ -109,8 +70,8 @@ module.exports = function (grunt) {
 
   // Register tasks
   grunt.registerTask('default', [
-    'compass:admin', 'compass:public',
-    'coffee:admin', 'coffee:public'
+    'compass:css', 'compass:cssDev',
+    'coffee:js', 'coffee:jsDev'
   ]);
   grunt.registerTask('dev', [
     'watch'

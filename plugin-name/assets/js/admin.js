@@ -1,7 +1,7 @@
 (function($) {
   'use strict';
-  $(function() {
-    $('#tabs').tabs();
-  });
+  $(function() {});
 // Place your administration-specific JavaScript here
 })(jQuery);
+
+//# sourceMappingURL=admin.js.map

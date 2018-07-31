@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "admin.js",
+  "sourceRoot": "../coffee/",
+  "sources": [
+    "admin.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAC,QAAA,CAAC,CAAD,CAAA;EACC;EACA,CAAA,CAAE,QAAA,CAAA,CAAA,EAAA,CAAF,EAFD;;AAAA,CAAD,CAAA,CAME,MANF",
+  "sourcesContent": [
+    "(($) ->\n  'use strict'\n  $ ->\n    # Place your administration-specific JavaScript here\n    return\n  return\n) jQuery\n"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "public.js",
+  "sourceRoot": "../coffee/",
+  "sources": [
+    "public.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA,CAAC,QAAA,CAAC,CAAD,CAAA;EACC;EACA,CAAA,CAAE,QAAA,CAAA,CAAA,EAAA;;IAEA,OAAO,CAAC,GAAR,CAAY,UAAU,CAAC,KAAvB;EAFA,CAAF,EAFD;;AAAA,CAAD,CAAA,CAQE,MARF",
+  "sourcesContent": [
+    "(($) ->\n  'use strict'\n  $ ->\n    # Write in console log the PHP value passed in enqueue_js_vars in public/class-plugin-name.php\n    console.log pn_js_vars.alert\n    # Place your public-facing JavaScript here\n    return\n  return\n) jQuery\n"
+  ]
+}

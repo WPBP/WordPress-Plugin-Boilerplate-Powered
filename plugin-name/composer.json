@@ -2,7 +2,6 @@
   "require": {
     "php": ">=5.3",
     "composer/installers": "1.x",
-    "mnsami/composer-custom-directory-installer": "1.1.*",
     "wpbp/pointerplus": "1.0.0",
     "wpbp/cronplus": "1.0.3",
     "wpbp/widgets-helper": "1.0.3",
@@ -69,41 +68,17 @@
   "minimum-stability": "dev",
   "extra": {
     "installer-paths": {
-      "./lib/{$name}": [
-        "johnbillion/extended-cpts",
-        "wpbp/language",
-        "wpbp/cronplus",
-        "wpbp/fakepage",
-        "wpbp/template",
-        "wpbp/requirements",
-        "wpbp/debug",
-        "wpackagist-plugin/posts-to-posts",
-        "miguelpeixe/wp_query_multisite",
-        "freemius/wordpress-sdk",
-        "wpbp/widgets-helper",
-        "webdevstudios/cmb2",
-        "yoast/i18n-module",
-        "origgami/cmb2-grid",
-        "rubengc/cmb2-tabs",
-        "wpbp/pointerplus",
-        "wpbp/cpt_columns",
-        "wpbp/backbone-modal-view",
-        "kevinlangleyjr/wp-contextual-help",
-        "nathanielks/wp-admin-notice",
-        "julien731/wp-dismissible-notices-handler",
-        "julien731/wp-review-me",
-        "yoast/whip"
-      ]
+      "vendor/{$name}/": ["webdevstudios/cmb2", "origgami/cmb2-grid", "wpackagist-plugin/posts-to-posts"]
     }
   },
   "autoload": {
-		"classmap": [
-			"admin/",
-			"public/",
-			"includes/",
-			"integrations/",
-			"ajax/",
-			"cli/"
+		"files": [
+			"admin/*.php",
+			"ajax/*.php",
+			"cli/*.php",
+			"includes/*.php",
+			"integrations/*.php",
+			"public/*.php"
 		]
   }
 }

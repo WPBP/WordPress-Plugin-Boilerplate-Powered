@@ -5,9 +5,9 @@
 
 [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 
-**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.   
-Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.  
-This project fit in this dev cases, choose a library or a snippet and the boilerplate will contain already the example for use it without need a manual copy&paste way or look on internet!  
+**WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.
+Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.
+This project fit in this dev cases, choose a library or a snippet and the boilerplate will contain already the example for use it without need a manual copy&paste way or look on internet!
 The [code generator](https://github.com/WPBP/generator) is the most smartiest way to use the boilerplate with a simple command and get ready to work.
 
 ## Features
@@ -41,7 +41,7 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [yoast/whip](https://github.com/yoast/whip)
-	* [TweetPressFr/WP_Query_Multisite](https://github.com/TweetPressFr/WP_Query_Multisite)
+	* [miguelpeixe/WP_Query_Multisite](https://github.com/miguelpeixe/WP_Query_Multisite)
 
 ### Snippet available
 
@@ -57,7 +57,7 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 * Transient examples with caching
 * Support for [Web Push](https://wordpress.org/plugins/web-push/)
 
-Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
+Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!
 Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
 
 ## Shell Script & Tools

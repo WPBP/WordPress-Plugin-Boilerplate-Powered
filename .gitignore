@@ -34,5 +34,5 @@ intermediate
 .idea
 cache
 vendor
-/plugin-name/integrations/lib/
-/plugin-name/composer/
+/plugin-name/lib/
+/plugin-name/vendor/

@@ -50,7 +50,7 @@ function pn_load_plugin_textdomain() {
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 //{{/if}}
 
-require_once( PN_PLUGIN_ROOT . 'composer/autoload.php' );
+require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**
@@ -83,65 +83,3 @@ function pn_fs() {
 // Init Freemius.
 // pn_fs();
 //{{/unless}}
-//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
-require_once( PN_PLUGIN_ROOT . 'includes/PN_PostTypes.php' );
-//{{/unless}}
-require_once( PN_PLUGIN_ROOT . 'public/Plugin_Name.php' );
-//WPBPGen{{#unless act-deact_actdeact}}
-require_once( PN_PLUGIN_ROOT . 'includes/PN_ActDeact.php' );
-//{{/unless}}
-//WPBPGen{{#if wpcli}}
-if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	require_once( PN_PLUGIN_ROOT . 'cli/PN_WPCli.php' );
-}
-//{{/if}}
-//WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
-require_once( PN_PLUGIN_ROOT . 'integrations/PN_P2P.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_wpbp__fakepage}}
-require_once( PN_PLUGIN_ROOT . 'integrations/PN_FakePage.php' );
-//{{/unless}}
-//WPBPGen{{#unless frontend_template-system}}
-require_once( PN_PLUGIN_ROOT . 'integrations/PN_Template.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_wpbp__widgets-helper}}
-require_once( PN_PLUGIN_ROOT . 'integrations/widgets/sample.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_kevinlangleyjr__wp-contextual-help}}
-/*
- * Contextual Help
- */
-require_once( PN_PLUGIN_ROOT . 'integrations/PN_ContextualHelp.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_wpbp__pointerplus}}
-/*
- * All the pointers
- */
-require_once( PN_PLUGIN_ROOT . 'integrations/PN_Pointers.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
-/*
- * Load CMB
- */
-require_once( PN_PLUGIN_ROOT . 'integrations/PN_CMB.php' );
-//{{/unless}}
-
-//WPBPGen{{#unless ajax_public}}
-require_once( PN_PLUGIN_ROOT . 'ajax/PN_Ajax.php' );
-//{{/unless}}
-//WPBPGen{{#if admin-assets_admin-page}}
-if ( is_admin() ) {
-	if (
-			(function_exists( 'wp_doing_ajax' ) && !wp_doing_ajax() ||
-			(!defined( 'DOING_AJAX' ) || !DOING_AJAX ) )
-	) {
-		require_once( PN_PLUGIN_ROOT . 'admin/Plugin_Name_Admin.php' );
-	}
-}
-
-if ( is_user_logged_in() ) {
-//WPBPGen{{#unless ajax_admin}}
-	require_once( PN_PLUGIN_ROOT . 'ajax/PN_Ajax_Admin.php' );
-//{{/unless}}
-}
-//{{/if}}

@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -21,13 +21,6 @@ class Pn_CMB {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
-		require_once( 'lib/cmb2/init.php' );
-//WPBPGen{{#unless libraries_rubengc__cmb2-tabs}}
-		require_once( 'lib/cmb2-grid/Cmb2GridPluginLoad.php' );
-//{{/unless}}
-//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
-		require_once( 'lib/cmb2-tabs/cmb2-tabs.php' );
-//{{/unless}}
 		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}
 
@@ -35,7 +28,7 @@ class Pn_CMB {
 	 * Your metabox on Demo CPT
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function cmb_demo_metaboxes() {

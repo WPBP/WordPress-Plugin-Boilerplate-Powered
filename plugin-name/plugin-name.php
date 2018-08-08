@@ -83,3 +83,46 @@ function pn_fs() {
 // Init Freemius.
 // pn_fs();
 //{{/unless}}
+
+/**
+ * Auto load our class files
+ *
+ * @param string $class Class name.
+ *
+ * @return void
+ */
+function pn_auto_load( $class ) {
+	static $classes = null;
+	if ( $classes === null ) {
+		$folders = array(
+			"admin",
+			"ajax",
+			"cli",
+			"includes",
+			"integrations",
+			"public"
+		);
+		foreach($folders as $folder) {
+            $files = glob( PN_PLUGIN_ROOT . $folder . '/*.{php}', GLOB_BRACE);
+            foreach($files as $file) {
+                if( false !== strpos($file, 'index.php') ) {
+                    continue;
+                }
+
+                $class_name = ucwords(basename($file,'.php'), '-');
+                $class_name = str_replace('Class', 'Pn', $class_name );
+                $class_name = str_replace('-', '_', $class_name);
+                // TODO: check classname
+                error_log((print_r($class_name, true)));
+                if ( ! class_exists( $class_name )  ) {
+                    //require_once $file;
+                }
+            }
+        }
+	}
+
+}
+
+if ( function_exists( 'spl_autoload_register' ) ) {
+	spl_autoload_register( 'pn_auto_load' );
+}

@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -19,15 +19,14 @@ class Pn_P2P {
 	 * Initialize the snippet
 	 */
 	function __construct() {
-		require_once( 'lib/posts-to-posts/posts-to-posts.php' );
 		add_action( 'p2p_init', array( $this, 'my_connection_types' ) );
 	}
 
 	/**
 	 * https://github.com/scribu/wp-posts-to-posts/wiki/Basic-usage
-	 * 
+	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function my_connection_types() {

@@ -2,7 +2,7 @@
 
 /**
  * Plugin_name
- * 
+ *
  * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -27,11 +27,11 @@ class Pn_Extras {
 	//WPBPGen{{#unless frontend_body-class}}
 	/**
 	 * Add class in the body on the frontend
-	 * 
-	 * @param array $classes THe array with all the classes of the page.
+	 *
+	 * @param array $classes The array with all the classes of the page.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return array
 	 */
 	public static function add_pn_class( $classes ) {

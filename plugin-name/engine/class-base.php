@@ -20,7 +20,7 @@ class Pn_Base {
 	 * Initialize the class
 	 */
 	function initialize() {
-        $this->settings = get_option( PN_TEXTDOMAIN . '-settings' );
+        $this->settings = pn_get_settings();
         return true;
 	}
 

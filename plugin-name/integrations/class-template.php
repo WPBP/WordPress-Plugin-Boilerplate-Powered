@@ -13,12 +13,13 @@
 /**
  * This class contain the Templating stuff for the frontend
  */
-class Pn_Template {
+class Pn_Template extends Pn_Base {
 
 	/**
 	 * Initialize the class
 	 */
 	public function initialize() {
+        parent::initialize();
 //WPBPGen{{#unless frontend_template-system}}
 		// Override the template hierarchy for load /templates/content-demo.php
 		add_filter( 'template_include', array( __CLASS__, 'load_content_demo' ) );

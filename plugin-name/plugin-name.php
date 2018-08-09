@@ -53,6 +53,8 @@ add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
 require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 
+require_once( PN_PLUGIN_ROOT . 'includes/functions.php' );
+
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.

@@ -31,6 +31,7 @@ class Pn_Initialize {
         $classes[] = 'Pn_Fakepage';
         $classes[] = 'Pn_P2P';
         $classes[] = 'Pn_Template';
+        $classes[] = 'Pn_Widgets';
 
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
             $classes[] = 'Pn_Cli';
@@ -64,7 +65,7 @@ class Pn_Initialize {
 			case 'admin':
 				return is_admin();
 			case 'ajax':
-				return defined( 'DOING_AJAX' );
+				return (function_exists( 'wp_doing_ajax' ) && wp_doing_ajax()) || defined( 'DOING_AJAX' );
 			case 'cron':
 				return defined( 'DOING_CRON' );
 			case 'frontend':
@@ -93,7 +94,7 @@ class Pn_Initialize {
 			try {
 				self::$instance = new self;
 			} catch ( Exception $err ) {
-				do_action( 'plugin_name_admin_failed', $err );
+				do_action( 'plugin_name_initialize_failed', $err );
 				if ( WP_DEBUG ) {
 					throw $err->getMessage();
 				}

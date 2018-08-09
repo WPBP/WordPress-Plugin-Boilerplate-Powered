@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -13,31 +13,34 @@
 /**
  * This class contain the activate and deactive method and relates.
  */
-class Pn_ActDeact {
+class Pn_ActDeact extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the Act/Deact
-	 * 
+	 *
 	 * @return void
 	 */
 	function __construct() {
+		if ( !parent::initialize() ) {
+            return;
+		}
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
-		
+
 		register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'deactivate' ) );
 //WPBPGen{{#unless system_upgrade-procedure}}
 		add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
 //{{/unless}}
 	}
-	
+
 	/**
 	 * Fired when a new site is activated with a WPMU environment.
 	 *
 	 * @param integer $blog_id ID of the new blog.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function activate_new_site( $blog_id ) {
@@ -56,7 +59,7 @@ class Pn_ActDeact {
 	 * @param boolean $network_wide True if active in a multiste, false if classic site.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public static function activate( $network_wide ) {
@@ -84,7 +87,7 @@ class Pn_ActDeact {
 	 *                              deactivated on an individual blog.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public static function deactivate( $network_wide ) {
@@ -107,7 +110,7 @@ class Pn_ActDeact {
 	 * Fired for each blog when the plugin is activated.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	private static function single_activate() {
@@ -133,7 +136,7 @@ class Pn_ActDeact {
 	 * Fired for each blog when the plugin is deactivated.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	private static function single_deactivate() {
@@ -141,11 +144,11 @@ class Pn_ActDeact {
 		// Clear the permalinks
 		flush_rewrite_rules();
 	}
-	
+
 	//WPBPGen{{#unless system_capability-system}}
 	/**
 	 * Add admin capabilities
-	 * 
+	 *
 	 * @return void
 	 */
 	public static function add_capabilities() {
@@ -212,8 +215,8 @@ class Pn_ActDeact {
 
 	//WPBPGen{{#unless system_upgrade-procedure}}
 	/**
-	 * Upgrade procedure 
-	 * 
+	 * Upgrade procedure
+	 *
 	 * @return void
 	 */
 	public static function upgrade_procedure() {

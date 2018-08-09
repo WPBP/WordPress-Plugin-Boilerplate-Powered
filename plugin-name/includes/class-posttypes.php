@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -13,15 +13,16 @@
 /**
  * This class contain the Post Types and Taxonomy initialize code
  */
-class Pn_PostTypes {
+class Pn_PostTypes extends Pn_Base{
 
 	/**
 	 * Initialize the snippet
 	 */
 	function __construct() {
+        parent::initialize();
 		add_action( 'init', array( $this, 'load_cpts' ) );
 	}
-	
+
 //WPBPGen{{#unless frontend_cpt-search-support}}
 	/**
 	 * Add support for custom CPT on the search box
@@ -29,7 +30,7 @@ class Pn_PostTypes {
 	 * @param object $query Wp_Query.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return object
 	 */
 	public function filter_search( $query ) {
@@ -43,11 +44,11 @@ class Pn_PostTypes {
 		return $query;
 	}
 //{{/unless}}
-	
+
 //WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	/**
 	 * Load CPT and Taxonomies on WordPress
-	 * 
+	 *
 	 * @return void
 	 */
 	public function load_cpts() {

@@ -14,10 +14,18 @@
     /**
     * This class contain the WP CLI support
     */
-    class Pn_WPCli {
+    class Pn_WPCli extends Pn_Base {
+
+        public function initialize() {
+            if ( !apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {
+                return;
+            }
+
+            parent::initialize();
+		}
 
         /**
-        * Initialize the snippet
+        * Initialize the commands
         *
         * @return void
         */

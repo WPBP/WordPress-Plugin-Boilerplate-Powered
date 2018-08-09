@@ -66,19 +66,12 @@
     "lucatume/function-mocker": "~1.0"
   },
   "minimum-stability": "dev",
+  "autoload": {
+        "files": ["vendor/cmb2/init.php", "vendor/cmb2-grid/Cmb2GridPluginLoad.php", "vendor/posts-to-posts/posts-to-posts.php"]
+  },
   "extra": {
     "installer-paths": {
       "vendor/{$name}/": ["webdevstudios/cmb2", "origgami/cmb2-grid", "wpackagist-plugin/posts-to-posts"]
     }
-  },
-  "autoload": {
-		"files": [
-			"admin/*.php",
-			"ajax/*.php",
-			"cli/*.php",
-			"includes/*.php",
-			"integrations/*.php",
-			"public/*.php"
-		]
   }
 }

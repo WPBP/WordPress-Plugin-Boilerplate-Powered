@@ -92,8 +92,7 @@ function pn_fs() {
  * @return void
  */
 function pn_auto_load( $class ) {
-	static $classes = null;
-	if ( $classes === null ) {
+	if ( false === strpos($class, 'Pn') ) {
 		$folders = array(
 			"admin",
 			"ajax",
@@ -109,14 +108,7 @@ function pn_auto_load( $class ) {
                     continue;
                 }
 
-                $class_name = ucwords(basename($file,'.php'), '-');
-                $class_name = str_replace('Class', 'Pn', $class_name );
-                $class_name = str_replace('-', '_', $class_name);
-                // TODO: check classname
-                error_log((print_r($class_name, true)));
-                if ( ! class_exists( $class_name )  ) {
-                    //require_once $file;
-                }
+                require_once $file;
             }
         }
 	}

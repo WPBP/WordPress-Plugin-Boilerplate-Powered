@@ -30,6 +30,7 @@ class Pn_Initialize {
         $classes = array();
         $classes[] = 'Pn_PostTypes';
         $classes[] = 'Pn_CMB';
+        $classes[] = 'Pn_Cron';
         $classes[] = 'Pn_FakePage';
         $classes[] = 'Pn_P2P';
         $classes[] = 'Pn_Template';

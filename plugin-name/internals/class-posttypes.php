@@ -21,6 +21,37 @@ class Pn_PostTypes extends Pn_Base{
 	function initialize() {
         parent::initialize();
 		add_action( 'init', array( $this, 'load_cpts' ) );
+//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
+		/*
+		 * Load CPT_Columns
+		 *
+		 * Check the file for example
+		 */
+		$post_columns = new CPT_columns( 'demo' );
+		$post_columns->add_column( 'cmb2_field', array(
+			'label' => __( 'CMB2 Field' ),
+			'type' => 'post_meta',
+			'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
+			'orderby' => 'meta_value',
+			'sortable' => true,
+			'prefix' => '<b>',
+			'suffix' => '</b>',
+			'def' => 'Not defined', // Default value in case post meta not found
+			'order' => '-1'
+				)
+		);
+//{{/unless}}
+//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
+        // Activity Dashboard widget for your cpts
+		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
+//{{/unless}}
+//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+		// Add bubble notification for cpt pending
+		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
+//{{/unless}}
+//WPBPGen{{#unless frontend_cpt-search-support}}
+		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
+//{{/unless}}
 	}
 
 //WPBPGen{{#unless frontend_cpt-search-support}}
@@ -102,9 +133,6 @@ class Pn_PostTypes extends Pn_Base{
 			'capability_type' => array( 'demo', 'demoes' ),
 				) );
 //{{/unless}}
-//WPBPGen{{#unless frontend_cpt-search-support}}
-		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
-//{{/unless}}
 //WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$tax->add_taxonomy( 'demo-section', array(
 			'hierarchical' => false,
@@ -141,5 +169,92 @@ class Pn_PostTypes extends Pn_Base{
 //{{/unless}}
 	}
 //{{/unless}}
+
+	//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
+	/**
+	 * Add the recents post type in the activity widget<br>
+	 * NOTE: add in $post_types your cpts
+	 *
+	 * @param array $query_args The content of the widget.
+	 *
+	 * @since {{plugin_version}}
+	 *
+	 * @return array
+	 */
+	function cpt_activity_dashboard_support( $query_args ) {
+		if ( !is_array( $query_args[ 'post_type' ] ) ) {
+			// Set default post type
+			$query_args[ 'post_type' ] = array( 'page' );
+		}
+		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], array( 'demo' ) );
+		return $query_args;
+	}
+
+	//{{/unless}}
+	//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+	/**
+	 * Bubble Notification for pending cpt<br>
+	 * NOTE: add in $post_types your cpts<br>
+	 *
+	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 *
+	 * @since {{plugin_version}}
+	 *
+	 * @return void
+	 */
+	function pending_cpt_bubble() {
+		global $menu;
+
+		$post_types = array( 'demo' );
+		foreach ( $post_types as $type ) {
+			if ( !post_type_exists( $type ) ) {
+				continue;
+			}
+			// Count posts
+			$cpt_count = wp_count_posts( $type );
+
+			if ( $cpt_count->pending ) {
+				// Menu link suffix, Post is different from the rest
+				$suffix = ( 'post' === $type ) ? '' : '?post_type=' . $type;
+
+				// Locate the key of
+				$key = self::recursive_array_search_php( 'edit.php' . $suffix, $menu );
+
+				// Not found, just in case
+				if ( !$key ) {
+					return;
+				}
+
+				// Modify menu item
+				$menu[ $key ][ 0 ] .= sprintf(
+						'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
+				);
+			}
+		}
+	}
+
+	/**
+	 * Required for the bubble notification<br>
+	 *
+	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 *
+	 *
+	 * @param array $needle   First parameter.
+	 * @param array $haystack Second parameter.
+	 *
+	 * @since {{plugin_version}}
+	 *
+	 * @return mixed
+	 */
+	private function recursive_array_search_php( $needle, $haystack ) {
+		foreach ( $haystack as $key => $value ) {
+			$current_key = $key;
+			if ( $needle === $value OR ( is_array( $value ) && self::recursive_array_search_php( $needle, $value ) !== false) ) {
+				return $current_key;
+			}
+		}
+		return false;
+	}
+
 
 }

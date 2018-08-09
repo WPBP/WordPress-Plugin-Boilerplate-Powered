@@ -11,7 +11,6 @@
     "wpbp/cpt_columns": "1.0.1",
     "wpbp/requirements": "1.0.0",
     "wpbp/language": "1.0.0",
-    "wpbp/backbone-modal-view": "1.0.2",
     "webdevstudios/cmb2": "2.3.0",
     "kevinlangleyjr/wp-contextual-help": "dev-master",
     "nathanielks/wp-admin-notice": "dev-master",
@@ -23,7 +22,6 @@
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
     "yoast/i18n-module": "3.0.0",
-    "yoast/whip": "1.1.0",
     "miguelpeixe/wp_query_multisite": "*"
   },
   "repositories": [

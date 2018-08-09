@@ -13,7 +13,7 @@
 /**
  * This class contain the Enqueue stuff for the frontend
  */
-class Pn_Enqueue {
+class Pn_Enqueue extends Pn_Base {
 
 	/**
 	 * Initialize the class
@@ -22,6 +22,8 @@ class Pn_Enqueue {
 		if ( !apply_filters( 'plugin_name_pn_enqueue_initialize', true ) ) {
 			return;
 		}
+		parent:initialize();
+		error_log(print_r($this->settings, true));
 
 //WPBPGen{{#if public-assets_css}}
 		// Load public-facing style sheet and JavaScript.

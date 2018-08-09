@@ -50,8 +50,8 @@ class Pn_CMB extends Pn_Base {
 					'icon' => 'dashicons-admin-site',
 					'title' => 'Tab 1',
 					'fields' => array(
-						$prefix . PN_TEXTDOMAIN . '_text',
-						$prefix . PN_TEXTDOMAIN . '_text2'
+						PN_TEXTDOMAIN . '_text',
+						PN_TEXTDOMAIN . '_text2'
 					),
 				),
 				array(
@@ -59,8 +59,8 @@ class Pn_CMB extends Pn_Base {
 					'icon' => 'dashicons-align-left',
 					'title' => 'Tab 2',
 					'fields' => array(
-						$prefix . PN_TEXTDOMAIN . '_textsmall',
-						$prefix . PN_TEXTDOMAIN . '_textsmall2'
+                        PN_TEXTDOMAIN . '_textsmall',
+						PN_TEXTDOMAIN . '_textsmall2'
 					),
 				),
 			)

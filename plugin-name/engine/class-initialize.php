@@ -34,8 +34,9 @@ class Pn_Initialize {
         $classes[] = 'Pn_P2P';
         $classes[] = 'Pn_Template';
         $classes[] = 'Pn_Widgets';
+        $classes[] = 'Pn_Rest';
 
-		if ( defined( 'WP_CLI' ) && WP_CLI ) {
+		if ( $this->is_request( 'cli' ) ) {
             $classes[] = 'Pn_Cli';
 		}
 
@@ -74,6 +75,8 @@ class Pn_Initialize {
 				return defined( 'DOING_CRON' );
 			case 'frontend':
 				return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' ) && ! defined( 'REST_REQUEST' );
+            case 'cli':
+				return defined( 'WP_CLI' ) && WP_CLI;
 		}
 	}
 

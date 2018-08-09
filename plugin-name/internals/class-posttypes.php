@@ -97,6 +97,8 @@ class Pn_PostTypes extends Pn_Base{
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
 			'plural' => __( 'Demos', PN_TEXTDOMAIN ),
 			'slug' => 'demo',
+			'show_in_rest'    => true,
+			'rest_controller_class' => 'WP_REST_Posts_Controller',
 			'capability_type' => array( 'demo', 'demoes' ),
 				) );
 //{{/unless}}
@@ -126,6 +128,7 @@ class Pn_PostTypes extends Pn_Base{
 			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
 			'plural' => __( 'Demo Categories', PN_TEXTDOMAIN ),
 			'slug' => 'demo-cat',
+			'show_in_rest'    => true,
 			//WPBPGen{{#unless system_capability-system}}
 			'capabilities' => array(
 				'manage_terms' => 'manage_demoes',

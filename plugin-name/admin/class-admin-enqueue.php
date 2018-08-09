@@ -13,7 +13,7 @@
 /**
  * This class contain the Enqueue stuff for the backend
  */
-class Pn_Enqueue_Admin extends Pn_Admin_Base {
+class Pn_Admin_Enqueue extends Pn_Admin_Base {
 
 	//WPBPGen{{#if admin-assets_admin-page}}
 	/**
@@ -166,8 +166,3 @@ class Pn_Enqueue_Admin extends Pn_Admin_Base {
 	//{{/if}}
 
 }
-
-$pn_enqueue_admin = new Pn_Enqueue_Admin();
-$pn_enqueue_admin->initialize();
-
-do_action( 'plugin_name_pn_enqueue_admin_instance', $pn_enqueue_admin );

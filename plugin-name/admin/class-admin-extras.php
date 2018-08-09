@@ -13,7 +13,7 @@
 /**
  * This class contain all the snippet or extra that improve the experience on the backend
  */
-class Pn_Extras_Admin extends Pn_Admin_Base {
+class Pn_Admin_Extras extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the snippet
@@ -280,8 +280,3 @@ class Pn_Extras_Admin extends Pn_Admin_Base {
 
 	//{{/unless}}
 }
-
-$pn_extras_admin = new Pn_Extras_Admin();
-$pn_extras_admin->initialize();
-
-do_action( 'plugin_name_pn_extras_admin_instance', $pn_extras_admin );

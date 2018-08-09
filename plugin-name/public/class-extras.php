@@ -42,8 +42,3 @@ class Pn_Extras extends Pn_Base {
 
 	//{{/unless}}
 }
-
-$pn_extras = new Pn_Extras();
-$pn_extras->initialize();
-
-do_action( 'plugin_name_pn_extras_instance', $pn_extras );

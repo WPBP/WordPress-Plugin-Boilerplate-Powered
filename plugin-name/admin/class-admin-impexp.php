@@ -13,13 +13,13 @@
 /**
  * Provide Import and Export of the settings of the plugin
  */
-class Pn_ImpExp extends Pn_Admin_Base {
+class Pn_Admin_ImpExp extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
 	 * settings page and menu.
 	 */
-	public function __construct() {
+	public function initialize() {
 		if ( !parent::initialize() ) {
             return;
 		}
@@ -109,5 +109,3 @@ class Pn_ImpExp extends Pn_Admin_Base {
 	}
 
 }
-
-new Pn_ImpExp();

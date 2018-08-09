@@ -13,14 +13,14 @@
 /**
  * This class contain the activate and deactive method and relates.
  */
-class Pn_ActDeact extends Pn_Admin_Base {
+class Pn_Admin_ActDeact extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the Act/Deact
 	 *
 	 * @return void
 	 */
-	function __construct() {
+	function initialize() {
 		if ( !parent::initialize() ) {
             return;
 		}
@@ -232,5 +232,3 @@ class Pn_ActDeact extends Pn_Admin_Base {
 	//{{/unless}}
 
 }
-
-new Pn_ActDeact();

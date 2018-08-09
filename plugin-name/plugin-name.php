@@ -23,6 +23,7 @@
  * License:           {{author_license}}
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
+ * Requires PHP:      5.3
  * WordPress-Plugin-Boilerplate-Powered: v2.3.0
  */
 // If this file is called directly, abort.
@@ -84,37 +85,4 @@ function pn_fs() {
 // pn_fs();
 //{{/unless}}
 
-/**
- * Auto load our class files
- *
- * @param string $class Class name.
- *
- * @return void
- */
-function pn_auto_load( $class ) {
-	if ( false === strpos($class, 'Pn') ) {
-		$folders = array(
-			"admin",
-			"ajax",
-			"cli",
-			"includes",
-			"integrations",
-			"public"
-		);
-		foreach($folders as $folder) {
-            $files = glob( PN_PLUGIN_ROOT . $folder . '/*.{php}', GLOB_BRACE);
-            foreach($files as $file) {
-                if( false !== strpos($file, 'index.php') ) {
-                    continue;
-                }
-
-                require_once $file;
-            }
-        }
-	}
-
-}
-
-if ( function_exists( 'spl_autoload_register' ) ) {
-	spl_autoload_register( 'pn_auto_load' );
-}
+new Pn_Autoloader();

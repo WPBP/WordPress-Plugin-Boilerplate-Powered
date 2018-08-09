@@ -79,8 +79,3 @@ class Pn_Enqueue extends Pn_Base {
 	//{{/if}}
 
 }
-
-$pn_enqueue = new Pn_Enqueue();
-$pn_enqueue->initialize();
-
-do_action( 'plugin_name_pn_enqueue_instance', $pn_enqueue );

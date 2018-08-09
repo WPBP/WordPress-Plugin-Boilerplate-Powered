@@ -19,8 +19,7 @@ class Pn_Autoloader {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		spl_autoload_register( array( $this, '__autoload' ) );
-		add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );
+		//spl_autoload_register( array( $this, '__autoload' ) );
 	}
 
     /**

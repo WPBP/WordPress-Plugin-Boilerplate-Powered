@@ -18,7 +18,7 @@ class Pn_PostTypes extends Pn_Base{
 	/**
 	 * Initialize the snippet
 	 */
-	function __construct() {
+	function initialize() {
         parent::initialize();
 		add_action( 'init', array( $this, 'load_cpts' ) );
 	}
@@ -140,5 +140,3 @@ class Pn_PostTypes extends Pn_Base{
 //{{/unless}}
 
 }
-
-new Pn_PostTypes();

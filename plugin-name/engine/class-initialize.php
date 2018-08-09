@@ -23,12 +23,14 @@ class Pn_Initialize {
 
 	/**
 	 * The Constructor that load the entry classes
+	 *
+	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
         $classes = array();
-        new Pn_PostTypes();
+        $classes[] = 'Pn_PostTypes';
         $classes[] = 'Pn_CMB';
-        $classes[] = 'Pn_Fakepage';
+        $classes[] = 'Pn_FakePage';
         $classes[] = 'Pn_P2P';
         $classes[] = 'Pn_Template';
         $classes[] = 'Pn_Widgets';
@@ -56,6 +58,8 @@ class Pn_Initialize {
 
     /**
 	 * What type of request is this?
+	 *
+	 * @since {{plugin_version}}
 	 *
 	 * @param  string $type admin, ajax, cron or frontend.
 	 * @return bool

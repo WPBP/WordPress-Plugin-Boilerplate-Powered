@@ -53,7 +53,7 @@ add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 
 require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 
-require_once( PN_PLUGIN_ROOT . 'includes/functions.php' );
+require_once( PN_PLUGIN_ROOT . 'internals/functions.php' );
 
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**
@@ -87,4 +87,4 @@ function pn_fs() {
 // pn_fs();
 //{{/unless}}
 
-new Pn_Autoloader();
+add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );

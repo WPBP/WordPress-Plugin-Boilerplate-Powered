@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -13,17 +13,15 @@
 /**
  * All the WP pointers.
  */
-class Pn_Pointers {
+class Pn_Pointers extends Pn_base {
 
 	/**
 	 * Initialize the Pointers.
 	 *
 	 * @since {{plugin_version}}
 	 */
-	public function __construct() {
-		if ( !apply_filters( 'plugin_name_pn_pointers_initialize', true ) ) {
-			return;
-		}
+	public function initialize() {
+        parent::initialize();
 		new PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
 		add_filter( PN_TEXTDOMAIN . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}

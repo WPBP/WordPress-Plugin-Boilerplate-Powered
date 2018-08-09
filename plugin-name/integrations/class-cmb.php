@@ -13,14 +13,15 @@
 /**
  * All the CMB related code.
  */
-class Pn_CMB {
+class Pn_CMB extends Pn_Base {
 
 	/**
 	 * Initialize CMB2.
 	 *
 	 * @since {{plugin_version}}
 	 */
-	public function __construct() {
+	public function initialize() {
+        parent::initialize();
 		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}
 
@@ -102,5 +103,3 @@ class Pn_CMB {
 	}
 
 }
-
-new Pn_CMB();

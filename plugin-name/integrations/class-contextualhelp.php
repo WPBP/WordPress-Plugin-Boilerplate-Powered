@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -18,10 +18,7 @@ class Pn_ContextualHelp {
     /**
      * Initialize the Contextual Help
      */
-    function __construct() {
-		if ( !apply_filters( 'plugin_name_pn_contextualhelp_initialize', true ) ) {
-			return;
-		}
+    function initialize() {
         add_filter( 'wp_contextual_help_docs_dir', array( $this, 'help_docs_dir' ) );
         add_filter( 'wp_contextual_help_docs_url', array( $this, 'help_docs_url' ) );
         add_action( 'init', array( $this, 'contextual_help' ) );
@@ -29,9 +26,9 @@ class Pn_ContextualHelp {
 
     /**
      * Filter for change the folder of Contextual Help
-     * 
+     *
      * @param string $paths The path.
-	 * 
+	 *
      * @since {{plugin_version}}
      *
      * @return string The path.
@@ -43,9 +40,9 @@ class Pn_ContextualHelp {
 
     /**
      * Filter for change the folder image of Contextual Help
-     * 
+     *
      * @param string $paths The path.
-	 * 
+	 *
      * @since {{plugin_version}}
      *
      * @return string the path
@@ -58,9 +55,9 @@ class Pn_ContextualHelp {
     /**
      * Contextual Help, docs in /help-docs folter
      * Documentation https://github.com/kevinlangleyjr/wp-contextual-help
-     * 
-     * @since {{plugin_version}} 
-	 * 
+     *
+     * @since {{plugin_version}}
+	 *
      * @return void
      */
     public function contextual_help() {
@@ -83,5 +80,3 @@ class Pn_ContextualHelp {
     }
 
 }
-
-new Pn_ContextualHelp();

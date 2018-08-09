@@ -25,13 +25,20 @@ class Pn_Initialize {
 	 * The Constructor that load the entry classes
 	 */
 	public function __construct() {
-        new Pn_PostTypes();
         $classes = array();
+        new Pn_PostTypes();
+        $classes[] = 'Pn_CMB';
+        $classes[] = 'Pn_Fakepage';
+        $classes[] = 'Pn_P2P';
+        $classes[] = 'Pn_Template';
+
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
             $classes[] = 'Pn_Cli';
 		}
 
 		if ( $this->is_request( 'admin' ) ) {
+            $classes[] = 'Pn_Pointers';
+            $classes[] = 'Pn_ContextualHelp';
             $classes[] = 'Pn_Admin_ActDeact';
             $classes[] = 'Pn_Admin_Enqueue';
             $classes[] = 'Pn_Admin_Extras';

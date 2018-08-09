@@ -19,9 +19,6 @@ class Pn_Enqueue extends Pn_Base {
 	 * Initialize the class
 	 */
 	public function initialize() {
-		if ( !apply_filters( 'plugin_name_pn_enqueue_initialize', true ) ) {
-			return;
-		}
 		parent::initialize();
 
 //WPBPGen{{#if public-assets_css}}

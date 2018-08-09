@@ -13,12 +13,15 @@
 /**
  * This class contain the Posts 2 Posts code
  */
-class Pn_P2P {
+class Pn_P2P extends Pn_Base {
 
 	/**
 	 * Initialize the snippet
+	 *
+	 * @since {{plugin_version}}
 	 */
-	function __construct() {
+	function initialize() {
+        parent::initialize();
 		add_action( 'p2p_init', array( $this, 'my_connection_types' ) );
 	}
 
@@ -38,5 +41,3 @@ class Pn_P2P {
 	}
 
 }
-
-new Pn_P2P();

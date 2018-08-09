@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -13,13 +13,16 @@
 /**
  * Provide Import and Export of the settings of the plugin
  */
-class Pn_ImpExp {
+class Pn_ImpExp extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
 	 * settings page and menu.
 	 */
 	public function __construct() {
+		if ( !parent::initialize() ) {
+            return;
+		}
 		// Add the export settings method
 		add_action( 'admin_init', array( $this, 'settings_export' ) );
 		// Add the import settings method
@@ -28,9 +31,9 @@ class Pn_ImpExp {
 
 	/**
 	 * Process a settings export from config
-	 * 
+	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function settings_export() {
@@ -65,9 +68,9 @@ class Pn_ImpExp {
 
 	/**
 	 * Process a settings import from a json file
-	 * 
+	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	public function settings_import() {

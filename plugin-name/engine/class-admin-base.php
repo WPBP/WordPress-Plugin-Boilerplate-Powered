@@ -20,8 +20,10 @@ class Pn_Admin_Base extends Pn_Base {
 	 */
 	function initialize() {
         if ( is_admin() ) {
-            parent::initialize();
+            return parent::initialize();
         }
+
+        return;
 	}
 
 }

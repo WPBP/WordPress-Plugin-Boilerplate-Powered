@@ -13,7 +13,7 @@
 /**
  * This class contain the Enqueue stuff for the backend
  */
-class Pn_Enqueue_Admin {
+class Pn_Enqueue_Admin extends Pn_Admin_Base {
 
 	//WPBPGen{{#if admin-assets_admin-page}}
 	/**
@@ -30,6 +30,9 @@ class Pn_Enqueue_Admin {
 	public function initialize() {
 		if ( !apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {
 			return;
+		}
+		if ( !parent::initialize() ) {
+            return;
 		}
 //WPBPGen{{#if admin-assets_admin-page}}
 		// Add the options page and menu item.

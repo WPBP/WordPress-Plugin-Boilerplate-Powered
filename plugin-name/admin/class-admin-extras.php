@@ -2,7 +2,7 @@
 
 /**
  * Plugin_name
- * 
+ *
  * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -13,12 +13,15 @@
 /**
  * This class contain all the snippet or extra that improve the experience on the backend
  */
-class Pn_Extras_Admin {
+class Pn_Extras_Admin extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the snippet
 	 */
 	function initialize() {
+		if ( !parent::initialize() ) {
+            return;
+		}
 //WPBPGen{{#unless libraries_wpbp__debug}}
 		/*
 		 * Debug mode
@@ -29,7 +32,7 @@ class Pn_Extras_Admin {
 //WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend
-		 * 
+		 *
 		 * First parameter the HTML, the second is the css class
 		 */
 		new WP_Admin_Notice( __( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
@@ -56,7 +59,7 @@ class Pn_Extras_Admin {
 //{{/unless}}
 //WPBPGen{{#unless libraries_wpbp__cronplus}}
 		/*
-		 * Load CronPlus 
+		 * Load CronPlus
 		 */
 		$args = array(
 			'recurrence' => 'hourly',
@@ -72,7 +75,7 @@ class Pn_Extras_Admin {
 //WPBPGen{{#unless libraries_wpbp__cpt_columns}}
 		/*
 		 * Load CPT_Columns
-		 * 
+		 *
 		 * Check the file for example
 		 */
 		$post_columns = new CPT_columns( 'demo' );
@@ -129,11 +132,11 @@ class Pn_Extras_Admin {
 	/**
 	 * Add the recents post type in the activity widget<br>
 	 * NOTE: add in $post_types your cpts
-	 * 
+	 *
 	 * @param array $query_args The content of the widget.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return array
 	 */
 	function cpt_activity_dashboard_support( $query_args ) {
@@ -154,7 +157,7 @@ class Pn_Extras_Admin {
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return void
 	 */
 	function pending_cpt_bubble() {
@@ -172,10 +175,10 @@ class Pn_Extras_Admin {
 				// Menu link suffix, Post is different from the rest
 				$suffix = ( 'post' === $type ) ? '' : '?post_type=' . $type;
 
-				// Locate the key of 
+				// Locate the key of
 				$key = self::recursive_array_search_php( 'edit.php' . $suffix, $menu );
 
-				// Not found, just in case 
+				// Not found, just in case
 				if ( !$key ) {
 					return;
 				}
@@ -193,12 +196,12 @@ class Pn_Extras_Admin {
 	 *
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
-	 * 
+	 *
 	 * @param array $needle   First parameter.
 	 * @param array $haystack Second parameter.
 	 *
 	 * @since {{plugin_version}}
-	 * 
+	 *
 	 * @return mixed
 	 */
 	private function recursive_array_search_php( $needle, $haystack ) {
@@ -215,7 +218,7 @@ class Pn_Extras_Admin {
 	//WPBPGen{{#unless system_transient-example}}
 	/**
 	 * This method contain an example of code for caching a transient with an external request and parse the results.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function transient_caching_example() {
@@ -224,7 +227,7 @@ class Pn_Extras_Admin {
 		// Let's see if we have a cached version
 		$json_output = get_transient( $key );
 		if ( $json_output === false || empty( $json_output ) ) {
-			// If there's no cached version we ask 
+			// If there's no cached version we ask
 			$response = wp_remote_get( "http://www.siteapi.org/api/v1/projects?page=1" );
 			if ( is_wp_error( $response ) ) {
 				// In case API is down we return the last successful count
@@ -252,9 +255,9 @@ class Pn_Extras_Admin {
 	//WPBPGen{{#unless system_push-notification}}
 	/**
 	 * Send a Push notification on the users browser using the Web Push plugin for WordPress
-	 * 
+	 *
 	 * PN_Extras->web_push_notification( 'Title', 'Content', 'http://domain.tld');
-	 * 
+	 *
 	 * @param string $title   Title.
 	 * @param string $content Content.
 	 * @param string $url     URL.

@@ -14,12 +14,14 @@
  * This class is the base skeleton of the plugin
  */
 class Pn_Base {
+    var $settings = array();
 
 	/**
 	 * Initialize the class
 	 */
 	function initialize() {
         $this->settings = get_option( PN_TEXTDOMAIN . '-settings' );
+        return true;
 	}
 
 }

@@ -67,6 +67,7 @@
   },
   "minimum-stability": "dev",
   "autoload": {
+        "classmap": ["engine/"],
         "files": ["vendor/cmb2/init.php", "vendor/cmb2-grid/Cmb2GridPluginLoad.php", "vendor/posts-to-posts/posts-to-posts.php"]
   },
   "extra": {

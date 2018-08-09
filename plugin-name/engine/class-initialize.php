@@ -44,6 +44,7 @@ class Pn_Initialize {
             $classes[] = 'Pn_Pointers';
             $classes[] = 'Pn_ContextualHelp';
             $classes[] = 'Pn_Admin_ActDeact';
+            $classes[] = 'Pn_Admin_Settings_Page';
             $classes[] = 'Pn_Admin_Enqueue';
             $classes[] = 'Pn_Admin_Extras';
             $classes[] = 'Pn_Admin_ImpExp';

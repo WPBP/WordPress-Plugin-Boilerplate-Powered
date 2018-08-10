@@ -35,17 +35,17 @@ class Pn_Pointers extends Pn_base {
 	 *
 	 * @return mixed
 	 */
-	function custom_initial_pointers( $pointers, $prefix ) {
+	public function custom_initial_pointers( $pointers, $prefix ) {
 		return array_merge( $pointers, array(
 			$prefix . '_contextual_tab' => array(
-				'selector' => '#contextual-help-link',
-				'title' => __( 'Boilerplate Help', PN_TEXTDOMAIN ),
-				'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
-				'edge' => 'top',
-				'align' => 'right',
+				'selector'   => '#contextual-help-link',
+				'title'      => __( 'Boilerplate Help', PN_TEXTDOMAIN ),
+				'text'       => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
+				'edge'       => 'top',
+				'align'      => 'right',
 				'icon_class' => 'dashicons-welcome-learn-more',
-			)
-				) );
+			),
+		) );
 	}
 
 }

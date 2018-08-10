@@ -43,15 +43,15 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 		 * Review Me notice
 		 */
 		new WP_Review_Me(
-             array(
-			'days_after' => 15,
-			'type'       => 'plugin',
-			'slug'       => PN_TEXTDOMAIN,
-			'rating'     => 5,
-			'message'    => __( 'Review me!', PN_TEXTDOMAIN ),
-			'link_label' => __( 'Click here to review', PN_TEXTDOMAIN ),
-		)
-            );
+			array(
+				'days_after' => 15,
+				'type'       => 'plugin',
+				'slug'       => PN_TEXTDOMAIN,
+				'rating'     => 5,
+				'message'    => __( 'Review me!', PN_TEXTDOMAIN ),
+				'link_label' => __( 'Click here to review', PN_TEXTDOMAIN ),
+			)
+		);
 		// {{/unless}}
 		// WPBPGen{{#unless libraries_yoast__i18n-module}}
 		new Yoast_I18n_WordPressOrg_v3(

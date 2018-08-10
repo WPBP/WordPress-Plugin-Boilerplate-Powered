@@ -16,16 +16,14 @@
 class Pn_PostTypes extends Pn_Base {
 
 	/**
-	 * Initialize the snippet
+	 * Initialize the custom post types
 	 */
 	public function initialize() {
 		parent::initialize();
 		add_action( 'init', array( $this, 'load_cpts' ) );
 		//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
 		/*
-		 * Load CPT_Columns
-		 *
-		 * Check the file for example
+		 * Custom Columns
 		 */
 		$post_columns = new CPT_columns( 'demo' );
 		$post_columns->add_column( 'cmb2_field', array(
@@ -161,11 +159,11 @@ class Pn_PostTypes extends Pn_Base {
 			),
 			//{{/unless}}
 		), array(
-				// Override the base names used for labels:
+			// Override the base names used for labels:
 			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
 			'plural'   => __( 'Demo Categories', PN_TEXTDOMAIN ),
-			)
-		);
+		)
+	);
 		//{{/unless}}
 	}
 	//{{/unless}}

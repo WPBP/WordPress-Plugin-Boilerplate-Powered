@@ -20,7 +20,7 @@ class Pn_P2P extends Pn_Base {
 	 *
 	 * @since {{plugin_version}}
 	 */
-	function initialize() {
+	public function initialize() {
         parent::initialize();
 		add_action( 'p2p_init', array( $this, 'my_connection_types' ) );
 	}
@@ -33,11 +33,13 @@ class Pn_P2P extends Pn_Base {
 	 * @return void
 	 */
 	public function my_connection_types() {
-		p2p_register_connection_type( array(
+		p2p_register_connection_type(
+             array(
 			'name' => 'demo_to_pages',
 			'from' => 'demo',
-			'to' => 'page'
-		) );
+			'to'   => 'page',
+		)
+            );
 	}
 
 }

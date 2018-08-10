@@ -13,13 +13,13 @@
 /**
  * This class contain the Widget stuff
  */
-class Pn_Widgets {
+class Pn_Widgets extends Pn_Base {
 
 	/**
 	 * Initialize the class
 	 */
 	public function initialize() {
-        include_once( 'widgets/sample.php' );
+		include_once( 'widgets/sample.php' );
 	}
 
 }

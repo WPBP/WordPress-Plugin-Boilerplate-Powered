@@ -18,12 +18,12 @@ class Pn_Admin_Base extends Pn_Base {
 	/**
 	 * Initialize the class
 	 */
-	function initialize() {
+	public function initialize() {
         if ( is_admin() ) {
             return parent::initialize();
         }
 
-        return;
+		return false;
 	}
 
 }

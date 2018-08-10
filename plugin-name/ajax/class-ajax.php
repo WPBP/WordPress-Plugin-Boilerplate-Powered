@@ -2,7 +2,7 @@
 
 /**
  * Plugin_name
- * 
+ *
  * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -31,13 +31,13 @@ class Pn_Ajax {
 
 	/**
 	 * The method to run on ajax
-	 * 
+	 *
 	 * @return void
 	 */
 	public function your_method() {
 		$return = array(
 			'message' => 'Saved',
-			'ID' => 1
+			'ID'      => 1,
 		);
 
 		wp_send_json_success( $return );
@@ -46,7 +46,3 @@ class Pn_Ajax {
 
 }
 
-$pn_ajax = new Pn_Ajax();
-$pn_ajax->initialize();
-
-do_action( 'plugin_name_pn_ajax_instance', $pn_ajax );

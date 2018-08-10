@@ -14,14 +14,18 @@
  * This class is the base skeleton of the plugin
  */
 class Pn_Base {
-    var $settings = array();
+
+	/**
+	 * The settings of the plugin
+	 */
+	public $settings = array();
 
 	/**
 	 * Initialize the class
 	 */
-	function initialize() {
-        $this->settings = pn_get_settings();
-        return true;
+	public function initialize() {
+		$this->settings = pn_get_settings();
+		return true;
 	}
 
 }

@@ -20,18 +20,19 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 	 *
 	 * @return void
 	 */
-	function initialize() {
+	public function initialize() {
 		if ( !parent::initialize() ) {
             return;
 		}
+
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
 		register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'deactivate' ) );
-//WPBPGen{{#unless system_upgrade-procedure}}
+		// WPBPGen{{#unless system_upgrade-procedure}}
 		add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
-//{{/unless}}
+		// {{/unless}}
 	}
 
 	/**
@@ -72,9 +73,11 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 					self::single_activate();
 					restore_current_blog();
 				}
+
 				return;
 			}
 		}
+
 		self::single_activate();
 	}
 
@@ -100,9 +103,11 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 					self::single_deactivate();
 					restore_current_blog();
 				}
+
 				return;
 			}
 		}
+
 		self::single_deactivate();
 	}
 
@@ -114,20 +119,22 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 	 * @return void
 	 */
 	private static function single_activate() {
-//WPBPGen{{#unless libraries_wpbp__requirements}}
+		// WPBPGen{{#unless libraries_wpbp__requirements}}
 		// Requirements Detection System - read the doc/example in the library file
-		new Plugin_Requirements( PN_NAME, PN_TEXTDOMAIN, array(
-			'WP' => new WordPress_Requirement( '4.6.0' )
-				) );
-//{{/unless}}
+		new Plugin_Requirements(
+             PN_NAME, PN_TEXTDOMAIN, array(
+			'WP' => new WordPress_Requirement( '4.6.0' ),
+		)
+            );
+		// {{/unless}}
 		// @TODO: Define activation functionality here
-//WPBPGen{{#unless system_capability-system}}
+		// WPBPGen{{#unless system_capability-system}}
 		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
 		self::add_capabilities();
-//{{/unless}}
-//WPBPGen{{#unless system_upgrade-procedure}}
+		// {{/unless}}
+		// WPBPGen{{#unless system_upgrade-procedure}}
 		self::upgrade_procedure();
-//{{/unless}}
+		// {{/unless}}
 		// Clear the permalinks
 		flush_rewrite_rules();
 	}
@@ -145,7 +152,7 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		flush_rewrite_rules();
 	}
 
-	//WPBPGen{{#unless system_capability-system}}
+	// WPBPGen{{#unless system_capability-system}}
 	/**
 	 * Add admin capabilities
 	 *
@@ -153,7 +160,7 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 	 */
 	public static function add_capabilities() {
 		// Add the capabilites to all the roles
-		$caps = array(
+		$caps  = array(
 			'create_plugins',
 			'read_demo',
 			'read_private_demoes',
@@ -182,6 +189,7 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 				$role->add_cap( $cap );
 			}
 		}
+
 		// Remove capabilities to specific roles
 		$bad_caps = array(
 			'create_demoes',
@@ -199,7 +207,7 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 			'delete_others_demoes',
 			'manage_demoes',
 		);
-		$roles = array(
+		$roles    = array(
 			get_role( 'author' ),
 			get_role( 'contributor' ),
 			get_role( 'subscriber' ),
@@ -211,9 +219,8 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		}
 	}
 
-	//{{/unless}}
-
-	//WPBPGen{{#unless system_upgrade-procedure}}
+	// {{/unless}}
+	// WPBPGen{{#unless system_upgrade-procedure}}
 	/**
 	 * Upgrade procedure
 	 *
@@ -229,6 +236,5 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		}
 	}
 
-	//{{/unless}}
-
+	// {{/unless}}
 }

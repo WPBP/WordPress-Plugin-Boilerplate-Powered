@@ -18,7 +18,7 @@ class Pn_Shortcode extends Pn_Base {
 	/**
 	 * Initialize the snippet
 	 */
-	function initialize() {
+	public function initialize() {
 		parent::initialize();
         add_shortcode( 'foobar', array( $this, 'foobar_func' ) );
 	}
@@ -33,12 +33,14 @@ class Pn_Shortcode extends Pn_Base {
 	 * @return string
 	 */
 	public static function foobar_func( $atts ) {
-		extract( shortcode_atts( array(
-            'foo' => 'something',
-            'bar' => 'something else',
-        ), $atts ) );
+		shortcode_atts(
+             array(
+			'foo' => 'something',
+			'bar' => 'something else',
+		), $atts
+            );
 
-        return "foo = {$foo}";
+		return 'foo = ' . $atts[ 'foo' ];
 	}
 
 }

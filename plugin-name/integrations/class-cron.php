@@ -19,16 +19,16 @@ class Pn_Cron extends Pn_Base {
 	 * Initialize the class
 	 */
 	public function initialize() {
-//WPBPGen{{#unless libraries_wpbp__cronplus}}
+		// WPBPGen{{#unless libraries_wpbp__cronplus}}
 		/*
 		 * Load CronPlus
 		 */
 		$args = array(
-			'recurrence' => 'hourly',
-			'schedule' => 'schedule',
-			'name' => 'cronplusexample',
-			'cb' => array( $this, 'cronplus_example' ),
-			'plugin_root_file' => 'plugin-name.php'
+			'recurrence'       => 'hourly',
+			'schedule'         => 'schedule',
+			'name'             => 'cronplusexample',
+			'cb'               => array( $this, 'cronplus_example' ),
+			'plugin_root_file' => 'plugin-name.php',
 		);
 
 		$cronplus = new CronPlus( $args );
@@ -38,12 +38,19 @@ class Pn_Cron extends Pn_Base {
         $cronplus->clear_schedule_by_hook();
         // Jump the scheduled event
         $cronplus->unschedule_specific_event();
-        //{{/unless}}
+        // {{/unless}}
 	}
 
+	/**
+	 * Cron example
+	 *
+	 * @param integer $id The ID.
+	 *
+	 * @return void
+	 */
 	public function cronplus_example( $id ) {
-        echo $id;
-    }
+		echo esc_html( $id );
+	}
 
 }
 

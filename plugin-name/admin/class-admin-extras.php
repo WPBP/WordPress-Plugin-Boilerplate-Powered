@@ -67,43 +67,4 @@ class Pn_Admin_Extras extends Pn_Admin_Base {
 		);
 //{{/unless}}
 	}
-
-	//{{/unless}}
-	//WPBPGen{{#unless system_transient-example}}
-	/**
-	 * This method contain an example of code for caching a transient with an external request and parse the results.
-	 *
-	 * @return void
-	 */
-	public function transient_caching_example() {
-		$key = 'siteapi_json_transient';
-
-		// Let's see if we have a cached version
-		$json_output = get_transient( $key );
-		if ( $json_output === false || empty( $json_output ) ) {
-			// If there's no cached version we ask
-			$response = wp_remote_get( "http://www.siteapi.org/api/v1/projects?page=1" );
-			if ( is_wp_error( $response ) ) {
-				// In case API is down we return the last successful count
-				return;
-			}
-			// If everything's okay, parse the body and json_decode it
-			$json_output = json_decode( wp_remote_retrieve_body( $response ) );
-
-			// Store the result in a transient, expires after 1 day
-			// Also store it as the last successful using update_option
-			set_transient( $key, $json_output, DAY_IN_SECONDS );
-			update_option( $key, $json_output );
-		}
-
-		echo '<div class="siteapi-bridge-container">';
-		foreach ( $json_output->projects as &$value ) {
-			echo '<div class="siteapi-bridge-single">';
-			// json_output is an object so use -> to call children
-			echo '</div>';
-		}
-		echo '</div>';
-	}
-
-	//{{/unless}}
 }

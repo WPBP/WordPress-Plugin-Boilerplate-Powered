@@ -22,7 +22,8 @@
     "julien731/wp-review-me": "2.0.1",
     "wpackagist-plugin/posts-to-posts": "*",
     "yoast/i18n-module": "3.0.0",
-    "miguelpeixe/wp_query_multisite": "*"
+    "miguelpeixe/wp_query_multisite": "*",
+    "stevegrunwell/wp-cache-remember": "dev-master"
   },
   "repositories": [
     {
@@ -70,7 +71,7 @@
   },
   "extra": {
     "installer-paths": {
-      "vendor/{$name}/": ["webdevstudios/cmb2", "origgami/cmb2-grid", "wpackagist-plugin/posts-to-posts"]
+      "vendor/{$name}/": ["webdevstudios/cmb2", "origgami/cmb2-grid", "wpackagist-plugin/posts-to-posts", "stevegrunwell/wp-cache-remember"]
     }
   }
 }

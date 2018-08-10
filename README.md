@@ -28,7 +28,6 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)
 	* [WPBP/Requirements](https://github.com/WPBP/Requirements)
 	* [WPBP/Language](https://github.com/WPBP/Language)
-	* [WPBP/Backbone-Modal-View](https://github.com/WPBP/Backbone-Modal-View)
 	* [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)
 	* [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)
 	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
@@ -40,8 +39,8 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
 	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
-	* [yoast/whip](https://github.com/yoast/whip)
 	* [miguelpeixe/WP_Query_Multisite](https://github.com/miguelpeixe/WP_Query_Multisite)
+	* [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)
 
 ### Snippet available
 
@@ -55,7 +54,6 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 * Support for CMB in the options page
 * Support for email template/theme with language detection
 * Transient examples with caching
-* Support for [Web Push](https://wordpress.org/plugins/web-push/)
 
 Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!
 Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.

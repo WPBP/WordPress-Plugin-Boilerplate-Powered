@@ -35,7 +35,7 @@ define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
-define( 'PN_PLUGIN_ABSOLUTE',  __FILE__  );
+define( 'PN_PLUGIN_ABSOLUTE',  __FILE__ );
 
 //WPBPGen{{#if language-files}}
 /**
@@ -68,17 +68,17 @@ function pn_fs() {
 
 	if ( !isset( $pn_fs ) ) {
 		$pn_fs = fs_dynamic_init( array(
-			'id' => '',
-			'slug' => 'plugin-name',
-			'public_key' => '',
-			'is_live' => false,
-			'is_premium' => true,
-			'has_addons' => false,
+			'id'             => '',
+			'slug'           => 'plugin-name',
+			'public_key'     => '',
+			'is_live'        => false,
+			'is_premium'     => true,
+			'has_addons'     => false,
 			'has_paid_plans' => true,
-			'menu' => array(
-				'slug' => 'plugin-name'
+			'menu'           => array(
+				'slug' => 'plugin-name',
 			),
-				) );
+		) );
 	}
 
 	return $pn_fs;

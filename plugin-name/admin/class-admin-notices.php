@@ -13,7 +13,7 @@
 /**
  * This class contain all the snippet or extra that improve the experience on the backend
  */
-class Pn_Admin_Extras extends Pn_Admin_Base {
+class Pn_Admin_Notices extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the snippet

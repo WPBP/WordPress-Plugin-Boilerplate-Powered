@@ -38,6 +38,8 @@ class Pn_Initialize {
 		$classes[] = 'Pn_Widgets';
 		$classes[] = 'Pn_Rest';
 		$classes[] = 'Pn_Transient';
+		//TODO: Split debug outside and move back that class
+		$classes[] = 'Pn_Admin_Extras';
 
 		if ( $this->is_request( 'cli' ) ) {
 			$classes[] = 'Pn_Cli';
@@ -49,7 +51,6 @@ class Pn_Initialize {
 			$classes[] = 'Pn_Admin_ActDeact';
 			$classes[] = 'Pn_Admin_Settings_Page';
 			$classes[] = 'Pn_Admin_Enqueue';
-			$classes[] = 'Pn_Admin_Extras';
 			$classes[] = 'Pn_Admin_ImpExp';
 		}
 

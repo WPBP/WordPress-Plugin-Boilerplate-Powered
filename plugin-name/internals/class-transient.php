@@ -20,8 +20,6 @@ class Pn_Transient extends Pn_Base {
 	 */
 	public function initialize() {
 		!parent::initialize();
-
-		$this->print_transient_output();
 	}
 
 	/**

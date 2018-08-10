@@ -29,17 +29,17 @@ class Pn_PostTypes extends Pn_Base {
 		 */
 		$post_columns = new CPT_columns( 'demo' );
 		$post_columns->add_column( 'cmb2_field', array(
-			'label' => __( 'CMB2 Field' ),
-			'type' => 'post_meta',
-			'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
-			'orderby' => 'meta_value',
-			'sortable' => true,
-			'prefix' => '<b>',
-			'suffix' => '</b>',
-			'def' => 'Not defined', // Default value in case post meta not found
-			'order' => '-1'
-		)
-	);
+				'label'    => __( 'CMB2 Field', PN_TEXTDOMAIN ),
+				'type'     => 'post_meta',
+				'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
+				'orderby'  => 'meta_value',
+				'sortable' => true,
+				'prefix'   => '<b>',
+				'suffix'   => '</b>',
+				'def'      => 'Not defined', // Default value in case post meta not found
+				'order'    => '-1',
+			)
+		);
 		//{{/unless}}
 		//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
 		// Activity Dashboard widget for your cpts
@@ -87,18 +87,17 @@ class Pn_PostTypes extends Pn_Base {
 		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
 		$tax = register_extended_post_type( 'demo', array(
-			# Show all posts on the post type archive:
+			// Show all posts on the post type archive:
 			'archive' => array(
 				'nopaging' => true
 			),
-			'slug' => 'demo',
+			'slug'            => 'demo',
 			'show_in_rest'    => true,
-			'rest_controller_class' => 'WP_REST_Posts_Controller',
 			'capability_type' => array( 'demo', 'demoes' ),
-			# Add some custom columns to the admin screen:
+			// Add some custom columns to the admin screen:
 			'admin_cols' => array(
 				'featured_image' => array(
-					'title' => 'Featured Image',
+					'title'          => 'Featured Image',
 					'featured_image' => 'thumbnail'
 				),
 				'title',
@@ -107,7 +106,7 @@ class Pn_PostTypes extends Pn_Base {
 				),
 				//WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
 				'p2p' => array(
-					'title' => 'Connected Posts',
+					'title'      => 'Connected Posts',
 					'connection' => 'demo_to_pages',
 					'link' => 'edit'
 				),
@@ -115,7 +114,7 @@ class Pn_PostTypes extends Pn_Base {
 				'custom_field' => array(
 					'title' => 'By Lib',
 					'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
-					'cap' => 'manage_options',
+					'cap'      => 'manage_options',
 				),
 				'date' => array(
 					'title' => 'Date',
@@ -131,7 +130,7 @@ class Pn_PostTypes extends Pn_Base {
 		), array(
 			# Override the base names used for labels:
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
-			'plural' => __( 'Demos', PN_TEXTDOMAIN ),		) );
+			'plural'   => __( 'Demos', PN_TEXTDOMAIN ),		) );
 		//{{/unless}}
 		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$tax->add_taxonomy( 'demo-section', array(
@@ -140,32 +139,33 @@ class Pn_PostTypes extends Pn_Base {
 		) );
 		// Create Custom Taxonomy https://github.com/johnbillion/extended-taxos
 		register_extended_taxonomy( 'demo-section', 'demo', array(
-			# Use radio buttons in the meta box for this taxonomy on the post editing screen:
-			'meta_box' => 'radio',
-			# Show this taxonomy in the 'At a Glance' dashboard widget:
+			// Use radio buttons in the meta box for this taxonomy on the post editing screen:
+			'meta_box'         => 'radio',
+			// Show this taxonomy in the 'At a Glance' dashboard widget:
 			'dashboard_glance' => true,
-			# Add a custom column to the admin screen:
-			'admin_cols' => array(
+			// Add a custom column to the admin screen:
+			'admin_cols'       => array(
 				'featured_image' => array(
-					'title' => 'Featured Image',
+					'title'          => 'Featured Image',
 					'featured_image' => 'thumbnail'
 				),
 			),
-		), array(
-			# Override the base names used for labels:
-			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
-			'plural' => __( 'Demo Categories', PN_TEXTDOMAIN ),
-			'slug' => 'demo-cat',
-			'show_in_rest'    => true,
+			'slug'             => 'demo-cat',
+			'show_in_rest'     => true,
 			//WPBPGen{{#unless system_capability-system}}
-			'capabilities' => array(
+			'capabilities'     => array(
 				'manage_terms' => 'manage_demoes',
-				'edit_terms' => 'manage_demoes',
+				'edit_terms'   => 'manage_demoes',
 				'delete_terms' => 'manage_demoes',
 				'assign_terms' => 'read_demo',
-			)
+			),
 			//{{/unless}}
-		) );
+		), array(
+				// Override the base names used for labels:
+			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
+			'plural'   => __( 'Demo Categories', PN_TEXTDOMAIN ),
+			)
+		);
 		//{{/unless}}
 	}
 	//{{/unless}}

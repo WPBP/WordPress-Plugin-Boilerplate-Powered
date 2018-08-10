@@ -13,15 +13,15 @@
 /**
  * This class contain the Post Types and Taxonomy initialize code
  */
-class Pn_PostTypes extends Pn_Base{
+class Pn_PostTypes extends Pn_Base {
 
 	/**
 	 * Initialize the snippet
 	 */
-	function initialize() {
-        parent::initialize();
+	public function initialize() {
+		parent::initialize();
 		add_action( 'init', array( $this, 'load_cpts' ) );
-//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
+		//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
 		/*
 		 * Load CPT_Columns
 		 *
@@ -38,23 +38,23 @@ class Pn_PostTypes extends Pn_Base{
 			'suffix' => '</b>',
 			'def' => 'Not defined', // Default value in case post meta not found
 			'order' => '-1'
-				)
-		);
-//{{/unless}}
-//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
-        // Activity Dashboard widget for your cpts
+		)
+	);
+		//{{/unless}}
+		//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
+		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
-//{{/unless}}
-//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+		//{{/unless}}
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending
 		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
-//{{/unless}}
-//WPBPGen{{#unless frontend_cpt-search-support}}
+		//{{/unless}}
+		//WPBPGen{{#unless frontend_cpt-search-support}}
 		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
-//{{/unless}}
+		//{{/unless}}
 	}
 
-//WPBPGen{{#unless frontend_cpt-search-support}}
+	//WPBPGen{{#unless frontend_cpt-search-support}}
 	/**
 	 * Add support for custom CPT on the search box
 	 *
@@ -72,24 +72,29 @@ class Pn_PostTypes extends Pn_Base{
 				$query->set( 'post_type', array_push( $post_types, $this->cpts ) );
 			}
 		}
+
 		return $query;
 	}
-//{{/unless}}
+	//{{/unless}}
 
-//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 	/**
 	 * Load CPT and Taxonomies on WordPress
 	 *
 	 * @return void
 	 */
 	public function load_cpts() {
-//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
 		$tax = register_extended_post_type( 'demo', array(
 			# Show all posts on the post type archive:
 			'archive' => array(
 				'nopaging' => true
 			),
+			'slug' => 'demo',
+			'show_in_rest'    => true,
+			'rest_controller_class' => 'WP_REST_Posts_Controller',
+			'capability_type' => array( 'demo', 'demoes' ),
 			# Add some custom columns to the admin screen:
 			'admin_cols' => array(
 				'featured_image' => array(
@@ -100,13 +105,13 @@ class Pn_PostTypes extends Pn_Base{
 				'genre' => array(
 					'taxonomy' => 'demo-section'
 				),
-//WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
+				//WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
 				'p2p' => array(
 					'title' => 'Connected Posts',
 					'connection' => 'demo_to_pages',
 					'link' => 'edit'
 				),
-//{{/unless}}
+				//{{/unless}}
 				'custom_field' => array(
 					'title' => 'By Lib',
 					'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
@@ -123,17 +128,12 @@ class Pn_PostTypes extends Pn_Base{
 					'taxonomy' => 'demo-section'
 				)
 			)
-				), array(
+		), array(
 			# Override the base names used for labels:
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
-			'plural' => __( 'Demos', PN_TEXTDOMAIN ),
-			'slug' => 'demo',
-			'show_in_rest'    => true,
-			'rest_controller_class' => 'WP_REST_Posts_Controller',
-			'capability_type' => array( 'demo', 'demoes' ),
-				) );
-//{{/unless}}
-//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+			'plural' => __( 'Demos', PN_TEXTDOMAIN ),		) );
+		//{{/unless}}
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		$tax->add_taxonomy( 'demo-section', array(
 			'hierarchical' => false,
 			'show_ui' => false,
@@ -151,7 +151,7 @@ class Pn_PostTypes extends Pn_Base{
 					'featured_image' => 'thumbnail'
 				),
 			),
-				), array(
+		), array(
 			# Override the base names used for labels:
 			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
 			'plural' => __( 'Demo Categories', PN_TEXTDOMAIN ),
@@ -164,11 +164,11 @@ class Pn_PostTypes extends Pn_Base{
 				'delete_terms' => 'manage_demoes',
 				'assign_terms' => 'read_demo',
 			)
-//{{/unless}}
+			//{{/unless}}
 		) );
-//{{/unless}}
+		//{{/unless}}
 	}
-//{{/unless}}
+	//{{/unless}}
 
 	//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
 	/**
@@ -181,11 +181,12 @@ class Pn_PostTypes extends Pn_Base{
 	 *
 	 * @return array
 	 */
-	function cpt_activity_dashboard_support( $query_args ) {
+	public function cpt_activity_dashboard_support( $query_args ) {
 		if ( !is_array( $query_args[ 'post_type' ] ) ) {
 			// Set default post type
 			$query_args[ 'post_type' ] = array( 'page' );
 		}
+
 		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], array( 'demo' ) );
 		return $query_args;
 	}
@@ -202,7 +203,7 @@ class Pn_PostTypes extends Pn_Base{
 	 *
 	 * @return void
 	 */
-	function pending_cpt_bubble() {
+	public function pending_cpt_bubble() {
 		global $menu;
 
 		$post_types = array( 'demo' );
@@ -210,6 +211,7 @@ class Pn_PostTypes extends Pn_Base{
 			if ( !post_type_exists( $type ) ) {
 				continue;
 			}
+
 			// Count posts
 			$cpt_count = wp_count_posts( $type );
 
@@ -227,7 +229,7 @@ class Pn_PostTypes extends Pn_Base{
 
 				// Modify menu item
 				$menu[ $key ][ 0 ] .= sprintf(
-						'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
+					'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>', $cpt_count->pending
 				);
 			}
 		}
@@ -237,7 +239,6 @@ class Pn_PostTypes extends Pn_Base{
 	 * Required for the bubble notification<br>
 	 *
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
-	 *
 	 *
 	 * @param array $needle   First parameter.
 	 * @param array $haystack Second parameter.
@@ -249,12 +250,12 @@ class Pn_PostTypes extends Pn_Base{
 	private function recursive_array_search_php( $needle, $haystack ) {
 		foreach ( $haystack as $key => $value ) {
 			$current_key = $key;
-			if ( $needle === $value OR ( is_array( $value ) && self::recursive_array_search_php( $needle, $value ) !== false) ) {
+			if ( $needle === $value || ( is_array( $value ) && self::recursive_array_search_php( $needle, $value ) !== false ) ) {
 				return $current_key;
 			}
 		}
+
 		return false;
 	}
-
 
 }

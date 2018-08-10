@@ -35,7 +35,7 @@ define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
-define( 'PN_PLUGIN_ABSOLUTE',  __FILE__ );
+define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
 
 //WPBPGen{{#if language-files}}
 /**
@@ -44,8 +44,8 @@ define( 'PN_PLUGIN_ABSOLUTE',  __FILE__ );
  * @return void
  */
 function pn_load_plugin_textdomain() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
-	load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
+    $locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
+    load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
 }
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
@@ -64,24 +64,24 @@ require_once( PN_PLUGIN_ROOT . 'internals/debug.php' );
  * @return object
  */
 function pn_fs() {
-	global $pn_fs;
+    global $pn_fs;
 
-	if ( !isset( $pn_fs ) ) {
-		$pn_fs = fs_dynamic_init( array(
-			'id'             => '',
-			'slug'           => 'plugin-name',
-			'public_key'     => '',
-			'is_live'        => false,
-			'is_premium'     => true,
-			'has_addons'     => false,
-			'has_paid_plans' => true,
-			'menu'           => array(
-				'slug' => 'plugin-name',
-			),
-		) );
-	}
+    if ( !isset( $pn_fs ) ) {
+        $pn_fs = fs_dynamic_init( array(
+            'id'             => '',
+            'slug'           => 'plugin-name',
+            'public_key'     => '',
+            'is_live'        => false,
+            'is_premium'     => true,
+            'has_addons'     => false,
+            'has_paid_plans' => true,
+            'menu'           => array(
+                'slug' => 'plugin-name',
+            ),
+        ) );
+    }
 
-	return $pn_fs;
+    return $pn_fs;
 }
 
 // Init Freemius.

@@ -1,77 +1,103 @@
 {
-  "require": {
-    "php": ">=5.3",
-    "composer/installers": "1.x",
-    "wpbp/pointerplus": "1.0.0",
-    "wpbp/cronplus": "1.0.3",
-    "wpbp/widgets-helper": "1.0.3",
-    "wpbp/fakepage": "1.0.0",
-    "wpbp/template": "1.0.2",
-    "wpbp/debug": "1.1",
-    "wpbp/cpt_columns": "1.0.1",
-    "wpbp/requirements": "1.0.0",
-    "wpbp/language": "1.0.0",
-    "webdevstudios/cmb2": "2.3.0",
-    "kevinlangleyjr/wp-contextual-help": "dev-master",
-    "nathanielks/wp-admin-notice": "dev-master",
-    "origgami/cmb2-grid": "dev-master",
-    "rubengc/cmb2-tabs": "*",
-    "johnbillion/extended-cpts": "4.2",
-    "freemius/wordpress-sdk": "1.2.2.*",
-    "julien731/wp-dismissible-notices-handler": "1.0.0",
-    "julien731/wp-review-me": "2.0.1",
-    "wpackagist-plugin/posts-to-posts": "*",
-    "yoast/i18n-module": "3.0.0",
-    "miguelpeixe/wp_query_multisite": "*",
-    "stevegrunwell/wp-cache-remember": "dev-master"
-  },
-  "repositories": [
-    {
-      "url": "git@github.com:nathanielks/wordpress-admin-notice.git",
-      "type": "git"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "rubengc/cmb2-tabs",
-        "version": "1.0.0",
-        "source": {
-          "url": "https://github.com/rubengc/cmb2-tabs",
-          "type": "git",
-          "reference": "master"
-        }
+   "require":{
+      "php":">=5.3",
+      "composer/installers":"1.x",
+      "wpbp/pointerplus":"1.0.0",
+      "wpbp/cronplus":"1.0.3",
+      "wpbp/widgets-helper":"1.0.3",
+      "wpbp/fakepage":"1.0.0",
+      "wpbp/template":"1.0.2",
+      "wpbp/debug":"1.1",
+      "wpbp/cpt_columns":"1.0.1",
+      "wpbp/requirements":"1.0.0",
+      "wpbp/language":"1.0.0",
+      "webdevstudios/cmb2":"2.3.0",
+      "kevinlangleyjr/wp-contextual-help":"dev-master",
+      "nathanielks/wp-admin-notice":"dev-master",
+      "origgami/cmb2-grid":"dev-master",
+      "rubengc/cmb2-tabs":"*",
+      "johnbillion/extended-cpts":"4.2",
+      "freemius/wordpress-sdk":"1.2.2.*",
+      "julien731/wp-dismissible-notices-handler":"1.0.0",
+      "julien731/wp-review-me":"2.0.1",
+      "wp-posts-to-posts/wp-posts-to-posts":"*",
+      "yoast/i18n-module":"3.0.0",
+      "miguelpeixe/wp_query_multisite":"*",
+      "stevegrunwell/wp-cache-remember":"dev-master"
+   },
+   "repositories":[
+      {
+         "url":"git@github.com:nathanielks/wordpress-admin-notice.git",
+         "type":"git"
+      },
+      {
+         "type":"package",
+         "package":{
+            "name":"wp-posts-to-posts/wp-posts-to-posts",
+            "version":"1.0.0",
+            "source":{
+               "url":"https://github.com/wp-posts-to-posts/wp-posts-to-posts",
+               "type":"git",
+               "reference":"master"
+            }
+         }
+      },
+      {
+         "type":"package",
+         "package":{
+            "name":"rubengc/cmb2-tabs",
+            "version":"1.0.0",
+            "source":{
+               "url":"https://github.com/rubengc/cmb2-tabs",
+               "type":"git",
+               "reference":"master"
+            }
+         }
+      },
+      {
+         "type":"package",
+         "package":{
+            "name":"miguelpeixe/wp_query_multisite",
+            "version":"1.0.0",
+            "source":{
+               "url":"https://github.com/miguelpeixe/wp_query_multisite",
+               "type":"git",
+               "reference":"master"
+            }
+         }
       }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "miguelpeixe/wp_query_multisite",
-        "version": "1.0.0",
-        "source": {
-          "url": "https://github.com/miguelpeixe/wp_query_multisite",
-          "type": "git",
-          "reference": "master"
-        }
+   ],
+   "require-dev":{
+      "lucatume/wp-browser":"2.*",
+      "phpro/grumphp":"^0.14",
+      "lucatume/function-mocker":"~1.0"
+   },
+   "minimum-stability":"dev",
+   "autoload":{
+      "classmap":[
+         "engine/",
+         "admin/",
+         "cli/",
+         "ajax/",
+         "public/",
+         "internals/",
+         "integrations/",
+         "rest/"
+      ],
+      "files":[
+         "vendor/cmb2/init.php",
+         "vendor/cmb2-grid/Cmb2GridPluginLoad.php",
+         "vendor/posts-to-posts/posts-to-posts.php"
+      ]
+   },
+   "extra":{
+      "installer-paths":{
+         "vendor/{$name}/":[
+            "webdevstudios/cmb2",
+            "origgami/cmb2-grid",
+            "posts-to-posts/posts-to-posts",
+            "stevegrunwell/wp-cache-remember"
+         ]
       }
-    },
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
-  "require-dev": {
-    "lucatume/wp-browser": "2.*",
-    "phpro/grumphp": "^0.14",
-    "lucatume/function-mocker": "~1.0"
-  },
-  "minimum-stability": "dev",
-  "autoload": {
-        "classmap": ["engine/", "admin/", "cli/", "ajax/", "public/", "internals/", "integrations/", "rest/"],
-        "files": ["vendor/cmb2/init.php", "vendor/cmb2-grid/Cmb2GridPluginLoad.php", "vendor/posts-to-posts/posts-to-posts.php"]
-  },
-  "extra": {
-    "installer-paths": {
-      "vendor/{$name}/": ["webdevstudios/cmb2", "origgami/cmb2-grid", "wpackagist-plugin/posts-to-posts", "stevegrunwell/wp-cache-remember"]
-    }
-  }
+   }
 }

@@ -23,14 +23,6 @@ class Pn_Admin_Extras extends Pn_Admin_Base {
 			return;
 		}
 
-		// WPBPGen{{#unless libraries_wpbp__debug}}
-		/*
-		 * Debug mode
-		 */
-		$debug = new WPBP_Debug( __( 'WPBP', PN_TEXTDOMAIN ) );
-		$debug->log( __( 'Plugin Loaded', PN_TEXTDOMAIN ) );
-		$debug->qm_log( __( 'Boilerplate loaded inside Query Monitor', 'your-textdomain' ), 'info' );
-		// {{/unless}}
 		// WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend

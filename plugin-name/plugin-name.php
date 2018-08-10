@@ -54,6 +54,7 @@ add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 
 require_once( PN_PLUGIN_ROOT . 'internals/functions.php' );
+require_once( PN_PLUGIN_ROOT . 'internals/debug.php' );
 
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**

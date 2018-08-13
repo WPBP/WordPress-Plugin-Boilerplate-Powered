@@ -2,6 +2,7 @@
    "require":{
       "php":">=5.3",
       "composer/installers":"1.x",
+      "cweagans/composer-patches": "~1.0",
       "wpbp/pointerplus":"1.0.1",
       "wpbp/cronplus":"1.0.5",
       "wpbp/widgets-helper":"1.0.3",
@@ -22,7 +23,7 @@
       "wp-posts-to-posts/wp-posts-to-posts":"*",
       "yoast/i18n-module":"3.0.0",
       "miguelpeixe/wp_query_multisite":"*",
-      "stevegrunwell/wp-cache-remember":"dev-master"
+	  "stevegrunwell/wp-cache-remember":"dev-master"
    },
    "repositories":[
       {
@@ -36,18 +37,6 @@
             "version":"1.0.0",
             "source":{
                "url":"https://github.com/wp-posts-to-posts/wp-posts-to-posts",
-               "type":"git",
-               "reference":"master"
-            }
-         }
-      },
-      {
-         "type":"package",
-         "package":{
-            "name":"rubengc/cmb2-tabs",
-            "version":"1.0.0",
-            "source":{
-               "url":"https://github.com/rubengc/cmb2-tabs",
                "type":"git",
                "reference":"master"
             }
@@ -97,6 +86,11 @@
             "posts-to-posts/posts-to-posts",
             "stevegrunwell/wp-cache-remember"
          ]
-      }
+      },
+      "patches": {
+		 "kevinlangleyjr/wp-contextual-help": {
+			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/kevinlangleyjr/wp-contextual-help/pull/1.patch"
+		}
+	  }
    }
 }

@@ -14,12 +14,11 @@
       "wpbp/language":"1.0.0",
       "kevinlangleyjr/wp-contextual-help":"dev-master",
       "nathanielks/wp-admin-notice":"dev-master",
+      "mte90/wp-dismissible-notices-handler":"1.*",
+      "mte90/wp-review-me":"2.0.1",
       "johnbillion/extended-cpts":"4.2",
       "freemius/wordpress-sdk":"1.2.2.*",
-      "mte90/wp-dismissible-notices-handler":"*",
-      "julien731/wp-review-me":"2.0.1",
       "yoast/i18n-module":"3.0.0",
-      "miguelpeixe/wp_query_multisite":"*",
       "webdevstudios/cmb2":"2.4.",
       "origgami/cmb2-grid":"dev-master",
 	  "stevegrunwell/wp-cache-remember":"dev-master"
@@ -44,10 +43,10 @@
       {
          "type":"package",
          "package":{
-            "name":"miguelpeixe/wp_query_multisite",
-            "version":"1.0.0",
+            "name":"mte90/wp-review-me",
+            "version":"2.0.1",
             "source":{
-               "url":"https://github.com/miguelpeixe/wp_query_multisite",
+               "url":"https://github.com/mte90/wp-review-me",
                "type":"git",
                "reference":"master"
             }
@@ -70,7 +69,8 @@
          "internals/",
          "integrations/",
          "rest/"
-      ]
+      ],
+      "files": ["vendor/mte90/wp-dismissible-notices-handler/handler.php", "vendor/mte90/wp-dismissible-notices-handler/includes/helper-functions.php", "vendor/mte90//wp-review-me/review.php"]
    },
    "extra":{
       "installer-paths":{
@@ -84,7 +84,7 @@
 		"kevinlangleyjr/wp-contextual-help": {
 			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/kevinlangleyjr/wp-contextual-help/pull/1.patch"
 		},
-		"julien731/wp-review-me": {
+		"mte90/wp-review-me": {
 			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/julien731/WP-Review-Me/pull/11.patch"
 		}
 	  }

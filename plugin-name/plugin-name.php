@@ -67,6 +67,7 @@ function pn_fs() {
     global $pn_fs;
 
     if ( !isset( $pn_fs ) ) {
+		require_once( PN_PLUGIN_ROOT . 'vendor/freemius/wordpress-sdk/start.php' );
         $pn_fs = fs_dynamic_init( array(
             'id'             => '',
             'slug'           => 'plugin-name',

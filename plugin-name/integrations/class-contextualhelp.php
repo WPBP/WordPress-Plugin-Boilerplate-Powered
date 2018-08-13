@@ -61,10 +61,6 @@ class Pn_ContextualHelp {
 	 * @return void
 	 */
 	public function contextual_help() {
-		if ( !class_exists( 'WP_Contextual_Help' ) ) {
-			return;
-		}
-
 		// Only display on the pages - post.php and post-new.php, but only on the `demo` post_type
 		WP_Contextual_Help::register_tab(
              'demo-example', __( 'Demo Management', PN_TEXTDOMAIN ), array(

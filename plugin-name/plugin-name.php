@@ -88,4 +88,6 @@ function pn_fs() {
 // pn_fs();
 //{{/unless}}
 
-add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );
+if ( ! wp_installing() ) {
+	add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );
+}

@@ -22,6 +22,10 @@ class Pn_CMB extends Pn_Base {
 	 */
 	public function initialize() {
         parent::initialize();
+		require_once(  PN_PLUGIN_ROOT . 'vendor/cmb2/init.php' );
+		//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
+		require_once(  PN_PLUGIN_ROOT . 'vendor/cmb2-grid/Cmb2GridPluginLoad.php' );
+		//{{/unless}}
 		add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}
 

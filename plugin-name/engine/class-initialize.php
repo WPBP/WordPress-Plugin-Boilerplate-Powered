@@ -33,7 +33,6 @@ class Pn_Initialize {
 		$classes[] = 'Pn_CMB';
 		$classes[] = 'Pn_Cron';
 		$classes[] = 'Pn_FakePage';
-		$classes[] = 'Pn_P2P';
 		$classes[] = 'Pn_Template';
 		$classes[] = 'Pn_Widgets';
 		$classes[] = 'Pn_Rest';

@@ -18,7 +18,6 @@
       "freemius/wordpress-sdk":"1.2.2.*",
       "mte90/wp-dismissible-notices-handler":"*",
       "julien731/wp-review-me":"2.0.1",
-      "wp-posts-to-posts/wp-posts-to-posts":"*",
       "yoast/i18n-module":"3.0.0",
       "miguelpeixe/wp_query_multisite":"*",
       "webdevstudios/cmb2":"2.4.",
@@ -31,16 +30,12 @@
          "type":"git"
       },
       {
-         "url":"git@github.com:mte90/wp-dismissible-notices-handler.git",
-         "type":"git"
-      },
-      {
          "type":"package",
          "package":{
-            "name":"wp-posts-to-posts/wp-posts-to-posts",
-            "version":"1.0.0",
+            "name":"mte90/wp-dismissible-notices-handler",
+            "version":"1.1.0",
             "source":{
-               "url":"https://github.com/wp-posts-to-posts/wp-posts-to-posts",
+               "url":"https://github.com/mte90/wp-dismissible-notices-handler",
                "type":"git",
                "reference":"master"
             }
@@ -75,11 +70,6 @@
          "internals/",
          "integrations/",
          "rest/"
-      ],
-      "files":[
-         "vendor/cmb2/init.php",
-         "vendor/cmb2-grid/Cmb2GridPluginLoad.php",
-         "vendor/posts-to-posts/posts-to-posts.php"
       ]
    },
    "extra":{
@@ -87,13 +77,15 @@
          "vendor/{$name}/":[
             "webdevstudios/cmb2",
             "origgami/cmb2-grid",
-            "posts-to-posts/posts-to-posts",
             "stevegrunwell/wp-cache-remember"
          ]
       },
       "patches": {
 		"kevinlangleyjr/wp-contextual-help": {
 			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/kevinlangleyjr/wp-contextual-help/pull/1.patch"
+		},
+		"julien731/wp-review-me": {
+			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/julien731/WP-Review-Me/pull/11.patch"
 		}
 	  }
    }

@@ -12,22 +12,26 @@
       "wpbp/cpt_columns":"1.0.1",
       "wpbp/requirements":"1.0.0",
       "wpbp/language":"1.0.0",
-      "webdevstudios/cmb2":"2.3.0",
       "kevinlangleyjr/wp-contextual-help":"dev-master",
       "nathanielks/wp-admin-notice":"dev-master",
-      "origgami/cmb2-grid":"dev-master",
       "johnbillion/extended-cpts":"4.2",
       "freemius/wordpress-sdk":"1.2.2.*",
-      "julien731/wp-dismissible-notices-handler":"1.0.0",
+      "mte90/wp-dismissible-notices-handler":"*",
       "julien731/wp-review-me":"2.0.1",
       "wp-posts-to-posts/wp-posts-to-posts":"*",
       "yoast/i18n-module":"3.0.0",
       "miguelpeixe/wp_query_multisite":"*",
+      "webdevstudios/cmb2":"2.4.",
+      "origgami/cmb2-grid":"dev-master",
 	  "stevegrunwell/wp-cache-remember":"dev-master"
    },
    "repositories":[
       {
          "url":"git@github.com:nathanielks/wordpress-admin-notice.git",
+         "type":"git"
+      },
+      {
+         "url":"git@github.com:mte90/wp-dismissible-notices-handler.git",
          "type":"git"
       },
       {
@@ -88,7 +92,7 @@
          ]
       },
       "patches": {
-		 "kevinlangleyjr/wp-contextual-help": {
+		"kevinlangleyjr/wp-contextual-help": {
 			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/kevinlangleyjr/wp-contextual-help/pull/1.patch"
 		}
 	  }

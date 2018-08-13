@@ -37,7 +37,6 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
-	* [wpackagist-plugin/posts-to-posts](https://github.com/scribu/wp-posts-to-posts)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [miguelpeixe/WP_Query_Multisite](https://github.com/miguelpeixe/WP_Query_Multisite)
 	* [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)

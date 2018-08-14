@@ -32,13 +32,11 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)
 	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
 	* [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)
-	* [rubengc/cmb2-tabs](https://github.com/rubengc/cmb2-tabs)
 	* [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)
 	* [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
 	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
 	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
-	* [miguelpeixe/WP_Query_Multisite](https://github.com/miguelpeixe/WP_Query_Multisite)
 	* [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)
 
 ### Snippet available

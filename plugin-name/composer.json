@@ -56,7 +56,9 @@
    "require-dev":{
       "lucatume/wp-browser":"2.*",
       "phpro/grumphp":"^0.14",
-      "lucatume/function-mocker":"~1.0"
+      "codeception/codeception": "2.*",
+      "lucatume/function-mocker":"~1.0",
+      "phpunit/phpunit": "6.*"
    },
    "minimum-stability":"dev",
    "autoload":{

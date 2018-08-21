@@ -4,6 +4,4 @@
 # perform tests in browser using WPBrowser or WPWebDriver modules.
 class_name: AcceptanceTester
 modules:
-    enabled:
-        - WPBrowser
-        - \Helper\Acceptance
+    enabled: [WPWebDriver, \Helper\Acceptance]

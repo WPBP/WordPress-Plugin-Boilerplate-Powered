@@ -16,32 +16,21 @@
 class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 
 	/**
-	 * Slug of the plugin screen.
-	 *
-	 * @var string
-	 */
-	protected $admin_view_page = null;
-
-	// {{/if}}
-	/**
 	 * Initialize the class
 	 */
 	public function initialize() {
 		if ( !parent::initialize() ) {
-            return;
+			return;
 		}
 
-		// WPBPGen{{#if admin-assets_admin-page}}
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
-		// {{/if}}
 	}
 
-	// WPBPGen{{#if admin-assets_admin-page}}
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
@@ -58,14 +47,14 @@ class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 		 * - Change 'manage_options' to the capability you see fit
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 
-		  add_options_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ) );
-		 *
+		 add_options_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ) );
+		*
 		 */
 		/*
 		 * Add a settings page for this plugin to the main menu
 		 *
 		 */
-		add_menu_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
+		add_menu_page( __( 'Plugin Name Settings', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
 
 	/**
@@ -99,5 +88,4 @@ class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 		);
 	}
 
-	// {{/if}}
 }

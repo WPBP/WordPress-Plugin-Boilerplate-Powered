@@ -8,10 +8,14 @@ settings:
     bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
+extensions:
+    enabled:
+      - Codeception\Extension\RunProcess:
+        - java -jar -Dwebdriver.chrome.driver=/opt/selenium/chromedriver /opt/selenium/selenium-server.jar
 modules:
     config:
         WPBrowser:
-            url: 'http://boilerplate.dev'
+            url: 'http://boilerplate.test'
             adminUsername: admin
             adminPassword: password
             adminUrl: /wp-admin
@@ -22,7 +26,7 @@ modules:
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
-            url: 'http://boilerplate.dev'
+            url: 'http://boilerplate.test'
             tablePrefix: wp_
         WPLoader:
             wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
@@ -34,20 +38,23 @@ modules:
             dbCharset: utf8
             dbCollate: ''
             tablePrefix: wp_
-            domain: boilerplate.dev
+            domain: boilerplate.test
             adminEmail: admin@wp.dev
             title: 'WP Tests'
             phpBinary: php
             language: ''
             configFile: 'wp-config-test.php'
-            plugins: ["WordPress-Plugin-Boilerplate-Powered/WordPress-Plugin-Boilerplate-Powered.php"]
-            activatePlugins: ["WordPress-Plugin-Boilerplate-Powered/WordPress-Plugin-Boilerplate-Powered.php"]
+            plugins: ["WordPress-Plugin-Boilerplate-Powered/plugin-name/plugin-name.php"]
+            activatePlugins: ["WordPress-Plugin-Boilerplate-Powered/plugin-name/plugin-name.php"]
         WPWebDriver:
-            url: 'http://boilerplate.dev'
-            browser: phantomjs
+            url: 'http://boilerplate.test'
+            browser: chrome
             port: 4444
             restart: true
             wait: 2
             adminUsername: admin
             adminPassword: password
             adminUrl: /wp-admin
+            capabilities:
+              chromeOptions:
+                args: ["--headless", "--disable-gpu"]

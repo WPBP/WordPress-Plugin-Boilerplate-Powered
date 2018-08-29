@@ -58,7 +58,8 @@
       "phpro/grumphp":"^0.14",
       "codeception/codeception": "2.*",
       "lucatume/function-mocker":"~1.0",
-      "phpunit/phpunit": "6.*"
+      "phpunit/phpunit": "6.*",
+      "codeception/codeception-progress-reporter": "dev-master"
    },
    "minimum-stability":"dev",
    "autoload":{

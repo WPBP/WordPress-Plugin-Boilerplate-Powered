@@ -10,8 +10,7 @@ settings:
     memory_limit: 1024M
 extensions:
     enabled:
-      - Codeception\Extension\RunProcess:
-        - java -jar -Dwebdriver.chrome.driver=/opt/selenium/chromedriver /opt/selenium/selenium-server.jar
+        - Codeception\ProgressReporter\ProgressReporter
 modules:
     config:
         WPBrowser:
@@ -56,5 +55,5 @@ modules:
             adminPassword: password
             adminUrl: /wp-admin
             capabilities:
-              chromeOptions:
-                args: ["--headless", "--disable-gpu"]
+                chromeOptions:
+                    args: ["--headless", "--disable-gpu"]

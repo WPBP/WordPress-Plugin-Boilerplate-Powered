@@ -27,9 +27,9 @@ modules:
             adminPassword: password
             adminUrl: /wp-admin
         WPDb:
-            dsn: 'mysql:host=192.168.50.4;dbname=wordpress_unit_tests'
-            user: wp
-            password: wp
+            dsn: 'mysql:host=localhost;dbname=wordpress_unit_tests'
+            user: root
+            password: test
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
@@ -42,9 +42,9 @@ modules:
             multisite: false
             wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
             dbName: wordpress_unit_tests
-            dbHost: 192.168.50.4
-            dbUser: wp
-            dbPassword: wp
+            dbHost: localhost
+            dbUser: root
+            dbPassword: test
             wpDebug: true
             dbCharset: utf8
             dbCollate: ''

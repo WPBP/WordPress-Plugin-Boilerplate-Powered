@@ -11,6 +11,14 @@ settings:
 extensions:
     enabled:
         - Codeception\ProgressReporter\ProgressReporter
+    commands:
+        - 'Codeception\Command\GenerateWPUnit'
+        - 'Codeception\Command\GenerateWPRestApi'
+        - 'Codeception\Command\GenerateWPRestController'
+        - 'Codeception\Command\GenerateWPRestPostTypeController'
+        - 'Codeception\Command\GenerateWPAjax'
+        - 'Codeception\Command\DbSnapshot'
+        - 'tad\Codeception\Command\SearchReplace'
 modules:
     config:
         WPBrowser:
@@ -25,9 +33,13 @@ modules:
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
+            reconnect: true
             url: 'http://boilerplate.test'
+            urlReplacement: true
             tablePrefix: wp_
+            waitlock: 0
         WPLoader:
+            multisite: false
             wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
             dbName: wordpress_unit_tests
             dbHost: 192.168.50.4
@@ -57,3 +69,17 @@ modules:
             capabilities:
                 chromeOptions:
                     args: ["--headless", "--disable-gpu"]
+        WordPress:
+            depends: WPDb
+            wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
+            adminUsername: 'admin'
+            adminPassword: 'password'
+        WPFilesystem:
+            wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
+            themes: '/wp-content/themes'
+            plugins: '/wp-content/plugins'
+            mu-plugins: '/wp-content/mu-plugins'
+            uploads: '/wp-content/uploads'
+        WPCLI:
+            path: /var/www/VVV/www/boilerplate/htdocs/
+            throw: true

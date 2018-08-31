@@ -34,13 +34,14 @@ class Pn_Shortcode extends Pn_Base {
 	 */
 	public static function foobar_func( $atts ) {
 		shortcode_atts(
-             array(
-			'foo' => 'something',
-			'bar' => 'something else',
-		), $atts
-            );
+			array(
+				'foo' => 'something',
+				'bar' => 'something else',
+			), $atts
+		);
 
-		return 'foo = ' . $atts[ 'foo' ];
+		return '<span class="foo">foo = ' . $atts[ 'foo' ] . '</span>' .
+			'<span class="bar">foo = ' . $atts[ 'bar' ] . '</span>';
 	}
 
 }

@@ -7,7 +7,7 @@ modules:
   enabled:
     - \Helper\Functional
     # see https://github.com/lucatume/wp-browser#modules to know the general ratio of each
-    - WordPress #load wordpress module
+    - WPBrowser
     - WPDb #manipulate the database and look up stuff
     - WPFilesystem #manipulate the WP filesystem, scaffold themes and plugins
     - Asserts #PHPUnit-like assertions

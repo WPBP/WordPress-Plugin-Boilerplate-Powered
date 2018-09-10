@@ -12,16 +12,16 @@
       "wpbp/cpt_columns":"1.0.1",
       "wpbp/requirements":"1.0.0",
       "wpbp/language":"1.0.0",
-      "kevinlangleyjr/wp-contextual-help":"dev-master",
       "nathanielks/wp-admin-notice":"dev-master",
-      "mte90/wp-dismissible-notices-handler":"1.*",
-      "mte90/wp-review-me":"2.0.1",
+      "mte90/wp-contextual-help":"1.1.0",
+      "julien731/wp-dismissible-notices-handler":"dev-master as 1.2",
+      "julien731/wp-review-me":"dev-develop",
       "johnbillion/extended-cpts":"4.2",
       "freemius/wordpress-sdk":"1.2.2.*",
       "yoast/i18n-module":"3.0.0",
       "webdevstudios/cmb2":"2.4.",
       "origgami/cmb2-grid":"dev-master",
-	  "stevegrunwell/wp-cache-remember":"dev-master"
+      "stevegrunwell/wp-cache-remember":"dev-master"
    },
    "repositories":[
       {
@@ -31,22 +31,10 @@
       {
          "type":"package",
          "package":{
-            "name":"mte90/wp-dismissible-notices-handler",
+            "name":"mte90/wp-contextual-help",
             "version":"1.1.0",
             "source":{
-               "url":"https://github.com/mte90/wp-dismissible-notices-handler",
-               "type":"git",
-               "reference":"master"
-            }
-         }
-      },
-      {
-         "type":"package",
-         "package":{
-            "name":"mte90/wp-review-me",
-            "version":"2.0.1",
-            "source":{
-               "url":"https://github.com/mte90/wp-review-me",
+               "url":"https://github.com/mte90/wp-contextual-help",
                "type":"git",
                "reference":"master"
             }
@@ -56,9 +44,8 @@
    "require-dev":{
       "lucatume/wp-browser":"2.*",
       "phpro/grumphp":"^0.14",
-      "codeception/codeception": "2.*",
+      "codeception/codeception": "2.3.9",
       "lucatume/function-mocker":"~1.0",
-      "phpunit/phpunit": "6.*",
       "codeception/codeception-progress-reporter": "dev-master"
    },
    "minimum-stability":"dev",
@@ -72,8 +59,7 @@
          "internals/",
          "integrations/",
          "rest/"
-      ],
-      "files": ["vendor/mte90/wp-dismissible-notices-handler/handler.php", "vendor/mte90/wp-dismissible-notices-handler/includes/helper-functions.php", "vendor/mte90//wp-review-me/review.php"]
+      ]
    },
    "extra":{
       "installer-paths":{
@@ -82,14 +68,6 @@
             "origgami/cmb2-grid",
             "stevegrunwell/wp-cache-remember"
          ]
-      },
-      "patches": {
-		"kevinlangleyjr/wp-contextual-help": {
-			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/kevinlangleyjr/wp-contextual-help/pull/1.patch"
-		},
-		"mte90/wp-review-me": {
-			"Remove autoload": "https://patch-diff.githubusercontent.com/raw/julien731/WP-Review-Me/pull/11.patch"
-		}
-	  }
+      }
    }
 }

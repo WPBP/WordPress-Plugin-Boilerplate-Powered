@@ -10,4 +10,9 @@ modules:
     - WPBrowser
     - WPDb #manipulate the database and look up stuff
     - WPFilesystem #manipulate the WP filesystem, scaffold themes and plugins
+    - REST
     - Asserts #PHPUnit-like assertions
+  config:
+    REST:
+      depends: PhpBrowser
+      url: 'http://boilerplate.test/wp-json/wp/v2/'

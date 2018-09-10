@@ -50,7 +50,7 @@ modules:
             dbCollate: ''
             tablePrefix: wp_
             domain: boilerplate.test
-            adminEmail: admin@wp.test
+            adminEmail: admin@boilerplate.test
             title: 'WP Tests'
             phpBinary: php
             language: ''

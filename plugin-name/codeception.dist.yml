@@ -12,15 +12,19 @@ extensions:
     enabled:
         - Codeception\ProgressReporter\ProgressReporter
     commands:
+        # Generate Tests cases
+        # codecept generate:wp[...] [suite] [className]
         - 'Codeception\Command\GenerateWPUnit'
         - 'Codeception\Command\GenerateWPRestApi'
         - 'Codeception\Command\GenerateWPRestController'
         - 'Codeception\Command\GenerateWPRestPostTypeController'
         - 'Codeception\Command\GenerateWPAjax'
+        # Generate a snapshot of DB and also share a remote DB
         - 'Codeception\Command\DbSnapshot'
         - 'tad\Codeception\Command\SearchReplace'
 modules:
     config:
+        # Check https://github.com/lucatume/wp-browser
         WPBrowser:
             url: 'http://boilerplate.test'
             adminUsername: admin
@@ -39,6 +43,7 @@ modules:
             tablePrefix: wp_
             waitlock: 0
         WPLoader:
+            # Download, install and get a working WP site
             multisite: false
             wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
             dbName: wordpress_unit_tests
@@ -70,11 +75,9 @@ modules:
                 chromeOptions:
                     args: ["--headless", "--disable-gpu"]
         WPFilesystem:
+            # Navigate and manipulate files inside WP
             wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
-            themes: '/wp-content/themes'
-            plugins: '/wp-content/plugins'
-            mu-plugins: '/wp-content/mu-plugins'
-            uploads: '/wp-content/uploads'
         WPCLI:
+            # Download and install WPCLI for synchronous and isolated tests
             path: /var/www/VVV/www/boilerplate/htdocs/
             throw: true

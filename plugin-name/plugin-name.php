@@ -68,21 +68,23 @@ function pn_fs() {
 
     if ( !isset( $pn_fs ) ) {
 		require_once( PN_PLUGIN_ROOT . 'vendor/freemius/wordpress-sdk/start.php' );
-        $pn_fs = fs_dynamic_init( array(
+		$pn_fs = fs_dynamic_init(
+			array(
             'id'             => '',
-            'slug'           => 'plugin-name',
-            'public_key'     => '',
-            'is_live'        => false,
-            'is_premium'     => true,
-            'has_addons'     => false,
-            'has_paid_plans' => true,
-            'menu'           => array(
-                'slug' => 'plugin-name',
-            ),
-        ) );
-    }
+			'slug'           => 'plugin-name',
+			'public_key'     => '',
+			'is_live'        => false,
+			'is_premium'     => true,
+			'has_addons'     => false,
+			'has_paid_plans' => true,
+			'menu'           => array(
+				'slug' => 'plugin-name',
+			),
+		)
+	);
+	}
 
-    return $pn_fs;
+	return $pn_fs;
 }
 
 // Init Freemius.

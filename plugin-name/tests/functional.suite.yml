@@ -6,12 +6,13 @@ class_name: FunctionalTester
 modules:
   enabled:
     - \Helper\Functional
-    # see https://github.com/lucatume/wp-browser#modules to know the general ratio of each
-    - WPBrowser
-    - WPDb #manipulate the database and look up stuff
-    - WPFilesystem #manipulate the WP filesystem, scaffold themes and plugins
-    - REST
-    - Asserts #PHPUnit-like assertions
+    # see https://github.com/lucatume/wp-browser#modules
+    - WPBrowser     # JavaScript-less and headless browser
+    - WPDb          # manipulate the database and look up stuff
+    - WPFilesystem  # manipulate the WP filesystem, scaffold themes and plugins
+    - REST          # to test REST WebServices
+    - Asserts       # PHPUnit-like assertions
+    - WPCLI         # Why not test also the CLI?
   config:
     REST:
       depends: PhpBrowser

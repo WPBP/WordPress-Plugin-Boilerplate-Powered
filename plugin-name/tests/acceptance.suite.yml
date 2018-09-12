@@ -6,8 +6,8 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - \Helper\Acceptance
-        # see https://github.com/lucatume/wp-browser#modules to know the general ratio of each
-        - WPWebDriver #browse
-        - WPDb #manipulate the database and look up stuff
-        - WPFilesystem #manipulate the WP filesystem, scaffold themes and plugins
-        - Asserts #PHPUnit-like assertions
+        # see https://github.com/lucatume/wp-browser#modules
+        - WPWebDriver   # browser for Javascript support
+        - WPDb          # manipulate the database and look up stuff
+        - WPFilesystem  # manipulate the WP filesystem, scaffold themes and plugins
+        - Asserts       # PHPUnit-like assertions

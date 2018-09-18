@@ -14,7 +14,7 @@
       "wpbp/language":"1.0.0",
       "nathanielks/wp-admin-notice":"dev-master",
       "mte90/wp-contextual-help":"1.1.0",
-      "julien731/wp-dismissible-notices-handler":"dev-master as 1.2",
+      "julien731/wp-dismissible-notices-handler":"1.*",
       "julien731/wp-review-me":"dev-develop",
       "johnbillion/extended-cpts":"4.2",
       "freemius/wordpress-sdk":"1.2.2.*",
@@ -59,7 +59,8 @@
          "internals/",
          "integrations/",
          "rest/"
-      ]
+      ],
+      "files": ["vendor/mte90/wp-contextual-help/wp-contextual-help.php"]
    },
    "extra":{
       "installer-paths":{

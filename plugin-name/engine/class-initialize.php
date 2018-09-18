@@ -44,9 +44,7 @@ class Pn_Initialize {
 
 		if ( $this->is_request( 'ajax' ) ) {
 			$classes[] = 'Pn_Ajax';
-			if ( is_user_logged_in() ) {
-				$classes[] = 'Pn_Ajax_Admin';
-			}
+			$classes[] = 'Pn_Ajax_Admin';
 		}
 
 		if ( $this->is_request( 'admin' ) ) {

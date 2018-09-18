@@ -20,25 +20,28 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 	/**
 	 * @test
-	 * it should be instantiatable
+	 * it should return default output
 	 */
 	public function it_should_return_default_output() {
 		$this->_setRole( 'administrator' );
 
 		try {
-			$this->_handleAjax( 'your_method' );
+			$this->_handleAjax( 'your_admin_method' );
+			$this->fail( 'Expected exception: WPAjaxDieContinueException' );
 		} catch ( WPAjaxDieContinueException $e ) {
-			unset( $e );
+			// We expected this, do nothing.
 		}
 
 		$response = json_decode( $this->_last_response, true );
-		$return = array( 'success' => true, array(
+		$this->assertTrue( $response[ 'success' ] );
+
+		$return = array(
 			'message' => 'Saved',
 			'ID'      => 2,
-		));
+		);
 
-		$this->expectException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
-		$this->assertEquals( $return, $response );
+		$this->assertEquals( $return, $response[ 'data' ] );
+		$this->assertInternalType( 'array', $response['data'] );
 	}
 
 }

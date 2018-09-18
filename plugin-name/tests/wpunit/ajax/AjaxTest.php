@@ -12,7 +12,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
-		apply_filters( 'wp_doing_ajax', defined( 'DOING_AJAX' ) && DOING_AJAX );
+
 	}
 
 	public function tearDown() {
@@ -21,25 +21,28 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 	/**
 	 * @test
-	 * it should be instantiatable
+	 * it should return default output
 	 */
 	public function it_should_return_default_output() {
 		wp_logout();
 
 		try {
 			$this->_handleAjax( 'nopriv_your_method' );
+			$this->fail( 'Expected exception: WPAjaxDieContinueException' );
 		} catch ( WPAjaxDieContinueException $e ) {
-			unset( $e );
+			// We expected this, do nothing.
 		}
 
 		$response = json_decode( $this->_last_response, true );
-		$return = array( 'success' => true, 'data' => array(
+		$this->assertTrue( $response[ 'success' ] );
+
+		$return = array(
 			'message' => 'Saved',
 			'ID'      => 1,
-		));
+		);
 
-		$this->expectException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
-		$this->assertEquals( $return, $response );
+		$this->assertEquals( $return, $response[ 'data' ] );
+		$this->assertInternalType( 'array', $response['data'] );
 	}
 
 }

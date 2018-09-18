@@ -13,7 +13,7 @@
 /**
  * AJAX in the public
  */
-class Pn_Ajax {
+class Pn_Ajax extends Pn_Base {
 
 	/**
 	 * Initialize the class

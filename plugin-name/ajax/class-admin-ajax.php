@@ -13,7 +13,7 @@
 /**
  * AJAX in the admin
  */
-class Pn_Ajax_Admin {
+class Pn_Ajax_Admin extends Pn_Admin_Base {
 
 	/**
 	 * Initialize the class
@@ -23,7 +23,7 @@ class Pn_Ajax_Admin {
 			return;
 		}
 
-		if ( is_user_logged_in() ) {
+		if ( ! is_user_logged_in() ) {
 			return;
 		}
 

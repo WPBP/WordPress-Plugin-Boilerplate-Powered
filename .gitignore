@@ -16,6 +16,7 @@
 Thumbs.db
 .cache
 .project
+.padawan
 .settings
 .tmproj
 *.esproj

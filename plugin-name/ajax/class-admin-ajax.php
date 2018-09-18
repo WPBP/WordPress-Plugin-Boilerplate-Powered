@@ -25,7 +25,7 @@ if ( is_user_logged_in() ) {
             }
 
             // For logged user
-            add_action( 'wp_ajax_{your_method}', array( $this, 'your_method' ) );
+			add_action( 'wp_ajax_your_method', array( $this, 'your_method' ) );
 		}
 
 		/**

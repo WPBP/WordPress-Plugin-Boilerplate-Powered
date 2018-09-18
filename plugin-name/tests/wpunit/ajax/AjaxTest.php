@@ -23,19 +23,21 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 * it should be instantiatable
 	 */
 	public function it_should_return_default_output() {
-		//		wp_logout();
+		wp_logout();
+
 		try {
-			$this->_handleAjax( 'your_method' );
+			$this->_handleAjax( 'nopriv_your_method' );
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
 
 		$response = json_decode( $this->_last_response, true );
-		$return = array(
+		$return = array( 'success' => true, array(
 			'message' => 'Saved',
 			'ID'      => 1,
-		);
+		));
 
+		$this->setExpectedException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
 		$this->assertEquals( $return, $response );
 	}
 

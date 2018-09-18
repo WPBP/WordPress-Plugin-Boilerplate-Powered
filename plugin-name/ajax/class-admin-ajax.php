@@ -36,7 +36,7 @@ if ( is_user_logged_in() ) {
 		public function your_method() {
 			$return = array(
 				'message' => 'Saved',
-				'ID'      => 1,
+				'ID'      => 2,
 			);
 
 			wp_send_json_success( $return );

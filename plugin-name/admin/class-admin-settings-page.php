@@ -48,7 +48,7 @@ class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 
 		 add_options_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ) );
-		*
+		 *
 		 */
 		/*
 		 * Add a settings page for this plugin to the main menu
@@ -84,7 +84,8 @@ class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 				// WPBPGen{{#if backend_donate-link-plugin-list}}
 				'donate'   => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', PN_TEXTDOMAIN ) . '</a>',
 				// {{/if}}
-			), $links
+			),
+            $links
 		);
 	}
 

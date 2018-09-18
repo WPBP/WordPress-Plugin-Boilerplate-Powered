@@ -23,10 +23,8 @@ class Pn_Ajax {
 			return;
 		}
 
-		// For logged user
-		add_action( 'wp_ajax_{your_method}', array( $this, 'your_method' ) );
 		// For not logged user
-		add_action( 'wp_ajax_nopriv_{your_method}', array( $this, 'your_method' ) );
+		add_action( 'wp_ajax_nopriv_your_method', array( $this, 'your_method' ) );
 	}
 
 	/**

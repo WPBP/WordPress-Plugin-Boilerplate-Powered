@@ -42,6 +42,11 @@ class Pn_Initialize {
 			$classes[] = 'Pn_Cli';
 		}
 
+        if ( $this->is_request( 'ajax' ) ) {
+			$classes[] = 'Pn_Ajax';
+			$classes[] = 'Pn_Ajax_Admin';
+		}
+
 		if ( $this->is_request( 'admin' ) ) {
 			$classes[] = 'Pn_Pointers';
 			$classes[] = 'Pn_ContextualHelp';

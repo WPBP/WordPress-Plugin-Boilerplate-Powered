@@ -37,7 +37,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 			'ID'      => 2,
 		));
 
-		$this->setExpectedException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
+		$this->expectException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
 		$this->assertEquals( $return, $response );
 	}
 

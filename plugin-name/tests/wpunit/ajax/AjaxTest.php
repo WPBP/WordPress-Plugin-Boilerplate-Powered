@@ -12,6 +12,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+		apply_filters( 'wp_doing_ajax', defined( 'DOING_AJAX' ) && DOING_AJAX );
 	}
 
 	public function tearDown() {
@@ -32,12 +33,12 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		}
 
 		$response = json_decode( $this->_last_response, true );
-		$return = array( 'success' => true, array(
+		$return = array( 'success' => true, 'data' => array(
 			'message' => 'Saved',
 			'ID'      => 1,
 		));
 
-		$this->setExpectedException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
+		$this->expectException( 'WPAjaxDieContinueException', 'WP Ajax Continue exception' );
 		$this->assertEquals( $return, $response );
 	}
 

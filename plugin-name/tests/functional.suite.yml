@@ -16,4 +16,4 @@ modules:
   config:
     REST:
       depends: PhpBrowser
-      url: 'http://boilerplate.test/wp-json/wp/v2/'
+      url: '%WP_URL%/wp-json/wp/v2/'

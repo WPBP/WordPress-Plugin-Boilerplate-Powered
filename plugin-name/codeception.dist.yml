@@ -8,6 +8,8 @@ settings:
     bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
+params:
+    - .env
 extensions:
     enabled:
         - Codeception\ProgressReporter\ProgressReporter
@@ -26,36 +28,36 @@ modules:
     config:
         # Check https://github.com/lucatume/wp-browser
         WPBrowser:
-            url: 'http://boilerplate.test'
+            url: %WP_URL%
             adminUsername: admin
             adminPassword: password
             adminUrl: /wp-admin
         WPDb:
-            dsn: 'mysql:host=localhost;dbname=wordpress_unit_tests'
+            dsn: 'mysql:host=%DB_HOST%;dbname=%DB_NAME%'
             user: root
             password: test
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
             reconnect: true
-            url: 'http://boilerplate.test'
+            url: %WP_URL%
             urlReplacement: true
             tablePrefix: wp_
             waitlock: 0
         WPLoader:
             # Download, install and get a working WP site
             multisite: false
-            wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
-            dbName: wordpress_unit_tests
-            dbHost: localhost
-            dbUser: root
-            dbPassword: test
+            wpRootFolder: %WP_ROOT%
+            dbName: %DB_NAME%
+            dbHost: %DB_HOST%
+            dbUser: %DB_USER%
+            dbPassword: %DB_PASSWORD%
             wpDebug: true
             dbCharset: utf8
             dbCollate: ''
             tablePrefix: wp_
-            domain: boilerplate.test
-            adminEmail: admin@boilerplate.test
+            domain: %WP_DOMAIN%
+            adminEmail: admin@%WP_DOMAIN%
             title: 'WP Tests'
             phpBinary: php
             language: ''
@@ -63,7 +65,7 @@ modules:
             plugins: ["WordPress-Plugin-Boilerplate-Powered/plugin-name/plugin-name.php"]
             activatePlugins: ["WordPress-Plugin-Boilerplate-Powered/plugin-name/plugin-name.php"]
         WPWebDriver:
-            url: 'http://boilerplate.test'
+            url: %WP_URL%
             browser: chrome
             port: 4444
             restart: true
@@ -76,8 +78,8 @@ modules:
                     args: ["--headless", "--disable-gpu"]
         WPFilesystem:
             # Navigate and manipulate files inside WP
-            wpRootFolder: /var/www/VVV/www/boilerplate/htdocs/
+            wpRootFolder: %WP_ROOT%
         WPCLI:
             # Download and install WPCLI for synchronous and isolated tests
-            path: /var/www/VVV/www/boilerplate/htdocs/
+            path: %WP_ROOT%
             throw: true

@@ -34,8 +34,8 @@ modules:
             adminUrl: /wp-admin
         WPDb:
             dsn: 'mysql:host=%DB_HOST%;dbname=%DB_NAME%'
-            user: root
-            password: test
+            user: %DB_USER%
+            password: %DB_PASSWORD%
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
@@ -43,7 +43,6 @@ modules:
             url: %WP_URL%
             urlReplacement: true
             tablePrefix: wp_
-            waitlock: 0
         WPLoader:
             # Download, install and get a working WP site
             multisite: false

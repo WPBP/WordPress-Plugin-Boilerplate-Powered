@@ -1,56 +1,66 @@
 {
-   "require":{
-      "php":">=5.3",
-      "composer/installers":"1.x",
-      "cweagans/composer-patches": "~1.0",
-      "wpbp/pointerplus":"1.0.1",
-      "wpbp/cronplus":"1.0.5",
-      "wpbp/widgets-helper":"1.0.3",
-      "wpbp/fakepage":"1.0.0",
-      "wpbp/template":"1.0.2",
-      "wpbp/debug":"1.1.1",
-      "wpbp/cpt_columns":"1.0.1",
-      "wpbp/requirements":"1.0.0",
-      "wpbp/language":"1.0.0",
-      "nathanielks/wp-admin-notice":"dev-master",
-      "mte90/wp-contextual-help":"1.1.0",
-      "julien731/wp-dismissible-notices-handler":"1.*",
-      "julien731/wp-review-me":"dev-develop",
-      "johnbillion/extended-cpts":"4.2",
-      "freemius/wordpress-sdk":"1.2.2.*",
-      "yoast/i18n-module":"3.0.0",
-      "webdevstudios/cmb2":"2.4.",
-      "origgami/cmb2-grid":"dev-master",
-      "stevegrunwell/wp-cache-remember":"dev-master"
-   },
-   "repositories":[
+   "name": "wpbp/wordpress-plugin-boilerplate-powered",
+   "description": "Wordpress Plugin Boilerplate with steroids!",
+   "license": "GPL-2.0-or-later",
+   "authors": [
       {
-         "url":"git@github.com:nathanielks/wordpress-admin-notice.git",
-         "type":"git"
+         "name": "author_name",
+         "email": "author@email.it",
+         "homepage": "http://author.url"
+      }
+   ],
+   "require": {
+      "php": ">=5.6",
+      "composer/installers": "1.x",
+      "cweagans/composer-patches": "~1.0",
+      "wpbp/pointerplus": "1.0.*",
+      "wpbp/cronplus": "1.0.*",
+      "wpbp/widgets-helper": "1.0.*",
+      "wpbp/fakepage": "1.0.*",
+      "wpbp/template": "1.0.*",
+      "wpbp/debug": "1.1.*",
+      "wpbp/cpt_columns": "1.0.*",
+      "wpbp/requirements": "1.0.*",
+      "wpbp/language": "1.0.*",
+      "nathanielks/wp-admin-notice": "dev-master",
+      "mte90/wp-contextual-help": "1.1.*",
+      "julien731/wp-dismissible-notices-handler": "1.*",
+      "julien731/wp-review-me": "dev-develop",
+      "johnbillion/extended-cpts": "4.2",
+      "freemius/wordpress-sdk": "1.2.2.*",
+      "yoast/i18n-module": "3.0.0",
+      "webdevstudios/cmb2": "2.4.*",
+      "origgami/cmb2-grid": "dev-master",
+      "stevegrunwell/wp-cache-remember": "dev-master"
+   },
+   "repositories": [
+      {
+         "url": "git@github.com:nathanielks/wordpress-admin-notice.git",
+         "type": "git"
       },
       {
-         "type":"package",
-         "package":{
-            "name":"mte90/wp-contextual-help",
-            "version":"1.1.0",
-            "source":{
-               "url":"https://github.com/mte90/wp-contextual-help",
-               "type":"git",
-               "reference":"master"
+         "type": "package",
+         "package": {
+            "name": "mte90/wp-contextual-help",
+            "version": "1.1.0",
+            "source": {
+               "url": "https://github.com/mte90/wp-contextual-help",
+               "type": "git",
+               "reference": "master"
             }
          }
       }
    ],
-   "require-dev":{
-      "lucatume/wp-browser":"2.*",
-      "phpro/grumphp":"^0.14",
-      "codeception/codeception": "2.3.9",
-      "lucatume/function-mocker":"~1.0",
+   "require-dev": {
+      "lucatume/wp-browser": "2.*",
+      "lucatume/function-mocker": "~1.0",
+      "phpro/grumphp": "^0.14",
+      "codeception/codeception": "2.3.*",
       "codeception/codeception-progress-reporter": "dev-master"
    },
-   "minimum-stability":"dev",
-   "autoload":{
-      "classmap":[
+   "minimum-stability": "dev",
+   "autoload": {
+      "classmap": [
          "engine/",
          "admin/",
          "cli/",
@@ -62,13 +72,14 @@
       ],
       "files": ["vendor/mte90/wp-contextual-help/wp-contextual-help.php"]
    },
-   "extra":{
-      "installer-paths":{
-         "vendor/{$name}/":[
+   "extra": {
+      "installer-paths": {
+         "vendor/{$name}/": [
             "webdevstudios/cmb2",
             "origgami/cmb2-grid",
             "stevegrunwell/wp-cache-remember"
          ]
       }
-   }
+   },
+   "homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered"
 }

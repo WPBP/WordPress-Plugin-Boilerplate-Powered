@@ -23,46 +23,57 @@ class Pn_Initialize {
 	protected static $instance = null;
 
 	/**
+	 * List of class to initialize.
+	 *
+	 * @var object
+	 */
+	public $classes = null;
+
+	/**
 	 * The Constructor that load the entry classes
 	 *
 	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
-		$classes   = array();
-		$classes[] = 'Pn_PostTypes';
-		$classes[] = 'Pn_CMB';
-		$classes[] = 'Pn_Cron';
-		$classes[] = 'Pn_FakePage';
-		$classes[] = 'Pn_Template';
-		$classes[] = 'Pn_Widgets';
-		$classes[] = 'Pn_Rest';
-		$classes[] = 'Pn_Transient';
+		$this->classes   = array();
+		$this->classes[] = 'Pn_PostTypes';
+		$this->classes[] = 'Pn_CMB';
+		$this->classes[] = 'Pn_Cron';
+		$this->classes[] = 'Pn_FakePage';
+		$this->classes[] = 'Pn_Template';
+		$this->classes[] = 'Pn_Widgets';
+		$this->classes[] = 'Pn_Rest';
+		$this->classes[] = 'Pn_Transient';
 
         if ( $this->is_request( 'cli' ) ) {
-			$classes[] = 'Pn_Cli';
+			$this->classes[] = 'Pn_Cli';
 		}
 
 		if ( $this->is_request( 'ajax' ) ) {
-			$classes[] = 'Pn_Ajax';
-			$classes[] = 'Pn_Ajax_Admin';
+			$this->classes[] = 'Pn_Ajax';
+			if ( $this->is_request( 'admin' ) ) {
+				$this->classes[] = 'Pn_Ajax_Admin';
+			}
 		}
 
 		if ( $this->is_request( 'admin' ) ) {
-			$classes[] = 'Pn_Pointers';
-			$classes[] = 'Pn_ContextualHelp';
-			$classes[] = 'Pn_Admin_ActDeact';
-			$classes[] = 'Pn_Admin_Notices';
-			$classes[] = 'Pn_Admin_Settings_Page';
-			$classes[] = 'Pn_Admin_Enqueue';
-			$classes[] = 'Pn_Admin_ImpExp';
+			$this->classes[] = 'Pn_Pointers';
+			$this->classes[] = 'Pn_ContextualHelp';
+			$this->classes[] = 'Pn_Admin_ActDeact';
+			$this->classes[] = 'Pn_Admin_Notices';
+			$this->classes[] = 'Pn_Admin_Settings_Page';
+			$this->classes[] = 'Pn_Admin_Enqueue';
+			$this->classes[] = 'Pn_Admin_ImpExp';
 		}
 
 		if ( $this->is_request( 'frontend' ) ) {
-			$classes[] = 'Pn_Enqueue';
-			$classes[] = 'Pn_Extras';
+			$this->classes[] = 'Pn_Enqueue';
+			$this->classes[] = 'Pn_Extras';
 		}
 
-		$this->load_classes( $classes );
+		$this->classes = apply_filters( 'pn_class_instances', $this->classes );
+
+		return $this->load_classes();
 	}
 
 	/**
@@ -88,8 +99,8 @@ class Pn_Initialize {
 		}
 	}
 
-	private function load_classes( $classes ) {
-		foreach ( $classes as &$class ) {
+	private function load_classes() {
+		foreach ( $this->classes as &$class ) {
 			$class = apply_filters( strtolower( $class ) . '_instance', $class );
 			$temp  = new $class;
 			$temp->initialize();

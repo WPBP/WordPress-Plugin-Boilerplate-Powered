@@ -81,13 +81,13 @@ class Pn_Initialize {
 	 *
 	 * @since {{plugin_version}}
 	 *
-	 * @param  string $type admin, ajax, cron or frontend.
+	 * @param  string $type admin, ajax, cron, cli or frontend.
 	 * @return bool
 	 */
 	private function is_request( $type ) {
 		switch ( $type ) {
 			case 'admin':
-				return is_admin();
+				return is_user_logged_in() && is_admin();
 			case 'ajax':
 				return ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) || defined( 'DOING_AJAX' );
 			case 'cron':

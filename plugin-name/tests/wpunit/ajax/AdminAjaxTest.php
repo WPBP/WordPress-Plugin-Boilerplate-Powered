@@ -12,6 +12,11 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+
+		$this->_setRole( 'administrator' );
+
+		// Load again the class for the AJAX mode
+		new Pn_Initialize();
 	}
 
 	public function tearDown() {
@@ -23,8 +28,6 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 * it should return default output
 	 */
 	public function it_should_return_default_output() {
-		$this->_setRole( 'administrator' );
-
 		try {
 			$this->_handleAjax( 'your_admin_method' );
 			$this->fail( 'Expected exception: WPAjaxDieContinueException' );

@@ -23,10 +23,6 @@ class Pn_Ajax_Admin extends Pn_Admin_Base {
 			return;
 		}
 
-		if ( ! is_user_logged_in() ) {
-			return;
-		}
-
 		// For logged user
 		add_action( 'wp_ajax_your_admin_method', array( $this, 'your_admin_method' ) );
 	}

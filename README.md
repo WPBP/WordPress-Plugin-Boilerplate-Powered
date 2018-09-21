@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
-[![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
+[![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)[![FOSSA Alert](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=shield)](#license)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.
 Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.
@@ -15,8 +15,8 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 ### Libraries and Miscellaneus available
 
 * Sass support with Compass and Grunt
-* CoffeeScript support with Grunt (not mandatory with the Yeoman generator)
-* Custom folder for Composer libraries
+* CoffeeScript support with Grunt (not mandatory)
+* Autoload based on Composer extended
 * [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool) to start to develop <--
 * Many libraries already available (with starter code) in composer.json (with the yeoman generator you can choose)
 	* [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)
@@ -47,9 +47,10 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 * Custom capabilities with CPTs and taxonomy support
 * wp_localize_script for pass PHP var to JS in the frontend
 * Class in frontend body with the slug of plugin
+* Shortcode example included
+* WPCLI support
 * Support for your CPTs in Activity widget in dashboard
 * Support for CMB in the options page
-* Support for email template/theme with language detection
 * Transient examples with caching
 
 Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!
@@ -91,3 +92,5 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 ## License
 
 The WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered?ref=badge_large)

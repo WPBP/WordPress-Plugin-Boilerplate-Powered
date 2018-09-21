@@ -3,6 +3,8 @@
 * Enhancement: Moved PN_Uninstall.php to uninstall.php
 * Enhancement: New folder structure
 * Enhancement: New tests for the various suites
+* Enhancement: 2 new pages on the wiki https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Useful-resources and https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Cool-libraries
+* Enhancement: Added a page about codeception trick on the wiki https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Cool-libraries
 * Removed: Few libraries that was to much specific
 * Added: WP_Query_Multisite library
 * Updated: All the composer dependences

@@ -59,11 +59,8 @@ class Pn_Admin_ImpExp extends Pn_Admin_Base {
 		header( 'Content-Type: application/json; charset=utf-8' );
 		header( 'Content-Disposition: attachment; filename=pn-settings-export-' . date( 'm-d-Y' ) . '.json' );
 		header( 'Expires: 0' );
-		if ( version_compare( PHP_VERSION, '5.4.0', '>=' ) ) {
-			echo wp_json_encode( $settings, JSON_PRETTY_PRINT );
-		} else {
-			echo wp_json_encode( $settings );
-		}
+
+		echo wp_json_encode( $settings, JSON_PRETTY_PRINT );
 
 		exit;
 	}

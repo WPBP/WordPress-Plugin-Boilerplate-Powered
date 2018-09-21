@@ -39,7 +39,7 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
 	* [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)
 
-### Snippet available
+### Snippets available
 
 * Dashicon as dependence of admin stylesheet
 * Bubble notification on pending CPTs

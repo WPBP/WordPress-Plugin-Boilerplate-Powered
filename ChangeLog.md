@@ -1,12 +1,13 @@
 ## 2.3
 
 * Enhancement: Moved PN_Uninstall.php to uninstall.php
+* Enhancement: New folder structure
+* Enhancement: New tests for the various suites
+* Removed: Few libraries that was to much specific
 * Added: WP_Query_Multisite library
 * Updated: All the composer dependences
-* Enhancement: New tests for the various suites
 * Feature: Block plugin loading/activate if PHP < 5.6
 * Feature: Composer for autoloading of Plugin's classes
-* Enhancement: New folder structure
 
 ## 2.2.1
 

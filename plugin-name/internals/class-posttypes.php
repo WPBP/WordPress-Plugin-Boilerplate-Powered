@@ -249,5 +249,6 @@ class Pn_PostTypes extends Pn_Base {
 
 		return false;
 	}
+	//{{/unless}}
 
 }

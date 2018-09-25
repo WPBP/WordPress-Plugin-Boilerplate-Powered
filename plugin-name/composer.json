@@ -12,7 +12,6 @@
    "require": {
       "php": ">=5.6",
       "composer/installers": "1.x",
-      "cweagans/composer-patches": "~1.0",
       "wpbp/pointerplus": "1.0.*",
       "wpbp/cronplus": "1.0.*",
       "wpbp/widgets-helper": "1.0.*",

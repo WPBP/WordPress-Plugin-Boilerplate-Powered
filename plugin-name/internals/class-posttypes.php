@@ -39,7 +39,7 @@ class Pn_PostTypes extends Pn_Base {
 			)
 		);
 		//{{/unless}}
-		//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_dashboard-activity}}
 		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
 		//{{/unless}}
@@ -102,13 +102,6 @@ class Pn_PostTypes extends Pn_Base {
 				'genre' => array(
 					'taxonomy' => 'demo-section'
 				),
-				//WPBPGen{{#unless libraries_wpackagist-plugin__posts-to-posts}}
-				'p2p' => array(
-					'title'      => 'Connected Posts',
-					'connection' => 'demo_to_pages',
-					'link' => 'edit'
-				),
-				//{{/unless}}
 				'custom_field' => array(
 					'title' => 'By Lib',
 					'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text',
@@ -128,9 +121,9 @@ class Pn_PostTypes extends Pn_Base {
 		), array(
 			# Override the base names used for labels:
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
-			'plural'   => __( 'Demos', PN_TEXTDOMAIN ),		) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+			'plural'   => __( 'Demos', PN_TEXTDOMAIN ),		)
+		);
+
 		$tax->add_taxonomy( 'demo-section', array(
 			'hierarchical' => false,
 			'show_ui' => false,

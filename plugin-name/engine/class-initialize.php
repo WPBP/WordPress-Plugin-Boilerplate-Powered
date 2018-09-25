@@ -37,74 +37,74 @@ class Pn_Initialize {
 	public function __construct() {
         $this->is        = new Pn_Is_Methods();
         $this->classes   = array();
-        // WPBPGen{{#if libraries_johnbillion__extended-cpts}}
+        // WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
         $this->classes[] = 'Pn_PostTypes';
-        // {{/if}}
-        // WPBPGen{{#if libraries_webdevstudios__cmb2}}
+        // {{/unless}}
+        // WPBPGen{{#unless libraries_webdevstudios__cmb2}}
         $this->classes[] = 'Pn_CMB';
-        // {{/if}}
-        // WPBPGen{{#if libraries_wpbp__cronplus}}
+        // {{/unless}}
+        // WPBPGen{{#unless libraries_wpbp__cronplus}}
         $this->classes[] = 'Pn_Cron';
-        // {{/if}}
-        // WPBPGen{{#if libraries_wpbp__fakepage}}
+        // {{/unless}}
+        // WPBPGen{{#unless libraries_wpbp__fakepage}}
         $this->classes[] = 'Pn_FakePage';
-        // {{/if}}
-        // WPBPGen{{#if libraries_wpbp__template}}
+        // {{/unless}}
+        // WPBPGen{{#unless libraries_wpbp__template}}
         $this->classes[] = 'Pn_Template';
-        // {{/if}}
-        // WPBPGen{{#if libraries_wpbp__widgets-helper}}
+        // {{/unless}}
+        // WPBPGen{{#unless libraries_wpbp__widgets-helper}}
         $this->classes[] = 'Pn_Widgets';
-        // {{/if}}
-        // WPBPGen{{#if system_rest}}
+        // {{/unless}}
+        // WPBPGen{{#unless system_rest}}
         $this->classes[] = 'Pn_Rest';
-        // {{/if}}
-        // WPBPGen{{#if system_transient}}
+        // {{/unless}}
+        // WPBPGen{{#unless system_transient}}
         $this->classes[] = 'Pn_Transient';
-        // {{/if}}
+        // {{/unless}}
 
-        // WPBPGen{{#if wpcli}}
+        // WPBPGen{{#unless wpcli}}
         if ( $this->is->request( 'cli' ) ) {
             $this->classes[] = 'Pn_Cli';
         }
-        // {{/if}}
+        // {{/unless}}
 
-        // WPBPGen{{#if ajax_public}}
+        // WPBPGen{{#unless ajax_public}}
         if ( $this->is->request( 'ajax' ) ) {
             $this->classes[] = 'Pn_Ajax';
             if ( $this->is->request( 'admin' ) ) {
                 $this->classes[] = 'Pn_Ajax_Admin';
             }
         }
-        // {{/if}}
+        // {{/unless}}
 
         if ( $this->is->request( 'admin' ) ) {
-			// WPBPGen{{#if libraries_wpbp__pointerplus}}
+			// WPBPGen{{#unless libraries_wpbp__pointerplus}}
             $this->classes[] = 'Pn_Pointers';
-			// {{/if}}
-			// WPBPGen{{#if libraries_mte90__wp-contextual-help}}
+			// {{/unless}}
+			// WPBPGen{{#unless libraries_mte90__wp-contextual-help}}
             $this->classes[] = 'Pn_ContextualHelp';
-			// {{/if}}
-			// WPBPGen{{#if act-deact_actdeact}}
+			// {{/unless}}
+			// WPBPGen{{#unless act-deact_actdeact}}
             $this->classes[] = 'Pn_Admin_ActDeact';
-			// {{/if}}
-			// WPBPGen{{#if libraries_nathanielks__wp-admin-notice}}
+			// {{/unless}}
+			// WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
             $this->classes[] = 'Pn_Admin_Notices';
-			// {{/if}}
-			// WPBPGen{{#if admin-assets_admin-page}}
+			// {{/unless}}
+			// WPBPGen{{#unless admin-assets_admin-page}}
             $this->classes[] = 'Pn_Admin_Settings_Page';
-			// {{/if}}
-			// WPBPGen{{#if admin-assets_admin-js && admin-assets_admin-css}}
+			// {{/unless}}
+			// WPBPGen{{#unless admin-assets_admin-js && admin-assets_admin-css}}
             $this->classes[] = 'Pn_Admin_Enqueue';
-			// {{/if}}
-			// WPBPGen{{#if backend_impexp-settings}}
+			// {{/unless}}
+			// WPBPGen{{#unless backend_impexp-settings}}
             $this->classes[] = 'Pn_Admin_ImpExp';
-			// {{/if}}
+			// {{/unless}}
         }
 
         if ( $this->is->request( 'frontend' ) ) {
-			// WPBPGen{{#if public-assets_js && public-assets_css && frontend_wp-localize-script}}
+			// WPBPGen{{#unless public-assets_js && public-assets_css && frontend_wp-localize-script}}
             $this->classes[] = 'Pn_Enqueue';
-            // {{/if}}
+            // {{/unless}}
             $this->classes[] = 'Pn_Extras';
         }
 

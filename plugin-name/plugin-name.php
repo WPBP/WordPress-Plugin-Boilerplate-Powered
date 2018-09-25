@@ -24,7 +24,7 @@
  * License:           {{author_license}}
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * Requires PHP:      5.3
+ * Requires PHP:      5.6
  * WordPress-Plugin-Boilerplate-Powered: v2.3.0
  */
 // If this file is called directly, abort.

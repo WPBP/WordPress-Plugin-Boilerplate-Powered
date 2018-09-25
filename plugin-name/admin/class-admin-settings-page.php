@@ -81,9 +81,9 @@ class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 		return array_merge(
 			array(
 				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) . '">' . __( 'Settings', PN_TEXTDOMAIN ) . '</a>',
-				// WPBPGen{{#if backend_donate-link-plugin-list}}
+				//WPBPGen{{#if backend_donate-link-plugin-list}}
 				'donate'   => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . __( 'Donate', PN_TEXTDOMAIN ) . '</a>',
-				// {{/if}}
+				//{{/if}}
 			),
             $links
 		);

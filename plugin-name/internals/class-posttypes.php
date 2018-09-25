@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin_Name
+ * Plugin_name
  *
- * @package   Plugin_Name
+ * @package   Plugin_name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
@@ -20,7 +20,9 @@ class Pn_PostTypes extends Pn_Base {
 	 */
 	public function initialize() {
 		parent::initialize();
+		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		add_action( 'init', array( $this, 'load_cpts' ) );
+		//{{/unless}}
 		//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
 		/*
 		 * Custom Columns
@@ -82,7 +84,6 @@ class Pn_PostTypes extends Pn_Base {
 	 * @return void
 	 */
 	public function load_cpts() {
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
 		$tax = register_extended_post_type( 'demo', array(
 			// Show all posts on the post type archive:
@@ -121,7 +122,8 @@ class Pn_PostTypes extends Pn_Base {
 		), array(
 			# Override the base names used for labels:
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
-			'plural'   => __( 'Demos', PN_TEXTDOMAIN ),		)
+			'plural'   => __( 'Demos', PN_TEXTDOMAIN ),
+			)
 		);
 
 		$tax->add_taxonomy( 'demo-section', array(
@@ -156,8 +158,7 @@ class Pn_PostTypes extends Pn_Base {
 			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
 			'plural'   => __( 'Demo Categories', PN_TEXTDOMAIN ),
 		)
-	);
-		//{{/unless}}
+		);
 	}
 	//{{/unless}}
 

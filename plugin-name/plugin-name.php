@@ -38,7 +38,7 @@ define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
 
-// WPBPGen{{#if language-files}}
+//WPBPGen{{#if language-files}}
 /**
  * Load the textdomain of the plugin
  *
@@ -50,7 +50,7 @@ function pn_load_plugin_textdomain() {
 }
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
-// {{/if}}
+//{{/if}}
 if ( ! version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
 	function pn_deactivate() {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
@@ -77,7 +77,7 @@ require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 require_once( PN_PLUGIN_ROOT . 'internals/functions.php' );
 require_once( PN_PLUGIN_ROOT . 'internals/debug.php' );
 
-// WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
+//WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.
  *
@@ -110,7 +110,8 @@ function pn_fs() {
 
 // Init Freemius.
 // pn_fs();
-// {{/unless}}
+//{{/unless}}
+
 if ( ! wp_installing() ) {
 	add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );
 }

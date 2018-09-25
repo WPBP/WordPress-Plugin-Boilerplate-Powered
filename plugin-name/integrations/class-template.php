@@ -20,13 +20,13 @@ class Pn_Template extends Pn_Base {
 	 */
 	public function initialize() {
         parent::initialize();
-		// WPBPGen{{#unless frontend_template-system}}
+		//WPBPGen{{#unless frontend_template-system}}
 		// Override the template hierarchy for load /templates/content-demo.php
 		add_filter( 'template_include', array( __CLASS__, 'load_content_demo' ) );
-		// {{/unless}}
+		//{{/unless}}
 	}
 
-	// WPBPGen{{#unless frontend_template-system}}
+	//WPBPGen{{#unless frontend_template-system}}
 	/**
 	 * Example for override the template system on the frontend
 	 *
@@ -44,5 +44,5 @@ class Pn_Template extends Pn_Base {
 		return $original_template;
 	}
 
-	// {{/unless}}
+	//{{/unless}}
 }

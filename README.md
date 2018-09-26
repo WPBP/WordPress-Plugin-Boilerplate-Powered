@@ -6,38 +6,31 @@
 [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)[![FOSSA Alert](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=shield)](#license)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.
-Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.
+Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.  
 This project fit in this dev cases, choose a library or a snippet and the boilerplate will contain already the example for use it without need a manual copy&paste way or look on internet!
-The [code generator](https://github.com/WPBP/generator) is the most smartiest way to use the boilerplate with a simple command and get ready to work.
 
 ## Features
 
 ### Libraries and Miscellaneus available
 
-* Sass support with Compass and Grunt
-* CoffeeScript support with Grunt (not mandatory)
-* Autoload based on Composer extended
-* [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool) to start to develop <--
-* Many libraries already available (with starter code) in composer.json (with the yeoman generator you can choose)
-	* [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)
-	* [WPBP/CronPlus](https://github.com/WPBP/CronPlus)
-	* [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)
-	* [WPBP/FakePage](https://github.com/WPBP/FakePage)
-	* [WPBP/Template](https://github.com/WPBP/Template)
-	* [WPBP/Debug](https://github.com/WPBP/Debug)
-	* [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)
-	* [WPBP/Requirements](https://github.com/WPBP/Requirements)
-	* [WPBP/Language](https://github.com/WPBP/Language)
-	* [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)
-	* [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)
-	* [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)
-	* [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)
-	* [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)
-	* [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)
-	* [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)
-	* [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)
-	* [yoast/i18n-module](https://github.com/yoast/i18n-module)
-	* [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)
+* [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool) to start to develop
+* Sass support (with Compass), CoffeScript and Grunt (not mandatory because the generator can remove them)
+* Autoload based on Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php)
+* Many libraries already available (with starter code) for Composer
+
+| WPBP Libraries  | Other libraries |
+| --- | --- |
+| [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus) | [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)  |
+| [WPBP/CronPlus](https://github.com/WPBP/CronPlus) | [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)  |
+| [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)  |
+| [WPBP/FakePage](https://github.com/WPBP/FakePage)  | [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)  |
+| [WPBP/Template](https://github.com/WPBP/Template)  | [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)  |
+| [WPBP/Debug](https://github.com/WPBP/Debug)  | [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)  |
+| [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)  | [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)  |
+| [WPBP/Requirements](https://github.com/WPBP/Requirements)  | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)  |
+| [WPBP/Language](https://github.com/WPBP/Language)  | [yoast/i18n-module](https://github.com/yoast/i18n-module)  |
+|   | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)  |
+
 
 ### Snippets available
 
@@ -53,16 +46,9 @@ The [code generator](https://github.com/WPBP/generator) is the most smartiest wa
 * Support for CMB in the options page
 * Transient examples with caching
 
-Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!
-Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info.
+Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
 
-## Shell Script & Tools
-
-Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools) to discover how to use the scripts available!
-
-### Useful resources or code examples
-
-Check on the [wiki](https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/Useful-resources-or-code-examples)!
+Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info (shell scripts, resources and tools as example).
 
 ## Contributors
 

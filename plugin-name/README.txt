@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's) 
+Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: comments, spam (maximum 12)
 Requires at least: 4.8
@@ -7,7 +7,7 @@ Tested up to: 4.9
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 5.3
+Requires PHP: 5.6
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
@@ -66,7 +66,6 @@ e.g.
 3. Upload the `plugin-name` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
-
 == Frequently Asked Questions ==
 
 = A question that someone might have =
@@ -98,13 +97,3 @@ Upgrade notices describe the reason a user should upgrade.  No more than 300 cha
 
 = 0.5 =
 This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== Updates ==
-
-The basic structure of this plugin was cloned from the [WordPress-Plugin-Boilerplate-Powered](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered) project.

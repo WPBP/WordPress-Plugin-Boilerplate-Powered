@@ -71,13 +71,15 @@ class Pn_Initialize {
         // WPBPGen{{#unless ajax_public}}
         if ( $this->is->request( 'ajax' ) ) {
             $this->classes[] = 'Pn_Ajax';
-            if ( $this->is->request( 'admin' ) ) {
-                $this->classes[] = 'Pn_Ajax_Admin';
-            }
         }
         // {{/unless}}
 
         if ( $this->is->request( 'admin' ) ) {
+			// WPBPGen{{#unless ajax_public}}
+			if ( $this->is->request( 'ajax' ) ) {
+				$this->classes[] = 'Pn_Ajax_Admin';
+			}
+			// {{/unless}}
 			// WPBPGen{{#unless libraries_wpbp__pointerplus}}
             $this->classes[] = 'Pn_Pointers';
 			// {{/unless}}

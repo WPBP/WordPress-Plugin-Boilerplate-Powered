@@ -53,7 +53,7 @@ Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wi
 ## Contributors
 
 This project exists thanks to all the people who contribute.
-<a href="graphs/contributors"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/contributors.svg?width=890" /></a>
+<a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/graphs/contributors"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/contributors.svg?width=890" /></a>
 
 ## Backers
 

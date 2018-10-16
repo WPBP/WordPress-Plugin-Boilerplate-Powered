@@ -13,8 +13,8 @@ This project fit in this dev cases, choose a library or a snippet and the boiler
 
 ### Libraries and Miscellaneus available
 
-* [Code Generator](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered#generator-tool) to start to develop
-* Sass support (with Compass), CoffeScript and Grunt (not mandatory because the generator can remove them)
+* [Code Generator](https://github.com/WPBP/generator) to start to develop
+* Sass support, CoffeScript and Grunt (not mandatory because the generator can remove them)
 * Autoload based on Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php)
 * Many libraries already available (with starter code) for Composer
 

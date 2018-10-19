@@ -9,22 +9,22 @@
 //{{/unless}}
  *
  * @package   Plugin_Name
- * @author    {{author_name}} <{{author_email}}>
+ * @author	{{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
- * @link      {{author_url}}
+ * @link	  {{author_url}}
  *
- * Plugin Name:       {{plugin_name}}
- * Plugin URI:        @TODO
- * Description:       @TODO
- * Version:           {{plugin_version}}
- * Author:            {{author_name}}
- * Author URI:        {{author_url}}
- * Text Domain:       plugin-name
- * License:           {{author_license}}
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /languages
- * Requires PHP:      5.6
+ * Plugin Name:	   {{plugin_name}}
+ * Plugin URI:		@TODO
+ * Description:	   @TODO
+ * Version:		   {{plugin_version}}
+ * Author:			{{author_name}}
+ * Author URI:		{{author_url}}
+ * Text Domain:	   plugin-name
+ * License:		   {{author_license}}
+ * License URI:	   http://www.gnu.org/licenses/gpl-2.0.txt
+ * Domain Path:	   /languages
+ * Requires PHP:	  5.6
  * WordPress-Plugin-Boilerplate-Powered: v2.3.0
  */
 // If this file is called directly, abort.
@@ -45,8 +45,8 @@ define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
  * @return void
  */
 function pn_load_plugin_textdomain() {
-    $locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
-    load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
+	$locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
+	load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
 }
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
@@ -91,18 +91,27 @@ function pn_fs() {
 		require_once( PN_PLUGIN_ROOT . 'vendor/freemius/wordpress-sdk/start.php' );
 		$pn_fs = fs_dynamic_init(
 			array(
-				'id'             => '',
-				'slug'           => 'plugin-name',
-				'public_key'     => '',
-				'is_live'        => false,
-				'is_premium'     => true,
-				'has_addons'     => false,
+				'id'			 => '',
+				'slug'		     => 'plugin-name',
+				'public_key'	 => '',
+				'is_live'		 => false,
+				'is_premium'	 => true,
+				'has_addons'	 => false,
 				'has_paid_plans' => true,
-				'menu'           => array(
+				'menu'		   => array(
 					'slug' => 'plugin-name',
 				),
 			)
 		);
+
+
+		if ( $pn_fs->is_premium() ) {
+				$pn_fs->add_filter( 'support_forum_url', 'gt_premium_support_forum_url' );
+
+				function gt_premium_support_forum_url( $wp_org_support_forum_url ) {
+					return 'http://your url';
+				}
+			}
 	}
 
 	return $pn_fs;

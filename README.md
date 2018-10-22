@@ -77,5 +77,3 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 ## License
 
 The WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered?ref=badge_large)

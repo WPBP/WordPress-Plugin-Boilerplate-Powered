@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt="Logo" title="Logo">
 </p>
 
-[![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)[![FOSSA Alert](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWPBP%2FWordPress-Plugin-Boilerplate-Powered.svg?type=shield)](#license)
+[![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.
 Why another boilerplate? Every experienced WordPress developers use always the same libraries or snippets and with composer this part today is very easy but not contain examples or best practices to use all of them.  

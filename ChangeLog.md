@@ -7,6 +7,7 @@
 * Enhancement: Added a page about codeception trick on the wiki https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Cool-libraries
 * Enhancement: improved Freemius snippet
 * Removed: Few libraries that was to much specific
+* Removed: Requirements library that doesn't work pretty well
 * Added: WP_Query_Multisite library
 * Updated: All the composer dependences
 * Feature: Block plugin loading/activate if PHP < 5.6

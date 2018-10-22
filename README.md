@@ -27,8 +27,8 @@ This project fit in this dev cases, choose a library or a snippet and the boiler
 | [WPBP/Template](https://github.com/WPBP/Template)  | [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)  |
 | [WPBP/Debug](https://github.com/WPBP/Debug)  | [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)  |
 | [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)  | [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)  |
-| [WPBP/Requirements](https://github.com/WPBP/Requirements)  | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)  |
-| [WPBP/Language](https://github.com/WPBP/Language)  | [yoast/i18n-module](https://github.com/yoast/i18n-module)  |
+| [WPBP/Language](https://github.com/WPBP/Language)  | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)  |
+|   | [yoast/i18n-module](https://github.com/yoast/i18n-module)  |
 |   | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)  |
 
 

@@ -51,7 +51,7 @@ function pn_load_plugin_textdomain() {
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
 //{{/if}}
-if ( ! version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
+if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 	function pn_deactivate() {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 	}

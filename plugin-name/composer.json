@@ -19,7 +19,6 @@
       "wpbp/template": "1.0.*",
       "wpbp/debug": "1.1.*",
       "wpbp/cpt_columns": "1.0.*",
-      "wpbp/requirements": "1.0.*",
       "wpbp/language": "1.0.*",
       "nathanielks/wp-admin-notice": "dev-master",
       "mte90/wp-contextual-help": "1.1.*",

@@ -9,23 +9,23 @@
 //{{/unless}}
  *
  * @package   Plugin_Name
- * @author	{{author_name}} <{{author_email}}>
+ * @author	  {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link	  {{author_url}}
  *
- * Plugin Name:	   {{plugin_name}}
+ * Plugin Name:	    {{plugin_name}}
  * Plugin URI:		@TODO
- * Description:	   @TODO
- * Version:		   {{plugin_version}}
+ * Description:	    @TODO
+ * Version:		    {{plugin_version}}
  * Author:			{{author_name}}
  * Author URI:		{{author_url}}
- * Text Domain:	   plugin-name
- * License:		   {{author_license}}
- * License URI:	   http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:	   /languages
- * Requires PHP:	  5.6
- * WordPress-Plugin-Boilerplate-Powered: v2.3.0
+ * Text Domain:	    plugin-name
+ * License:		    {{author_license}}
+ * License URI:	    http://www.gnu.org/licenses/gpl-2.0.txt
+ * Domain Path:	    /languages
+ * Requires PHP:	5.6
+ * WordPress-Plugin-Boilerplate-Powered: v3.0.0
  */
 // If this file is called directly, abort.
 if ( !defined( 'WPINC' ) ) {

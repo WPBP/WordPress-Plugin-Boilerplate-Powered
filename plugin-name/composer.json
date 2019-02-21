@@ -25,9 +25,9 @@
       "julien731/wp-dismissible-notices-handler": "1.*",
       "julien731/wp-review-me": "dev-develop",
       "johnbillion/extended-cpts": "4.2",
-      "freemius/wordpress-sdk": "1.2.2.*",
+      "freemius/wordpress-sdk": "2.2.*",
       "yoast/i18n-module": "3.0.0",
-      "webdevstudios/cmb2": "2.4.*",
+      "webdevstudios/cmb2": "2.6.*",
       "origgami/cmb2-grid": "dev-master",
       "stevegrunwell/wp-cache-remember": "dev-master"
    },
@@ -53,8 +53,9 @@
       "lucatume/wp-browser": "2.*",
       "lucatume/function-mocker": "~1.0",
       "phpro/grumphp": "^0.14",
-      "codeception/codeception": "2.3.*",
-      "codeception/codeception-progress-reporter": "dev-master"
+      "codeception/codeception": "2.5.*",
+      "codeception/codeception-progress-reporter": "dev-master",
+      "phpunit/phpunit": "6.*"
    },
    "minimum-stability": "dev",
    "autoload": {

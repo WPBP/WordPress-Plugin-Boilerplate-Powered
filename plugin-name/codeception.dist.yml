@@ -21,9 +21,6 @@ extensions:
         - 'Codeception\Command\GenerateWPRestController'
         - 'Codeception\Command\GenerateWPRestPostTypeController'
         - 'Codeception\Command\GenerateWPAjax'
-        # Generate a snapshot of DB and also share a remote DB
-        - 'Codeception\Command\DbSnapshot'
-        - 'tad\Codeception\Command\SearchReplace'
 modules:
     config:
         # Check https://github.com/lucatume/wp-browser

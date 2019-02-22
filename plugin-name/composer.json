@@ -52,7 +52,7 @@
    "require-dev": {
       "lucatume/wp-browser": "2.*",
       "lucatume/function-mocker": "~1.0",
-      "phpro/grumphp": "^0.14",
+      "phpro/grumphp": "^0.15",
       "codeception/codeception": "2.5.*",
       "codeception/codeception-progress-reporter": "dev-master",
       "phpunit/phpunit": "6.*"
@@ -74,7 +74,7 @@
    "extra": {
       "installer-paths": {
          "vendor/{$name}/": [
-            "webdevstudios/cmb2",
+            "cmb2/cmb2",
             "origgami/cmb2-grid",
             "stevegrunwell/wp-cache-remember"
          ]

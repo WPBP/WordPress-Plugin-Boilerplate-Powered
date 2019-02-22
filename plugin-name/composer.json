@@ -24,7 +24,7 @@
       "mte90/wp-contextual-help": "1.1.*",
       "julien731/wp-dismissible-notices-handler": "1.*",
       "julien731/wp-review-me": "dev-develop",
-      "johnbillion/extended-cpts": "4.2",
+      "johnbillion/extended-cpts": "4.2.*",
       "freemius/wordpress-sdk": "2.2.*",
       "yoast/i18n-module": "3.0.0",
       "cmb2/cmb2": "2.6.*",
@@ -58,6 +58,7 @@
       "phpunit/phpunit": "6.*"
    },
    "minimum-stability": "dev",
+   "prefer-stable": true,
    "autoload": {
       "classmap": [
          "engine/",

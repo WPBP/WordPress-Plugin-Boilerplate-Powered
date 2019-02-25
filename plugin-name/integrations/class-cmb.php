@@ -46,29 +46,6 @@ class Pn_CMB extends Pn_Base {
 			'context'       => 'normal',
 			'priority'      => 'high',
 			'show_names'    => true, // Show field names on the left
-			//WPBPGen{{#unless libraries_rubengc__cmb2-tabs}}
-			'vertical_tabs' => true, // Set vertical tabs, default false
-			'tabs'          => array(
-				array(
-					'id'     => 'tab-1',
-					'icon'   => 'dashicons-admin-site',
-					'title'  => 'Tab 1',
-					'fields' => array(
-						PN_TEXTDOMAIN . '_text',
-						PN_TEXTDOMAIN . '_text2',
-					),
-				),
-				array(
-					'id'     => 'tab-2',
-					'icon'   => 'dashicons-align-left',
-					'title'  => 'Tab 2',
-					'fields' => array(
-                        PN_TEXTDOMAIN . '_textsmall',
-						PN_TEXTDOMAIN . '_textsmall2',
-					),
-				),
-			),
-		//{{/unless}}
 		) );
 		//WPBPGen{{#unless libraries_origgami__cmb2-grid}}
 		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo );

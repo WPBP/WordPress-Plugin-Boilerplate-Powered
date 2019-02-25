@@ -20,7 +20,7 @@ This project fit in this dev cases, choose a library or a snippet and the boiler
 
 | WPBP Libraries  | Other libraries |
 | --- | --- |
-| [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus) | [WebDevStudios/CMB2](https://github.com/WebDevStudios/CMB2)  |
+| [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus) | [CMB2/CMB2](https://github.com/CMB2/CMB2)  |
 | [WPBP/CronPlus](https://github.com/WPBP/CronPlus) | [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)  |
 | [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)  |
 | [WPBP/FakePage](https://github.com/WPBP/FakePage)  | [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)  |

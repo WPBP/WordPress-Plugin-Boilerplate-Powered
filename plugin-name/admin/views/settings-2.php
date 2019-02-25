@@ -1,7 +1,7 @@
 
 		<div id="tabs-2" class="wrap">
 			<?php
-			//WPBPGen{{#unless libraries_webdevstudios__cmb2}}
+			//WPBPGen{{#unless libraries_cmb2__cmb2}}
 			$cmb = new_cmb2_box( array(
 				'id' => PN_TEXTDOMAIN . '_options-second',
 				'hookup' => false,

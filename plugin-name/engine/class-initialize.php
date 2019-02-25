@@ -40,7 +40,7 @@ class Pn_Initialize {
         // WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
         $this->classes[] = 'Pn_PostTypes';
         // {{/unless}}
-        // WPBPGen{{#unless libraries_webdevstudios__cmb2}}
+        // WPBPGen{{#unless libraries_cmb2__cmb2}}
         $this->classes[] = 'Pn_CMB';
         // {{/unless}}
         // WPBPGen{{#unless libraries_wpbp__cronplus}}

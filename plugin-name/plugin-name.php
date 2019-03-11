@@ -25,7 +25,7 @@
  * License URI:	    http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:	    /languages
  * Requires PHP:	5.6
- * WordPress-Plugin-Boilerplate-Powered: v3.0.0
+ * WordPress-Plugin-Boilerplate-Powered: v3.0.3
  */
 // If this file is called directly, abort.
 if ( !defined( 'WPINC' ) ) {

@@ -75,7 +75,9 @@ if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 
 require_once( PN_PLUGIN_ROOT . 'internals/functions.php' );
+//WPBPGen{{#unless libraries_wpbp__debug}}
 require_once( PN_PLUGIN_ROOT . 'internals/debug.php' );
+//{{/unless}}
 
 //WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
 /**

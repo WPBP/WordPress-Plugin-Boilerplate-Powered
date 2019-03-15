@@ -19,7 +19,7 @@ class Pn_Transient extends Pn_Base {
 	 * Initialize the snippet
 	 */
 	public function initialize() {
-		!parent::initialize();
+		parent::initialize();
 	}
 
 	/**

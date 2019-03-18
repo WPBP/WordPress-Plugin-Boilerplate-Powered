@@ -127,8 +127,7 @@ class Pn_Rest extends Pn_Base {
      * @return void
      */
     public function sum( $data ) {
-        echo wp_json_encode( array( 'result' => $data[ 'first' ] + $data[ 'second' ] ) );
-        die();
+        return array( 'result' => $data[ 'first' ] + $data[ 'second' ] );
     }
 
 }

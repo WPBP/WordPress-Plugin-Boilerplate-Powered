@@ -6,7 +6,7 @@
 [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.  
-This project started because mainly the WordPress plugin boilerplates available was too minimal for who is building a lot of plugins.
+This project started because mainly the WordPress plugin boilerplates available was too minimal for who is building a lot of plugins.  
 Every experienced WordPress developers use always the same libraries (or snippets) and with Composer is very easy but at same time follow best practices.  
 Choose a library or a snippet and the boilerplate (with the help of the Code Generator) will generate everything without need a manual copy&paste way or look on internet!
 
@@ -49,7 +49,7 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 
 Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
 
-Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info (shell scripts, resources and tools as example).
+Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info (shell scripts, resources, libraries and tools as example).
 
 ## Contributors
 

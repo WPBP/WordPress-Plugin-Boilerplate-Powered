@@ -28,7 +28,7 @@
  * WordPress-Plugin-Boilerplate-Powered: v3.0.3
  */
 // If this file is called directly, abort.
-if ( !defined( 'WPINC' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
 	die;
 }
 
@@ -108,12 +108,12 @@ function pn_fs() {
 
 
 		if ( $pn_fs->is_premium() ) {
-				$pn_fs->add_filter( 'support_forum_url', 'gt_premium_support_forum_url' );
+			$pn_fs->add_filter( 'support_forum_url', 'gt_premium_support_forum_url' );
 
-				function gt_premium_support_forum_url( $wp_org_support_forum_url ) {
-					return 'http://your url';
-				}
+			function gt_premium_support_forum_url( $wp_org_support_forum_url ) {
+				return 'http://your url';
 			}
+		}
 	}
 
 	return $pn_fs;

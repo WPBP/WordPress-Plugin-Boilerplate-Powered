@@ -62,7 +62,7 @@ class Pn_Is_Methods {
 	 * @return boolean
 	 */
 	public function is_cron() {
-		return defined( 'DOING_CRON' );
+		return ( function_exists( 'wp_doing_cron' ) && wp_doing_cron() ) || defined( 'DOING_CRON' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Pn_Is_Methods {
 	 * @return boolean
 	 */
 	public function is_frontend() {
-		return ( ! is_admin() || defined( 'DOING_AJAX' ) ) && ! defined( 'DOING_CRON' ) && ! defined( 'REST_REQUEST' );
+		return ( ! is_admin() || !$this->is_ajax() ) && !$this->is_cron() && ! defined( 'REST_REQUEST' );
 	}
 
 	/**

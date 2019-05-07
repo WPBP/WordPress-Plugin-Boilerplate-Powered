@@ -17,6 +17,7 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 * [Code Generator](https://github.com/WPBP/generator) to start to develop
 * Sass support, CoffeScript and Grunt (not mandatory because the generator can remove them)
 * Autoload based on Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php)
+* Tools integrated like [GrumpPHP](https://github.com/phpro/grumphp) (automatically on commit) and [PHPStan](https://github.com/phpstan/phpstan/) (`php7.2 vendor/bin/phpstan analyze`)
 * Many libraries already available (with starter code) for Composer
 
 | WPBP Libraries  | Other libraries |

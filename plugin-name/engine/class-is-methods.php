@@ -21,12 +21,12 @@ class Pn_Is_Methods {
 	 * @param \WP_User $user The given user.
 	 * @return bool
 	 */
-	public static function is_user_admin( $user = '' ) {
-		if ( empty( $user ) ) {
+	public static function is_user_admin( \WP_User $user = NULL ) {
+		if ( is_null( $user ) ) {
 			$user = wp_get_current_user();
 		}
 
-		if ( ! is_object( $user ) || ! $user instanceof WP_User ) {
+		if ( ! $user instanceof WP_User ) {
 			_doing_it_wrong( __METHOD__, 'To check if the user is admin is required a WP_User object.', '1.0.0' );
 		}
 

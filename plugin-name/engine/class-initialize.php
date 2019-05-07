@@ -23,9 +23,16 @@ class Pn_Initialize {
 	protected static $instance = null;
 
 	/**
-	 * List of class to initialize.
+	 * Instance of this Pn_Is_Methods.
 	 *
 	 * @var object
+	 */
+	protected $is = null;
+
+	/**
+	 * List of class to initialize.
+	 *
+	 * @var array
 	 */
 	public $classes = null;
 
@@ -115,7 +122,7 @@ class Pn_Initialize {
 
 		$this->classes = apply_filters( 'pn_class_instances', $this->classes );
 
-		return $this->load_classes();
+		$this->load_classes();
 	}
 
 	private function load_classes() {

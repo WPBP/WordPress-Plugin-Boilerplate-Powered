@@ -83,7 +83,7 @@ class Pn_Rest extends Pn_Base {
      *
      * @since {{plugin_version}}
      *
-     * @param object $post_obj Post ID.
+     * @param array $post_obj Post ID.
      *
      * @return string
      */
@@ -122,9 +122,9 @@ class Pn_Rest extends Pn_Base {
      *
      * @since {{plugin_version}}
      *
-     * @param object $data Values.
+     * @param array $data Values.
      *
-     * @return void
+     * @return array
      */
     public function sum( $data ) {
         return array( 'result' => $data[ 'first' ] + $data[ 'second' ] );

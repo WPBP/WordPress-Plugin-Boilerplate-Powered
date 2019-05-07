@@ -68,8 +68,8 @@ class Pn_PostTypes extends Pn_Base {
 		if ( $query->is_search && !is_admin() ) {
 			$post_types = $query->get( 'post_type' );
 			if ( $post_types === 'post' ) {
-				$post_types = array();
-				$query->set( 'post_type', array_push( $post_types, $this->cpts ) );
+				$post_types = array( $post_types );
+				$query->set( 'post_type', array_push( $post_types, array( 'demo' ) ) );
 			}
 		}
 
@@ -208,11 +208,8 @@ class Pn_PostTypes extends Pn_Base {
 			$cpt_count = wp_count_posts( $type );
 
 			if ( $cpt_count->pending ) {
-				// Menu link suffix, Post is different from the rest
-				$suffix = ( 'post' === $type ) ? '' : '?post_type=' . $type;
-
 				// Locate the key of
-				$key = self::recursive_array_search_php( 'edit.php' . $suffix, $menu );
+				$key = self::recursive_array_search_php( 'edit.php?post_type=' . $type, $menu );
 
 				// Not found, just in case
 				if ( !$key ) {
@@ -232,8 +229,8 @@ class Pn_PostTypes extends Pn_Base {
 	 *
 	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
-	 * @param array $needle   First parameter.
-	 * @param array $haystack Second parameter.
+	 * @param string $needle   First parameter.
+	 * @param array  $haystack Second parameter.
 	 *
 	 * @since {{plugin_version}}
 	 *

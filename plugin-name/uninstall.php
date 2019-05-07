@@ -2,7 +2,7 @@
 
 /**
  * Plugin_Name
- * 
+ *
  * Fired when the plugin is uninstalled.
  *
  * When populating this file, consider the following flow
@@ -28,9 +28,9 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 
 /**
  * Loop for uninstall
- * 
+ *
  * @global type $wpdb
- * 
+ *
  * @return void
  */
 function pn_uninstall_multisite() {
@@ -45,14 +45,14 @@ function pn_uninstall_multisite() {
 			return;
 		}
 	}
-	$this->uninstall();
+	pn_uninstall();
 }
 
 /**
  * What happen on uninstall?
- * 
+ *
  * @global WP_Roles $wp_roles
- * 
+ *
  * @return void
  */
 function pn_uninstall() {
@@ -86,7 +86,7 @@ function pn_uninstall() {
 	  $GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
 	  $GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
 	 */
-	
+
 	// Remove the capabilities of the plugin
 	if ( !isset( $wp_roles ) ) {
 		$wp_roles = new WP_Roles;

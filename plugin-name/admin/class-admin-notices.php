@@ -54,7 +54,7 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 		);
 		// {{/unless}}
 		// WPBPGen{{#unless libraries_yoast__i18n-module}}
-		new Yoast_I18n_WordPressOrg_v3(
+		new Yoast_I18n_WordPressOrg_V3(
 			array(
 				'textdomain'  => PN_TEXTDOMAIN,
 				'plugin_name' => PN_NAME,

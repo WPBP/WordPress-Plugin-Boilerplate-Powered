@@ -13,7 +13,7 @@
 /**
  * All the WP pointers.
  */
-class Pn_Pointers extends Pn_base {
+class Pn_Pointers extends Pn_Base {
 
 	/**
 	 * Initialize the Pointers.
@@ -31,7 +31,7 @@ class Pn_Pointers extends Pn_base {
 	 * Check on https://github.com/Mte90/pointerplus/blob/master/pointerplus.php for examples
 	 *
 	 * @param array $pointers The list of pointers.
-	 * @param array $prefix   For your pointers.
+	 * @param string $prefix   For your pointers.
 	 *
 	 * @return mixed
 	 */

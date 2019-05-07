@@ -101,7 +101,7 @@ class Pn_Rest extends Pn_Base {
      * @param object $post  Post object.
      * @param string $key   Key.
      *
-     * @return boolean
+     * @return boolean|WP_Error
      */
     public function update_text_field( $value, $post, $key ) {
         $post_id = update_post_meta( $post->ID, $key, $value );

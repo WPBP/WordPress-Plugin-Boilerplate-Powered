@@ -114,7 +114,7 @@ class Pn_Is_Methods {
 	 * @return boolean
 	 */
 	public function is_frontend() {
-		return ( ! $this->is_admin_backend() || ! $this->is_ajax() ) && ! $this->is_cron() && ! $this->is_rest() && ! is_robots() && ! is_feed() && ! is_trackback();
+		return ( ! $this->is_admin_backend() || ! $this->is_ajax() ) && ! $this->is_cron() && ! $this->is_rest();
 	}
 
 	/**

@@ -27,7 +27,7 @@ class Pn_ContextualHelp {
     /**
      * Filter for change the folder of Contextual Help
      *
-     * @param string $paths The path.
+     * @param array $paths The path.
 	 *
      * @since {{plugin_version}}
      *
@@ -41,7 +41,7 @@ class Pn_ContextualHelp {
     /**
      * Filter for change the folder image of Contextual Help
      *
-     * @param string $paths The path.
+     * @param array $paths The path.
 	 *
      * @since {{plugin_version}}
      *

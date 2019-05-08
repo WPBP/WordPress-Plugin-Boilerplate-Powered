@@ -2,15 +2,19 @@ parameters:
     git_dir: .
     bin_dir: composer/bin
     ignore_unstaged_changes: false
-    tasks: 
+    tasks:
         composer:
             with_dependencies: false
             strict: false
         phpcs:
             standard: ./phpcs.xml
-            ignore_patterns: ['/lib/']
+            ignore_patterns: ['/vendor/']
         grunt: ~
         phpmd: ~
+        phpstan:
+            configuration: ~
+            triggered_by: ['php']
+            memory_limit: -1
         codeception:
             config_file: ~
             fail_fast: false
@@ -22,8 +26,4 @@ parameters:
                 - 'print_r('
                 - 'var_dump('
             triggered_by: [php]
-    testsuites:
-        git_pre_push:
-            tasks: 
-                - codeception
 

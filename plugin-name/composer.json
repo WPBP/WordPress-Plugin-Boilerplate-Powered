@@ -56,7 +56,8 @@
       "phpro/grumphp": "^0.15",
       "codeception/codeception": "2.5.*",
       "codeception/codeception-progress-reporter": "dev-master",
-      "phpunit/phpunit": "6.*"
+      "phpunit/phpunit": "6.*",
+      "wearejust/grumphp-extra-tasks": "^2.2"
    },
    "minimum-stability": "dev",
    "prefer-stable": true,

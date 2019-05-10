@@ -26,8 +26,8 @@ class Pn_Cron extends Pn_Base {
 		$args = array(
 			'recurrence'       => 'hourly',
 			'schedule'         => 'schedule',
-			'name'             => 'cronplusexample',
-			'cb'               => array( $this, 'cronplus_example' ),
+			'name'             => 'hourly_cron',
+			'cb'               => array( $this, 'hourly_cron' ),
 			'plugin_root_file' => 'plugin-name.php',
 		);
 
@@ -35,20 +35,20 @@ class Pn_Cron extends Pn_Base {
         // Schedule the event
 		$cronplus->schedule_event();
         // Remove the event by the schedule
-        $cronplus->clear_schedule_by_hook();
+        //$cronplus->clear_schedule_by_hook();
         // Jump the scheduled event
-        $cronplus->unschedule_specific_event();
+        //$cronplus->unschedule_specific_event();
         //{{/unless}}
 	}
 
 	/**
-	 * Cron example
+	 * Cron Hourly example
 	 *
 	 * @param integer $id The ID.
 	 *
 	 * @return void
 	 */
-	public function cronplus_example( $id ) {
+	public function hourly_cron( $id ) {
 		echo esc_html( $id );
 	}
 

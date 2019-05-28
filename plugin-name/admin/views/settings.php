@@ -1,6 +1,6 @@
 <div id="tabs-1" class="wrap">
 			<?php
-			//WPBPGen{{#unless libraries_cmb2__cmb2}}
+			//WPBPGen{{#if libraries_cmb2__cmb2}}
 			$cmb = new_cmb2_box( array(
 				'id' => PN_TEXTDOMAIN . '_options',
 				'hookup' => false,
@@ -203,7 +203,7 @@
 
 
 			cmb2_metabox_form( PN_TEXTDOMAIN . '_options', PN_TEXTDOMAIN . '-settings' );
-			//{{/unless}}
+			//{{/if}}
 			?>
 
 			<!-- @TODO: Provide other markup for your options page here. -->

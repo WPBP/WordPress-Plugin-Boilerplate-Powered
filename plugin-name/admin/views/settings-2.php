@@ -1,7 +1,7 @@
 
 		<div id="tabs-2" class="wrap">
 			<?php
-			//WPBPGen{{#unless libraries_cmb2__cmb2}}
+			//WPBPGen{{#if libraries_cmb2__cmb2}}
 			$cmb = new_cmb2_box( array(
 				'id' => PN_TEXTDOMAIN . '_options-second',
 				'hookup' => false,
@@ -24,7 +24,7 @@
 			) );
 
 			cmb2_metabox_form( PN_TEXTDOMAIN . '_options-second', PN_TEXTDOMAIN . '-settings-second' );
-			//{{/unless}}
+			//{{/if}}
 			?>
 
 			<!-- @TODO: Provide other markup for your options page here. -->

@@ -22,11 +22,11 @@
 			<li><a href="#tabs-1"><?php _e( 'Settings' ); ?></a></li>
 			<li><a href="#tabs-2"><?php _e( 'Settings 2', PN_TEXTDOMAIN ); ?></a></li>
 			<?php
-			//WPBPGen{{#unless backend_impexp-settings}}
+			//WPBPGen{{#if backend_impexp-settings}}
 			?>
 			<li><a href="#tabs-3"><?php _e( 'Import/Export', PN_TEXTDOMAIN ); ?></a></li>
 			<?php
-			//{{/unless}}
+			//{{/if}}
 			?>
 		</ul>
 		<?php
@@ -34,7 +34,7 @@
 		require_once( plugin_dir_path( __FILE__ ) . 'settings-2.php' );
 		?>
 		<?php
-		//WPBPGen{{#unless backend_impexp-settings}}
+		//WPBPGen{{#if backend_impexp-settings}}
 		?>
 		<div id="tabs-3" class="metabox-holder">
 			<div class="postbox">
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		<?php
-		//{{/unless}}
+		//{{/if}}
 		?>
     </div>
 

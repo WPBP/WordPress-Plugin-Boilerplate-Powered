@@ -1,12 +1,12 @@
 <?php
 
 /**
-//WPBPGen{{#unless author_name}}
+//WPBPGen{{#if author_name}}
  * The WordPress Plugin Boilerplate.
  *
  * A foundation off of which to build well-documented WordPress plugins that
  * also follow WordPress Coding Standards and PHP best practices.
-//{{/unless}}
+//{{/if}}
  *
  * @package   Plugin_Name
  * @author	  {{author_name}} <{{author_email}}>
@@ -75,11 +75,11 @@ if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
 
 require_once( PN_PLUGIN_ROOT . 'internals/functions.php' );
-//WPBPGen{{#unless libraries_wpbp__debug}}
+//WPBPGen{{#if libraries_wpbp__debug}}
 require_once( PN_PLUGIN_ROOT . 'internals/debug.php' );
-//{{/unless}}
+//{{/if}}
 
-//WPBPGen{{#unless libraries_freemius__wordpress-sdk}}
+//WPBPGen{{#if libraries_freemius__wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.
  *
@@ -121,7 +121,7 @@ function pn_fs() {
 
 // Init Freemius.
 // pn_fs();
-//{{/unless}}
+//{{/if}}
 
 if ( ! wp_installing() ) {
 	add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );

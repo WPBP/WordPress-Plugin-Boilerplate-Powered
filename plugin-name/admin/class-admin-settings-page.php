@@ -54,7 +54,7 @@ class Pn_Admin_Settings_Page extends Pn_Admin_Base {
 		 * Add a settings page for this plugin to the main menu
 		 *
 		 */
-		add_menu_page( __( '{{plugin-name}} Settings', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
+		add_menu_page( __( '{{plugin_name}} Settings', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
 
 	/**

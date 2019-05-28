@@ -67,17 +67,14 @@ class Pn_Initialize {
 			$this->classes[] = 'Pn_Rest';
 		}
 		// {{/unless}}
-
 		// WPBPGen{{#unless system_transient}}
 		$this->classes[] = 'Pn_Transient';
 		// {{/unless}}
-
 		// WPBPGen{{#unless wpcli}}
 		if ( $this->is->request( 'cli' ) ) {
 			$this->classes[] = 'Pn_Cli';
 		}
 		// {{/unless}}
-
 		// WPBPGen{{#unless ajax_public}}
 		if ( $this->is->request( 'ajax' ) ) {
 			$this->classes[] = 'Pn_Ajax';

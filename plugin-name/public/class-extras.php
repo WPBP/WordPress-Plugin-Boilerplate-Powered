@@ -20,12 +20,12 @@ class Pn_Extras extends Pn_Base {
 	 */
 	public function initialize() {
 		parent::initialize();
-		//WPBPGen{{#unless frontend_body-class}}
+		//WPBPGen{{#if frontend_body-class}}
 		add_filter( 'body_class', array( __CLASS__, 'add_pn_class' ), 10, 3 );
-		//{{/unless}}
+		//{{/if}}
 	}
 
-	//WPBPGen{{#unless frontend_body-class}}
+	//WPBPGen{{#if frontend_body-class}}
 	/**
 	 * Add class in the body on the frontend
 	 *
@@ -40,5 +40,5 @@ class Pn_Extras extends Pn_Base {
 		return $classes;
 	}
 
-	//{{/unless}}
+	//{{/if}}
 }

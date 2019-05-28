@@ -20,10 +20,10 @@ class Pn_PostTypes extends Pn_Base {
 	 */
 	public function initialize() {
 		parent::initialize();
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+		//WPBPGen{{#if libraries_johnbillion__extended-cpts}}
 		add_action( 'init', array( $this, 'load_cpts' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_wpbp__cpt_columns}}
+		//{{/if}}
+		//WPBPGen{{#if libraries_wpbp__cpt_columns}}
 		/*
 		 * Custom Columns
 		 */
@@ -40,21 +40,21 @@ class Pn_PostTypes extends Pn_Base {
 				'order'    => '-1',
 			)
 		);
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_dashboard-activity}}
+		//{{/if}}
+		//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_dashboard-activity}}
 		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
-		//{{/unless}}
-		//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+		//{{/if}}
+		//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending
 		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
-		//{{/unless}}
-		//WPBPGen{{#unless frontend_cpt-search-support}}
+		//{{/if}}
+		//WPBPGen{{#if frontend_cpt-search-support}}
 		add_filter( 'pre_get_posts', array( $this, 'filter_search' ) );
-		//{{/unless}}
+		//{{/if}}
 	}
 
-	//WPBPGen{{#unless frontend_cpt-search-support}}
+	//WPBPGen{{#if frontend_cpt-search-support}}
 	/**
 	 * Add support for custom CPT on the search box
 	 *
@@ -75,9 +75,9 @@ class Pn_PostTypes extends Pn_Base {
 
 		return $query;
 	}
-	//{{/unless}}
+	//{{/if}}
 
-	//WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+	//WPBPGen{{#if libraries_johnbillion__extended-cpts}}
 	/**
 	 * Load CPT and Taxonomies on WordPress
 	 *
@@ -145,14 +145,14 @@ class Pn_PostTypes extends Pn_Base {
 			),
 			'slug'             => 'demo-cat',
 			'show_in_rest'     => true,
-			//WPBPGen{{#unless system_capability-system}}
+			//WPBPGen{{#if system_capability-system}}
 			'capabilities'     => array(
 				'manage_terms' => 'manage_demoes',
 				'edit_terms'   => 'manage_demoes',
 				'delete_terms' => 'manage_demoes',
 				'assign_terms' => 'read_demo',
 			),
-			//{{/unless}}
+			//{{/if}}
 		), array(
 			// Override the base names used for labels:
 			'singular' => __( 'Demo Category', PN_TEXTDOMAIN ),
@@ -160,9 +160,9 @@ class Pn_PostTypes extends Pn_Base {
 		)
 		);
 	}
-	//{{/unless}}
+	//{{/if}}
 
-	//WPBPGen{{#unless backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
+	//WPBPGen{{#if backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
 	/**
 	 * Add the recents post type in the activity widget<br>
 	 * NOTE: add in $post_types your cpts
@@ -183,8 +183,8 @@ class Pn_PostTypes extends Pn_Base {
 		return $query_args;
 	}
 
-	//{{/unless}}
-	//WPBPGen{{#unless libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+	//{{/if}}
+	//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 	/**
 	 * Bubble Notification for pending cpt<br>
 	 * NOTE: add in $post_types your cpts<br>
@@ -246,6 +246,6 @@ class Pn_PostTypes extends Pn_Base {
 
 		return false;
 	}
-	//{{/unless}}
+	//{{/if}}
 
 }

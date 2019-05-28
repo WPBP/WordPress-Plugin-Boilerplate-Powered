@@ -30,9 +30,9 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 
 		register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'deactivate' ) );
-		//WPBPGen{{#unless system_upgrade-procedure}}
+		//WPBPGen{{#if system_upgrade-procedure}}
 		add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
-		//{{/unless}}
+		//{{/if}}
 	}
 
 	/**
@@ -119,22 +119,22 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 	 * @return void
 	 */
 	private static function single_activate() {
-		//WPBPGen{{#unless libraries_wpbp__requirements}}
+		//WPBPGen{{#if libraries_wpbp__requirements}}
 		// Requirements Detection System - read the doc/example in the library file
 		new Plugin_Requirements(
              PN_NAME, PN_TEXTDOMAIN, array(
 			'WP' => new WordPress_Requirement( '4.6.0' ),
 		)
             );
-		//{{/unless}}
+		//{{/if}}
 		// @TODO: Define activation functionality here
-		//WPBPGen{{#unless system_capability-system}}
+		//WPBPGen{{#if system_capability-system}}
 		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
 		self::add_capabilities();
-		//{{/unless}}
-		//WPBPGen{{#unless system_upgrade-procedure}}
+		//{{/if}}
+		//WPBPGen{{#if system_upgrade-procedure}}
 		self::upgrade_procedure();
-		//{{/unless}}
+		//{{/if}}
 		// Clear the permalinks
 		flush_rewrite_rules();
 	}
@@ -152,7 +152,7 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		flush_rewrite_rules();
 	}
 
-	//WPBPGen{{#unless system_capability-system}}
+	//WPBPGen{{#if system_capability-system}}
 	/**
 	 * Add admin capabilities
 	 *
@@ -219,8 +219,8 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		}
 	}
 
-	//{{/unless}}
-	//WPBPGen{{#unless system_upgrade-procedure}}
+	//{{/if}}
+	//WPBPGen{{#if system_upgrade-procedure}}
 	/**
 	 * Upgrade procedure
 	 *
@@ -236,5 +236,5 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		}
 	}
 
-	//{{/unless}}
+	//{{/if}}
 }

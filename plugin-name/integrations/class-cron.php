@@ -19,7 +19,7 @@ class Pn_Cron extends Pn_Base {
 	 * Initialize the class
 	 */
 	public function initialize() {
-		//WPBPGen{{#unless libraries_wpbp__cronplus}}
+		//WPBPGen{{#if libraries_wpbp__cronplus}}
 		/*
 		 * Load CronPlus
 		 */
@@ -38,7 +38,7 @@ class Pn_Cron extends Pn_Base {
         //$cronplus->clear_schedule_by_hook();
         // Jump the scheduled event
         //$cronplus->unschedule_specific_event();
-        //{{/unless}}
+        //{{/if}}
 	}
 
 	/**

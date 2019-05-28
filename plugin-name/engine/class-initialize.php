@@ -44,76 +44,76 @@ class Pn_Initialize {
 	public function __construct() {
         $this->is        = new Pn_Is_Methods();
         $this->classes   = array();
-        // WPBPGen{{#unless libraries_johnbillion__extended-cpts}}
+        // WPBPGen{{#if libraries_johnbillion__extended-cpts}}
         $this->classes[] = 'Pn_PostTypes';
-        // {{/unless}}
-        // WPBPGen{{#unless libraries_cmb2__cmb2}}
+        // {{/if}}
+        // WPBPGen{{#if libraries_cmb2__cmb2}}
         $this->classes[] = 'Pn_CMB';
-        // {{/unless}}
-        // WPBPGen{{#unless libraries_wpbp__cronplus}}
+        // {{/if}}
+        // WPBPGen{{#if libraries_wpbp__cronplus}}
         $this->classes[] = 'Pn_Cron';
-        // {{/unless}}
-        // WPBPGen{{#unless libraries_wpbp__fakepage}}
+        // {{/if}}
+        // WPBPGen{{#if libraries_wpbp__fakepage}}
         $this->classes[] = 'Pn_FakePage';
-        // {{/unless}}
-        // WPBPGen{{#unless libraries_wpbp__template}}
+        // {{/if}}
+        // WPBPGen{{#if libraries_wpbp__template}}
         $this->classes[] = 'Pn_Template';
-        // {{/unless}}
-        // WPBPGen{{#unless libraries_wpbp__widgets-helper}}
+        // {{/if}}
+        // WPBPGen{{#if libraries_wpbp__widgets-helper}}
         $this->classes[] = 'Pn_Widgets';
-        // {{/unless}}
-		// WPBPGen{{#unless system_rest}}
+        // {{/if}}
+		// WPBPGen{{#if system_rest}}
 		if ( $this->is->request( 'rest' ) ) {
 			$this->classes[] = 'Pn_Rest';
 		}
-		// {{/unless}}
-		// WPBPGen{{#unless system_transient}}
+		// {{/if}}
+		// WPBPGen{{#if system_transient}}
 		$this->classes[] = 'Pn_Transient';
-		// {{/unless}}
-		// WPBPGen{{#unless wpcli}}
+		// {{/if}}
+		// WPBPGen{{#if wpcli}}
 		if ( $this->is->request( 'cli' ) ) {
 			$this->classes[] = 'Pn_Cli';
 		}
-		// {{/unless}}
-		// WPBPGen{{#unless ajax_public}}
+		// {{/if}}
+		// WPBPGen{{#if ajax_public}}
 		if ( $this->is->request( 'ajax' ) ) {
 			$this->classes[] = 'Pn_Ajax';
 		}
-		// {{/unless}}
+		// {{/if}}
 
 		if ( $this->is->request( 'admin_backend' ) ) {
-			// WPBPGen{{#unless ajax_public}}
+			// WPBPGen{{#if ajax_public}}
 			if ( $this->is->request( 'ajax' ) ) {
 				$this->classes[] = 'Pn_Ajax_Admin';
 			}
-			// {{/unless}}
-			// WPBPGen{{#unless libraries_wpbp__pointerplus}}
+			// {{/if}}
+			// WPBPGen{{#if libraries_wpbp__pointerplus}}
 			$this->classes[] = 'Pn_Pointers';
-			// {{/unless}}
-			// WPBPGen{{#unless libraries_mte90__wp-contextual-help}}
+			// {{/if}}
+			// WPBPGen{{#if libraries_mte90__wp-contextual-help}}
 			$this->classes[] = 'Pn_ContextualHelp';
-			// {{/unless}}
-			// WPBPGen{{#unless act-deact_actdeact}}
+			// {{/if}}
+			// WPBPGen{{#if act-deact_actdeact}}
 			$this->classes[] = 'Pn_Admin_ActDeact';
-			// {{/unless}}
-			// WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
+			// {{/if}}
+			// WPBPGen{{#if libraries_nathanielks__wp-admin-notice}}
 			$this->classes[] = 'Pn_Admin_Notices';
-			// {{/unless}}
-			// WPBPGen{{#unless admin-assets_admin-page}}
+			// {{/if}}
+			// WPBPGen{{#if admin-assets_admin-page}}
 			$this->classes[] = 'Pn_Admin_Settings_Page';
-			// {{/unless}}
-			// WPBPGen{{#unless admin-assets_admin-js && admin-assets_admin-css}}
+			// {{/if}}
+			// WPBPGen{{#if admin-assets_admin-js && admin-assets_admin-css}}
 			$this->classes[] = 'Pn_Admin_Enqueue';
-			// {{/unless}}
-			// WPBPGen{{#unless backend_impexp-settings}}
+			// {{/if}}
+			// WPBPGen{{#if backend_impexp-settings}}
 			$this->classes[] = 'Pn_Admin_ImpExp';
-			// {{/unless}}
+			// {{/if}}
 		}
 
 		if ( $this->is->request( 'frontend' ) ) {
-			// WPBPGen{{#unless public-assets_js && public-assets_css && frontend_wp-localize-script}}
+			// WPBPGen{{#if public-assets_js && public-assets_css && frontend_wp-localize-script}}
 			$this->classes[] = 'Pn_Enqueue';
-			// {{/unless}}
+			// {{/if}}
 			$this->classes[] = 'Pn_Extras';
 		}
 

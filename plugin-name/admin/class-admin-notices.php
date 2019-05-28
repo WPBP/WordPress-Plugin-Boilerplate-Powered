@@ -23,7 +23,7 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 			return;
 		}
 
-		// WPBPGen{{#unless libraries_nathanielks__wp-admin-notice}}
+		// WPBPGen{{#if libraries_nathanielks__wp-admin-notice}}
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend
 		 *
@@ -31,14 +31,14 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 		 */
 		new WP_Admin_Notice( __( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
 		new WP_Admin_Notice( __( 'Error Messages', PN_TEXTDOMAIN ), 'error' );
-		// {{/unless}}
-		// WPBPGen{{#unless libraries_julien731__wp-dismissible-notices-handler}}
+		// {{/if}}
+		// WPBPGen{{#if libraries_julien731__wp-dismissible-notices-handler}}
 		/*
 		 * Dismissible notice
 		 */
 		dnh_register_notice( 'my_demo_notice', 'updated', __( 'This is my dismissible notice', PN_TEXTDOMAIN ) );
-		// {{/unless}}
-		// WPBPGen{{#unless libraries_julien731__wp-review-me}}
+		// {{/if}}
+		// WPBPGen{{#if libraries_julien731__wp-review-me}}
 		/*
 		 * Review Me notice
 		 */
@@ -52,8 +52,8 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 				'link_label' => __( 'Click here to review', PN_TEXTDOMAIN ),
 			)
 		);
-		// {{/unless}}
-		// WPBPGen{{#unless libraries_yoast__i18n-module}}
+		// {{/if}}
+		// WPBPGen{{#if libraries_yoast__i18n-module}}
 		new Yoast_I18n_WordPressOrg_V3(
 			array(
 				'textdomain'  => PN_TEXTDOMAIN,
@@ -61,7 +61,7 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 				'hook'        => 'admin_notices',
 			)
 		);
-		// {{/unless}}
+		// {{/if}}
 	}
 
 }

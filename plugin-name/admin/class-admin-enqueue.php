@@ -23,17 +23,17 @@ class Pn_Admin_Enqueue extends Pn_Admin_Base {
             return;
 		}
 
-		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
+		//WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 		// Load admin style sheet and JavaScript.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		//{{/unless}}
-		//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
+		//{{/if}}
+		//WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-		//{{/unless}}
+		//{{/if}}
 	}
 
 
-	//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
+	//WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
@@ -43,19 +43,19 @@ class Pn_Admin_Enqueue extends Pn_Admin_Base {
 	 */
 	public function enqueue_admin_styles() {
 		$screen = get_current_screen();
-		//WPBPGen{{#unless admin-assets_settings-css}}
+		//WPBPGen{{#if admin-assets_settings-css}}
 		if ( $screen->id === 'toplevel_page_plugin-name' || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
 			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		}
 
-		//{{/unless}}
-		//WPBPGen{{#unless admin-assets_admin-css}}
+		//{{/if}}
+		//WPBPGen{{#if admin-assets_admin-css}}
 		wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', plugins_url( 'assets/css/admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
-		//{{/unless}}
+		//{{/if}}
 	}
 
-	//{{/unless}}
-	//WPBPGen{{#unless admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
+	//{{/if}}
+	//WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
@@ -64,17 +64,17 @@ class Pn_Admin_Enqueue extends Pn_Admin_Base {
 	 * @return mixed Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_scripts() {
-		//WPBPGen{{#unless admin-assets_settings-js}}
+		//WPBPGen{{#if admin-assets_settings-js}}
 		$screen = get_current_screen();
         if ( $screen->id === 'toplevel_page_plugin-name' ) {
             wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION );
         }
 
-		//{{/unless}}
-		//WPBPGen{{#unless admin-assets_admin-js}}
+		//{{/if}}
+		//WPBPGen{{#if admin-assets_admin-js}}
 		wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', plugins_url( 'assets/js/admin.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
-		//{{/unless}}
+		//{{/if}}
 	}
 
-	//{{/unless}}
+	//{{/if}}
 }

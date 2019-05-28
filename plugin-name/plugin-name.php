@@ -60,7 +60,7 @@ if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 		echo wp_kses_post(
 			sprintf(
 				'<div class="notice notice-error"><p>%s</p></div>',
-				__( '"Plugin Name" requires PHP 5.6 or newer.', PN_TEXTDOMAIN )
+				__( '"{{plugin_name}}" requires PHP 5.6 or newer.', PN_TEXTDOMAIN )
 			)
 		);
 	}

@@ -94,13 +94,13 @@ function pn_fs() {
 		$pn_fs = fs_dynamic_init(
 			array(
 				'id'			 => '',
-				'slug'		     => 'plugin-name',
+				'slug'			 => 'plugin-name',
 				'public_key'	 => '',
 				'is_live'		 => false,
 				'is_premium'	 => true,
 				'has_addons'	 => false,
 				'has_paid_plans' => true,
-				'menu'		   => array(
+				'menu'			 => array(
 					'slug' => 'plugin-name',
 				),
 			)

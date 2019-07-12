@@ -45,9 +45,7 @@ class Pn_PostTypes extends Pn_Base {
 		/*
 		 * Custom Bulk Actions
 		 */
-		// Define bulk actions for custom-post-type property
 		$bulk_actions = new Seravo_Custom_Bulk_Action( array( 'post_type' => 'demo' ) );
-
 		$bulk_actions->register_bulk_action(
 			array(
 				'menu_text'    => 'Mark meta',

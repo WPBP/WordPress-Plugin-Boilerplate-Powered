@@ -30,5 +30,5 @@ parameters:
                 - 'die('
                 - 'print_r('
                 - 'var_dump('
-            triggered_by: [php]
+            triggered_by: ['php']
 

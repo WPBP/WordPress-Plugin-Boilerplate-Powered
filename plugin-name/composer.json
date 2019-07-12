@@ -21,6 +21,7 @@
       "wpbp/cpt_columns": "1.0.*",
       "wpbp/language": "1.0.*",
       "nathanielks/wp-admin-notice": "dev-master",
+      "seravo/wp-custom-bulk-actions": "dev-master",
       "mte90/wp-contextual-help": "1.1.*",
       "julien731/wp-dismissible-notices-handler": "1.*",
       "julien731/wp-review-me": "dev-develop",
@@ -72,14 +73,15 @@
          "integrations/",
          "rest/"
       ],
-      "files": ["vendor/mte90/wp-contextual-help/wp-contextual-help.php"]
+      "files": ["vendor/mte90/wp-contextual-help/wp-contextual-help.php", "vendor/wp-custom-bulk-actions/custom-bulk-actions.php"]
    },
    "extra": {
       "installer-paths": {
          "vendor/{$name}/": [
             "cmb2/cmb2",
             "origgami/cmb2-grid",
-            "stevegrunwell/wp-cache-remember"
+            "stevegrunwell/wp-cache-remember",
+            "seravo/wp-custom-bulk-actions"
          ]
       }
    },

@@ -41,6 +41,28 @@ class Pn_PostTypes extends Pn_Base {
 			)
 		);
 		//{{/if}}
+		//WPBPGen{{#if libraries_seravo__wp-custom-bulk-actions}}
+		/*
+		 * Custom Bulk Actions
+		 */
+		// Define bulk actions for custom-post-type property
+		$bulk_actions = new Seravo_Custom_Bulk_Action( array( 'post_type' => 'demo' ) );
+
+		$bulk_actions->register_bulk_action(
+			array(
+				'menu_text'    => 'Mark meta',
+				'admin_notice' => 'Written something on custom bulk meta',
+				'callback'     => function( $post_ids ) {
+					foreach ( $post_ids as $post_id ) {
+						update_post_meta( $post_id, '_demo_' . PN_TEXTDOMAIN . '_text', 'Random stuff' );
+					}
+
+					return true;
+				},
+			)
+		);
+		$bulk_actions->init();
+		//{{/if}}
 		//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_dashboard-activity}}
 		// Activity Dashboard widget for your cpts
 		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
@@ -123,7 +145,7 @@ class Pn_PostTypes extends Pn_Base {
 			# Override the base names used for labels:
 			'singular' => __( 'Demo', PN_TEXTDOMAIN ),
 			'plural'   => __( 'Demos', PN_TEXTDOMAIN ),
-			)
+		)
 		);
 
 		$tax->add_taxonomy( 'demo-section', array(

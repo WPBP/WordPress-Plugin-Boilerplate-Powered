@@ -1,4 +1,35 @@
-## 3.0
+## 3.1.2
+
+* Enhancement: Added Seravo/wp-custom-bulk-actions
+
+## 3.1.1
+
+* Fix: Missing 2 placeholders
+* Fix: Use `if` for the generation instead of `unless`
+
+## 3.1.0
+
+* Enhancement: Added support for phpstan (it is not complete)
+* Enhancement: Scanned the boilerplate with phpstan and fixed some docs issues
+* Enhancement: Improved the `Pn_Is` class methods
+* Enhancement: Bumped version of few libraries
+* Enhancement: Added phpdoc and phpstan to grumphp
+
+## 3.0.3
+
+* Fix: Issue on generation when the library debug is not chosen
+
+## 3.0.2
+
+* Fix: Removed reference to a library for CMB not used anymore
+* Fix: Replace all the reference of CMB2 to the new repo
+* Enhancement: Added index.php files in folder where was missing
+
+## 3.0.1
+
+* Enhancement: bump of the various packages and tools used to avoid errors
+
+## 3.0.0
 
 * Enhancement: Moved PN_Uninstall.php to uninstall.php
 * Enhancement: New folder structure

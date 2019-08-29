@@ -61,10 +61,6 @@ class Pn_PostTypes extends Pn_Base {
 		);
 		$bulk_actions->init();
 		//{{/if}}
-		//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_dashboard-activity}}
-		// Activity Dashboard widget for your cpts
-		add_filter( 'dashboard_recent_posts_query_args', array( $this, 'cpt_activity_dashboard_support' ), 10, 1 );
-		//{{/if}}
 		//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending
 		add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
@@ -112,6 +108,7 @@ class Pn_PostTypes extends Pn_Base {
 			),
 			'slug'            => 'demo',
 			'show_in_rest'    => true,
+			'dashboard_activity' => true,
 			'capability_type' => array( 'demo', 'demoes' ),
 			// Add some custom columns to the admin screen:
 			'admin_cols' => array(
@@ -182,28 +179,6 @@ class Pn_PostTypes extends Pn_Base {
 	}
 	//{{/if}}
 
-	//WPBPGen{{#if backend_dashboard-activity && libraries_johnbillion__extended-cpts}}
-	/**
-	 * Add the recents post type in the activity widget<br>
-	 * NOTE: add in $post_types your cpts
-	 *
-	 * @param array $query_args The content of the widget.
-	 *
-	 * @since {{plugin_version}}
-	 *
-	 * @return array
-	 */
-	public function cpt_activity_dashboard_support( $query_args ) {
-		if ( !is_array( $query_args[ 'post_type' ] ) ) {
-			// Set default post type
-			$query_args[ 'post_type' ] = array( 'page' );
-		}
-
-		$query_args[ 'post_type' ] = array_merge( $query_args[ 'post_type' ], array( 'demo' ) );
-		return $query_args;
-	}
-
-	//{{/if}}
 	//WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
 	/**
 	 * Bubble Notification for pending cpt<br>

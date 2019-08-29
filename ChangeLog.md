@@ -1,6 +1,7 @@
 ## 3.1.2
 
 * Enhancement: Added Seravo/wp-custom-bulk-actions
+* Enhancement: Removed Activity widget support because Extended-Cpts integrated
 
 ## 3.1.1
 

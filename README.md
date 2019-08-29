@@ -45,7 +45,6 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 * Class in frontend body with the slug of plugin
 * Shortcode example included
 * WPCLI support
-* Support for your CPTs in Activity widget in dashboard
 * Support for CMB in the options page
 * Transient examples with caching
 

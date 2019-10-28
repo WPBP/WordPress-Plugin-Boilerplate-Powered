@@ -52,6 +52,7 @@
    ],
    "require-dev": {
       "szepeviktor/phpstan-wordpress": "^0.1.0",
+      "szepeviktor/phpstan-phpdoc": "^0.1.0",
       "lucatume/wp-browser": "2.*",
       "lucatume/function-mocker": "~1.0",
       "phpro/grumphp": "^0.15",

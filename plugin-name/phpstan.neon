@@ -4,6 +4,7 @@ includes:
     # https://github.com/phpstan/phpstan/blob/master/conf/bleedingEdge.neon
     - vendor/phpstan/phpstan/conf/bleedingEdge.neon
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
+    - vendor/szepeviktor/phpstan-phpdoc/extension.neon
 parameters:
     level: max
     paths:

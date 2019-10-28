@@ -10,6 +10,19 @@ settings:
     memory_limit: 1024M
 params:
     - .env
+coverage:
+    enabled: true
+    exclude:
+        - vendor/*
+    include:
+        - public/*
+        - admin/*
+        - ajax/*
+        - cli/*
+        - engine/*
+        - internals/*
+        - rest/*
+        - integrations/*
 extensions:
     enabled:
         - Codeception\ProgressReporter\ProgressReporter

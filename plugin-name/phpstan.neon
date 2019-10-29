@@ -23,15 +23,15 @@ parameters:
         - '#^Function add_query_arg invoked with [123] parameters?, 0 required\.$#'
         # Less import errors
         - '/^Parameter #1 \$text of function esc_html expects string, int given\.$/'
-        - '/^Parameter #1 \$file of function plugin_dir_path expects string, string|false given\.$/'
+        - '/^Parameter #1 \$file of function plugin_dir_path expects string, string\|false given\.$/'
         - '/^Parameter #1 \$array_arg of function end is passed by reference, so it expects variables only\.$/'
-        - '#Argument of an invalid type array|int supplied for foreach, only iterables are supported.#'
-        - '#Argument of an invalid type object supplied for foreach, only iterables are supported.#'
-        - '#Access to an undefined property object::\$is_search.#'
-        - '#Access to an undefined property object::\$pending.#'
-        - '#Access to an undefined property object::\$ID.#'
-        - '#Call to an undefined method object::set().#'
-        - '#Call to an undefined method object::get().#'
+        - '#Argument of an invalid type array\|int supplied for foreach, only iterables are supported\.#'
+        - '#Argument of an invalid type object supplied for foreach, only iterables are supported\.#'
+        - '#Access to an undefined property object::\$is_search\.#'
+        - '#Access to an undefined property object::\$pending\.#'
+        - '#Access to an undefined property object::\$ID\.#'
+        - '#Call to an undefined method object::set\(\)\.#'
+        - '#Call to an undefined method object::get\(\)\.#'
         # https://core.trac.wordpress.org/ticket/43304
         - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
         # WP-CLI accepts a class as callable

@@ -1,9 +1,11 @@
 actor: Tester
+actor_suffix: Tester
 paths:
     tests: tests
     log: tests/_output
     data: tests/_data
     helpers: tests/_support
+    envs: tests/_envs
 settings:
     bootstrap: _bootstrap.php
     colors: true
@@ -26,6 +28,7 @@ coverage:
 extensions:
     enabled:
         - Codeception\ProgressReporter\ProgressReporter
+        - Codeception\Extension\RunFailed
     commands:
         # Generate Tests cases
         # codecept generate:wp[...] [suite] [className]

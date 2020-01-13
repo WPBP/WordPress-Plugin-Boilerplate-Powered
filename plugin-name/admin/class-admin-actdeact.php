@@ -119,14 +119,6 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 	 * @return void
 	 */
 	private static function single_activate() {
-		//WPBPGen{{#if libraries_wpbp__requirements}}
-		// Requirements Detection System - read the doc/example in the library file
-		new Plugin_Requirements(
-             PN_NAME, PN_TEXTDOMAIN, array(
-			'WP' => new WordPress_Requirement( '4.6.0' ),
-		)
-            );
-		//{{/if}}
 		// @TODO: Define activation functionality here
 		//WPBPGen{{#if system_capability-system}}
 		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles

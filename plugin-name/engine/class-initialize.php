@@ -72,7 +72,7 @@ class Pn_Initialize {
 		// {{/if}}
 		// WPBPGen{{#if wpcli}}
 		if ( $this->is->request( 'cli' ) ) {
-			$this->classes[] = 'Pn_Cli';
+			$this->classes[] = 'Pn_WPCli';
 		}
 		// {{/if}}
 		// WPBPGen{{#if ajax_public}}

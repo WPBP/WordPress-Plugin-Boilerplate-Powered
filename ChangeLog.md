@@ -1,3 +1,8 @@
+## 3.1.3
+
+* Enhancement: Bump version of PHP supported to PHP) 7.0
+* Enhancement: removed Requirements library as not working anymore
+
 ## 3.1.2
 
 * Enhancement: Added Seravo/wp-custom-bulk-actions

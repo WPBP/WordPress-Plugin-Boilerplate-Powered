@@ -28,7 +28,7 @@
       "johnbillion/extended-cpts": "4.3.*",
       "freemius/wordpress-sdk": "2.2.*",
       "yoast/i18n-module": "3.1.0",
-      "cmb2/cmb2": "2.6.*",
+      "cmb2/cmb2": "2.7.*",
       "origgami/cmb2-grid": "dev-master",
       "stevegrunwell/wp-cache-remember": "dev-master"
    },

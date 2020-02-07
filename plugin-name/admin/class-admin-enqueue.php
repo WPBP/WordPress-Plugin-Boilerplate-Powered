@@ -44,7 +44,7 @@ class Pn_Admin_Enqueue extends Pn_Admin_Base {
 	public function enqueue_admin_styles() {
 		$screen = get_current_screen();
 		//WPBPGen{{#if admin-assets_settings-css}}
-		if ( $screen->id === 'toplevel_page_plugin-name' || strpos( $_SERVER[ 'REQUEST_URI' ], 'index.php' ) || strpos( $_SERVER[ 'REQUEST_URI' ], get_bloginfo( 'wpurl' ) . '/wp-admin/' ) ) {
+		if ( $screen->id === 'toplevel_page_plugin-name' ) {
 			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		}
 

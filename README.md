@@ -51,7 +51,7 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 
 Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
 
-Check the [Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/) for other info (shell scripts, resources, libraries and tools as example).
+Check the [Wiki](https://wpbp.github.io/wiki.html) for other info (shell scripts, resources, libraries and tools as example).
 
 ## Contributors
 

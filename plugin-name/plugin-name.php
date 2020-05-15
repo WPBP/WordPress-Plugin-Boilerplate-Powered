@@ -9,23 +9,23 @@
 //{{/if}}
  *
  * @package   Plugin_Name
- * @author	  {{author_name}} <{{author_email}}>
+ * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
- * @link	  {{author_url}}
+ * @link      {{author_url}}
  *
- * Plugin Name:	    {{plugin_name}}
- * Plugin URI:		@TODO
- * Description:	    @TODO
- * Version:		    {{plugin_version}}
- * Author:			{{author_name}}
- * Author URI:		{{author_url}}
- * Text Domain:	    plugin-name
- * License:		    {{author_license}}
- * License URI:	    http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:	    /languages
- * Requires PHP:	7.0
- * WordPress-Plugin-Boilerplate-Powered: v3.1.3
+ * Plugin Name:     {{plugin_name}}
+ * Plugin URI:      @TODO
+ * Description:     @TODO
+ * Version:         {{plugin_version}}
+ * Author:          {{author_name}}
+ * Author URI:      {{author_url}}
+ * Text Domain:     plugin-name
+ * License:         {{author_license}}
+ * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
+ * Domain Path:     /languages
+ * Requires PHP:    7.0
+ * WordPress-Plugin-Boilerplate-Powered: v3.2.0
  */
 // If this file is called directly, abort.
 if ( !defined( 'ABSPATH' ) ) {
@@ -38,7 +38,7 @@ define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
 
-//WPBPGen{{#if language-files}}
+// WPBPGen{{#if language-files}}
 /**
  * Load the textdomain of the plugin
  *
@@ -50,8 +50,9 @@ function pn_load_plugin_textdomain() {
 }
 
 add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
-//{{/if}}
+// {{/if}}
 if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
+
 	function pn_deactivate() {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 	}
@@ -72,14 +73,33 @@ if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 	return;
 }
 
-require_once( PN_PLUGIN_ROOT . 'vendor/autoload.php' );
+require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
 
-require_once( PN_PLUGIN_ROOT . 'internals/functions.php' );
-//WPBPGen{{#if libraries_wpbp__debug}}
-require_once( PN_PLUGIN_ROOT . 'internals/debug.php' );
-//{{/if}}
+require_once PN_PLUGIN_ROOT . 'internals/functions.php';
+// WPBPGen{{#if libraries_wpbp__debug}}
+require_once PN_PLUGIN_ROOT . 'internals/debug.php';
+// {{/if}}
 
-//WPBPGen{{#if libraries_freemius__wordpress-sdk}}
+// WPBPGen{{#if libraries_micropackage_requirements}}
+$requirements = new \Micropackage\Requirements\Requirements(
+     'Plugin Name',
+    array(
+	'php'            => '7.0',
+	'php_extensions' => array( 'mbstring' ),
+	'wp'             => '5.3',
+	// 'plugins'            => array(
+	// array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
+	// ),
+)
+    );
+if ( ! $requirements->satisfied() ) {
+	$requirements->print_notice();
+	return;
+}
+
+// {{/if}}
+
+// WPBPGen{{#if libraries_freemius__wordpress-sdk}}
 /**
  * Create a helper function for easy SDK access.
  *
@@ -90,17 +110,17 @@ function pn_fs() {
 	global $pn_fs;
 
 	if ( !isset( $pn_fs ) ) {
-		require_once( PN_PLUGIN_ROOT . 'vendor/freemius/wordpress-sdk/start.php' );
+		require_once PN_PLUGIN_ROOT . 'vendor/freemius/wordpress-sdk/start.php';
 		$pn_fs = fs_dynamic_init(
 			array(
-				'id'			 => '',
-				'slug'			 => 'plugin-name',
-				'public_key'	 => '',
-				'is_live'		 => false,
-				'is_premium'	 => true,
-				'has_addons'	 => false,
+				'id'             => '',
+				'slug'           => 'plugin-name',
+				'public_key'     => '',
+				'is_live'        => false,
+				'is_premium'     => true,
+				'has_addons'     => false,
 				'has_paid_plans' => true,
-				'menu'			 => array(
+				'menu'           => array(
 					'slug' => 'plugin-name',
 				),
 			)
@@ -113,6 +133,7 @@ function pn_fs() {
 			function gt_premium_support_forum_url( $wp_org_support_forum_url ) {
 				return 'http://your url';
 			}
+
 		}
 	}
 
@@ -121,7 +142,7 @@ function pn_fs() {
 
 // Init Freemius.
 // pn_fs();
-//{{/if}}
+// {{/if}}
 
 if ( ! wp_installing() ) {
 	add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );

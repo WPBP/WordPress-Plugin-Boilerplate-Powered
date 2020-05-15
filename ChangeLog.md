@@ -1,3 +1,7 @@
+## 3.2.0
+
+* Enhancement: Added micropackage/requirements 
+
 ## 3.1.3
 
 * Enhancement: Bump version of PHP supported to PHP) 7.0

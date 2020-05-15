@@ -34,6 +34,7 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 |   | [yoast/i18n-module](https://github.com/yoast/i18n-module)  |
 |   | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)  |
 |   | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions)  |
+|   | [micropackage/requirements](https://github.com/micropackage/requirements)  |
 
 
 ### Snippets available

@@ -1,6 +1,4 @@
 parameters:
-    extensions:
-        - Wearejust\GrumPHPExtra\Extension\Loader
     git_dir: .
     bin_dir: composer/bin
     ignore_unstaged_changes: false
@@ -13,9 +11,6 @@ parameters:
             ignore_patterns: ['/vendor/']
         grunt: ~
         phpmd: ~
-        phpdoc:
-            triggered_by: ['php']
-            ignore: ['/vendor/']
         phpstan:
             configuration: ~
             triggered_by: ['php']

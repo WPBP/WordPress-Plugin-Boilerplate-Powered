@@ -2,7 +2,8 @@
 
 * Enhancement: Added micropackage/requirements 
 * Enhancement: Added yahnis-elsts/plugin-update-checker
-* Enhancement: Improved code styling
+* Enhancement: Improved code style with WPCS
+* Enhancement: Updated example pot files with new folder to exclude
 * Removed: mte90/wp-contextual-help
 * Removed: CoffeeScript support
 * Replace: wordpress-admin-notices and WP-Dismissable-Notice-Handler with wpdesk/wp-notice

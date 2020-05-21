@@ -5,339 +5,409 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TODO 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/plugins/plugin-name\n"
-"POT-Creation-Date: 2016-02-23 19:23+0100\n"
+"POT-Creation-Date: 2020-05-21 19:28+0200\n"
 "PO-Revision-Date: 2014-07-07 18:52+0100\n"
 "Last-Translator: Mte90 <mte90net@gmail.com>\n"
 "Language-Team: LANGUAGE <translations@example.com >\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
 "esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPathExcluded-11: *.js\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
-"X-Poedit-SearchPathExcluded-1: includes/CPT_Core\n"
-"X-Poedit-SearchPathExcluded-2: includes/Taxonomy_Core\n"
-"X-Poedit-SearchPathExcluded-3: includes/Widgets-Helper\n"
-"X-Poedit-SearchPathExcluded-4: includes/freemius\n"
-"X-Poedit-SearchPathExcluded-5: admin/includes/CMB2\n"
-"X-Poedit-SearchPathExcluded-6: admin/includes/CPT_Columns.php\n"
-"X-Poedit-SearchPathExcluded-7: admin/includes/CMB2-Google-maps\n"
-"X-Poedit-SearchPathExcluded-8: admin/includes/CronPlus\n"
-"X-Poedit-SearchPathExcluded-9: admin/includes/PointerPlus\n"
-"X-Poedit-SearchPathExcluded-10: public/includes/requirements.php\n"
-"X-Poedit-SearchPathExcluded-11: *.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: admin/class-plugin-name-admin.php:220
-msgid "Page Title"
+#: admin/class-admin-impexp.php:91
+msgid "Please upload a valid .json file"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:220
-msgid "Menu Text"
+#: admin/class-admin-impexp.php:97
+msgid "Please upload a file to import"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:241
+#: admin/class-admin-notices.php:33
+msgid "Updated Messages"
+msgstr ""
+
+#: admin/class-admin-notices.php:34
+msgid "This is my dismissible notice"
+msgstr ""
+
+#: admin/class-admin-notices.php:47
+msgid "Review me!"
+msgstr ""
+
+#: admin/class-admin-notices.php:48
+msgid "Click here to review"
+msgstr ""
+
+#: admin/class-admin-settings-page.php:57
+msgid "{{plugin_name}} Settings"
+msgstr ""
+
+#: admin/class-admin-settings-page.php:83 admin/views/admin.php:22
 msgid "Settings"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:290
-#, php-format
-msgid "%s "
-msgid_plural "%s "
-msgstr[0] ""
-msgstr[1] ""
-
-#: admin/class-plugin-name-admin.php:310
-msgid "Demo Metabox"
+#: admin/class-admin-settings-page.php:85
+msgid "Donate"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:317 admin/views/admin.php:30
+#: admin/views/admin.php:23
+msgid "Settings 2"
+msgstr ""
+
+#: admin/views/admin.php:27
+msgid "Import/Export"
+msgstr ""
+
+#: admin/views/admin.php:41
+msgid "Export Settings"
+msgstr ""
+
+#: admin/views/admin.php:43
+msgid ""
+"Export the plugin's settings for this site as a .json file. This will allows "
+"you to easily import the configuration to another installation."
+msgstr ""
+
+#: admin/views/admin.php:48
+msgid "Export"
+msgstr ""
+
+#: admin/views/admin.php:55
+msgid "Import Settings"
+msgstr ""
+
+#: admin/views/admin.php:57
+msgid ""
+"Import the plugin's settings from a .json file. This file can be retrieved "
+"by exporting the settings from another installation."
+msgstr ""
+
+#: admin/views/admin.php:65
+msgid "Import"
+msgstr ""
+
+#: admin/views/admin.php:78
+msgid "Plugin Name."
+msgstr ""
+
+#: admin/views/settings-2.php:15 admin/views/settings.php:14
+#: integrations/class-cmb.php:58
 msgid "Text"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:318 admin/class-plugin-name-admin.php:324
-#: admin/views/admin.php:31 admin/views/admin.php:37
+#: admin/views/settings-2.php:16 admin/views/settings-2.php:25
+#: admin/views/settings.php:15 admin/views/settings.php:24
+#: admin/views/settings.php:33 admin/views/settings.php:42
+#: admin/views/settings.php:50 admin/views/settings.php:58
+#: admin/views/settings.php:66 admin/views/settings.php:74
+#: admin/views/settings.php:82 admin/views/settings.php:90
+#: admin/views/settings.php:99 admin/views/settings.php:107
+#: admin/views/settings.php:123 admin/views/settings.php:137
+#: admin/views/settings.php:151 admin/views/settings.php:164
+#: admin/views/settings.php:174 admin/views/settings.php:183
+#: admin/views/settings.php:192 admin/views/settings.php:200
+#: admin/views/settings.php:213 integrations/class-cmb.php:59
+#: integrations/class-cmb.php:67 integrations/class-cmb.php:76
+#: integrations/class-cmb.php:84
 msgid "field description (optional)"
 msgstr ""
 
-#: admin/class-plugin-name-admin.php:323
-msgid "Text Small"
-msgstr ""
-
-#: admin/includes/CMBF/init.php:258
-msgid "Clear"
-msgstr ""
-
-#: admin/includes/CMBF/init.php:259
-msgid "Default"
-msgstr ""
-
-#: admin/includes/CMBF/init.php:260
-msgid "Select Color"
-msgstr ""
-
-#: admin/includes/CMBF/init.php:261
-msgid "Current Color"
-msgstr ""
-
-#: admin/includes/CMBF/init.php:288
-msgid "Select / Deselect All"
-msgstr ""
-
-#: admin/includes/CMBF/init.php:1177
-msgid "Save"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_field.php:459
-msgid "Add Group"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_field.php:460
-msgid "Remove Group"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:250
-msgid "Add Row"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:306
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:706
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:768
-#: admin/includes/CMB/classes.fields.php:448
-#: admin/includes/CMB/classes.fields.php:508
-msgid "Remove"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:601
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:635
-msgid "No terms"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:674
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:728
-msgid "Add or Upload File"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:695
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:760
-msgid "Remove Image"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:706
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:768
-msgid "File:"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:706
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_types.php:768
-msgid "Download"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_ajax.php:47
-msgid "Please Try Again"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_ajax.php:131
-msgid "Remove Embed"
-msgstr ""
-
-#: admin/includes/CMBF/helpers/cmb_Meta_Box_ajax.php:134
-#, php-format
-msgid "No oEmbed Results Found for %s. View more info at"
-msgstr ""
-
-#: admin/includes/CMB/classes.fields.php:361
-msgid "Add New"
-msgstr ""
-
-#: admin/includes/CMB/classes.fields.php:430
-msgid "Add File"
-msgstr ""
-
-#: admin/includes/CMB/classes.fields.php:496
-msgid "Add Image"
-msgstr ""
-
-#: admin/includes/CMB/classes.fields.php:1011
-msgid "Type to search"
-msgstr ""
-
-#: admin/includes/CMB/classes.fields.php:1370
-msgid "Add New Group"
-msgstr ""
-
-#: admin/views/admin.php:36
+#: admin/views/settings-2.php:24 admin/views/settings.php:23
 msgid "Color Picker"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:94
-#: includes/CPT_Core/CPT_Core.php:101
-#, php-format
-msgid "Search %s"
+#: admin/views/settings.php:32
+msgid "Test Text Medium"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:95
-#: includes/CPT_Core/CPT_Core.php:99
-#, php-format
-msgid "All %s"
+#: admin/views/settings.php:41
+msgid "Website URL"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:96
-#, php-format
-msgid "Parent %s"
+#: admin/views/settings.php:49
+msgid "Test Text Email"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:97
-#: includes/CPT_Core/CPT_Core.php:104
-#, php-format
-msgid "Parent %s:"
+#: admin/views/settings.php:57
+msgid "Test Time"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:98
-#: includes/CPT_Core/CPT_Core.php:97
-#, php-format
-msgid "Edit %s"
+#: admin/views/settings.php:65
+msgid "Test Date Picker"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:99
-#, php-format
-msgid "Update %s"
+#: admin/views/settings.php:73
+msgid "Test Date Picker (UNIX timestamp)"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:100
-#: includes/CPT_Core/CPT_Core.php:95 includes/CPT_Core/CPT_Core.php:96
-#, php-format
-msgid "Add New %s"
+#: admin/views/settings.php:81
+msgid "Test Date/Time Picker Combo (UNIX timestamp)"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:101
-#, php-format
-msgid "New %s Name"
+#: admin/views/settings.php:89
+msgid "Test Money"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:107
-#, php-format
-msgid "Popular %s"
+#: admin/views/settings.php:98
+msgid "Test Text Area"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:108
-#, php-format
-msgid "Separate %s with commas"
+#: admin/views/settings.php:106
+msgid "Test Text Area for Code"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:109
-#, php-format
-msgid "Add or remove %s"
+#: admin/views/settings.php:114
+msgid "Test Title Weeeee"
 msgstr ""
 
-#: includes/Taxonomy_Core/Taxonomy_Core.php:110
-#, php-format
-msgid "Choose from the most used %s"
+#: admin/views/settings.php:115
+msgid "This is a title description"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:98
-#, php-format
-msgid "New %s"
+#: admin/views/settings.php:122
+msgid "Test Select"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:100
-#, php-format
-msgid "View %s"
+#: admin/views/settings.php:128 admin/views/settings.php:142
+#: admin/views/settings.php:155
+msgid "Option One"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:102
-#, php-format
-msgid "No %s"
+#: admin/views/settings.php:129 admin/views/settings.php:143
+#: admin/views/settings.php:156
+msgid "Option Two"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:103
-#, php-format
-msgid "No %s found in Trash"
+#: admin/views/settings.php:130 admin/views/settings.php:144
+#: admin/views/settings.php:157
+msgid "Option Three"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:152
-#, php-format
-msgid "%1$s updated. <a href=\"%2$s\">View %1$s</a>"
+#: admin/views/settings.php:136
+msgid "Test Radio inline"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:153
-msgid "Custom field updated."
+#: admin/views/settings.php:150
+msgid "Test Radio"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:154
-msgid "Custom field deleted."
+#: admin/views/settings.php:163
+msgid "Test Taxonomy Radio"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:155
-#, php-format
-msgid "%1$s updated."
+#: admin/views/settings.php:173
+msgid "Test Taxonomy Select"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:157
-#, php-format
-msgid "%1$s restored to revision from %2$s"
+#: admin/views/settings.php:182
+msgid "Test Taxonomy Multi Checkbox"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:158
-#, php-format
-msgid "%1$s published. <a href=\"%2$s\">View %1$s</a>"
+#: admin/views/settings.php:191
+msgid "Test Checkbox"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:159
-#, php-format
-msgid "%1$s saved."
+#: admin/views/settings.php:199
+msgid "Test Multi Checkbox"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:160
-#, php-format
-msgid "%1$s submitted. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+#: admin/views/settings.php:204
+msgid "Check One"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:161
-#, php-format
+#: admin/views/settings.php:205
+msgid "Check Two"
+msgstr ""
+
+#: admin/views/settings.php:206
+msgid "Check Three"
+msgstr ""
+
+#: admin/views/settings.php:212
+msgid "Test wysiwyg"
+msgstr ""
+
+#: admin/views/settings.php:221
+msgid "Test Image"
+msgstr ""
+
+#: admin/views/settings.php:222
+msgid "Upload an image or enter a URL."
+msgstr ""
+
+#: admin/views/settings.php:229
+msgid "Multiple Files"
+msgstr ""
+
+#: admin/views/settings.php:230
+msgid "Upload or add multiple images/attachments."
+msgstr ""
+
+#: admin/views/settings.php:238
+msgid "oEmbed"
+msgstr ""
+
+#: admin/views/settings.php:239
 msgid ""
-"%1$s scheduled for: <strong>%2$s</strong>. <a target=\"_blank\" href=\"%3$s"
-"\">Preview %1$s</a>"
+"Enter a youtube, twitter, or instagram URL. Supports services listed at <a "
+"href=\"http://codex.wordpress.org/Embeds\">http://codex.wordpress.org/"
+"Embeds</a>."
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:163
-msgid "M j, Y @ G:i"
+#: integrations/class-cmb.php:45
+msgid "Demo Metabox"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:164
-#, php-format
-msgid "%1$s draft updated. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+#: integrations/class-cmb.php:66
+msgid "Text 2"
 msgstr ""
 
-#: includes/CPT_Core/CPT_Core.php:200
-#, php-format
-msgid "%s Title"
+#: integrations/class-cmb.php:75
+msgid "Text Small"
 msgstr ""
 
-#: includes/Widget-Boilerplate/widget-boilerplate/plugin.php:66
-msgid "Widget Name"
+#: integrations/class-cmb.php:83
+msgid "Text Small 2"
 msgstr ""
 
-#: includes/Widget-Boilerplate/widget-boilerplate/plugin.php:69
-msgid "Short description of the widget goes here."
+#: integrations/class-pointers.php:45
+msgid "Boilerplate Help"
 msgstr ""
 
-#: public/class-plugin-name.php:89
+#: integrations/class-pointers.php:46
+msgid ""
+"A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers."
+msgstr ""
+
+#: integrations/widgets/sample.php:14
+msgid "My Recent Posts Example"
+msgstr ""
+
+#: integrations/widgets/sample.php:15
+msgid "My Recent Posts Widget Description"
+msgstr ""
+
+#: integrations/widgets/sample.php:26
+msgid "Title"
+msgstr ""
+
+#: integrations/widgets/sample.php:28
+msgid "Enter the widget title."
+msgstr ""
+
+#: integrations/widgets/sample.php:36
+msgid "Recent Posts"
+msgstr ""
+
+#: integrations/widgets/sample.php:79
+msgid "Taxonomy"
+msgstr ""
+
+#: integrations/widgets/sample.php:81
+msgid "Set the taxonomy."
+msgstr ""
+
+#: integrations/widgets/sample.php:91
+msgid "Taxonomy terms"
+msgstr ""
+
+#: integrations/widgets/sample.php:93
+msgid "Set the taxonomy terms."
+msgstr ""
+
+#: integrations/widgets/sample.php:104
+msgid "Pages"
+msgstr ""
+
+#: integrations/widgets/sample.php:106
+msgid "Set the page."
+msgstr ""
+
+#: integrations/widgets/sample.php:116
+msgid "Post type"
+msgstr ""
+
+#: integrations/widgets/sample.php:118
+msgid "Set the post type."
+msgstr ""
+
+#: integrations/widgets/sample.php:128
+msgid "Amount"
+msgstr ""
+
+#: integrations/widgets/sample.php:129
+msgid "Select how many posts to show."
+msgstr ""
+
+#: integrations/widgets/sample.php:136
+msgid "1 Post"
+msgstr ""
+
+#: integrations/widgets/sample.php:141
+msgid "2 Posts"
+msgstr ""
+
+#: integrations/widgets/sample.php:145
+msgid "3 Posts"
+msgstr ""
+
+#: integrations/widgets/sample.php:156
+msgid "Output as list"
+msgstr ""
+
+#: integrations/widgets/sample.php:157
+msgid "Wraps posts with the <li> tag."
+msgstr ""
+
+#: internals/class-posttypes.php:34
+msgid "CMB2 Field"
+msgstr ""
+
+#: internals/class-posttypes.php:146
 msgid "Demo"
 msgstr ""
 
-#: public/class-plugin-name.php:89
+#: internals/class-posttypes.php:147
 msgid "Demos"
 msgstr ""
 
-#: public/class-plugin-name.php:94
-msgid "Demo Section"
+#: internals/class-posttypes.php:187
+msgid "Demo Category"
 msgstr ""
 
-#: public/class-plugin-name.php:94
-msgid "Demo Sections"
+#: internals/class-posttypes.php:188
+msgid "Demo Categories"
+msgstr ""
+
+#: internals/debug.php:12
+msgid "Plugin Name"
+msgstr ""
+
+#: plugin-name.php:64
+msgid "\"{{plugin_name}}\" requires PHP 5.6 or newer."
+msgstr ""
+
+#: public/class-enqueue.php:77
+msgid "Hey! You have clicked the button!"
+msgstr ""
+
+#: rest/class-rest.php:52
+msgid "Text field demo of Post type"
+msgstr ""
+
+#: rest/class-rest.php:119
+msgid "Failed to update post views."
+msgstr ""
+
+#: templates/content-demo.php:4
+msgid "Insert here your custom HTML"
 msgstr ""

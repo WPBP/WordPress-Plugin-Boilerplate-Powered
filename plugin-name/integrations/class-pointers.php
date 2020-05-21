@@ -39,13 +39,13 @@ class Pn_Pointers extends Pn_Base {
 		return array_merge(
 			$pointers,
 			array(
-				$prefix . '_admin_bar' =>
+				$prefix . '_contextual_help' =>
 				array(
-					'selector' => '.wrap h2',
+					'selector' => '#show-settings-link',
 					'title' => __( 'Boilerplate Help', PN_TEXTDOMAIN ),
 					'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
 					'edge' => 'top',
-					'align' => 'right',
+					'align' => 'left',
 					'icon_class' => 'dashicons-welcome-learn-more',
 				),
 			)

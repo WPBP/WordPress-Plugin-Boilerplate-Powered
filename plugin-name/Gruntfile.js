@@ -24,31 +24,6 @@ module.exports = function (grunt) {
         }
       }
     },
-    coffee: {
-      js: {
-        options: {
-          bare: true,
-          join: true
-        },
-        files: {
-          'assets/js/public.js': 'assets/coffee/public.coffee',
-          'assets/js/admin.js': 'assets/coffee/admin.coffee',
-          'assets/js/settings.js': 'assets/coffee/settings.coffee'
-        }
-      },
-      jsDev: {
-        options: {
-          bare: true,
-          join: true,
-          sourceMap: true
-        },
-        files: {
-          'assets/js/public.js': 'assets/coffee/public.coffee',
-          'assets/js/admin.js': 'assets/coffee/admin.coffee',
-          'assets/js/settings.js': 'assets/coffee/settings.coffee'
-        }
-      }
-    },
     watch: {
       compass: {
         files: [
@@ -66,12 +41,10 @@ module.exports = function (grunt) {
   // Load tasks
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Register tasks
   grunt.registerTask('default', [
-    'compass:css', 'compass:cssDev',
-    'coffee:js', 'coffee:jsDev'
+    'compass:css', 'compass:cssDev'
   ]);
   grunt.registerTask('dev', [
     'watch'

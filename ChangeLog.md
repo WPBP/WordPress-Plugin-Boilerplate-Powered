@@ -3,6 +3,7 @@
 * Enhancement: Added micropackage/requirements 
 * Enhancement: Improved code styling
 * Removed: mte90/wp-contextual-help
+* Removed: CoffeeScript support
 * Replace: wordpress-admin-notices and WP-Dismissable-Notice-Handler with wpdesk/wp-notice
 
 ## 3.1.3

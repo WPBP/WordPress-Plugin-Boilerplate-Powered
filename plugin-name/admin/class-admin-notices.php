@@ -24,7 +24,7 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 			return;
 		}
 
-		// WPBPGen{{#if libraries_nathanielks__wp-admin-notice}}
+		// WPBPGen{{#if libraries_wpdesk_wp-notice}}
 		/*
 		 * Load Wp_Admin_Notice for the notices in the backend
 		 *

@@ -40,7 +40,7 @@ class Pn_CMB extends Pn_Base {
 		// Start with an underscore to hide fields from custom fields list
 		$prefix   = '_demo_';
 		$cmb_demo = new_cmb2_box(
-             array(
+            array(
 			'id'           => $prefix . 'metabox',
 			'title'        => __( 'Demo Metabox', PN_TEXTDOMAIN ),
 			'object_types' => array( 'demo' ),
@@ -54,7 +54,7 @@ class Pn_CMB extends Pn_Base {
 		$row      = $cmb2Grid->addRow(); //phpcs:ignore WordPress.NamingConventions
 		// {{/if}}
 		$field1 = $cmb_demo->add_field(
-             array(
+            array(
 			'name' => __( 'Text', PN_TEXTDOMAIN ),
 			'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
 			'id'   => $prefix . PN_TEXTDOMAIN . '_text',
@@ -62,7 +62,7 @@ class Pn_CMB extends Pn_Base {
 				)
             );
 		$field2 = $cmb_demo->add_field(
-             array(
+            array(
 			'name' => __( 'Text 2', PN_TEXTDOMAIN ),
 			'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
 			'id'   => $prefix . PN_TEXTDOMAIN . '_text2',
@@ -71,7 +71,7 @@ class Pn_CMB extends Pn_Base {
             );
 
 		$field3 = $cmb_demo->add_field(
-             array(
+            array(
 			'name' => __( 'Text Small', PN_TEXTDOMAIN ),
 			'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
 			'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall',
@@ -79,7 +79,7 @@ class Pn_CMB extends Pn_Base {
 				)
             );
 		$field4 = $cmb_demo->add_field(
-             array(
+            array(
 			'name' => __( 'Text Small 2', PN_TEXTDOMAIN ),
 			'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
 			'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall2',

@@ -39,15 +39,16 @@ class Pn_Pointers extends Pn_Base {
 		return array_merge(
 			$pointers,
 			array(
-			$prefix . '_contextual_tab' => array(
-				'selector'   => '#contextual-help-link',
-				'title'      => __( 'Boilerplate Help', PN_TEXTDOMAIN ),
-				'text'       => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
-				'edge'       => 'top',
-				'align'      => 'right',
-				'icon_class' => 'dashicons-welcome-learn-more',
-			),
-		)
+				$prefix . '_admin_bar' =>
+				array(
+					'selector' => '.wrap h2',
+					'title' => __( 'Boilerplate Help', PN_TEXTDOMAIN ),
+					'text' => __( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
+					'edge' => 'top',
+					'align' => 'right',
+					'icon_class' => 'dashicons-welcome-learn-more',
+				),
+			)
 		);
 	}
 

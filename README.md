@@ -25,13 +25,12 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 | --- | --- |
 | [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus) | [CMB2/CMB2](https://github.com/CMB2/CMB2)  |
 | [WPBP/CronPlus](https://github.com/WPBP/CronPlus) | [micropackage/requirements](https://github.com/micropackage/requirements)  |
-| [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)  |
+| [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [yoast/i18n-module](https://github.com/yoast/i18n-module) |
 | [WPBP/FakePage](https://github.com/WPBP/FakePage)  | [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)  |
 | [WPBP/Template](https://github.com/WPBP/Template)  | [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)  |
 | [WPBP/Debug](https://github.com/WPBP/Debug)  | [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)  |
-| [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)  | [julien731/WP-Dismissible-Notices-Handler](https://github.com/julien731/wp-dismissible-notices-handler)  |
+| [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)  | [wpdesk/wp-notice](https://gitlab.com/wpdesk/wp-notice/-/tree/master)  |
 | [WPBP/Language](https://github.com/WPBP/Language)  | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)  |
-|   | [yoast/i18n-module](https://github.com/yoast/i18n-module)  |
 |   | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)  |
 |   | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions)  |
 

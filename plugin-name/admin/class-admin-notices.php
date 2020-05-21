@@ -30,15 +30,10 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 		 *
 		 * First parameter the HTML, the second is the css class
 		 */
-		new WP_Admin_Notice( __( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
-		new WP_Admin_Notice( __( 'Error Messages', PN_TEXTDOMAIN ), 'error' );
+		wpdesk_wp_notice( __( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
+		wpdesk_wp_notice( __( 'This is my dismissible notice', PN_TEXTDOMAIN ), 'error', true );
 		// {{/if}}
-		// WPBPGen{{#if libraries_julien731__wp-dismissible-notices-handler}}
-		/*
-		 * Dismissible notice
-		 */
-		dnh_register_notice( 'my_demo_notice', 'updated', __( 'This is my dismissible notice', PN_TEXTDOMAIN ) );
-		// {{/if}}
+
 		// WPBPGen{{#if libraries_julien731__wp-review-me}}
 		/*
 		 * Review Me notice

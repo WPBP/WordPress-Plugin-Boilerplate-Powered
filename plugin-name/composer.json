@@ -22,7 +22,6 @@
       "wpbp/language": "1.0.*",
       "nathanielks/wp-admin-notice": "dev-master",
       "seravo/wp-custom-bulk-actions": "dev-master",
-      "julien731/wp-dismissible-notices-handler": "1.*",
       "julien731/wp-review-me": "dev-develop",
       "johnbillion/extended-cpts": "4.3.*",
       "freemius/wordpress-sdk": "2.3.*",
@@ -30,14 +29,9 @@
       "cmb2/cmb2": "2.7.*",
       "origgami/cmb2-grid": "dev-master",
       "stevegrunwell/wp-cache-remember": "dev-master",
-      "micropackage/requirements": "^1.0"
+      "micropackage/requirements": "^1.0",
+      "wpdesk/wp-notice": "^3.1"
    },
-   "repositories": [
-      {
-         "url": "git@github.com:nathanielks/wordpress-admin-notice.git",
-         "type": "git"
-      }
-   ],
    "require-dev": {
       "szepeviktor/phpstan-wordpress": "^0.6.0",
       "szepeviktor/phpstan-phpdoc": "^0.2.0",

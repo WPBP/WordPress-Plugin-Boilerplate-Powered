@@ -42,7 +42,7 @@ class Pn_Enqueue extends Pn_Base {
 	 * @return void
 	 */
 	public static function enqueue_styles() {
-		wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'assets/css/public.css', PN_PLUGIN_ABSOLUTE ), array(), PN_VERSION );
+		wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', plugins_url( 'assets/css/public.css', PN_PLUGIN_ABSOLUTE ), array(), PN_VERSION, false );
 	}
 
 	// {{/if}}
@@ -56,7 +56,7 @@ class Pn_Enqueue extends Pn_Base {
 	 * @return void
 	 */
 	public static function enqueue_scripts() {
-		wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'assets/js/public.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION );
+		wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', plugins_url( 'assets/js/public.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION, false );
 	}
 
 	// {{/if}}

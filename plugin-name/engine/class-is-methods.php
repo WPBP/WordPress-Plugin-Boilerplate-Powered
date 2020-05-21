@@ -21,7 +21,7 @@ class Pn_Is_Methods {
 	 * @param \WP_User $user The given user.
 	 * @return bool
 	 */
-	public static function is_user_admin( \WP_User $user = NULL ) {
+	public static function is_user_admin( \WP_User $user = null ) {
 		if ( is_null( $user ) ) {
 			$user = wp_get_current_user();
 		}

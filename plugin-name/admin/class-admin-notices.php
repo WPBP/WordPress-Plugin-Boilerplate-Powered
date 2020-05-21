@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin_name
  *
@@ -9,6 +8,8 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
+use Yoast_I18n_WordPressOrg_v3;
 
 /**
  * This class contain all the snippet or extra that improve the experience on the backend

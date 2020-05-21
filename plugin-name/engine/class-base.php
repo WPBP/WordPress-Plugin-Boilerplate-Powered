@@ -16,7 +16,7 @@
 class Pn_Base {
 
 	/**
-	 * The settings of the plugin
+	 * @var array The settings of the plugin
 	 */
 	public $settings = array();
 

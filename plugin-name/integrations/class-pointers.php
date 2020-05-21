@@ -30,13 +30,15 @@ class Pn_Pointers extends Pn_Base {
 	 * Add pointers.
 	 * Check on https://github.com/Mte90/pointerplus/blob/master/pointerplus.php for examples
 	 *
-	 * @param array $pointers The list of pointers.
+	 * @param array  $pointers The list of pointers.
 	 * @param string $prefix   For your pointers.
 	 *
 	 * @return mixed
 	 */
 	public function custom_initial_pointers( $pointers, $prefix ) {
-		return array_merge( $pointers, array(
+		return array_merge(
+			$pointers,
+			array(
 			$prefix . '_contextual_tab' => array(
 				'selector'   => '#contextual-help-link',
 				'title'      => __( 'Boilerplate Help', PN_TEXTDOMAIN ),
@@ -45,7 +47,8 @@ class Pn_Pointers extends Pn_Base {
 				'align'      => 'right',
 				'icon_class' => 'dashicons-welcome-learn-more',
 			),
-		) );
+		)
+		);
 	}
 
 }

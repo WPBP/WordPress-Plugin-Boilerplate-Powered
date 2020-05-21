@@ -37,7 +37,8 @@ class Pn_Shortcode extends Pn_Base {
 			array(
 				'foo' => 'something',
 				'bar' => 'something else',
-			), $atts
+			),
+            $atts
 		);
 
 		return '<span class="foo">foo = ' . $atts[ 'foo' ] . '</span>' .
@@ -45,3 +46,4 @@ class Pn_Shortcode extends Pn_Base {
 	}
 
 }
+

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin_Name
  *
@@ -43,14 +42,18 @@ class Pn_Rest extends Pn_Base {
      * @return void
      */
     public function add_custom_field() {
-        register_rest_field( 'demo', PN_TEXTDOMAIN . '_text', array(
-            'get_callback'    => array( $this, 'get_text_field' ),
-            'update_callback' => array( $this, 'update_text_field' ),
-            'schema'          => array(
-                'description' => __( 'Text field demo of Post type', PN_TEXTDOMAIN ),
-                'type'        => 'string',
-            ),
-        ));
+        register_rest_field(
+             'demo',
+            PN_TEXTDOMAIN . '_text',
+            array(
+				'get_callback'    => array( $this, 'get_text_field' ),
+				'update_callback' => array( $this, 'update_text_field' ),
+				'schema'          => array(
+					'description' => __( 'Text field demo of Post type', PN_TEXTDOMAIN ),
+					'type' => 'string',
+				),
+			)
+		);
     }
 
     /**
@@ -62,20 +65,24 @@ class Pn_Rest extends Pn_Base {
      */
     public function add_custom_ruote() {
         // Only an example with 2 parameters
-        register_rest_route( 'wp/v2', '/calc', array(
-            'methods'  => WP_REST_Server::READABLE,
-            'callback' => array( $this, 'sum' ),
-            'args'     => array(
-                'first'  => array(
-                    'default'           => 10,
-                    'sanitize_callback' => 'absint',
-                ),
-                'second' => array(
-                    'default'           => 1,
-                    'sanitize_callback' => 'absint',
-                ),
-            ),
-        ) );
+        register_rest_route(
+             'wp/v2',
+            '/calc',
+            array(
+				'methods'  => WP_REST_Server::READABLE,
+				'callback' => array( $this, 'sum' ),
+				'args'     => array(
+					'first'  => array(
+						'default' => 10,
+						'sanitize_callback' => 'absint',
+					),
+					'second' => array(
+						'default' => 1,
+						'sanitize_callback' => 'absint',
+					),
+				),
+			)
+		);
     }
 
     /**

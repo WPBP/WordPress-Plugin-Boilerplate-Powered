@@ -32,7 +32,8 @@ class Pn_Transient extends Pn_Base {
 
 		// Use wp-cache-remember package to retrive or save in transient
 		return remember_transient(
-             $key, function () use ( $key ) {
+             $key,
+            function () use ( $key ) {
 				// If there's no cached version we ask
 				$response = wp_remote_get( 'https://jsonplaceholder.typicode.com/todos/' );
 				if ( is_wp_error( $response ) ) {
@@ -42,7 +43,8 @@ class Pn_Transient extends Pn_Base {
 
 				// If everything's okay, parse the body and json_decode it
 				return json_decode( wp_remote_retrieve_body( $response ) );
-			 }, DAY_IN_SECONDS
+			},
+            DAY_IN_SECONDS
             );
 	}
 

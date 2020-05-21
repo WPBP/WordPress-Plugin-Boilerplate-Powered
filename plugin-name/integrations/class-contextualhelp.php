@@ -64,7 +64,9 @@ class Pn_ContextualHelp {
 		WP_Contextual_Help::init();
 		// Only display on the pages - post.php and post-new.php, but only on the `demo` post_type
 		WP_Contextual_Help::register_tab(
-             'demo-example', __( 'Demo Management', PN_TEXTDOMAIN ), array(
+             'demo-example',
+            __( 'Demo Management', PN_TEXTDOMAIN ),
+            array(
 			'page'      => array( 'post.php', 'post-new.php' ),
 			'post_type' => 'demo',
 			'wpautop'   => true,
@@ -73,7 +75,9 @@ class Pn_ContextualHelp {
 
 		// Add to a custom plugin settings page
 		WP_Contextual_Help::register_tab(
-             'pn_settings', __( 'Boilerplate Settings', PN_TEXTDOMAIN ), array(
+             'pn_settings',
+            __( 'Boilerplate Settings', PN_TEXTDOMAIN ),
+            array(
 			'page'    => 'settings_page_' . PN_TEXTDOMAIN,
 			'wpautop' => true,
 		)

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin_name
  *
@@ -12,6 +11,13 @@
 
 $pn_debug = new WPBP_Debug( __( 'Plugin Name', PN_TEXTDOMAIN ) );
 
+/**
+ * Log text inside the debugging plugins
+ *
+ * @param string $text The text.
+ *
+ * @return void
+ */
 function pn_log( $text ) {
 	global $pn_debug;
 	$pn_debug->log( $text );

@@ -24,7 +24,7 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 | WPBP Libraries  | Other libraries |
 | --- | --- |
 | [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus) | [CMB2/CMB2](https://github.com/CMB2/CMB2)  |
-| [WPBP/CronPlus](https://github.com/WPBP/CronPlus) | [kevinlangleyjr/wp-contextual-help](https://github.com/kevinlangleyjr/wp-contextual-help)  |
+| [WPBP/CronPlus](https://github.com/WPBP/CronPlus) | [micropackage/requirements](https://github.com/micropackage/requirements)  |
 | [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [nathanielks/wp-admin-notice](https://github.com/nathanielks/wordpress-admin-notice)  |
 | [WPBP/FakePage](https://github.com/WPBP/FakePage)  | [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)  |
 | [WPBP/Template](https://github.com/WPBP/Template)  | [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)  |
@@ -34,7 +34,6 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 |   | [yoast/i18n-module](https://github.com/yoast/i18n-module)  |
 |   | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)  |
 |   | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions)  |
-|   | [micropackage/requirements](https://github.com/micropackage/requirements)  |
 
 
 ### Snippets available

@@ -1,6 +1,8 @@
 ## 3.2.0
 
 * Enhancement: Added micropackage/requirements 
+* Enhancement: Improved code styling
+* Removed: mte90/wp-contextual-help
 
 ## 3.1.3
 

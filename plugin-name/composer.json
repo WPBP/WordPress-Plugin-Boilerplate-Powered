@@ -22,7 +22,6 @@
       "wpbp/language": "1.0.*",
       "nathanielks/wp-admin-notice": "dev-master",
       "seravo/wp-custom-bulk-actions": "dev-master",
-      "mte90/wp-contextual-help": "1.1.*",
       "julien731/wp-dismissible-notices-handler": "1.*",
       "julien731/wp-review-me": "dev-develop",
       "johnbillion/extended-cpts": "4.3.*",
@@ -37,18 +36,6 @@
       {
          "url": "git@github.com:nathanielks/wordpress-admin-notice.git",
          "type": "git"
-      },
-      {
-         "type": "package",
-         "package": {
-            "name": "mte90/wp-contextual-help",
-            "version": "1.1.0",
-            "source": {
-               "url": "https://github.com/mte90/wp-contextual-help",
-               "type": "git",
-               "reference": "master"
-            }
-         }
       }
    ],
    "require-dev": {
@@ -74,7 +61,7 @@
          "integrations/",
          "rest/"
       ],
-      "files": ["vendor/mte90/wp-contextual-help/wp-contextual-help.php", "vendor/wp-custom-bulk-actions/custom-bulk-actions.php"]
+      "files": [ "vendor/wp-custom-bulk-actions/custom-bulk-actions.php" ]
    },
    "extra": {
       "installer-paths": {

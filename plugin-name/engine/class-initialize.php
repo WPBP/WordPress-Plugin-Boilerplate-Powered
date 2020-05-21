@@ -42,8 +42,8 @@ class Pn_Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
-        $this->is        = new Pn_Is_Methods();
-        $this->classes   = array();
+        $this->is      = new Pn_Is_Methods();
+        $this->classes = array();
         // WPBPGen{{#if libraries_johnbillion__extended-cpts}}
         $this->classes[] = 'Pn_PostTypes';
         // {{/if}}
@@ -66,6 +66,7 @@ class Pn_Initialize {
 		if ( $this->is->request( 'rest' ) ) {
 			$this->classes[] = 'Pn_Rest';
 		}
+
 		// {{/if}}
 		// WPBPGen{{#if system_transient}}
 		$this->classes[] = 'Pn_Transient';
@@ -74,11 +75,13 @@ class Pn_Initialize {
 		if ( $this->is->request( 'cli' ) ) {
 			$this->classes[] = 'Pn_WPCli';
 		}
+
 		// {{/if}}
 		// WPBPGen{{#if ajax_public}}
 		if ( $this->is->request( 'ajax' ) ) {
 			$this->classes[] = 'Pn_Ajax';
 		}
+
 		// {{/if}}
 
 		if ( $this->is->request( 'admin_backend' ) ) {
@@ -86,12 +89,10 @@ class Pn_Initialize {
 			if ( $this->is->request( 'ajax' ) ) {
 				$this->classes[] = 'Pn_Ajax_Admin';
 			}
+
 			// {{/if}}
 			// WPBPGen{{#if libraries_wpbp__pointerplus}}
 			$this->classes[] = 'Pn_Pointers';
-			// {{/if}}
-			// WPBPGen{{#if libraries_mte90__wp-contextual-help}}
-			$this->classes[] = 'Pn_ContextualHelp';
 			// {{/if}}
 			// WPBPGen{{#if act-deact_actdeact}}
 			$this->classes[] = 'Pn_Admin_ActDeact';

@@ -97,7 +97,7 @@ class Pn_Initialize {
 			// WPBPGen{{#if act-deact_actdeact}}
 			$this->classes[] = 'Pn_Admin_ActDeact';
 			// {{/if}}
-			// WPBPGen{{#if libraries_nathanielks__wp-admin-notice}}
+			// WPBPGen{{#if libraries_wpdesk__wp-notice}}
 			$this->classes[] = 'Pn_Admin_Notices';
 			// {{/if}}
 			// WPBPGen{{#if admin-assets_admin-page}}

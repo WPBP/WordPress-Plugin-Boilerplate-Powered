@@ -2,7 +2,7 @@
 
 /**
 //WPBPGen{{#if author_name}}
- * The WordPress Plugin Boilerplate.
+ * The WordPress Plugin Boilerplate Powered.
  *
  * A foundation off of which to build well-documented WordPress plugins that
  * also follow WordPress Coding Standards and PHP best practices.
@@ -79,6 +79,8 @@ require_once PN_PLUGIN_ROOT . 'internals/functions.php';
 // WPBPGen{{#if libraries_wpbp__debug}}
 require_once PN_PLUGIN_ROOT . 'internals/debug.php';
 // {{/if}}
+
+// Add your new plugin on the wiki: https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate
 
 // WPBPGen{{#if libraries_micropackage_requirements}}
 $requirements = new \Micropackage\Requirements\Requirements(

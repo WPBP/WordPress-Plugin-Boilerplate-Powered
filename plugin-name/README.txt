@@ -15,6 +15,10 @@ Here is a short description of the plugin.  This should be no more than 150 char
 
 This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
 
+Add your new plugin at
+[WordPress Plugin Boilerplate Powered
+Wiki](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!
+
 For backwards compatibility, if this section is missing, the full length of the short description will be used, and
 Markdown parsed.
 

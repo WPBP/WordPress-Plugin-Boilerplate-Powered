@@ -20,7 +20,6 @@
       "wpbp/debug": "1.1.*",
       "wpbp/cpt_columns": "1.0.*",
       "wpbp/language": "1.0.*",
-      "nathanielks/wp-admin-notice": "dev-master",
       "seravo/wp-custom-bulk-actions": "dev-master",
       "julien731/wp-review-me": "dev-develop",
       "johnbillion/extended-cpts": "4.3.*",

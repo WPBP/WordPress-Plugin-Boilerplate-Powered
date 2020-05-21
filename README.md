@@ -7,9 +7,10 @@
 [![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 
 **WordPress Plugin Boilerplate Powered** is a complete foundation for building your WordPress plugins.  
-This project started because mainly the WordPress plugin boilerplates available was too minimal for who is building a lot of plugins.  
-Every experienced WordPress developers use always the same libraries (or snippets) and with Composer is very easy but at same time follow best practices.  
-Choose a library or a snippet and the boilerplate (with the help of the Code Generator) will generate everything without need a manual copy&paste way or look on internet!
+The project history is part of the [Wiki](https://wpbp.github.io/wiki.html) that include also the workflow and how it is organized.  
+
+Every experienced WordPress developers use always the same libraries (or snippets) but at same time follow best practices.  
+Choose a library or a snippet and the boilerplate (with the help of the [Code Generator](https://wpbp.github.io/wiki.html)) will generate everything without need a manual copy&paste way or look on internet!
 
 ## Features
 
@@ -35,7 +36,6 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 |   | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions)  |
 |   | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/)  |
 
-
 ### Snippets available
 
 * Dashicon as dependence of admin stylesheet
@@ -50,8 +50,6 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 * Transient examples with caching
 
 Do you want to see which plugins have been made with this boilerplate? Check [here](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
-
-Check the [Wiki](https://wpbp.github.io/wiki.html) for other info (shell scripts, resources, libraries and tools as example).
 
 ## Contributors
 

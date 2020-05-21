@@ -30,7 +30,8 @@
       "origgami/cmb2-grid": "dev-master",
       "stevegrunwell/wp-cache-remember": "dev-master",
       "micropackage/requirements": "^1.0",
-      "wpdesk/wp-notice": "^3.1"
+      "wpdesk/wp-notice": "^3.1",
+      "yahnis-elsts/plugin-update-checker": "^4.9"
    },
    "require-dev": {
       "szepeviktor/phpstan-wordpress": "^0.6.0",

@@ -33,6 +33,7 @@ Choose a library or a snippet and the boilerplate (with the help of the Code Gen
 | [WPBP/Language](https://github.com/WPBP/Language)  | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)  |
 |   | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)  |
 |   | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions)  |
+|   | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/)  |
 
 
 ### Snippets available

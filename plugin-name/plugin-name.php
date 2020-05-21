@@ -146,6 +146,15 @@ function pn_fs() {
 // pn_fs();
 // {{/if}}
 
+// WPBPGen{{#if libraries_yahnis-elsts_plugin-update-checker}}
+// Documentation to integrate GitHub, GitLab or BitBucket https://github.com/YahnisElsts/plugin-update-checker/blob/master/README.md
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/user-name/repo-name/',
+	__FILE__,
+	'unique-plugin-or-theme-slug'
+);
+// {{/if}}
+
 if ( ! wp_installing() ) {
 	add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );
 }

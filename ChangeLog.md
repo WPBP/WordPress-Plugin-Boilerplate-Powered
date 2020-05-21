@@ -1,6 +1,7 @@
 ## 3.2.0
 
 * Enhancement: Added micropackage/requirements 
+* Enhancement: Added yahnis-elsts/plugin-update-checker
 * Enhancement: Improved code styling
 * Removed: mte90/wp-contextual-help
 * Removed: CoffeeScript support

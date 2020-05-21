@@ -82,7 +82,7 @@ require_once PN_PLUGIN_ROOT . 'internals/debug.php';
 
 // Add your new plugin on the wiki: https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate
 
-// WPBPGen{{#if libraries_micropackage_requirements}}
+// WPBPGen{{#if libraries_micropackage__requirements}}
 $requirements = new \Micropackage\Requirements\Requirements(
      'Plugin Name',
     array(
@@ -146,7 +146,7 @@ function pn_fs() {
 // pn_fs();
 // {{/if}}
 
-// WPBPGen{{#if libraries_yahnis-elsts_plugin-update-checker}}
+// WPBPGen{{#if libraries_yahnis-elsts__plugin-update-checker}}
 // Documentation to integrate GitHub, GitLab or BitBucket https://github.com/YahnisElsts/plugin-update-checker/blob/master/README.md
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/user-name/repo-name/',

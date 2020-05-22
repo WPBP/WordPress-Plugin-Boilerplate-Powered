@@ -10,7 +10,7 @@
  */
 namespace Plugin_Name\Frontend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine;
 
 /**
  * This class contain the Enqueue stuff for the frontend

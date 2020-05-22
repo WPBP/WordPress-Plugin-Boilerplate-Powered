@@ -114,8 +114,8 @@ class Initialize {
 
 	private function get_classes( $namespace ) {
 		$namespace = str_replace( '\\', '/', $namespace );
-		$namespace = strtolower( $namespace );
-		$classes   = array_diff( scandir( PN_PLUGIN_ROOT . $namespace ), array( '..', '.', 'index.php' ) );
+		$folder    = strtolower( $namespace );
+		$classes   = array_diff( scandir( PN_PLUGIN_ROOT . $folder ), array( '..', '.', 'index.php' ) );
 		$this->enqueue_classes( $namespace, $classes );
 	}
 
@@ -128,12 +128,15 @@ class Initialize {
 					$class_name      = substr( $php_file, 0, -4 );
 					$this->classes[] = 'Plugin_Name\\' . str_replace( '/', '\\', $namespace_to_append ) . '\\' . $class_name;
 				}
-			} else {
-				if ( $is_php_file === false ) {
-					$this->get_classes( $namespace_to_append . '\\' . strtolower( $php_file ) );
-				}
+
+				continue;
+			}
+
+			if ( $is_php_file === false ) {
+				$this->get_classes( $namespace_to_append . '\\' . strtolower( $php_file ) );
 			}
 		}
 	}
 
 }
+

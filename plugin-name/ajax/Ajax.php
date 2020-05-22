@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin_name
  *
@@ -9,9 +8,9 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-namespace Plugin_name\Ajax;
+namespace Plugin_Name\Ajax;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine;
 
 /**
  * AJAX in the public

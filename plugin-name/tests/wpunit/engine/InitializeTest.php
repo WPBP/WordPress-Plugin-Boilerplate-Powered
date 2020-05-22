@@ -1,5 +1,7 @@
 <?php
 
+namespace Plugin_Name\Tests\WPUnit;
+
 class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	/**
 	 * @var string
@@ -22,7 +24,7 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	}
 
 	private function make_instance() {
-		return new Pn_Initialize();
+		return new \Plugin_name\Engine\Initialize();
 	}
 
 	/**
@@ -31,7 +33,7 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	public function it_should_be_instantiatable() {
 		$sut = $this->make_instance();
-		$this->assertInstanceOf( 'Pn_Initialize', $sut );
+		$this->assertInstanceOf( '\\Plugin_name\\Engine\\Initialize', $sut );
 	}
 
 	/**
@@ -42,17 +44,18 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$sut = $this->make_instance();
 
 		$classes   = array();
-		$classes[] = 'Pn_PostTypes';
-		$classes[] = 'Pn_CMB';
-		$classes[] = 'Pn_Cron';
-		$classes[] = 'Pn_FakePage';
-		$classes[] = 'Pn_Template';
-		$classes[] = 'Pn_Widgets';
-		$classes[] = 'Pn_Rest';
-		$classes[] = 'Pn_Transient';
-		$classes[] = 'Pn_Ajax';
-		$classes[] = 'Pn_Enqueue';
-		$classes[] = 'Pn_Extras';
+		$classes[] = 'Plugin_Name\Internals\PostTypes';
+		$classes[] = 'Plugin_Name\Internals\Shortcode';
+		$classes[] = 'Plugin_Name\Internals\Transient';
+		$classes[] = 'Plugin_Name\Integrations\CMB';
+		$classes[] = 'Plugin_Name\Integrations\Cron';
+		$classes[] = 'Plugin_Name\Integrations\FakePage';
+		$classes[] = 'Plugin_Name\Integrations\Template';
+		$classes[] = 'Plugin_Name\Integrations\Widgets';
+ 		$classes[] = 'Plugin_Name\Ajax\Ajax';
+ 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
+		$classes[] = 'Plugin_Name\Frontend\Enqueue';
+		$classes[] = 'Plugin_Name\Frontend\extras\Body_Class';
 
 		$this->assertEquals( $classes, $sut->classes );
 	}

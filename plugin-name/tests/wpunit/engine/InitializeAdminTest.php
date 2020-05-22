@@ -1,5 +1,7 @@
 <?php
 
+namespace Plugin_Name\Tests\WPUnit;
+
 class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	/**
 	 * @var string
@@ -22,7 +24,7 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	}
 
 	private function make_instance() {
-		return new Pn_Initialize();
+		return new \Plugin_name\Engine\Initialize();
 	}
 
 	/**
@@ -33,25 +35,22 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		$sut = $this->make_instance();
 
 		$classes   = array();
-		$classes[] = 'Pn_PostTypes';
-		$classes[] = 'Pn_CMB';
-		$classes[] = 'Pn_Cron';
-		$classes[] = 'Pn_FakePage';
-		$classes[] = 'Pn_Template';
-		$classes[] = 'Pn_Widgets';
-		$classes[] = 'Pn_Rest';
-		$classes[] = 'Pn_Transient';
- 		$classes[] = 'Pn_Ajax';
- 		$classes[] = 'Pn_Ajax_Admin';
-		$classes[] = 'Pn_Pointers';
-		$classes[] = 'Pn_ContextualHelp';
-		$classes[] = 'Pn_Admin_ActDeact';
-		$classes[] = 'Pn_Admin_Notices';
-		$classes[] = 'Pn_Admin_Settings_Page';
-		$classes[] = 'Pn_Admin_Enqueue';
-		$classes[] = 'Pn_Admin_ImpExp';
-		$classes[] = 'Pn_Enqueue';
-		$classes[] = 'Pn_Extras';
+		$classes[] = 'Plugin_Name\Internals\PostTypes';
+		$classes[] = 'Plugin_Name\Internals\Shortcode';
+		$classes[] = 'Plugin_Name\Internals\Transient';
+		$classes[] = 'Plugin_Name\Integrations\CMB';
+		$classes[] = 'Plugin_Name\Integrations\Cron';
+		$classes[] = 'Plugin_Name\Integrations\FakePage';
+		$classes[] = 'Plugin_Name\Integrations\Template';
+		$classes[] = 'Plugin_Name\Integrations\Widgets';
+ 		$classes[] = 'Plugin_Name\Ajax\Ajax';
+ 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
+		$classes[] = 'Plugin_Name\Backend\ActDeact';
+		$classes[] = 'Plugin_Name\Backend\Enqueue';
+		$classes[] = 'Plugin_Name\Backend\ImpExp';
+		$classes[] = 'Plugin_Name\Backend\Notices';
+		$classes[] = 'Plugin_Name\Backend\Pointers';
+		$classes[] = 'Plugin_Name\Backend\Settings_Page';
 
 		$this->assertTrue( is_admin() );
 		$this->assertEquals( $classes, $sut->classes );

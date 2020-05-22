@@ -37,4 +37,4 @@ cache
 vendor
 tests/_output
 /plugin-name/vendor/
-tests/_output/
+tests/_support/_generated

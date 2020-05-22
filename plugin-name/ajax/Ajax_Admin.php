@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_name\Ajax;
 
 /**
  * AJAX in the admin
  */
-class Pn_Ajax_Admin extends Pn_Admin_Base {
+class Ajax_Admin extends \Pn_Admin_Base {
 
 	/**
 	 * Initialize the class

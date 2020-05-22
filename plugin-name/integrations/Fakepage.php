@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Integrations;
 
 /**
  * This class contain the Fake Page
  */
-class Pn_FakePage extends Pn_Base {
+class FakePage extends \Pn_Base {
 
 	/**
 	 * Initialize the class

@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Integrations;
 
 /**
  * This class contain the Widget stuff
  */
-class Pn_Cron extends Pn_Base {
+class Cron extends \Pn_Base {
 
 	/**
 	 * Initialize the class

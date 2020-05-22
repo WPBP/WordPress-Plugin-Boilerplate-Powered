@@ -9,6 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Engine;
 
 /**
  * Plugin Name Is Methods

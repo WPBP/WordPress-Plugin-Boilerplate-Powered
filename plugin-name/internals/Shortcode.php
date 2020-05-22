@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Internals;
 
 /**
  * This class contain all the snippet or extra that improve the experience on the frontend
  */
-class Pn_Shortcode extends Pn_Base {
+class Shortcode extends \Pn_Base {
 
 	/**
 	 * Initialize the snippet

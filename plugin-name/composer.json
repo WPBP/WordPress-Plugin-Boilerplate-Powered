@@ -45,17 +45,14 @@
    "minimum-stability": "dev",
    "prefer-stable": true,
    "autoload": {
-      "classmap": [
-         "engine/",
-         "cli/",
-         "ajax/",
-         "internals/",
-         "integrations/",
-         "rest/"
-      ],
       "psr-4": {
          "Plugin_Name\\Admin\\": "admin",
-         "Plugin_Name\\Frontend\\": "public"
+         "Plugin_Name\\Frontend\\": "public",
+         "Plugin_Name\\Rest\\": "rest",
+         "Plugin_Name\\Internals\\": "internals",
+         "Plugin_Name\\Cli\\": "cli",
+         "Plugin_Name\\Integrations\\": "integrations",
+         "Plugin_Name\\Engine\\": "engine"
       },
       "files": [ "vendor/wp-custom-bulk-actions/custom-bulk-actions.php" ]
    },

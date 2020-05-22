@@ -9,11 +9,11 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-
+namespace Plugin_Name\Integrations;
 /**
  * All the CMB related code.
  */
-class Pn_CMB extends Pn_Base {
+class CMB extends \Pn_Base {
 
 	/**
 	 * Initialize CMB2.

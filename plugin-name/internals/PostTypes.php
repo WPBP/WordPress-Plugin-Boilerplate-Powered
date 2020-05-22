@@ -9,11 +9,12 @@
  * @license	{{author_license}}
  * @link		{{author_url}}
  */
+namespace Plugin_Name\Internals;
 
 /**
  * This class contain the Post Types and Taxonomy initialize code
  */
-class Pn_PostTypes extends Pn_Base {
+class PostTypes extends \Pn_Base {
 
 	/**
 	 * Initialize the custom post types

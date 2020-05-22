@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Engine;
 
 /**
  * This class is the base skeleton of the plugin
  */
-class Pn_Base {
+class Base {
 
 	/**
 	 * @var array The settings of the plugin

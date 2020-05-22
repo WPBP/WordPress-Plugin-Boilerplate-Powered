@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_name\Ajax;
 
 /**
  * AJAX in the public
  */
-class Pn_Ajax extends Pn_Base {
+class Ajax extends \Pn_Base {
 
 	/**
 	 * Initialize the class

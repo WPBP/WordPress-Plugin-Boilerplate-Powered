@@ -75,9 +75,9 @@ if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 
 require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
 
-require_once PN_PLUGIN_ROOT . 'internals/functions.php';
+require_once PN_PLUGIN_ROOT . 'functions/functions.php';
 // WPBPGen{{#if libraries_wpbp__debug}}
-require_once PN_PLUGIN_ROOT . 'internals/debug.php';
+require_once PN_PLUGIN_ROOT . 'functions/debug.php';
 // {{/if}}
 
 // Add your new plugin on the wiki: https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate
@@ -148,7 +148,7 @@ function pn_fs() {
 
 // WPBPGen{{#if libraries_yahnis-elsts__plugin-update-checker}}
 // Documentation to integrate GitHub, GitLab or BitBucket https://github.com/YahnisElsts/plugin-update-checker/blob/master/README.md
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+$my_update_checker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/user-name/repo-name/',
 	__FILE__,
 	'unique-plugin-or-theme-slug'
@@ -156,5 +156,5 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 // {{/if}}
 
 if ( ! wp_installing() ) {
-	add_action( 'plugins_loaded', array( 'Pn_Initialize', 'get_instance' ) );
+	add_action( 'plugins_loaded', 'Plugin_Name\\Engine\\Initialize\\get_instance' );
 }

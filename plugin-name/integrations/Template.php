@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Integrations;
 
 /**
  * This class contain the Templating stuff for the frontend
  */
-class Pn_Template extends Pn_Base {
+class Template extends \Pn_Base {
 
 	/**
 	 * Initialize the class

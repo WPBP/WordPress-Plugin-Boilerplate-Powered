@@ -10,11 +10,13 @@
  * @link      {{author_url}}
  */
 
+ namespace Plugin_Name\Cli;
+
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
     /**
      * This class contain the WP CLI support
      */
-    class Pn_WPCli extends Pn_Base {
+    class Example extends \Pn_Base {
 
         public function initialize() {
             if ( !apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {

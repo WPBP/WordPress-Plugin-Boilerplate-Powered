@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Internals;
 
 /**
  * This class contain the transient example
  */
-class Pn_Transient extends Pn_Base {
+class Transient extends \Pn_Base {
 
 	/**
 	 * Initialize the snippet

@@ -1,29 +1,26 @@
 <?php
 
 /**
- * Plugin_name
+ * Plugin_Name
  *
- * @package   Plugin_name
+ * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Integrations;
 
 /**
- * This class is the base skeleton of the plugin
+ * This class contain the Widget stuff
  */
-class Pn_Admin_Base extends Pn_Base {
+class Widgets extends \Pn_Base {
 
 	/**
 	 * Initialize the class
 	 */
 	public function initialize() {
-        if ( is_admin() ) {
-            return parent::initialize();
-        }
-
-		return false;
+		include_once 'widgets/sample.php';
 	}
 
 }

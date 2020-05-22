@@ -14,7 +14,7 @@ namespace Plugin_Name\Admin;
 /**
  * This class contain the activate and deactive method and relates.
  */
-class ActDeact extends \Pn_Admin_Base {
+class ActDeact extends \Plugin_Name\Engine\Admin_Base {
 
 	/**
 	 * Initialize the Act/Deact

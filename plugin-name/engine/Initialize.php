@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-
+namespace Plugin_Name\Engine;
+use Plugin_Name\Engine;
 /**
  * Plugin Name Initializer
  */
-class Pn_Initialize {
+class Initialize {
 
 	/**
 	 * Instance of this class.
@@ -42,44 +43,44 @@ class Pn_Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct() {
-        $this->is      = new Pn_Is_Methods();
+        $this->is      = new Is_Methods();
         $this->classes = array();
         // WPBPGen{{#if libraries_johnbillion__extended-cpts}}
-        $this->classes[] = 'Pn_PostTypes';
+        $this->classes[] = 'Plugin_Name\\Internals\\PostTypes';
         // {{/if}}
         // WPBPGen{{#if libraries_cmb2__cmb2}}
-        $this->classes[] = 'Pn_CMB';
+        $this->classes[] = 'Plugin_Name\\Integrations\\CMB';
         // {{/if}}
         // WPBPGen{{#if libraries_wpbp__cronplus}}
-        $this->classes[] = 'Pn_Cron';
+        $this->classes[] = 'Plugin_Name\\Integrations\\Cron';
         // {{/if}}
         // WPBPGen{{#if libraries_wpbp__fakepage}}
-        $this->classes[] = 'Pn_FakePage';
+        $this->classes[] = 'Plugin_Name\\Integrations\\FakePage';
         // {{/if}}
         // WPBPGen{{#if libraries_wpbp__template}}
-        $this->classes[] = 'Pn_Template';
+        $this->classes[] = 'Plugin_Name\\Integrations\\Template';
         // {{/if}}
         // WPBPGen{{#if libraries_wpbp__widgets-helper}}
-        $this->classes[] = 'Pn_Widgets';
+        $this->classes[] = 'Plugin_Name\\Integrations\\Widgets';
         // {{/if}}
 		// WPBPGen{{#if system_rest}}
 		if ( $this->is->request( 'rest' ) ) {
-			$this->classes[] = 'Pn_Rest';
+			$this->classes[] = 'Plugin_Name\\Rest\\Example';
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if system_transient}}
-		$this->classes[] = 'Pn_Transient';
+		$this->classes[] = 'Plugin_Name\\Internals\\Transient';
 		// {{/if}}
 		// WPBPGen{{#if wpcli}}
 		if ( $this->is->request( 'cli' ) ) {
-			$this->classes[] = 'Pn_WPCli';
+			$this->classes[] = 'Plugin_Name\\Cli\\Example';
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if ajax_public}}
 		if ( $this->is->request( 'ajax' ) ) {
-			$this->classes[] = 'Pn_Ajax';
+			$this->classes[] = 'Plugin_Name\\Ajax\\Ajax';
 		}
 
 		// {{/if}}
@@ -87,12 +88,12 @@ class Pn_Initialize {
 		if ( $this->is->request( 'admin_backend' ) ) {
 			// WPBPGen{{#if ajax_public}}
 			if ( $this->is->request( 'ajax' ) ) {
-				$this->classes[] = 'Pn_Ajax_Admin';
+				$this->classes[] = 'Plugin_Name\\Ajax\\Ajax_Admin';
 			}
 
 			// {{/if}}
 			// WPBPGen{{#if libraries_wpbp__pointerplus}}
-			$this->classes[] = 'Pn_Pointers';
+			$this->classes[] = 'Plugin_Name\\Admin\\Pointers';
 			// {{/if}}
 			// WPBPGen{{#if act-deact_actdeact}}
 			$this->classes[] = 'Plugin_Name\\Admin\\ActDeact';

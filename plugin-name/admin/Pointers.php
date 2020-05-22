@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Admin;
 
 /**
  * All the WP pointers.
  */
-class Pn_Pointers extends Pn_Base {
+class Pointers extends Plugin_Name\Engine\Admin_Base {
 
 	/**
 	 * Initialize the Pointers.

@@ -8,11 +8,11 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-
+namespace Plugin_Name\Rest;
 /**
  * This class contain the Rest stuff
  */
-class Pn_Rest extends Pn_Base {
+class Example extends \Pn_Base {
 
 	/**
 	 * Initialize the class

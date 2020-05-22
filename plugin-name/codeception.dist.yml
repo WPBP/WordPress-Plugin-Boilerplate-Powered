@@ -6,8 +6,8 @@ paths:
     data: tests/_data
     helpers: tests/_support
     envs: tests/_envs
+bootstrap: _bootstrap.php
 settings:
-    bootstrap: _bootstrap.php
     colors: true
     memory_limit: 1024M
 params:
@@ -17,7 +17,8 @@ coverage:
     exclude:
         - vendor/*
     include:
-        - public/*
+        - frontend/*
+        - functions/*
         - admin/*
         - ajax/*
         - cli/*
@@ -27,7 +28,6 @@ coverage:
         - integrations/*
 extensions:
     enabled:
-        - Codeception\ProgressReporter\ProgressReporter
         - Codeception\Extension\RunFailed
     commands:
         # Generate Tests cases

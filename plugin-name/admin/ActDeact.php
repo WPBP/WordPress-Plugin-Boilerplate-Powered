@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Admin;
 
 /**
  * This class contain the activate and deactive method and relates.
  */
-class Pn_Admin_ActDeact extends Pn_Admin_Base {
+class ActDeact extends \Pn_Admin_Base {
 
 	/**
 	 * Initialize the Act/Deact
@@ -30,9 +31,9 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 
 		register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( __CLASS__, 'deactivate' ) );
-		//WPBPGen{{#if system_upgrade-procedure}}
+		// WPBPGen{{#if system_upgrade-procedure}}
 		add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
-		//{{/if}}
+		// {{/if}}
 	}
 
 	/**
@@ -120,13 +121,13 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 	 */
 	private static function single_activate() {
 		// @TODO: Define activation functionality here
-		//WPBPGen{{#if system_capability-system}}
+		// WPBPGen{{#if system_capability-system}}
 		// add_role( 'advanced', __( 'Advanced' ) ); //Add a custom roles
 		self::add_capabilities();
-		//{{/if}}
-		//WPBPGen{{#if system_upgrade-procedure}}
+		// {{/if}}
+		// WPBPGen{{#if system_upgrade-procedure}}
 		self::upgrade_procedure();
-		//{{/if}}
+		// {{/if}}
 		// Clear the permalinks
 		flush_rewrite_rules();
 	}
@@ -144,7 +145,7 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		flush_rewrite_rules();
 	}
 
-	//WPBPGen{{#if system_capability-system}}
+	// WPBPGen{{#if system_capability-system}}
 	/**
 	 * Add admin capabilities
 	 *
@@ -211,8 +212,8 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		}
 	}
 
-	//{{/if}}
-	//WPBPGen{{#if system_upgrade-procedure}}
+	// {{/if}}
+	// WPBPGen{{#if system_upgrade-procedure}}
 	/**
 	 * Upgrade procedure
 	 *
@@ -228,5 +229,5 @@ class Pn_Admin_ActDeact extends Pn_Admin_Base {
 		}
 	}
 
-	//{{/if}}
+	// {{/if}}
 }

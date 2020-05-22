@@ -8,13 +8,14 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Admin;
 
 use Yoast_I18n_WordPressOrg_v3;
 
 /**
  * This class contain all the snippet or extra that improve the experience on the backend
  */
-class Pn_Admin_Notices extends Pn_Admin_Base {
+class Notices extends \Pn_Admin_Base {
 
 	/**
 	 * Initialize the snippet
@@ -38,7 +39,7 @@ class Pn_Admin_Notices extends Pn_Admin_Base {
 		/*
 		 * Review Me notice
 		 */
-		new WP_Review_Me(
+		new \WP_Review_Me(
 			array(
 				'days_after' => 15,
 				'type'       => 'plugin',

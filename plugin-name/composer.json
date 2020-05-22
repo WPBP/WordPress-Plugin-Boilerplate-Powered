@@ -47,14 +47,16 @@
    "autoload": {
       "classmap": [
          "engine/",
-         "admin/",
          "cli/",
          "ajax/",
-         "public/",
          "internals/",
          "integrations/",
          "rest/"
       ],
+      "psr-4": {
+         "Plugin_Name\\Admin\\": "admin",
+         "Plugin_Name\\Frontend\\": "public"
+      },
       "files": [ "vendor/wp-custom-bulk-actions/custom-bulk-actions.php" ]
    },
    "extra": {

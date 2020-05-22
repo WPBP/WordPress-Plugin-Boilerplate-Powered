@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Admin;
 
 /**
  * Provide Import and Export of the settings of the plugin
  */
-class Pn_Admin_ImpExp extends Pn_Admin_Base {
+class ImpExp extends \Pn_Admin_Base {
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a

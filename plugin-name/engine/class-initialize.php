@@ -95,27 +95,27 @@ class Pn_Initialize {
 			$this->classes[] = 'Pn_Pointers';
 			// {{/if}}
 			// WPBPGen{{#if act-deact_actdeact}}
-			$this->classes[] = 'Pn_Admin_ActDeact';
+			$this->classes[] = 'Plugin_Name\\Admin\\ActDeact';
 			// {{/if}}
 			// WPBPGen{{#if libraries_wpdesk__wp-notice}}
-			$this->classes[] = 'Pn_Admin_Notices';
+			$this->classes[] = 'Plugin_Name\\Admin\\Notices';
 			// {{/if}}
 			// WPBPGen{{#if admin-assets_admin-page}}
-			$this->classes[] = 'Pn_Admin_Settings_Page';
+			$this->classes[] = 'Plugin_Name\\Admin\\Settings_Page';
 			// {{/if}}
 			// WPBPGen{{#if admin-assets_admin-js && admin-assets_admin-css}}
-			$this->classes[] = 'Pn_Admin_Enqueue';
+			$this->classes[] = 'Plugin_Name\\Admin\\Enqueue';
 			// {{/if}}
 			// WPBPGen{{#if backend_impexp-settings}}
-			$this->classes[] = 'Pn_Admin_ImpExp';
+			$this->classes[] = 'Plugin_Name\\Admin\\ImpExp';
 			// {{/if}}
 		}
 
 		if ( $this->is->request( 'frontend' ) ) {
 			// WPBPGen{{#if public-assets_js && public-assets_css && frontend_wp-localize-script}}
-			$this->classes[] = 'Pn_Enqueue';
+			$this->classes[] = 'Plugin_Name\\Frontend\\Enqueue';
 			// {{/if}}
-			$this->classes[] = 'Pn_Extras';
+			$this->classes[] = 'Plugin_Name\\Frontend\\Extras';
 		}
 
 		$this->classes = apply_filters( 'pn_class_instances', $this->classes );

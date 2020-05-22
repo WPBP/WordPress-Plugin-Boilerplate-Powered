@@ -8,11 +8,11 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-
+namespace Plugin_Name\Frontend;
 /**
  * This class contain all the snippet or extra that improve the experience on the frontend
  */
-class Pn_Extras extends Pn_Base {
+class Extras extends \Pn_Base {
 
 	/**
 	 * Initialize the snippet

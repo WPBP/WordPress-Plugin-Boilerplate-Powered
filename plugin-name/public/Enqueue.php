@@ -8,11 +8,11 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-
+namespace Plugin_Name\Frontend;
 /**
  * This class contain the Enqueue stuff for the frontend
  */
-class Pn_Enqueue extends Pn_Base {
+class Enqueue extends \Pn_Base {
 
 	/**
 	 * Initialize the class

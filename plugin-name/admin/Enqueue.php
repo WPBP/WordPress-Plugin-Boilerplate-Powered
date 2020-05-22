@@ -9,11 +9,12 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+namespace Plugin_Name\Admin;
 
 /**
  * This class contain the Enqueue stuff for the backend
  */
-class Pn_Admin_Enqueue extends Pn_Admin_Base {
+class Enqueue extends \Pn_Admin_Base {
 
 	/**
 	 * Initialize the class

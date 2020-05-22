@@ -45,8 +45,8 @@
    "prefer-stable": true,
    "autoload": {
       "psr-4": {
-         "Plugin_Name\\Admin\\": "admin",
-         "Plugin_Name\\Frontend\\": "public",
+         "Plugin_Name\\Backend\\": "backend",
+         "Plugin_Name\\Frontend\\": "frontend",
          "Plugin_Name\\Rest\\": "rest",
          "Plugin_Name\\Internals\\": "internals",
          "Plugin_Name\\Cli\\": "cli",

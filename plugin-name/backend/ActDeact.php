@@ -9,7 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-namespace Plugin_Name\Admin;
+namespace Plugin_Name\Backend;
 
 use \Plugin_Name\Engine;
 

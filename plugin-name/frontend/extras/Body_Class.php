@@ -8,14 +8,14 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-namespace Plugin_Name\Frontend;
+namespace Plugin_Name\Frontend\Extras;
 
 use \Plugin_Name\Engine;
 
 /**
  * This class contain all the snippet or extra that improve the experience on the frontend
  */
-class Extras extends Engine\Base {
+class Body_Class extends Engine\Base {
 
 	/**
 	 * Initialize the snippet

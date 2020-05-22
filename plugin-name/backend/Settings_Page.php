@@ -9,7 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-namespace Plugin_Name\Admin;
+namespace Plugin_Name\Backend;
 
 use \Plugin_Name\Engine;
 
@@ -68,7 +68,7 @@ class Settings_Page extends Engine\Admin_Base {
 	 * @return void
 	 */
 	public function display_plugin_admin_page() {
-		include_once PN_PLUGIN_ROOT . 'admin/views/admin.php';
+		include_once PN_PLUGIN_ROOT . 'backend/views/admin.php';
 	}
 
 	/**

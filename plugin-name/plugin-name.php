@@ -157,7 +157,7 @@ $my_update_checker = Puc_v4_Factory::buildUpdateChecker(
 
 if ( ! wp_installing() ) {
 	add_action(
-         'plugins_loaded',
+        'plugins_loaded',
         function() {
 			new \Plugin_Name\Engine\Initialize;
 		}

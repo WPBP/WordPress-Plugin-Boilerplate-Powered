@@ -44,7 +44,7 @@ class Is_Methods {
 	 */
 	public function request( $type ) {
 		switch ( $type ) {
-			case 'admin_backend':
+			case 'backend':
 				return $this->is_admin_backend();
 			case 'ajax':
 				return $this->is_ajax();

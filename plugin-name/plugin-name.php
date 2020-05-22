@@ -156,5 +156,10 @@ $my_update_checker = Puc_v4_Factory::buildUpdateChecker(
 // {{/if}}
 
 if ( ! wp_installing() ) {
-	add_action( 'plugins_loaded', 'Plugin_Name\\Engine\\Initialize\\get_instance' );
+	add_action(
+         'plugins_loaded',
+        function() {
+			new \Plugin_Name\Engine\Initialize;
+		}
+        );
 }

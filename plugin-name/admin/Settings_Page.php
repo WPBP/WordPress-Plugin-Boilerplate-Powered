@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Admin;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Enqueue stuff for the backend
  */
-class Settings_Page extends \Pn_Admin_Base {
+class Settings_Page extends Engine\Admin_Base {
 
 	/**
 	 * Initialize the class

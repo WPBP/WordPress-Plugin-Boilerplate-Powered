@@ -9,10 +9,13 @@
  * @link      {{author_url}}
  */
 namespace Plugin_Name\Frontend;
+
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Enqueue stuff for the frontend
  */
-class Enqueue extends \Pn_Base {
+class Enqueue extends Engine\Base {
 
 	/**
 	 * Initialize the class

@@ -14,7 +14,7 @@ namespace Plugin_Name\Engine;
 /**
  * Plugin Name Is Methods
  */
-class Pn_Is_Methods {
+class Is_Methods {
 
 	/**
 	 * Whether given user is an administrator.

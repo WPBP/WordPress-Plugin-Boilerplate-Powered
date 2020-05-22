@@ -11,10 +11,12 @@
  */
 namespace Plugin_name\Ajax;
 
+use \Plugin_Name\Engine;
+
 /**
  * AJAX in the public
  */
-class Ajax extends \Pn_Base {
+class Ajax extends Engine\Base {
 
 	/**
 	 * Initialize the class

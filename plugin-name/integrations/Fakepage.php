@@ -11,17 +11,19 @@
  */
 namespace Plugin_Name\Integrations;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Fake Page
  */
-class FakePage extends \Pn_Base {
+class FakePage extends Engine\Base {
 
 	/**
 	 * Initialize the class
 	 */
 	public function initialize() {
         parent::initialize();
-        new Fake_Page(
+        new \Fake_Page(
             array(
             'slug'         => 'fake_slug',
             'post_title'   => 'Fake Page Title',

@@ -9,10 +9,13 @@
  * @link      {{author_url}}
  */
 namespace Plugin_Name\Frontend;
+
+use \Plugin_Name\Engine;
+
 /**
  * This class contain all the snippet or extra that improve the experience on the frontend
  */
-class Extras extends \Pn_Base {
+class Extras extends Engine\Base {
 
 	/**
 	 * Initialize the snippet

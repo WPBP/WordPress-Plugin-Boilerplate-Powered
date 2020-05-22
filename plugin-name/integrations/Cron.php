@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Integrations;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Widget stuff
  */
-class Cron extends \Pn_Base {
+class Cron extends Engine\Base {
 
 	/**
 	 * Initialize the class
@@ -32,7 +34,7 @@ class Cron extends \Pn_Base {
 			'plugin_root_file' => 'plugin-name.php',
 		);
 
-		$cronplus = new CronPlus( $args );
+		$cronplus = new \CronPlus( $args );
         // Schedule the event
 		$cronplus->schedule_event();
         // Remove the event by the schedule

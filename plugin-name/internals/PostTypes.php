@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Internals;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Post Types and Taxonomy initialize code
  */
-class PostTypes extends \Pn_Base {
+class PostTypes extends Engine\Base {
 
 	/**
 	 * Initialize the custom post types
@@ -28,7 +30,7 @@ class PostTypes extends \Pn_Base {
 		/*
 		* Custom Columns
 		*/
-		$post_columns = new CPT_columns( 'demo' );
+		$post_columns = new \CPT_columns( 'demo' );
 		$post_columns->add_column(
 			'cmb2_field',
 			array(
@@ -48,7 +50,7 @@ class PostTypes extends \Pn_Base {
 		/*
 		* Custom Bulk Actions
 		*/
-		$bulk_actions = new Seravo_Custom_Bulk_Action( array( 'post_type' => 'demo' ) );
+		$bulk_actions = new \Seravo_Custom_Bulk_Action( array( 'post_type' => 'demo' ) );
 		$bulk_actions->register_bulk_action(
 			array(
 				'menu_text'		=> 'Mark meta',

@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Integrations;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Widget stuff
  */
-class Widgets extends \Pn_Base {
+class Widgets extends Engine\Base {
 
 	/**
 	 * Initialize the class

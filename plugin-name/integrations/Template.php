@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Integrations;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Templating stuff for the frontend
  */
-class Template extends \Pn_Base {
+class Template extends Engine\Base {
 
 	/**
 	 * Initialize the class

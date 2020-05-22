@@ -9,10 +9,13 @@
  * @link      {{author_url}}
  */
 namespace Plugin_Name\Rest;
+
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the Rest stuff
  */
-class Example extends \Pn_Base {
+class Example extends Engine\Base {
 
 	/**
 	 * Initialize the class

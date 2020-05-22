@@ -10,12 +10,13 @@
  */
 namespace Plugin_Name\Admin;
 
+use \Plugin_Name\Engine;
 use Yoast_I18n_WordPressOrg_v3;
 
 /**
  * This class contain all the snippet or extra that improve the experience on the backend
  */
-class Notices extends \Pn_Admin_Base {
+class Notices extends Engine\Admin_Base {
 
 	/**
 	 * Initialize the snippet

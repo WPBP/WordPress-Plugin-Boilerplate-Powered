@@ -10,10 +10,13 @@
  * @link      {{author_url}}
  */
 namespace Plugin_Name\Integrations;
+
+use \Plugin_Name\Engine;
+
 /**
  * All the CMB related code.
  */
-class CMB extends \Pn_Base {
+class CMB extends Engine\Base {
 
 	/**
 	 * Initialize CMB2.

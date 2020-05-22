@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Admin;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the activate and deactive method and relates.
  */
-class ActDeact extends \Plugin_Name\Engine\Admin_Base {
+class ActDeact extends Engine\Admin_Base {
 
 	/**
 	 * Initialize the Act/Deact

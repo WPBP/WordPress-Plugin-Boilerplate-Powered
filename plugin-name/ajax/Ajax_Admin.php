@@ -11,10 +11,12 @@
  */
 namespace Plugin_name\Ajax;
 
+use \Plugin_Name\Engine;
+
 /**
  * AJAX in the admin
  */
-class Ajax_Admin extends \Pn_Admin_Base {
+class Ajax_Admin extends Engine\Admin_Base {
 
 	/**
 	 * Initialize the class

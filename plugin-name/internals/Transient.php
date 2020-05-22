@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Internals;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain the transient example
  */
-class Transient extends \Pn_Base {
+class Transient extends Engine\Base {
 
 	/**
 	 * Initialize the snippet

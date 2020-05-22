@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Internals;
 
+use \Plugin_Name\Engine;
+
 /**
  * This class contain all the snippet or extra that improve the experience on the frontend
  */
-class Shortcode extends \Pn_Base {
+class Shortcode extends Engine\Base {
 
 	/**
 	 * Initialize the snippet

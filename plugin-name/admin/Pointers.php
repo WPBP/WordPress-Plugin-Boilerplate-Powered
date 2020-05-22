@@ -11,10 +11,12 @@
  */
 namespace Plugin_Name\Admin;
 
+use \Plugin_Name\Engine;
+
 /**
  * All the WP pointers.
  */
-class Pointers extends Plugin_Name\Engine\Admin_Base {
+class Pointers extends Engine\Admin_Base {
 
 	/**
 	 * Initialize the Pointers.
@@ -23,7 +25,7 @@ class Pointers extends Plugin_Name\Engine\Admin_Base {
 	 */
 	public function initialize() {
         parent::initialize();
-		new PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
+		new \PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
 		add_filter( PN_TEXTDOMAIN . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}
 
@@ -54,5 +56,3 @@ class Pointers extends Plugin_Name\Engine\Admin_Base {
 	}
 
 }
-
-new Pn_Pointers();

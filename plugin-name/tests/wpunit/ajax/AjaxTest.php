@@ -14,7 +14,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
 		// Load again the class for the AJAX mode
-		new Pn_Initialize();
+		new \Plugin_name\Engine\Initialize();
 	}
 
 	public function tearDown() {

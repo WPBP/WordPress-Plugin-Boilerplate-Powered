@@ -22,7 +22,7 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	}
 
 	private function make_instance() {
-		return new Pn_Initialize();
+		return new \Plugin_name\Engine\Initialize();
 	}
 
 	/**

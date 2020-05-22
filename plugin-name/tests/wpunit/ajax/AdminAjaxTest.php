@@ -16,7 +16,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		$this->_setRole( 'administrator' );
 
 		// Load again the class for the AJAX mode
-		new Pn_Initialize();
+		new \Plugin_name\Engine\Initialize();
 	}
 
 	public function tearDown() {

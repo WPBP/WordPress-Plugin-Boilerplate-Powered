@@ -22,7 +22,7 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	}
 
 	private function make_instance() {
-		return new Pn_Initialize();
+		return new \Plugin_name\Engine\Initialize();
 	}
 
 	/**
@@ -31,7 +31,7 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	public function it_should_be_instantiatable() {
 		$sut = $this->make_instance();
-		$this->assertInstanceOf( 'Pn_Initialize', $sut );
+		$this->assertInstanceOf( '\\Plugin_name\\Engine\\Initialize', $sut );
 	}
 
 	/**

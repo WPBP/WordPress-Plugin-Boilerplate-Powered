@@ -1,5 +1,7 @@
 <?php
 
+namespace Plugin_Name\Tests\WPUnit;
+
 class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 	/**
@@ -12,9 +14,6 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
-
-		// Load again the class for the AJAX mode
-		new \Plugin_name\Engine\Initialize();
 	}
 
 	public function tearDown() {

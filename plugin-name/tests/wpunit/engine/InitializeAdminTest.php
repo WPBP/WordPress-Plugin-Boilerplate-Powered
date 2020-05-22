@@ -1,5 +1,7 @@
 <?php
 
+namespace Plugin_Name\Tests\WPUnit;
+
 class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	/**
 	 * @var string

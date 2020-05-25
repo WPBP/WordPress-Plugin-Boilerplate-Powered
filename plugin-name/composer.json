@@ -34,7 +34,7 @@
    },
    "require-dev": {
       "szepeviktor/phpstan-wordpress": "^0.6.0",
-      "szepeviktor/phpstan-phpdoc": "^0.2.0",
+      "szepeviktor/phpstan-phpdoc": "^0.2.1",
       "lucatume/wp-browser": "^2.5",
       "lucatume/function-mocker": "~1.0",
       "phpro/grumphp": "^0.18",

@@ -14,6 +14,7 @@ parameters:
         - %currentWorkingDirectory%/tests
     autoload_files:
         # Procedural code
+        - vendor/autoload.php
         - %currentWorkingDirectory%/plugin-name.php
     ignoreErrors:
         # Uses func_get_args()

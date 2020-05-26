@@ -53,7 +53,7 @@ class Example extends Engine\Base {
 				'update_callback' => array( $this, 'update_text_field' ),
 				'schema'          => array(
 					'description' => __( 'Text field demo of Post type', PN_TEXTDOMAIN ),
-					'type' => 'string',
+					'type'        => 'string',
 				),
 			)
 		);
@@ -72,15 +72,15 @@ class Example extends Engine\Base {
              'wp/v2',
             '/calc',
             array(
-				'methods'  => WP_REST_Server::READABLE,
+				'methods'  => \WP_REST_Server::READABLE,
 				'callback' => array( $this, 'sum' ),
 				'args'     => array(
 					'first'  => array(
-						'default' => 10,
+						'default'           => 10,
 						'sanitize_callback' => 'absint',
 					),
 					'second' => array(
-						'default' => 1,
+						'default'           => 1,
 						'sanitize_callback' => 'absint',
 					),
 				),
@@ -111,13 +111,13 @@ class Example extends Engine\Base {
      * @param object $post  Post object.
      * @param string $key   Key.
      *
-     * @return boolean|WP_Error
+     * @return boolean|\WP_Error
      */
     public function update_text_field( $value, $post, $key ) {
         $post_id = update_post_meta( $post->ID, $key, $value );
 
         if ( false === $post_id ) {
-            return new WP_Error(
+            return new \WP_Error(
                 'rest_post_views_failed',
                 __( 'Failed to update post views.', PN_TEXTDOMAIN ),
                 array( 'status' => 500 )

@@ -7,15 +7,19 @@ includes:
     - vendor/szepeviktor/phpstan-phpdoc/extension.neon
 parameters:
     level: max
+    # void as typehint is available only on PHP 7.1+
+    checkMissingIterableValueType: false
     paths:
         - %currentWorkingDirectory%
     excludes_analyse:
         - %currentWorkingDirectory%/vendor
         - %currentWorkingDirectory%/tests
     autoload_files:
-        # Procedural code
         - vendor/autoload.php
-        - %currentWorkingDirectory%/plugin-name.php
+        - plugin-name.php
+        - vendor/cmb2/init.php
+        - vendor/cmb2-grid/Cmb2GridPluginLoad.php
+        - vendor/freemius/wordpress-sdk/start.php
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'
@@ -37,3 +41,4 @@ parameters:
         - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
         # WP-CLI accepts a class as callable
         - '/^Parameter #2 \$callable of static method WP_CLI::add_command\(\) expects callable\(\): mixed, \S+ given\.$/'
+        - '#has no return typehint specified\.#'

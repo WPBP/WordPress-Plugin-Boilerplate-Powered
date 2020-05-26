@@ -21,7 +21,7 @@ class Ajax_Admin extends Engine\Admin_Base {
 	/**
 	 * Initialize the class
 	 */
-	public function initialize() {
+	public function initialize() : void {
 		if ( !apply_filters( 'plugin_name_pn_ajax_admin_initialize', true ) ) {
 			return;
 		}

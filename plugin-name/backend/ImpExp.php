@@ -101,14 +101,22 @@ class ImpExp extends Engine\Admin_Base {
 		}
 
 		// Retrieve the settings from the file and convert the json object to an array.
-		$settings = json_decode( file_get_contents( $import_file ) ); // phpcs:ignore
+		$settings_file = file_get_contents( $import_file );// phpcs:ignore
+		if ( !$settings_file ) {
+			$settings = json_decode( (string) $settings_file );
 
-		update_option( PN_TEXTDOMAIN . '-settings', get_object_vars( $settings[ 0 ] ) );
-		update_option( PN_TEXTDOMAIN . '-settings-second', get_object_vars( $settings[ 1 ] ) );
+			update_option( PN_TEXTDOMAIN . '-settings', get_object_vars( $settings[ 0 ] ) );
+			update_option( PN_TEXTDOMAIN . '-settings-second', get_object_vars( $settings[ 1 ] ) );
 
-		wp_safe_redirect( admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) );
+			wp_safe_redirect( admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) );
+			exit;
+		}
 
-		exit;
+		new \WP_Error(
+                'plugin_name_import_settings_failed',
+                __( 'Failed to import the settings.', PN_TEXTDOMAIN )
+            );
+
 	}
 
 }

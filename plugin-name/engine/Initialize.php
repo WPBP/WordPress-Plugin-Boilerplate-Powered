@@ -112,14 +112,20 @@ class Initialize {
 		return self::$instance;
 	}
 
-	private function get_classes( $namespace ) {
-		$namespace = str_replace( '\\', '/', $namespace );
-		$folder    = strtolower( $namespace );
-		$classes   = array_diff( scandir( PN_PLUGIN_ROOT . $folder ), array( '..', '.', 'index.php' ) );
+	private function get_classes( string $namespace ) {
+		$namespace  = str_replace( '\\', '/', $namespace );
+		$folder     = strtolower( $namespace );
+		$files      = array();
+		$temp_files = scandir( PN_PLUGIN_ROOT . $folder );
+		if ( is_array( $temp_files ) ) {
+			$files = $temp_files;
+		}
+
+		$classes = array_diff( $files, array( '..', '.', 'index.php' ) );
 		$this->enqueue_classes( $namespace, $classes );
 	}
 
-	private function enqueue_classes( $namespace_to_append, $classes ) {
+	private function enqueue_classes( string $namespace_to_append, array $classes ) {
 		foreach ( $classes as $php_file ) {
 			$is_php_file = strpos( $php_file, '.php' );
 			// File with lowercase names are not PSR-4

@@ -37,8 +37,16 @@ parameters:
         - '#Access to an undefined property object::\$ID\.#'
         - '#Call to an undefined method object::set\(\)\.#'
         - '#Call to an undefined method object::get\(\)\.#'
+        # sanitize_text_field is used always with wp_unslash that based on the input, the output is the same type
+        - '/^Parameter #1 \$str of function sanitize_text_field expects string, array<string>\|string given\.$/'
         # https://core.trac.wordpress.org/ticket/43304
         - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
         # WP-CLI accepts a class as callable
         - '/^Parameter #2 \$callable of static method WP_CLI::add_command\(\) expects callable\(\): mixed, \S+ given\.$/'
+        # void as typehint is available only on PHP 7.1+
         - '#has no return typehint specified\.#'
+        # Stubs for WP-CLI are not available
+        - '#on an unknown class WP_CLI\.#'
+        # CMB2 is not detected by PHPStan
+        - '#cmb2#'
+        - '#Cmb2#'

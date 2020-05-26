@@ -9,7 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
-namespace Plugin_name\Ajax;
+namespace Plugin_Name\Ajax;
 
 use \Plugin_Name\Engine;
 

@@ -27,7 +27,7 @@ class Is_Methods {
 			$user = wp_get_current_user();
 		}
 
-		if ( ! $user instanceof WP_User ) {
+		if ( ! $user instanceof \WP_User ) {
 			_doing_it_wrong( __METHOD__, 'To check if the user is admin is required a WP_User object.', '1.0.0' );
 		}
 

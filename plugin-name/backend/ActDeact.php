@@ -181,7 +181,9 @@ class ActDeact extends Engine\Admin_Base {
 		);
 		foreach ( $roles as $role ) {
 			foreach ( $caps as $cap ) {
-				$role->add_cap( $cap );
+				if ( !is_null( $role ) ) {
+					$role->add_cap( $cap );
+				}
 			}
 		}
 
@@ -209,7 +211,9 @@ class ActDeact extends Engine\Admin_Base {
 		);
 		foreach ( $roles as $role ) {
 			foreach ( $bad_caps as $cap ) {
-				$role->remove_cap( $cap );
+				if ( !is_null( $role ) ) {
+					$role->remove_cap( $cap );
+				}
 			}
 		}
 	}

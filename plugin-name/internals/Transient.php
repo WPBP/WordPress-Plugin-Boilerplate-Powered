@@ -35,7 +35,7 @@ class Transient extends Engine\Base {
 
 		// Use wp-cache-remember package to retrive or save in transient
 		return remember_transient(
-             $key,
+            $key,
             function () use ( $key ) {
 				// If there's no cached version we ask
 				$response = wp_remote_get( 'https://jsonplaceholder.typicode.com/todos/' );

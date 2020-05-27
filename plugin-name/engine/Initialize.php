@@ -145,6 +145,7 @@ class Initialize {
 
 		return $this->classes;
 	}
+
 	/**
 	 * Get php files inside the folders
 	 *

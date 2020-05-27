@@ -39,12 +39,21 @@ class Initialize {
 	public $classes = array();
 
 	/**
+     * Composer autoload.
+     *
+     * @var \Composer\Autoload\ClassLoader
+     */
+	private $composer;
+
+	/**
 	 * The Constructor that load the entry classes
 	 *
+	 * @param \Composer\Autoload\ClassLoader $composer Composer autoload output.
 	 * @since {{plugin_version}}
 	 */
-	public function __construct() {
-		$this->is = new Engine\Is_Methods();
+	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
+		$this->is       = new Engine\Is_Methods();
+		$this->composer = $composer;
 
 		$this->get_classes( 'Internals' );
 		$this->get_classes( 'Integrations' );
@@ -81,65 +90,105 @@ class Initialize {
 		$this->load_classes();
 	}
 
+	/**
+     * Execute all the classes.
+     *
+     * @since {{plugin_version}}
+     */
 	private function load_classes() {
 		foreach ( $this->classes as &$class ) {
 			$class = apply_filters( strtolower( $class ) . '_instance', $class );
-			$temp  = new $class;
-			$temp->initialize();
+			try {
+				$temp = new $class;
+				$temp->initialize();
+			} catch ( \Exception $err ) {
+				do_action( 'plugin_name_initialize_failed', $err );
+				if ( WP_DEBUG ) {
+					throw new \Exception( $err->getMessage() );
+				}
+			}
 		}
 	}
 
 	/**
-	 * Return an instance of this class.
+	 * Using Composer autoload to detect the classes of a Namespace
+	 *
+	 * @param string $namespace Class name to find.
 	 *
 	 * @since {{plugin_version}}
 	 *
-	 * @return object A single instance of this class.
+	 * @return array Return the classes.
 	 */
-	public static function get_instance() {
-		// If the single instance hasn't been set, set it now.
-		if ( null === self::$instance ) {
-			try {
-				self::$instance = new self;
-			} catch ( \Exception $err ) {
-				do_action( 'plugin_name_initialize_failed', $err );
-				if ( WP_DEBUG ) {
-					throw $err->getMessage();
+	private function get_classes( string $namespace ) {
+		$prefix   = $this->composer->getPrefixesPsr4();
+		$classmap = $this->composer->getClassMap();
+		$base     = 'Plugin_Name\\' . $namespace;
+
+		if ( isset( $classmap[ $base ] ) ) {
+			$keys = array_keys( $classmap );
+			foreach ( $keys as $key ) {
+				if ( false !== strpos( $namespace, $key ) ) {
+					$this->classes[] = $key;
 				}
 			}
+
+			return $this->classes;
 		}
 
-		return self::$instance;
-	}
+		$base = $base . '\\';
+		if ( isset( $prefix[ $base ] ) ) {
+			$folder  = $prefix[ $base ][0];
+			$classes = $this->scandir( $folder );
+			$this->loop_classes( $classes, $folder, $base, true );
+			return $this->classes;
+		}
 
-	private function get_classes( string $namespace ) {
-		$namespace  = str_replace( '\\', '/', $namespace );
-		$folder     = strtolower( $namespace );
-		$files      = array();
-		$temp_files = scandir( PN_PLUGIN_ROOT . $folder );
+		return $this->classes;
+	}
+	/**
+	 * Get php files inside the folders
+	 *
+	 * @param string $folder Path.
+	 *
+	 * @since {{plugin_version}}
+	 *
+	 * @return array List of files.
+	 */
+	private function scandir( string $folder ) {
+		$temp_files = scandir( $folder );
+			$files  = array();
 		if ( is_array( $temp_files ) ) {
 			$files = $temp_files;
 		}
 
-		$classes = array_diff( $files, array( '..', '.', 'index.php' ) );
-		$this->enqueue_classes( $namespace, $classes );
+		return array_diff( $files, array( '..', '.', 'index.php' ) );
 	}
 
-	private function enqueue_classes( string $namespace_to_append, array $classes ) {
+	/**
+	 * Load namespace classes by files
+	 *
+	 * @param array  $classes List of files.
+	 * @param string $folder Path folder.
+	 * @param string $base Namespace base.
+	 * @param bool   $loop_again To avoid a deep scanning.
+	 *
+	 * @since {{plugin_version}}
+	 */
+	private function loop_classes( array $classes, string $folder, string $base, bool $loop_again = true ) {
 		foreach ( $classes as $php_file ) {
-			$is_php_file = strpos( $php_file, '.php' );
-			// File with lowercase names are not PSR-4
-			if ( strtolower( $php_file ) !== $php_file ) {
-				if ( $is_php_file !== false ) {
-					$class_name      = substr( $php_file, 0, -4 );
-					$this->classes[] = 'Plugin_Name\\' . str_replace( '/', '\\', $namespace_to_append ) . '\\' . $class_name;
-				}
+			$class_name = substr( $php_file, 0, -4 );
+			$path       = $folder . '/' . $php_file;
 
+			if ( is_file( $path ) ) {
+				$this->classes[] = $base . $class_name;
 				continue;
 			}
 
-			if ( $is_php_file === false ) {
-				$this->get_classes( $namespace_to_append . '\\' . strtolower( $php_file ) );
+			if ( $loop_again ) {
+				if ( is_dir( $path ) && strtolower( $php_file ) !== $php_file ) {
+					$classes = $this->scandir( $folder . '/' . $php_file );
+					$this->loop_classes( $classes, $folder . '/' . $php_file, $base . $php_file . '\\', false );
+				}
 			}
 		}
 	}

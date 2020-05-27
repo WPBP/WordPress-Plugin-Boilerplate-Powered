@@ -73,7 +73,7 @@ if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
 	return;
 }
 
-require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
+$plugin_name_libraries = require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
 
 require_once PN_PLUGIN_ROOT . 'functions/functions.php';
 // WPBPGen{{#if libraries_wpbp__debug}}
@@ -158,8 +158,8 @@ $my_update_checker = Puc_v4_Factory::buildUpdateChecker(
 if ( ! wp_installing() ) {
 	add_action(
         'plugins_loaded',
-        function() {
-			new \Plugin_Name\Engine\Initialize;
+        function () use ( $plugin_name_libraries ) {
+			new \Plugin_Name\Engine\Initialize( $plugin_name_libraries );
 		}
         );
 }

@@ -39,37 +39,33 @@ define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
 
 // WPBPGen{{#if language-files}}
-/**
- * Load the textdomain of the plugin
- *
- * @return void
- */
-function pn_load_plugin_textdomain() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), PN_TEXTDOMAIN );
-	load_textdomain( PN_TEXTDOMAIN, trailingslashit( WP_PLUGIN_DIR ) . PN_TEXTDOMAIN . '/languages/' . PN_TEXTDOMAIN . '-' . $locale . '.mo' );
-}
-
-add_action( 'plugins_loaded', 'pn_load_plugin_textdomain', 1 );
-// {{/if}}
-if ( version_compare( PHP_VERSION, '5.6.0', '<' ) ) {
-
-	function pn_deactivate() {
-		deactivate_plugins( plugin_basename( __FILE__ ) );
+add_action(
+    'init',
+    function () {
+		load_plugin_textdomain( PN_TEXTDOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
-
-	function pn_show_deactivation_notice() {
-		echo wp_kses_post(
+    );
+// {{/if}}
+if ( version_compare( PHP_VERSION, '7.0.0', '<=' ) ) {
+	add_action(
+        'admin_init',
+        function() {
+			deactivate_plugins( plugin_basename( __FILE__ ) );
+		}
+    );
+	add_action(
+        'admin_notices',
+        function() {
+			echo wp_kses_post(
 			sprintf(
 				'<div class="notice notice-error"><p>%s</p></div>',
 				__( '"{{plugin_name}}" requires PHP 5.6 or newer.', PN_TEXTDOMAIN )
 			)
-		);
-	}
+			);
+		}
+    );
 
-	add_action( 'admin_init', 'pn_deactivate' );
-	add_action( 'admin_notices', 'pn_show_deactivation_notice' );
-
-	// Return early to prevent loading the other includes.
+	// Return early to prevent loading the plugin.
 	return;
 }
 
@@ -84,7 +80,7 @@ require_once PN_PLUGIN_ROOT . 'functions/debug.php';
 
 // WPBPGen{{#if libraries_micropackage__requirements}}
 $requirements = new \Micropackage\Requirements\Requirements(
-     'Plugin Name',
+    'Plugin Name',
     array(
 	'php'            => '7.0',
 	'php_extensions' => array( 'mbstring' ),
@@ -130,19 +126,18 @@ function pn_fs() {
 
 
 		if ( $pn_fs->is_premium() ) {
-			$pn_fs->add_filter( 'support_forum_url', 'gt_premium_support_forum_url' );
-
-			function gt_premium_support_forum_url( $wp_org_support_forum_url ) {
-				return 'http://your url';
-			}
-
+			$pn_fs->add_filter(
+                'support_forum_url',
+                function( $wp_org_support_forum_url ) {
+					return 'http://your url';
+				}
+            );
 		}
 	}
 
 	return $pn_fs;
 }
 
-// Init Freemius.
 // pn_fs();
 // {{/if}}
 
@@ -161,5 +156,5 @@ if ( ! wp_installing() ) {
         function () use ( $plugin_name_libraries ) {
 			new \Plugin_Name\Engine\Initialize( $plugin_name_libraries );
 		}
-        );
+    );
 }

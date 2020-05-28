@@ -29,8 +29,6 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 /**
  * Loop for uninstall
  *
- * @global type $wpdb
- *
  * @return void
  */
 function pn_uninstall_multisite() {
@@ -42,9 +40,11 @@ function pn_uninstall_multisite() {
 				pn_uninstall();
 				restore_current_blog();
 			}
+
 			return;
 		}
 	}
+
 	pn_uninstall();
 }
 
@@ -89,7 +89,7 @@ function pn_uninstall() {
 
 	// Remove the capabilities of the plugin
 	if ( !isset( $wp_roles ) ) {
-		$wp_roles = new WP_Roles;
+		$wp_roles = new WP_Roles; // phpcs:ignore
 	}
 
 	$caps = array(
@@ -116,3 +116,5 @@ function pn_uninstall() {
 		}
 	}
 }
+
+pn_uninstall_multisite();

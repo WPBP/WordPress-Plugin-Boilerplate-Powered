@@ -14,6 +14,7 @@ parameters:
     excludes_analyse:
         - %currentWorkingDirectory%/vendor
         - %currentWorkingDirectory%/tests
+        - integrations/Widgets/
     autoload_files:
         - vendor/autoload.php
         - plugin-name.php
@@ -43,12 +44,14 @@ parameters:
         - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
         # WP-CLI accepts a class as callable
         - '/^Parameter #2 \$callable of static method WP_CLI::add_command\(\) expects callable\(\): mixed, \S+ given\.$/'
-        # void as typehint is available only on PHP 7.1+
-        - '#has no return typehint specified\.#'
         # Stubs for WP-CLI are not available
         - '#on an unknown class WP_CLI\.#'
+        # void as typehint is available only on PHP 7.1+
+        - '#has no return typehint specified\.#'
         # CMB2 is not detected by PHPStan
         - '#cmb2#'
         - '#Cmb2#'
         # Freemius is not detect by PHPStan
         - '#fs_dynamic_init#'
+        # Uninstall is not detect by PHPStan
+        - '#pn_uninstall#'

@@ -14,13 +14,13 @@ Choose a library or a snippet and the boilerplate (with the help of the [Code Ge
 
 ## Features
 
-### Libraries and Miscellaneus available
+### Libraries and Miscellaneous available
 
 * [Code Generator](https://github.com/WPBP/generator) to start to develop
 * Sass support and Grunt (not mandatory because the generator can remove them)
-* Autoload based on Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php)
-* Tools integrated like [GrumpPHP](https://github.com/phpro/grumphp) (automatically on commit) and [PHPStan](https://github.com/phpstan/phpstan/) (`php7.2 vendor/bin/phpstan analyze`)
-* Many libraries already available (with starter code) for Composer
+* PSR-4 support by Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php) to load classes based on request type and folder structure
+* Tools integrated like [GrumpPHP](https://github.com/phpro/grumphp) (automatically on commit) and [PHPStan](https://github.com/phpstan/phpstan/) (`php vendor/bin/phpstan analyze`)
+* Many libraries already available (with starter code)
 
 | WPBP Libraries  | Other libraries |
 | --- | --- |

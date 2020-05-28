@@ -50,3 +50,5 @@ parameters:
         # CMB2 is not detected by PHPStan
         - '#cmb2#'
         - '#Cmb2#'
+        # Freemius is not detect by PHPStan
+        - '#fs_dynamic_init#'

@@ -128,7 +128,7 @@ class Initialize {
 		if ( isset( $classmap[ 'Plugin_Name\\Engine\\Initialize' ] ) ) {
 			$keys = array_keys( $classmap );
 			foreach ( $keys as $key ) {
-				if ( strncmp( $key, $base, strlen( $base ) ) === 0 ) {
+				if ( strncmp( (string) $key, $base, strlen( $base ) ) === 0 ) {
 					$this->classes[] = $key;
 				}
 			}
@@ -201,4 +201,3 @@ class Initialize {
 	}
 
 }
-

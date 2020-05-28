@@ -141,7 +141,11 @@ class Initialize {
 		if ( isset( $prefix[ $base ] ) ) {
 			$folder  = $prefix[ $base ][0];
 			$classes = $this->scandir( $folder );
-			$this->find_classes( $classes, $folder, $base, true );
+			$this->find_classes( $classes, $folder, $base );
+			if ( !WP_DEBUG ) {
+				wp_die( esc_html__( 'Plugin Name is on production environment with missing `composer dumpautoload -o` that will improve the performance on autoloading itself.', PN_TEXTDOMAIN ) );
+			}
+
 			return $this->classes;
 		}
 
@@ -173,11 +177,10 @@ class Initialize {
 	 * @param array  $classes List of files.
 	 * @param string $folder Path folder.
 	 * @param string $base Namespace base.
-	 * @param bool   $loop_again To avoid a deep scanning.
 	 *
 	 * @since {{plugin_version}}
 	 */
-	private function find_classes( array $classes, string $folder, string $base, bool $loop_again = true ) {
+	private function find_classes( array $classes, string $folder, string $base ) {
 		foreach ( $classes as $php_file ) {
 			$class_name = substr( $php_file, 0, -4 );
 			$path       = $folder . '/' . $php_file;
@@ -187,10 +190,11 @@ class Initialize {
 				continue;
 			}
 
-			if ( $loop_again ) {
+			// Verify the Namespace level
+			if ( substr_count( $base . $class_name, '\\' ) >= 2 ) {
 				if ( is_dir( $path ) && strtolower( $php_file ) !== $php_file ) {
 					$classes = $this->scandir( $folder . '/' . $php_file );
-					$this->find_classes( $classes, $folder . '/' . $php_file, $base . $php_file . '\\', false );
+					$this->find_classes( $classes, $folder . '/' . $php_file, $base . $php_file . '\\' );
 				}
 			}
 		}

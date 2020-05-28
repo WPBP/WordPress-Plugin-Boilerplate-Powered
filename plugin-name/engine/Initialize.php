@@ -124,10 +124,11 @@ class Initialize {
 		$classmap = $this->composer->getClassMap();
 		$base     = 'Plugin_Name\\' . $namespace;
 
-		if ( isset( $classmap[ $base ] ) ) {
+		// In case composer has autoload optimized
+		if ( isset( $classmap[ 'Plugin_Name\\Engine\\Initialize' ] ) ) {
 			$keys = array_keys( $classmap );
 			foreach ( $keys as $key ) {
-				if ( false !== strpos( $namespace, $key ) ) {
+				if ( strncmp( $key, $base, strlen( $base ) ) === 0 ) {
 					$this->classes[] = $key;
 				}
 			}
@@ -136,10 +137,11 @@ class Initialize {
 		}
 
 		$base = $base . '\\';
+		// In case composer is not optimized
 		if ( isset( $prefix[ $base ] ) ) {
 			$folder  = $prefix[ $base ][0];
 			$classes = $this->scandir( $folder );
-			$this->loop_classes( $classes, $folder, $base, true );
+			$this->find_classes( $classes, $folder, $base, true );
 			return $this->classes;
 		}
 
@@ -175,7 +177,7 @@ class Initialize {
 	 *
 	 * @since {{plugin_version}}
 	 */
-	private function loop_classes( array $classes, string $folder, string $base, bool $loop_again = true ) {
+	private function find_classes( array $classes, string $folder, string $base, bool $loop_again = true ) {
 		foreach ( $classes as $php_file ) {
 			$class_name = substr( $php_file, 0, -4 );
 			$path       = $folder . '/' . $php_file;
@@ -188,7 +190,7 @@ class Initialize {
 			if ( $loop_again ) {
 				if ( is_dir( $path ) && strtolower( $php_file ) !== $php_file ) {
 					$classes = $this->scandir( $folder . '/' . $php_file );
-					$this->loop_classes( $classes, $folder . '/' . $php_file, $base . $php_file . '\\', false );
+					$this->find_classes( $classes, $folder . '/' . $php_file, $base . $php_file . '\\', false );
 				}
 			}
 		}

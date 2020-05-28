@@ -14,7 +14,6 @@ parameters:
         phpstan:
             configuration: ~
             triggered_by: ['php']
-            memory_limit: -1
         codeception:
             config_file: ~
             fail_fast: false
@@ -26,4 +25,3 @@ parameters:
                 - 'print_r('
                 - 'var_dump('
             triggered_by: ['php']
-

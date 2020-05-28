@@ -4,9 +4,13 @@
 * Enhancement: Added yahnis-elsts/plugin-update-checker
 * Enhancement: Improved code style with WPCS
 * Enhancement: Updated example pot files with new folder to exclude
+* Enhancement: PSR-4 support with file and class renaming
+* Enhancement: PHPStan support improved
+* Enhancement: Code optimized with PHPStan help
+* Enhancement: New `Initialize` class to avoid static class list
 * Removed: mte90/wp-contextual-help
 * Removed: CoffeeScript support
-* Replace: wordpress-admin-notices and WP-Dismissable-Notice-Handler with wpdesk/wp-notice
+* Replace: `wordpress-admin-notices` and `WP-Dismissable-Notice-Handler` with `wpdesk/wp-notice`
 
 ## 3.1.3
 

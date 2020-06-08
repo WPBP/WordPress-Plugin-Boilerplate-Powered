@@ -11,16 +11,17 @@ parameters:
     checkMissingIterableValueType: false
     paths:
         - %currentWorkingDirectory%
+    bootstrapFiles:
+        - vendor/autoload.php
+        - vendor/cmb2/init.php
     excludes_analyse:
         - %currentWorkingDirectory%/vendor
         - %currentWorkingDirectory%/tests
         - integrations/Widgets/
-    autoload_files:
-        - vendor/autoload.php
+    scanFiles:
         - plugin-name.php
-        - vendor/cmb2/init.php
-        - vendor/cmb2-grid/Cmb2GridPluginLoad.php
         - vendor/freemius/wordpress-sdk/start.php
+        - vendor/cmb2-grid/Cmb2GridPluginLoad.php
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'

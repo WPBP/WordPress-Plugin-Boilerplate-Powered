@@ -12,7 +12,7 @@
 namespace Plugin_Name\Engine;
 
 /**
- * This class is the base skeleton of the plugin
+ * Base skeleton of the plugin
  */
 class Base {
 

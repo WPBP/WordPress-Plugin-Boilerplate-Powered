@@ -28,7 +28,7 @@ class Is_Methods {
 		}
 
 		if ( ! $user instanceof \WP_User ) {
-			_doing_it_wrong( __METHOD__, 'To check if the user is admin is required a WP_User object.', '1.0.0' );
+			_doing_it_wrong( __METHOD__, 'To check if the user is admin is required a WP_User object.', '{{plugin_version}}' );
 		}
 
 		return is_multisite() ? user_can( $user, 'manage_network' ) : user_can( $user, 'manage_options' );
@@ -39,7 +39,7 @@ class Is_Methods {
 	 *
 	 * @since {{plugin_version}}
 	 *
-	 * @param  string $type admin, ajax, cron, cli or frontend.
+	 * @param  string $type admin, ajax, cron, cli, amp or frontend.
 	 * @return bool
 	 */
 	public function request( $type ) {
@@ -58,6 +58,8 @@ class Is_Methods {
 				return $this->is_frontend();
 			case 'cli':
 				return $this->is_cli();
+			case 'amp':
+				return $this->is_amp();
 			default:
 				_doing_it_wrong( __METHOD__, esc_html( sprintf( 'Unknown request type: %s', $type ) ), '1.0.0' );
 				return false;
@@ -126,5 +128,14 @@ class Is_Methods {
 	public function is_cli() {
 		return defined( 'WP_CLI' ) && WP_CLI;
 	}
+
+    /**
+     * Is AMP
+     *
+     * @return boolean
+     */
+    public function is_amp() {
+        return ( function_exists( 'is_amp_endpoint' ) && \is_amp_endpoint() );
+    }
 
 }

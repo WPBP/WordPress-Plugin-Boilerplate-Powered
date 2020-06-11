@@ -18,13 +18,6 @@ use Plugin_Name\Engine;
 class Initialize {
 
 	/**
-	 * Instance of this class.
-	 *
-	 * @var object
-	 */
-	protected static $instance = null;
-
-	/**
 	 * Instance of this Pn_Is_Methods.
 	 *
 	 * @var object
@@ -39,7 +32,7 @@ class Initialize {
 	public $classes = array();
 
 	/**
-     * Composer autoload.
+     * Composer autoload file list.
      *
      * @var \Composer\Autoload\ClassLoader
      */
@@ -49,6 +42,7 @@ class Initialize {
 	 * The Constructor that load the entry classes
 	 *
 	 * @param \Composer\Autoload\ClassLoader $composer Composer autoload output.
+	 *
 	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
@@ -70,7 +64,7 @@ class Initialize {
 		}
 
 		// {{/if}}
-		// WPBPGen{{#if ajax_public}}
+		// WPBPGen{{#if ajax}}
 		if ( $this->is->request( 'ajax' ) ) {
 			$this->get_classes( 'Ajax' );
 		}
@@ -91,13 +85,13 @@ class Initialize {
 	}
 
 	/**
-     * Execute all the classes.
+     * Initialize all the classes.
      *
      * @since {{plugin_version}}
      */
 	private function load_classes() {
+		$this->classes = apply_filters( 'plugin_name_classes_to_execute', $this->classes );
 		foreach ( $this->classes as &$class ) {
-			$class = apply_filters( strtolower( $class ) . '_instance', $class );
 			try {
 				$temp = new $class;
 				$temp->initialize();
@@ -111,7 +105,7 @@ class Initialize {
 	}
 
 	/**
-	 * Using Composer autoload to detect the classes of a Namespace
+	 * Based on the folder loads the classes automatically using the Composer autoload to detect the classes of a Namespace.
 	 *
 	 * @param string $namespace Class name to find.
 	 *
@@ -120,28 +114,28 @@ class Initialize {
 	 * @return array Return the classes.
 	 */
 	private function get_classes( string $namespace ) {
-		$prefix   = $this->composer->getPrefixesPsr4();
-		$classmap = $this->composer->getClassMap();
-		$base     = 'Plugin_Name\\' . $namespace;
+		$prefix    = $this->composer->getPrefixesPsr4();
+		$classmap  = $this->composer->getClassMap();
+		$namespace = 'Plugin_Name\\' . $namespace;
 
 		// In case composer has autoload optimized
 		if ( isset( $classmap[ 'Plugin_Name\\Engine\\Initialize' ] ) ) {
-			$keys = array_keys( $classmap );
-			foreach ( $keys as $key ) {
-				if ( strncmp( (string) $key, $base, strlen( $base ) ) === 0 ) {
-					$this->classes[] = $key;
+			$classes = array_keys( $classmap );
+			foreach ( $classes as $class ) {
+				if ( strncmp( (string) $class, $namespace, strlen( $namespace ) ) === 0 ) {
+					$this->classes[] = $class;
 				}
 			}
 
 			return $this->classes;
 		}
 
-		$base = $base . '\\';
+		$namespace = $namespace . '\\';
 		// In case composer is not optimized
-		if ( isset( $prefix[ $base ] ) ) {
-			$folder  = $prefix[ $base ][0];
-			$classes = $this->scandir( $folder );
-			$this->find_classes( $classes, $folder, $base );
+		if ( isset( $prefix[ $namespace ] ) ) {
+			$folder    = $prefix[ $namespace ][0];
+			$php_files = $this->scandir( $folder );
+			$this->find_classes( $php_files, $folder, $namespace );
 			if ( !WP_DEBUG ) {
 				wp_die( esc_html__( 'Plugin Name is on production environment with missing `composer dumpautoload -o` that will improve the performance on autoloading itself.', PN_TEXTDOMAIN ) );
 			}
@@ -153,7 +147,8 @@ class Initialize {
 	}
 
 	/**
-	 * Get php files inside the folders
+	 * Get php files inside the folder/subfolder that will be loaded.
+	 * This class is used only when Composer is not optimized.
 	 *
 	 * @param string $folder Path.
 	 *
@@ -172,16 +167,16 @@ class Initialize {
 	}
 
 	/**
-	 * Load namespace classes by files
+	 * Load namespace classes by files.
 	 *
-	 * @param array  $classes List of files.
-	 * @param string $folder Path folder.
+	 * @param array  $php_files List of files with the Class.
+	 * @param string $folder Path of the folder.
 	 * @param string $base Namespace base.
 	 *
 	 * @since {{plugin_version}}
 	 */
-	private function find_classes( array $classes, string $folder, string $base ) {
-		foreach ( $classes as $php_file ) {
+	private function find_classes( array $php_files, string $folder, string $base ) {
+		foreach ( $php_files as $php_file ) {
 			$class_name = substr( $php_file, 0, -4 );
 			$path       = $folder . '/' . $php_file;
 
@@ -193,8 +188,8 @@ class Initialize {
 			// Verify the Namespace level
 			if ( substr_count( $base . $class_name, '\\' ) >= 2 ) {
 				if ( is_dir( $path ) && strtolower( $php_file ) !== $php_file ) {
-					$classes = $this->scandir( $folder . '/' . $php_file );
-					$this->find_classes( $classes, $folder . '/' . $php_file, $base . $php_file . '\\' );
+					$sub_php_files = $this->scandir( $folder . '/' . $php_file );
+					$this->find_classes( $sub_php_files, $folder . '/' . $php_file, $base . $php_file . '\\' );
 				}
 			}
 		}

@@ -14,12 +14,14 @@ namespace Plugin_Name\Backend;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the Enqueue stuff for the backend
+ * Create the settings page in the backend
  */
-class Settings_Page extends Engine\Admin_Base {
+class Settings_Page extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		if ( !parent::initialize() ) {

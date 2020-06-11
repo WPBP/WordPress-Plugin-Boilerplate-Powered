@@ -14,12 +14,12 @@ namespace Plugin_Name\Backend;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the activate and deactive method and relates.
+ * Activate and deactive method of the plugin and relates.
  */
-class ActDeact extends Engine\Admin_Base {
+class ActDeact extends Engine\Base {
 
 	/**
-	 * Initialize the Act/Deact
+	 * Initialize the class
 	 *
 	 * @return void
 	 */

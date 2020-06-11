@@ -16,10 +16,12 @@ use \Plugin_Name\Engine;
 /**
  * This class contain the Enqueue stuff for the backend
  */
-class Enqueue extends Engine\Admin_Base {
+class Enqueue extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		if ( !parent::initialize() ) {
@@ -45,9 +47,9 @@ class Enqueue extends Engine\Admin_Base {
 	 * @return mixed Return early if no settings page is registered.
 	 */
 	public function enqueue_admin_styles() {
-		$screen = get_current_screen();
+		$admin_page = get_current_screen();
 		// WPBPGen{{#if admin-assets_settings-css}}
-		if ( !is_null( $screen ) && $screen->id === 'toplevel_page_plugin-name' ) {
+		if ( !is_null( $admin_page ) && $admin_page->id === 'toplevel_page_plugin-name' ) {
 			wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', plugins_url( 'assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		}
 
@@ -68,8 +70,8 @@ class Enqueue extends Engine\Admin_Base {
 	 */
 	public function enqueue_admin_scripts() {
 		// WPBPGen{{#if admin-assets_settings-js}}
-		$screen = get_current_screen();
-        if ( !is_null( $screen ) && $screen->id === 'toplevel_page_plugin-name' ) {
+		$admin_page = get_current_screen();
+        if ( !is_null( $admin_page ) && $admin_page->id === 'toplevel_page_plugin-name' ) {
             wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', plugins_url( 'assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION, false );
         }
 

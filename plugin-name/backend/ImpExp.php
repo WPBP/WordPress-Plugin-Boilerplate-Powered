@@ -16,11 +16,12 @@ use \Plugin_Name\Engine;
 /**
  * Provide Import and Export of the settings of the plugin
  */
-class ImpExp extends Engine\Admin_Base {
+class ImpExp extends Engine\Base {
 
 	/**
-	 * Initialize the plugin by loading admin scripts & styles and adding a
-	 * settings page and menu.
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		if ( !parent::initialize() ) {
@@ -88,13 +89,13 @@ class ImpExp extends Engine\Admin_Base {
 			return;
 		}
 
-		$extension = end( explode( '.', $_FILES[ 'import_file' ][ 'name' ] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$extension = end( explode( '.', $_FILES[ 'pn_import_file' ][ 'name' ] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 
 		if ( $extension !== 'json' ) {
 			wp_die( esc_html__( 'Please upload a valid .json file', PN_TEXTDOMAIN ) );
 		}
 
-		$import_file = $_FILES[ 'import_file' ][ 'tmp_name' ]; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$import_file = $_FILES[ 'pn_import_file' ][ 'tmp_name' ]; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 
 		if ( empty( $import_file ) ) {
 			wp_die( esc_html__( 'Please upload a file to import', PN_TEXTDOMAIN ) );

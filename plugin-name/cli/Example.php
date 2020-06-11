@@ -14,11 +14,17 @@ namespace Plugin_Name\Cli;
 use \Plugin_Name\Engine;
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-    /**
-     * This class contain the WP CLI support
+
+	/**
+     * WP CLI command example
      */
     class Example extends Engine\Base {
 
+		/**
+         * Initialize the class.
+         *
+         * @return void
+         */
         public function initialize() {
             if ( !apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {
                 return;
@@ -30,6 +36,8 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
         /**
          * Initialize the commands
          *
+         * @since {{plugin_version}}
+         *
          * @return void
          */
         public function __construct() {
@@ -39,7 +47,9 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
         /**
          * Example command
 		 * API reference: https://wp-cli.org/docs/internal-api/
-		 *
+         *
+         * @since {{plugin_version}}
+         *
 		 * @param array $args The attributes.
 		 *
 		 * @return void

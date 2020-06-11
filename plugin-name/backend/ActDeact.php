@@ -19,7 +19,7 @@ use \Plugin_Name\Engine;
 class ActDeact extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
 	 *
 	 * @return void
 	 */

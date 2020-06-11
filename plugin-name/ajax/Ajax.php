@@ -18,7 +18,9 @@ use Plugin_Name\Engine;
 class Ajax extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		if ( !apply_filters( 'plugin_name_pn_ajax_initialize', true ) ) {
@@ -31,6 +33,8 @@ class Ajax extends Engine\Base {
 
 	/**
 	 * The method to run on ajax
+	 *
+	 * @since {{plugin_version}}
 	 *
 	 * @return void
 	 */

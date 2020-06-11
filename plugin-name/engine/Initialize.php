@@ -79,8 +79,6 @@ class Initialize {
 			$this->get_classes( 'Frontend' );
 		}
 
-		$this->classes = apply_filters( 'pn_class_instances', $this->classes );
-
 		$this->load_classes();
 	}
 

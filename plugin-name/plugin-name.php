@@ -1,12 +1,6 @@
 <?php
 
 /**
-//WPBPGen{{#if author_name}}
- * The WordPress Plugin Boilerplate Powered.
- *
- * A foundation off of which to build well-documented WordPress plugins that
- * also follow WordPress Coding Standards and PHP best practices.
-//{{/if}}
  *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>

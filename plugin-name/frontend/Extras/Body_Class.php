@@ -13,21 +13,19 @@ namespace Plugin_Name\Frontend\Extras;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain all the snippet or extra that improve the experience on the frontend
+ * Add custom css class to <body>
  */
 class Body_Class extends Engine\Base {
 
 	/**
-	 * Initialize the snippet
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		parent::initialize();
-		// WPBPGen{{#if frontend_body-class}}
 		add_filter( 'body_class', array( __CLASS__, 'add_pn_class' ), 10, 3 );
-		// {{/if}}
 	}
-
-	// WPBPGen{{#if frontend_body-class}}
 
 	/**
 	 * Add class in the body on the frontend
@@ -43,5 +41,4 @@ class Body_Class extends Engine\Base {
 		return $classes;
 	}
 
-	// {{/if}}
 }

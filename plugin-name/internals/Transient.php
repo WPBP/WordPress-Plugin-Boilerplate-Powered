@@ -14,12 +14,14 @@ namespace Plugin_Name\Internals;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the transient example
+ * Transient used by the plugin
  */
 class Transient extends Engine\Base {
 
 	/**
-	 * Initialize the snippet
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		parent::initialize();
@@ -27,6 +29,8 @@ class Transient extends Engine\Base {
 
 	/**
 	 * This method contain an example of caching a transient with an external request.
+	 *
+	 * @since {{plugin_version}}
 	 *
 	 * @return object
 	 */
@@ -53,6 +57,8 @@ class Transient extends Engine\Base {
 
 	/**
 	 * Print the transient content
+	 *
+	 * @since {{plugin_version}}
 	 *
 	 * @return void
 	 */

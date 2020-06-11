@@ -19,7 +19,7 @@ use \Plugin_Name\Engine;
 class CMB extends Engine\Base {
 
 	/**
-	 * Initialize CMB2.
+	 * Initialize class.
 	 *
 	 * @since {{plugin_version}}
 	 */

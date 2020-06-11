@@ -14,12 +14,14 @@ namespace Plugin_Name\Integrations;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the Fake Page
+ * Fake Pages inside WordPress
  */
 class FakePage extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
         parent::initialize();
@@ -33,3 +35,4 @@ class FakePage extends Engine\Base {
     }
 
 }
+

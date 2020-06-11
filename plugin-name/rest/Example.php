@@ -13,12 +13,14 @@ namespace Plugin_Name\Rest;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the Rest stuff
+ * Example class for REST
  */
 class Example extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		parent::initialize();
@@ -46,7 +48,7 @@ class Example extends Engine\Base {
      */
     public function add_custom_field() {
         register_rest_field(
-             'demo',
+            'demo',
             PN_TEXTDOMAIN . '_text',
             array(
 				'get_callback'    => array( $this, 'get_text_field' ),
@@ -69,7 +71,7 @@ class Example extends Engine\Base {
     public function add_custom_ruote() {
         // Only an example with 2 parameters
         register_rest_route(
-             'wp/v2',
+            'wp/v2',
             '/calc',
             array(
 				'methods'  => \WP_REST_Server::READABLE,

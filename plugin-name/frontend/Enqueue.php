@@ -13,12 +13,14 @@ namespace Plugin_Name\Frontend;
 use Plugin_Name\Engine;
 
 /**
- * This class contain the Enqueue stuff for the frontend
+ * Enqueue stuff on the frontend
  */
 class Enqueue extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		parent::initialize();
@@ -66,7 +68,7 @@ class Enqueue extends Engine\Base {
 	// WPBPGen{{#if frontend_wp-localize-script}}
 
 	/**
-	 * Print the PHP var in the HTML of the frontend for access by JavaScript
+	 * Print the PHP var in the HTML of the frontend for access by JavaScript.
 	 *
 	 * @since {{plugin_version}}
 	 *

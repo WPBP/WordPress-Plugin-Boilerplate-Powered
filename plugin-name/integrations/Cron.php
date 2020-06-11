@@ -14,15 +14,16 @@ namespace Plugin_Name\Integrations;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the Widget stuff
+ * The various Cron of this plugin
  */
 class Cron extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
-		// WPBPGen{{#if libraries_wpbp__cronplus}}
 		/*
 		 * Load CronPlus
 		 */
@@ -41,11 +42,12 @@ class Cron extends Engine\Base {
         // $cronplus->clear_schedule_by_hook();
         // Jump the scheduled event
         // $cronplus->unschedule_specific_event();
-        // {{/if}}
 	}
 
 	/**
 	 * Cron Hourly example
+	 *
+	 * @since {{plugin_version}}
 	 *
 	 * @param integer $id The ID.
 	 *

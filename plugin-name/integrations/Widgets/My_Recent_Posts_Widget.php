@@ -45,35 +45,24 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 				'std'      => __( 'Recent Posts', PN_TEXTDOMAIN ),
 				/**
 				  Set the field validation type/s
-
 				  'alpha_dash'
 				  Returns FALSE if the value contains anything other than alpha-numeric characters, underscores or dashes.
-
 				  'alpha'
 				  Returns FALSE if the value contains anything other than alphabetical characters.
-
 				  'alpha_numeric'
 				  Returns FALSE if the value contains anything other than alpha-numeric characters.
-
 				  'numeric'
 				  Returns FALSE if the value contains anything other than numeric characters.
-
 				  'boolean'
 				  Returns FALSE if the value contains anything other than a boolean value ( true or false ).
-
-				  ----------
-
 				  You can define custom validation methods. Make sure to return a boolean ( TRUE/FALSE ).
 				  Example:
-
 				  'validate' => 'my_custom_validation',
-
 				  Will call for: $this->my_custom_validation( $value_to_validate );
 				 */
 				'validate' => 'alpha_dash',
 				/**
 				  Filter data before entering the DB
-
 				  strip_tags ( default )
 				  wp_strip_all_tags
 				  esc_attr
@@ -160,6 +149,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	/**
 	 * Custom validation for this widget
 	 *
+	 * @since {{plugin_version}}
+	 *
 	 * @param string $value The text.
 	 *
 	 * @return boolean
@@ -174,6 +165,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 
 	/**
 	 * Output function
+	 *
+	 * @since {{plugin_version}}
 	 *
 	 * @param array $args     The argument shared to the output from WordPress.
 	 * @param array $instance The settings saved.
@@ -195,6 +188,11 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 		echo $out; // phpcs:ignore
 	}
 
+	/**
+	 * Initialize the class.
+	 *
+	 * @return void
+	 */
 	public function initialize() {
 		add_action(
 		'widgets_init',

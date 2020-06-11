@@ -14,22 +14,22 @@ namespace Plugin_Name\Integrations;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain the Templating stuff for the frontend
+ * Load custom template files
  */
 class Template extends Engine\Base {
 
 	/**
-	 * Initialize the class
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
         parent::initialize();
-		// WPBPGen{{#if frontend_template-system}}
+
 		// Override the template hierarchy for load /templates/content-demo.php
 		add_filter( 'template_include', array( __CLASS__, 'load_content_demo' ) );
-		// {{/if}}
 	}
 
-	// WPBPGen{{#if frontend_template-system}}
 	/**
 	 * Example for override the template system on the frontend
 	 *
@@ -47,5 +47,4 @@ class Template extends Engine\Base {
 		return $original_template;
 	}
 
-	// {{/if}}
 }

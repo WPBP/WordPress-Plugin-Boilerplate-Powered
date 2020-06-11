@@ -12,7 +12,7 @@
 $pn_debug = new WPBP_Debug( __( 'Plugin Name', PN_TEXTDOMAIN ) );
 
 /**
- * Log text inside the debugging plugins
+ * Log text inside the debugging plugins.
  *
  * @param string $text The text.
  *

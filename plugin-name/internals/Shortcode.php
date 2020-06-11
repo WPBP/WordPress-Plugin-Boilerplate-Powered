@@ -14,12 +14,14 @@ namespace Plugin_Name\Internals;
 use \Plugin_Name\Engine;
 
 /**
- * This class contain all the snippet or extra that improve the experience on the frontend
+ * Shortcodes of this plugin
  */
 class Shortcode extends Engine\Base {
 
 	/**
-	 * Initialize the snippet
+	 * Initialize the class.
+	 *
+	 * @return void
 	 */
 	public function initialize() {
 		parent::initialize();

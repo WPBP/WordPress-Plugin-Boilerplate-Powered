@@ -61,7 +61,7 @@ class ImpExp extends Engine\Base {
 
 		nocache_headers();
 		header( 'Content-Type: application/json; charset=utf-8' );
-		header( 'Content-Disposition: attachment; filename=pn-settings-export-' . gmdate( 'm-d-Y' ) . '.json' );
+		header( 'Content-Disposition: attachment; filename=plugin_name-settings-export-' . gmdate( 'm-d-Y' ) . '.json' );
 		header( 'Expires: 0' );
 
 		echo wp_json_encode( $settings, JSON_PRETTY_PRINT );

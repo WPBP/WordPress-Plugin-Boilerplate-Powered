@@ -56,3 +56,9 @@ parameters:
         - '#fs_dynamic_init#'
         # Uninstall is not detect by PHPStan
         - '#pn_uninstall#'
+        # Other method to silence that PHPStan cannot detect
+        - '#Call to an undefined method object::is_#'
+        - "#Cannot access offset 'id' on object.#"
+        - '#Access to an undefined property object::\$query.#'
+        - '#invalid type array<WP_Term>\|int supplied for foreach#'
+        - '#Function is_amp_endpoint not found.#'

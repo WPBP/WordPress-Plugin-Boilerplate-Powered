@@ -198,7 +198,7 @@ class PostTypes extends Engine\Base {
 	}
 	// {{/if}}
 
-	// WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+	// WPBPGen{{#if backend_bubble-notification-pending-cpt}}
 	/**
      * Bubble Notification for pending cpt<br>
      * NOTE: add in $post_types your cpts<br>

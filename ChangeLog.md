@@ -1,3 +1,11 @@
+## 3.2.1
+
+* Enhancement: On .env file some parameters are better with apostrophes
+* Enhancement: Settings now support better the new improvements to WordPress Visual changes of last releases
+* Enhancement: New PHPStan exceptions added
+* Fix: ImpExp class wasn't possible to change the file name exported by generator
+* Fix: Bubble notification is now removed by the generator
+* 
 ## 3.2.0
 
 * Enhancement: Added micropackage/requirements 

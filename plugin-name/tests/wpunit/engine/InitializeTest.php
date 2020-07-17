@@ -29,20 +29,9 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 
 	/**
 	 * @test
-	 * it should be instantiatable
-	 */
-	public function it_should_be_instantiatable() {
-		$sut = $this->make_instance();
-		$this->assertInstanceOf( '\\Plugin_name\\Engine\\Initialize', $sut );
-	}
-
-	/**
-	 * @test
 	 * it should be front
 	 */
 	public function it_should_be_front() {
-		$sut = $this->make_instance();
-
 		$classes   = array();
 		$classes[] = 'Plugin_Name\Internals\PostTypes';
 		$classes[] = 'Plugin_Name\Internals\Shortcode';
@@ -57,7 +46,9 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Frontend\Enqueue';
 		$classes[] = 'Plugin_Name\Frontend\extras\Body_Class';
 
-		$this->assertEquals( $classes, $sut->classes );
+		foreach( $classes as $class ) {
+			$this->assertTrue( class_exists( $class ) );
+		}
 	}
 
 }

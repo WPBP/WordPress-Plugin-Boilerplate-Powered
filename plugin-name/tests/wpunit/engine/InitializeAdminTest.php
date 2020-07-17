@@ -23,17 +23,11 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		parent::tearDown();
 	}
 
-	private function make_instance() {
-		return new \Plugin_name\Engine\Initialize();
-	}
-
 	/**
 	 * @test
 	 * it should be admin
 	 */
 	public function it_should_be_admin() {
-		$sut = $this->make_instance();
-
 		$classes   = array();
 		$classes[] = 'Plugin_Name\Internals\PostTypes';
 		$classes[] = 'Plugin_Name\Internals\Shortcode';
@@ -53,7 +47,9 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Backend\Settings_Page';
 
 		$this->assertTrue( is_admin() );
-		$this->assertEquals( $classes, $sut->classes );
+		foreach( $classes as $class ) {
+			$this->assertTrue( class_exists( $class ) );
+		}
 	}
 
 }

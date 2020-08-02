@@ -11,12 +11,13 @@
  */
 namespace Plugin_Name\Internals;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
+use stdClass;
 
 /**
  * Transient used by the plugin
  */
-class Transient extends Engine\Base {
+class Transient extends Base {
 
 	/**
 	 * Initialize the class.
@@ -40,12 +41,12 @@ class Transient extends Engine\Base {
 		// Use wp-cache-remember package to retrive or save in transient
 		return remember_transient(
             $key,
-            function () use ( $key ) {
+            function () {
 				// If there's no cached version we ask
 				$response = wp_remote_get( 'https://jsonplaceholder.typicode.com/todos/' );
 				if ( is_wp_error( $response ) ) {
-					// In case API is down we return the last successful count
-					return;
+					// In case API is down we return an empty object
+					return new stdClass();
 				}
 
 				// If everything's okay, parse the body and json_decode it

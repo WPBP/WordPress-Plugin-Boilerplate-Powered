@@ -11,14 +11,14 @@
  */
 namespace Plugin_Name\Cli;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 
 	/**
      * WP CLI command example
      */
-    class Example extends Engine\Base {
+    class Example extends Base {
 
 		/**
          * Initialize the class.

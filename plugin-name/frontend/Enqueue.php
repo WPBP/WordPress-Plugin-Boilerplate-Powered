@@ -10,12 +10,12 @@
  */
 namespace Plugin_Name\Frontend;
 
-use Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Enqueue stuff on the frontend
  */
-class Enqueue extends Engine\Base {
+class Enqueue extends Base {
 
 	/**
 	 * Initialize the class.

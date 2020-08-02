@@ -10,13 +10,13 @@
  */
 namespace Plugin_Name\Backend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 use Yoast_I18n_WordPressOrg_v3;
 
 /**
  * Everything that involves notification on the WordPress dashboard
  */
-class Notices extends Engine\Base {
+class Notices extends Base {
 
 	/**
 	 * Initialize the class

@@ -10,12 +10,12 @@
  */
 namespace Plugin_Name\Frontend\Extras;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Add custom css class to <body>
  */
-class Body_Class extends Engine\Base {
+class Body_Class extends Base {
 
 	/**
 	 * Initialize the class.

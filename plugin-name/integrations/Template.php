@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Integrations;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Load custom template files
  */
-class Template extends Engine\Base {
+class Template extends Base {
 
 	/**
 	 * Initialize the class.

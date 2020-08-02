@@ -8,14 +8,15 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Ajax;
 
-use Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * AJAX in the public
  */
-class Ajax extends Engine\Base {
+class Ajax extends Base {
 
 	/**
 	 * Initialize the class.

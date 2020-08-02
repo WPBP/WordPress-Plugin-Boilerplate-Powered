@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Backend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * All the WP pointers.
  */
-class Pointers extends Engine\Base {
+class Pointers extends Base {
 
 	/**
 	 * Initialize the Pointers.

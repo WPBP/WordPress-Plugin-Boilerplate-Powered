@@ -1,5 +1,6 @@
 <?php
-use \Codeception\Util\HttpCode;
+
+use Codeception\Util\HttpCode;
 
 class CustomRestRouteCest {
 

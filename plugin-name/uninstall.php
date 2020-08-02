@@ -33,10 +33,11 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
  */
 function pn_uninstall_multisite() {
 	if ( is_multisite() ) {
+		/** @var \WP_Site[] $blogs */
 		$blogs = get_sites();
 		if ( !empty( $blogs ) ) {
 			foreach ( $blogs as $blog ) {
-				switch_to_blog( $blog->blog_id );
+				switch_to_blog( (int) $blog->blog_id );
 				pn_uninstall();
 				restore_current_blog();
 			}

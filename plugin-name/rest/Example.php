@@ -10,12 +10,12 @@
  */
 namespace Plugin_Name\Rest;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Example class for REST
  */
-class Example extends Engine\Base {
+class Example extends Base {
 
 	/**
 	 * Initialize the class.
@@ -109,9 +109,9 @@ class Example extends Engine\Base {
      *
      * @since {{plugin_version}}
      *
-     * @param string $value Value.
-     * @param object $post  Post object.
-     * @param string $key   Key.
+     * @param string   $value Value.
+     * @param \WP_Post $post  Post object.
+     * @param string   $key   Key.
      *
      * @return boolean|\WP_Error
      */

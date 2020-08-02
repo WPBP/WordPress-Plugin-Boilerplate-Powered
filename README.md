@@ -54,7 +54,7 @@ will generate everything without the need of manual copy&paste way or searching 
 * Transient examples with caching
 
 Do you want to see which plugins have been made with this boilerplate?
-Check out [this Wiki page](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate)!  
+Check out [this Wiki page](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugins-made-with-this-Boilerplate)!  
 
 ## Contributors
 

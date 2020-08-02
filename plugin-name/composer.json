@@ -1,12 +1,13 @@
 {
    "name": "wpbp/wordpress-plugin-boilerplate-powered",
    "description": "Wordpress Plugin Boilerplate with steroids!",
+   "type": "wordpress-plugin",
    "license": "GPL-2.0-or-later",
    "authors": [
       {
          "name": "author_name",
-         "email": "author@email.it",
-         "homepage": "http://author.url"
+         "email": "author@example.com",
+         "homepage": "https://author-url.test"
       }
    ],
    "require": {
@@ -33,8 +34,7 @@
       "yahnis-elsts/plugin-update-checker": "^4.9"
    },
    "require-dev": {
-      "szepeviktor/phpstan-wordpress": "^0.6.0",
-      "szepeviktor/phpstan-phpdoc": "^0.2.1",
+      "szepeviktor/phpstan-wordpress": "^0.6.2",
       "lucatume/wp-browser": "^2.5",
       "lucatume/function-mocker": "~1.0",
       "phpro/grumphp": "^0.18",
@@ -54,16 +54,18 @@
    "prefer-stable": true,
    "autoload": {
       "psr-4": {
-         "Plugin_Name\\Backend\\": "backend",
-         "Plugin_Name\\Frontend\\": "frontend",
-         "Plugin_Name\\Rest\\": "rest",
-         "Plugin_Name\\Ajax\\": "ajax",
-         "Plugin_Name\\Internals\\": "internals",
-         "Plugin_Name\\Cli\\": "cli",
-         "Plugin_Name\\Integrations\\": "integrations",
-         "Plugin_Name\\Engine\\": "engine"
+         "Plugin_Name\\Backend\\": "backend/",
+         "Plugin_Name\\Frontend\\": "frontend/",
+         "Plugin_Name\\Rest\\": "rest/",
+         "Plugin_Name\\Ajax\\": "ajax/",
+         "Plugin_Name\\Internals\\": "internals/",
+         "Plugin_Name\\Cli\\": "cli/",
+         "Plugin_Name\\Integrations\\": "integrations/",
+         "Plugin_Name\\Engine\\": "engine/"
       },
-      "files": [ "vendor/wp-custom-bulk-actions/custom-bulk-actions.php" ]
+      "files": [
+        "vendor/wp-custom-bulk-actions/custom-bulk-actions.php"
+      ]
    },
    "extra": {
       "installer-paths": {

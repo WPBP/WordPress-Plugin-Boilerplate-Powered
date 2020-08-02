@@ -11,7 +11,7 @@
 The project history is part of the [Wiki](https://wpbp.github.io/wiki.html) that also includes the workflow and how it is organized.
 
 Every experienced WordPress developer uses always the same libraries (or snippets) but at the same time follows best practices.  
-Choose a library or a snippet and the boilerplate (with the help of the [Code Generator](https://wpbp.github.io/wiki.html))
+Choose a library or a snippet and the boilerplate (with the help of the [Code Generator](https://wpbp.github.io/#generator))
 will generate everything without the need of manual copy&paste way or searching on the Internet!
 
 ## Features

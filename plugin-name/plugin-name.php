@@ -116,7 +116,7 @@ function pn_fs() {
 				'has_addons'     => false,
 				'has_paid_plans' => true,
 				'menu'           => array(
-				'slug'           => 'plugin-name',
+				'slug' => 'plugin-name',
 				),
 			)
 		);
@@ -124,7 +124,7 @@ function pn_fs() {
 		if ( $pn_fs->is_premium() ) {
 			$pn_fs->add_filter(
 				'support_forum_url',
-				function ( $wp_org_support_forum_url ) {
+				static function ( $wp_org_support_forum_url ) {
 					return 'http://your url'
 				}
 			);

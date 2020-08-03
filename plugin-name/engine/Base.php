@@ -17,14 +17,10 @@ namespace Plugin_Name\Engine;
  */
 class Base {
 
-	/**
-     * @var array The settings of the plugin
-     */
+	/** @var array The settings of the plugin */
 	public $settings = array();
 
-	/**
-	 * Initialize the class and get the plugin settings
-	 */
+	/** Initialize the class and get the plugin settings */
 	public function initialize() {
 		$this->settings = \pn_get_settings();
 	}

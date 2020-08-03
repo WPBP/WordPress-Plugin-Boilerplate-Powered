@@ -8,6 +8,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Integrations\Widgets;
 
 /**
@@ -22,8 +23,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 */
 	public function __construct() {
 		$args = array(
-			'label'       => __( 'My Recent Posts Example', PN_TEXTDOMAIN ),
-			'description' => __( 'My Recent Posts Widget Description', PN_TEXTDOMAIN ),
+			'label'       => \__( 'My Recent Posts Example', PN_TEXTDOMAIN ),
+			'description' => \__( 'My Recent Posts Widget Description', PN_TEXTDOMAIN ),
 			'slug'        => 'recent-posts',
 			// 'options' => array( 'cache' => true )
 		);
@@ -32,9 +33,9 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			// Title field
 			array(
 				// Field name/label
-				'name'     => __( 'Title', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Title', PN_TEXTDOMAIN ),
 				// Field description
-				'desc'     => __( 'Enter the widget title.', PN_TEXTDOMAIN ),
+				'desc'     => \__( 'Enter the widget title.', PN_TEXTDOMAIN ),
 				// Field id
 				'id'       => 'title',
 				// Field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
@@ -42,47 +43,47 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 				// Class, rows, cols
 				'class'    => 'widefat',
 				// Default value
-				'std'      => __( 'Recent Posts', PN_TEXTDOMAIN ),
+				'std'      => \__( 'Recent Posts', PN_TEXTDOMAIN ),
 				/**
-				  Set the field validation type/s
-				  'alpha_dash'
-				  Returns FALSE if the value contains anything other than alpha-numeric characters, underscores or dashes.
-				  'alpha'
-				  Returns FALSE if the value contains anything other than alphabetical characters.
-				  'alpha_numeric'
-				  Returns FALSE if the value contains anything other than alpha-numeric characters.
-				  'numeric'
-				  Returns FALSE if the value contains anything other than numeric characters.
-				  'boolean'
-				  Returns FALSE if the value contains anything other than a boolean value ( true or false ).
-				  You can define custom validation methods. Make sure to return a boolean ( TRUE/FALSE ).
-				  Example:
-				  'validate' => 'my_custom_validation',
-				  Will call for: $this->my_custom_validation( $value_to_validate );
+				Set the field validation type/s
+				'alpha_dash'
+				Returns FALSE if the value contains anything other than alpha-numeric characters, underscores or dashes.
+				'alpha'
+				Returns FALSE if the value contains anything other than alphabetical characters.
+				'alpha_numeric'
+				Returns FALSE if the value contains anything other than alpha-numeric characters.
+				'numeric'
+				Returns FALSE if the value contains anything other than numeric characters.
+				'boolean'
+				Returns FALSE if the value contains anything other than a boolean value ( true or false ).
+				You can define custom validation methods. Make sure to return a boolean ( TRUE/FALSE ).
+				Example:
+				'validate' => 'my_custom_validation',
+				Will call for: $this->my_custom_validation( $value_to_validate );
 				 */
 				'validate' => 'alpha_dash',
 				/**
-				  Filter data before entering the DB
-				  strip_tags ( default )
-				  wp_strip_all_tags
-				  esc_attr
-				  esc_url
-				  esc_textarea
+				Filter data before entering the DB
+				strip_tags ( default )
+				wp_strip_all_tags
+				esc_attr
+				esc_url
+				esc_textarea
 				 */
 				'filter'   => 'strip_tags|esc_attr',
 			),
 			// Taxonomy Field
 			array(
-				'name'  => __( 'Taxonomy', PN_TEXTDOMAIN ),
-				'desc'  => __( 'Set the taxonomy.', PN_TEXTDOMAIN ),
+				'name'  => \__( 'Taxonomy', PN_TEXTDOMAIN ),
+				'desc'  => \__( 'Set the taxonomy.', PN_TEXTDOMAIN ),
 				'id'    => 'taxonomy',
 				'type'  => 'taxonomy',
 				'class' => 'widefat',
 			),
 			// Taxonomy Field
 			array(
-				'name'     => __( 'Taxonomy terms', PN_TEXTDOMAIN ),
-				'desc'     => __( 'Set the taxonomy terms.', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Taxonomy terms', PN_TEXTDOMAIN ),
+				'desc'     => \__( 'Set the taxonomy terms.', PN_TEXTDOMAIN ),
 				'id'       => 'taxonomyterm',
 				'type'     => 'taxonomyterm',
 				'taxonomy' => 'category',
@@ -90,16 +91,16 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Pages Field
 			array(
-				'name'  => __( 'Pages', PN_TEXTDOMAIN ),
-				'desc'  => __( 'Set the page.', PN_TEXTDOMAIN ),
+				'name'  => \__( 'Pages', PN_TEXTDOMAIN ),
+				'desc'  => \__( 'Set the page.', PN_TEXTDOMAIN ),
 				'id'    => 'pages',
 				'type'  => 'pages',
 				'class' => 'widefat',
 			),
 			// Post type Field
 			array(
-				'name'     => __( 'Post type', PN_TEXTDOMAIN ),
-				'desc'     => __( 'Set the post type.', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Post type', PN_TEXTDOMAIN ),
+				'desc'     => \__( 'Set the post type.', PN_TEXTDOMAIN ),
 				'id'       => 'posttype',
 				'type'     => 'posttype',
 				'posttype' => 'post',
@@ -107,22 +108,22 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Amount Field
 			array(
-				'name'     => __( 'Amount', PN_TEXTDOMAIN ),
-				'desc'     => __( 'Select how many posts to show.', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Amount', PN_TEXTDOMAIN ),
+				'desc'     => \__( 'Select how many posts to show.', PN_TEXTDOMAIN ),
 				'id'       => 'amount',
 				'type'     => 'select',
 				// Selectbox fields
 				'fields'   => array(
 					array(
-						'name'  => __( '1 Post', PN_TEXTDOMAIN ),
+						'name'  => \__( '1 Post', PN_TEXTDOMAIN ),
 						'value' => '1',
 					),
 					array(
-						'name'  => __( '2 Posts', PN_TEXTDOMAIN ),
+						'name'  => \__( '2 Posts', PN_TEXTDOMAIN ),
 						'value' => '2',
 					),
 					array(
-						'name'  => __( '3 Posts', PN_TEXTDOMAIN ),
+						'name'  => \__( '3 Posts', PN_TEXTDOMAIN ),
 						'value' => '3',
 					),
 
@@ -133,8 +134,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Output type checkbox
 			array(
-				'name'   => __( 'Output as list', PN_TEXTDOMAIN ),
-				'desc'   => __( 'Wraps posts with the <li> tag.', PN_TEXTDOMAIN ),
+				'name'   => \__( 'Output as list', PN_TEXTDOMAIN ),
+				'desc'   => \__( 'Wraps posts with the <li> tag.', PN_TEXTDOMAIN ),
 				'id'     => 'list',
 				'type'   => 'checkbox',
 				// Checked by default:
@@ -150,30 +151,22 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 * Custom validation for this widget
 	 *
 	 * @since {{plugin_version}}
-	 *
-	 * @param string $value The text.
-	 *
-	 * @return boolean
+     * @param string $value The text.
+     * @return bool
 	 */
-	public function my_custom_validation( $value ) {
-		if ( strlen( $value ) > 1 ) {
-			return false;
-		}
-
-		return true;
+	public function my_custom_validation( string $value ) {
+		return \strlen( $value ) <= 1;
 	}
 
 	/**
 	 * Output function
 	 *
 	 * @since {{plugin_version}}
-	 *
-	 * @param array $args     The argument shared to the output from WordPress.
+     * @param array $args     The argument shared to the output from WordPress.
 	 * @param array $instance The settings saved.
-	 *
-	 * @return void
+     * @return void
 	 */
-	public function widget( $args, $instance ) {
+	public function widget( array $args, array $instance ) {
 		$out = $args[ 'before_widget' ];
 		// And here do whatever you want
 		$out .= $args[ 'before_title' ];
@@ -194,10 +187,10 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 * @return void
 	 */
 	public function initialize() {
-		add_action(
+		\add_action(
 		'widgets_init',
-		function() {
-			register_widget( 'Plugin_Name\Integrations\Widgets\My_Recent_Posts_Widget' );
+		static function() {
+			\register_widget( 'Plugin_Name\Integrations\Widgets\My_Recent_Posts_Widget' );
 		}
 		);
 	}

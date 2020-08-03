@@ -9,6 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Integrations;
 
 use Plugin_Name\Engine\Base;
@@ -25,6 +26,7 @@ class FakePage extends Base {
 	 */
 	public function initialize() {
         parent::initialize();
+
         new \Fake_Page(
             array(
             'slug'         => 'fake_slug',

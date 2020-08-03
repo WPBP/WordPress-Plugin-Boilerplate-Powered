@@ -9,6 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Internals;
 
 use Plugin_Name\Engine\Base;
@@ -25,20 +26,19 @@ class Shortcode extends Base {
 	 */
 	public function initialize() {
 		parent::initialize();
-        add_shortcode( 'foobar', array( $this, 'foobar_func' ) );
+
+        \add_shortcode( 'foobar', array( $this, 'foobar_func' ) );
 	}
 
 	/**
 	 * Shortcode example
 	 *
 	 * @param array $atts Parameters.
-	 *
-	 * @since {{plugin_version}}
-	 *
-	 * @return string
+     * @since {{plugin_version}}
+     * @return string
 	 */
-	public static function foobar_func( $atts ) {
-		shortcode_atts(
+	public static function foobar_func( array $atts ) {
+		\shortcode_atts(
 			array(
 				'foo' => 'something',
 				'bar' => 'something else',

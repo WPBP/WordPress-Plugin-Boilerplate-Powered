@@ -1,7 +1,6 @@
 <?php
 
 /**
- *
  * @package   Plugin_Name
  * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
@@ -21,6 +20,7 @@
  * Requires PHP:    7.0
  * WordPress-Plugin-Boilerplate-Powered: v3.2.0
  */
+
 // If this file is called directly, abort.
 if ( !defined( 'ABSPATH' ) ) {
 	die( 'We\'re sorry, but you can not directly access this file.' );
@@ -35,21 +35,22 @@ define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
 // WPBPGen{{#if language-files}}
 add_action(
     'init',
-    function () {
+    static function () {
 		load_plugin_textdomain( PN_TEXTDOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
     );
+
 // {{/if}}
 if ( version_compare( PHP_VERSION, '7.0.0', '<=' ) ) {
 	add_action(
         'admin_init',
-        function() {
+        static function() {
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 		}
     );
 	add_action(
         'admin_notices',
-        function() {
+        static function() {
 			echo wp_kses_post(
 			sprintf(
 				'<div class="notice notice-error"><p>%s</p></div>',
@@ -84,8 +85,10 @@ $requirements = new \Micropackage\Requirements\Requirements(
 	// ),
 )
     );
+
 if ( ! $requirements->satisfied() ) {
 	$requirements->print_notice();
+
 	return;
 }
 
@@ -118,13 +121,10 @@ function pn_fs() {
 			)
 		);
 
-
 		if ( $pn_fs->is_premium() ) {
 			$pn_fs->add_filter(
                 'support_forum_url',
-                function( $wp_org_support_forum_url ) {
-					return 'http://your url';
-				}
+                static fn ( $wp_org_support_forum_url ) => 'http://your url'
             );
 		}
 	}
@@ -137,7 +137,7 @@ function pn_fs() {
 
 // WPBPGen{{#if libraries_yahnis-elsts__plugin-update-checker}}
 // Documentation to integrate GitHub, GitLab or BitBucket https://github.com/YahnisElsts/plugin-update-checker/blob/master/README.md
-$my_update_checker = Puc_v4_Factory::buildUpdateChecker(
+Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/user-name/repo-name/',
 	__FILE__,
 	'unique-plugin-or-theme-slug'
@@ -147,7 +147,7 @@ $my_update_checker = Puc_v4_Factory::buildUpdateChecker(
 if ( ! wp_installing() ) {
 	add_action(
         'plugins_loaded',
-        function () use ( $plugin_name_libraries ) {
+        static function () use ( $plugin_name_libraries ) {
 			new \Plugin_Name\Engine\Initialize( $plugin_name_libraries );
 		}
     );

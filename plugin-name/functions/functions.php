@@ -13,7 +13,6 @@
  * Get the settings of the plugin in a filterable way
  *
  * @since {{plugin_version}}
- *
  * @return array
  */
 function pn_get_settings() {

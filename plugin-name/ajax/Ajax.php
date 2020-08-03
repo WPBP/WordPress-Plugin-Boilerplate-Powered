@@ -24,20 +24,19 @@ class Ajax extends Base {
 	 * @return void
 	 */
 	public function initialize() {
-		if ( !apply_filters( 'plugin_name_pn_ajax_initialize', true ) ) {
+		if ( !\apply_filters( 'plugin_name_pn_ajax_initialize', true ) ) {
 			return;
 		}
 
 		// For not logged user
-		add_action( 'wp_ajax_nopriv_your_method', array( $this, 'your_method' ) );
+		\add_action( 'wp_ajax_nopriv_your_method', array( $this, 'your_method' ) );
 	}
 
 	/**
 	 * The method to run on ajax
 	 *
 	 * @since {{plugin_version}}
-	 *
-	 * @return void
+     * @return void
 	 */
 	public function your_method() {
 		$return = array(
@@ -45,7 +44,7 @@ class Ajax extends Base {
 			'ID'      => 1,
 		);
 
-		wp_send_json_success( $return );
+		\wp_send_json_success( $return );
 		// wp_send_json_error( $return );
 	}
 

@@ -49,13 +49,11 @@ class Cron extends Base {
 	 * Cron Hourly example
 	 *
 	 * @since {{plugin_version}}
-	 *
-	 * @param integer $id The ID.
-	 *
-	 * @return void
+     * @param int $id The ID.
+     * @return void
 	 */
-	public function hourly_cron( $id ) {
-		echo esc_html( (string) $id );
+	public function hourly_cron( int $id ) {
+		echo \esc_html( (string) $id );
 	}
 
 }

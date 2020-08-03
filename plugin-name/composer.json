@@ -1,69 +1,55 @@
 {
    "name": "wpbp/wordpress-plugin-boilerplate-powered",
+   "type": "wordpress-plugin",
    "description": "Wordpress Plugin Boilerplate with steroids!",
+   "homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered",
    "license": "GPL-2.0-or-later",
    "authors": [
       {
          "name": "author_name",
-         "email": "author@email.it",
-         "homepage": "http://author.url"
+         "email": "author@example.com",
+         "homepage": "https://author-url.test"
       }
    ],
    "require": {
       "php": ">=7.0",
-      "composer/installers": "1.x",
-      "wpbp/pointerplus": "1.0.*",
-      "wpbp/cronplus": "1.0.*",
-      "wpbp/widgets-helper": "1.0.*",
-      "wpbp/fakepage": "1.0.*",
-      "wpbp/template": "1.0.*",
-      "wpbp/debug": "1.1.*",
-      "wpbp/cpt_columns": "1.0.*",
-      "wpbp/language": "1.0.*",
-      "seravo/wp-custom-bulk-actions": "dev-master",
-      "julien731/wp-review-me": "dev-develop",
-      "johnbillion/extended-cpts": "4.3.*",
-      "freemius/wordpress-sdk": "2.3.*",
-      "yoast/i18n-module": "3.1.*",
       "cmb2/cmb2": "2.7.*",
-      "origgami/cmb2-grid": "dev-master",
-      "stevegrunwell/wp-cache-remember": "dev-master",
+      "composer/installers": "1.x",
+      "freemius/wordpress-sdk": "2.3.*",
+      "johnbillion/extended-cpts": "4.3.*",
+      "julien731/wp-review-me": "dev-develop",
       "micropackage/requirements": "^1.0",
+      "origgami/cmb2-grid": "dev-master",
+      "seravo/wp-custom-bulk-actions": "dev-master",
+      "stevegrunwell/wp-cache-remember": "dev-master",
+      "wpbp/cpt_columns": "1.0.*",
+      "wpbp/cronplus": "1.0.*",
+      "wpbp/debug": "1.1.*",
+      "wpbp/fakepage": "1.0.*",
+      "wpbp/language": "1.0.*",
+      "wpbp/pointerplus": "1.0.*",
+      "wpbp/template": "1.0.*",
+      "wpbp/widgets-helper": "1.0.*",
       "wpdesk/wp-notice": "^3.1",
-      "yahnis-elsts/plugin-update-checker": "^4.9"
+      "yahnis-elsts/plugin-update-checker": "^4.9",
+      "yoast/i18n-module": "3.1.*"
    },
    "require-dev": {
-      "szepeviktor/phpstan-wordpress": "^0.6.0",
-      "szepeviktor/phpstan-phpdoc": "^0.2.1",
-      "lucatume/wp-browser": "^2.5",
-      "lucatume/function-mocker": "~1.0",
-      "phpro/grumphp": "^0.18",
       "codeception/codeception": "4.1.*",
+      "codeception/codeception-progress-reporter": "^4.0",
       "codeception/module-asserts": "^1.0",
-      "codeception/module-phpbrowser": "^1.0",
-      "codeception/module-webdriver": "^1.0",
+      "codeception/module-cli": "^1.0",
       "codeception/module-db": "^1.0",
       "codeception/module-filesystem": "^1.0",
-      "codeception/module-cli": "^1.0",
-      "codeception/util-universalframework": "^1.0",
-      "phpunit/phpunit": "6.*",
+      "codeception/module-phpbrowser": "^1.0",
       "codeception/module-rest": "^1.2",
-      "codeception/codeception-progress-reporter": "^4.0"
-   },
-   "minimum-stability": "dev",
-   "prefer-stable": true,
-   "autoload": {
-      "psr-4": {
-         "Plugin_Name\\Backend\\": "backend",
-         "Plugin_Name\\Frontend\\": "frontend",
-         "Plugin_Name\\Rest\\": "rest",
-         "Plugin_Name\\Ajax\\": "ajax",
-         "Plugin_Name\\Internals\\": "internals",
-         "Plugin_Name\\Cli\\": "cli",
-         "Plugin_Name\\Integrations\\": "integrations",
-         "Plugin_Name\\Engine\\": "engine"
-      },
-      "files": [ "vendor/wp-custom-bulk-actions/custom-bulk-actions.php" ]
+      "codeception/module-webdriver": "^1.0",
+      "codeception/util-universalframework": "^1.0",
+      "lucatume/function-mocker": "~1.0",
+      "lucatume/wp-browser": "^2.5",
+      "phpro/grumphp": "^0.18",
+      "phpunit/phpunit": "6.*",
+      "szepeviktor/phpstan-wordpress": "^0.6.2"
    },
    "extra": {
       "installer-paths": {
@@ -75,5 +61,21 @@
          ]
       }
    },
-   "homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered"
+   "autoload": {
+      "psr-4": {
+         "Plugin_Name\\Backend\\": "backend/",
+         "Plugin_Name\\Frontend\\": "frontend/",
+         "Plugin_Name\\Rest\\": "rest/",
+         "Plugin_Name\\Ajax\\": "ajax/",
+         "Plugin_Name\\Internals\\": "internals/",
+         "Plugin_Name\\Cli\\": "cli/",
+         "Plugin_Name\\Integrations\\": "integrations/",
+         "Plugin_Name\\Engine\\": "engine/"
+      },
+      "files": [
+         "vendor/wp-custom-bulk-actions/custom-bulk-actions.php"
+      ]
+   },
+   "minimum-stability": "dev",
+   "prefer-stable": true
 }

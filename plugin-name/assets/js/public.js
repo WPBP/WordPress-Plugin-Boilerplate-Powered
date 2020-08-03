@@ -6,5 +6,3 @@
   });
 // Place your public-facing JavaScript here
 })(jQuery);
-
-//# sourceMappingURL=public.js.map

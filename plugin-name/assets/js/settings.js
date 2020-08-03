@@ -1,9 +1,8 @@
 (function($) {
-  'use strict';
+  "use strict";
   $(function() {
-    $('#tabs').tabs();
+    $("#tabs").tabs();
   });
 // Place your administration-specific JavaScript here
 })(jQuery);
 
-//# sourceMappingURL=settings.js.map

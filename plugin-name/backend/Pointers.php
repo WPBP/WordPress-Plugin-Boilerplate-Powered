@@ -39,7 +39,7 @@ class Pointers extends Base {
 	 * @param array  $pointers The list of pointers.
 	 * @param string $prefix   For your pointers.
      * @since {{plugin_version}}
-     * @return mixed
+     * @return array
 	 */
 	public function custom_initial_pointers( array $pointers, string $prefix ) {
 		return \array_merge(

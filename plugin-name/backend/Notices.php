@@ -12,7 +12,7 @@
 namespace Plugin_Name\Backend;
 
 use Plugin_Name\Engine\Base;
-use Yoast_I18n_WordPressOrg_v3;
+use Yoast_I18n_WordPressOrg_V3;
 
 /**
  * Everything that involves notification on the WordPress dashboard

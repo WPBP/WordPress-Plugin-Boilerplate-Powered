@@ -23,7 +23,7 @@ class Base {
 	public $settings = array();
 
 	/**
-	 * Initialize the class
+	 * Initialize the class and get the plugin settings
 	 */
 	public function initialize() {
 		$this->settings = \pn_get_settings();

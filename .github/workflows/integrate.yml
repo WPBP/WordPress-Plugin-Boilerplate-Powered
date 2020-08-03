@@ -57,7 +57,7 @@ jobs:
 
       - name: "Run squizlabs/PHP_CodeSniffer"
         working-directory: "./plugin-name"
-        run: "vendor/bin/phpcs -s --standard=CodeatCodingStandard ."
+        run: "vendor/bin/phpcs -s --standard=CodeatCodingStandard --exclude=Squiz.PHP.CommentedOutCode,Generic.Commenting.Todo,SlevomatCodingStandard.Functions.UnusedParameter,SlevomatCodingStandard.Variables.UnusedVariable,Squiz.Commenting.FileComment ."
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.0.0"

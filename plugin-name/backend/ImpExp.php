@@ -54,7 +54,7 @@ class ImpExp extends Base {
 			return;
 		}
 
-		$settings = array();
+		$settings      = array();
 		$settings[ 0 ] = \get_option( PN_TEXTDOMAIN . '-settings' );
 		$settings[ 1 ] = \get_option( PN_TEXTDOMAIN . '-settings-second' );
 

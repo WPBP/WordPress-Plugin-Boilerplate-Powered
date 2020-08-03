@@ -126,9 +126,9 @@
 				'show_option_none' => true,
 				'options'          => array(
 						'standard' => __( 'Option One', PN_TEXTDOMAIN ),
-						'custom' => __( 'Option Two', PN_TEXTDOMAIN ),
-						'none'   => __( 'Option Three', PN_TEXTDOMAIN ),
-					 ),
+						'custom'   => __( 'Option Two', PN_TEXTDOMAIN ),
+						'none'     => __( 'Option Three', PN_TEXTDOMAIN ),
+					),
 			)
 				);
 			$cmb->add_field(
@@ -140,9 +140,9 @@
 				'show_option_none' => 'No Selection',
 				'options'          => array(
 						'standard' => __( 'Option One', PN_TEXTDOMAIN ),
-						'custom' => __( 'Option Two', PN_TEXTDOMAIN ),
-						'none'   => __( 'Option Three', PN_TEXTDOMAIN ),
-					 ),
+						'custom'   => __( 'Option Two', PN_TEXTDOMAIN ),
+						'none'     => __( 'Option Three', PN_TEXTDOMAIN ),
+					),
 			)
 				);
 			$cmb->add_field(
@@ -152,10 +152,10 @@
 				'id'      => '_radio',
 				'type'    => 'radio',
 				'options' => array(
-					'option1' => __( 'Option One', PN_TEXTDOMAIN ),
-					'option2' => __( 'Option Two', PN_TEXTDOMAIN ),
-					'option3' => __( 'Option Three', PN_TEXTDOMAIN ),
-					 ),
+						'option1' => __( 'Option One', PN_TEXTDOMAIN ),
+						'option2' => __( 'Option Two', PN_TEXTDOMAIN ),
+						'option3' => __( 'Option Three', PN_TEXTDOMAIN ),
+					),
 			)
 				);
 			$cmb->add_field(
@@ -201,9 +201,9 @@
 				'id'      => '_multicheckbox',
 				'type'    => 'multicheck',
 				'options' => array(
-					'check1' => __( 'Check One', PN_TEXTDOMAIN ),
-					'check2' => __( 'Check Two', PN_TEXTDOMAIN ),
-					'check3' => __( 'Check Three', PN_TEXTDOMAIN ),
+						'check1' => __( 'Check One', PN_TEXTDOMAIN ),
+						'check2' => __( 'Check Two', PN_TEXTDOMAIN ),
+						'check3' => __( 'Check Three', PN_TEXTDOMAIN ),
 					),
 			)
 				);

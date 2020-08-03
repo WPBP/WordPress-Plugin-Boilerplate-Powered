@@ -35,6 +35,7 @@
       "yoast/i18n-module": "3.1.*"
    },
    "require-dev": {
+      "codeatcode/codeatcs": "^1.0",
       "codeception/codeception": "4.1.*",
       "codeception/codeception-progress-reporter": "^4.0",
       "codeception/module-asserts": "^1.0",
@@ -45,6 +46,7 @@
       "codeception/module-rest": "^1.2",
       "codeception/module-webdriver": "^1.0",
       "codeception/util-universalframework": "^1.0",
+      "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
       "lucatume/function-mocker": "~1.0",
       "lucatume/wp-browser": "^2.5",
       "phpro/grumphp": "^0.18",

@@ -53,7 +53,7 @@ jobs:
 
       - name: "Run ergebnis/composer-normalize"
         working-directory: "./plugin-name"
-        run: "composer require --dev ergebnis/composer-normalize && composer normalize --dry-run"
+        run: "composer normalize --dry-run"
 
       - name: "Run squizlabs/PHP_CodeSniffer"
         working-directory: "./plugin-name"

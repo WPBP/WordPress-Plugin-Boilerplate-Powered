@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Backend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * This class contain the Enqueue stuff for the backend
  */
-class Enqueue extends Engine\Base {
+class Enqueue extends Base {
 
 	/**
 	 * Initialize the class.

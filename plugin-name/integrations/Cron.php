@@ -9,14 +9,15 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Integrations;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * The various Cron of this plugin
  */
-class Cron extends Engine\Base {
+class Cron extends Base {
 
 	/**
 	 * Initialize the class.
@@ -54,7 +55,7 @@ class Cron extends Engine\Base {
 	 * @return void
 	 */
 	public function hourly_cron( $id ) {
-		echo esc_html( $id );
+		echo esc_html( (string) $id );
 	}
 
 }

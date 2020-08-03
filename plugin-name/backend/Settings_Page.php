@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Backend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Create the settings page in the backend
  */
-class Settings_Page extends Engine\Base {
+class Settings_Page extends Base {
 
 	/**
 	 * Initialize the class.
@@ -32,7 +32,9 @@ class Settings_Page extends Engine\Base {
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		// Add an action link pointing to the options page.
-		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . PN_TEXTDOMAIN . '.php' );
+		/** @var string $realpath */
+		$realpath = realpath( dirname( __FILE__ ) );
+		$plugin_basename = plugin_basename( plugin_dir_path( $realpath ) . PN_TEXTDOMAIN . '.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 	}
 

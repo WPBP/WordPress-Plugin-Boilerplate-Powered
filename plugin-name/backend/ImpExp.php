@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Backend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Provide Import and Export of the settings of the plugin
  */
-class ImpExp extends Engine\Base {
+class ImpExp extends Base {
 
 	/**
 	 * Initialize the class.
@@ -89,7 +89,8 @@ class ImpExp extends Engine\Base {
 			return;
 		}
 
-		$extension = end( explode( '.', $_FILES[ 'pn_import_file' ][ 'name' ] ) ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$file_name_parts = explode( '.', $_FILES[ 'pn_import_file' ][ 'name' ] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		$extension = end( $file_name_parts );
 
 		if ( $extension !== 'json' ) {
 			wp_die( esc_html__( 'Please upload a valid .json file', PN_TEXTDOMAIN ) );

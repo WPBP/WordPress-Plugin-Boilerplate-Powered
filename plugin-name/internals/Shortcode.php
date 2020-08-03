@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Internals;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Shortcodes of this plugin
  */
-class Shortcode extends Engine\Base {
+class Shortcode extends Base {
 
 	/**
 	 * Initialize the class.

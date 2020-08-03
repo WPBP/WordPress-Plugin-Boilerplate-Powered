@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Backend;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Activate and deactive method of the plugin and relates.
  */
-class ActDeact extends Engine\Base {
+class ActDeact extends Base {
 
 	/**
 	 * Initialize the class.
@@ -70,9 +70,10 @@ class ActDeact extends Engine\Base {
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 			if ( $network_wide ) {
 				// Get all blog ids
+				/** @var \WP_Site[] $blogs */
 				$blogs = get_sites();
 				foreach ( $blogs as $blog ) {
-					switch_to_blog( $blog->blog_id );
+					switch_to_blog( (int) $blog->blog_id );
 					self::single_activate();
 					restore_current_blog();
 				}
@@ -100,9 +101,10 @@ class ActDeact extends Engine\Base {
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 			if ( $network_wide ) {
 				// Get all blog ids
+				/** @var \WP_Site[] $blogs */
 				$blogs = get_sites();
 				foreach ( $blogs as $blog ) {
-					switch_to_blog( $blog->blog_id );
+					switch_to_blog( (int) $blog->blog_id );
 					self::single_deactivate();
 					restore_current_blog();
 				}

@@ -9,14 +9,15 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Ajax;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * AJAX as logged user
  */
-class Ajax_Admin extends Engine\Base {
+class Ajax_Admin extends Base {
 
 	/**
 	 * Initialize the class.

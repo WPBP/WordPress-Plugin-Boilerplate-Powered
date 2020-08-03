@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Integrations;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Fake Pages inside WordPress
  */
-class FakePage extends Engine\Base {
+class FakePage extends Base {
 
 	/**
 	 * Initialize the class.

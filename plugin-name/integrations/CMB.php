@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Integrations;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * All the CMB related code.
  */
-class CMB extends Engine\Base {
+class CMB extends Base {
 
 	/**
 	 * Initialize class.

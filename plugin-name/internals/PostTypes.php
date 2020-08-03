@@ -11,12 +11,12 @@
  */
 namespace Plugin_Name\Internals;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Post Types and Taxonomies
  */
-class PostTypes extends Engine\Base {
+class PostTypes extends Base {
 
 	/**
 	 * Initialize the class.
@@ -81,11 +81,11 @@ class PostTypes extends Engine\Base {
 	/**
 	 * Add support for custom CPT on the search box
 	 *
-	 * @param object $query Wp_Query.
+	 * @param \WP_Query $query WP_Query.
 	 *
 	 * @since {{plugin_version}}
 	 *
-	 * @return object
+	 * @return \WP_Query
 	 */
 	public function filter_search( $query ) {
 		if ( $query->is_search && !is_admin() ) {

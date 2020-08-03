@@ -15,7 +15,7 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
         $user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
-		$user = wp_set_current_user( $user_id );
+		wp_set_current_user( $user_id );
 		set_current_screen( 'edit.php' );
 	}
 

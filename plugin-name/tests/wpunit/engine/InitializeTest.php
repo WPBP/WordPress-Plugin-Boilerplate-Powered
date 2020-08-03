@@ -23,10 +23,6 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		parent::tearDown();
 	}
 
-	private function make_instance() {
-		return new \Plugin_name\Engine\Initialize();
-	}
-
 	/**
 	 * @test
 	 * it should be front

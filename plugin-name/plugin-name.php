@@ -125,7 +125,7 @@ function pn_fs() {
 			$pn_fs->add_filter(
 				'support_forum_url',
 				static function ( $wp_org_support_forum_url ) {
-					return 'http://your url'
+					return 'http://your url';
 				}
 			);
 		}

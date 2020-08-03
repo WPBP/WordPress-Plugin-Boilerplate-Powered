@@ -19,6 +19,7 @@ parameters:
         - plugin-name.php
         - uninstall.php
         - vendor/wpbp/widgets-helper/class.wph-widget.php
+        - vendor/yoast/i18n-module/src/i18n-wordpressorg-v3.php
         - vendor/freemius/wordpress-sdk/start.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php
@@ -36,8 +37,6 @@ parameters:
         - '#^Argument of an invalid type object supplied for foreach, only iterables are supported\.$#'
         # https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/issues/162
         - '#^Parameter \#2 \$object_id of function cmb2_metabox_form expects int, string given\.$#'
-        # https://github.com/Freemius/wordpress-sdk/pull/439
-        - '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
         # TODO Any can POST an array in a $_POST item, May I send a PR?
         - '#^Parameter \#1 \$str of function sanitize_text_field expects string, array<string>\|string given\.$#'
 # Not used in the boilerplate.

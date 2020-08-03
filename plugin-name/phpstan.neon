@@ -18,7 +18,7 @@ parameters:
     scanFiles:
         - plugin-name.php
         - uninstall.php
-		- vendor/wpbp/widgets-helper/class.wph-widget.php
+        - vendor/wpbp/widgets-helper/class.wph-widget.php
         - vendor/freemius/wordpress-sdk/start.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php

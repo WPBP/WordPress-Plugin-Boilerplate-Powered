@@ -15,11 +15,10 @@ parameters:
     bootstrapFiles:
         # CMB2 is loaded in this file
         - tests/phpstan/bootstrap.php
-        # Copy of vendor/wpbp/widgets-helper/wph-widget.php
-        - tests/phpstan/WPH_Widget.php
     scanFiles:
         - plugin-name.php
         - uninstall.php
+		- vendor/wpbp/widgets-helper/class.wph-widget.php
         - vendor/freemius/wordpress-sdk/start.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php

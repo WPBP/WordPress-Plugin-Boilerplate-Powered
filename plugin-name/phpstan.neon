@@ -40,10 +40,6 @@ parameters:
         - '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
         # TODO Any can POST an array in a $_POST item, May I send a PR?
         - '#^Parameter \#1 \$str of function sanitize_text_field expects string, array<string>\|string given\.$#'
-        # We use library without namespace in WordPress
-        - '#^Missing class import via use statement$#'
-        # We use library without namespace in WordPress
-        - '#^Avoid variables with short names like $I$#'
 # Not used in the boilerplate.
 #        # Uses func_get_args()
 #        - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'

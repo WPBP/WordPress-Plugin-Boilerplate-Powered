@@ -5,10 +5,10 @@ name: "Integrate"
 on:
   pull_request:
     branches:
-      - "main"
+      - "master"
   push:
     branches:
-      - "main"
+      - "master"
 
 env:
   PHP_EXTENSIONS: "mbstring"
@@ -38,40 +38,33 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
-      - name: "Change to plugin directory"
-        run: "cd plugin-name/"
-
       - name: "Validate composer.json"
-        run: "composer validate --strict"
+        working-directory: "./plugin-name"
+        run: "composer validate"
 
       - name: "Determine composer cache directory"
+        working-directory: "./plugin-name"
         id: "determine-composer-cache-directory"
         run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+
+      - name: "Install highest dependencies from composer.json"
+        working-directory: "./plugin-name"
+        run: "composer update --no-interaction --no-progress --no-suggest"
+
+      - name: "Run ergebnis/composer-normalize"
+        working-directory: "./plugin-name"
+        run: "composer require --dev ergebnis/composer-normalize && composer normalize --dry-run"
+
+      - name: "Run squizlabs/PHP_CodeSniffer"
+        working-directory: "./plugin-name"
+        run: "vendor/bin/phpcs -s --standard=CodeatCodingStandard ."
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.0.0"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.json') }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
-
-      - name: "Install lowest dependencies from composer.json"
-        if: "matrix.dependencies == 'lowest'"
-        run: "composer update --no-interaction --no-progress --no-suggest --prefer-lowest"
-
-      - name: "Install locked dependencies from composer.lock"
-        if: "matrix.dependencies == 'locked'"
-        run: "composer install --no-interaction --no-progress --no-suggest"
-
-      - name: "Install highest dependencies from composer.json"
-        if: "matrix.dependencies == 'highest'"
-        run: "composer update --no-interaction --no-progress --no-suggest"
-
-      - name: "Run ergebnis/composer-normalize"
-        run: "composer normalize --dry-run"
-
-      - name: "Run squizlabs/PHP_CodeSniffer"
-        run: "vendor/bin/phpcs -s --standard=CodeatCodingStandard ."
 
   static-code-analysis:
     name: "Static Code Analysis"
@@ -81,7 +74,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "7.2"
 
         dependencies:
           - "highest"
@@ -97,31 +90,23 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
-      - name: "Change to plugin directory"
-        run: "cd plugin-name/"
-
       - name: "Determine composer cache directory"
+        working-directory: "./plugin-name"
         id: "determine-composer-cache-directory"
         run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+
+      - name: "Install highest dependencies from composer.json"
+        working-directory: "./plugin-name"
+        if: "matrix.dependencies == 'highest'"
+        run: "composer update --no-interaction --no-progress --no-suggest"
+
+      - name: "Run phpstan/phpstan"
+        working-directory: "./plugin-name"
+        run: "vendor/bin/phpstan analyse"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.0.0"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.json') }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
-
-      - name: "Install lowest dependencies from composer.json"
-        if: "matrix.dependencies == 'lowest'"
-        run: "composer update --no-interaction --no-progress --no-suggest --prefer-lowest"
-
-      - name: "Install locked dependencies from composer.lock"
-        if: "matrix.dependencies == 'locked'"
-        run: "composer install --no-interaction --no-progress --no-suggest"
-
-      - name: "Install highest dependencies from composer.json"
-        if: "matrix.dependencies == 'highest'"
-        run: "composer update --no-interaction --no-progress --no-suggest"
-
-      - name: "Run phpstan/phpstan"
-        run: "vendor/bin/phpstan analyse"

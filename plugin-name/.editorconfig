@@ -20,11 +20,7 @@ block_comment_end = */
 indent_style = space
 indent_size = 2
 
-[{package.json}]
-indent_style = space
-indent_size = 4
-
-[{composer.json,composer.lock}]
+[{composer.json,composer.lock,package.json}]
 indent_style = space
 indent_size = 4
 

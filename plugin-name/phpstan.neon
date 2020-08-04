@@ -15,10 +15,11 @@ parameters:
     bootstrapFiles:
         # CMB2 is loaded in this file
         - tests/phpstan/bootstrap.php
+        # Does not work in "scanFiles"
+        - vendor/wpbp/widgets-helper/class.wph-widget.php
     scanFiles:
         - plugin-name.php
         - uninstall.php
-        - vendor/wpbp/widgets-helper/class.wph-widget.php
         - vendor/yoast/i18n-module/src/i18n-wordpressorg-v3.php
         - vendor/freemius/wordpress-sdk/start.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
@@ -39,6 +40,8 @@ parameters:
         - '#^Parameter \#2 \$object_id of function cmb2_metabox_form expects int, string given\.$#'
         # TODO Any can POST an array in a $_POST item, May I send a PR?
         - '#^Parameter \#1 \$str of function sanitize_text_field expects string, array<string>\|string given\.$#'
+        # https://github.com/Freemius/wordpress-sdk/pull/439
+        - '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
 # Not used in the boilerplate.
 #        # Uses func_get_args()
 #        - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'

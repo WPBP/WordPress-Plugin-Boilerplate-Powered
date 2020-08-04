@@ -31,9 +31,9 @@ indent_size = 3
 [*.md]
 trim_trailing_whitespace = false
 
-[{*.txt,wp-config-sample.php}]
+[{wp-config-sample.php}]
 end_of_line = crlf
 
-[license.txt]
+[LICENSE.txt,README.txt]
 indent_style = space
 end_of_line = lf

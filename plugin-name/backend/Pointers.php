@@ -26,7 +26,7 @@ class Pointers extends Base {
 	 * @return void
 	 */
 	public function initialize() {
-	parent::initialize();
+		parent::initialize();
 
 		new \PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
 		\add_filter( 'plugin_name-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );

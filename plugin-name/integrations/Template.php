@@ -25,7 +25,7 @@ class Template extends Base {
 	 * @return void
 	 */
 	public function initialize() {
-	parent::initialize();
+		parent::initialize();
 
 		// Override the template hierarchy for load /templates/content-demo.php
 		\add_filter( 'template_include', array( self::class, 'load_content_demo' ) );

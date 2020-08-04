@@ -40,21 +40,21 @@ class Transient extends Base {
 
 		// Use wp-cache-remember package to retrive or save in transient
 		return \remember_transient(
-	$key,
-	static function () {
-				// If there's no cached version we ask
-				$response = \wp_remote_get( 'https://jsonplaceholder.typicode.com/todos/' );
+		$key,
+		static function () {
+			// If there's no cached version we ask
+			$response = \wp_remote_get( 'https://jsonplaceholder.typicode.com/todos/' );
 
-				if ( \is_wp_error( $response ) ) {
-					// In case API is down we return an empty object
-					return new stdClass;
-				}
+			if ( \is_wp_error( $response ) ) {
+				// In case API is down we return an empty object
+				return new stdClass;
+			}
 
-				// If everything's okay, parse the body and json_decode it
-				return \json_decode( \wp_remote_retrieve_body( $response ) );
-			},
-	DAY_IN_SECONDS
-	);
+			// If everything's okay, parse the body and json_decode it
+			return \json_decode( \wp_remote_retrieve_body( $response ) );
+		},
+		DAY_IN_SECONDS
+		);
 	}
 
 	/**

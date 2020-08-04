@@ -3,7 +3,6 @@
 define( 'PN_PLUGIN_ROOT', __DIR__ );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
-define( 'PN_PLUGIN_ROOT', plugin_dir_path( __DIR__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __DIR__ );
 define( 'PN_VERSION', '{{plugin_version}}' );
 

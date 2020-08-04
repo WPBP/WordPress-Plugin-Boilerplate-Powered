@@ -87,7 +87,7 @@ function pn_uninstall() {
 	// Remove and optimize tables
 	$GLOBALS['wpdb']->query("DROP TABLE `".$GLOBALS['wpdb']->prefix."TABLE_NAME`");
 	$GLOBALS['wpdb']->query("OPTIMIZE TABLE `" .$GLOBALS['wpdb']->prefix."options`");
-	*/
+	 */
 
 	// Remove the capabilities of the plugin
 	if ( !isset( $wp_roles ) ) {

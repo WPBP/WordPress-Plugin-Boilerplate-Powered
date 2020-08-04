@@ -120,14 +120,14 @@ class Is_Methods {
 		return \defined( 'WP_CLI' ) && WP_CLI;
 	}
 
-    /**
-     * Is AMP
-     *
-     * @return bool
-     */
-    public function is_amp() {
-        return \function_exists( 'is_amp_endpoint' ) && \is_amp_endpoint();
-    }
+	/**
+	 * Is AMP
+	 *
+	 * @return bool
+	 */
+	public function is_amp() {
+		return \function_exists( 'is_amp_endpoint' ) && \is_amp_endpoint();
+	}
 
 	/**
 	 * Whether given user is an administrator.

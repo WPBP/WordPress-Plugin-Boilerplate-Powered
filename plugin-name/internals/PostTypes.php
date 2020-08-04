@@ -32,8 +32,8 @@ class PostTypes extends Base {
 		// {{/if}}
 		// WPBPGen{{#if libraries_wpbp__cpt_columns}}
 		/*
-		* Custom Columns
-		*/
+		 * Custom Columns
+		 */
 		$post_columns = new \CPT_columns( 'demo' );
 		$post_columns->add_column(
 			'cmb2_field',
@@ -52,8 +52,8 @@ class PostTypes extends Base {
 		// {{/if}}
 		// WPBPGen{{#if libraries_seravo__wp-custom-bulk-actions}}
 		/*
-		* Custom Bulk Actions
-		*/
+		 * Custom Bulk Actions
+		 */
 		$bulk_actions = new \Seravo_Custom_Bulk_Action( array( 'post_type' => 'demo' ) );
 		$bulk_actions->register_bulk_action(
 			array(
@@ -84,8 +84,8 @@ class PostTypes extends Base {
 	 * Add support for custom CPT on the search box
 	 *
 	 * @param \WP_Query $query WP_Query.
-     * @since {{plugin_version}}
-     * @return \WP_Query
+	 * @since {{plugin_version}}
+	 * @return \WP_Query
 	 */
 	public function filter_search( \WP_Query $query ) {
 		if ( $query->is_search && !\is_admin() ) {
@@ -106,7 +106,7 @@ class PostTypes extends Base {
 	 * Load CPT and Taxonomies on WordPress
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function load_cpts() {
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
@@ -200,14 +200,14 @@ class PostTypes extends Base {
 
 	// WPBPGen{{#if backend_bubble-notification-pending-cpt}}
 	/**
-     * Bubble Notification for pending cpt<br>
-     * NOTE: add in $post_types your cpts<br>
-     *
-     *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
-     *
-     * @since {{plugin_version}}
-     * @return void
-     */
+	 * Bubble Notification for pending cpt<br>
+	 * NOTE: add in $post_types your cpts<br>
+	 *
+	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 *
+	 * @since {{plugin_version}}
+	 * @return void
+	 */
 	public function pending_cpt_bubble() {
 		global $menu;
 
@@ -222,35 +222,35 @@ class PostTypes extends Base {
 			$cpt_count = \wp_count_posts( $type );
 
 			if ( !$cpt_count->pending ) {
-                continue;
-            }
+				continue;
+			}
 
-            // Locate the key of
-            $key = self::recursive_array_search_php( 'edit.php?post_type=' . $type, $menu );
+			// Locate the key of
+			$key = self::recursive_array_search_php( 'edit.php?post_type=' . $type, $menu );
 
-            // Not found, just in case
-            if ( !$key ) {
-                return;
-            }
+			// Not found, just in case
+			if ( !$key ) {
+				return;
+			}
 
-            // Modify menu item
-            $menu[ $key ][ 0 ] .= \sprintf( //phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-                '<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>',
-                $cpt_count->pending
-            );
+			// Modify menu item
+			$menu[ $key ][ 0 ] .= \sprintf( //phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				'<span class="update-plugins count-%1$s"><span class="plugin-count">%1$s</span></span>',
+				$cpt_count->pending
+			);
 		}
 	}
 
 	/**
-     * Required for the bubble notification<br>
-     *
-     *  Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
-     *
-     * @param string $needle First parameter.
-     * @param array  $haystack Second parameter.
-     * @since {{plugin_version}}
-     * @return string|bool
-     */
+	 * Required for the bubble notification<br>
+	 *
+	 *  Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 *
+	 * @param string $needle First parameter.
+	 * @param array  $haystack Second parameter.
+	 * @since {{plugin_version}}
+	 * @return string|bool
+	 */
 	private function recursive_array_search_php( string $needle, array $haystack ) {
 		foreach ( $haystack as $key => $value ) {
 			$current_key = $key;

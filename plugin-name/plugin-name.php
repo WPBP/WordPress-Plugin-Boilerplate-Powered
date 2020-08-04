@@ -34,23 +34,23 @@ define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
 
 // WPBPGen{{#if language-files}}
 add_action(
-    'init',
-    static function () {
+	'init',
+	static function () {
 		load_plugin_textdomain( PN_TEXTDOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
-    );
+	);
 
 // {{/if}}
 if ( version_compare( PHP_VERSION, '7.0.0', '<=' ) ) {
 	add_action(
-        'admin_init',
-        static function() {
+		'admin_init',
+		static function() {
 			deactivate_plugins( plugin_basename( __FILE__ ) );
 		}
-    );
+	);
 	add_action(
-        'admin_notices',
-        static function() {
+		'admin_notices',
+		static function() {
 			echo wp_kses_post(
 			sprintf(
 				'<div class="notice notice-error"><p>%s</p></div>',
@@ -58,7 +58,7 @@ if ( version_compare( PHP_VERSION, '7.0.0', '<=' ) ) {
 			)
 			);
 		}
-    );
+	);
 
 	// Return early to prevent loading the plugin.
 	return;
@@ -75,8 +75,8 @@ require_once PN_PLUGIN_ROOT . 'functions/debug.php';
 
 // WPBPGen{{#if libraries_micropackage__requirements}}
 $requirements = new \Micropackage\Requirements\Requirements(
-    'Plugin Name',
-    array(
+	'Plugin Name',
+	array(
 	'php'            => '7.0',
 	'php_extensions' => array( 'mbstring' ),
 	'wp'             => '5.3',
@@ -84,7 +84,7 @@ $requirements = new \Micropackage\Requirements\Requirements(
 	// array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
 	// ),
 )
-    );
+	);
 
 if ( ! $requirements->satisfied() ) {
 	$requirements->print_notice();
@@ -148,9 +148,9 @@ Puc_v4_Factory::buildUpdateChecker(
 
 if ( ! wp_installing() ) {
 	add_action(
-        'plugins_loaded',
-        static function () use ( $plugin_name_libraries ) {
+		'plugins_loaded',
+		static function () use ( $plugin_name_libraries ) {
 			new \Plugin_Name\Engine\Initialize( $plugin_name_libraries );
 		}
-    );
+	);
 }

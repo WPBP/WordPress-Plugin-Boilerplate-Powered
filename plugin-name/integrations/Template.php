@@ -25,7 +25,7 @@ class Template extends Base {
 	 * @return void
 	 */
 	public function initialize() {
-        parent::initialize();
+	parent::initialize();
 
 		// Override the template hierarchy for load /templates/content-demo.php
 		\add_filter( 'template_include', array( self::class, 'load_content_demo' ) );
@@ -35,8 +35,8 @@ class Template extends Base {
 	 * Example for override the template system on the frontend
 	 *
 	 * @param string $original_template The original templace HTML.
-     * @since {{plugin_version}}
-     * @return string
+	 * @since {{plugin_version}}
+	 * @return string
 	 */
 	public static function load_content_demo( string $original_template ) {
 		if ( \is_singular( 'demo' ) && \in_the_loop() ) {

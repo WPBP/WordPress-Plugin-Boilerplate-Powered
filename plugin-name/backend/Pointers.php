@@ -23,10 +23,10 @@ class Pointers extends Base {
 	 * Initialize the Pointers.
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function initialize() {
-        parent::initialize();
+	parent::initialize();
 
 		new \PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
 		\add_filter( 'plugin_name-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
@@ -38,8 +38,8 @@ class Pointers extends Base {
 	 *
 	 * @param array  $pointers The list of pointers.
 	 * @param string $prefix   For your pointers.
-     * @since {{plugin_version}}
-     * @return array
+	 * @since {{plugin_version}}
+	 * @return array
 	 */
 	public function custom_initial_pointers( array $pointers, string $prefix ) {
 		return \array_merge(

@@ -70,4 +70,3 @@ class Notices extends Base {
 	}
 
 }
-

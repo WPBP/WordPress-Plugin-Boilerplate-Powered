@@ -36,7 +36,7 @@ class Ajax extends Base {
 	 * The method to run on ajax
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function your_method() {
 		$return = array(
@@ -49,4 +49,3 @@ class Ajax extends Base {
 	}
 
 }
-

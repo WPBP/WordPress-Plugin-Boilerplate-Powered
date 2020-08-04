@@ -26,7 +26,7 @@ class ImpExp extends Base {
 	 */
 	public function initialize() {
 		if ( !parent::initialize() ) {
-            return;
+			return;
 		}
 
 		// Add the export settings method
@@ -39,7 +39,7 @@ class ImpExp extends Base {
 	 * Process a settings export from config
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function settings_export() {
 		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' !== \sanitize_text_field( \wp_unslash( $_POST[ 'pn_action' ] ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification
@@ -74,7 +74,7 @@ class ImpExp extends Base {
 	 * Process a settings import from a json file
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function settings_import() {
 		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' !== \sanitize_text_field( \wp_unslash( $_POST[ 'pn_action' ] ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification
@@ -116,9 +116,9 @@ class ImpExp extends Base {
 		}
 
 		new \WP_Error(
-                'plugin_name_import_settings_failed',
-                \__( 'Failed to import the settings.', PN_TEXTDOMAIN )
-            );
+				'plugin_name_import_settings_failed',
+				\__( 'Failed to import the settings.', PN_TEXTDOMAIN )
+			);
 
 	}
 

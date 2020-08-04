@@ -19,12 +19,12 @@ use Plugin_Name\Engine;
  */
 class Initialize {
 
-    /**
-     * List of class to initialize.
-     *
-     * @var array
-     */
-    public $classes = array();
+	/**
+	 * List of class to initialize.
+	 *
+	 * @var array
+	 */
+	public $classes = array();
 
 	/**
 	 * Instance of this Pn_Is_Methods.
@@ -34,17 +34,17 @@ class Initialize {
 	protected $is = null;
 
 	/**
-     * Composer autoload file list.
-     *
-     * @var \Composer\Autoload\ClassLoader
-     */
+	 * Composer autoload file list.
+	 *
+	 * @var \Composer\Autoload\ClassLoader
+	 */
 	private $composer;
 
 	/**
 	 * The Constructor that load the entry classes
 	 *
 	 * @param \Composer\Autoload\ClassLoader $composer Composer autoload output.
-     * @since {{plugin_version}}
+	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
 		$this->is       = new Engine\Is_Methods;
@@ -84,10 +84,10 @@ class Initialize {
 	}
 
 	/**
-     * Initialize all the classes.
-     *
-     * @since {{plugin_version}}
-     */
+	 * Initialize all the classes.
+	 *
+	 * @since {{plugin_version}}
+	 */
 	private function load_classes() {
 		$this->classes = \apply_filters( 'plugin_name_classes_to_execute', $this->classes );
 
@@ -109,8 +109,8 @@ class Initialize {
 	 * Based on the folder loads the classes automatically using the Composer autoload to detect the classes of a Namespace.
 	 *
 	 * @param string $namespace Class name to find.
-     * @since {{plugin_version}}
-     * @return array Return the classes.
+	 * @since {{plugin_version}}
+	 * @return array Return the classes.
 	 */
 	private function get_classes( string $namespace ) {
 		$prefix    = $this->composer->getPrefixesPsr4();
@@ -123,10 +123,10 @@ class Initialize {
 
 			foreach ( $classes as $class ) {
 				if ( 0 !== \strncmp( (string) $class, $namespace, \strlen( $namespace ) ) ) {
-                    continue;
-                }
+					continue;
+				}
 
-                $this->classes[] = $class;
+				$this->classes[] = $class;
 			}
 
 			return $this->classes;
@@ -155,8 +155,8 @@ class Initialize {
 	 * This class is used only when Composer is not optimized.
 	 *
 	 * @param string $folder Path.
-     * @since {{plugin_version}}
-     * @return array List of files.
+	 * @since {{plugin_version}}
+	 * @return array List of files.
 	 */
 	private function scandir( string $folder ) {
 		$temp_files = \scandir( $folder );
@@ -175,7 +175,7 @@ class Initialize {
 	 * @param array  $php_files List of files with the Class.
 	 * @param string $folder Path of the folder.
 	 * @param string $base Namespace base.
-     * @since {{plugin_version}}
+	 * @since {{plugin_version}}
 	 */
 	private function find_classes( array $php_files, string $folder, string $base ) {
 		foreach ( $php_files as $php_file ) {
@@ -190,15 +190,15 @@ class Initialize {
 
 			// Verify the Namespace level
 			if ( \substr_count( $base . $class_name, '\\' ) < 2 ) {
-                continue;
-            }
+				continue;
+			}
 
-            if ( !\is_dir( $path ) || \strtolower( $php_file ) === $php_file ) {
-                continue;
-            }
+			if ( !\is_dir( $path ) || \strtolower( $php_file ) === $php_file ) {
+				continue;
+			}
 
-            $sub_php_files = $this->scandir( $folder . '/' . $php_file );
-            $this->find_classes( $sub_php_files, $folder . '/' . $php_file, $base . $php_file . '\\' );
+			$sub_php_files = $this->scandir( $folder . '/' . $php_file );
+			$this->find_classes( $sub_php_files, $folder . '/' . $php_file, $base . $php_file . '\\' );
 		}
 	}
 

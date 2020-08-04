@@ -27,15 +27,15 @@ class Shortcode extends Base {
 	public function initialize() {
 		parent::initialize();
 
-        \add_shortcode( 'foobar', array( $this, 'foobar_func' ) );
+		\add_shortcode( 'foobar', array( $this, 'foobar_func' ) );
 	}
 
 	/**
 	 * Shortcode example
 	 *
 	 * @param array $atts Parameters.
-     * @since {{plugin_version}}
-     * @return string
+	 * @since {{plugin_version}}
+	 * @return string
 	 */
 	public static function foobar_func( array $atts ) {
 		\shortcode_atts(
@@ -43,7 +43,7 @@ class Shortcode extends Base {
 				'foo' => 'something',
 				'bar' => 'something else',
 			),
-            $atts
+			$atts
 		);
 
 		return '<span class="foo">foo = ' . $atts[ 'foo' ] . '</span>' .
@@ -51,4 +51,3 @@ class Shortcode extends Base {
 	}
 
 }
-

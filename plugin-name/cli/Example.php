@@ -17,40 +17,40 @@ use Plugin_Name\Engine\Base;
 if ( \defined( 'WP_CLI' ) && WP_CLI ) {
 
 	/**
-     * WP CLI command example
-     */
-    class Example extends Base {
-
-        /**
-         * Initialize the commands
-         *
-         * @since {{plugin_version}}
-         * @return void
-         */
-        public function __construct() {
-            \WP_CLI::add_command( 'pn_commandname', array( $this, 'command_example' ) );
-        }
+	 * WP CLI command example
+	 */
+	class Example extends Base {
 
 		/**
-         * Initialize the class.
-         *
-         * @return void
-         */
-        public function initialize() {
-            if ( !\apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {
-                return;
-            }
-
-            parent::initialize();
+		 * Initialize the commands
+		 *
+		 * @since {{plugin_version}}
+		 * @return void
+		 */
+		public function __construct() {
+			\WP_CLI::add_command( 'pn_commandname', array( $this, 'command_example' ) );
 		}
 
-        /**
-         * Example command
+		/**
+		 * Initialize the class.
+		 *
+		 * @return void
+		 */
+		public function initialize() {
+			if ( !\apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {
+				return;
+			}
+
+			parent::initialize();
+		}
+
+		/**
+		 * Example command
 		 * API reference: https://wp-cli.org/docs/internal-api/
-         *
-         * @since {{plugin_version}}
-         * @param array $args The attributes.
-         * @return void
+		 *
+		 * @since {{plugin_version}}
+		 * @param array $args The attributes.
+		 * @return void
 		 */
 		public function command_example( array $args ) {
 			// Message prefixed with "Success: ".

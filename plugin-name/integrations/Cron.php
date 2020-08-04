@@ -37,24 +37,23 @@ class Cron extends Base {
 		);
 
 		$cronplus = new \CronPlus( $args );
-        // Schedule the event
+	// Schedule the event
 		$cronplus->schedule_event();
-        // Remove the event by the schedule
-        // $cronplus->clear_schedule_by_hook();
-        // Jump the scheduled event
-        // $cronplus->unschedule_specific_event();
+	// Remove the event by the schedule
+	// $cronplus->clear_schedule_by_hook();
+	// Jump the scheduled event
+	// $cronplus->unschedule_specific_event();
 	}
 
 	/**
 	 * Cron Hourly example
 	 *
 	 * @since {{plugin_version}}
-     * @param int $id The ID.
-     * @return void
+	 * @param int $id The ID.
+	 * @return void
 	 */
 	public function hourly_cron( int $id ) {
 		echo \esc_html( (string) $id );
 	}
 
 }
-

@@ -1,9 +1,9 @@
 <?php
 class AdminSettingsJsCest {
 
-    function _before( AcceptanceTester $I ) {
-        // will be executed at the beginning of each test
-        $I->loginAsAdmin();
+	function _before( AcceptanceTester $I ) {
+		// will be executed at the beginning of each test
+		$I->loginAsAdmin();
 	}
 
 	function jquery_tabs_loaded( AcceptanceTester $I ) {

@@ -33,8 +33,8 @@ class Body_Class extends Base {
 	 * Add class in the body on the frontend
 	 *
 	 * @param array $classes The array with all the classes of the page.
-     * @since {{plugin_version}}
-     * @return array
+	 * @since {{plugin_version}}
+	 * @return array
 	 */
 	public static function add_pn_class( array $classes ) {
 		$classes[] = PN_TEXTDOMAIN;

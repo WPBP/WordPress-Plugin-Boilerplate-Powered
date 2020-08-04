@@ -14,9 +14,9 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
-        wp_set_current_user(0);
-        wp_logout();
-        wp_safe_redirect(wp_login_url());
+	wp_set_current_user(0);
+	wp_logout();
+	wp_safe_redirect(wp_login_url());
 	}
 
 	public function tearDown() {
@@ -37,8 +37,8 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Integrations\FakePage';
 		$classes[] = 'Plugin_Name\Integrations\Template';
 		$classes[] = 'Plugin_Name\Integrations\Widgets';
- 		$classes[] = 'Plugin_Name\Ajax\Ajax';
- 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
+		$classes[] = 'Plugin_Name\Ajax\Ajax';
+		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
 		$classes[] = 'Plugin_Name\Frontend\Enqueue';
 		$classes[] = 'Plugin_Name\Frontend\extras\Body_Class';
 

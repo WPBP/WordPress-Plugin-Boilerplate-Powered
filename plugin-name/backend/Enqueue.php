@@ -70,9 +70,9 @@ class Enqueue extends Base {
 		// WPBPGen{{#if admin-assets_settings-js}}
 		$admin_page = \get_current_screen();
 
-        if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-            \wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION, false );
-        }
+		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
+			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION, false );
+		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-js}}

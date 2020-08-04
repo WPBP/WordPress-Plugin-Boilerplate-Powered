@@ -21,4 +21,3 @@ function pn_log( string $text ) {
 	global $pn_debug;
 	$pn_debug->log( $text );
 }
-

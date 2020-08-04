@@ -151,8 +151,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 * Custom validation for this widget
 	 *
 	 * @since {{plugin_version}}
-     * @param string $value The text.
-     * @return bool
+	 * @param string $value The text.
+	 * @return bool
 	 */
 	public function my_custom_validation( string $value ) {
 		return \strlen( $value ) <= 1;
@@ -162,9 +162,9 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 * Output function
 	 *
 	 * @since {{plugin_version}}
-     * @param array $args     The argument shared to the output from WordPress.
+	 * @param array $args     The argument shared to the output from WordPress.
 	 * @param array $instance The settings saved.
-     * @return void
+	 * @return void
 	 */
 	public function widget( $args, $instance ) { //phpcs:ignore
 		$out = $args[ 'before_widget' ];
@@ -196,4 +196,3 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	}
 
 }
-

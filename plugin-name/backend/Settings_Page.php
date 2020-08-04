@@ -33,7 +33,7 @@ class Settings_Page extends Base {
 		\add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		$realpath = \realpath( \dirname( __FILE__ ) );
-        \assert( \is_string( $realpath ) );
+		\assert( \is_string( $realpath ) );
 		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . PN_TEXTDOMAIN . '.php' );
 		\add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 	}
@@ -42,7 +42,7 @@ class Settings_Page extends Base {
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function add_plugin_admin_menu() {
 		/*
@@ -67,7 +67,7 @@ class Settings_Page extends Base {
 	 * Render the settings page for this plugin.
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function display_plugin_admin_page() {
 		include_once PN_PLUGIN_ROOT . 'backend/views/admin.php';
@@ -77,8 +77,8 @@ class Settings_Page extends Base {
 	 * Add settings action link to the plugins page.
 	 *
 	 * @since {{plugin_version}}
-     * @param array $links Array of links.
-     * @return array
+	 * @param array $links Array of links.
+	 * @return array
 	 */
 	public function add_action_links( array $links ) {
 		return \array_merge(
@@ -88,7 +88,7 @@ class Settings_Page extends Base {
 				'donate'   => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . \__( 'Donate', PN_TEXTDOMAIN ) . '</a>',
 				// {{/if}}
 			),
-            $links
+			$links
 		);
 	}
 

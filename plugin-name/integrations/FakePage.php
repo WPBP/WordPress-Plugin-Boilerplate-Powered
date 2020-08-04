@@ -25,16 +25,15 @@ class FakePage extends Base {
 	 * @return void
 	 */
 	public function initialize() {
-        parent::initialize();
+		parent::initialize();
 
-        new \Fake_Page(
-            array(
-            'slug'         => 'fake_slug',
-            'post_title'   => 'Fake Page Title',
-            'post_content' => 'This is the fake page content',
-            )
-        );
-    }
+		new \Fake_Page(
+			array(
+			'slug'         => 'fake_slug',
+			'post_title'   => 'Fake Page Title',
+			'post_content' => 'This is the fake page content',
+			)
+		);
+	}
 
 }
-

@@ -37,7 +37,7 @@ class Ajax_Admin extends Base {
 	 * The method to run on ajax
 	 *
 	 * @since {{plugin_version}}
-     * @return void
+	 * @return void
 	 */
 	public function your_admin_method() {
 		$return = array(
@@ -50,4 +50,3 @@ class Ajax_Admin extends Base {
 	}
 
 }
-

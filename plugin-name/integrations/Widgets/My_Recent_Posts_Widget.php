@@ -166,7 +166,7 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 * @param array $instance The settings saved.
      * @return void
 	 */
-	public function widget( $args, $instance ) {
+	public function widget( array $args, array $instance ) {
 		$out = $args[ 'before_widget' ];
 		// And here do whatever you want
 		$out .= $args[ 'before_title' ];

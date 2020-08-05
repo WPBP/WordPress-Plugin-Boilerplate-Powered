@@ -125,7 +125,7 @@ function pn_fs() {
 			$pn_fs->add_filter(
 				'support_forum_url',
 				static function ( $wp_org_support_forum_url ) { //phpcs:ignore
-					'https://your-url.test';
+					return 'https://your-url.test';
 				}
 			);
 		}

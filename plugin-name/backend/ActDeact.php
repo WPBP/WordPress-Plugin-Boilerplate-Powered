@@ -210,6 +210,7 @@ class ActDeact extends Base {
 		\update_option( 'plugin-name-version', PN_VERSION );
 		\delete_option( PN_TEXTDOMAIN . '_fake-meta' );
 	}
+	// {{/if}}
 
 	/**
 	 * Fired for each blog when the plugin is activated.
@@ -240,9 +241,6 @@ class ActDeact extends Base {
 		// @TODO: Define deactivation functionality here
 		// Clear the permalinks
 		\flush_rewrite_rules();
-	}//end single_deactivate()
-
-
-	// {{/if}}
+	}
 
 }

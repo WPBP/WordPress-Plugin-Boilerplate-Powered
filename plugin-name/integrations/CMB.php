@@ -45,12 +45,12 @@ class CMB extends Base {
 		$prefix   = '_demo_';
 		$cmb_demo = \new_cmb2_box(
 			array(
-			'id'           => $prefix . 'metabox',
-			'title'        => \__( 'Demo Metabox', PN_TEXTDOMAIN ),
-			'object_types' => array( 'demo' ),
-			'context'      => 'normal',
-			'priority'     => 'high',
-			'show_names'   => true, // Show field names on the left
+				'id'           => $prefix . 'metabox',
+				'title'        => \__( 'Demo Metabox', PN_TEXTDOMAIN ),
+				'object_types' => array( 'demo' ),
+				'context'      => 'normal',
+				'priority'     => 'high',
+				'show_names'   => true, // Show field names on the left
 		)
 			);
 		// WPBPGen{{#if libraries_origgami__cmb2-grid}}
@@ -59,35 +59,35 @@ class CMB extends Base {
 		// {{/if}}
 		$field1 = $cmb_demo->add_field(
 			array(
-			'name' => \__( 'Text', PN_TEXTDOMAIN ),
-			'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-			'id'   => $prefix . PN_TEXTDOMAIN . '_text',
-			'type' => 'text',
+				'name' => \__( 'Text', PN_TEXTDOMAIN ),
+				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
+				'id'   => $prefix . PN_TEXTDOMAIN . '_text',
+				'type' => 'text',
 				)
 			);
 		$field2 = $cmb_demo->add_field(
 			array(
-			'name' => \__( 'Text 2', PN_TEXTDOMAIN ),
-			'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-			'id'   => $prefix . PN_TEXTDOMAIN . '_text2',
-			'type' => 'text',
+				'name' => \__( 'Text 2', PN_TEXTDOMAIN ),
+				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
+				'id'   => $prefix . PN_TEXTDOMAIN . '_text2',
+				'type' => 'text',
 				)
 			);
 
 		$field3 = $cmb_demo->add_field(
 			array(
-			'name' => \__( 'Text Small', PN_TEXTDOMAIN ),
-			'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-			'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall',
-			'type' => 'text_small',
+				'name' => \__( 'Text Small', PN_TEXTDOMAIN ),
+				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
+				'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall',
+				'type' => 'text_small',
 				)
 			);
 		$field4 = $cmb_demo->add_field(
 			array(
-			'name' => \__( 'Text Small 2', PN_TEXTDOMAIN ),
-			'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-			'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall2',
-			'type' => 'text_small',
+				'name' => \__( 'Text Small 2', PN_TEXTDOMAIN ),
+				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
+				'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall2',
+				'type' => 'text_small',
 		)
 			);
 		// WPBPGen{{#if libraries_origgami__cmb2-grid}}

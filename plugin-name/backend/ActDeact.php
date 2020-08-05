@@ -113,6 +113,7 @@ class ActDeact extends Base {
 		self::single_deactivate();
 	}
 
+	// WPBPGen{{#if system_capability-system}}
 	/**
 	 * Add admin capabilities
 	 *

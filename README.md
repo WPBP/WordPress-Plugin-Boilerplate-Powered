@@ -23,7 +23,8 @@ will generate everything without the need of manual copy&paste way or searching 
 * PSR-4 support by Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php)
   to load classes based on request type and folder structure
 * Tools integrated like [GrumpPHP](https://github.com/phpro/grumphp) (automatically on commit)
-  and [PHPStan](https://github.com/phpstan/phpstan/) (`php vendor/bin/phpstan analyze`)
+  and [PHPStan](https://github.com/phpstan/phpstan/)
+* [GitHub Action](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/.github/workflows/integrate.yml) and [GitLab CI](https://gist.github.com/Mte90/abbb816e9755f189ad52272e71b7c959) available
 * Many libraries already available (with starter code)
 
 | WPBP Libraries  | Other libraries |

@@ -22,7 +22,7 @@ class Ajax_Admin extends Base {
 	/**
 	 * Initialize the class.
 	 *
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
 		if ( !\apply_filters( 'plugin_name_pn_ajax_admin_initialize', true ) ) {

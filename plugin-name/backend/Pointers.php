@@ -23,7 +23,7 @@ class Pointers extends Base {
 	 * Initialize the Pointers.
 	 *
 	 * @since {{plugin_version}}
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
 		parent::initialize();

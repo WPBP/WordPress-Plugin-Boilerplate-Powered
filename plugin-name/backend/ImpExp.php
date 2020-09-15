@@ -22,7 +22,7 @@ class ImpExp extends Base {
 	/**
 	 * Initialize the class.
 	 *
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
 		if ( !parent::initialize() ) {

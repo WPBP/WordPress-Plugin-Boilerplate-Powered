@@ -23,6 +23,7 @@ class CMB extends Base {
 	 * Initialize class.
 	 *
 	 * @since {{plugin_version}}
+	 * @return void|bool
 	 */
 	public function initialize() {
 		parent::initialize();

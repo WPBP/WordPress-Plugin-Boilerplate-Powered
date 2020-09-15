@@ -23,7 +23,7 @@ class Transient extends Base {
 	/**
 	 * Initialize the class.
 	 *
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
 		parent::initialize();

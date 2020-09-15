@@ -21,7 +21,7 @@ class Ajax extends Base {
 	/**
 	 * Initialize the class.
 	 *
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
 		if ( !\apply_filters( 'plugin_name_pn_ajax_initialize', true ) ) {

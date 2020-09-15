@@ -155,13 +155,7 @@ class PostTypes extends Base {
 			)
 		);
 
-		$tax->add_taxonomy(
-			'demo-section',
-			array(
-				'hierarchical' => false,
-				'show_ui'      => false,
-			)
-		);
+		$tax->add_taxonomy( 'demo-section', array( 'hierarchical' => false, 'show_ui' => false, ) );
 		// Create Custom Taxonomy https://github.com/johnbillion/extended-taxos
 		\register_extended_taxonomy(
 			'demo-section',
@@ -255,7 +249,11 @@ class PostTypes extends Base {
 		foreach ( $haystack as $key => $value ) {
 			$current_key = $key;
 
-			if ( $needle === $value || ( \is_array( $value ) && false !== self::recursive_array_search_php( $needle, $value ) ) ) {
+			if ( 
+				$needle === $value || 
+				( \is_array( $value ) && 
+				false !== self::recursive_array_search_php( $needle, $value ) ) 
+			) {
 				return $current_key;
 			}
 		}

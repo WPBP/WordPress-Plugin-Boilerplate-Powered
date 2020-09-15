@@ -33,7 +33,6 @@ class Settings_Page extends Base {
 		\add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		$realpath = \realpath( \dirname( __FILE__ ) );
-		\assert( \is_string( $realpath ) );
 		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . PN_TEXTDOMAIN . '.php' );
 		\add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 	}

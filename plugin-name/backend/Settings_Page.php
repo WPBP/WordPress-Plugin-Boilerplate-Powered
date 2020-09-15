@@ -32,7 +32,7 @@ class Settings_Page extends Base {
 		// Add the options page and menu item.
 		\add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
-		$realpath = \realpath( \dirname( __FILE__ ) );
+		$realpath = (str) \realpath( \dirname( __FILE__ ) );
 		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . PN_TEXTDOMAIN . '.php' );
 		\add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 	}

@@ -38,13 +38,7 @@ class Shortcode extends Base {
 	 * @return string
 	 */
 	public static function foobar_func( array $atts ) {
-		\shortcode_atts(
-			array(
-				'foo' => 'something',
-				'bar' => 'something else',
-			),
-			$atts
-		);
+		\shortcode_atts( array( 'foo' => 'something', 'bar' => 'something else' ), $atts );
 
 		return '<span class="foo">foo = ' . $atts[ 'foo' ] . '</span>' .
 			'<span class="bar">foo = ' . $atts[ 'bar' ] . '</span>';

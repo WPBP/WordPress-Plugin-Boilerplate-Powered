@@ -42,7 +42,10 @@ class ImpExp extends Base {
 	 * @return void
 	 */
 	public function settings_export() {
-		if ( empty( $_POST[ 'pn_action' ] ) || 'export_settings' !== \sanitize_text_field( \wp_unslash( $_POST[ 'pn_action' ] ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification
+		if (
+			empty( $_POST[ 'pn_action' ] ) || //phpcs:ignore WordPress.Security.NonceVerification
+			'export_settings' !== \sanitize_text_field( \wp_unslash( $_POST[ 'pn_action' ] ) ) //phpcs:ignore WordPress.Security.NonceVerification
+		) {
 			return;
 		}
 
@@ -77,7 +80,10 @@ class ImpExp extends Base {
 	 * @return void
 	 */
 	public function settings_import() {
-		if ( empty( $_POST[ 'pn_action' ] ) || 'import_settings' !== \sanitize_text_field( \wp_unslash( $_POST[ 'pn_action' ] ) ) ) { //phpcs:ignore WordPress.Security.NonceVerification
+		if (
+			empty( $_POST[ 'pn_action' ] ) || //phpcs:ignore WordPress.Security.NonceVerification
+			'import_settings' !== \sanitize_text_field( \wp_unslash( $_POST[ 'pn_action' ] ) ) //phpcs:ignore WordPress.Security.NonceVerification
+		) {
 			return;
 		}
 

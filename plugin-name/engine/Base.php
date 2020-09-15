@@ -25,6 +25,7 @@ class Base {
 	/** Initialize the class and get the plugin settings */
 	public function initialize() {
 		$this->settings = \pn_get_settings();
+		return true;
 	}
 
 }

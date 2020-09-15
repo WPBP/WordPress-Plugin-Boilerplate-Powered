@@ -25,7 +25,6 @@ if ( \defined( 'WP_CLI' ) && WP_CLI ) {
 		 * Initialize the commands
 		 *
 		 * @since {{plugin_version}}
-		 * @return void|bool
 		 */
 		public function __construct() {
 			\WP_CLI::add_command( 'pn_commandname', array( $this, 'command_example' ) );
@@ -34,7 +33,7 @@ if ( \defined( 'WP_CLI' ) && WP_CLI ) {
 		/**
 		 * Initialize the class.
 		 *
-		 * @return void
+		 * @return void|bool
 		 */
 		public function initialize() {
 			if ( !\apply_filters( 'plugin_name_pn_enqueue_admin_initialize', true ) ) {

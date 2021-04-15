@@ -95,14 +95,15 @@ class Is_Methods {
 		}
 
 		global $wp_rewrite;
-		
+
 		if ( $wp_rewrite === null ) {
-			$wp_rewrite = new \WP_Rewrite();
+			$wp_rewrite = new \WP_Rewrite; //phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
 
-		$rest_url    = \wp_parse_url( \trailingslashit( rest_url() ) );
+		$rest_url    = \wp_parse_url( \trailingslashit( \rest_url() ) );
 		$current_url = \wp_parse_url( a\dd_query_arg( array() ) );
-		return \strpos( $current_url[ 'path' ], substr( $rest_url[ 'path' ], 0, strlen( $rest_url[ 'path' ] ) - 1 ) ) === 0;
+		
+		return \strpos( $current_url[ 'path' ], \substr( $rest_url[ 'path' ], 0, \strlen( $rest_url[ 'path' ] ) - 1 ) ) === 0;
 	}
 
 	/**

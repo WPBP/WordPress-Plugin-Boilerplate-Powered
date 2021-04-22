@@ -13,10 +13,10 @@
     ],
     "require": {
         "php": ">=7.0",
-        "cmb2/cmb2": "2.7.*",
+        "cmb2/cmb2": "2.9.*",
         "composer/installers": "1.x",
-        "freemius/wordpress-sdk": "2.3.*",
-        "johnbillion/extended-cpts": "4.3.*",
+        "freemius/wordpress-sdk": "2.4.*",
+        "johnbillion/extended-cpts": "4.5.*",
         "julien731/wp-review-me": "dev-develop",
         "micropackage/requirements": "^1.0",
         "origgami/cmb2-grid": "dev-master",
@@ -32,7 +32,8 @@
         "wpbp/widgets-helper": "1.0.*",
         "wpdesk/wp-notice": "^3.1",
         "yahnis-elsts/plugin-update-checker": "^4.9",
-        "yoast/i18n-module": "3.1.*"
+        "yoast/i18n-module": "3.1.*",
+        "ayecode/wp-super-duper": "^1.0"
     },
     "require-dev": {
         "codeatcode/codeatcs": "^1.0",

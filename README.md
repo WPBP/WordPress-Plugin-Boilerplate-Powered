@@ -40,6 +40,7 @@ will generate everything without the need of manual copy&paste way or searching 
 |                 | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember) |
 |                 | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions) |
 |                 | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/) |
+|                 | [AyeCode/wp-super-duper](https://github.com/AyeCode/wp-super-duper) |
 
 ### Available Snippets
 

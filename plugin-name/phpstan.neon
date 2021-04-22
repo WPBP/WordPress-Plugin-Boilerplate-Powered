@@ -36,11 +36,9 @@ parameters:
         # PHPStan is better safe than sorry!
         # https://github.com/phpstan/phpstan/issues/1060#issuecomment-667675767
         - '#^Argument of an invalid type object supplied for foreach, only iterables are supported\.$#'
-        # https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/issues/162
-        - '#^Parameter \#2 \$object_id of function cmb2_metabox_form expects int, string given\.$#'
         - '#^Parameter \#1 \$str of function sanitize_text_field expects string, array\|string given\.$#'
         # https://github.com/Freemius/wordpress-sdk/pull/439
-        - '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
+        #- '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
 # Not used in the boilerplate.
 #        # Uses func_get_args()
 #        - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'

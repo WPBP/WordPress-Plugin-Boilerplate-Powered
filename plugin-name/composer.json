@@ -13,6 +13,7 @@
     ],
     "require": {
         "php": ">=7.0",
+        "ayecode/wp-super-duper": "^1.0",
         "cmb2/cmb2": "2.9.*",
         "composer/installers": "1.x",
         "freemius/wordpress-sdk": "2.4.*",
@@ -32,8 +33,7 @@
         "wpbp/widgets-helper": "1.0.*",
         "wpdesk/wp-notice": "^3.1",
         "yahnis-elsts/plugin-update-checker": "^4.9",
-        "yoast/i18n-module": "3.1.*",
-        "ayecode/wp-super-duper": "^1.0"
+        "yoast/i18n-module": "3.1.*"
     },
     "require-dev": {
         "codeatcode/codeatcs": "^1.0",

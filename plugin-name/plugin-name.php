@@ -77,16 +77,16 @@ require_once PN_PLUGIN_ROOT . 'functions/debug.php';
 
 // WPBPGen{{#if libraries_micropackage__requirements}}
 $requirements = new \Micropackage\Requirements\Requirements(
-   'Plugin Name',
-    array(
-      'php'            => PN_MIN_PHP_VERSION,
-      'php_extensions' => array( 'mbstring' ),
-      'wp'             => PN_WP_VERSION,
-      // 'plugins'            => array(
-      // array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
-      // ),
-    )
-	);
+	'Plugin Name',
+	array(
+		'php'            => PN_MIN_PHP_VERSION,
+		'php_extensions' => array( 'mbstring' ),
+		'wp'             => PN_WP_VERSION,
+		// 'plugins'            => array(
+		// array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
+		// ),
+	)
+);
 
 if ( ! $requirements->satisfied() ) {
 	$requirements->print_notice();

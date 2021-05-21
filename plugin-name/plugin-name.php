@@ -31,6 +31,8 @@ define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
+define( 'PN_MIN_PHP_VERSION', 7.0 );
+define( 'PN_WP_VERSION', 5.3 );
 
 // WPBPGen{{#if language-files}}
 add_action(
@@ -41,7 +43,7 @@ add_action(
 	);
 
 // {{/if}}
-if ( version_compare( PHP_VERSION, '7.0.0', '<=' ) ) {
+if ( version_compare( PHP_VERSION, PN_MIN_PHP_VERSION, '<=' ) ) {
 	add_action(
 		'admin_init',
 		static function() {
@@ -77,14 +79,14 @@ require_once PN_PLUGIN_ROOT . 'functions/debug.php';
 $requirements = new \Micropackage\Requirements\Requirements(
 	'Plugin Name',
 	array(
-		'php'            => '7.0',
+		'php'            => PN_MIN_PHP_VERSION,
 		'php_extensions' => array( 'mbstring' ),
-		'wp'             => '5.3',
-	// 'plugins'            => array(
-	// array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
-	// ),
-)
-	);
+		'wp'             => PN_WP_VERSION,
+		// 'plugins'            => array(
+		// array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
+		// ),
+	)
+);
 
 if ( ! $requirements->satisfied() ) {
 	$requirements->print_notice();

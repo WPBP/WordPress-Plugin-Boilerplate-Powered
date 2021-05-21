@@ -65,6 +65,11 @@ class Example extends Base {
 	 * Examples
 	 *
 	 * @since {{plugin_version}}
+   *
+   *  Make an instance of this class somewhere, then
+   *  call this method and test on the command line with
+   * `curl http://example.com/wp-json/wp/v2/calc?first=1&second=2`
+   *
 	 * @return void
 	 */
 	public function add_custom_ruote() {

@@ -9,6 +9,7 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Engine;
 
 /**
@@ -17,15 +18,18 @@ namespace Plugin_Name\Engine;
 class Base {
 
 	/**
-	 * @var array The settings of the plugin
+	 * @var array The settings of the plugin.
 	 */
 	public $settings = array();
 
 	/**
-	 * Initialize the class
+	 * Initialize the class and get the plugin settings
+	 *
+	 * @return bool
 	 */
 	public function initialize() {
-		$this->settings = pn_get_settings();
+		$this->settings = \pn_get_settings();
+
 		return true;
 	}
 

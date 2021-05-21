@@ -1,3 +1,9 @@
+## 3.2.2
+
+* Code is fully checked with new GitHub Action for Static Code analysis (PHPStan), Codee Style (PHPCS) and EditorConfig
+* Now the code is passing everything from PHPStan to PHPCS
+* Fixed example tests cases included
+
 ## 3.2.1
 
 * Enhancement: On .env file some parameters are better with apostrophes

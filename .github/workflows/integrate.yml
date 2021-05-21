@@ -1,0 +1,134 @@
+# https://docs.github.com/en/actions
+
+name: "Integrate"
+
+on:
+  pull_request:
+    branches:
+      - "master"
+  push:
+    branches:
+      - "master"
+
+env:
+  PHP_EXTENSIONS: "mbstring"
+
+jobs:
+  coding-standards:
+    name: "Coding Standards"
+
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.2"
+
+        dependencies:
+          - "highest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2.3.1"
+
+      - name: "Install PHP with extensions"
+        uses: "shivammathur/setup-php@2.10.0"
+        with:
+          coverage: "none"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Validate composer.json"
+        working-directory: "./plugin-name"
+        run: "composer validate"
+
+      - name: "Determine composer cache directory"
+        working-directory: "./plugin-name"
+        id: "determine-composer-cache-directory"
+        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+
+      - name: "Install highest dependencies from composer.json"
+        working-directory: "./plugin-name"
+        run: "composer update --no-interaction --no-progress --no-suggest"
+
+      - name: "Run ergebnis/composer-normalize"
+        working-directory: "./plugin-name"
+        run: "composer normalize --dry-run"
+
+      - name: "Run squizlabs/PHP_CodeSniffer"
+        working-directory: "./plugin-name"
+        run: "vendor/bin/phpcs -s --standard=CodeatCodingStandard --exclude=Squiz.PHP.CommentedOutCode,Generic.Commenting.Todo,SlevomatCodingStandard.Functions.UnusedParameter,SlevomatCodingStandard.Variables.UnusedVariable,Squiz.Commenting.FileComment ."
+
+      - name: "Cache dependencies installed with composer"
+        uses: "actions/cache@v2.0.0"
+        with:
+          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
+
+  static-code-analysis:
+    name: "Static Code Analysis"
+
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.2"
+
+        dependencies:
+          - "highest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2.3.1"
+
+      - name: "Install PHP with extensions"
+        uses: "shivammathur/setup-php@2.10.0"
+        with:
+          coverage: "none"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
+          php-version: "${{ matrix.php-version }}"
+
+      - name: "Determine composer cache directory"
+        working-directory: "./plugin-name"
+        id: "determine-composer-cache-directory"
+        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+
+      - name: "Install highest dependencies from composer.json"
+        working-directory: "./plugin-name"
+        if: "matrix.dependencies == 'highest'"
+        run: "composer update --no-interaction --no-progress --no-suggest"
+
+      - name: "Run phpstan/phpstan"
+        working-directory: "./plugin-name"
+        run: "vendor/bin/phpstan analyse"
+
+      - name: "Cache dependencies installed with composer"
+        uses: "actions/cache@v2.0.0"
+        with:
+          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
+
+  editorconfig-adherence:
+    name: "EditorConfig adherence"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2.3.1"
+
+      - name: "Install NodeJS"
+        uses: "actions/setup-node@v2-beta"
+        with:
+          node-version: '12'
+
+      - name: "Install eclint"
+        working-directory: "./plugin-name"
+        run: "npm install --no-package-lock eclint"
+
+      - name: "Check EditorConfig adherence"
+        working-directory: "./plugin-name"
+        run: "npx eclint check"

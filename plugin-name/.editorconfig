@@ -12,13 +12,24 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
+block_comment_start = /*
+block_comment = *
+block_comment_end = */
 
-[*.yml]
+[{*.yml,*.neon}]
 indent_style = space
 indent_size = 2
+
+[{composer.json,composer.lock,package.json}]
+indent_style = space
+indent_size = 4
 
 [*.md]
 trim_trailing_whitespace = false
 
-[{*.txt,wp-config-sample.php}]
+[{wp-config-sample.php}]
 end_of_line = crlf
+
+[{LICENSE.txt,README.txt}]
+indent_style = space
+end_of_line = lf

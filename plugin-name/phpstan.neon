@@ -1,64 +1,51 @@
 # Start command: composer update --classmap-authoritative && vendor/bin/phpstan analyze
 
 includes:
-    # https://github.com/phpstan/phpstan/blob/master/conf/bleedingEdge.neon
-    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
     - vendor/szepeviktor/phpstan-wordpress/extension.neon
-    - vendor/szepeviktor/phpstan-phpdoc/extension.neon
 parameters:
     level: max
-    # void as typehint is available only on PHP 7.1+
+    inferPrivatePropertyTypeFromConstructor: true
+    # Void as typehints are available only on PHP 7.1+
     checkMissingIterableValueType: false
     paths:
-        - %currentWorkingDirectory%
-    bootstrapFiles:
-        - vendor/autoload.php
-        - vendor/cmb2/init.php
+        - ./
     excludes_analyse:
-        - %currentWorkingDirectory%/vendor
-        - %currentWorkingDirectory%/tests
-        - integrations/Widgets/
+        - vendor/
+        - tests/
+    bootstrapFiles:
+        # CMB2 is loaded in this file
+        - tests/phpstan/bootstrap.php
+        # Does not work in "scanFiles"
+        - vendor/wpbp/widgets-helper/class.wph-widget.php
     scanFiles:
         - plugin-name.php
+        - uninstall.php
+        - vendor/yoast/i18n-module/src/i18n-wordpressorg-v3.php
         - vendor/freemius/wordpress-sdk/start.php
-        - vendor/cmb2-grid/Cmb2GridPluginLoad.php
+        - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
+        - vendor/freemius/wordpress-sdk/includes/class-freemius.php
     ignoreErrors:
-        # Uses func_get_args()
-        - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'
-        - '#^Function do_action invoked with [3456] parameters, 1-2 required\.$#'
-        - '#^Function current_user_can invoked with 2 parameters, 1 required\.$#'
-        - '#^Function add_query_arg invoked with [123] parameters?, 0 required\.$#'
-        # Less import errors
-        - '/^Parameter #1 \$text of function esc_html expects string, int given\.$/'
-        - '/^Parameter #1 \$file of function plugin_dir_path expects string, string\|false given\.$/'
-        - '/^Parameter #1 \$array_arg of function end is passed by reference, so it expects variables only\.$/'
-        - '#Argument of an invalid type array\|int supplied for foreach, only iterables are supported\.#'
-        - '#Argument of an invalid type object supplied for foreach, only iterables are supported\.#'
-        - '#Access to an undefined property object::\$is_search\.#'
-        - '#Access to an undefined property object::\$pending\.#'
-        - '#Access to an undefined property object::\$ID\.#'
-        - '#Call to an undefined method object::set\(\)\.#'
-        - '#Call to an undefined method object::get\(\)\.#'
-        # sanitize_text_field is used always with wp_unslash that based on the input, the output is the same type
-        - '/^Parameter #1 \$str of function sanitize_text_field expects string, array<string>\|string given\.$/'
-        # https://core.trac.wordpress.org/ticket/43304
-        - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
-        # WP-CLI accepts a class as callable
-        - '/^Parameter #2 \$callable of static method WP_CLI::add_command\(\) expects callable\(\): mixed, \S+ given\.$/'
-        # Stubs for WP-CLI are not available
-        - '#on an unknown class WP_CLI\.#'
-        # void as typehint is available only on PHP 7.1+
-        - '#has no return typehint specified\.#'
-        # CMB2 is not detected by PHPStan
-        - '#cmb2#'
-        - '#Cmb2#'
-        # Freemius is not detect by PHPStan
-        - '#fs_dynamic_init#'
-        # Uninstall is not detect by PHPStan
-        - '#pn_uninstall#'
-        # Other method to silence that PHPStan cannot detect
-        - '#Call to an undefined method object::is_#'
-        - "#Cannot access offset 'id' on object.#"
-        - '#Access to an undefined property object::\$query.#'
-        - '#invalid type array<WP_Term>\|int supplied for foreach#'
-        - '#Function is_amp_endpoint not found.#'
+        # TODO Add file names!!
+
+        # Void as typehints are available only on PHP 7.1+
+        - '#has no return typehint specified\.$#'
+        # In wp_count_posts(): $counts = (object) $counts;
+        - '#^Access to an undefined property object::\$pending\.$#'
+        # AMP plugin stubs can be also generated
+        - '#^Function is_amp_endpoint not found\.$#'
+        # PHPStan is better safe than sorry!
+        # https://github.com/phpstan/phpstan/issues/1060#issuecomment-667675767
+        - '#^Argument of an invalid type object supplied for foreach, only iterables are supported\.$#'
+        - '#^Parameter \#1 \$str of function sanitize_text_field expects string, array\|string given\.$#'
+        # https://github.com/Freemius/wordpress-sdk/pull/439
+        #- '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
+# Not used in the boilerplate.
+#        # Uses func_get_args()
+#        - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'
+#        # https://core.trac.wordpress.org/ticket/43304
+#        - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
+#        # WP-CLI accepts a class as callable
+#        - '/^Parameter #2 \$callable of static method WP_CLI::add_command\(\) expects callable\(\): mixed, \S+ given\.$/'
+#        # WP-CLI stubs can be generated and included in "scanFiles:"
+#        # https://github.com/szepeviktor/phpstan-wordpress/blob/master/stub-generators/wp-cli-generate-stubs.sh
+#        - '#on an unknown class WP_CLI\.$#'

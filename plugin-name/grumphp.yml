@@ -7,13 +7,14 @@ parameters:
             with_dependencies: false
             strict: false
         phpcs:
-            standard: ./phpcs.xml
-            ignore_patterns: ['/vendor/']
+            standard: CodeatCodingStandard
+            ignore_patterns: ['/vendor/', '/tests/']
         grunt: ~
         phpmd: ~
         phpstan:
-            configuration: ~
+            configuration: phpstan.neon
             triggered_by: ['php']
+            ignore_patterns: ['/vendor/']
         codeception:
             config_file: ~
             fail_fast: false

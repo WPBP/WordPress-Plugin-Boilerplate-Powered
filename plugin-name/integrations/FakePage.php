@@ -9,30 +9,31 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Integrations;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * Fake Pages inside WordPress
  */
-class FakePage extends Engine\Base {
+class FakePage extends Base {
 
 	/**
 	 * Initialize the class.
 	 *
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
-        parent::initialize();
-        new \Fake_Page(
-            array(
-            'slug'         => 'fake_slug',
-            'post_title'   => 'Fake Page Title',
-            'post_content' => 'This is the fake page content',
-            )
-        );
-    }
+		parent::initialize();
+
+		new \Fake_Page(
+			array(
+				'slug'         => 'fake_slug',
+				'post_title'   => 'Fake Page Title',
+				'post_content' => 'This is the fake page content',
+			)
+		);
+	}
 
 }
-

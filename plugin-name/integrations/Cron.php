@@ -9,19 +9,20 @@
  * @license   {{author_license}}
  * @link      {{author_url}}
  */
+
 namespace Plugin_Name\Integrations;
 
-use \Plugin_Name\Engine;
+use Plugin_Name\Engine\Base;
 
 /**
  * The various Cron of this plugin
  */
-class Cron extends Engine\Base {
+class Cron extends Base {
 
 	/**
 	 * Initialize the class.
 	 *
-	 * @return void
+	 * @return void|bool
 	 */
 	public function initialize() {
 		/*
@@ -36,26 +37,23 @@ class Cron extends Engine\Base {
 		);
 
 		$cronplus = new \CronPlus( $args );
-        // Schedule the event
+		// Schedule the event
 		$cronplus->schedule_event();
-        // Remove the event by the schedule
-        // $cronplus->clear_schedule_by_hook();
-        // Jump the scheduled event
-        // $cronplus->unschedule_specific_event();
+		// Remove the event by the schedule
+		// $cronplus->clear_schedule_by_hook();
+		// Jump the scheduled event
+		// $cronplus->unschedule_specific_event();
 	}
 
 	/**
 	 * Cron Hourly example
 	 *
 	 * @since {{plugin_version}}
-	 *
-	 * @param integer $id The ID.
-	 *
+	 * @param int $id The ID.
 	 * @return void
 	 */
-	public function hourly_cron( $id ) {
-		echo esc_html( $id );
+	public function hourly_cron( int $id ) {
+		echo \esc_html( (string) $id );
 	}
 
 }
-

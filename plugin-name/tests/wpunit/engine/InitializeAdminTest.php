@@ -14,8 +14,8 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
-        $user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
-		$user = wp_set_current_user( $user_id );
+	$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
 		set_current_screen( 'edit.php' );
 	}
 
@@ -37,8 +37,8 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Integrations\FakePage';
 		$classes[] = 'Plugin_Name\Integrations\Template';
 		$classes[] = 'Plugin_Name\Integrations\Widgets';
- 		$classes[] = 'Plugin_Name\Ajax\Ajax';
- 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
+		$classes[] = 'Plugin_Name\Ajax\Ajax';
+		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
 		$classes[] = 'Plugin_Name\Backend\ActDeact';
 		$classes[] = 'Plugin_Name\Backend\Enqueue';
 		$classes[] = 'Plugin_Name\Backend\ImpExp';

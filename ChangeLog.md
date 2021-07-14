@@ -1,8 +1,14 @@
+## 3.2.3
+
+* Enhancement: Now there are constants for minimum php/wp versions
+* Enhancement: Added wp-super-duper library
+* Updated: CI for latest php versions
+
 ## 3.2.2
 
-* Code is fully checked with new GitHub Action for Static Code analysis (PHPStan), Codee Style (PHPCS) and EditorConfig
-* Now the code is passing everything from PHPStan to PHPCS
-* Fixed example tests cases included
+* Enhancement:Code is fully checked with new GitHub Action for Static Code analysis (PHPStan), Codee Style (PHPCS) and EditorConfig
+* Enhancement:Now the code is passing everything from PHPStan to PHPCS
+* Fix: example tests cases included
 
 ## 3.2.1
 

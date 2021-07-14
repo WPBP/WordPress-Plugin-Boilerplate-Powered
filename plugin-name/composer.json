@@ -53,7 +53,7 @@
         "lucatume/wp-browser": "^2.5",
         "phpro/grumphp": "^0.18",
         "phpunit/phpunit": "6.*",
-        "szepeviktor/phpstan-wordpress": "^0.6.2"
+        "szepeviktor/phpstan-wordpress": "^0.7.7"
     },
     "extra": {
         "installer-paths": {

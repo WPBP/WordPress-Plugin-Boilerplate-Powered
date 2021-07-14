@@ -31,8 +31,8 @@ define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
-define( 'PN_MIN_PHP_VERSION', 7.0 );
-define( 'PN_WP_VERSION', 5.3 );
+define( 'PN_MIN_PHP_VERSION', '7.0' );
+define( 'PN_WP_VERSION', '5.3' );
 
 // WPBPGen{{#if language-files}}
 add_action(

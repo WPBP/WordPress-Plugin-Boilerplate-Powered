@@ -130,7 +130,7 @@ class Is_Methods {
 	 * @return bool
 	 */
 	public function is_cli() {
-		return \defined( 'WP_CLI' ) && WP_CLI;
+		return \defined( 'WP_CLI' ) && WP_CLI || \php_sapi_name() === 'cli';
 	}
 
 	/**

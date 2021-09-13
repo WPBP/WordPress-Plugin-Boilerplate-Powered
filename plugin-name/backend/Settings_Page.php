@@ -60,12 +60,6 @@ class Settings_Page extends Base {
 		 *
 		 */
 		\add_menu_page( \__( '{{plugin_name}} Settings', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
-	        /* 
-		 * Retrieve settings on front end in either of these ways:
-		 *   $my_setting = cmb2_get_option( PN_TEXTDOMAIN . '-settings', 'some_setting', 'default' );
-                 *   $my_settings = get_option( PN_TEXTDOMAIN . '-settings', 'default too' );
-		 * CMB2 Snippet: https://github.com/CMB2/CMB2-Snippet-Library/blob/master/options-and-settings-pages/theme-options-cmb.php
-		 */
 	}
 
 	/**

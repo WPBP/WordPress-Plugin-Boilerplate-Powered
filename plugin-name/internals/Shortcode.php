@@ -12,6 +12,7 @@
 
 namespace Plugin_Name\Internals;
 
+use DecodeLabs\Tagged as Html;
 use Plugin_Name\Engine\Base;
 
 /**
@@ -40,8 +41,7 @@ class Shortcode extends Base {
 	public static function foobar_func( array $atts ) {
 		\shortcode_atts( array( 'foo' => 'something', 'bar' => 'something else' ), $atts );
 
-		return '<span class="foo">foo = ' . $atts[ 'foo' ] . '</span>' .
-			'<span class="bar">foo = ' . $atts[ 'bar' ] . '</span>';
+		return Html::{'span.foo'}( 'foo = ' . $atts['foo'] ) . Html::{'span.bar'}( 'bar = ' . $atts['bar'] );
 	}
 
 }

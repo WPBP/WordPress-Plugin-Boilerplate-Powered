@@ -5,10 +5,10 @@
 define('DB_NAME', 'wordpress_unit_tests');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'wpbp');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'test');
+define('DB_PASSWORD', 'my-strong-pass');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

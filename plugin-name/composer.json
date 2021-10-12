@@ -16,6 +16,7 @@
         "ayecode/wp-super-duper": "^1.0",
         "cmb2/cmb2": "2.9.*",
         "composer/installers": "1.x",
+        "decodelabs/tagged": "^0.11.9",
         "freemius/wordpress-sdk": "2.4.*",
         "johnbillion/extended-cpts": "4.5.*",
         "julien731/wp-review-me": "dev-develop",

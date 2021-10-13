@@ -1,4 +1,5 @@
 <?php
+
 define( 'PN_PLUGIN_ROOT', __DIR__ );
 define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );

@@ -41,6 +41,7 @@ will generate everything without the need of manual copy&paste way or searching 
 |                 | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions) |
 |                 | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/) |
 |                 | [AyeCode/wp-super-duper](https://github.com/AyeCode/wp-super-duper) |
+|                 | [decodelabs/tagged](https://github.com/decodelabs/tagged) |
 
 ### Available Snippets
 
@@ -67,7 +68,7 @@ This project exists thanks to all the people who contribute.
 
 Thank you to all our backers! 🙏
 [[Become a backer](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backer)]
-
+<br>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backers" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers.svg?width=890"></a>
 
 ## Sponsors
@@ -79,10 +80,6 @@ Your logo will show up here with a link to your website.
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/0/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/1/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/1/avatar.svg"></a>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/2/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/3/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/4/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/5/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/6/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/6/avatar.svg"></a>
 
 ## License
 

@@ -36,6 +36,7 @@ class Context {
 	 */
 	public function request( string $type ) {
 		$this->context = WpContext::determine();
+
 		switch ( $type ) {
 			case 'backend':
 				return $this->context->isBackoffice();

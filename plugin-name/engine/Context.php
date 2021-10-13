@@ -27,22 +27,15 @@ class Context {
 	public $context = null;
 
 	/**
-	 * Get the context
-	 *
-	 * @SuppressWarnings("StaticAccess")
-	 */
-	public function __construct() {
-		$this->context = WpContext::determine();
-	}
-
-	/**
 	 * What type of request is this?
 	 *
 	 * @since {{plugin_version}}
 	 * @param  string $type admin, ajax, cron, cli, amp or frontend.
 	 * @return bool
+	 * @SuppressWarnings("StaticAccess")
 	 */
 	public function request( string $type ) {
+		$this->context = WpContext::determine();
 		switch ( $type ) {
 			case 'backend':
 				return $this->context->isBackoffice();

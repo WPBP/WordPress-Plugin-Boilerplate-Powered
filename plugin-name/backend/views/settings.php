@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Retrieve these settings on front end in either of these ways:
  *   $my_setting = cmb2_get_option( PN_TEXTDOMAIN . '-settings', 'some_setting', 'default' );

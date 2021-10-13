@@ -22,7 +22,7 @@ class Context {
 	/**
 	 * WpContext Class
 	 *
-	 * @var array
+	 * @var object
 	 */
 	public $context = null;
 

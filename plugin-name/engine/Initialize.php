@@ -27,11 +27,11 @@ class Initialize {
 	public $classes = array();
 
 	/**
-	 * Instance of this Pn_Is_Methods.
+	 * Instance of this Context.
 	 *
 	 * @var object
 	 */
-	protected $is = null;
+	protected $content = null;
 
 	/**
 	 * Composer autoload file list.
@@ -47,36 +47,36 @@ class Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
-		$this->is       = new Engine\Is_Methods;
+		$this->content  = new Engine\Context;
 		$this->composer = $composer;
 
 		$this->get_classes( 'Internals' );
 		$this->get_classes( 'Integrations' );
 
 		// WPBPGen{{#if system_rest}}
-		if ( $this->is->request( 'rest' ) ) {
+		if ( $this->content->request( 'rest' ) ) {
 			$this->get_classes( 'Rest' );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if wpcli}}
-		if ( $this->is->request( 'cli' ) ) {
+		if ( $this->content->request( 'cli' ) ) {
 			$this->get_classes( 'Cli' );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if ajax}}
-		if ( $this->is->request( 'ajax' ) ) {
+		if ( $this->content->request( 'ajax' ) ) {
 			$this->get_classes( 'Ajax' );
 		}
 
 		// {{/if}}
 
-		if ( $this->is->request( 'backend' ) ) {
+		if ( $this->content->request( 'backend' ) ) {
 			$this->get_classes( 'Backend' );
 		}
 
-		if ( $this->is->request( 'frontend' ) ) {
+		if ( $this->content->request( 'frontend' ) ) {
 			$this->get_classes( 'Frontend' );
 		}
 
@@ -87,6 +87,7 @@ class Initialize {
 	 * Initialize all the classes.
 	 *
 	 * @since {{plugin_version}}
+	 * @SuppressWarnings("MissingImport")
 	 */
 	private function load_classes() {
 		$this->classes = \apply_filters( 'plugin_name_classes_to_execute', $this->classes );

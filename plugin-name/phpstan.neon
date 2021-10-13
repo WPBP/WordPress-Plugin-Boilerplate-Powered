@@ -24,6 +24,7 @@ parameters:
         - vendor/freemius/wordpress-sdk/start.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php
+        - vendor/inpsyde/wp-context/src/WpContext.php
     ignoreErrors:
         # TODO Add file names!!
 

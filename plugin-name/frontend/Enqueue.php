@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin_Name
  *

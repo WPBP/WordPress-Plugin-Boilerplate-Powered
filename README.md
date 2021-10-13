@@ -83,6 +83,6 @@ Your logo will show up here with a link to your website.
 
 ## License
 
-WordPress Plugin Boilerplate Powered is licensed under the GPL v2 or later;
-however, if you opt-in to use third-party code that is not compatible with v2,
+WordPress Plugin Boilerplate Powered is licensed under the GPL v3 or later;
+however, if you opt-in to use third-party code that is not compatible with v3,
 then you may need to switch to using code that is GPL v3 compatible.

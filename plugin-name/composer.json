@@ -3,7 +3,7 @@
     "type": "wordpress-plugin",
     "description": "Wordpress Plugin Boilerplate with steroids!",
     "homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered",
-    "license": "GPL-2.0-or-later",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "author_name",

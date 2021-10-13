@@ -1,4 +1,3 @@
-
 		<div id="tabs-2" class="wrap">
 			<?php
 			// WPBPGen{{#if libraries_cmb2__cmb2}}

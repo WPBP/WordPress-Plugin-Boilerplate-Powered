@@ -1,5 +1,4 @@
 <?php
-
 class AdminSettingsPageCest {
 	function _before(AcceptanceTester $I) {
 		// will be executed at the beginning of each test

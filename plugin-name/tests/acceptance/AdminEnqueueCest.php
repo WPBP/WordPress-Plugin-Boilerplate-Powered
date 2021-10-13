@@ -1,5 +1,4 @@
 <?php
-
 class AdminEnqueueCest {
 
 	function _before(AcceptanceTester $I) {

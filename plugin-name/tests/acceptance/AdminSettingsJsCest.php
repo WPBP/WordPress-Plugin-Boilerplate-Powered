@@ -1,5 +1,4 @@
 <?php
-
 class AdminSettingsJsCest {
 
 	function _before( AcceptanceTester $I ) {

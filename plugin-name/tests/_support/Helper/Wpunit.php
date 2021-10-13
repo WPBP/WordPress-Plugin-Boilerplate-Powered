@@ -1,5 +1,4 @@
 <?php
-
 namespace Helper;
 
 // here you can define custom actions

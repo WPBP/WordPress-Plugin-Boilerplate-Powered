@@ -1,3 +1,11 @@
+## 3.2.4
+
+* Changes: Now GPLv3 as default
+* Refactor: Is_methods replaced with Context class using inpyside/wpcontext
+* Enhancement: Tagged library added
+* Enhancement: Improved doc for CMB2
+* Enhancement: Updated the dependencies
+
 ## 3.2.3
 
 * Enhancement: Now there are constants for minimum php/wp versions

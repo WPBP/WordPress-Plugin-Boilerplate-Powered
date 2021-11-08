@@ -33,3 +33,11 @@ end_of_line = crlf
 [{LICENSE.txt,README.txt}]
 indent_style = space
 end_of_line = lf
+
+[*.sql]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset

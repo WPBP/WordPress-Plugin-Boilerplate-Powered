@@ -13,7 +13,7 @@
 namespace Plugin_Name\Internals;
 
 use Plugin_Name\Engine\Base;
-use stdClass;
+use \stdClass;
 
 /**
  * Transient used by the plugin
@@ -79,6 +79,7 @@ class Transient extends Base {
 		}
 
 		echo '</div>';
+
 		return '';
 	}
 

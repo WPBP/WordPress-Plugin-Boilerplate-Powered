@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "ayecode/wp-super-duper": "^1.0",
+        "php": ">=8.0",
+        "ayecode/wp-super-duper": "2.0.2",
         "cmb2/cmb2": "2.9.*",
         "composer/installers": "1.x",
         "decodelabs/tagged": "^0.11.9",
@@ -40,7 +40,6 @@
     "require-dev": {
         "codeatcode/codeatcs": "^1.0",
         "codeception/codeception": "4.1.*",
-        "codeception/codeception-progress-reporter": "^4.0",
         "codeception/module-asserts": "^1.0",
         "codeception/module-cli": "^1.0",
         "codeception/module-db": "^1.0",
@@ -52,11 +51,17 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
         "ergebnis/composer-normalize": "^2.6",
         "lucatume/function-mocker": "~1.0",
-        "lucatume/wp-browser": "^2.5",
-        "phpro/grumphp": "^0.18",
-        "phpunit/phpunit": "6.*",
-        "szepeviktor/phpstan-wordpress": "^0.7.7"
+        "lucatume/wp-browser": "^3.0",
+        "phpro/grumphp": "^1.7",
+        "phpunit/phpunit": "^9.2",
+        "szepeviktor/phpstan-wordpress": "^1.0.2"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https:\/\/github.com\/ayecode\/wp-super-duper"
+        }
+    ],
     "extra": {
         "installer-paths": {
             "vendor/{$name}/": [
@@ -65,6 +70,20 @@
                 "stevegrunwell/wp-cache-remember",
                 "seravo/wp-custom-bulk-actions"
             ]
+        },
+        "patches": {
+            "ayecode\/wp-super-duper": {
+                "Fix v2": "https:\/\/patch-diff.githubusercontent.com\/raw\/AyeCode\/wp-super-duper\/pull\/25.patch"
+            }
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer\/installers": true,
+            "cweagans\/composer-patches": true,
+            "dealerdirect\/phpcodesniffer-composer-installer": true,
+            "ergebnis\/composer-normalize": true,
+            "phpro\/grumphp": true
         }
     },
     "autoload": {

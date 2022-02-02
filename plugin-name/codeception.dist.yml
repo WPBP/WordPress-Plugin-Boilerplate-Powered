@@ -28,7 +28,6 @@ coverage:
         - integrations/*
 extensions:
     enabled:
-        - Codeception\ProgressReporter\ProgressReporter
         - Codeception\Extension\RunFailed
     commands:
         # Generate Tests cases

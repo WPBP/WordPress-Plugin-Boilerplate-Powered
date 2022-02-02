@@ -41,7 +41,7 @@ class CMB extends Base {
 	 * @since {{plugin_version}}
 	 * @return void
 	 */
-	public function cmb_demo_metaboxes() {
+	public function cmb_demo_metaboxes() { // phpcs:ignore
 		// Start with an underscore to hide fields from custom fields list
 		$prefix   = '_demo_';
 		$cmb_demo = \new_cmb2_box(

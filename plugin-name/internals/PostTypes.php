@@ -24,7 +24,7 @@ class PostTypes extends Base {
 	 *
 	 * @return void|bool
 	 */
-	public function initialize() {
+	public function initialize() { // phpcs:ignore
 		parent::initialize();
 
 		// WPBPGen{{#if libraries_johnbillion__extended-cpts}}

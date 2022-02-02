@@ -47,7 +47,7 @@ class Transient extends Base {
 
 			if ( \is_wp_error( $response ) ) {
 				// In case API is down we return an empty object
-				return new \stdClass;
+				return new \stdClass; // phpcs:ignore
 			}
 
 			// If everything's okay, parse the body and json_decode it
@@ -61,7 +61,7 @@ class Transient extends Base {
 	 * Print the transient content
 	 *
 	 * @since {{plugin_version}}
-	 * @return string
+	 * @return void
 	 */
 	public function print_transient_output() {
 		$transient = $this->transient_caching_example();

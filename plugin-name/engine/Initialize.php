@@ -96,7 +96,8 @@ class Initialize {
 		foreach ( $this->classes as $class ) {
 			try {
 				$temp = new $class;
-				if ( method_exists( $temp, 'initialize' ) ) {
+
+				if ( \method_exists( $temp, 'initialize' ) ) {
 					$temp->initialize();
 				}
 			} catch ( \Throwable $err ) {

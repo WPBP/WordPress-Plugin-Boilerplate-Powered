@@ -57,7 +57,7 @@ function pn_uninstall_multisite() {
  * @global WP_Roles $wp_roles
  * @return void
  */
-function pn_uninstall() {
+function pn_uninstall() { // phpcs:ignore
 	global $wp_roles;
 	/*
 	@TODO

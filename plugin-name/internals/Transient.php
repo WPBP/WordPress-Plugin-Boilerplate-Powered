@@ -35,7 +35,7 @@ class Transient extends Base {
 	 * @since {{plugin_version}}
 	 * @return mixed
 	 */
-	public function transient_caching_example() {
+	public function transient_caching_example() { // phpcs:ignore
 		$key = 'placeholder_json_transient';
 
 		// Use wp-cache-remember package to retrive or save in transient
@@ -61,7 +61,7 @@ class Transient extends Base {
 	 * Print the transient content
 	 *
 	 * @since {{plugin_version}}
-	 * @return void
+	 * @return string
 	 */
 	public function print_transient_output() {
 		$transient = $this->transient_caching_example();
@@ -79,6 +79,7 @@ class Transient extends Base {
 		}
 
 		echo '</div>';
+		return '';
 	}
 
 }

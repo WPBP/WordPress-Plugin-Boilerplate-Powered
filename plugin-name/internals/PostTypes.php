@@ -108,7 +108,7 @@ class PostTypes extends Base {
 	 * @since {{plugin_version}}
 	 * @return void
 	 */
-	public function load_cpts() {
+	public function load_cpts() { //phpcs:ignore
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
 		$tax = \register_extended_post_type(
 				'demo',

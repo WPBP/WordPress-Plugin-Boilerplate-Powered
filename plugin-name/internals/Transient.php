@@ -61,10 +61,11 @@ class Transient extends Base {
 	 * Print the transient content
 	 *
 	 * @since {{plugin_version}}
-	 * @return void
+	 * @return string
 	 */
 	public function print_transient_output() {
 		$transient = $this->transient_caching_example();
+
 		if ( !\is_iterable( $transient ) ) {
 			return '';
 		}

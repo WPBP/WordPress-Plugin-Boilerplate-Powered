@@ -93,7 +93,9 @@ class Context {
 			\_doing_it_wrong( __METHOD__, 'To check if the user is admin is required a WP_User object.', '{{plugin_version}}' );
 		}
 
-		return \is_multisite() ? \user_can( $user, 'manage_network' ) : \user_can( $user, 'manage_options' );
+		return \is_multisite() ?
+			\user_can( $user, 'manage_network' ) :
+			\user_can( $user, 'manage_options' );
 	}
 
 }

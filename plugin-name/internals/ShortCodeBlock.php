@@ -27,7 +27,7 @@ class ShortCodeBlock extends \WP_Super_Duper {
 	/**
 	 * Sets up the widgets name etc
 	 */
-	public function __construct() {
+	public function __construct() { // phpcs:ignore
 		$options = array(
 			'textdomain'     => PN_TEXTDOMAIN,
 			// textdomain of the plugin/theme (used to prefix the Gutenberg block)

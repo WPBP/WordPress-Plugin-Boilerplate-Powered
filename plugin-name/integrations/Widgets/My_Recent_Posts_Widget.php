@@ -21,7 +21,7 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 *
 	 * @return void
 	 */
-	public function __construct() {
+	public function __construct() { // phpcs:ignore
 		$args = array(
 			'label'       => \__( 'My Recent Posts Example', PN_TEXTDOMAIN ),
 			'description' => \__( 'My Recent Posts Widget Description', PN_TEXTDOMAIN ),

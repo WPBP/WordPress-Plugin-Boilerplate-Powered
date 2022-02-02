@@ -28,9 +28,6 @@ parameters:
     ignoreErrors:
         # TODO Add file names!!
 
-        # PHPStan is better safe than sorry!
-        # https://github.com/phpstan/phpstan/issues/1060#issuecomment-667675767
-        - '#^Argument of an invalid type object supplied for foreach, only iterables are supported\.$#'
         # https://github.com/Freemius/wordpress-sdk/pull/439
         #- '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
 # Not used in the boilerplate.

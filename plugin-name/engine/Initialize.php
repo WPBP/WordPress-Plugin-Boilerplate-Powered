@@ -96,7 +96,9 @@ class Initialize {
 		foreach ( $this->classes as $class ) {
 			try {
 				$temp = new $class;
-				$temp->initialize();
+				if ( method_exists( $temp, 'initialize' ) ) {
+					$temp->initialize();
+				}
 			} catch ( \Throwable $err ) {
 				\do_action( 'plugin_name_initialize_failed', $err );
 

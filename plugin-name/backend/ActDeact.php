@@ -156,6 +156,15 @@ class ActDeact extends Base {
 			}
 		}
 
+		self::remove_capabilities();
+	}
+
+	/**
+	 * Remove capabilities to specific roles
+	 *
+	 * @return void
+	 */
+	public static function remove_capabilities() {
 		// Remove capabilities to specific roles
 		$bad_caps = array(
 			'create_demoes',

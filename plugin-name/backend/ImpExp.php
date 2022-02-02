@@ -114,8 +114,10 @@ class ImpExp extends Base {
 		if ( !$settings_file ) {
 			$settings = \json_decode( (string) $settings_file );
 
-			\update_option( PN_TEXTDOMAIN . '-settings', \get_object_vars( $settings[ 0 ] ) );
-			\update_option( PN_TEXTDOMAIN . '-settings-second', \get_object_vars( $settings[ 1 ] ) );
+			if ( \is_array( $settings ) ) {
+				\update_option( PN_TEXTDOMAIN . '-settings', \get_object_vars( $settings[ 0 ] ) );
+				\update_option( PN_TEXTDOMAIN . '-settings-second', \get_object_vars( $settings[ 1 ] ) );
+			}
 
 			\wp_safe_redirect( \admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) );
 			exit;

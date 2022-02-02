@@ -202,7 +202,7 @@ class ActDeact extends Base {
 			return;
 		}
 
-		$version = \get_option( 'plugin-name-version' );
+		$version = \strval( \get_option( 'plugin-name-version' ) );
 
 		if ( !\version_compare( PN_VERSION, $version, '>' ) ) {
 			return;

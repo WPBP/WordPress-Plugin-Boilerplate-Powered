@@ -33,7 +33,7 @@ class Transient extends Base {
 	 * This method contain an example of caching a transient with an external request.
 	 *
 	 * @since {{plugin_version}}
-	 * @return object
+	 * @return mixed
 	 */
 	public function transient_caching_example() {
 		$key = 'placeholder_json_transient';
@@ -47,7 +47,7 @@ class Transient extends Base {
 
 			if ( \is_wp_error( $response ) ) {
 				// In case API is down we return an empty object
-				return new stdClass;
+				return new \stdClass;
 			}
 
 			// If everything's okay, parse the body and json_decode it
@@ -65,6 +65,10 @@ class Transient extends Base {
 	 */
 	public function print_transient_output() {
 		$transient = $this->transient_caching_example();
+		if ( !\is_iterable( $transient ) ) {
+			return '';
+		}
+
 		echo '<div class="siteapi-bridge-container">';
 
 		foreach ( $transient as $value ) {

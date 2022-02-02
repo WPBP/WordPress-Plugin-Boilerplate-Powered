@@ -44,6 +44,7 @@ class Enqueue extends Base {
 	 * Register and enqueue admin-specific style sheet.
 	 *
 	 * @since {{plugin_version}}
+	 * @return void
 	 */
 	public function enqueue_admin_styles() {
 		$admin_page = \get_current_screen();
@@ -64,7 +65,8 @@ class Enqueue extends Base {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since {{plugin_version}}
+	 * @since
+	 * @return void
 	 */
 	public function enqueue_admin_scripts() {
 		// WPBPGen{{#if admin-assets_settings-js}}

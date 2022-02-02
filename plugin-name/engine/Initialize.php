@@ -88,6 +88,7 @@ class Initialize {
 	 *
 	 * @since {{plugin_version}}
 	 * @SuppressWarnings("MissingImport")
+	 * @return void
 	 */
 	private function load_classes() {
 		$this->classes = \apply_filters( 'plugin_name_classes_to_execute', $this->classes );
@@ -177,6 +178,7 @@ class Initialize {
 	 * @param string $folder Path of the folder.
 	 * @param string $base Namespace base.
 	 * @since {{plugin_version}}
+	 * @return void
 	 */
 	private function find_classes( array $php_files, string $folder, string $base ) {
 		foreach ( $php_files as $php_file ) {

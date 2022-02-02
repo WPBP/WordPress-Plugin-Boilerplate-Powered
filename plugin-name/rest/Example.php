@@ -103,7 +103,7 @@ class Example extends Base {
 	public function get_text_field( array $post_obj ) {
 		$post_id = $post_obj['id'];
 
-		return \get_post_meta( $post_id, PN_TEXTDOMAIN . '_text', true );
+		return \strval( \get_post_meta( $post_id, PN_TEXTDOMAIN . '_text', true ) );
 	}
 
 	/**

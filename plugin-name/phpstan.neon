@@ -28,12 +28,6 @@ parameters:
     ignoreErrors:
         # TODO Add file names!!
 
-        # Void as typehints are available only on PHP 7.1+
-        - '#has no return typehint specified\.$#'
-        # In wp_count_posts(): $counts = (object) $counts;
-        - '#^Access to an undefined property object::\$pending\.$#'
-        # AMP plugin stubs can be also generated
-        - '#^Function is_amp_endpoint not found\.$#'
         # PHPStan is better safe than sorry!
         # https://github.com/phpstan/phpstan/issues/1060#issuecomment-667675767
         - '#^Argument of an invalid type object supplied for foreach, only iterables are supported\.$#'

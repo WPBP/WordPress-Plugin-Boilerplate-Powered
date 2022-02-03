@@ -13,7 +13,7 @@
 namespace Plugin_Name\Internals;
 
 use Plugin_Name\Engine\Base;
-use \stdClass;
+use \stdClass; // phpcs:ignore
 
 /**
  * Transient used by the plugin
@@ -72,7 +72,7 @@ class Transient extends Base {
 
 		echo '<div class="siteapi-bridge-container">';
 
-		foreach ( $transient as $value ) {
+		foreach ( $transient as $value ) { // phpcs:ignore
 			echo '<div class="siteapi-bridge-single">';
 			// $transient is an object so use -> to call children
 			echo '</div>';

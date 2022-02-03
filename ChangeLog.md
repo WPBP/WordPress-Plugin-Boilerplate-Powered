@@ -1,3 +1,8 @@
+## 3.2.5
+
+* Enhancement: Added support for PHP 8.1
+* Enhancement: Updated DB test dump
+
 ## 3.2.4
 
 * Changes: Now GPLv3 as default
@@ -14,8 +19,8 @@
 
 ## 3.2.2
 
-* Enhancement:Code is fully checked with new GitHub Action for Static Code analysis (PHPStan), Codee Style (PHPCS) and EditorConfig
-* Enhancement:Now the code is passing everything from PHPStan to PHPCS
+* Enhancement: Code is fully checked with new GitHub Action for Static Code analysis (PHPStan), Codee Style (PHPCS) and EditorConfig
+* Enhancement: Now the code is passing everything from PHPStan to PHPCS
 * Fix: example tests cases included
 
 ## 3.2.1

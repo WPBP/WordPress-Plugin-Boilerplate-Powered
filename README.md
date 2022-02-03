@@ -61,7 +61,7 @@ Check out [this Wiki page](https://github.com/WPBP/WordPress-Plugin-Boilerplate-
 
 ## Contributors
 
-This project exists thanks to all the people who contribute.
+This project exists thanks to all the people who contribute.  
 <a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/graphs/contributors"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/contributors.svg?width=890"></a>
 
 ## Backers
@@ -70,16 +70,6 @@ Thank you to all our backers! 🙏
 [[Become a backer](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backer)]
 <br>
 <a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backers" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers.svg?width=890"></a>
-
-## Sponsors
-
-Support this project by becoming a sponsor.
-Your logo will show up here with a link to your website.
-[[Become a sponsor](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#sponsor)]
-
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/0/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/1/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/2/website" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsor/2/avatar.svg"></a>
 
 ## License
 

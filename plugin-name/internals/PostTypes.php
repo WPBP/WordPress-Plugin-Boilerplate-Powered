@@ -70,7 +70,7 @@ class PostTypes extends Base {
 		);
 		$bulk_actions->init();
 		// {{/if}}
-		// WPBPGen{{#if libraries_johnbillion__extended-cpts && backend_bubble-notification-pending-cpt}}
+		// WPBPGen{{#if backend_bubble-notification-pending-cpt}}
 		// Add bubble notification for cpt pending
 		\add_action( 'admin_menu', array( $this, 'pending_cpt_bubble' ), 999 );
 		// {{/if}}
@@ -120,7 +120,9 @@ class PostTypes extends Base {
 					'slug'               => 'demo',
 					'show_in_rest'       => true,
 					'dashboard_activity' => true,
+				// WPBPGen{{#if system_capability-system}}
 					'capability_type'    => array( 'demo', 'demoes' ),
+				// {{/if}}
 					// Add some custom columns to the admin screen
 					'admin_cols'         => array(
 						'featured_image' => array(

@@ -120,9 +120,9 @@ class PostTypes extends Base {
 					'slug'               => 'demo',
 					'show_in_rest'       => true,
 					'dashboard_activity' => true,
-				// WPBPGen{{#if system_capability-system}}
+					// WPBPGen{{#if system_capability-system}}
 					'capability_type'    => array( 'demo', 'demoes' ),
-				// {{/if}}
+					// {{/if}}
 					// Add some custom columns to the admin screen
 					'admin_cols'         => array(
 						'featured_image' => array(

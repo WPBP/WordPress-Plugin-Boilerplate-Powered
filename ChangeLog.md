@@ -1,4 +1,4 @@
-## 3.2.5
+## 3.2.6
 
 * Enhancement: Bump PHP minimum requirements to 7.4
 * Fix: Some issue on boilerpalte generation

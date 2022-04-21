@@ -1,5 +1,10 @@
 ## 3.2.5
 
+* Enhancement: Bump PHP minimum requirements to 7.4
+* Fix: Some issue on boilerpalte generation
+
+## 3.2.5
+
 * Enhancement: Added support for PHP 8.1
 * Enhancement: Updated DB test dump
 

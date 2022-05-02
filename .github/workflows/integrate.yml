@@ -70,7 +70,7 @@ jobs:
         run: |
           curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
           wp package install swissspidy/validate-readme-command:dev-main --allow-root
-          wp plugin validate-readme ./README.txt --allow-root
+          wp plugin validate-readme ./plugin-name/README.txt --allow-root
 
   static-code-analysis:
     name: "Static Code Analysis"

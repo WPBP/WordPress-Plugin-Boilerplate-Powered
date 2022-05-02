@@ -65,6 +65,12 @@ jobs:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
+          
+      - name: "Readme Validation"
+        run: |
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+          wp package install swissspidy/validate-readme-command:dev-main --allow-root
+          wp plugin validate-readme ./README.txt --allow-root
 
   static-code-analysis:
     name: "Static Code Analysis"

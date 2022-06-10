@@ -155,8 +155,6 @@ class ActDeact extends Base {
 				$role->add_cap( $cap );
 			}
 		}
-
-		self::remove_capabilities();
 	}
 
 	/**
@@ -249,6 +247,9 @@ class ActDeact extends Base {
 	 */
 	private static function single_deactivate() {
 		// @TODO: Define deactivation functionality here
+		// WPBPGen{{#if system_capability-system}}
+		self::remove_capabilities();
+		// {{/if}}
 		// Clear the permalinks
 		\flush_rewrite_rules();
 	}

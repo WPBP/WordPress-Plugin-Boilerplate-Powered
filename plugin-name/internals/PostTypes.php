@@ -110,7 +110,7 @@ class PostTypes extends Base {
 	 */
 	public function load_cpts() { //phpcs:ignore
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
-		$tax = \register_extended_post_type(
+		$demo_cpt = \register_extended_post_type(
 				'demo',
 				array(
 					// Show all posts on the post type archive:
@@ -157,7 +157,7 @@ class PostTypes extends Base {
 			)
 		);
 
-		$tax->add_taxonomy( 'demo-section', array( 'hierarchical' => false, 'show_ui' => false ) );
+		$demo_cpt->add_taxonomy( 'demo-section', array( 'hierarchical' => false, 'show_ui' => false ) );
 		// Create Custom Taxonomy https://github.com/johnbillion/extended-taxos
 		\register_extended_taxonomy(
 			'demo-section',

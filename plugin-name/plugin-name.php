@@ -152,6 +152,6 @@ if ( ! wp_installing() ) {
 		}
 	);
 
-	\register_activation_hook( MNP_TEXTDOMAIN . '/' . MNP_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
-	\register_deactivation_hook( MNP_TEXTDOMAIN . '/' . MNP_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
+	\register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
+	\register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
 }

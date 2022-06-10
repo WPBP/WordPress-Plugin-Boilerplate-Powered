@@ -32,8 +32,6 @@ class ActDeact extends Base {
 		// Activate plugin when new blog is added
 		\add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		\register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( self::class, 'activate' ) );
-		\register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( self::class, 'deactivate' ) );
 		// WPBPGen{{#if system_upgrade-procedure}}
 		\add_action( 'admin_init', array( $this, 'upgrade_procedure' ) );
 		// {{/if}}

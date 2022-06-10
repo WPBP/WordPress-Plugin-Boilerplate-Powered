@@ -151,4 +151,7 @@ if ( ! wp_installing() ) {
 			new \Plugin_Name\Engine\Initialize( $plugin_name_libraries );
 		}
 	);
+
+	\register_activation_hook( MNP_TEXTDOMAIN . '/' . MNP_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
+	\register_deactivation_hook( MNP_TEXTDOMAIN . '/' . MNP_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
 }

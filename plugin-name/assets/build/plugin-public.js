@@ -1,0 +1,1 @@
+(()=>{"use strict";window.onload=()=>{console.log(pn_js_vars.alert)}})();

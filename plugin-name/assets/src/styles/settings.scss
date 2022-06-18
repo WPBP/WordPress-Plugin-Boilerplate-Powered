@@ -6,15 +6,15 @@
 	border-color: rgb(204, 204, 204);
 	border-width: 1px;
 	border-style:solid;
-	border-bottom-width: 0px;
-	padding: 12px 0px;
-	background: none repeat scroll 0% 0% rgb(228, 228, 228);
+	border-bottom-width: 0;
+	padding: 12px 0;
+	background: none repeat scroll 0 0 rgb(228, 228, 228);
 }
 
 .ui-tabs-nav {
 	padding-bottom: 9px;
 	padding-left: 10px;
-	border-bottom: 1px solid rgb(204, 204, 204);
+	border-bottom: 1px solid var(--my-plugin_color-primary);
 }
 
 .ui-tabs-anchor, .ui-tabs-anchor:focus {

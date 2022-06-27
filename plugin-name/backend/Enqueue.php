@@ -72,13 +72,15 @@ class Enqueue extends Base {
 		// WPBPGen{{#if admin-assets_settings-js}}
 		$admin_page = \get_current_screen();
 
+		$settings_script_dependencies = include plugins_url( 'assets/build/plugin-settings.asset.php' , PN_PLUGIN_ABSOLUTE );
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION, false );
+			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ), array_merge($settings_script_dependencies['dependencies'], ['jquery', 'jquery-ui-tabs']), PN_VERSION, false );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-js}}
-		\wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION, false );
+		$admin_script_dependencies = include plugins_url( 'assets/build/plugin-admin.asset.php' , PN_PLUGIN_ABSOLUTE );
+		\wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ), array_merge($admin_script_dependencies['dependencies'], ['jquery']), PN_VERSION, false );
 		// {{/if}}
 	}
 

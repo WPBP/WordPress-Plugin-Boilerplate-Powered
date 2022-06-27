@@ -1,3 +1,10 @@
+## 3.2.7
+
+* Fix: Activation/Deactivation and capabilities are saved rightly
+* Enhancement: Removed `language` library
+* Updated: i18n-module to a mte90 fork
+* CI: readme.txt validation added
+
 ## 3.2.6
 
 * Enhancement: Bump PHP minimum requirements to 7.4

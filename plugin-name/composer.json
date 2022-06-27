@@ -59,6 +59,23 @@
         {
             "type": "git",
             "url": "https:\/\/github.com\/ayecode\/wp-super-duper"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mte90\/i18n-module",
+                "version": "3.1.0",
+                "autoload": {
+                    "classmap": [
+                        "src\/"
+                    ]
+                },
+                "source": {
+                    "type": "git",
+                    "url": "https:\/\/github.com\/mte90\/i18n-module.git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "minimum-stability": "dev",

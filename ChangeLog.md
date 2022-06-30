@@ -1,3 +1,9 @@
+## 3.3.0
+
+* Enhancement: wp-scripts integration
+* Enhancement: Custom block example in React.js
+* Removed: Grunt replaced by Webpack
+
 ## 3.2.7
 
 * Fix: Activation/Deactivation and capabilities are saved rightly

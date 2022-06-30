@@ -19,7 +19,7 @@ will generate everything without the need of manual copy&paste way or searching 
 ### Available Libraries and other stuff
 
 * [Code Generator](https://github.com/WPBP/generator) to start development
-* Sass support and Grunt (not mandatory because the generator can remove them)
+* Sass support and WebPack (not mandatory because the generator can remove them)
 * PSR-4 support by Composer but [extended](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/blob/master/plugin-name/engine/class-initialize.php)
   to load classes based on request type and folder structure
 * Tools integrated like [GrumpPHP](https://github.com/phpro/grumphp) (automatically on commit)

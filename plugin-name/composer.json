@@ -51,9 +51,9 @@
         "ergebnis\/composer-normalize": "^2.6",
         "lucatume\/function-mocker": "~1.0",
         "lucatume\/wp-browser": "^3.0",
-        "phpro\/grumphp": "^1.7",
+        "phpro\/grumphp": "^1.13",
         "phpunit\/phpunit": "^9.2",
-        "szepeviktor\/phpstan-wordpress": "^1.0.2"
+        "szepeviktor\/phpstan-wordpress": "^1.1.2"
     },
     "repositories": [
         {

@@ -19,8 +19,8 @@
         "uninstall.php"
     ],
     "scripts": {
-        "start": "wp-scripts start assets/src/plugin-admin.js assets/src/plugin-block.js assets/src/plugin-public.js assets/src/plugin-settings.js --output-path=assets/build",
-        "build": "wp-scripts build assets/src/plugin-admin.js assets/src/plugin-block.js assets/src/plugin-public.js assets/src/plugin-settings.js --output-path=assets/build",
+        "start": "wp-scripts start assets/src/*.js --output-path=assets/build",
+        "build": "wp-scripts build assets/src/*.js --output-path=assets/build",
         "check-engines": "wp-scripts check-engines",
         "check-licenses": "wp-scripts check-licenses",
         "format": "wp-scripts format",

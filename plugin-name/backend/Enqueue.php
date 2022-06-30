@@ -73,13 +73,13 @@ class Enqueue extends Base {
 		$admin_page = \get_current_screen();
 
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-			$script_dependencies = include \plugins_url( 'assets/build/plugin-settings.asset.php', PN_PLUGIN_ABSOLUTE );
+			$script_dependencies = include PN_PLUGIN_ROOT . 'assets/build/plugin-settings.asset.php';
 			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery', 'jquery-ui-tabs' ) ), PN_VERSION, false );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-js}}
-		$script_dependencies = include \plugins_url( 'assets/build/plugin-admin.asset.php', PN_PLUGIN_ABSOLUTE );
+		$script_dependencies = include PN_PLUGIN_ROOT . 'assets/build/plugin-admin.asset.php';
 		\wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery' ) ), PN_VERSION, false );
 		// {{/if}}
 	}

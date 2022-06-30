@@ -6,8 +6,7 @@ grumphp:
             strict: false
         phpcs:
             standard: CodeatCodingStandard
-            ignore_patterns: ['/vendor/', '/tests/']
-        grunt: ~
+            ignore_patterns: ['/vendor/', '/tests/', '/assets/build']
         phpmd: ~
         phpstan:
             configuration: phpstan.neon

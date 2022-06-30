@@ -60,7 +60,7 @@ class Enqueue extends Base {
 	 * @return void
 	 */
 	public static function enqueue_scripts() {
-		$script_dependencies = include \plugins_url( 'assets/build/plugin-public.asset.php', PN_PLUGIN_ABSOLUTE );
+		$script_dependencies = include PN_PLUGIN_ROOT . 'assets/build/plugin-public.asset.php';
 		\wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array() ), PN_VERSION, false );
 	}
 

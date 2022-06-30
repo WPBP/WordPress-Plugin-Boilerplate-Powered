@@ -14,7 +14,8 @@
 .ui-tabs-nav {
 	padding-bottom: 9px;
 	padding-left: 10px;
-	border-bottom: 1px solid var(--my-plugin_color-primary);
+	border-bottom: 1px solid rgb(204, 204, 204);
+	color: var(--my-plugin_color-primary);
 }
 
 .ui-tabs-anchor, .ui-tabs-anchor:focus {
@@ -42,6 +43,10 @@
 		max-width:100%;
 		h3 {
 			padding-left: 10px;
+			border-bottom: 1px solid #e0e0e0;
+		}
+		img {
+			max-width: 240px;
 		}
 	}
 }

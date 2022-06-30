@@ -51,12 +51,12 @@ class Enqueue extends Base {
 
 		// WPBPGen{{#if admin-assets_settings-css}}
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-			\wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', \plugins_url( 'assets/css/settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+			\wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', \plugins_url( 'assets/build/plugin-settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-css}}
-		\wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', \plugins_url( 'assets/css/admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+		\wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', \plugins_url( 'assets/build/plugin-admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
 		// {{/if}}
 	}
 
@@ -73,12 +73,14 @@ class Enqueue extends Base {
 		$admin_page = \get_current_screen();
 
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/js/settings.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery', 'jquery-ui-tabs' ), PN_VERSION, false );
+			$script_dependencies = include \plugins_url( 'assets/build/plugin-settings.asset.php', PN_PLUGIN_ABSOLUTE );
+			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery', 'jquery-ui-tabs' ) ), PN_VERSION, false );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-js}}
-		\wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', \plugins_url( 'assets/js/admin.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION, false );
+		$script_dependencies = include \plugins_url( 'assets/build/plugin-admin.asset.php', PN_PLUGIN_ABSOLUTE );
+		\wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery' ) ), PN_VERSION, false );
 		// {{/if}}
 	}
 

@@ -16,6 +16,8 @@ coverage:
     enabled: true
     exclude:
         - vendor/*
+        - build/*
+        - assets/build/*
     include:
         - frontend/*
         - functions/*

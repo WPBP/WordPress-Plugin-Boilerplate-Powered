@@ -47,7 +47,7 @@ class Enqueue extends Base {
 	 * @return void
 	 */
 	public static function enqueue_styles() {
-		\wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/css/public.css', PN_PLUGIN_ABSOLUTE ), array(), PN_VERSION );
+		\wp_enqueue_style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ), array(), PN_VERSION );
 	}
 
 	// {{/if}}
@@ -60,7 +60,8 @@ class Enqueue extends Base {
 	 * @return void
 	 */
 	public static function enqueue_scripts() {
-		\wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/js/public.js', PN_PLUGIN_ABSOLUTE ), array( 'jquery' ), PN_VERSION, false );
+		$script_dependencies = include \plugins_url( 'assets/build/plugin-public.asset.php', PN_PLUGIN_ABSOLUTE );
+		\wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array() ), PN_VERSION, false );
 	}
 
 	// {{/if}}

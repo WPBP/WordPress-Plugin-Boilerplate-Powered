@@ -34,18 +34,10 @@ end_of_line = crlf
 indent_style = space
 end_of_line = lf
 
-[*.sql]
+[{/assets/build/**,/assets/src/block/*.json,*.sql}]
 charset = unset
 end_of_line = unset
 insert_final_newline = unset
 trim_trailing_whitespace = unset
-indent_style = unset
-indent_size = unset
-
-[{/assets/build/**,*.json}]
-charset = unset
-end_of_line = unset
-insert_final_newline = unset
-trim_trailing_whitespace = unset
-indent_style = unset
+indent_style = space
 indent_size = unset

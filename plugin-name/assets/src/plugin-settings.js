@@ -1,4 +1,4 @@
-import './styles/settings.scss';
+import "./styles/settings.scss";
 
 ( ( $ ) => {
 	"use strict";

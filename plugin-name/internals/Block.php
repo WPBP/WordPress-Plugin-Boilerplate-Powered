@@ -36,7 +36,7 @@ class Block extends Base {
 	 * @since {{plugin_version}}
 	 * @return void
 	 */
-	function register_block() {
+	public function register_block() {
 		// Register the block by passing the location of block.json to register_block_type.
 		\register_block_type( PN_PLUGIN_ABSOLUTE . '/assets/src/block' );
 	}

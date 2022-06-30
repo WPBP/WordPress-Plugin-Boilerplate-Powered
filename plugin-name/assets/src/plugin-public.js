@@ -1,5 +1,5 @@
 /* global pn_js_vars */
-import './styles/public.scss';
+import "./styles/public.scss";
 
 window.onload = () => {
 	// Write in console log the PHP value passed in enqueue_js_vars in public/class-plugin-name.php

@@ -60,8 +60,8 @@ class Enqueue extends Base {
 	 * @return void
 	 */
 	public static function enqueue_scripts() {
-		$frontend_script_dependencies = include plugins_url( 'assets/build/plugin-public.asset.php' , PN_PLUGIN_ABSOLUTE );
-		\wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ), array_merge($frontend_script_dependencies['dependencies'], []), PN_VERSION, false );
+		$script_dependencies = include \plugins_url( 'assets/build/plugin-public.asset.php', PN_PLUGIN_ABSOLUTE );
+		\wp_enqueue_script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array() ), PN_VERSION, false );
 	}
 
 	// {{/if}}

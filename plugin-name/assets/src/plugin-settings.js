@@ -1,9 +1,9 @@
 import './styles/settings.scss';
 
 ( ( $ ) => {
-	'use strict';
+	"use strict";
 	$( () => {
-		$( '#tabs' ).tabs();
+		$( "#tabs" ).tabs();
 	} );
 	// Place your administration-specific JavaScript here
 } )( jQuery );

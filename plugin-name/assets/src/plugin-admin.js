@@ -1,7 +1,7 @@
-import './styles/admin.scss';
+import "./styles/admin.scss";
 
 ( ( $ ) => {
-	'use strict';
+	"use strict";
 	$( () => {} );
 	// Place your administration-specific JavaScript here
 } )( jQuery );

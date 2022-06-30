@@ -72,8 +72,8 @@ class Enqueue extends Base {
 		// WPBPGen{{#if admin-assets_settings-js}}
 		$admin_page = \get_current_screen();
 
-		$script_dependencies = include \plugins_url( 'assets/build/plugin-settings.asset.php', PN_PLUGIN_ABSOLUTE );
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
+			$script_dependencies = include \plugins_url( 'assets/build/plugin-settings.asset.php', PN_PLUGIN_ABSOLUTE );
 			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery', 'jquery-ui-tabs' ) ), PN_VERSION, false );
 		}
 

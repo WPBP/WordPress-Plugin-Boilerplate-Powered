@@ -32,12 +32,13 @@ class Block extends Base {
 
 	/**
 	 * Registers and enqueue the block assets
+	 *
 	 * @since {{plugin_version}}
 	 * @return void
 	 */
 	function register_block() {
 		// Register the block by passing the location of block.json to register_block_type.
-		register_block_type( PN_PLUGIN_ABSOLUTE . '/assets/src/block' );
+		\register_block_type( PN_PLUGIN_ABSOLUTE . '/assets/src/block' );
 	}
 
 }

@@ -29,13 +29,13 @@
         "wpbp\/cronplus": "1.0.*",
         "wpbp\/debug": "1.1.*",
         "wpbp\/fakepage": "1.0.*",
+        "wpbp\/page-madness-detector": "1.0.*",
         "wpbp\/pointerplus": "1.0.*",
         "wpbp\/template": "1.0.*",
         "wpbp\/widgets-helper": "1.0.*",
         "wpdesk\/wp-notice": "^3.2",
         "yahnis-elsts\/plugin-update-checker": "^4.9",
-        "yoast\/i18n-module": "3.1.*",
-        "wpbp/page-madness-detector": "dev-main"
+        "yoast\/i18n-module": "3.1.*"
     },
     "require-dev": {
         "codeatcode\/codeatcs": "^1.0",

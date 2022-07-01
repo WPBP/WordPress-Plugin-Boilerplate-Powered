@@ -31,9 +31,16 @@ class Notices extends Base {
 
 		// WPBPGen{{#if libraries_wpdesk__wp-notice}}
 		\wpdesk_wp_notice( \__( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
-		\wpdesk_wp_notice( \__( 'This is my dismissible notice', PN_TEXTDOMAIN ), 'error', true );
 		// {{/if}}
 
+		// WPBPGen{{#if libraries_wpbp__page-madness-detector}}
+		$builder = new \Page_Madness_Detector();
+
+		if ( $builder->has_entrophy() ) {
+			\wpdesk_wp_notice( \__( 'A Page Builder/Visual Composer was found on this website!', PN_TEXTDOMAIN ), 'error', true );
+		}
+
+		// {{/if}}
 		// WPBPGen{{#if libraries_julien731__wp-review-me}}
 		/*
 		 * Review plugin notice.

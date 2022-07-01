@@ -34,7 +34,8 @@
         "wpbp\/widgets-helper": "1.0.*",
         "wpdesk\/wp-notice": "^3.2",
         "yahnis-elsts\/plugin-update-checker": "^4.9",
-        "yoast\/i18n-module": "3.1.*"
+        "yoast\/i18n-module": "3.1.*",
+        "wpbp/page-madness-detector": "dev-main"
     },
     "require-dev": {
         "codeatcode\/codeatcs": "^1.0",

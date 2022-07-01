@@ -36,7 +36,7 @@ will generate everything without the need of manual copy&paste way or searching 
 | [WPBP/Template](https://github.com/WPBP/Template)  | [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/) |
 | [WPBP/Debug](https://github.com/WPBP/Debug)  | [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk) |
 | [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)  | [wpdesk/wp-notice](https://gitlab.com/wpdesk/wp-notice/-/tree/master) |
-|                 | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me) |
+| [WPBP/Page-Madness-Detector](https://github.com/WPBP/Page-Madness-Detector)   | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me) |
 |                 | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember) |
 |                 | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions) |
 |                 | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/) |

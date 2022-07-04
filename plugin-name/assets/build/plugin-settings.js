@@ -1,1 +1,0 @@
-(()=>{"use strict";var s;(s=jQuery)((()=>{s("#tabs").tabs()}))})();

@@ -9,7 +9,7 @@ parameters:
     checkMissingIterableValueType: false
     paths:
         - ./
-    excludes_analyse:
+    excludePaths:
         - vendor/
         - tests/
     bootstrapFiles:

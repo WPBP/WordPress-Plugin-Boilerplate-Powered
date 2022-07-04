@@ -75,20 +75,32 @@ class Example extends Base {
 		// Only an example with 2 parameters
 		\register_rest_route(
 			'wp/v2',
-			'/calc',
+			'calc',
 			array(
 				'methods'  => \WP_REST_Server::READABLE,
 				'callback' => array( $this, 'sum' ),
 				'args'     => array(
 					'first'  => array(
-						'default'           => 10,
+						'default'           => 0,
 						'sanitize_callback' => 'absint',
 					),
 					'second' => array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'absint',
 					),
 				),
+			)
+		);
+		\register_rest_route(
+			'wp/v2', 'demo/example', array(
+				'methods' => 'POST',
+				'callback' => array( $this, 'demo_example' ),
+				'args' => array(
+					'nonce' => array(
+						'required' => true,
+					)
+				),
+				'permission_callback' => '__return_true'
 			)
 		);
 	}
@@ -133,11 +145,43 @@ class Example extends Base {
 	 * Examples
 	 *
 	 * @since {{plugin_version}}
-	 * @param array $data Values.
+	 * @param \WP_REST_Request $request Values.
 	 * @return array
 	 */
-	public function sum( array $data ) {
-		return array( 'result' => $data[ 'first' ] + $data[ 'second' ] );
+	public function sum( \WP_REST_Request $request ) {
+		if ( !isset( $request[ 'first' ], $request[ 'second' ] ) ) {
+			return array( 'result' => 0 );
+		}
+
+		return array( 'result' => $request[ 'first' ] + $request[ 'second' ] );
+	}
+
+	/**
+	 * Examples
+	 *
+	 * @since {{plugin_version}}
+	 * @param \WP_REST_Request $request Values.
+	 * @return \WP_REST_Response|\WP_REST_Request
+	 */
+	public function demo_example( \WP_REST_Request $request ){
+		// $request is an array with various parameters
+		if ( !\wp_verify_nonce( strval( $request['nonce'] ), 'demo_example')  ) {
+			$response = \rest_ensure_response( 'Wrong nonce' );
+			if ( \is_wp_error( $response ) ) {
+				return $request;
+			}
+
+			$response->set_status( 500 );
+			return $response;
+		}
+
+		$response = \rest_ensure_response( 'Something here' );
+		if ( \is_wp_error( $response ) ) {
+			return $request;
+		}
+
+		$response->set_status( 500 );
+		return $response;
 	}
 
 }

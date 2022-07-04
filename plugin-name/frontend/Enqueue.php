@@ -76,9 +76,11 @@ class Enqueue extends Base {
 	public static function enqueue_js_vars() {
 		\wp_localize_script(
 			PN_TEXTDOMAIN . '-plugin-script',
-			'pn_js_vars',
+			'example_demo',
 			array(
-				'alert' => \__( 'Hey! You have clicked the button!', PN_TEXTDOMAIN ),
+				'alert' => \__( 'Error!', PN_TEXTDOMAIN ),
+				'nonce'  => wp_create_nonce( 'demo_example' ),
+				'wp_rest' => wp_create_nonce( 'wp_rest' ),
 			)
 		);
 	}

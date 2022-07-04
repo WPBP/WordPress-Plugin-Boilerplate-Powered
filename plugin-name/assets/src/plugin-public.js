@@ -4,6 +4,7 @@ import "./styles/public.scss";
 window.onload = () => {
 	// Write in console log the PHP value passed in enqueue_js_vars in frontend/Enqueue.php
 	( () => {
+		// WPBPGen{{#if system_rest}}
 		jQuery('#example-demo-button').on('click', function() {
 			jQuery.ajax({
 				method: "POST",
@@ -21,6 +22,7 @@ window.onload = () => {
 				alert( window.example_demo.alert );
 			});
 		});
+		// {{/if}}
 	} )();
 
 	// Place your public-facing JavaScript here

@@ -2,6 +2,7 @@
 
 * Enhancement: wp-scripts integration
 * Enhancement: Custom block example in React.js
+* Enhancement: JS example with REST and nonce
 * Removed: Grunt replaced by Webpack
 
 ## 3.2.7

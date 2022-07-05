@@ -42,6 +42,7 @@ will generate everything without the need of manual copy&paste way or searching 
 |                 | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/) |
 |                 | [AyeCode/wp-super-duper](https://github.com/AyeCode/wp-super-duper) |
 |                 | [decodelabs/tagged](https://github.com/decodelabs/tagged) |
+|                 | [inpsyde/assets](https://github.com/inpsyde/assets) |
 
 ### Available Snippets
 

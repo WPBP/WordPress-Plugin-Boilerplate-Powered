@@ -1,4 +1,5 @@
 import "./styles/admin.scss";
+import $ from 'jquery';
 
 ( ( $ ) => {
 	"use strict";

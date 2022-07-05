@@ -13,6 +13,10 @@
 namespace Plugin_Name\Backend;
 
 use Plugin_Name\Engine\Base;
+use Inpsyde\Assets\AssetManager;
+use Inpsyde\Assets\Asset;
+use Inpsyde\Assets\Script;
+use Inpsyde\Assets\Style;
 
 /**
  * This class contain the Enqueue stuff for the backend
@@ -29,35 +33,67 @@ class Enqueue extends Base {
 			return;
 		}
 
-		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
-		// Load admin style sheet and JavaScript.
-		\add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		// {{/if}}
-		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
-		\add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-		// {{/if}}
+		\add_action( AssetManager::ACTION_SETUP, array( $this, 'enqueue_assets' ) );
 	}
 
+	/**
+	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
+	 *
+	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
+	 *
+	 * @return void
+	 */
+	public function enqueue_assets( AssetManager $asset_manager ) {
+		// Load admin style sheet and JavaScript.
+		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
+		$assets = $this->enqueue_admin_styles();
+		if ( !empty( $assets ) ) {
+			foreach ( $assets as $asset ) {
+				$asset_manager->register( $asset );
+			}
+		}
+		// {{/if}}
+
+		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
+		$assets = $this->enqueue_admin_scripts();
+		if ( !empty( $assets ) ) {
+			foreach ( $assets as $asset ) {
+				$asset_manager->register( $asset );
+			}
+		}
+		// {{/if}}
+	}
 
 	// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 	/**
 	 * Register and enqueue admin-specific style sheet.
 	 *
 	 * @since {{plugin_version}}
-	 * @return void
+	 * @return array
 	 */
 	public function enqueue_admin_styles() {
 		$admin_page = \get_current_screen();
+		$styles = array();
 
 		// WPBPGen{{#if admin-assets_settings-css}}
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-			\wp_enqueue_style( PN_TEXTDOMAIN . '-settings-styles', \plugins_url( 'assets/build/plugin-settings.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+			$styles[0] = new Style( PN_TEXTDOMAIN . '-settings-style', \plugins_url( 'assets/build/plugin-settings.css', PN_PLUGIN_ABSOLUTE ) );
+			$styles[0]
+				->forLocation( Asset::BACKEND )
+				->withVersion( PN_VERSION );
+			$styles[0]->withDependencies( 'dashicons' );
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-css}}
-		\wp_enqueue_style( PN_TEXTDOMAIN . '-admin-styles', \plugins_url( 'assets/build/plugin-admin.css', PN_PLUGIN_ABSOLUTE ), array( 'dashicons' ), PN_VERSION );
+		$styles[1] = new Style( PN_TEXTDOMAIN . '-admin-style', \plugins_url( 'assets/build/plugin-admin.css', PN_PLUGIN_ABSOLUTE ) );
+		$styles[1]
+			->forLocation( Asset::BACKEND )
+			->withVersion( PN_VERSION );
+		$styles[1]->withDependencies( 'dashicons' );
 		// {{/if}}
+
+		return $styles;
 	}
 
 	// {{/if}}
@@ -66,24 +102,35 @@ class Enqueue extends Base {
 	 * Register and enqueue admin-specific JavaScript.
 	 *
 	 * @since
-	 * @return void
+	 * @return array
 	 */
 	public function enqueue_admin_scripts() {
 		// WPBPGen{{#if admin-assets_settings-js}}
 		$admin_page = \get_current_screen();
+		$scripts = array();
 
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
-			$script_dependencies = include PN_PLUGIN_ROOT . 'assets/build/plugin-settings.asset.php';
-			\wp_enqueue_script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery', 'jquery-ui-tabs' ) ), PN_VERSION, false );
+			$scripts[0] = new Script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ) );
+			$scripts[0]
+				->forLocation( Asset::BACKEND )
+				->withVersion( PN_VERSION );
+			$scripts[0]->withDependencies( 'jquery-ui-tabs' );
+			$scripts[0]->canEnqueue(function(): bool {
+				return \current_user_can( 'manage_options' );
+			});
 		}
 
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-js}}
-		$script_dependencies = include PN_PLUGIN_ROOT . 'assets/build/plugin-admin.asset.php';
-		\wp_enqueue_script( PN_TEXTDOMAIN . '-admin-script', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ), \array_merge( $script_dependencies['dependencies'], array( 'jquery' ) ), PN_VERSION, false );
+		$scripts[1] = new Script( PN_TEXTDOMAIN . '-settings-admin', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ) );
+		$scripts[1]
+			->forLocation( Asset::BACKEND )
+			->withVersion( PN_VERSION );
+		$scripts[1]->dependencies();
 		// {{/if}}
-	}
 
+		return $scripts;
+	}
 	// {{/if}}
 
 }

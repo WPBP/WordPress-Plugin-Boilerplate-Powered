@@ -3,6 +3,7 @@
 * Enhancement: wp-scripts integration
 * Enhancement: Custom block example in React.js
 * Enhancement: JS example with REST and nonce
+* Enhancement: Page-Madness-Detector and Assets package added
 * Removed: Grunt replaced by Webpack
 
 ## 3.2.7

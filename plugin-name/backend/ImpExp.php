@@ -70,7 +70,7 @@ class ImpExp extends Base {
 
 		echo \wp_json_encode( $settings, JSON_PRETTY_PRINT );
 
-		exit;
+		exit; // phpcs:ignore
 	}
 
 	/**

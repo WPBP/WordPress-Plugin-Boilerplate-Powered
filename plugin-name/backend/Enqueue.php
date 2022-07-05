@@ -13,10 +13,12 @@
 namespace Plugin_Name\Backend;
 
 use Plugin_Name\Engine\Base;
+// WPBPGen{{#if libraries_inpsyde__assets}}
 use Inpsyde\Assets\AssetManager;
 use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
+// {{/if}}
 
 /**
  * This class contain the Enqueue stuff for the backend
@@ -33,9 +35,12 @@ class Enqueue extends Base {
 			return;
 		}
 
+		// WPBPGen{{#if libraries_inpsyde__assets}}
 		\add_action( AssetManager::ACTION_SETUP, array( $this, 'enqueue_assets' ) );
+		// {{/if}}
 	}
 
+	// WPBPGen{{#if libraries_inpsyde__assets}}
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
 	 *
@@ -63,6 +68,7 @@ class Enqueue extends Base {
 		}
 		// {{/if}}
 	}
+	// {{/if}}
 
 	// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 	/**
@@ -75,7 +81,7 @@ class Enqueue extends Base {
 		$admin_page = \get_current_screen();
 		$styles = array();
 
-		// WPBPGen{{#if admin-assets_settings-css}}
+		// WPBPGen{{#if admin-assets_settings-css && libraries_inpsyde__assets}}
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
 			$styles[0] = new Style( PN_TEXTDOMAIN . '-settings-style', \plugins_url( 'assets/build/plugin-settings.css', PN_PLUGIN_ABSOLUTE ) );
 			$styles[0]
@@ -85,7 +91,7 @@ class Enqueue extends Base {
 		}
 
 		// {{/if}}
-		// WPBPGen{{#if admin-assets_admin-css}}
+		// WPBPGen{{#if admin-assets_admin-css && libraries_inpsyde__assets}}
 		$styles[1] = new Style( PN_TEXTDOMAIN . '-admin-style', \plugins_url( 'assets/build/plugin-admin.css', PN_PLUGIN_ABSOLUTE ) );
 		$styles[1]
 			->forLocation( Asset::BACKEND )
@@ -105,7 +111,7 @@ class Enqueue extends Base {
 	 * @return array
 	 */
 	public function enqueue_admin_scripts() {
-		// WPBPGen{{#if admin-assets_settings-js}}
+		// WPBPGen{{#if admin-assets_settings-js && libraries_inpsyde__assets}}
 		$admin_page = \get_current_screen();
 		$scripts = array();
 
@@ -121,7 +127,7 @@ class Enqueue extends Base {
 		}
 
 		// {{/if}}
-		// WPBPGen{{#if admin-assets_admin-js}}
+		// WPBPGen{{#if admin-assets_admin-js && libraries_inpsyde__assets}}
 		$scripts[1] = new Script( PN_TEXTDOMAIN . '-settings-admin', \plugins_url( 'assets/build/plugin-admin.js', PN_PLUGIN_ABSOLUTE ) );
 		$scripts[1]
 			->forLocation( Asset::BACKEND )

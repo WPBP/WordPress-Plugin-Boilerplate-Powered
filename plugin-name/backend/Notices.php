@@ -33,7 +33,7 @@ class Notices extends Base {
 		\wpdesk_wp_notice( \__( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
 		// {{/if}}
 
-		// WPBPGen{{#if libraries_wpbp__page-madness-detector}}
+		// WPBPGen{{#if libraries_wpbp__page-madness-detector && libraries_wpdesk__wp-notice}}
 		$builder = new \Page_Madness_Detector();
 
 		if ( $builder->has_entrophy() ) {

@@ -12,10 +12,12 @@
 namespace Plugin_Name\Frontend;
 
 use Plugin_Name\Engine\Base;
+// WPBPGen{{#if libraries_inpsyde__assets}}
 use Inpsyde\Assets\AssetManager;
 use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
+// {{/if}}
 
 /**
  * Enqueue stuff on the frontend
@@ -30,9 +32,11 @@ class Enqueue extends Base {
 	public function initialize() {
 		parent::initialize();
 
+		// WPBPGen{{#if libraries_inpsyde__assets}}
 		\add_action( AssetManager::ACTION_SETUP, array( $this, 'enqueue_assets' ) );
 	}
 
+	// WPBPGen{{#if libraries_inpsyde__assets}}
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
 	 *
@@ -60,6 +64,7 @@ class Enqueue extends Base {
 		}
 		// {{/if}}
 	}
+	// {{/if}}
 
 	// WPBPGen{{#if public-assets_css}}
 	/**
@@ -69,12 +74,14 @@ class Enqueue extends Base {
 	 * @return array
 	 */
 	public function enqueue_styles() {
+		// WPBPGen{{#if libraries_inpsyde__assets}}
 		$styles[0] = new Style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ) );
 		$styles[0]
 			->forLocation( Asset::FRONTEND )
 			->useAsyncFilter()
 			->withVersion( PN_VERSION );
 		$styles[0]->dependencies();
+		// {{/if}}
 
 		return $styles;
 	}
@@ -89,6 +96,7 @@ class Enqueue extends Base {
 	 * @return array
 	 */
 	public static function enqueue_scripts() {
+		// WPBPGen{{#if libraries_inpsyde__assets}}
 		$scripts[0] = new Script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ));
 		$scripts[0]
 			->forLocation( Asset::FRONTEND )
@@ -106,6 +114,7 @@ class Enqueue extends Base {
 		);
 
 		return $scripts;
+		// {{/if}}
 		// {{/if}}
 	}
 

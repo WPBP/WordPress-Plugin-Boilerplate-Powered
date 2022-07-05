@@ -34,6 +34,7 @@ class Enqueue extends Base {
 
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		\add_action( AssetManager::ACTION_SETUP, array( $this, 'enqueue_assets' ) );
+		// {{/if}}
 	}
 
 	// WPBPGen{{#if libraries_inpsyde__assets}}

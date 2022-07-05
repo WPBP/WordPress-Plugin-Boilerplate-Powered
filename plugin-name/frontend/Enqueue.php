@@ -72,7 +72,7 @@ class Enqueue extends Base {
 		$styles[0] = new Style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ) );
 		$styles[0]
 			->forLocation( Asset::FRONTEND )
-		->useAsyncFilter()
+			->useAsyncFilter()
 			->withVersion( PN_VERSION );
 		$styles[0]->dependencies();
 

@@ -34,13 +34,12 @@ class Enqueue extends Base {
 		if ( !parent::initialize() ) {
 			return;
 		}
-
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		\add_action( AssetManager::ACTION_SETUP, array( $this, 'enqueue_assets' ) );
 		// {{/if}}
 	}
-
 	// WPBPGen{{#if libraries_inpsyde__assets}}
+
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
 	 *
@@ -81,6 +80,7 @@ class Enqueue extends Base {
 		$admin_page = \get_current_screen();
 		$styles = array();
 
+		// WPBPGen{{#if libraries_inpsyde__assets}}
 		// WPBPGen{{#if admin-assets_settings-css && libraries_inpsyde__assets}}
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
 			$styles[0] = new Style( PN_TEXTDOMAIN . '-settings-style', \plugins_url( 'assets/build/plugin-settings.css', PN_PLUGIN_ABSOLUTE ) );
@@ -98,6 +98,7 @@ class Enqueue extends Base {
 			->withVersion( PN_VERSION );
 		$styles[1]->withDependencies( 'dashicons' );
 		// {{/if}}
+		// {{/if}}
 
 		return $styles;
 	}
@@ -111,9 +112,10 @@ class Enqueue extends Base {
 	 * @return array
 	 */
 	public function enqueue_admin_scripts() {
-		// WPBPGen{{#if admin-assets_settings-js && libraries_inpsyde__assets}}
 		$admin_page = \get_current_screen();
 		$scripts = array();
+		// WPBPGen{{#if libraries_inpsyde__assets}}
+		// WPBPGen{{#if admin-assets_settings-js && libraries_inpsyde__assets}}
 
 		if ( !\is_null( $admin_page ) && 'toplevel_page_plugin-name' === $admin_page->id ) {
 			$scripts[0] = new Script( PN_TEXTDOMAIN . '-settings-script', \plugins_url( 'assets/build/plugin-settings.js', PN_PLUGIN_ABSOLUTE ) );
@@ -133,6 +135,7 @@ class Enqueue extends Base {
 			->forLocation( Asset::BACKEND )
 			->withVersion( PN_VERSION );
 		$scripts[1]->dependencies();
+		// {{/if}}
 		// {{/if}}
 
 		return $scripts;

@@ -75,6 +75,7 @@ class Enqueue extends Base {
 	 * @return array
 	 */
 	public function enqueue_styles() {
+		$styles = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		$styles[0] = new Style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ) );
 		$styles[0]
@@ -97,6 +98,7 @@ class Enqueue extends Base {
 	 * @return array
 	 */
 	public static function enqueue_scripts() {
+		$scripts = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		$scripts[0] = new Script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ));
 		$scripts[0]
@@ -114,9 +116,9 @@ class Enqueue extends Base {
 			)
 		);
 
+		// {{/if}}
+		// {{/if}}
 		return $scripts;
-		// {{/if}}
-		// {{/if}}
 	}
 
 	// {{/if}}

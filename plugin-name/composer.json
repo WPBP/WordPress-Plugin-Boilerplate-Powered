@@ -18,7 +18,7 @@
         "composer\/installers": "1.x",
         "decodelabs\/tagged": "^0.11.9",
         "freemius\/wordpress-sdk": "2.4.*",
-        "inpsyde/assets": "^2.8",
+        "inpsyde\/assets": "^2.8",
         "inpsyde\/wp-context": "1.3.*",
         "johnbillion\/extended-cpts": "4.5.*",
         "julien731\/wp-review-me": "dev-develop",

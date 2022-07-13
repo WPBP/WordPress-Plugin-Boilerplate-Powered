@@ -11,7 +11,7 @@ on:
       - "master"
 
 env:
-  PHP_EXTENSIONS: "mbstring"
+  PHP_EXTENSIONS: "mbstring, pdo_mysql"
 
 jobs:
   coding-standards:
@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "7.4"
 
         dependencies:
           - "highest"
@@ -80,7 +80,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "7.4"
 
         dependencies:
           - "highest"
@@ -147,10 +147,21 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "7.4"
 
         dependencies:
           - "highest"
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: test
+          MYSQL_DATABASE: wordpress_unit_tests
+        ports:
+          - 3306/tcp
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - name: "Checkout"

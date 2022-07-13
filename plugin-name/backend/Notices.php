@@ -34,7 +34,7 @@ class Notices extends Base {
 		// {{/if}}
 
 		// WPBPGen{{#if libraries_wpbp__page-madness-detector && libraries_wpdesk__wp-notice}}
-		$builder = new \Page_Madness_Detector();
+		$builder = new \Page_Madness_Detector(); // phpcs:ignore
 
 		if ( $builder->has_entrophy() ) {
 			\wpdesk_wp_notice( \__( 'A Page Builder/Visual Composer was found on this website!', PN_TEXTDOMAIN ), 'error', true );

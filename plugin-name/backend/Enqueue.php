@@ -14,8 +14,8 @@ namespace Plugin_Name\Backend;
 
 use Plugin_Name\Engine\Base;
 // WPBPGen{{#if libraries_inpsyde__assets}}
-use Inpsyde\Assets\AssetManager;
 use Inpsyde\Assets\Asset;
+use Inpsyde\Assets\AssetManager;
 use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
 // {{/if}}
@@ -34,6 +34,7 @@ class Enqueue extends Base {
 		if ( !parent::initialize() ) {
 			return;
 		}
+
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		\add_action( AssetManager::ACTION_SETUP, array( $this, 'enqueue_assets' ) );
 		// {{/if}}
@@ -42,7 +43,6 @@ class Enqueue extends Base {
 
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
-	 *
 	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
 	 *
 	 * @return void
@@ -56,8 +56,8 @@ class Enqueue extends Base {
 				$asset_manager->register( $asset );
 			}
 		}
-		// {{/if}}
 
+		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 		$assets = $this->enqueue_admin_scripts();
 		if ( !empty( $assets ) ) {
@@ -65,6 +65,7 @@ class Enqueue extends Base {
 				$asset_manager->register( $asset );
 			}
 		}
+
 		// {{/if}}
 	}
 	// {{/if}}
@@ -78,7 +79,7 @@ class Enqueue extends Base {
 	 */
 	public function enqueue_admin_styles() {
 		$admin_page = \get_current_screen();
-		$styles = array();
+		$styles     = array();
 
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		// WPBPGen{{#if admin-assets_settings-css && libraries_inpsyde__assets}}
@@ -113,7 +114,7 @@ class Enqueue extends Base {
 	 */
 	public function enqueue_admin_scripts() {
 		$admin_page = \get_current_screen();
-		$scripts = array();
+		$scripts    = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		// WPBPGen{{#if admin-assets_settings-js && libraries_inpsyde__assets}}
 

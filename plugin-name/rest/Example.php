@@ -92,10 +92,12 @@ class Example extends Base {
 			)
 		);
 		\register_rest_route(
-			'wp/v2', 'demo/example', array(
-				'methods' => 'POST',
+			'wp/v2',
+			'demo/example',
+			array(
+				'methods'  => 'POST',
 				'callback' => array( $this, 'demo_example' ),
-				'args' => array(
+				'args'     => array(
 					'nonce' => array(
 						'required' => true,
 					)
@@ -176,11 +178,13 @@ class Example extends Base {
 		}
 
 		$response = \rest_ensure_response( 'Something here' );
+
 		if ( \is_wp_error( $response ) ) {
 			return $request;
 		}
 
 		$response->set_status( 500 );
+
 		return $response;
 	}
 

@@ -186,7 +186,7 @@ jobs:
 
       - name: "Run codeception"
         working-directory: "./plugin-name"
-        run: "pwd && vendor/bin/codecept run"
+        run: "sed '1 c\WP_ROOT\=/home/runner/work/WordPress-Plugin-Boilerplate-Powered/WordPress-Plugin-Boilerplate-Powered/plugin-name' ./.env && cat .env && vendor/bin/codecept run"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.0.0"

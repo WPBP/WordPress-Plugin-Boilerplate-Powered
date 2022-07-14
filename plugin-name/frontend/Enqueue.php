@@ -40,8 +40,8 @@ class Enqueue extends Base {
 	// WPBPGen{{#if libraries_inpsyde__assets}}
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
-	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
 	 *
+	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
 	 * @return void
 	 */
 	public function enqueue_assets( AssetManager $asset_manager ) {
@@ -64,6 +64,7 @@ class Enqueue extends Base {
 				$asset_manager->register( $asset );
 			}
 		}
+
 		// {{/if}}
 	}
 	// {{/if}}
@@ -101,7 +102,7 @@ class Enqueue extends Base {
 	public static function enqueue_scripts() {
 		$scripts = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
-		$scripts[0] = new Script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ));
+		$scripts[0] = new Script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ) );
 		$scripts[0]
 			->forLocation( Asset::FRONTEND )
 			->useAsyncFilter()
@@ -122,5 +123,6 @@ class Enqueue extends Base {
 
 		return $scripts;
 	}
+
 	// {{/if}}
 }

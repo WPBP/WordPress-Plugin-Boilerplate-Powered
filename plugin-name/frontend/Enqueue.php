@@ -12,8 +12,8 @@
 namespace Plugin_Name\Frontend;
 
 // WPBPGen{{#if libraries_inpsyde__assets}}
-use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\AssetManager;
+use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
 // {{/if}}

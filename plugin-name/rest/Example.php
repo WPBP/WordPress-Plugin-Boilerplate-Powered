@@ -95,14 +95,14 @@ class Example extends Base {
 			'wp/v2',
 			'demo/example',
 			array(
-				'methods'          => 'POST',
-				'callback'         => array( $this, 'demo_example' ),
-				'args'             => array(
-					'nonce'        => array(
-						'required' => true,
+				'methods'             => 'POST',
+				'callback'            => array( $this, 'demo_example' ),
+				'permission_callback' => '__return_true',
+				'args'                => array(
+					'nonce'           => array(
+						'required'    => true,
 					),
 				),
-				'permission_callback' => '__return_true',
 			)
 		);
 	}

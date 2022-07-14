@@ -185,7 +185,7 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=${GITHUB_WORKSPACE}%" ./.env
-          sed -i "2s%.*%WP_URL='http://localhost:3020%'" ./.env
+          sed -i "2s%.*%WP_URL=http://localhost:3020%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1%" ./.env
           cat ./.env

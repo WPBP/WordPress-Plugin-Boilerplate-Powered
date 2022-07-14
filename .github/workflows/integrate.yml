@@ -177,7 +177,7 @@ jobs:
         uses: "mirromutth/mysql-action@v1.1"
         with:
           collation server: utf8mb4_unicode_ci
-          mysql version: 5.9
+          mysql version: 8.0
           mysql database: wordpress_unit_tests
           mysql root password: root
 

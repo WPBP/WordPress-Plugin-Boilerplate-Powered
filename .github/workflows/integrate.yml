@@ -141,6 +141,7 @@ jobs:
 
   codepcetion-tests:
     name: "Codeception tests"
+    timeout-minutes: 15
 
     runs-on: "ubuntu-latest"
 
@@ -173,6 +174,13 @@ jobs:
         if: "matrix.dependencies == 'highest'"
         run: "composer update --no-interaction --no-progress --no-suggest"
 
+      - name: "Cache dependencies installed with composer"
+        uses: "actions/cache@v2.0.0"
+        with:
+          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
+          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
+
       - name: "Set up MySQL"
         uses: "mirromutth/mysql-action@v1.1"
         with:
@@ -189,12 +197,4 @@ jobs:
           sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1%" ./.env
           cat ./.env
-          nohup php -S localhost:3020
-          ./vendor/bin/codecept run wpunit
-
-      - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v2.0.0"
-        with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
-          key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
-          restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
+          nohup php -S localhost:3020 && ./vendor/bin/codecept run wpunit

@@ -187,6 +187,7 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=${GITHUB_WORKSPACE}%" ./.env
+          sed -i "4s%.*%DB_HOST=127.0.0.1%" ./.env
           ./vendor/bin/codecept run
 
       - name: "Cache dependencies installed with composer"

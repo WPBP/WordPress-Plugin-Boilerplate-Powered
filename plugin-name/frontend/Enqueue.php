@@ -48,6 +48,7 @@ class Enqueue extends Base {
 		// Load public-facing style sheet and JavaScript.
 		// WPBPGen{{#if public-assets_css}}
 		$assets = $this->enqueue_styles();
+
 		if ( !empty( $assets ) ) {
 			foreach ( $assets as $asset ) {
 				$asset_manager->register( $asset );
@@ -57,6 +58,7 @@ class Enqueue extends Base {
 		// {{/if}}
 		// WPBPGen{{#if public-assets_js}}
 		$assets = $this->enqueue_scripts();
+
 		if ( !empty( $assets ) ) {
 			foreach ( $assets as $asset ) {
 				$asset_manager->register( $asset );
@@ -109,14 +111,15 @@ class Enqueue extends Base {
 		$scripts[0]->withLocalize(
 			'example_demo',
 			array(
-				'alert' => \__( 'Error!', PN_TEXTDOMAIN ),
-				'nonce'  => wp_create_nonce( 'demo_example' ),
-				'wp_rest' => wp_create_nonce( 'wp_rest' ),
+				'alert'   => \__( 'Error!', PN_TEXTDOMAIN ),
+				'nonce'   => \wp_create_nonce( 'demo_example' ),
+				'wp_rest' => \wp_create_nonce( 'wp_rest' ),
 			)
 		);
 
 		// {{/if}}
 		// {{/if}}
+
 		return $scripts;
 	}
 	// {{/if}}

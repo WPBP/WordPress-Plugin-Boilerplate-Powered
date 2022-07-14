@@ -14,8 +14,8 @@ namespace Plugin_Name\Backend;
 
 use Plugin_Name\Engine\Base;
 // WPBPGen{{#if libraries_inpsyde__assets}}
-use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\AssetManager;
+use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
 // {{/if}}
@@ -43,14 +43,15 @@ class Enqueue extends Base {
 
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
-	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
 	 *
+	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
 	 * @return void
 	 */
 	public function enqueue_assets( AssetManager $asset_manager ) {
 		// Load admin style sheet and JavaScript.
 		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-css && admin-assets_admin-css}}
 		$assets = $this->enqueue_admin_styles();
+
 		if ( !empty( $assets ) ) {
 			foreach ( $assets as $asset ) {
 				$asset_manager->register( $asset );
@@ -60,6 +61,7 @@ class Enqueue extends Base {
 		// {{/if}}
 		// WPBPGen{{#if admin-assets_admin-page && admin-assets_settings-js && admin-assets_admin-js}}
 		$assets = $this->enqueue_admin_scripts();
+
 		if ( !empty( $assets ) ) {
 			foreach ( $assets as $asset ) {
 				$asset_manager->register( $asset );
@@ -109,7 +111,7 @@ class Enqueue extends Base {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since
+	 * @since {{plugin_version}}
 	 * @return array
 	 */
 	public function enqueue_admin_scripts() {

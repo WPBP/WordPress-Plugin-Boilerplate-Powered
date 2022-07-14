@@ -95,9 +95,9 @@ class Example extends Base {
 			'wp/v2',
 			'demo/example',
 			array(
-				'methods'  => 'POST',
-				'callback' => array( $this, 'demo_example' ),
-				'args'     => array(
+				'methods'   => 'POST',
+				'callback'  => array( $this, 'demo_example' ),
+				'args'      => array(
 					'nonce' => array(
 						'required' => true,
 					)
@@ -169,11 +169,13 @@ class Example extends Base {
 		// $request is an array with various parameters
 		if ( !\wp_verify_nonce( strval( $request['nonce'] ), 'demo_example')  ) {
 			$response = \rest_ensure_response( 'Wrong nonce' );
+
 			if ( \is_wp_error( $response ) ) {
 				return $request;
 			}
 
 			$response->set_status( 500 );
+
 			return $response;
 		}
 

@@ -96,10 +96,10 @@ class Example extends Base {
 			'demo/example',
 			array(
 				'methods'             => 'POST',
-				'callback'            => array( $this, 'demo_example' ),
 				'permission_callback' => '__return_true',
-				'args'                => array(
-					'nonce'           => array(
+				'callback'            => array( $this, 'demo_example' ),
+				'args'                => array (
+					'nonce'           => array (
 						'required'    => true,
 					),
 				),

@@ -187,8 +187,8 @@ jobs:
       - name: "Run codeception"
         working-directory: "./plugin-name"
         run: |
-          - echo ${GITHUB_WORKSPACE}
-          - sed -i '1s%.*%WP_ROOT\=${GITHUB_WORKSPACE}%' ./.env
+          - echo "1s%.*%WP_ROOT\=${GITHUB_WORKSPACE}%"
+          - sed -i "1s%.*%WP_ROOT\=${GITHUB_WORKSPACE}%" ./.env
           - cat ./.env
           - ./vendor/bin/codecept run
 

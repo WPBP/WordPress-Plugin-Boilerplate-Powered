@@ -11,7 +11,7 @@ on:
       - "master"
 
 env:
-  PHP_EXTENSIONS: "mbstring, pdo_mysql"
+  PHP_EXTENSIONS: "mbstring, mysql"
 
 jobs:
   coding-standards:
@@ -156,7 +156,6 @@ jobs:
       mysql:
         image: mysql:latest
         env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
           MYSQL_ROOT_PASSWORD: test
           MYSQL_DATABASE: wordpress_unit_tests
         ports:
@@ -187,9 +186,7 @@ jobs:
       - name: "Run codeception"
         working-directory: "./plugin-name"
         run: |
-          echo "1s%.*%WP_ROOT=${GITHUB_WORKSPACE}%"
           sed -i "1s%.*%WP_ROOT=${GITHUB_WORKSPACE}%" ./.env
-          cat ./.env
           ./vendor/bin/codecept run
 
       - name: "Cache dependencies installed with composer"

@@ -188,7 +188,6 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           - echo "1s%.*%WP_ROOT\=${GITHUB_WORKSPACE}%"
-          - sed -i "1s%.*%WP_ROOT\=${GITHUB_WORKSPACE}%" ./.env
           - cat ./.env
           - ./vendor/bin/codecept run
 

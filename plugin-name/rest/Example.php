@@ -98,9 +98,9 @@ class Example extends Base {
 				'methods'             => 'POST',
 				'permission_callback' => '__return_true',
 				'callback'            => array( $this, 'demo_example' ),
-				'args'                => array (
-					'nonce'           => array (
-						'required'    => true,
+				'args'                => array(
+					'nonce' => array(
+						'required' => true,
 					),
 				),
 			)

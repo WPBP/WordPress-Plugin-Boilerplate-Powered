@@ -152,16 +152,6 @@ jobs:
         dependencies:
           - "highest"
 
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: test
-          MYSQL_DATABASE: wordpress_unit_tests
-        ports:
-          - 3306/tcp
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v2.3.1"
@@ -183,11 +173,23 @@ jobs:
         if: "matrix.dependencies == 'highest'"
         run: "composer update --no-interaction --no-progress --no-suggest"
 
+      - name: "Set up MySQL"
+        uses: "mirromutth/mysql-action@v1.1"
+        with:
+          collation server: utf8mb4_unicode_ci
+          mysql version: 5.9
+          mysql database: wordpress_unit_tests
+          mysql root password: root
+
       - name: "Run codeception"
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=${GITHUB_WORKSPACE}%" ./.env
+          sed -i "2s%.*%WP_URL='http://localhost:3020%'" ./.env
+          sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1%" ./.env
+          cat ./.env
+          nohup php -S localhost:3020
           ./vendor/bin/codecept run
 
       - name: "Cache dependencies installed with composer"

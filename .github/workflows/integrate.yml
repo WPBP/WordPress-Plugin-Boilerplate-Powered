@@ -190,7 +190,7 @@ jobs:
           sed -i "4s%.*%DB_HOST=127.0.0.1%" ./.env
           cat ./.env
           nohup php -S localhost:3020
-          ./vendor/bin/codecept run
+          ./vendor/bin/codecept run wpunit
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.0.0"

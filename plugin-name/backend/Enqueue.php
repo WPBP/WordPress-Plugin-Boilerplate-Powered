@@ -12,13 +12,13 @@
 
 namespace Plugin_Name\Backend;
 
-use Plugin_Name\Engine\Base;
 // WPBPGen{{#if libraries_inpsyde__assets}}
-use Inpsyde\Assets\Script;
 use Inpsyde\Assets\AssetManager;
 use Inpsyde\Assets\Asset;
+use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
 // {{/if}}
+use Plugin_Name\Engine\Base;
 
 /**
  * This class contain the Enqueue stuff for the backend
@@ -127,7 +127,7 @@ class Enqueue extends Base {
 				->withVersion( PN_VERSION );
 			$scripts[0]->withDependencies( 'jquery-ui-tabs' );
 			$scripts[0]->canEnqueue(
-				function()  {
+				function() {
 					return \current_user_can( 'manage_options' );
 				}
 			);

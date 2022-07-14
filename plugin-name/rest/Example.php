@@ -95,14 +95,14 @@ class Example extends Base {
 			'wp/v2',
 			'demo/example',
 			array(
-				'methods'   => 'POST',
-				'callback'  => array( $this, 'demo_example' ),
-				'args'      => array(
-					'nonce'     => array(
+				'methods'          => 'POST',
+				'callback'         => array( $this, 'demo_example' ),
+				'args'             => array(
+					'nonce'        => array(
 						'required' => true,
-					)
+					),
 				),
-				'permission_callback' => '__return_true'
+				'permission_callback' => '__return_true',
 			)
 		);
 	}
@@ -165,9 +165,9 @@ class Example extends Base {
 	 * @param \WP_REST_Request $request Values.
 	 * @return \WP_REST_Response|\WP_REST_Request
 	 */
-	public function demo_example( \WP_REST_Request $request ){
+	public function demo_example( \WP_REST_Request $request ) {
 		// $request is an array with various parameters
-		if ( !\wp_verify_nonce( \strval( $request['nonce'] ), 'demo_example' )  ) {
+		if ( !\wp_verify_nonce( \strval( $request['nonce'] ), 'demo_example' ) ) {
 			$response = \rest_ensure_response( 'Wrong nonce' );
 
 			if ( \is_wp_error( $response ) ) {

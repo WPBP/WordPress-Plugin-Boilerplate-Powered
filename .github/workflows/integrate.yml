@@ -189,7 +189,7 @@ jobs:
         run: |
           - sed -i '1s%.*%WP_ROOT=$GITHUB_WORKSPACE%' ./.env
           - cat ./.env
-          - vendor/bin/codecept run
+          #- ./vendor/bin/codecept run
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.0.0"

@@ -11,13 +11,13 @@
 
 namespace Plugin_Name\Frontend;
 
-use Plugin_Name\Engine\Base;
 // WPBPGen{{#if libraries_inpsyde__assets}}
 use Inpsyde\Assets\Asset;
 use Inpsyde\Assets\AssetManager;
 use Inpsyde\Assets\Script;
 use Inpsyde\Assets\Style;
 // {{/if}}
+use Plugin_Name\Engine\Base;
 
 /**
  * Enqueue stuff on the frontend
@@ -125,4 +125,5 @@ class Enqueue extends Base {
 	}
 
 	// {{/if}}
+
 }

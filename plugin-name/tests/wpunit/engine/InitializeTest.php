@@ -8,18 +8,18 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
-	wp_set_current_user(0);
-	wp_logout();
-	wp_safe_redirect(wp_login_url());
+		wp_set_current_user(0);
+		wp_logout();
+		wp_safe_redirect(wp_login_url());
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 	}
 

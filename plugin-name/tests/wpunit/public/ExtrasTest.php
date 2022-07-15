@@ -8,7 +8,7 @@ class ExtrasTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
@@ -17,7 +17,7 @@ class ExtrasTest extends \Codeception\TestCase\WPTestCase {
 		// FunctionMocker::setUp();
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 		// FunctionMocker::tearDown();
 	}

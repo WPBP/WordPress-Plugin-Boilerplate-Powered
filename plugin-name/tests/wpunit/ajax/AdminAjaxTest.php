@@ -18,7 +18,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		$this->_setRole( 'administrator' );
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 	}
 

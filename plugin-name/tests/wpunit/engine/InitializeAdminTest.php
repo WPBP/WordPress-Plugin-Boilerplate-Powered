@@ -8,18 +8,18 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
-	$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 		set_current_screen( 'edit.php' );
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 	}
 

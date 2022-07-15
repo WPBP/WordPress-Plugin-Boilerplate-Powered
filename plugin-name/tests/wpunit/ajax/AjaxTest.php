@@ -16,7 +16,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 	}
 

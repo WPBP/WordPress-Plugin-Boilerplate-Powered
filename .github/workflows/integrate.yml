@@ -189,11 +189,28 @@ jobs:
           mysql database: wordpress_unit_tests
           mysql root password: root
 
+      - name: "Set up WordPress"
+        run: |
+          mkdir -p /tmp/WP
+          cd /tmp/WP
+          wp config create --dbname="wordpress_unit_tests" --dbuser="root" --dbpass="test" --dbhost="127.0.0.1" --dbprefix="wp_full_"
+          wp core install --url="localhost:3020" --base="/" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
+          wp rewrite structure '/%postname%/' --hard
+          ln -s ${GITHUB_WORKSPACE} /tmp/WP/wp-content/plugins/plugin-name
+          ls /tmp/WP/wp-content/plugins
+
+      - name: "RUn WebServer"
+        run: |
+          cd /tmp/WP
+          php -S localhost:3020
+
       - name: "Run codeception"
         working-directory: "./plugin-name"
         run: |
-          sed -i "1s%.*%WP_ROOT=${GITHUB_WORKSPACE}%" ./.env
+          sed -i "1s%.*%WP_ROOT=/tmp/WP/" ./.env
           sed -i "2s%.*%WP_URL=http://localhost:3020%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1%" ./.env
-          ./vendor/bin/codecept run wpunit
+          ./vendor/bin/codecept run wpunit -vvv
+          ./vendor/bin/codecept run acceptance -vvv
+          ./vendor/bin/codecept run functional -vvv

@@ -47,6 +47,11 @@ modules:
             adminUsername: admin
             adminPassword: password
             adminUrl: /wp-admin
+            browser: chrome
+            port: 4444
+            capabilities:
+              chromeOptions:
+                args: ["--headless", "--disable-gpu", "--proxy-server='direct://'", "--proxy-bypass-list=*"]
         WPDb:
             dsn: "mysql:host=%DB_HOST%;dbname=%DB_NAME%"
             user: "%DB_USER%"

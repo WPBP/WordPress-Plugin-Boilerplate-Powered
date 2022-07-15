@@ -66,13 +66,16 @@ if ( version_compare( PHP_VERSION, PN_MIN_PHP_VERSION, '<=' ) ) {
 	return;
 }
 
+$plugin_name_libraries = require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
+
+if ( is_bool( $plugin_name_libraries ) ) {
+	return;
+}
+
 require_once PN_PLUGIN_ROOT . 'functions/functions.php';
 // WPBPGen{{#if libraries_wpbp__debug}}
 require_once PN_PLUGIN_ROOT . 'functions/debug.php';
 // {{/if}}
-
-
-$plugin_name_libraries = require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
 
 // Add your new plugin on the wiki: https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugin-made-with-this-Boilerplate
 

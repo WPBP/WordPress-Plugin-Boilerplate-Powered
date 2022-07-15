@@ -216,7 +216,7 @@ jobs:
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
-          sed -i "1s%.*%WP_ROOT=/tmp/WP/" ./.env
+          sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
 
       - name: "Run codeception"
         working-directory: "./plugin-name"

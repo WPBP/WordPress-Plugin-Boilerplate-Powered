@@ -193,6 +193,8 @@ jobs:
         run: |
           mkdir -p /tmp/WP
           cd /tmp/WP
+          curl -s -o /tmp/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x /tmp/wp-cli.phar && mv /tmp/wp-cli.phar /usr/local/bin/wp
           wp config create --dbname="wordpress_unit_tests" --dbuser="root" --dbpass="test" --dbhost="127.0.0.1" --dbprefix="wp_full_"
           wp core install --url="localhost:3020" --base="/" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
           wp rewrite structure '/%postname%/' --hard

@@ -54,7 +54,7 @@ class CMB extends Base {
 				'show_names'   => true, // Show field names on the left
 		)
 			);
-		// WPBPGen{{#if libraries_origgami__cmb2-grid}}
+		// WPBPGen{{#if libraries_mte90__cmb2-grid}}
 		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo ); //phpcs:ignore WordPress.NamingConventions
 		$row      = $cmb2Grid->addRow(); //phpcs:ignore WordPress.NamingConventions
 		// {{/if}}

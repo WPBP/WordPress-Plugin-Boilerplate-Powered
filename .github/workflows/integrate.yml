@@ -187,6 +187,7 @@ jobs:
           collation server: utf8mb4_unicode_ci
           mysql version: 8.0
           mysql database: wordpress_unit_tests
+          container port: 3306
           mysql root password: root
 
       - name: "Set up WordPress"
@@ -202,7 +203,7 @@ jobs:
           ln -s ${GITHUB_WORKSPACE} /tmp/WP/wp-content/plugins/plugin-name
           ls /tmp/WP/wp-content/plugins
 
-      - name: "RUn WebServer"
+      - name: "Run WebServer"
         run: |
           cd /tmp/WP
           php -S localhost:3020

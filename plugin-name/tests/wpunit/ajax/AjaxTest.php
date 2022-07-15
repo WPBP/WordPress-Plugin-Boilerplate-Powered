@@ -20,18 +20,11 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		parent::tearDown();
 	}
 
-	private function make_instance() {
-		return new \Plugin_name\Engine\Initialize();
-	}
-
-
 	/**
 	 * @test
 	 * it should return default output
 	 */
 	public function it_should_return_default_output() {
-		$this->make_instance();
-
 		wp_logout();
 
 		try {

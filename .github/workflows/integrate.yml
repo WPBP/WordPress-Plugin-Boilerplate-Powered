@@ -225,8 +225,8 @@ jobs:
       - name: "Chrome installation"
         run: |
           cd /tmp
-          sudo apt-get install google-chrome-stable xvfb
-          wget https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip > /dev/null 2>&1 &
+          sudo apt-get install google-chrome-stable
+          wget https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip > /dev/null 2>&1
           unzip chromedriver_linux64.zip
           nohup ./chromedriver &
 

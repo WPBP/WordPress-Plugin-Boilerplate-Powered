@@ -207,12 +207,11 @@ jobs:
           wp core install --url="localhost:3020" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
           wp rewrite structure '/%postname%/' --hard
           ln -s ${GITHUB_WORKSPACE} /tmp/WP/wp-content/plugins/plugin-name
-          ls /tmp/WP/wp-content/plugins
 
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          php -S localhost:3020
+          nohup php -S localhost:3020 > /dev/null 2>&1 &
 
       - name: "Run codeception"
         working-directory: "./plugin-name"

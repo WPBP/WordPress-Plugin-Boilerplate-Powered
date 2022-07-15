@@ -16,6 +16,7 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
+		define('WP_ADMIN', true);
 		set_current_screen( 'edit.php' );
 	}
 

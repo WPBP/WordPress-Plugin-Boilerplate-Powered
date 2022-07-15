@@ -23,7 +23,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	}
 
 	private function make_instance() {
-		return new \Plugin_name\Engine\Initialize();
+		return new \Plugin_Name\Engine\Initialize();
 	}
 
 	/**

@@ -23,7 +23,7 @@ class ExtrasTest extends \Codeception\TestCase\WPTestCase {
 	}
 
 	private function make_instance() {
-		return new \Plugin_name\Frontend\Extras\Body_Class();
+		return new \Plugin_Name\Frontend\Extras\Body_Class();
 	}
 
 	/**

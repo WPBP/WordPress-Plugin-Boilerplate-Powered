@@ -181,6 +181,14 @@ jobs:
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
+      - name: "Chrome installation"
+        run: |
+          cd /tmp
+          sudo apt-get install google-chrome-stable
+          wget https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip > /dev/null 2>&1
+          unzip chromedriver_linux64.zip
+          nohup ./chromedriver --port=4444 &
+
       - name: "Set up MySQL"
         uses: "mirromutth/mysql-action@v1.1"
         with:
@@ -221,14 +229,6 @@ jobs:
           sed -i "2s%.*%WP_URL=http:\/\/localhost:3020%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
-
-      - name: "Chrome installation"
-        run: |
-          cd /tmp
-          sudo apt-get install google-chrome-stable
-          wget https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip > /dev/null 2>&1
-          unzip chromedriver_linux64.zip
-          nohup ./chromedriver &
 
       - name: "Run codeception"
         working-directory: "./plugin-name"

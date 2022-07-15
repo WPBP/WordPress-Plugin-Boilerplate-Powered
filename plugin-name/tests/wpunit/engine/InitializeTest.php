@@ -29,8 +29,8 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	public function it_should_be_front() {
 		$classes   = array();
-		$classes[] = 'Plugin_Name\Internals\PostTypes';
-		$classes[] = 'Plugin_Name\Internals\Shortcode';
+		$classes[] = '\Plugin_Name\Internals\PostTypes';
+		$classes[] = '\Plugin_Name\Internals\Shortcode';
 		$classes[] = 'Plugin_Name\Internals\Transient';
 		$classes[] = 'Plugin_Name\Integrations\CMB';
 		$classes[] = 'Plugin_Name\Integrations\Cron';
@@ -42,7 +42,8 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Frontend\Enqueue';
 		$classes[] = 'Plugin_Name\Frontend\extras\Body_Class';
 
-		foreach( $classes as $class ) {
+		new \Plugin_Name\Engine\Initialize();
+		foreach( $classes as $class ) {);
 			$this->assertTrue( class_exists( $class ) );
 		}
 	}

@@ -66,7 +66,10 @@ if ( version_compare( PHP_VERSION, PN_MIN_PHP_VERSION, '<=' ) ) {
 	return;
 }
 
-$plugin_name_libraries = require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
+$_plugin_name_libraries = require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
+if ( !is_bool( $_plugin_name_libraries ) ) {
+	$plugin_name_libraries = $_plugin_name_libraries;
+}
 
 require_once PN_PLUGIN_ROOT . 'functions/functions.php';
 // WPBPGen{{#if libraries_wpbp__debug}}
@@ -149,13 +152,8 @@ if ( ! wp_installing() ) {
 	register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
 	add_action(
 		'plugins_loaded',
-		static function () use ( $_plugin_name_libraries ) {
-			if ( is_bool( $_plugin_name_libraries ) ) {
-				global $plugin_name_libraries;
-				$_plugin_name_libraries = $plugin_name_libraries;
-			}
-
-			new \Plugin_Name\Engine\Initialize( $_plugin_name_libraries );
+		static function () use ( $plugin_name_libraries ) {
+			new \Plugin_Name\Engine\Initialize( $plugin_name_libraries );
 		}
 	);
 }

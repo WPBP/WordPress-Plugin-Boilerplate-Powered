@@ -217,13 +217,13 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
+          sed -i "2s%.*%WP_URL=http:\/\/localhost:3020%" ./.env
+          sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
+          sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
       - name: "Run codeception"
         working-directory: "./plugin-name"
         run: |
-          sed -i "2s%.*%WP_URL=http:\/\/localhost:3020%" ./.env
-          sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
-          sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
           ./vendor/bin/codecept run wpunit -vvv
           ./vendor/bin/codecept run acceptance -vvv
           ./vendor/bin/codecept run functional -vvv

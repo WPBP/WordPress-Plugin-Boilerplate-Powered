@@ -188,13 +188,12 @@ jobs:
           mysql version: 8.0
           mysql database: wordpress_unit_tests
           container port: 3306
-          mysql root password: root
+          mysql root password: test
 
       - name: Wait for MySQL
         run: |
           while ! mysqladmin ping --host=127.0.0.1 --password=test --silent; do
-            echo "Waiting MySQL"
-            sleep 1
+            sleep 2
           done
 
       - name: "Set up WordPress"

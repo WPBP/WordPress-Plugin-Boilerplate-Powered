@@ -29,8 +29,8 @@ class CMB extends Base {
 		parent::initialize();
 
 		require_once PN_PLUGIN_ROOT . 'vendor/cmb2/init.php';
-		// WPBPGen{{#if libraries_origgami__cmb2-grid}}
-		require_once PN_PLUGIN_ROOT . 'vendor/cmb2-grid/Cmb2GridPluginLoad.php';
+		// WPBPGen{{#if libraries_mte90__cmb2-grid}}
+		require_once PN_PLUGIN_ROOT . 'vendor/mte90/cmb2-grid/Cmb2GridPluginLoad.php';
 		// {{/if}}
 		\add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}

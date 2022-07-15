@@ -9,7 +9,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		// your set up methods here

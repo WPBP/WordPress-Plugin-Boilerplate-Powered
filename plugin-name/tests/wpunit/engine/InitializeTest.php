@@ -43,7 +43,7 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Frontend\extras\Body_Class';
 
 		new \Plugin_Name\Engine\Initialize();
-		foreach( $classes as $class ) {);
+		foreach( $classes as $class ) {
 			$this->assertTrue( class_exists( $class ) );
 		}
 	}

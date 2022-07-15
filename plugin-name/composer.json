@@ -23,7 +23,7 @@
         "johnbillion\/extended-cpts": "4.5.*",
         "julien731\/wp-review-me": "dev-develop",
         "micropackage\/requirements": "^1.0",
-        "origgami\/cmb2-grid": "dev-master",
+        "mte90\/cmb2-grid": "2.9.0",
         "seravo\/wp-custom-bulk-actions": "dev-master",
         "stevegrunwell\/wp-cache-remember": "dev-master",
         "wpbp\/cpt_columns": "1.0.*",
@@ -40,19 +40,10 @@
     },
     "require-dev": {
         "codeatcode\/codeatcs": "^1.0",
-        "codeception\/codeception": "4.1.*",
-        "codeception\/module-asserts": "^1.0",
-        "codeception\/module-cli": "^1.0",
-        "codeception\/module-db": "^1.0",
-        "codeception\/module-filesystem": "^1.0",
-        "codeception\/module-phpbrowser": "^1.0",
-        "codeception\/module-rest": "^1.2",
-        "codeception\/module-webdriver": "^1.0",
-        "codeception\/util-universalframework": "^1.0",
         "dealerdirect\/phpcodesniffer-composer-installer": "^0.7",
         "ergebnis\/composer-normalize": "^2.6",
         "lucatume\/function-mocker": "~1.0",
-        "lucatume\/wp-browser": "^3.1",
+        "lucatume/wp-browser": "^3.1",
         "phpro\/grumphp": "^1.13",
         "phpunit\/phpunit": "^9.2",
         "szepeviktor\/phpstan-wordpress": "^1.1.2"
@@ -61,6 +52,18 @@
         {
             "type": "git",
             "url": "https:\/\/github.com\/ayecode\/wp-super-duper"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mte90\/cmb2-grid",
+                "version": "2.9.0",
+                "source": {
+                    "type": "git",
+                    "url": "https:\/\/github.com\/mte90\/cmb2-grid.git",
+                    "reference": "patch-1"
+                }
+            }
         },
         {
             "type": "package",
@@ -110,7 +113,7 @@
         "installer-paths": {
             "vendor\/{$name}\/": [
                 "cmb2\/cmb2",
-                "origgami\/cmb2-grid",
+                "mte90\/cmb2-grid",
                 "stevegrunwell\/wp-cache-remember",
                 "seravo\/wp-custom-bulk-actions"
             ]

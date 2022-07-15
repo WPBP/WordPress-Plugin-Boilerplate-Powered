@@ -66,10 +66,7 @@ if ( version_compare( PHP_VERSION, PN_MIN_PHP_VERSION, '<=' ) ) {
 	return;
 }
 
-$_plugin_name_libraries = require_once PN_PLUGIN_ROOT . 'vendor/autoload.php';
-if ( !is_bool( $_plugin_name_libraries ) ) {
-	$plugin_name_libraries = $_plugin_name_libraries;
-}
+$plugin_name_libraries = require PN_PLUGIN_ROOT . 'vendor/autoload.php'; //phpcs:ignore
 
 require_once PN_PLUGIN_ROOT . 'functions/functions.php';
 // WPBPGen{{#if libraries_wpbp__debug}}

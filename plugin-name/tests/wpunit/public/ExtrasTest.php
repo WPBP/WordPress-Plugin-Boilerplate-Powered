@@ -13,6 +13,8 @@ class ExtrasTest extends \Codeception\TestCase\WPTestCase {
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
+		do_action('plugins_loaded');
+
 		// https://github.com/lucatume/function-mocker
 		// FunctionMocker::setUp();
 	}

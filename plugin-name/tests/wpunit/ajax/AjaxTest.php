@@ -14,6 +14,8 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+
+		do_action('plugins_loaded');
 	}
 
 	public function tearDown(): void {
@@ -43,7 +45,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		);
 
 		$this->assertEquals( $return, $response[ 'data' ] );
-		$this->assertInternalType( 'array', $response['data'] );
+		$this->assertIsArray( $response['data'] );
 	}
 
 }

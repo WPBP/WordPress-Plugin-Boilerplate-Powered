@@ -19,6 +19,8 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		define('WP_ADMIN', true);
 
 		$this->_setRole( 'administrator' );
+
+		do_action('plugins_loaded');
 	}
 
 	public function tearDown(): void {
@@ -46,7 +48,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		);
 
 		$this->assertEquals( $return, $response[ 'data' ] );
-		$this->assertInternalType( 'array', $response['data'] );
+		$this->assertIsArray( $response['data'] );
 	}
 
 }

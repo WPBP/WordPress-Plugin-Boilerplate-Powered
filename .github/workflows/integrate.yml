@@ -2,6 +2,11 @@
 
 name: "Integrate"
 
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+
 on:
   pull_request:
     branches:
@@ -139,7 +144,7 @@ jobs:
         working-directory: "./plugin-name"
         run: "npx eclint check"
 
-  codepcetion-tests:
+  codeception-tests:
     name: "Codeception tests"
     timeout-minutes: 15
 

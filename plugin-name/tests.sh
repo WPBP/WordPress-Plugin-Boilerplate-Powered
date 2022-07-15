@@ -8,7 +8,7 @@ if ! lsof -Pi :4444 -sTCP:LISTEN -t >/dev/null; then
 		wget https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip > /dev/null 2>&1
 		unzip chromedriver_linux64.zip
 	fi
-    ./chromedriver --port=4444 &
+	/tmp/chromedriver --port=4444 &
 fi
 
 echo " - Run Codeception"

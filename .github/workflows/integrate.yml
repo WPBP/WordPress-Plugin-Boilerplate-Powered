@@ -207,6 +207,8 @@ jobs:
           wp core install --url="localhost:3020" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
           wp rewrite structure '/%postname%/' --hard
           ln -s ${GITHUB_WORKSPACE} /tmp/WP/wp-content/plugins/plugin-name
+          cat /tmp/WP/wp-content/plugins/plugin-name/plugin-name.php
+          pwd
 
       - name: "Run WebServer"
         run: |

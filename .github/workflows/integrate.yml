@@ -213,10 +213,14 @@ jobs:
           cd /tmp/WP
           nohup php -S localhost:3020 > /dev/null 2>&1 &
 
-      - name: "Run codeception"
+      - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=/tmp/WP/" ./.env
+
+      - name: "Run codeception"
+        working-directory: "./plugin-name"
+        run: |
           sed -i "2s%.*%WP_URL=http:\/\/localhost:3020%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env

@@ -220,15 +220,15 @@ jobs:
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          nohup php -S localhost:3020 > /dev/null 2>&1 &
-          wget http://localhost:3020 && cat index.html
+          php -S 127.0.0.1:3020 > /dev/null 2>&1 &
+          wget http://127.0.0.1:3020
 
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
-          sed -i "2s%.*%WP_URL=http:\/\/localhost:3020%" ./.env
-          sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
+          sed -i "2s%.*%WP_URL=http:\/\/127.0.0.1:3020%" ./.env
+          sed -i "3s%.*%WP_DOMAIN=127.0.0.1:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
       - name: "Run codeception"

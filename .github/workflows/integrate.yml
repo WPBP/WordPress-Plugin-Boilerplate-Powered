@@ -220,7 +220,7 @@ jobs:
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          php -S 127.0.0.1:3020# > /dev/null 2>&1 &
+          php -S 127.0.0.1:3020 -t ./# > /dev/null 2>&1 &
           wget http://127.0.0.1:3020
 
       - name: "Set Codeception parameters"

@@ -2,11 +2,6 @@
 
 name: "Integrate"
 
-addons:
-  apt:
-    packages:
-      - google-chrome-stable
-
 on:
   pull_request:
     branches:
@@ -226,6 +221,7 @@ jobs:
           sed -i "2s%.*%WP_URL=http:\/\/localhost:3020%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:3020%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
+          sudo apt-get install libxml2-utils
 
       - name: "Run codeception"
         working-directory: "./plugin-name"

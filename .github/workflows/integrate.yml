@@ -220,10 +220,9 @@ jobs:
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          php -S 127.0.0.1:3020 -t ./ > test.txt &
-          sleep 3
+          php -S 127.0.0.1:3020 -t /tmp/WP > test.txt &
+          sleep 5
           cat test.txt
-          wget http://127.0.0.1:3020
 # > /dev/null 2>&1 &
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"

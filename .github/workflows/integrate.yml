@@ -234,5 +234,5 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           ./vendor/bin/codecept run wpunit
-          ./vendor/bin/codecept run acceptance --env headless -vvv
+          ./vendor/bin/codecept run acceptance -vvv
           ./vendor/bin/codecept run functional -vvv

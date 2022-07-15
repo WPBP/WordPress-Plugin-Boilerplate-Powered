@@ -76,8 +76,8 @@ modules:
             phpBinary: php
             language: ''
             configFile: 'wp-config-test.php'
-            plugins: ["WordPress-Plugin-Boilerplate-Powered/plugin-name/plugin-name.php"]
-            activatePlugins: ["WordPress-Plugin-Boilerplate-Powered/plugin-name/plugin-name.php"]
+            plugins: ["plugin-name/plugin-name.php"]
+            activatePlugins: ["plugin-name/plugin-name.php"]
         WPWebDriver:
             url: "%WP_URL%"
             browser: chrome

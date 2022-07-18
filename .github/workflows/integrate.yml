@@ -218,12 +218,14 @@ jobs:
           ln -s ${GITHUB_WORKSPACE}/plugin-name /tmp/WP/wp-content/plugins/
 
       - name: "Run WebServer"
+        working-directory: "./plugin-name"
         uses: BerniWittmann/background-server-action@v1.0.4
         with:
-          command: cd /tmp/WP && php -S localhost:8000 -t /tmp/WP
+          start: php -S localhost:8000 -t /tmp/WP
+          command: ./vendor/bin/codecept run acceptance -vvv
           build: pwd
           wait-on: 'http://localhost:8000'
-          wait-on-timeout: 60
+          wait-on-timeout: 20
 
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"

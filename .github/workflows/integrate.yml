@@ -221,6 +221,7 @@ jobs:
         uses: BerniWittmann/background-server-action@v1.0.4
         with:
           command: cd /tmp/WP && php -S localhost:8000 -t /tmp/WP
+          build: pwd
           wait-on: 'http://localhost:8000'
           wait-on-timeout: 60
 

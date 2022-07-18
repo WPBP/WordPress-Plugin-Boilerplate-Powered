@@ -153,6 +153,9 @@ jobs:
         dependencies:
           - "highest"
 
+    services:
+      - selenium/standalone-chrome:latest
+
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v2.3.1"
@@ -217,27 +220,21 @@ jobs:
           # Needs changes to be used outside the boilerplate
           ln -s ${GITHUB_WORKSPACE}/plugin-name /tmp/WP/wp-content/plugins/
 
-      - name: "Run WebServer"
-        uses: BerniWittmann/background-server-action@v1.0.4
-        with:
-          start: php -S localhost:8000 -t /tmp/WP
-          command: ./vendor/bin/codecept run acceptance -vvv
-          build: pwd
-          wait-on: 'http://localhost:8000'
-          wait-on-timeout: 20
-
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
-          wget http://localhost:8000/wp-login.php
           sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
           sed -i "2s%.*%WP_URL=http:\/\/localhost:8000%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:8000%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
+      - name: "Run WebServer"
+        run: |
+          php -S localhost:8000 --docroot /tmp/WP &>/dev/null&
+          ./vendor/bin/codecept run acceptance -vvv
+
       - name: "Run codeception"
         working-directory: "./plugin-name"
         run: |
           ./vendor/bin/codecept run wpunit
-          ./vendor/bin/codecept run acceptance -vvv
           ./vendor/bin/codecept run functional -vvv

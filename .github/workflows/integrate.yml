@@ -218,16 +218,16 @@ jobs:
           ln -s ${GITHUB_WORKSPACE}/plugin-name /tmp/WP/wp-content/plugins/
 
       - name: "Run WebServer"
-        run: |
-          cd /tmp/WP
-          nohup php -S localhost:8000 -t /tmp/WP > /tmp/test.txt 2>&1 &
-          wget http://localhost:8000/wp-login.php
-          sleep 5
-          cat /tmp/test.txt
+        uses: BerniWittmann/background-server-action@v1.0.4
+        with:
+          command: cd /tmp/WP && php -S localhost:8000 -t /tmp/WP
+          wait-on: 'http://localhost:8000'
+          wait-on-timeout: 60
 
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
+          wget http://localhost:8000/wp-login.php
           sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
           sed -i "2s%.*%WP_URL=http:\/\/localhost:8000%" ./.env
           sed -i "3s%.*%WP_DOMAIN=localhost:8000%" ./.env

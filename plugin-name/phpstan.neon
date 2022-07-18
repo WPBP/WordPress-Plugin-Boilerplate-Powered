@@ -13,8 +13,6 @@ parameters:
         - vendor/
         - tests/
         - node_modules/
-        # There are issues with CMB2 Grid
-        - integrations/CMB.php
     bootstrapFiles:
         # CMB2 is loaded in this file
         - tests/phpstan/bootstrap.php

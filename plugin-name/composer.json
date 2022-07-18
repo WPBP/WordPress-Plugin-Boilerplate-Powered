@@ -23,7 +23,7 @@
         "johnbillion\/extended-cpts": "4.5.*",
         "julien731\/wp-review-me": "dev-develop",
         "micropackage\/requirements": "^1.0",
-        "mte90\/cmb2-grid": "2.9.0",
+        "origgami\/cmb2-grid": "dev-master",
         "seravo\/wp-custom-bulk-actions": "dev-master",
         "stevegrunwell\/wp-cache-remember": "dev-master",
         "wpbp\/cpt_columns": "1.0.*",
@@ -61,18 +61,6 @@
         {
             "type": "git",
             "url": "https:\/\/github.com\/ayecode\/wp-super-duper"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mte90\/cmb2-grid",
-                "version": "2.9.0",
-                "source": {
-                    "type": "git",
-                    "url": "https:\/\/github.com\/mte90\/cmb2-grid.git",
-                    "reference": "patch-1"
-                }
-            }
         },
         {
             "type": "package",

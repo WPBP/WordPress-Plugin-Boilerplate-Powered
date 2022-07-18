@@ -153,9 +153,6 @@ jobs:
         dependencies:
           - "highest"
 
-    services:
-      - selenium/standalone-chrome:latest
-
     steps:
       - name: "Checkout"
         uses: "actions/checkout@v2.3.1"
@@ -229,6 +226,7 @@ jobs:
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
       - name: "Run WebServer"
+        working-directory: "./plugin-name"
         run: |
           php -S localhost:8000 --docroot /tmp/WP &>/dev/null&
           ./vendor/bin/codecept run acceptance -vvv

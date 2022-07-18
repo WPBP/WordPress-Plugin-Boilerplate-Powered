@@ -217,8 +217,7 @@ jobs:
           sed -i "3s%.*%WP_DOMAIN=localhost:8000%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
-      - name: "Run codeception"
+      - name: "Run codeception wpunit"
         working-directory: "./plugin-name"
         run: |
           ./vendor/bin/codecept run wpunit
-          ./vendor/bin/codecept run functional -vvv

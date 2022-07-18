@@ -29,8 +29,8 @@ class CMB extends Base {
 		parent::initialize();
 
 		require_once PN_PLUGIN_ROOT . 'vendor/cmb2/init.php';
-		// WPBPGen{{#if libraries_mte90__cmb2-grid}}
-		require_once PN_PLUGIN_ROOT . 'vendor/origgami/cmb2-grid/Cmb2GridPluginLoad.php';
+		// WPBPGen{{#if libraries_origgami__cmb2-grid}}
+		require_once PN_PLUGIN_ROOT . 'vendor/cmb2-grid/Cmb2GridPluginLoad.php';
 		// {{/if}}
 		\add_action( 'cmb2_init', array( $this, 'cmb_demo_metaboxes' ) );
 	}
@@ -54,7 +54,7 @@ class CMB extends Base {
 				'show_names'   => true, // Show field names on the left
 		)
 			);
-		// WPBPGen{{#if libraries_mte90__cmb2-grid}}
+		// WPBPGen{{#if libraries_origgami__cmb2-grid}}
 		$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb_demo ); //phpcs:ignore WordPress.NamingConventions
 		$row      = $cmb2Grid->addRow(); //phpcs:ignore WordPress.NamingConventions
 		// {{/if}}

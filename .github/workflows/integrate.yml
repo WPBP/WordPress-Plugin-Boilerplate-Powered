@@ -220,7 +220,7 @@ jobs:
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          php -S 127.0.0.1:3020 -t /tmp/WP > /tmp/test.txt &
+          nohup php -S 127.0.0.1:3020 -t /tmp/WP > /tmp/test.txt 2>&1 &
           wget http://127.0.0.1:3020/wp-login.php
           sleep 5
           cat /tmp/test.txt

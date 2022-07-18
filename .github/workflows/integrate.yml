@@ -218,7 +218,6 @@ jobs:
           ln -s ${GITHUB_WORKSPACE}/plugin-name /tmp/WP/wp-content/plugins/
 
       - name: "Run WebServer"
-        working-directory: "./plugin-name"
         uses: BerniWittmann/background-server-action@v1.0.4
         with:
           start: php -S localhost:8000 -t /tmp/WP

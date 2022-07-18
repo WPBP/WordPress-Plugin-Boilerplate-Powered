@@ -212,7 +212,7 @@ jobs:
           cd /tmp/WP
           wp core download
           wp config create --dbname="wordpress_unit_tests" --dbuser="root" --dbpass="test" --dbhost="127.0.0.1:3306" --dbprefix="wp_full_"
-          wp core install --url="localhost:3020" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
+          wp core install --url="localhost:8000" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
           wp rewrite structure '/%postname%/' --hard
           # Needs changes to be used outside the boilerplate
           ln -s ${GITHUB_WORKSPACE}/plugin-name /tmp/WP/wp-content/plugins/
@@ -220,17 +220,17 @@ jobs:
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          nohup php -S 127.0.0.1:3020 -t /tmp/WP > /tmp/test.txt 2>&1 &
-          wget http://127.0.0.1:3020/wp-login.php
+          nohup php -S 127.0.0.1:8000 -t /tmp/WP > /tmp/test.txt 2>&1 &
+          wget http://127.0.0.1:8000/wp-login.php
           sleep 5
           cat /tmp/test.txt
-# > /dev/null 2>&1 &
+
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
-          sed -i "2s%.*%WP_URL=http:\/\/127.0.0.1:3020%" ./.env
-          sed -i "3s%.*%WP_DOMAIN=127.0.0.1:3020%" ./.env
+          sed -i "2s%.*%WP_URL=http:\/\/127.0.0.1:8000%" ./.env
+          sed -i "3s%.*%WP_DOMAIN=127.0.0.1:8000%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
       - name: "Run codeception"

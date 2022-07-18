@@ -4,7 +4,7 @@ use Codeception\Util\HttpCode;
 
 class CustomRestRouteCest {
 
-	public function _before(FunctionalTester $I ) {
+	public function _before( FunctionalTester $I ) {
 		$I->am('user');
 	}
 	/**

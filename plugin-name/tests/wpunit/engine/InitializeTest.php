@@ -8,18 +8,20 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
-	wp_set_current_user(0);
-	wp_logout();
-	wp_safe_redirect(wp_login_url());
+		wp_set_current_user(0);
+		wp_logout();
+		wp_safe_redirect(wp_login_url());
+
+		do_action('plugins_loaded');
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 	}
 
@@ -36,14 +38,15 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Integrations\Cron';
 		$classes[] = 'Plugin_Name\Integrations\FakePage';
 		$classes[] = 'Plugin_Name\Integrations\Template';
-		$classes[] = 'Plugin_Name\Integrations\Widgets';
+		$classes[] = 'Plugin_Name\Integrations\Widgets\My_Recent_Posts_Widget';
 		$classes[] = 'Plugin_Name\Ajax\Ajax';
 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
 		$classes[] = 'Plugin_Name\Frontend\Enqueue';
-		$classes[] = 'Plugin_Name\Frontend\extras\Body_Class';
+		$classes[] = 'Plugin_Name\Frontend\Extras\Body_Class';
 
+		$all_classes = get_declared_classes();
 		foreach( $classes as $class ) {
-			$this->assertTrue( class_exists( $class ) );
+			$this->assertTrue( in_array( $class, $all_classes ) );
 		}
 	}
 

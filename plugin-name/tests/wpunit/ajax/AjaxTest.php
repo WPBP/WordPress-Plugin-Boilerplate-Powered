@@ -9,29 +9,24 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+
+		do_action('plugins_loaded');
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 	}
-
-	private function make_instance() {
-		return new \Plugin_name\Engine\Initialize();
-	}
-
 
 	/**
 	 * @test
 	 * it should return default output
 	 */
 	public function it_should_return_default_output() {
-		$this->make_instance();
-
 		wp_logout();
 
 		try {
@@ -50,7 +45,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		);
 
 		$this->assertEquals( $return, $response[ 'data' ] );
-		$this->assertInternalType( 'array', $response['data'] );
+		$this->assertIsArray( $response['data'] );
 	}
 
 }

@@ -9,21 +9,22 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		wp_set_current_user( $user_id );
+		define('WP_ADMIN', true);
 
 		$this->_setRole( 'administrator' );
+
+		do_action('plugins_loaded');
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
-	}
-
-	private function make_instance() {
-		return new \Plugin_name\Engine\Initialize();
 	}
 
 	/**
@@ -31,8 +32,6 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 * it should return default output
 	 */
 	public function it_should_return_default_output() {
-		$this->make_instance();
-
 		try {
 			$this->_handleAjax( 'your_admin_method' );
 			$this->fail( 'Expected exception: WPAjaxDieContinueException' );
@@ -49,7 +48,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		);
 
 		$this->assertEquals( $return, $response[ 'data' ] );
-		$this->assertInternalType( 'array', $response['data'] );
+		$this->assertIsArray( $response['data'] );
 	}
 
 }

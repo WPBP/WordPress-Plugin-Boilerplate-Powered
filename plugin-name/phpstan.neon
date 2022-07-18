@@ -12,6 +12,7 @@ parameters:
     excludePaths:
         - vendor/
         - tests/
+        - node_modules/
     bootstrapFiles:
         # CMB2 is loaded in this file
         - tests/phpstan/bootstrap.php
@@ -26,8 +27,6 @@ parameters:
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php
         - vendor/inpsyde/wp-context/src/WpContext.php
     ignoreErrors:
-        # TODO Add file names!!
-
         # https://github.com/Freemius/wordpress-sdk/pull/439
         #- '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
 # Not used in the boilerplate.

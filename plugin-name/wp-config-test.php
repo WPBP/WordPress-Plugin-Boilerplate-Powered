@@ -5,13 +5,13 @@
 define('DB_NAME', 'wordpress_unit_tests');
 
 /** MySQL database username */
-define('DB_USER', 'wpbp');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'my-strong-pass');
+define('DB_PASSWORD', 'test');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1:3306');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

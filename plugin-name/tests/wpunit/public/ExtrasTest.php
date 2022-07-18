@@ -8,22 +8,24 @@ class ExtrasTest extends \Codeception\TestCase\WPTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
+
+		do_action('plugins_loaded');
 
 		// https://github.com/lucatume/function-mocker
 		// FunctionMocker::setUp();
 	}
 
-	public function tearDown() {
+	public function tearDown(): void {
 		parent::tearDown();
 		// FunctionMocker::tearDown();
 	}
 
 	private function make_instance() {
-		return new \Plugin_name\Frontend\Extras\Body_Class();
+		return new \Plugin_Name\Frontend\Extras\Body_Class();
 	}
 
 	/**

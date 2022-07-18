@@ -220,8 +220,8 @@ jobs:
       - name: "Run WebServer"
         run: |
           cd /tmp/WP
-          nohup php -S 127.0.0.1:8000 -t /tmp/WP > /tmp/test.txt 2>&1 &
-          wget http://127.0.0.1:8000/wp-login.php
+          nohup php -S localhost:8000 -t /tmp/WP > /tmp/test.txt 2>&1 &
+          wget http://localhost:8000/wp-login.php
           sleep 5
           cat /tmp/test.txt
 
@@ -229,8 +229,8 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
-          sed -i "2s%.*%WP_URL=http:\/\/127.0.0.1:8000%" ./.env
-          sed -i "3s%.*%WP_DOMAIN=127.0.0.1:8000%" ./.env
+          sed -i "2s%.*%WP_URL=http:\/\/localhost:8000%" ./.env
+          sed -i "3s%.*%WP_DOMAIN=localhost:8000%" ./.env
           sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
 
       - name: "Run codeception"

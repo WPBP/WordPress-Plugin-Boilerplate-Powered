@@ -2,7 +2,7 @@
     "name": "plugin-name",
     "version": "1.0.0",
     "description": "",
-    "author": "Your Name <email@example.com>",
+    "author": "{{author_name}} <{{author_email}}>",
     "files": [
         "ajax/*",
         "backend/*",

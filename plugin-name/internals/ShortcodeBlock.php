@@ -15,7 +15,7 @@ namespace Plugin_Name\Internals;
 /**
  * Create Shortcode and Gutenberg Block with Widget support
  */
-class ShortCodeBlock extends \WP_Super_Duper {
+class ShortcodeBlock extends \WP_Super_Duper {
 
 	/**
 	 * Parameters shared between methods

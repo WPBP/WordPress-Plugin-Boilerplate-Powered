@@ -16,19 +16,23 @@ parameters:
     bootstrapFiles:
         # CMB2 is loaded in this file
         - tests/phpstan/bootstrap.php
+        # WPBPGen{{#if libraries_wpbp__widgets-helper}}
         # Does not work in "scanFiles"
         - vendor/wpbp/widgets-helper/class.wph-widget.php
+        # {{/if}}
     scanFiles:
         - plugin-name.php
         - uninstall.php
+        # WPBPGen{{#if libraries_yoast__i18n-module}}
         - vendor/yoast/i18n-module/src/i18n-wordpressorg-v3.php
+        # {{/if}}
+        # WPBPGen{{#if libraries_freemius__wordpress-sdk}}
         - vendor/freemius/wordpress-sdk/start.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius-abstract.php
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php
+        # {{/if}}
         - vendor/inpsyde/wp-context/src/WpContext.php
     ignoreErrors:
-        # https://github.com/Freemius/wordpress-sdk/pull/439
-        #- '#^Parameter \#1 \$module of function fs_dynamic_init expects array<string, string>, array<string, array<string, string>\|bool\|string> given\.$#'
 # Not used in the boilerplate.
 #        # Uses func_get_args()
 #        - '#^Function apply_filters invoked with [34567] parameters, 2 required\.$#'

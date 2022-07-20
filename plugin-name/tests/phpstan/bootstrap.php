@@ -6,6 +6,7 @@ define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ABSOLUTE', __DIR__ );
 define( 'PN_VERSION', '{{plugin_version}}' );
 
+// WPBPGen{{#if libraries_cmb2__cmb2}}
 // Load CMB2
 define( 'CMB2_DIR', dirname( __DIR__, 2 ) . '/vendor/cmb2/' );
 require_once CMB2_DIR . 'includes/helper-functions.php';
@@ -26,3 +27,4 @@ spl_autoload_register( function ( $class ) {
 		require_once $file;
 	}
 } );
+// {{/if}}

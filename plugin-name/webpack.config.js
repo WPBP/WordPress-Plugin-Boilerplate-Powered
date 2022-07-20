@@ -2,19 +2,19 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const path = require( 'path' );
 
 const entry = {
-	'plugin-name-admin': path.resolve(
+	'plugin-admin': path.resolve(
 		process.cwd(),
 		`assets/src/plugin-admin.js`
 	),
-	'plugin-name-block': path.resolve(
+	'plugin-block': path.resolve(
 		process.cwd(),
 		`assets/src/plugin-block.js`
 	),
-	'plugin-name-public': path.resolve(
+	'plugin-public': path.resolve(
 		process.cwd(),
 		`assets/src/plugin-public.js`
 	),
-	'plugin-name-settings': path.resolve(
+	'plugin-settings': path.resolve(
 		process.cwd(),
 		`assets/src/plugin-settings.js`
 	),

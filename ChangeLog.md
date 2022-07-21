@@ -5,6 +5,7 @@
 * Enhancement: JS example with REST and nonce
 * Enhancement: Page-Madness-Detector and Assets package added
 * Enhancement: GitHub Action added Codeception WPunit tests
+* Enhancement: Removed `fakepage` library
 * Improved: Cli tests better example
 * Removed: Grunt replaced by Webpack
 

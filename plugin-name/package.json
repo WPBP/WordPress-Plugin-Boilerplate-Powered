@@ -19,8 +19,8 @@
         "uninstall.php"
     ],
     "scripts": {
-        "start": "wp-scripts start assets/src/*.js --output-path=assets/build",
-        "build": "wp-scripts build assets/src/*.js --output-path=assets/build",
+        "start": "wp-scripts start",
+        "build": "wp-scripts build",
         "check-engines": "wp-scripts check-engines",
         "check-licenses": "wp-scripts check-licenses",
         "format": "wp-scripts format",

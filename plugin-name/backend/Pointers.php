@@ -29,12 +29,12 @@ class Pointers extends Base {
 		parent::initialize();
 
 		new \PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
-		\add_filter( 'plugin_name-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
+		\add_filter( PN_TEXTDOMAIN . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}
 
 	/**
 	 * Add pointers.
-	 * Check on https://github.com/Mte90/pointerplus/blob/master/pointerplus.php for examples
+	 * Check on https://github.com/wpbp/pointerplus/blob/master/pointerplus.php for examples
 	 *
 	 * @param array  $pointers The list of pointers.
 	 * @param string $prefix   For your pointers.
@@ -46,7 +46,7 @@ class Pointers extends Base {
 			$pointers,
 			array(
 				$prefix . '_contextual_help' => array(
-					'selector'   => '#show-settings-link',
+					'selector'   => '.ui-tabs-anchor#ui-id-2',
 					'title'      => \__( 'Boilerplate Help', PN_TEXTDOMAIN ),
 					'text'       => \__( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
 					'edge'       => 'top',

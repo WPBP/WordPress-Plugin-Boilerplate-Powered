@@ -179,7 +179,7 @@ class Initialize {
 		if ( \is_array( $temp_files ) ) {
 			foreach ( $temp_files as $temp_file ) {
 				// Only include filenames that DO NOT contain the excluded string and ARE NOT on the scandir result blacklist.
-				if ( ( false !== $exclude_str && false === \mb_strpos( $file, $exclude_str ) ) && ! \in_array( $temp_file, $blacklist, true ) ) {
+				if ( ( false !== $exclude_str && false === \mb_strpos( $temp_file, $exclude_str ) ) && ! \in_array( $temp_file, $blacklist, true ) ) {
 					$files[] = $temp_file;
 				}
 			}

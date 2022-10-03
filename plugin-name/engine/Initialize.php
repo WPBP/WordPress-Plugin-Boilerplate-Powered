@@ -160,18 +160,32 @@ class Initialize {
 	 * This class is used only when Composer is not optimized.
 	 *
 	 * @param string $folder Path.
+	 * @param string $exclude_str Exclude all files whose filename contain this. Defaults to `~`.
 	 * @since {{plugin_version}}
 	 * @return array List of files.
 	 */
-	private function scandir( string $folder ) {
+	private function scandir( string $folder, string $exclude_str = '~' ) {
+		// Validate $exclude_str.
+		if ( ! \is_string( $exclude_str ) ) {
+			$exclude_str = false;
+		}
+		// Also exclude these specific scandir findings.
+		$blacklist = array( '..', '.', 'index.php' );
+		// Scan for files.
 		$temp_files = \scandir( $folder );
-			$files  = array();
+
+		$files = array();
 
 		if ( \is_array( $temp_files ) ) {
-			$files = $temp_files;
+			foreach ( $temp_files as $temp_file ) {
+				// Only include filenames that DO NOT contain the excluded string and ARE NOT on the scandir result blacklist.
+				if ( ( false !== $exclude_str && false === \mb_strpos( $file, $exclude_str ) ) && ! \in_array( $temp_file, $blacklist, true ) ) {
+					$files[] = $temp_file;
+				}
+			}
 		}
 
-		return \array_diff( $files, array( '..', '.', 'index.php' ) );
+		return $files;
 	}
 
 	/**

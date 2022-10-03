@@ -165,10 +165,10 @@ class Initialize {
 	 * @return array List of files.
 	 */
 	private function scandir( string $folder, string $exclude_str = '~' ) {
-		// Validate $exclude_str.
 		if ( ! \is_string( $exclude_str ) ) {
 			$exclude_str = false;
 		}
+
 		// Also exclude these specific scandir findings.
 		$blacklist = array( '..', '.', 'index.php' );
 		// Scan for files.
@@ -179,9 +179,15 @@ class Initialize {
 		if ( \is_array( $temp_files ) ) {
 			foreach ( $temp_files as $temp_file ) {
 				// Only include filenames that DO NOT contain the excluded string and ARE NOT on the scandir result blacklist.
-				if ( ( false !== $exclude_str && false === \mb_strpos( $temp_file, $exclude_str ) ) && ! \in_array( $temp_file, $blacklist, true ) ) {
-					$files[] = $temp_file;
-				}
+				if (
+                    false === $exclude_str
+                        || false !== \mb_strpos( $temp_file, $exclude_str )
+                    || \in_array( $temp_file, $blacklist, true )
+                ) {
+                    continue;
+                }
+
+                $files[] = $temp_file;
 			}
 		}
 

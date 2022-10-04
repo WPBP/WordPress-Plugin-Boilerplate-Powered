@@ -96,8 +96,9 @@ class Initialize {
 		foreach ( $this->classes as $class ) {
 			try {
 				$reflection = new \ReflectionClass( $class );
+
 				if ( ! $reflection->isAbstract() ) {
-					$temp = new $class();
+					$temp = new $class;
 
 					if ( \method_exists( $temp, 'initialize' ) ) {
 						$temp->initialize();

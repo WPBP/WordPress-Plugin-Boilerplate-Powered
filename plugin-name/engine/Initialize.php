@@ -4,10 +4,10 @@
  * Plugin_Name
  *
  * @package   Plugin_Name
- * @author	{{author_name}} <{{author_email}}>
+ * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
  * @license   {{author_license}}
- * @link	  {{author_url}}
+ * @link      {{author_url}}
  */
 
 namespace Plugin_Name\Engine;
@@ -121,7 +121,7 @@ class Initialize {
 	 * @return array Return the classes.
 	 */
 	private function get_classes( string $namespace ) {
-		$prefix	= $this->composer->getPrefixesPsr4();
+		$prefix    = $this->composer->getPrefixesPsr4();
 		$classmap  = $this->composer->getClassMap();
 		$namespace = 'Plugin_Name\\' . $namespace;
 
@@ -144,7 +144,7 @@ class Initialize {
 
 		// In case composer is not optimized
 		if ( isset( $prefix[ $namespace ] ) ) {
-			$folder	= $prefix[ $namespace ][0];
+			$folder    = $prefix[ $namespace ][0];
 			$php_files = $this->scandir( $folder );
 			$this->find_classes( $php_files, $folder, $namespace );
 
@@ -204,7 +204,7 @@ class Initialize {
 	private function find_classes( array $php_files, string $folder, string $base ) {
 		foreach ( $php_files as $php_file ) {
 			$class_name = \substr( $php_file, 0, -4 );
-			$path	   = $folder . '/' . $php_file;
+			$path       = $folder . '/' . $php_file;
 
 			if ( \is_file( $path ) ) {
 				$this->classes[] = $base . $class_name;

@@ -122,9 +122,11 @@ class Initialize {
 
 		$temp = new $class;
 
-		if ( \method_exists( $temp, 'initialize' ) ) {
-			$temp->initialize();
+		if ( !\method_exists( $temp, 'initialize' ) ) {
+			return;
 		}
+
+		$temp->initialize();
 	}
 
 	/**

@@ -106,9 +106,9 @@ class Initialize {
 	}
 
 	/**
-	 * validate the class and initialize it.
+	 * Validate the class and initialize it.
 	 *
-	 * @param string $class Class name to validate.
+	 * @param mixed $class Class name to validate.
 	 * @since {{plugin_version}}
 	 * @SuppressWarnings("MissingImport")
 	 * @return void

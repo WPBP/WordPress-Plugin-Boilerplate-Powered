@@ -87,7 +87,6 @@ class Initialize {
 	 * Initialize all the classes.
 	 *
 	 * @since {{plugin_version}}
-	 * @SuppressWarnings("MissingImport")
 	 * @return void
 	 */
 	private function load_classes() {
@@ -95,21 +94,33 @@ class Initialize {
 
 		foreach ( $this->classes as $class ) {
 			try {
-				$reflection = new \ReflectionClass( $class );
-
-				if ( ! $reflection->isAbstract() ) {
-					$temp = new $class;
-
-					if ( \method_exists( $temp, 'initialize' ) ) {
-						$temp->initialize();
-					}
-				}
+				$this->initiliaze_plugin_class( $class );
 			} catch ( \Throwable $err ) {
 				\do_action( 'plugin_name_initialize_failed', $err );
 
 				if ( WP_DEBUG ) {
 					throw new \Exception( $err->getMessage() );
 				}
+			}
+		}
+	}
+
+	/**
+	 * validate the class and initialize it.
+	 *
+	 * @param string $class Class name to validate.
+	 * @since {{plugin_version}}
+	 * @SuppressWarnings("MissingImport")
+	 * @return void
+	 */
+	private function initiliaze_plugin_class( $class ) {
+		$reflection = new \ReflectionClass( $class );
+
+		if ( ! $reflection->isAbstract() ) {
+			$temp = new $class;
+
+			if ( \method_exists( $temp, 'initialize' ) ) {
+				$temp->initialize();
 			}
 		}
 	}

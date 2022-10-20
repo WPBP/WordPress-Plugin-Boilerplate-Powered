@@ -59,11 +59,11 @@ class ActDeact extends Base {
 	/**
 	 * Fired when the plugin is activated.
 	 *
-	 * @param bool $network_wide True if active in a multiste, false if classic site.
+	 * @param bool|null $network_wide True if active in a multiste, false if classic site.
 	 * @since {{plugin_version}}
 	 * @return void
 	 */
-	public static function activate( bool $network_wide ) {
+	public static function activate( $network_wide ) {
 		if ( \function_exists( 'is_multisite' ) && \is_multisite() ) {
 			if ( $network_wide ) {
 				// Get all blog ids

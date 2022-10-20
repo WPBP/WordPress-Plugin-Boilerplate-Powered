@@ -94,7 +94,7 @@ class Initialize {
 
 		foreach ( $this->classes as $class ) {
 			try {
-				$this->initiliaze_plugin_class( $class );
+				$this->initialize_plugin_class( $class );
 			} catch ( \Throwable $err ) {
 				\do_action( 'plugin_name_initialize_failed', $err );
 
@@ -108,20 +108,22 @@ class Initialize {
 	/**
 	 * Validate the class and initialize it.
 	 *
-	 * @param mixed $class Class name to validate.
+	 * @param class-string $class Class name to validate.
 	 * @since {{plugin_version}}
 	 * @SuppressWarnings("MissingImport")
 	 * @return void
 	 */
-	private function initiliaze_plugin_class( $class ) {
+	private function initialize_plugin_class( $class ) {
 		$reflection = new \ReflectionClass( $class );
 
-		if ( ! $reflection->isAbstract() ) {
-			$temp = new $class;
+		if ( $reflection->isAbstract() ) {
+			return;
+		}
 
-			if ( \method_exists( $temp, 'initialize' ) ) {
-				$temp->initialize();
-			}
+		$temp = new $class;
+
+		if ( \method_exists( $temp, 'initialize' ) ) {
+			$temp->initialize();
 		}
 	}
 

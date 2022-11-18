@@ -26,7 +26,7 @@ class Body_Class extends Base {
 	public function initialize() {
 		parent::initialize();
 
-		\add_filter( 'body_class', array( self::class, 'add_pn_class' ), 10, 3 );
+		\add_filter( 'body_class', array( self::class, 'add_pn_class' ), 10, 1 );
 	}
 
 	/**

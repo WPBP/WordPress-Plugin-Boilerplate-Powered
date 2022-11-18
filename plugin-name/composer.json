@@ -35,7 +35,7 @@
         "wpbp\/widgets-helper": "1.0.*",
         "wpdesk\/wp-notice": "^3.2",
         "yahnis-elsts\/plugin-update-checker": "^4.9",
-        "yoast\/i18n-module": "3.1.*"
+        "yoast\/i18n-module": "dev-main"
     },
     "require-dev": {
         "codeatcode\/codeatcs": "^1.0",
@@ -60,23 +60,6 @@
         {
             "type": "git",
             "url": "https:\/\/github.com\/ayecode\/wp-super-duper"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "mte90\/i18n-module",
-                "version": "3.1.0",
-                "autoload": {
-                    "classmap": [
-                        "src\/"
-                    ]
-                },
-                "source": {
-                    "type": "git",
-                    "url": "https:\/\/github.com\/mte90\/i18n-module.git",
-                    "reference": "master"
-                }
-            }
         }
     ],
     "minimum-stability": "dev",

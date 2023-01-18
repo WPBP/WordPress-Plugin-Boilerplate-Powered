@@ -24,7 +24,7 @@ parameters:
         - plugin-name.php
         - uninstall.php
         # WPBPGen{{#if libraries_yoast__i18n-module}}
-        - vendor/yoast/i18n-module/src/i18n-wordpressorg-v3.php
+        - vendor/wpbp/i18n-notice/src/i18n-wordpressorg-v3.php
         # {{/if}}
         # WPBPGen{{#if libraries_freemius__wordpress-sdk}}
         - vendor/freemius/wordpress-sdk/start.php

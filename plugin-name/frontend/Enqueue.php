@@ -80,10 +80,7 @@ class Enqueue extends Base {
 		$styles = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		$styles[0] = new Style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ) );
-		$styles[0]
-			->forLocation( Asset::FRONTEND )
-			->useAsyncFilter()
-			->withVersion( PN_VERSION );
+		$styles[0]->forLocation( Asset::FRONTEND )->useAsyncFilter()->withVersion( PN_VERSION );
 		$styles[0]->dependencies();
 		// {{/if}}
 
@@ -103,10 +100,7 @@ class Enqueue extends Base {
 		$scripts = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
 		$scripts[0] = new Script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ) );
-		$scripts[0]
-			->forLocation( Asset::FRONTEND )
-			->useAsyncFilter()
-			->withVersion( PN_VERSION );
+		$scripts[0]->forLocation( Asset::FRONTEND )->useAsyncFilter()->withVersion( PN_VERSION );
 		$scripts[0]->dependencies();
 		// WPBPGen{{#if frontend_wp-localize-script}}
 		$scripts[0]->withLocalize(

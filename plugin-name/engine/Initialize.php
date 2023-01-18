@@ -47,7 +47,7 @@ class Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
-		$this->content  = new Engine\Context;
+		$this->content  = new Engine\Context();
 		$this->composer = $composer;
 
 		$this->get_classes( 'Internals' );
@@ -108,19 +108,19 @@ class Initialize {
 	/**
 	 * Validate the class and initialize it.
 	 *
-	 * @param class-string $class Class name to validate.
+	 * @param class-string $classtovalidate Class name to validate.
 	 * @since {{plugin_version}}
 	 * @SuppressWarnings("MissingImport")
 	 * @return void
 	 */
-	private function initialize_plugin_class( $class ) {
-		$reflection = new \ReflectionClass( $class );
+	private function initialize_plugin_class( $classtovalidate ) {
+		$reflection = new \ReflectionClass( $classtovalidate );
 
 		if ( $reflection->isAbstract() ) {
 			return;
 		}
 
-		$temp = new $class;
+		$temp = new $classtovalidate();
 
 		if ( !\method_exists( $temp, 'initialize' ) ) {
 			return;
@@ -132,21 +132,21 @@ class Initialize {
 	/**
 	 * Based on the folder loads the classes automatically using the Composer autoload to detect the classes of a Namespace.
 	 *
-	 * @param string $namespace Class name to find.
+	 * @param string $namespacetofind Class name to find.
 	 * @since {{plugin_version}}
 	 * @return array Return the classes.
 	 */
-	private function get_classes( string $namespace ) {
+	private function get_classes( string $namespacetofind ) {
 		$prefix    = $this->composer->getPrefixesPsr4();
 		$classmap  = $this->composer->getClassMap();
-		$namespace = 'Plugin_Name\\' . $namespace;
+		$namespacetofind = 'Plugin_Name\\' . $namespacetofind;
 
 		// In case composer has autoload optimized
 		if ( isset( $classmap[ 'Plugin_Name\\Engine\\Initialize' ] ) ) {
 			$classes = \array_keys( $classmap );
 
 			foreach ( $classes as $class ) {
-				if ( 0 !== \strncmp( (string) $class, $namespace, \strlen( $namespace ) ) ) {
+				if ( 0 !== \strncmp( (string) $class, $namespacetofind, \strlen( $namespacetofind ) ) ) {
 					continue;
 				}
 
@@ -156,13 +156,13 @@ class Initialize {
 			return $this->classes;
 		}
 
-		$namespace .= '\\';
+		$namespacetofind .= '\\';
 
 		// In case composer is not optimized
-		if ( isset( $prefix[ $namespace ] ) ) {
-			$folder    = $prefix[ $namespace ][0];
+		if ( isset( $prefix[ $namespacetofind ] ) ) {
+			$folder    = $prefix[ $namespacetofind ][0];
 			$php_files = $this->scandir( $folder );
-			$this->find_classes( $php_files, $folder, $namespace );
+			$this->find_classes( $php_files, $folder, $namespacetofind );
 
 			if ( !WP_DEBUG ) {
 				\wp_die( \esc_html__( 'Plugin Name is on production environment with missing `composer dumpautoload -o` that will improve the performance on autoloading itself.', PN_TEXTDOMAIN ) );

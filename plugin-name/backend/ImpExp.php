@@ -127,7 +127,6 @@ class ImpExp extends Base {
 				'plugin_name_import_settings_failed',
 				\__( 'Failed to import the settings.', PN_TEXTDOMAIN )
 			);
-
 	}
 
 }

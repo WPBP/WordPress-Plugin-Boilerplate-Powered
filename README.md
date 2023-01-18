@@ -31,18 +31,17 @@ will generate everything without the need of manual copy&paste way or searching 
 | --------------- | --------------- |
 | [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus) | [CMB2/CMB2](https://github.com/CMB2/CMB2) |
 | [WPBP/CronPlus](https://github.com/WPBP/CronPlus) | [micropackage/requirements](https://github.com/micropackage/requirements) |
-| [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [yoast/i18n-module](https://github.com/yoast/i18n-module) |
+| [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)  | [inpsyde/assets](https://github.com/inpsyde/assets) |
 | [WPBP/Page-Madness-Detector](https://github.com/WPBP/Page-Madness-Detector)  | [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid) |
 | [WPBP/Template](https://github.com/WPBP/Template)  | [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/) |
 | [WPBP/Debug](https://github.com/WPBP/Debug)  | [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk) |
 | [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)  | [wpdesk/wp-notice](https://gitlab.com/wpdesk/wp-notice/-/tree/master) |
-|                 | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me) |
+| [WPBP/i18n-notice](https://github.com/WPBP/i18n-notice) | [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me) |
 |                 | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember) |
 |                 | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions) |
 |                 | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/) |
 |                 | [AyeCode/wp-super-duper](https://github.com/AyeCode/wp-super-duper) |
 |                 | [decodelabs/tagged](https://github.com/decodelabs/tagged) |
-|                 | [inpsyde/assets](https://github.com/inpsyde/assets) |
 
 ### Available Snippets
 

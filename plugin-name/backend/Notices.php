@@ -11,8 +11,8 @@
 
 namespace Plugin_Name\Backend;
 
+use I18n_Notice_WordPressOrg;
 use Plugin_Name\Engine\Base;
-use Yoast_I18n_WordPressOrg_v3;
 
 /**
  * Everything that involves notification on the WordPress dashboard
@@ -63,7 +63,7 @@ class Notices extends Base {
 		 */
 		// WPBPGen{{#if libraries_yoast__i18n-module}}
 		if ( \apply_filters( 'plugin_name_alert_localization', true ) ) {
-			new Yoast_I18n_WordPressOrg_v3(
+			new I18n_Notice_WordPressOrg(
 			array(
 				'textdomain'  => PN_TEXTDOMAIN,
 				'plugin_name' => PN_NAME,

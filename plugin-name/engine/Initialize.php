@@ -47,7 +47,7 @@ class Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
-		$this->content  = Engine\Context();
+		$this->content  = new Engine\Context;
 		$this->composer = $composer;
 
 		$this->get_classes( 'Internals' );
@@ -120,7 +120,7 @@ class Initialize {
 			return;
 		}
 
-		$temp = $classtovalidate();
+		$temp = new $classtovalidate;
 
 		if ( !\method_exists( $temp, 'initialize' ) ) {
 			return;

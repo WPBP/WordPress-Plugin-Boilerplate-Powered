@@ -145,8 +145,8 @@ Puc_v4_Factory::buildUpdateChecker( 'https://github.com/user-name/repo-name/', _
 // {{/if}}
 
 if ( ! wp_installing() ) {
-	register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact(), 'activate' ) );
-	register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact(), 'deactivate' ) );
+	register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( \Plugin_Name\Backend\ActDeact(), 'activate' ) );
+	register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( \Plugin_Name\Backend\ActDeact(), 'deactivate' ) );
 	add_action(
 		'plugins_loaded',
 		static function () use ( $plugin_name_libraries ) {

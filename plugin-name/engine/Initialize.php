@@ -47,7 +47,7 @@ class Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
-		$this->content  = new Engine\Context();
+		$this->content  = Engine\Context();
 		$this->composer = $composer;
 
 		$this->get_classes( 'Internals' );
@@ -120,7 +120,7 @@ class Initialize {
 			return;
 		}
 
-		$temp = new $classtovalidate();
+		$temp = $classtovalidate();
 
 		if ( !\method_exists( $temp, 'initialize' ) ) {
 			return;
@@ -137,8 +137,8 @@ class Initialize {
 	 * @return array Return the classes.
 	 */
 	private function get_classes( string $namespacetofind ) {
-		$prefix    = $this->composer->getPrefixesPsr4();
-		$classmap  = $this->composer->getClassMap();
+		$prefix          = $this->composer->getPrefixesPsr4();
+		$classmap        = $this->composer->getClassMap();
 		$namespacetofind = 'Plugin_Name\\' . $namespacetofind;
 
 		// In case composer has autoload optimized

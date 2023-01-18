@@ -61,7 +61,7 @@ class Notices extends Base {
 		 * Alert after few days to suggest to contribute to the localization if it is incomplete
 		 * on translate.wordpress.org, the filter enables to remove globally.
 		 */
-		// WPBPGen{{#if libraries_yoast__i18n-module}}
+		// WPBPGen{{#if libraries_wpbp__i18n-notice}}
 		if ( \apply_filters( 'plugin_name_alert_localization', true ) ) {
 			new I18n_Notice_WordPressOrg(
 			array(

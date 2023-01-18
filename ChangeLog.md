@@ -1,3 +1,8 @@
+## 3.3.1
+
+* Fix: Replaced Yoast i18n-module with wpbp/i18n-notice to keep support
+* Enhancement: Improvements on Initialize for class detection
+
 ## 3.3.0
 
 * Enhancement: wp-scripts integration

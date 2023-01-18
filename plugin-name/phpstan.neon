@@ -23,7 +23,7 @@ parameters:
     scanFiles:
         - plugin-name.php
         - uninstall.php
-        # WPBPGen{{#if libraries_yoast__i18n-module}}
+        # WPBPGen{{#if libraries_wpbp__i18n-notice}}
         - vendor/wpbp/i18n-notice/src/i18n-wordpressorg-v3.php
         # {{/if}}
         # WPBPGen{{#if libraries_freemius__wordpress-sdk}}

@@ -17,7 +17,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 		define('WP_ADMIN', true);
-		define('DOING_AJAX', true);
+		add_filter( 'wp_doing_ajax', '__return_true' );
 
 		$this->_setRole( 'administrator' );
 
@@ -26,7 +26,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 
 	public function tearDown(): void {
 		parent::tearDown();
-		define('DOING_AJAX', false);
+		add_filter( 'wp_doing_ajax', '__return_false' );
 	}
 
 	/**

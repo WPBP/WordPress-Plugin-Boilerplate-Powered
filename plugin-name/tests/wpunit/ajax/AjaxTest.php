@@ -15,13 +15,13 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
-		define('DOING_AJAX', true);
+		add_filter( 'wp_doing_ajax', '__return_true' );
 		do_action('plugins_loaded');
 	}
 
 	public function tearDown(): void {
 		parent::tearDown();
-		define('DOING_AJAX', false);
+		add_filter( 'wp_doing_ajax', '__return_false' );
 	}
 
 	/**

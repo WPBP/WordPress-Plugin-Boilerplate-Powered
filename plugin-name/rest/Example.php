@@ -166,7 +166,6 @@ class Example extends Base {
 	 * @return \WP_REST_Response|\WP_REST_Request<array>
 	 */
 	public function demo_example( \WP_REST_Request $request ) { // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
-		// $request is an array with various parameters
 		if ( !\wp_verify_nonce( \strval( $request['nonce'] ), 'demo_example' ) ) {
 			$response = \rest_ensure_response( 'Wrong nonce' );
 

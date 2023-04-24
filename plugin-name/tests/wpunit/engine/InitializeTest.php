@@ -18,8 +18,6 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		wp_set_current_user(0);
 		wp_logout();
 		wp_safe_redirect(wp_login_url());
-
-		do_action('plugins_loaded');
 	}
 
 	public function tearDown(): void {
@@ -31,6 +29,8 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 * it should be front
 	 */
 	public function it_should_be_front() {
+		do_action('plugins_loaded');
+
 		$classes   = array();
 		$classes[] = 'Plugin_Name\Internals\PostTypes';
 		$classes[] = 'Plugin_Name\Internals\Shortcode';
@@ -53,6 +53,9 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	 * it should be ajax
 	 */
 	public function it_should_be_ajax() {
+		add_filter( 'wp_doing_ajax', '__return_true' );
+		do_action('plugins_loaded');
+
 		$classes   = array();
 		$classes[] = 'Plugin_Name\Ajax\Ajax';
 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';

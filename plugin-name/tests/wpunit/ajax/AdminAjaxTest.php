@@ -9,8 +9,8 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUp(): void {
-		parent::setUp();
+	public function setUpBeforeClass(): void {
+		parent::setUpBeforeClass();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
@@ -24,8 +24,9 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		do_action('plugins_loaded');
 	}
 
-	public function tearDown(): void {
-		parent::tearDown();
+	public function tearDownAfterClass(): void {
+		parent::tearDownAfterClass();
+		define('DOING_AJAX', false);
 	}
 
 	/**

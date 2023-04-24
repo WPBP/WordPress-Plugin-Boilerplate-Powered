@@ -17,8 +17,6 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 		set_current_screen( 'edit.php' );
-		add_filter( 'wp_doing_ajax', '__return_true' );
-		do_action('plugins_loaded');
 	}
 
 	public function tearDown(): void {
@@ -30,6 +28,9 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	 * it should be admin
 	 */
 	public function it_should_be_admin() {
+		add_filter( 'wp_doing_ajax', '__return_false' );
+		do_action('plugins_loaded');
+
 		$classes   = array();
 		$classes[] = 'Plugin_Name\Internals\PostTypes';
 		$classes[] = 'Plugin_Name\Internals\Shortcode';
@@ -56,6 +57,9 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 	 * it should be ajax
 	 */
 	public function it_should_be_admin_ajax() {
+		add_filter( 'wp_doing_ajax', '__return_true' );
+		do_action('plugins_loaded');
+
 		$classes   = array();
 		$classes[] = 'Plugin_Name\Ajax\Ajax';
 		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';

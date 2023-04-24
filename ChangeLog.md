@@ -1,6 +1,7 @@
 ## 3.3.2
 
-Enhancement: Tests use a dedicated .env file isntead to manipulate the env file (GitHub/GitLab CI updated)
+* Enhancement: Tests use a dedicated .env file isntead to manipulate the env file (GitHub/GitLab CI updated)
+* Enhancement: AJax tests improved to work with altst toosl updates
 
 ## 3.3.1
 

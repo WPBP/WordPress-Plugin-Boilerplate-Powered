@@ -1,3 +1,7 @@
+## 3.3.2
+
+Enhancement: Tests use a dedicated .env file isntead to manipulate the env file (GitHub/GitLab CI updated)
+
 ## 3.3.1
 
 * Fix: Replaced Yoast i18n-module with wpbp/i18n-notice to keep support

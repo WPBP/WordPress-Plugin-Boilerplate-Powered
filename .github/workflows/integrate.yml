@@ -212,10 +212,8 @@ jobs:
       - name: "Set Codeception parameters"
         working-directory: "./plugin-name"
         run: |
-          sed -i "1s%.*%WP_ROOT=/tmp/WP/%" ./.env
-          sed -i "2s%.*%WP_URL=http:\/\/localhost:8000%" ./.env
-          sed -i "3s%.*%WP_DOMAIN=localhost:8000%" ./.env
-          sed -i "4s%.*%DB_HOST=127.0.0.1:3306%" ./.env
+          rm tests/_envs/.env
+          mv tests/_envs/.env.testing tests/_envs/.env
 
       - name: "Run codeception wpunit"
         working-directory: "./plugin-name"

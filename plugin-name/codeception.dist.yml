@@ -11,7 +11,7 @@ settings:
     colors: true
     memory_limit: 1024M
 params:
-    - .env
+    - tests/_envs/.env
 coverage:
     enabled: true
     exclude:

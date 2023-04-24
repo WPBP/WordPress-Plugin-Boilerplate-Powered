@@ -147,7 +147,7 @@ class Example extends Base {
 	 * Examples
 	 *
 	 * @since {{plugin_version}}
-	 * @param \WP_REST_Request $request Values.
+	 * @param \WP_REST_Request<array> $request Values.
 	 * @return array
 	 */
 	public function sum( \WP_REST_Request $request ) {
@@ -162,7 +162,7 @@ class Example extends Base {
 	 * Examples
 	 *
 	 * @since {{plugin_version}}
-	 * @param \WP_REST_Request $request Values.
+	 * @param \WP_REST_Request<array> $request Values.
 	 * @return \WP_REST_Response|\WP_REST_Request
 	 */
 	public function demo_example( \WP_REST_Request $request ) {

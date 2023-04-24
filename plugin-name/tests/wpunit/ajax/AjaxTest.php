@@ -15,6 +15,7 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
 
+		define('DOING_AJAX', true);
 		do_action('plugins_loaded');
 	}
 

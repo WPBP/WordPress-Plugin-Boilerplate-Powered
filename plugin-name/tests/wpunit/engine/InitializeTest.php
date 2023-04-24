@@ -1,6 +1,7 @@
 <?php
 
 namespace Plugin_Name\Tests\WPUnit;
+use Inpsyde\WpContext;
 
 class InitializeTest extends \Codeception\TestCase\WPTestCase {
 	/**
@@ -38,8 +39,6 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Integrations\Cron';
 		$classes[] = 'Plugin_Name\Integrations\Template';
 		$classes[] = 'Plugin_Name\Integrations\Widgets\My_Recent_Posts_Widget';
-		$classes[] = 'Plugin_Name\Ajax\Ajax';
-		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
 		$classes[] = 'Plugin_Name\Frontend\Enqueue';
 		$classes[] = 'Plugin_Name\Frontend\Extras\Body_Class';
 
@@ -49,4 +48,18 @@ class InitializeTest extends \Codeception\TestCase\WPTestCase {
 		}
 	}
 
+	/**
+	 * @test
+	 * it should be ajax
+	 */
+	public function it_should_be_ajax() {
+		$classes   = array();
+		$classes[] = 'Plugin_Name\Ajax\Ajax';
+		$classes[] = 'Plugin_Name\Ajax\Ajax_Admin';
+
+		$all_classes = get_declared_classes();
+		foreach( $classes as $class ) {
+			$this->assertTrue( in_array( $class, $all_classes ) );
+		}
+	}
 }

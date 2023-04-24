@@ -17,6 +17,7 @@ class AdminAjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		wp_set_current_user( $user_id );
 		define('WP_ADMIN', true);
+		define('DOING_AJAX', true);
 
 		$this->_setRole( 'administrator' );
 

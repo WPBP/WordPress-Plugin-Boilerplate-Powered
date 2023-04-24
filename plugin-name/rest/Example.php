@@ -163,7 +163,7 @@ class Example extends Base {
 	 *
 	 * @since {{plugin_version}}
 	 * @param \WP_REST_Request<array> $request Values.
-	 * @return \WP_REST_Response|\WP_REST_Request
+	 * @return \WP_REST_Response<object>|\WP_REST_Request<array>
 	 */
 	public function demo_example( \WP_REST_Request $request ) {
 		// $request is an array with various parameters

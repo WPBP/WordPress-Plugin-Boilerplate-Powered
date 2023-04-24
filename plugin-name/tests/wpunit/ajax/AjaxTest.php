@@ -9,8 +9,8 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 	 */
 	protected $root_dir;
 
-	public function setUpBeforeClass(): void {
-		parent::setUpBeforeClass();
+	public function setUp(): void {
+		parent::setUp();
 
 		// your set up methods here
 		$this->root_dir = dirname( dirname( dirname( __FILE__ ) ) );
@@ -19,8 +19,8 @@ class AjaxTest extends \Codeception\TestCase\WPAjaxTestCase {
 		do_action('plugins_loaded');
 	}
 
-	public function tearDownAfterClass(): void {
-		parent::tearDownAfterClass();
+	public function tearDown(): void {
+		parent::tearDown();
 		define('DOING_AJAX', false);
 	}
 

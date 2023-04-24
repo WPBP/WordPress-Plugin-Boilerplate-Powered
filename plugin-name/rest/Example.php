@@ -150,7 +150,7 @@ class Example extends Base {
 	 * @param \WP_REST_Request<array> $request Values.
 	 * @return array
 	 */
-	public function sum( \WP_REST_Request $request ) {
+	public function sum( \WP_REST_Request $request ) { // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
 		if ( !isset( $request[ 'first' ], $request[ 'second' ] ) ) {
 			return array( 'result' => 0 );
 		}
@@ -165,7 +165,7 @@ class Example extends Base {
 	 * @param \WP_REST_Request<array> $request Values.
 	 * @return \WP_REST_Response<object>|\WP_REST_Request<array>
 	 */
-	public function demo_example( \WP_REST_Request $request ) {
+	public function demo_example( \WP_REST_Request $request ) { // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
 		// $request is an array with various parameters
 		if ( !\wp_verify_nonce( \strval( $request['nonce'] ), 'demo_example' ) ) {
 			$response = \rest_ensure_response( 'Wrong nonce' );

@@ -59,7 +59,7 @@ if ( \defined( 'WP_CLI' ) && WP_CLI ) {
 			// Message prefixed with "Debug: ". when '--debug' is used
 			\WP_CLI::debug( $args[0] );
 			// Message prefixed with "Error: ".
-			//\WP_CLI::error( $args[0] );
+			// \WP_CLI::error( $args[0] );
 			// Message with no prefix
 			\WP_CLI::log( $args[0] );
 			// Colorize a string for output

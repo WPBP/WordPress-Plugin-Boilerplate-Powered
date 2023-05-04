@@ -38,13 +38,9 @@ class Block extends Base {
 	 */
 	public function register_block() {
 		// Register the block by passing the location of block.json to register_block_type.
-		$json = \wp_json_file_decode( PN_PLUGIN_ROOT . 'assets/src/block/block.json' );
+		$json = \PN_PLUGIN_ROOT . 'assets/block.json';
 
-		if ( !\is_array( $json ) ) {
-			return;
-		}
-
-		\register_block_type( 'plugin-name/block-name', $json );
+		\register_block_type( $json );
 	}
 
 }

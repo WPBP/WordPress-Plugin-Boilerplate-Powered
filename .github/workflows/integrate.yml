@@ -131,7 +131,9 @@ jobs:
         with:
           node-version: '16'
 
-      - run: "npm install"
+      - name: "install dependencies"
+        run: "npm install"
+        working-directory: "./plugin-name"
 
       - name: "Check EditorConfig adherence"
         working-directory: "./plugin-name"

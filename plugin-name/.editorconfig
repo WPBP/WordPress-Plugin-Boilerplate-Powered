@@ -12,9 +12,6 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = tab
-block_comment_start = /*
-block_comment = *
-block_comment_end = */
 
 [{*.yml,*.neon}]
 indent_style = space
@@ -28,11 +25,3 @@ end_of_line = crlf
 
 [{LICENSE.txt,README.txt}]
 indent_style = space
-
-[{/tests/_data/*.sql,/tests/_support/_generated/**}]
-charset = unset
-end_of_line = unset
-insert_final_newline = unset
-trim_trailing_whitespace = unset
-indent_style = space
-indent_size = unset

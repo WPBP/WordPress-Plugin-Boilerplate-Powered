@@ -10,14 +10,14 @@ export const blockStyle = {
 };
 
 // The block configuration
-const blockConfig = require( './block.json' );
+const blockConfig = require('../../block.json');
 
 import { Edit } from './edit';
 import { Save } from './save';
 
 // Register the block
 /// https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
-registerBlockType( blockConfig.name, {
+registerBlockType(blockConfig.name, {
 	...blockConfig,
 	icon: blockIcon,
 	apiVersion: 2,
@@ -64,4 +64,4 @@ registerBlockType( blockConfig.name, {
 			default: 'https://github.com/WPBP',
 		},
 	},
-} );
+});

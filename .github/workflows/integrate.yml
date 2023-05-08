@@ -131,6 +131,8 @@ jobs:
         with:
           node-version: '16'
 
+      - run: "npm install"
+
       - name: "Check EditorConfig adherence"
         working-directory: "./plugin-name"
         run: "npx prettier --check . !vendor !tests"

@@ -5,7 +5,7 @@
 	display: inline;
 	border-color: rgb(204, 204, 204);
 	border-width: 1px;
-	border-style:solid;
+	border-style: solid;
 	border-bottom-width: 0;
 	padding: 12px 0;
 	background: none repeat scroll 0 0 rgb(228, 228, 228);
@@ -18,33 +18,40 @@
 	color: var(--my-plugin_color-primary);
 }
 
-.ui-tabs-anchor, .ui-tabs-anchor:focus {
+.ui-tabs-anchor,
+.ui-tabs-anchor:focus {
 	text-decoration: none;
 	font-weight: 600;
 	font-size: 15px;
 	line-height: 24px;
 	color: rgb(127, 127, 127);
-	padding:10px;
+	padding: 10px;
 	box-shadow: none;
 }
 
-.ui-tabs-anchor:hover,.ui-state-active a {
-	color: black;
+.ui-tabs-anchor:hover,
+.ui-state-active a {
+	color: #000;
 }
 
-.ui-tabs-active, .ui-tabs-active:hover, .ui-tabs-active:active {
-	color: rgb(0, 0, 0);
+.ui-tabs-active,
+.ui-tabs-active:hover,
+.ui-tabs-active:active {
+	color: #000;
 	background: rgb(239, 239, 239) !important;
 }
 
 // Settings page
 .metabox-holder {
+
 	.postbox {
-		max-width:100%;
+		max-width: 100%;
+
 		h3 {
 			padding-left: 10px;
 			border-bottom: 1px solid #e0e0e0;
 		}
+
 		img {
 			max-width: 240px;
 		}
@@ -52,10 +59,10 @@
 }
 
 .settings-tab {
-	float:left;
+	float: left;
 }
 
 .right-column-settings-page {
-	max-width:270px;
-	float:right;
+	max-width: 270px;
+	float: right;
 }

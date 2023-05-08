@@ -132,12 +132,12 @@ jobs:
           node-version: '16'
 
       - name: "install dependencies"
-        run: "npm install"
         working-directory: "./plugin-name"
+        run: "npm install"
 
       - name: "Check EditorConfig adherence"
         working-directory: "./plugin-name"
-        run: "npx prettier --check . !vendor !tests"
+        run: "npx prettier --check . !vendor !tests !assets/build"
 
   codeception-tests:
     name: "Codeception tests"

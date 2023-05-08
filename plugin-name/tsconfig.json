@@ -11,5 +11,8 @@
 		"sourceMap": true,
 		"strict": true
 	},
-	"include": [ "assets/src/**/*", "assets/src/block.json" ]
+	"include": [
+		"assets/src/**/*",
+		"assets/src/block.json"
+	]
 }

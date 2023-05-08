@@ -104,7 +104,7 @@ class Enqueue extends Base {
 		$scripts[0]->dependencies();
 		// WPBPGen{{#if frontend_wp-localize-script}}
 		$scripts[0]->withLocalize(
-			'example_demo',
+			'exampleDemo',
 			array(
 				'alert'   => \__( 'Error!', PN_TEXTDOMAIN ),
 				'nonce'   => \wp_create_nonce( 'demo_example' ),

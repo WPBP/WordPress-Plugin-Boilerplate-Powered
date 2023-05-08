@@ -1,2 +1,2 @@
-import "./styles/block.scss";
-import "./block/index";
+import './styles/block.scss';
+import './block/index';

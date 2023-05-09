@@ -1,76 +1,76 @@
 {
-    "name": "plugin-name",
-    "version": "1.0.0",
-    "description": "",
-    "author": "{{author_name}} <{{author_email}}>",
-    "files": [
-        "ajax",
-        "assets",
-        "backend",
-        "cli",
-        "engine",
-        "frontend",
-        "functions",
-        "integrations",
-        "internals",
-        "languages",
-        "rest",
-        "templates",
-        "vendor",
-        "index.php",
-        "LICENSE.txt",
-        "plugin-name.php",
-        "README.txt",
-        "uninstall.php"
-    ],
-    "scripts": {
-        "start": "wp-scripts start",
-        "build": "wp-scripts build",
-        "check-engines": "wp-scripts check-engines",
-        "check-licenses": "wp-scripts check-licenses",
-        "format": "wp-scripts format",
-        "lint:css": "wp-scripts lint-style ./assets/src/styles/**/*.scss --fix",
-        "lint:js": "wp-scripts lint-js ./assets/src",
-        "lint:md:docs": "wp-scripts lint-md-docs",
-        "lint:pkg-json": "wp-scripts lint-pkg-json",
-        "packages-update": "wp-scripts packages-update",
-        "plugin-zip": "wp-scripts plugin-zip",
-        "postinstall": "npm run build",
-        "publish": "npm run build && npm run plugin-zip",
-        "wp-env": "wp-env start"
-    },
-    "devDependencies": {
-        "@types/jquery": "^3.5.16",
-        "@wordpress/scripts": "^24.6.0",
-        "@wordpress/block-editor": "^9.8.0",
-        "typescript": "^5.0.4"
-    },
-    "engines": {
-        "node": ">=14.0.0",
-        "npm": ">=6.9.0"
-    },
-    "babel": {
-        "presets": [
-            "@wordpress/babel-preset-default"
-        ]
-    },
-    "browserslist": [
-        "extends @wordpress/browserslist-config"
-    ],
-    "eslintConfig": {
-        "extends": [
-            "plugin:@wordpress/eslint-plugin/recommended"
-        ],
-        "globals": {
-            "jQuery": true,
-            "$": true
-        }
-    },
-    "stylelint": {
-        "extends": [
-            "@wordpress/stylelint-config",
-            "@wordpress/stylelint-config/scss"
-        ]
-    },
-    "prettier": "@wordpress/prettier-config"
+	"name": "plugin-name",
+	"version": "1.0.0",
+	"description": "",
+	"author": "{{author_name}} <{{author_email}}>",
+	"files": [
+		"ajax",
+		"assets",
+		"backend",
+		"cli",
+		"engine",
+		"frontend",
+		"functions",
+		"integrations",
+		"internals",
+		"languages",
+		"rest",
+		"templates",
+		"vendor",
+		"index.php",
+		"LICENSE.txt",
+		"plugin-name.php",
+		"README.txt",
+		"uninstall.php"
+	],
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style ./assets/src/styles/**/*.scss --fix",
+		"lint:js": "wp-scripts lint-js ./assets/src",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"postinstall": "npm run build",
+		"publish": "npm run build && npm run plugin-zip",
+		"wp-env": "wp-env start"
+	},
+	"devDependencies": {
+		"@types/jquery": "^3.5.16",
+		"@wordpress/scripts": "^24.6.0",
+		"@wordpress/block-editor": "^9.8.0",
+		"typescript": "^5.0.4"
+	},
+	"engines": {
+		"node": ">=14.0.0",
+		"npm": ">=6.9.0"
+	},
+	"babel": {
+		"presets": [
+			"@wordpress/babel-preset-default"
+		]
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"eslintConfig": {
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/recommended"
+		],
+		"globals": {
+			"jQuery": true,
+			"$": true
+		}
+	},
+	"stylelint": {
+		"extends": [
+			"@wordpress/stylelint-config",
+			"@wordpress/stylelint-config/scss"
+		]
+	},
+	"prettier": "@wordpress/prettier-config"
 }

@@ -1,6 +1,14 @@
 import { useBlockProps } from '@wordpress/block-editor';
-import { blockIcon, blockStyle } from './index';
+import { blockIcon, blockStyle } from './utils';
 
+/**
+ * The save function defines the way in which the different attributes should be combined
+ * into the final markup, which is then serialized into post_content.
+ *
+ * @see https://wordpress.org/gutenberg/handbook/block-api/block-edit-save
+ * @param {import('../types.d.ts').BlockCustomProps} attributes      - The block attributes.
+ * @return {JSX.Element} The element to render.
+ */
 export const Save = ( { attributes } ) => {
 	return (
 		<div { ...useBlockProps.save( { style: { ...blockStyle } } ) }>

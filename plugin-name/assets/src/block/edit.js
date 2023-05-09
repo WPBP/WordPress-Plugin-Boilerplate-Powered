@@ -1,12 +1,22 @@
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { Panel, PanelBody, PanelRow, TextControl } from '@wordpress/components';
-import { blockIcon, blockStyle } from './index';
+import { blockIcon, blockStyle } from './utils';
 
-export const Edit = ( { isSelected, style, attributes, setAttributes } ) => {
+/**
+ * The edit function describes the structure of your block in the context of the editor.
+ *
+ * @see https://wordpress.org/gutenberg/handbook/block-api/block-edit-save
+ * @param {import('@wordpress/blocks').BlockEditProps<Record<string, any>>} props - The block attributes
+ * @return {JSX.Element} Element to render.
+ */
+export const Edit = ( { isSelected, attributes, setAttributes } ) => {
 	return (
 		<div
 			{ ...useBlockProps( {
-				style: { ...blockStyle, style },
+				style: {
+					...attributes.style,
+					...blockStyle,
+				},
 			} ) }
 		>
 			<InspectorControls key="setting">
@@ -37,7 +47,10 @@ export const Edit = ( { isSelected, style, attributes, setAttributes } ) => {
 						: { border: 'none' }
 				}
 			>
-				<a href={ attributes.href } className={ 'has-link-color' }>
+				<a
+					href={ attributes.href ?? '' }
+					className={ 'has-link-color' }
+				>
 					Hello World, WordPress Plugin Boilerplate Powered here!
 				</a>
 			</h4>

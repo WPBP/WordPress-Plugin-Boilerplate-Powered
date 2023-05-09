@@ -40,27 +40,32 @@
 		"wp-env": "wp-env start"
 	},
 	"devDependencies": {
+		"@types/babel__core": "^7.20.0",
 		"@types/jquery": "^3.5.16",
-		"@wordpress/scripts": "^24.6.0",
+		"@types/jqueryui": "^1.12.16",
+		"@types/wordpress__blocks": "^12.5.0",
 		"@wordpress/block-editor": "^9.8.0",
+		"@wordpress/scripts": "^24.6.0",
 		"typescript": "^5.0.4"
 	},
 	"engines": {
 		"node": ">=14.0.0",
 		"npm": ">=6.9.0"
 	},
-	"babel": {
-		"presets": [
-			"@wordpress/babel-preset-default"
-		]
-	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
 	],
 	"eslintConfig": {
 		"extends": [
-			"plugin:@wordpress/eslint-plugin/recommended"
+			"plugin:@wordpress/eslint-plugin/recommended",
+			"plugin:jsdoc/recommended"
 		],
+		"env": {
+			"browser": true,
+			"es6": true,
+			"jquery": true
+		},
+		"parser": "@typescript-eslint/parser",
 		"globals": {
 			"jQuery": true,
 			"$": true

@@ -5,5 +5,32 @@
 	"category": "text",
 	"editorScript": "file:./build/plugin-block.js",
 	"editorStyle": "file:./build/plugin-block.css",
-	"style": "file:./build/plugin-block.css"
+	"style": "file:./build/plugin-block.css",
+	"attributes": {
+		"style": {
+			"type": "object",
+			"default": {
+				"color": {
+					"background": "#333333",
+					"text": "#ffffff",
+					"link": "#00A0D2"
+				},
+				"spacing": {
+					"padding": {
+						"top": "32px",
+						"left": "32px",
+						"bottom": "32px",
+						"right": "32px"
+					}
+				}
+			}
+		},
+		"href": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href",
+			"default": "https://github.com/WPBP"
+		}
+	}
 }

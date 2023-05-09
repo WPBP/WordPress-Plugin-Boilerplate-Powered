@@ -5,7 +5,15 @@
 		"jsx": "react-jsx",
 		"moduleResolution": "node",
 		"noImplicitAny": true,
+
+		// Tells TypeScript to read JS files, as
+		// normally they are ignored as source files
 		"allowJs": true,
+		"checkJs": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"sourceMap": true,

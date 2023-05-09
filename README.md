@@ -4,16 +4,10 @@
   <img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt="Logo">
 </p>
 
-<div>
-  [![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)
-  [![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
-  <a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions">
-    <img alt="build" src="https://img.shields.io/github/actions/workflow/status/WPBP/WordPress-Plugin-Boilerplate-Powered/integrate.yml" />
-  </a>
-  <a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions">
-    <img alt="workflows" src="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions/workflows/integrate.yml/badge.svg" />
-  </a>
-</div>
+[![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
+[![GitHub CI](https://img.shields.io/github/actions/workflow/status/WPBP/WordPress-Plugin-Boilerplate-Powered/integrate.yml)](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions)
+[![Workflow](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions/workflows/integrate.yml/badge.svg)](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions)
 
 [Website](https://wpbp.github.io/index.html) | [Wiki](https://wpbp.github.io/wiki.html) | [GitHub](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered) | [Code Generator](https://github.com/WPBP/generator)
 

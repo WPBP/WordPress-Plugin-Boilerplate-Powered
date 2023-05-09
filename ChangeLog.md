@@ -1,7 +1,11 @@
 ## 3.3.2
 
 * Enhancement: Tests use a dedicated .env file isntead to manipulate the env file (GitHub/GitLab CI updated)
-* Enhancement: AJax tests improved to work with altst toosl updates
+* Enhancement: AJax tests improved to work with latest tools updates
+* Enhancement: Improvements on editorconfi support
+* Enhancement: New Readme
+* Enhancement: NPM and JS stuff improved
+* Fix:GitHub CI updated with different NodeJS versions tests
 
 ## 3.3.1
 

@@ -43,6 +43,7 @@
 		"@types/babel__core": "^7.20.0",
 		"@types/jquery": "^3.5.16",
 		"@types/jqueryui": "^1.12.16",
+		"@types/wordpress__block-editor": "^11.5.1",
 		"@types/wordpress__blocks": "^12.5.0",
 		"@wordpress/block-editor": "^9.8.0",
 		"@wordpress/scripts": "^24.6.0",

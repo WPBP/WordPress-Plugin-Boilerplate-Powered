@@ -15,10 +15,3 @@ declare global {
 		exampleDemo: ExampleDemo;
 	}
 }
-
-/**
- * Block types
- */
-interface BlockCustomProps extends BlockAttributes {
-	href: string;
-}

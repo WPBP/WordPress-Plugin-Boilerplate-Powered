@@ -11,11 +11,13 @@
 		"allowJs": true,
 		"checkJs": true,
 		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noEmit": true,
 
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"sourceMap": true,
 		"strict": true
 	},
-	"exclude": [ "assets/build", "tests" ]
+	"include": [ "assets/src/**/*", "assets/src/block.json" ]
 }

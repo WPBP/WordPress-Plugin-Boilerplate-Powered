@@ -27,6 +27,9 @@
 		},
 		"href": {
 			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href",
 			"default": "https://github.com/WPBP"
 		}
 	}

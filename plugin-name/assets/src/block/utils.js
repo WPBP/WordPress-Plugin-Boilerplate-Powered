@@ -1,7 +1,7 @@
 /**
  * The block styles.
  *
- * @type { Object.<string, any> }
+ * @type { Record<string, any> }
  */
 export const blockStyle = {
 	textAlign: 'center',

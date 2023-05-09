@@ -8,6 +8,13 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import { Edit } from './edit';
 import { Save } from './save';
+
+/**
+ * @typedef {import('@wordpress/blocks').Block<Props>} BlockType
+ * @typedef {import('@wordpress/blocks').BlockConfiguration<Props>} BlockConfig
+ * @typedef {import('./edit').Props} Props
+ */
+
 /**
  * @type { import('@wordpress/blocks').BlockIcon } BlockIcon - The Block Icon
  */
@@ -15,20 +22,19 @@ import { blockIcon } from './utils';
 
 /**
  * The block configuration
- *
- * @type { import('@wordpress/blocks').BlockConfiguration } BlockConfig      - The block configuration
  */
-const blockConfig = require( '../../block.json' );
+const blockConfig = /** @type {BlockConfig} */ (
+	require( '../../block.json' )
+);
 
 /**
  * Register the block
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( {
+registerBlockType( 'plugin-name/block-name', {
 	...blockConfig,
 	icon: blockIcon,
-	apiVersion: 2,
 	/**
 	 * @see edit.js
 	 */

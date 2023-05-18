@@ -111,7 +111,7 @@ class ImpExp extends Base {
 		// Retrieve the settings from the file and convert the json object to an array.
 		$settings_file = file_get_contents( $import_file );// phpcs:ignore
 
-		if ( !$settings_file ) {
+		if ( $settings_file !== false ) {
 			$settings = \json_decode( (string) $settings_file );
 
 			if ( \is_array( $settings ) ) {

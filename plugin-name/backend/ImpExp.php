@@ -29,10 +29,12 @@ class ImpExp extends Base {
 			return;
 		}
 
-		// Add the export settings method
-		\add_action( 'admin_init', array( $this, 'settings_export' ) );
-		// Add the import settings method
-		\add_action( 'admin_init', array( $this, 'settings_import' ) );
+		if ( \current_user_can( 'manage_options' ) ) {
+			// Add the export settings method
+			\add_action( 'admin_init', array( $this, 'settings_export' ) );
+			// Add the import settings method
+			\add_action( 'admin_init', array( $this, 'settings_import' ) );
+		}
 	}
 
 	/**
@@ -50,10 +52,6 @@ class ImpExp extends Base {
 		}
 
 		if ( !\wp_verify_nonce( \sanitize_text_field( \wp_unslash( $_POST[ 'pn_export_nonce' ] ) ), 'pn_export_nonce' ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
-			return;
-		}
-
-		if ( !\current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
@@ -91,10 +89,10 @@ class ImpExp extends Base {
 			return;
 		}
 
-		if ( !\current_user_can( 'manage_options' ) ) {
+		if ( !isset( $_FILES[ 'pn_import_file' ][ 'name' ] ) ) {
 			return;
 		}
-
+		
 		$file_name_parts = \explode( '.', $_FILES[ 'pn_import_file' ][ 'name' ] ); //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 		$extension       = \end( $file_name_parts );
 

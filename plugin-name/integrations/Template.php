@@ -40,7 +40,7 @@ class Template extends Base {
 	 */
 	public static function load_content_demo( string $original_template ) {
 		if ( \is_singular( 'demo' ) && \in_the_loop() ) {
-			return \wpbp_get_template_part( PN_TEXTDOMAIN, 'content', 'demo', false );
+			return \wpbp_get_template_part( PN_TEXTDOMAIN, 'content', 'demo', false, array() ); // The last parameter is for arguments to pass to the template but is not mandatory
 		}
 
 		return $original_template;

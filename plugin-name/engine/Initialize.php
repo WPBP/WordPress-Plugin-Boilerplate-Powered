@@ -99,7 +99,7 @@ class Initialize {
 				\do_action( 'plugin_name_initialize_failed', $err );
 
 				if ( WP_DEBUG ) {
-					throw new \Exception( $err->getMessage() );
+					throw new \Exception( $err->getMessage() ); //phpcs:ignore
 				}
 			}
 		}

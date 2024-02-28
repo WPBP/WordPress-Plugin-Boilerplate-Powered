@@ -7,8 +7,6 @@ assignees: ''
 
 ---
 
-<!-- Love WordPress-Plugin-Boilerplate-Powered? Please consider supporting our collective:
-👉  https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/donate -->
 **Describe the bug**
 A clear and concise description of what the bug is.
 

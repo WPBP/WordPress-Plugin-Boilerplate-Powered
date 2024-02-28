@@ -58,23 +58,23 @@
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},
 	"repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "mte90/wp-super-duper",
-                "version": "dev-fork",
-                "autoload": {
-                    "files": [
-                        "wp-super-duper.php"
-                    ]
-                },
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/mte90/wp-super-duper.git",
-                    "reference": "fork"
-                }
-            }
-        }
+		{
+			"type": "package",
+			"package": {
+				"name": "mte90/wp-super-duper",
+				"version": "dev-fork",
+				"autoload": {
+					"files": [
+						"wp-super-duper.php"
+					]
+				},
+				"source": {
+					"type": "git",
+					"url": "https://github.com/mte90/wp-super-duper.git",
+					"reference": "fork"
+				}
+			}
+		}
 	],
 	"minimum-stability": "dev",
 	"prefer-stable": true,

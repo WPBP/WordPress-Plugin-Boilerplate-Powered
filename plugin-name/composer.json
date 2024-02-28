@@ -61,7 +61,7 @@
         {
             "type": "package",
             "package": {
-                "name": "mte90\/wp-super-duper",
+                "name": "mte90/wp-super-duper",
                 "version": "dev-fork",
                 "autoload": {
                     "files": [
@@ -70,7 +70,7 @@
                 },
                 "source": {
                     "type": "git",
-                    "url": "https:\/\/github.com\/mte90\/wp-super-duper.git",
+                    "url": "https://github.com/mte90/wp-super-duper.git",
                     "reference": "fork"
                 }
             }

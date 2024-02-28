@@ -115,11 +115,6 @@ Suite to package and deploy the free version of the plugin by Freemius on WordPr
 Do you want to see which plugins have been made with this boilerplate?
 Check out [this Wiki page](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugins-made-with-this-Boilerplate)!
 
-## Contributors
-
-This project exists thanks to all the people who contribute.  
-<a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/graphs/contributors"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/contributors.svg?width=890"></a>
-
 ## License
 
 WordPress Plugin Boilerplate Powered is licensed under the GPL v3 or later;

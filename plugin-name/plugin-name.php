@@ -43,28 +43,6 @@ add_action(
 	);
 
 // {{/if}}
-if ( version_compare( PHP_VERSION, PN_MIN_PHP_VERSION, '<=' ) ) {
-	add_action(
-		'admin_init',
-		static function() {
-			deactivate_plugins( plugin_basename( __FILE__ ) );
-		}
-	);
-	add_action(
-		'admin_notices',
-		static function() {
-			echo wp_kses_post(
-			sprintf(
-				'<div class="notice notice-error"><p>%s</p></div>',
-				__( '"{{plugin_name}}" requires PHP 5.6 or newer.', PN_TEXTDOMAIN )
-			)
-			);
-		}
-	);
-
-	// Return early to prevent loading the plugin.
-	return;
-}
 
 $plugin_name_libraries = require PN_PLUGIN_ROOT . 'vendor/autoload.php'; //phpcs:ignore
 
@@ -145,8 +123,10 @@ Puc_v4_Factory::buildUpdateChecker( 'https://github.com/user-name/repo-name/', _
 // {{/if}}
 
 if ( ! wp_installing() ) {
+	// WPBPGen{{#if act-deact_actdeact}}
 	register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
 	register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
+	// {{/if}}
 	add_action(
 		'plugins_loaded',
 		static function () use ( $plugin_name_libraries ) {

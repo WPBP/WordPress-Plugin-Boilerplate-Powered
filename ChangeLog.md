@@ -1,3 +1,9 @@
+## 3.3.3
+
+* Enhancement: New filter on \Initialize to get the class instance 
+* Updated: CS changes
+* Updated: to latest libraries changes
+
 ## 3.3.2
 
 * Enhancement: Tests use a dedicated .env file instead to manipulate the env file (GitHub/GitLab CI updated)

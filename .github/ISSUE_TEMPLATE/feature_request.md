@@ -7,8 +7,6 @@ assignees: ''
 
 ---
 
-<!-- Love WordPress-Plugin-Boilerplate-Powered? Please consider supporting our collective:
-👉  https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/donate -->
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 

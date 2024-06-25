@@ -32,6 +32,12 @@ parameters:
         - vendor/freemius/wordpress-sdk/includes/class-freemius.php
         # {{/if}}
         - vendor/inpsyde/wp-context/src/WpContext.php
+        // WPBPGen{{#if wpcli}}
+        - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+        - vendor/php-stubs/wp-cli-stubs/wp-cli-stubs.php
+        - vendor/php-stubs/wp-cli-stubs/wp-cli-commands-stubs.php
+        - vendor/php-stubs/wp-cli-stubs/wp-cli-i18n-stubs.php
+        # {{/if}}
     ignoreErrors:
         - '/^Parameter #1 \$var of function strval expects bool\|float\|int\|resource\|string\|null, mixed given.$/'
 # Not used in the boilerplate.

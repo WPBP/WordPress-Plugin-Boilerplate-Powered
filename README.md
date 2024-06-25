@@ -4,8 +4,6 @@
   <img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt="Logo">
 </p>
 
-[![Backers on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers/badge.svg)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/sponsors/badge.svg)](#sponsors)
 [![GitHub CI](https://img.shields.io/github/actions/workflow/status/WPBP/WordPress-Plugin-Boilerplate-Powered/integrate.yml)](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions)
 [![Workflow](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions/workflows/integrate.yml/badge.svg)](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/actions)
 
@@ -116,21 +114,6 @@ Suite to package and deploy the free version of the plugin by Freemius on WordPr
 
 Do you want to see which plugins have been made with this boilerplate?
 Check out [this Wiki page](https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/wiki/Plugins-made-with-this-Boilerplate)!
-
-## Contributors
-
-This project exists thanks to all the people who contribute.  
-<a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered/graphs/contributors"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/contributors.svg?width=890"></a>
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backer)]
-<br>
-<a href="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered#backers" target="_blank"><img src="https://opencollective.com/WordPress-Plugin-Boilerplate-Powered/backers.svg?width=890"></a>
-
-## Sponsors
-
-[[Become a sponsor](https://opencollective.com/wordpress-plugin-boilerplate-powered/contribute/sponsors-1214/checkout)]
 
 ## License
 

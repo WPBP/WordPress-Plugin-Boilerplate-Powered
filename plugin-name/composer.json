@@ -13,33 +13,33 @@
 	"homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered",
 	"require": {
 		"php": ">=7.4",
-		"ayecode/wp-super-duper": "2.0.2",
-		"cmb2/cmb2": "2.9.*",
+		"cmb2/cmb2": "~2.9.0",
 		"composer/installers": "1.x",
 		"decodelabs/tagged": "^0.11.9",
-		"freemius/wordpress-sdk": "2.5.*",
+		"freemius/wordpress-sdk": "~2.6.0",
 		"inpsyde/assets": "^2.8",
-		"inpsyde/wp-context": "1.3.*",
-		"johnbillion/extended-cpts": "4.5.*",
+		"inpsyde/wp-context": "~1.3.0",
+		"johnbillion/extended-cpts": "~4.5.0",
 		"julien731/wp-review-me": "dev-develop",
 		"micropackage/requirements": "^1.0",
+		"mte90/wp-super-duper": "dev-fork",
 		"origgami/cmb2-grid": "dev-master",
 		"seravo/wp-custom-bulk-actions": "dev-master",
 		"stevegrunwell/wp-cache-remember": "dev-master",
-		"wpbp/cpt_columns": "1.0.*",
-		"wpbp/cronplus": "1.0.*",
-		"wpbp/debug": "1.1.*",
+		"wpbp/cpt_columns": "~1.0.0",
+		"wpbp/cronplus": "~1.0.0",
+		"wpbp/debug": "~1.1.0",
 		"wpbp/i18n-notice": "dev-main",
 		"wpbp/page-madness-detector": "^1.0",
-		"wpbp/pointerplus": "1.0.*",
-		"wpbp/template": "1.0.*",
-		"wpbp/widgets-helper": "1.0.*",
+		"wpbp/pointerplus": "~1.0.0",
+		"wpbp/template": "~1.0.0",
+		"wpbp/widgets-helper": "~1.0.0",
 		"wpdesk/wp-notice": "^3.2",
 		"yahnis-elsts/plugin-update-checker": "^4.9"
 	},
 	"require-dev": {
 		"codeatcode/codeatcs": "^1.0",
-		"codeception/codeception": "4.2.*",
+		"codeception/codeception": "~4.2.0",
 		"codeception/module-asserts": "^1.0",
 		"codeception/module-cli": "^1.0",
 		"codeception/module-db": "^1.0",
@@ -50,30 +50,44 @@
 		"codeception/util-universalframework": "^1.0",
 		"dealerdirect/phpcodesniffer-composer-installer": "1.0.0",
 		"ergebnis/composer-normalize": "^2.6",
-		"lucatume/function-mocker": "~1.0",
+		"lucatume/function-mocker": "^1.0",
 		"lucatume/wp-browser": "^3.1",
+		"php-stubs/wp-cli-stubs": "^2.0",
 		"phpro/grumphp": "^1.13",
 		"phpunit/phpunit": "^9.2",
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},
 	"repositories": [
 		{
-			"type": "git",
-			"url": "https://github.com/ayecode/wp-super-duper"
+			"type": "package",
+			"package": {
+				"name": "mte90/wp-super-duper",
+				"version": "dev-fork",
+				"autoload": {
+					"files": [
+						"wp-super-duper.php"
+					]
+				},
+				"source": {
+					"type": "git",
+					"url": "https://github.com/mte90/wp-super-duper.git",
+					"reference": "fork"
+				}
+			}
 		}
 	],
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
-			"Plugin_Name\\Backend\\": "backend/",
-			"Plugin_Name\\Frontend\\": "frontend/",
-			"Plugin_Name\\Rest\\": "rest/",
 			"Plugin_Name\\Ajax\\": "ajax/",
-			"Plugin_Name\\Internals\\": "internals/",
+			"Plugin_Name\\Backend\\": "backend/",
 			"Plugin_Name\\Cli\\": "cli/",
+			"Plugin_Name\\Engine\\": "engine/",
+			"Plugin_Name\\Frontend\\": "frontend/",
 			"Plugin_Name\\Integrations\\": "integrations/",
-			"Plugin_Name\\Engine\\": "engine/"
+			"Plugin_Name\\Internals\\": "internals/",
+			"Plugin_Name\\Rest\\": "rest/"
 		},
 		"files": [
 			"vendor/wp-custom-bulk-actions/custom-bulk-actions.php"
@@ -82,7 +96,6 @@
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true,
-			"cweagans/composer-patches": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"ergebnis/composer-normalize": true,
 			"phpro/grumphp": true
@@ -96,11 +109,6 @@
 				"stevegrunwell/wp-cache-remember",
 				"seravo/wp-custom-bulk-actions"
 			]
-		},
-		"patches": {
-			"ayecode/wp-super-duper": {
-				"Fix v2": "https://patch-diff.githubusercontent.com/raw/AyeCode/wp-super-duper/pull/25.patch"
-			}
 		}
 	}
 }

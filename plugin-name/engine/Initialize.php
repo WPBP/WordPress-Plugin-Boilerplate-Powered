@@ -98,7 +98,7 @@ class Initialize {
 			} catch ( \Throwable $err ) {
 				\do_action( 'plugin_name_initialize_failed', $err );
 
-				if ( WP_DEBUG ) {
+				if ( \WP_DEBUG ) {
 					throw new \Exception( $err->getMessage() ); //phpcs:ignore
 				}
 			}
@@ -121,6 +121,12 @@ class Initialize {
 		}
 
 		$temp = new $classtovalidate;
+		\add_filter(
+			'plugin_name_instance_' . $classtovalidate,
+			function() use ( $temp ) {
+				return $temp;
+			}
+		);
 
 		if ( !\method_exists( $temp, 'initialize' ) ) {
 			return;

@@ -13,15 +13,15 @@
 	"homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered",
 	"require": {
 		"php": ">=7.4",
-		"cmb2/cmb2": "~2.9.0",
+		"cmb2/cmb2": "~2.10.0",
 		"composer/installers": "1.x",
-		"decodelabs/tagged": "^0.11.9",
-		"freemius/wordpress-sdk": "~2.6.0",
+		"decodelabs/tagged": "^0.15.3",
+		"freemius/wordpress-sdk": "~2.7.3",
 		"inpsyde/assets": "^2.8",
-		"inpsyde/wp-context": "~1.3.0",
-		"johnbillion/extended-cpts": "~4.5.0",
+		"inpsyde/wp-context": "~1.5.0",
+		"johnbillion/extended-cpts": "~5.0.8",
 		"julien731/wp-review-me": "dev-develop",
-		"micropackage/requirements": "^1.0",
+		"micropackage/requirements": "^1.2",
 		"mte90/wp-super-duper": "dev-fork",
 		"origgami/cmb2-grid": "dev-master",
 		"seravo/wp-custom-bulk-actions": "dev-master",
@@ -35,7 +35,7 @@
 		"wpbp/template": "~1.0.0",
 		"wpbp/widgets-helper": "~1.0.0",
 		"wpdesk/wp-notice": "^3.2",
-		"yahnis-elsts/plugin-update-checker": "^4.9"
+		"yahnis-elsts/plugin-update-checker": "^5.4"
 	},
 	"require-dev": {
 		"codeatcode/codeatcs": "^1.0",
@@ -51,9 +51,9 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "1.0.0",
 		"ergebnis/composer-normalize": "^2.6",
 		"lucatume/function-mocker": "^1.0",
-		"lucatume/wp-browser": "^3.1",
+		"lucatume/wp-browser": "^3.6",
 		"php-stubs/wp-cli-stubs": "^2.0",
-		"phpro/grumphp": "^1.13",
+		"phpro/grumphp": "^2.6",
 		"phpunit/phpunit": "^9.2",
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},

@@ -53,7 +53,7 @@
 		"lucatume/function-mocker": "^1.0",
 		"lucatume/wp-browser": "^3.6",
 		"php-stubs/wp-cli-stubs": "^2.0",
-		"phpro/grumphp": "^1.16",
+		"phpro/grumphp": "^1.13",
 		"phpunit/phpunit": "^9.2",
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},

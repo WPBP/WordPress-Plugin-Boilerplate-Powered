@@ -120,6 +120,7 @@ function pn_fs() {
 // WPBPGen{{#if libraries_yahnis-elsts__plugin-update-checker}}
 // Documentation to integrate GitHub, GitLab or BitBucket https://github.com/YahnisElsts/plugin-update-checker/blob/master/README.md
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
 PucFactory::buildUpdateChecker( 'https://github.com/user-name/repo-name/', __FILE__, 'unique-plugin-or-theme-slug' );
 // {{/if}}
 

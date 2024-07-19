@@ -39,3 +39,4 @@ tests/_output/
 plugin-name/vendor/
 tests/_support/_generated/
 plugin-name/assets/build/
+/assets/build/

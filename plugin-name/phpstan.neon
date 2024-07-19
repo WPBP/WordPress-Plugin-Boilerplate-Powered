@@ -40,7 +40,7 @@ parameters:
         # {{/if}}
     ignoreErrors:
         - '/^Parameter #1 \$var of function strval expects bool\|float\|int\|resource\|string\|null, mixed given.$/'
-        - '/^Call to function is_wp_error\(\) with WP_REST_Response will always evaluate to false.$\'
+        - '/^Call to function is_wp_error\(\) with WP_REST_Response will always evaluate to false.$/'
         - '/^is_wp_error\(WP_REST_Response\) will always evaluate to false.$/'
 # Not used in the boilerplate.
 #        # Uses func_get_args()

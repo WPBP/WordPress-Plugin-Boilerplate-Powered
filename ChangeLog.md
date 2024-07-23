@@ -1,3 +1,8 @@
+## 3.3.4
+
+* Fix: Act/Deact support on removal for Generator
+* Updated: to latest libraries changes
+
 ## 3.3.3
 
 * Enhancement: New filter on \Initialize to get the class instance 

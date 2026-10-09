@@ -12,7 +12,7 @@
 	],
 	"homepage": "https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered",
 	"require": {
-		"php": ">=8.0",
+		"php": ">=8.1",
 		"cmb2/cmb2": "~2.10.0",
 		"composer/installers": "^1.0",
 		"decodelabs/tagged": "^0.13.0",
@@ -33,7 +33,9 @@
 		"wpbp/pointerplus": "~1.0.0",
 		"wpbp/template": "~1.0.0",
 		"wpdesk/wp-notice": "^3.2",
-		"yahnis-elsts/plugin-update-checker": "^5.4"
+		"yahnis-elsts/plugin-update-checker": "^5.4",
+		"joanrodas/plubo-routes": "^0.8",
+		"codeception/module-rest": "^3.4"
 	},
 	"require-dev": {
 		"codeatcode/codeatcs": "^1.0",
@@ -43,7 +45,6 @@
 		"codeception/module-db": "^3.0",
 		"codeception/module-filesystem": "^3.0",
 		"codeception/module-phpbrowser": "^3.0",
-		"codeception/module-rest": "^3.0",
 		"codeception/module-webdriver": "^3.0",
 		"dealerdirect/phpcodesniffer-composer-installer": "1.0.0",
 		"ergebnis/composer-normalize": "^2.45",
@@ -79,8 +80,8 @@
 			"phpro/grumphp": true
 		},
 		"platform": {
-			"ext-intl": "8.0.0",
-			"php": "8.0"
+			"ext-intl": "8.1.0",
+			"php": "8.1"
 		}
 	},
 	"extra": {
@@ -144,7 +145,8 @@
 				"yahnis-elsts/plugin-update-checker",
 				"origgami/cmb2-grid",
 				"seravo/wp-custom-bulk-actions",
-				"stevegrunwell/wp-cache-remember"
+				"stevegrunwell/wp-cache-remember",
+				"joanrodas/plubo-routes"
 			],
 			"target_directory": "vendor-prefixed",
 			"update_call_sites": false

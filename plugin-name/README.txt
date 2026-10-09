@@ -7,7 +7,7 @@ Tested up to: 7.1
 Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Requires PHP: 8.0
+Requires PHP: 8.1
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 

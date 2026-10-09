@@ -18,7 +18,7 @@
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  * Domain Path:     /languages
  * Requires at least: 6.0
- * Requires PHP:    8.0
+ * Requires PHP:    8.1
  * WordPress-Plugin-Boilerplate-Powered: v3.3.0
  */
 
@@ -31,7 +31,7 @@ define( 'PN_VERSION', '{{plugin_version}}' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
-define( 'PN_MIN_PHP_VERSION', '8.0' );
+define( 'PN_MIN_PHP_VERSION', '8.1' );
 define( 'PN_WP_VERSION', '6.0' );
 
 // WPBPGen{{#if language-files}}

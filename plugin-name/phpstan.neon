@@ -16,10 +16,6 @@ parameters:
     bootstrapFiles:
         # CMB2 is loaded in this file
         - tests/phpstan/bootstrap.php
-        # WPBPGen{{#if libraries_wpbp__widgets-helper}}
-        # Does not work in "scanFiles"
-        - vendor/wpbp/widgets-helper/class.wph-widget.php
-        # {{/if}}
     scanFiles:
         - plugin-name.php
         - uninstall.php
@@ -39,7 +35,6 @@ parameters:
         - vendor/php-stubs/wp-cli-stubs/wp-cli-i18n-stubs.php
         # {{/if}}
     ignoreErrors:
-        - '/^Parameter #1 \$var of function strval expects bool\|float\|int\|resource\|string\|null, mixed given.$/'
         - '/^Call to function is_wp_error\(\) with WP_REST_Response will always evaluate to false.$/'
         - '/^is_wp_error\(WP_REST_Response\) will always evaluate to false.$/'
 # Not used in the boilerplate.

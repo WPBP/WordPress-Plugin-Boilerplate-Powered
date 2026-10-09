@@ -207,7 +207,7 @@ class ActDeact extends Base {
 			return;
 		}
 
-		$version = \strval( \get_option( 'plugin-name-version' ) );
+		$version = is_scalar( \get_option( 'plugin-name-version' ) ) ? (string) \get_option( 'plugin-name-version' ) : '';
 
 		if ( !\version_compare( PN_VERSION, $version, '>' ) ) {
 			return;

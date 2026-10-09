@@ -6,8 +6,21 @@ grumphp:
             strict: false
         phpcs:
             standard: CodeatCodingStandard
-            exclude: ['Squiz.PHP.CommentedOutCode', 'Generic.Commenting.Todo', 'SlevomatCodingStandard.Functions.UnusedParameter', 'SlevomatCodingStandard.Variables.UnusedVariable', 'Squiz.Commenting.FileComment', 'SlevomatCodingStandard.Whitespaces.DuplicateSpaces', 'SlevomatCodingStandard.TypeHints.DeclareStrictTypes', 'SlevomatCodingStandard.Files.TypeNameMatchesFileName', 'SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator', 'Generic.CodeAnalysis.UnusedFunctionParameter']
-            ignore_patterns: ['/vendor/', '/vendor-prefixed/', '/tests/', '/assets/build']
+            exclude:
+                [
+                    'Squiz.PHP.CommentedOutCode',
+                    'Generic.Commenting.Todo',
+                    'SlevomatCodingStandard.Functions.UnusedParameter',
+                    'SlevomatCodingStandard.Variables.UnusedVariable',
+                    'Squiz.Commenting.FileComment',
+                    'SlevomatCodingStandard.Whitespaces.DuplicateSpaces',
+                    'SlevomatCodingStandard.TypeHints.DeclareStrictTypes',
+                    'SlevomatCodingStandard.Files.TypeNameMatchesFileName',
+                    'SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator',
+                    'Generic.CodeAnalysis.UnusedFunctionParameter',
+                ]
+            ignore_patterns:
+                ['/vendor/', '/vendor-prefixed/', '/tests/', '/assets/build']
         phpmd:
             ruleset: ['phpmd.xml']
             exclude: ['/vendor/', '/tests/', '/assets/build']

@@ -1,22 +1,20 @@
 {
-  "core": "WordPress/WordPress",
-  "plugins": [
-    "."
-  ],
-  "phpVersion": "8.1",
-  "env": {
-    "development": {
-      "port": 8888
-    },
-    "tests": {
-      "port": 8889,
-      "config": {
-        "WP_DEBUG": true,
-        "WP_DEBUG_LOG": true,
-        "WP_TESTS_DOMAIN": "example.test",
-        "WP_TESTS_EMAIL": "admin@example.test",
-        "WP_TESTS_TITLE": "Test Blog"
-      }
-    }
-  }
+	"core": "WordPress/WordPress",
+	"plugins": [ "." ],
+	"phpVersion": "8.1",
+	"env": {
+		"development": {
+			"port": 8888
+		},
+		"tests": {
+			"port": 8889,
+			"config": {
+				"WP_DEBUG": true,
+				"WP_DEBUG_LOG": true,
+				"WP_TESTS_DOMAIN": "example.test",
+				"WP_TESTS_EMAIL": "admin@example.test",
+				"WP_TESTS_TITLE": "Test Blog"
+			}
+		}
+	}
 }

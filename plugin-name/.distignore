@@ -16,6 +16,7 @@ tests/
 wp-config-test.php
 assets/.npmignore
 tests/_envs/
+tests.sh
 .phpunit.result.cache
 .phpcs.xml
 .phpcs.xml.dist

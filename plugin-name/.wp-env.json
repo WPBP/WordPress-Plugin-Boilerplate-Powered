@@ -1,9 +1,9 @@
 {
-  "core": "latest",
+  "core": "WordPress/WordPress",
   "plugins": [
     "."
   ],
-  "phpVersion": "8.0",
+  "phpVersion": "8.1",
   "env": {
     "development": {
       "port": 8888

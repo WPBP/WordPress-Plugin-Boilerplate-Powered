@@ -3,11 +3,11 @@
 /**
  * Plugin_Name
  *
- * @package   Plugin_Name
- * @author    {{author_name}} <{{author_email}}>
+ * @package Plugin_Name
+ * @author {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @license {{author_license}}
+ * @link {{author_url}}
  */
 
 namespace Plugin_Name\Internals;
@@ -53,8 +53,8 @@ class Routes extends Base {
 			'custom-page',
 			PN_PLUGIN_ROOT . 'templates/custom-page.php',
 			array(
-				'name'  => 'custom_page',
-				'title' => \__( 'Custom Page', 'plugin-name' ),
+				'name' => 'custom_page',
+			'title' => \__( 'Custom Page', 'plugin-name' ),
 			)
 		);
 
@@ -74,7 +74,7 @@ class Routes extends Base {
 			'old-page',
 			\home_url( '/custom-page' ),
 			array(
-				'name'   => 'old_page_redirect',
+				'name' => 'old_page_redirect',
 				'status' => 301,
 			)
 		);

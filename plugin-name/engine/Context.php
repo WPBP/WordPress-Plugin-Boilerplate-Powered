@@ -3,11 +3,11 @@
 /**
  * Plugin_Name
  *
- * @package   Plugin_Name
- * @author    {{author_name}} <{{author_email}}>
+ * @package Plugin_Name
+ * @author {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @license {{author_license}}
+ * @link {{author_url}}
  */
 
 namespace Plugin_Name\Engine;
@@ -30,7 +30,7 @@ class Context {
 	 * What type of request is this?
 	 *
 	 * @since {{plugin_version}}
-	 * @param  string $type admin, ajax, cron, cli, amp or frontend.
+	 * @param string $type admin, ajax, cron, cli, amp or frontend.
 	 * @return bool
 	 * @SuppressWarnings("StaticAccess")
 	 */

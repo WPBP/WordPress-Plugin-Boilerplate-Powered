@@ -3,11 +3,11 @@
 /**
  * Plugin_Name
  *
- * @package   Plugin_Name
- * @author    {{author_name}} <{{author_email}}>
+ * @package Plugin_Name
+ * @author {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @license {{author_license}}
+ * @link {{author_url}}
  */
 
 namespace Plugin_Name\Internals;
@@ -38,15 +38,15 @@ class PostTypes extends Base {
 		$post_columns->add_column(
 			'cmb2_field',
 			array(
-				'label'    => \__( 'CMB2 Field', 'plugin-name' ),
-				'type'     => 'post_meta',
-				'meta_key' => '_demo_plugin-name_text', // phpcs:ignore WordPress.DB
-				'orderby'  => 'meta_value',
-				'sortable' => true,
-				'prefix'   => '<b>',
-				'suffix'   => '</b>',
-				'def'      => 'Not defined', // Default value in case post meta not found
-				'order'    => '-1',
+					'label' => \__( 'CMB2 Field', 'plugin-name' ),
+					'type' => 'post_meta',
+					'meta_key' => '_demo_plugin-name_text', // phpcs:ignore WordPress.DB
+					'orderby' => 'meta_value',
+					'sortable' => true,
+					'prefix' => '<b>',
+					'suffix' => '</b>',
+					'def' => 'Not defined', // Default value in case post meta not found
+					'order' => '-1',
 			)
 		);
 		// {{/if}}
@@ -57,9 +57,9 @@ class PostTypes extends Base {
 		$bulk_actions = new \Seravo_Custom_Bulk_Action( array( 'post_type' => 'demo' ) );
 		$bulk_actions->register_bulk_action(
 			array(
-				'menu_text'    => 'Mark meta',
+				'menu_text' => 'Mark meta',
 				'admin_notice' => 'Written something on custom bulk meta',
-				'callback'     => static function( $post_ids ) {
+				'callback' => static function( $post_ids ) {
 					foreach ( $post_ids as $post_id ) {
 						\update_post_meta( $post_id, '_demo_plugin-name_text', 'Random stuff' );
 					}
@@ -114,46 +114,46 @@ class PostTypes extends Base {
 				'demo',
 				array(
 					// Show all posts on the post type archive:
-					'archive'            => array(
-						'nopaging' => true,
-					),
-					'slug'               => 'demo',
-					'show_in_rest'       => true,
-					'dashboard_activity' => true,
-					// WPBPGen{{#if system_capability-system}}
-					'capability_type'    => array( 'demo', 'demoes' ),
+						'archive' => array(
+							'nopaging' => true,
+						),
+						'slug' => 'demo',
+						'show_in_rest' => true,
+						'dashboard_activity' => true,
+						// WPBPGen{{#if system_capability-system}}
+						'capability_type' => array( 'demo', 'demoes' ),
 					// {{/if}}
-					// Add some custom columns to the admin screen
-					'admin_cols'         => array(
-						'featured_image' => array(
-							'title'          => 'Featured Image',
-							'featured_image' => 'thumbnail',
-						),
-						'title',
-						'genre'          => array(
-							'taxonomy' => 'demo-section',
-						),
-						'custom_field'   => array(
-							'title'    => 'By Lib',
-							'meta_key' => '_demo_' . 'plugin-name' . '_text', // phpcs:ignore
-							'cap'      => 'manage_options',
-						),
-						'date'           => array(
-							'title'   => 'Date',
-							'default' => 'ASC',
-						),
+						// Add some custom columns to the admin screen
+						'admin_cols' => array(
+							'featured_image' => array(
+								'title' => 'Featured Image',
+								'featured_image' => 'thumbnail',
+							),
+							'title',
+							'genre' => array(
+								'taxonomy' => 'demo-section',
+							),
+							'custom_field' => array(
+								'title' => 'By Lib',
+								'meta_key' => '_demo_' . 'plugin-name' . '_text', // phpcs:ignore
+								'cap' => 'manage_options',
+							),
+							'date' => array(
+								'title' => 'Date',
+								'default' => 'ASC',
+							),
 					),
-					// Add a dropdown filter to the admin screen:
-					'admin_filters'      => array(
-						'genre' => array(
-							'taxonomy' => 'demo-section',
+						// Add a dropdown filter to the admin screen:
+						'admin_filters' => array(
+							'genre' => array(
+								'taxonomy' => 'demo-section',
+							),
 						),
-					),
 			),
 			array(
 				// Override the base names used for labels:
 				'singular' => \__( 'Demo', 'plugin-name' ),
-				'plural'   => \__( 'Demos', 'plugin-name' ),
+				'plural' => \__( 'Demos', 'plugin-name' ),
 			)
 		);
 
@@ -164,22 +164,22 @@ class PostTypes extends Base {
 			'demo',
 			array(
 				// Use radio buttons in the meta box for this taxonomy on the post editing screen:
-				'meta_box'         => 'radio',
+				'meta_box' => 'radio',
 				// Show this taxonomy in the 'At a Glance' dashboard widget:
 				'dashboard_glance' => true,
 				// Add a custom column to the admin screen:
-				'admin_cols'       => array(
+				'admin_cols' => array(
 					'featured_image' => array(
-						'title'          => 'Featured Image',
+						'title' => 'Featured Image',
 						'featured_image' => 'thumbnail',
 					),
 				),
-				'slug'             => 'demo-cat',
-				'show_in_rest'     => true,
+				'slug' => 'demo-cat',
+				'show_in_rest' => true,
 				// WPBPGen{{#if system_capability-system}}
-				'capabilities'     => array(
+				'capabilities' => array(
 					'manage_terms' => 'manage_demoes',
-					'edit_terms'   => 'manage_demoes',
+					'edit_terms' => 'manage_demoes',
 					'delete_terms' => 'manage_demoes',
 					'assign_terms' => 'read_demo',
 				),
@@ -188,7 +188,7 @@ class PostTypes extends Base {
 			array(
 				// Override the base names used for labels:
 				'singular' => \__( 'Demo Category', 'plugin-name' ),
-				'plural'   => \__( 'Demo Categories', 'plugin-name' ),
+				'plural' => \__( 'Demo Categories', 'plugin-name' ),
 			)
 		);
 	}
@@ -199,7 +199,7 @@ class PostTypes extends Base {
 	 * Bubble Notification for pending cpt<br>
 	 * NOTE: add in $post_types your cpts<br>
 	 *
-	 *        Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 * Reference: http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @since {{plugin_version}}
 	 * @return void
@@ -240,10 +240,10 @@ class PostTypes extends Base {
 	/**
 	 * Required for the bubble notification<br>
 	 *
-	 *  Reference:  http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
+	 * Reference: http://wordpress.stackexchange.com/questions/89028/put-update-like-notification-bubble-on-multiple-cpts-menus-for-pending-items/95058
 	 *
 	 * @param string $needle First parameter.
-	 * @param array  $haystack Second parameter.
+	 * @param array $haystack Second parameter.
 	 * @since {{plugin_version}}
 	 * @return string|bool
 	 */

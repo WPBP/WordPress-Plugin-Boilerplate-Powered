@@ -3,11 +3,11 @@
 /**
  * Plugin_name
  *
- * @package   Plugin_name
- * @author    {{author_name}} <{{author_email}}>
+ * @package Plugin_name
+ * @author {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @license {{author_license}}
+ * @link {{author_url}}
  */
 
 namespace Plugin_Name\Engine;

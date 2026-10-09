@@ -2,6 +2,7 @@ actor: Tester
 actor_suffix: Tester
 paths:
     tests: tests
+    output: tests/_output
     log: tests/_output
     data: tests/_data
     helpers: tests/_support
@@ -28,9 +29,6 @@ coverage:
         - internals/*
         - rest/*
         - integrations/*
-extensions:
-    enabled:
-        - Codeception\Extension\RunFailed
     commands:
         # Generate Tests cases
         # codecept generate:wp[...] [suite] [className]
@@ -59,9 +57,7 @@ modules:
                             '--proxy-bypass-list=*',
                         ]
         WPDb:
-            dsn: 'mysql:host=%DB_HOST%;dbname=%DB_NAME%'
-            user: '%DB_USER%'
-            password: '%DB_PASSWORD%'
+            dbUrl: 'mysql://%DB_USER%:%DB_PASSWORD%@%DB_HOST%/%DB_NAME%'
             dump: tests/_data/dump.sql
             populate: true
             cleanup: true
@@ -78,17 +74,15 @@ modules:
             dbUser: '%DB_USER%'
             dbPassword: '%DB_PASSWORD%'
             wpDebug: true
-            dbCharset: utf8
+            dbCharset: utf8mb4
             dbCollate: ''
             tablePrefix: wp_
             domain: '%WP_DOMAIN%'
             adminEmail: 'admin@%WP_DOMAIN%'
             title: 'WP Tests'
-            phpBinary: php
             language: ''
             configFile: 'wp-config-test.php'
             plugins: ['plugin-name/plugin-name.php']
-            activatePlugins: ['plugin-name/plugin-name.php']
         WPWebDriver:
             url: '%WP_URL%'
             browser: chrome

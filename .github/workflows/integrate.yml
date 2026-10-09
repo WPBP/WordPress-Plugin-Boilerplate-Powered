@@ -170,14 +170,14 @@ jobs:
         run: "npx prettier --check . !vendor !tests !assets/build"
 
   codeception-tests:
-    name: "Codeception tests"
-    timeout-minutes: 15
+    name: "Codeception tests (wp-env)"
+    timeout-minutes: 20
 
     runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
-        # Test stack bump (Codeception 5) is a planned change; matrix stays single-version until then
+        # PHP 8.0 single-version for Codeception CI compatibility
         php-version:
           - "8.0"
 
@@ -192,8 +192,13 @@ jobs:
         uses: "shivammathur/setup-php@2.37.1"
         with:
           coverage: "none"
-          extensions: "${{ env.PHP_EXTENSIONS }}"
+          extensions: "${{ env.PHP_EXTENSIONS }}, intl"
           php-version: "${{ matrix.php-version }}"
+
+      - name: "Install Node.js"
+        uses: "actions/setup-node@v4"
+        with:
+          node-version: '20'
 
       - name: "Determine composer cache directory"
         working-directory: "./plugin-name"
@@ -205,51 +210,61 @@ jobs:
         if: "matrix.dependencies == 'highest'"
         run: "composer update --no-interaction --no-progress"
 
-      - name: "Cache dependencies installed with composer"
+      - name: "Cache composer dependencies"
         uses: "actions/cache@v4"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
-      - name: "Set up MySQL"
-        uses: "mirromutth/mysql-action@v1.1"
+      - name: "Install npm dependencies"
+        working-directory: "./plugin-name"
+        run: "npm install"
+
+      - name: "Cache npm dependencies"
+        uses: "actions/cache@v4"
         with:
-          collation server: utf8mb4_unicode_ci
-          mysql version: 8.0
-          mysql database: wordpress_unit_tests
-          container port: 3306
-          mysql root password: test
+          path: "~/.npm"
+          key: "node-20-npm-${{ hashFiles('plugin-name/package-lock.json') }}"
+          restore-keys: "node-20-npm-"
 
-      - name: "Wait for MySQL"
+      - name: "Start wp-env"
+        working-directory: "./plugin-name"
+        run: "npx --yes @wordpress/env start"
+
+      - name: "Wait for wp-env to be ready"
         run: |
-          while ! mysqladmin ping --host=127.0.0.1 --password=test --silent; do
-            sleep 2
-          done
+          timeout 120 bash -c '
+            while ! docker ps | grep -q "wordpress-test"; do
+              echo "Waiting for wp-env containers..."
+              sleep 5
+            done
+          ' || echo "wp-env containers started"
 
-      - name: "Set up WordPress"
-        run: |
-          curl -s -o /tmp/wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-          chmod +x /tmp/wp-cli.phar && mv /tmp/wp-cli.phar /usr/local/bin/wp
-          mkdir -p /tmp/WP
-          cd /tmp/WP
-          wp core download
-          wp config create --dbname="wordpress_unit_tests" --dbuser="root" --dbpass="test" --dbhost="127.0.0.1:3306" --dbprefix="wp_full_"
-          wp core install --url="localhost:8000" --title="Test" --admin_user="admin" --admin_password="password" --admin_email="admin@plugin-name.test" --skip-email
-          wp rewrite structure '/%postname%/' --hard
-          # Needs changes to be used outside the boilerplate
-          ln -s ${GITHUB_WORKSPACE}/plugin-name /tmp/WP/wp-content/plugins/
-
-      - name: "Set Codeception parameters"
+      - name: "Set Codeception parameters for wp-env"
         working-directory: "./plugin-name"
         run: |
-          rm tests/_envs/.env
-          mv tests/_envs/.env.testing tests/_envs/.env
+          rm tests/_envs/.env 2>/dev/null || true
+          cat > tests/_envs/.env << EOF
+          WP_ROOT=/var/www/html
+          WP_URL='http://localhost:8889'
+          WP_DOMAIN='example.test'
+          DB_HOST='mysql'
+          DB_NAME='wordpress_unit_tests'
+          TEST_DB_NAME='wordpress_unit_tests'
+          DB_USER='root'
+          DB_PASSWORD='root'
+          EOF
 
-      - name: "Run codeception wpunit"
+      - name: "Run codeception wpunit via wp-env"
         working-directory: "./plugin-name"
         run: |
-          ./vendor/bin/codecept run wpunit
+          npx --yes @wordpress/env run tests-wordpress -- --env-cwd=wp-content/plugins/plugin-name php -d register_argc_argv=On vendor/bin/codecept run wpunit
+
+      - name: "Stop wp-env"
+        working-directory: "./plugin-name"
+        if: always()
+        run: "npx --yes @wordpress/env stop"
 
   plugin-check:
     name: "Plugin Check"

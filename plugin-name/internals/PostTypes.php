@@ -34,7 +34,7 @@ class PostTypes extends Base {
 		/*
 		 * Custom Columns
 		 */
-		$post_columns = new \CPT_columns( 'demo' );
+		$post_columns = new \WPBP_Vendor_CPT_columns( 'demo' );
 		$post_columns->add_column(
 			'cmb2_field',
 			array(
@@ -110,7 +110,7 @@ class PostTypes extends Base {
 	 */
 	public function load_cpts() { //phpcs:ignore
 		// Create Custom Post Type https://github.com/johnbillion/extended-cpts/wiki
-		$demo_cpt = \register_extended_post_type(
+		$demo_cpt = wpbp_vendor_register_extended_post_type(
 				'demo',
 				array(
 					// Show all posts on the post type archive:
@@ -159,7 +159,7 @@ class PostTypes extends Base {
 
 		$demo_cpt->add_taxonomy( 'demo-section', array( 'hierarchical' => false, 'show_ui' => false ) );
 		// Create Custom Taxonomy https://github.com/johnbillion/extended-taxos
-		\register_extended_taxonomy(
+		wpbp_vendor_register_extended_taxonomy(
 			'demo-section',
 			'demo',
 			array(

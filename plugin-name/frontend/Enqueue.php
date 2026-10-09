@@ -12,10 +12,10 @@
 namespace Plugin_Name\Frontend;
 
 // WPBPGen{{#if libraries_inpsyde__assets}}
-use Inpsyde\Assets\Asset;
-use Inpsyde\Assets\AssetManager;
-use Inpsyde\Assets\Script;
-use Inpsyde\Assets\Style;
+use WPBP\Vendor\Inpsyde\Assets\Asset;
+use WPBP\Vendor\Inpsyde\Assets\AssetManager;
+use WPBP\Vendor\Inpsyde\Assets\Script;
+use WPBP\Vendor\Inpsyde\Assets\Style;
 // {{/if}}
 use Plugin_Name\Engine\Base;
 
@@ -41,7 +41,7 @@ class Enqueue extends Base {
 	/**
 	 * Enqueue assets with Inpyside library https://inpsyde.github.io/assets
 	 *
-	 * @param \Inpsyde\Assets\AssetManager $asset_manager The class.
+	 * @param \WPBP\Vendor\Inpsyde\Assets\AssetManager $asset_manager The class.
 	 * @return void
 	 */
 	public function enqueue_assets( AssetManager $asset_manager ) {

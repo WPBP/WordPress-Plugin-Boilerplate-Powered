@@ -36,7 +36,7 @@ class Cron extends Base {
 			'plugin_root_file' => 'plugin-name.php',
 		);
 
-		$cronplus = new \CronPlus( $args );
+		$cronplus = new \WPBP_Vendor_CronPlus( $args );
 		// Schedule the event
 		$cronplus->schedule_event();
 		// Remove the event by the schedule

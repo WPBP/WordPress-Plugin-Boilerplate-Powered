@@ -12,7 +12,7 @@
 
 namespace Plugin_Name\Engine;
 
-use Inpsyde\WpContext;
+use WPBP\Vendor\Inpsyde\WpContext;
 
 /**
  * Plugin Name Is Methods

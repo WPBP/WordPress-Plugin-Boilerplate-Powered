@@ -11,7 +11,7 @@
 
 namespace Plugin_Name\Backend;
 
-use I18n_Notice_WordPressOrg;
+use WPBP_Vendor_I18n_Notice_WordPressOrg as I18n_Notice_WordPressOrg;
 use Plugin_Name\Engine\Base;
 
 /**
@@ -30,14 +30,14 @@ class Notices extends Base {
 		}
 
 		// WPBPGen{{#if libraries_wpdesk__wp-notice}}
-		\wpdesk_wp_notice( \__( 'Updated Messages', 'plugin-name' ), 'updated' );
+		wpbp_vendor_wpdesk_wp_notice( \__( 'Updated Messages', 'plugin-name' ), 'updated' );
 		// {{/if}}
 
 		// WPBPGen{{#if libraries_wpbp__page-madness-detector && libraries_wpdesk__wp-notice}}
-		$builder = new \Page_Madness_Detector(); // phpcs:ignore
+		$builder = new \WPBP_Vendor_Page_Madness_Detector(); // phpcs:ignore
 
 		if ( $builder->has_entropy() ) {
-			\wpdesk_wp_notice( \__( 'A Page Builder/Visual Composer was found on this website!', 'plugin-name' ), 'error', true );
+			wpbp_vendor_wpdesk_wp_notice( \__( 'A Page Builder/Visual Composer was found on this website!', 'plugin-name' ), 'error', true );
 		}
 
 		// {{/if}}

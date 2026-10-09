@@ -39,22 +39,21 @@
 	},
 	"require-dev": {
 		"codeatcode/codeatcs": "^1.0",
-		"codeception/codeception": "~4.2.0",
-		"codeception/module-asserts": "^1.0",
-		"codeception/module-cli": "^1.0",
-		"codeception/module-db": "^1.0",
-		"codeception/module-filesystem": "^1.0",
-		"codeception/module-phpbrowser": "^1.0",
-		"codeception/module-rest": "^1.2",
-		"codeception/module-webdriver": "^1.0",
-		"codeception/util-universalframework": "^1.0",
+		"codeception/codeception": "^5.0",
+		"codeception/module-asserts": "^2.0",
+		"codeception/module-cli": "^2.0",
+		"codeception/module-db": "^3.0",
+		"codeception/module-filesystem": "^3.0",
+		"codeception/module-phpbrowser": "^3.0",
+		"codeception/module-rest": "^3.0",
+		"codeception/module-webdriver": "^3.0",
 		"dealerdirect/phpcodesniffer-composer-installer": "1.0.0",
-		"ergebnis/composer-normalize": "^2.6",
+		"ergebnis/composer-normalize": "^2.45",
 		"lucatume/function-mocker": "^1.0",
-		"lucatume/wp-browser": "^3.6",
+		"lucatume/wp-browser": "^4.0",
 		"php-stubs/wp-cli-stubs": "^2.0",
 		"phpro/grumphp": "^1.13",
-		"phpunit/phpunit": "^9.2",
+		"phpunit/phpunit": "^9.6",
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},
 	"scripts": {
@@ -116,6 +115,10 @@
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"ergebnis/composer-normalize": true,
 			"phpro/grumphp": true
+		},
+		"platform": {
+			"php": "8.0",
+			"ext-intl": "8.0.0"
 		}
 	},
 	"extra": {
@@ -129,7 +132,7 @@
 		},
 		"strauss": {
 			"target_directory": "vendor-prefixed",
-			"namespace_prefix": "WPBP\\\\Vendor\\\\",
+			"namespace_prefix": "WPBP\\Vendor\\",
 			"classmap_prefix": "WPBP_Vendor_",
 			"constant_prefix": "WPBP_VENDOR_",
 			"packages": [
@@ -154,6 +157,9 @@
 				"stevegrunwell/wp-cache-remember"
 			],
 			"exclude_from_prefix": {
+				"namespaces": [
+					"DecodeLabs"
+				],
 				"packages": [
 					"freemius/wordpress-sdk",
 					"mte90/wp-super-duper",
@@ -165,10 +171,20 @@
 					"freemius/wordpress-sdk",
 					"mte90/wp-super-duper",
 					"julien731/wp-review-me",
-					"composer/installers"
+					"composer/installers",
+					"decodelabs/tagged",
+					"decodelabs/veneer",
+					"decodelabs/dictum",
+					"decodelabs/elementary",
+					"decodelabs/collections",
+					"decodelabs/coercion",
+					"decodelabs/exceptional",
+					"decodelabs/fluidity",
+					"decodelabs/gadgets",
+					"decodelabs/glitch-support"
 				]
 			},
-			"update_call_sites": false,
+			"update_call_sites": true,
 			"include_root_autoload": false,
 			"optimize_autoloader": true,
 			"delete_vendor_packages": false,

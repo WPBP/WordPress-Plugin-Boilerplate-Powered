@@ -28,7 +28,7 @@ class Pointers extends Base {
 	public function initialize() {
 		parent::initialize();
 
-		new \PointerPlus( array( 'prefix' => 'plugin-name' ) );
+		new \WPBP_Vendor_PointerPlus( array( 'prefix' => 'plugin-name' ) );
 		\add_filter( 'plugin-name-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}
 

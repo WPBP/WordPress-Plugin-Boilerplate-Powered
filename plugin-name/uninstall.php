@@ -15,11 +15,11 @@
  * - Repeat with other user roles. Best directly by using the links/query string parameters.
  * - Repeat things for multisite. Once for a single site in the network, once sitewide.
  *
- * @package   Plugin_Name
- * @author    {{author_name}} <{{author_email}}>
+ * @package Plugin_Name
+ * @author {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @license {{author_license}}
+ * @link {{author_url}}
  */
 
 // If uninstall not called from WordPress, then exit.

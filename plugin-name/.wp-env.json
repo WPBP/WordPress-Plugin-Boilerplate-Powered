@@ -15,13 +15,7 @@
         "WP_DEBUG_LOG": true,
         "WP_TESTS_DOMAIN": "example.test",
         "WP_TESTS_EMAIL": "admin@example.test",
-        "WP_TESTS_TITLE": "Test Blog",
-        "DB_NAME": "wordpress_unit_tests",
-        "DB_USER": "root",
-        "DB_PASSWORD": "root",
-        "DB_HOST": "mysql",
-        "DB_CHARSET": "utf8mb4",
-        "DB_COLLATE": ""
+        "WP_TESTS_TITLE": "Test Blog"
       }
     }
   }

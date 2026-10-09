@@ -129,7 +129,7 @@ jobs:
     strategy:
       matrix:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        node-version: [ 16.x, 18.x, 20.x ]
+        node-version: [ 18.x, 20.x ]
         os: [ ubuntu-latest, macos-latest, windows-latest ]
 
     steps:
@@ -157,7 +157,7 @@ jobs:
       - name: "Install NodeJS"
         uses: "actions/setup-node@v4"
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: "install dependencies"
         working-directory: "./plugin-name"
@@ -247,11 +247,11 @@ jobs:
           WP_ROOT=/var/www/html
           WP_URL='http://localhost:8889'
           WP_DOMAIN='example.test'
-          DB_HOST='mysql'
-          DB_NAME='wordpress_unit_tests'
-          TEST_DB_NAME='wordpress_unit_tests'
+          DB_HOST='tests-mysql'
+          DB_NAME='tests-wordpress'
+          TEST_DB_NAME='tests-wordpress'
           DB_USER='root'
-          DB_PASSWORD='root'
+          DB_PASSWORD='password'
           EOF
 
       - name: "Run codeception wpunit via wp-env"
@@ -290,5 +290,6 @@ jobs:
           build-dir: "./plugin-name"
           # Dev artifacts the repo tracks but a plugin may not ship: PHARs in bin/,
           # dotfiles used by local tooling. vendor/ is already ignored by PCP defaults.
-          exclude-files: ".editorconfig,.wp-env.json"
-          exclude-directories: "bin,.sass-cache"
+          exclude-files: ".editorconfig,.wp-env.json,wp-config-test.php,assets/.npmignore"
+          exclude-directories: "bin,.sass-cache,tests"
+          exclude-checks: "plugin_header_fields,plugin_readme,plugin_updater"

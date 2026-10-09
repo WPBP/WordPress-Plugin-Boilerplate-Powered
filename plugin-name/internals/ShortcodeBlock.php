@@ -3,11 +3,11 @@
 /**
  * Plugin_Name
  *
- * @package Plugin_Name
- * @author {{author_name}} <{{author_email}}>
+ * @package   Plugin_Name
+ * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license {{author_license}}
- * @link {{author_url}}
+ * @license   {{author_license}}
+ * @link      {{author_url}}
  */
 
 namespace Plugin_Name\Internals;
@@ -34,19 +34,19 @@ class ShortcodeBlock {
 		);
 	}
 
-	/**
+		/**
 	 * Render callback for the hello-world block.
 	 *
-	 * @param array $attributes Block attributes.
-	 * @param string $content Block content (not used for dynamic blocks).
-	 * @param \WP_Block|null $block Block instance.
+	 * @param array         $attributes Block attributes.
+	 * @param string        $content    Block content (not used for dynamic blocks).
+	 * @param \WP_Block|null $block     Block instance.
 	 * @return string Rendered block HTML.
 	 */
 	public function render( array $attributes, string $content = '', ?\WP_Block $block = null ): string {
 		$text = isset( $attributes['text'] ) && \is_string( $attributes['text'] ) ? $attributes['text'] : 'World';
 
-		$context = array( 'text' => 'Hello: ' . $text );
-		$class = isset( $attributes['className'] ) ? ' class="' . \esc_attr( $attributes['className'] ) . '"' : '';
+		$context     = array( 'text' => 'Hello: ' . $text );
+		$class       = isset( $attributes['className'] ) ? ' class="' . \esc_attr( $attributes['className'] ) . '"' : '';
 		$interactive = 'plugin-name/hello-world';
 
 		return '<div data-wp-interactive="' . \esc_attr( $interactive ) . '" data-wp-context="' . \esc_attr( (string) \wp_json_encode( $context ) ) . '"' . $class . '>' .
@@ -55,5 +55,7 @@ class ShortcodeBlock {
 		'</div>';
 	}
 
+
+	
 
 }

@@ -3,11 +3,11 @@
 /**
  * Plugin_Name
  *
- * @package Plugin_Name
- * @author {{author_name}} <{{author_email}}>
+ * @package   Plugin_Name
+ * @author    {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license {{author_license}}
- * @link {{author_url}}
+ * @license   {{author_license}}
+ * @link      {{author_url}}
  */
 
 namespace Plugin_Name\Engine;
@@ -47,7 +47,7 @@ class Initialize {
 	 * @since {{plugin_version}}
 	 */
 	public function __construct( \Composer\Autoload\ClassLoader $composer ) {
-		$this->content = new Engine\Context;
+		$this->content  = new Engine\Context;
 		$this->composer = $composer;
 
 		$this->get_classes( 'Internals' );
@@ -137,12 +137,12 @@ class Initialize {
 	 * @return array Return the classes.
 	 */
 	private function get_classes( string $namespacetofind ) {
-		$prefix = $this->composer->getPrefixesPsr4();
-		$classmap = $this->composer->getClassMap();
+		$prefix          = $this->composer->getPrefixesPsr4();
+		$classmap        = $this->composer->getClassMap();
 		$namespacetofind = 'Plugin_Name\\' . $namespacetofind;
 
 		// In case composer has autoload optimized
-		if ( isset( $classmap['Plugin_Name\\Engine\\Initialize'] ) ) {
+		if ( isset( $classmap[ 'Plugin_Name\\Engine\\Initialize' ] ) ) {
 			$classes = \array_keys( $classmap );
 
 			foreach ( $classes as $class ) {
@@ -160,7 +160,7 @@ class Initialize {
 
 		// In case composer is not optimized
 		if ( isset( $prefix[ $namespacetofind ] ) ) {
-			$folder = $prefix[ $namespacetofind ][0];
+			$folder    = $prefix[ $namespacetofind ][0];
 			$php_files = $this->scandir( $folder );
 			$this->find_classes( $php_files, $folder, $namespacetofind );
 
@@ -212,7 +212,7 @@ class Initialize {
 	/**
 	 * Load namespace classes by files.
 	 *
-	 * @param array $php_files List of files with the Class.
+	 * @param array  $php_files List of files with the Class.
 	 * @param string $folder Path of the folder.
 	 * @param string $base Namespace base.
 	 * @since {{plugin_version}}
@@ -221,7 +221,7 @@ class Initialize {
 	private function find_classes( array $php_files, string $folder, string $base ) {
 		foreach ( $php_files as $php_file ) {
 			$class_name = \substr( $php_file, 0, -4 );
-			$path = $folder . '/' . $php_file;
+			$path       = $folder . '/' . $php_file;
 
 			if ( \is_file( $path ) ) {
 				$this->classes[] = $base . $class_name;

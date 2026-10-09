@@ -118,7 +118,7 @@ class Example extends Base {
 	 */
 	public function get_text_field( array $post_obj ) {
 		$post_id = $post_obj['id'];
-		$value  = \get_post_meta( $post_id, 'plugin-name_text', true );
+		$value   = \get_post_meta( $post_id, 'plugin-name_text', true );
 
 		return is_scalar( $value ) ? (string) $value : '';
 	}

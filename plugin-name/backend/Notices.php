@@ -11,8 +11,8 @@
 
 namespace Plugin_Name\Backend;
 
-use WPBP_Vendor_I18n_Notice_WordPressOrg as I18n_Notice_WordPressOrg;
 use Plugin_Name\Engine\Base;
+use WPBP_Vendor_I18n_Notice_WordPressOrg as I18n_Notice_WordPressOrg;
 
 /**
  * Everything that involves notification on the WordPress dashboard

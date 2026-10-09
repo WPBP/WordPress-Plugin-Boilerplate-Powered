@@ -11,13 +11,13 @@
 
 namespace Plugin_Name\Frontend;
 
+// {{/if}}
+use Plugin_Name\Engine\Base;
 // WPBPGen{{#if libraries_inpsyde__assets}}
 use WPBP\Vendor\Inpsyde\Assets\Asset;
 use WPBP\Vendor\Inpsyde\Assets\AssetManager;
 use WPBP\Vendor\Inpsyde\Assets\Script;
 use WPBP\Vendor\Inpsyde\Assets\Style;
-// {{/if}}
-use Plugin_Name\Engine\Base;
 
 /**
  * Enqueue stuff on the frontend

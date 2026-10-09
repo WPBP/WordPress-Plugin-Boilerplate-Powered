@@ -35,15 +35,19 @@ class ShortcodeBlock {
 	}
 
 		/**
-	 * Render callback for the hello-world block.
-	 *
-	 * @param array         $attributes Block attributes.
-	 * @param string        $content    Block content (not used for dynamic blocks).
-	 * @param \WP_Block|null $block     Block instance.
-	 * @return string Rendered block HTML.
-	 */
+         * Render callback for the hello-world block.
+         *
+         * @param array          $attributes Block attributes.
+         * @param string         $content    Block content (not used for dynamic blocks).
+         * @param \WP_Block|null $block     Block instance.
+         * @return string Rendered block HTML.
+         */
 	public function render( array $attributes, string $content = '', ?\WP_Block $block = null ): string {
-		$text = isset( $attributes['text'] ) && \is_string( $attributes['text'] ) ? $attributes['text'] : 'World';
+		$text = 'World';
+
+		if ( isset( $attributes['text'] ) && \is_string( $attributes['text'] ) ) {
+			$text = $attributes['text'];
+		}
 
 		$context     = array( 'text' => 'Hello: ' . $text );
 		$class       = isset( $attributes['className'] ) ? ' class="' . \esc_attr( $attributes['className'] ) . '"' : '';
@@ -54,8 +58,5 @@ class ShortcodeBlock {
 			'<span data-wp-text="context.text">' . \esc_html( $context['text'] ) . '</span>' .
 		'</div>';
 	}
-
-
-	
 
 }

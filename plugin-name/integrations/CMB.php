@@ -62,7 +62,7 @@ class CMB extends Base {
 			array(
 				'name' => \__( 'Text', 'plugin-name' ),
 				'desc' => \__( 'field description (optional)', 'plugin-name' ),
-				'id'   => $prefix . 'plugin-name' . '_text',
+				'id'   => $prefix . 'plugin-name_text',
 				'type' => 'text',
 				)
 			);
@@ -70,7 +70,7 @@ class CMB extends Base {
 			array(
 				'name' => \__( 'Text 2', 'plugin-name' ),
 				'desc' => \__( 'field description (optional)', 'plugin-name' ),
-				'id'   => $prefix . 'plugin-name' . '_text2',
+				'id'   => $prefix . 'plugin-name_text2',
 				'type' => 'text',
 				)
 			);
@@ -79,7 +79,7 @@ class CMB extends Base {
 			array(
 				'name' => \__( 'Text Small', 'plugin-name' ),
 				'desc' => \__( 'field description (optional)', 'plugin-name' ),
-				'id'   => $prefix . 'plugin-name' . '_textsmall',
+				'id'   => $prefix . 'plugin-name_textsmall',
 				'type' => 'text_small',
 				)
 			);
@@ -87,7 +87,7 @@ class CMB extends Base {
 			array(
 				'name' => \__( 'Text Small 2', 'plugin-name' ),
 				'desc' => \__( 'field description (optional)', 'plugin-name' ),
-				'id'   => $prefix . 'plugin-name' . '_textsmall2',
+				'id'   => $prefix . 'plugin-name_textsmall2',
 				'type' => 'text_small',
 		)
 			);

@@ -196,7 +196,7 @@ class Initialize {
 				// Only include filenames that DO NOT contain the excluded string and ARE NOT on the scandir result blacklist.
 				if (
 					false !== \mb_strpos( $temp_file, $exclude_str )
-					|| $temp_file[0] === '.'
+					|| '.' === $temp_file[0]
 					|| \in_array( $temp_file, $blacklist, true )
 				) {
 					continue;

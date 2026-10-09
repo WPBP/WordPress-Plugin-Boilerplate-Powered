@@ -17,7 +17,7 @@ if ( !defined( 'ABSPATH' ) ) {
 			// WPBPGen{{#if libraries_cmb2__cmb2}}
 			$cmb = new_cmb2_box(
 				array(
-					'id'         => 'plugin-name' . '_options',
+					'id'         => 'plugin-name_options',
 					'hookup'     => false,
 					'show_on'    => array( 'key' => 'options-page', 'value' => array( 'plugin-name' ) ),
 					'show_names' => true,
@@ -269,7 +269,7 @@ if ( !defined( 'ABSPATH' ) ) {
 				)
 			);
 
-			cmb2_metabox_form( 'plugin-name' . '_options', 'plugin-name' . '-settings' );
+			cmb2_metabox_form( 'plugin-name_options', 'plugin-name-settings' );
 			// {{/if}}
 			?>
 

@@ -4,6 +4,7 @@
 if ( !defined( 'ABSPATH' ) ) {
 	die( 'We\'re sorry, but you can not directly access this file.' );
 }
+
 ?>
 
 		<div id="tabs-2" class="wrap">
@@ -11,7 +12,7 @@ if ( !defined( 'ABSPATH' ) ) {
 			// WPBPGen{{#if libraries_cmb2__cmb2}}
 			$cmb = new_cmb2_box(
 				array(
-					'id'         => 'plugin-name' . '_options-second',
+					'id'         => 'plugin-name_options-second',
 					'hookup'     => false,
 					'show_on'    => array( 'key' => 'options-page', 'value' => array( 'plugin-name' ) ),
 					'show_names' => true,
@@ -36,7 +37,7 @@ if ( !defined( 'ABSPATH' ) ) {
 			)
 			);
 
-			cmb2_metabox_form( 'plugin-name' . '_options-second', 'plugin-name' . '-settings-second' );
+			cmb2_metabox_form( 'plugin-name_options-second', 'plugin-name-settings-second' );
 			// {{/if}}
 			?>
 

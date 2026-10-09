@@ -33,7 +33,7 @@ class Settings_Page extends Base {
 		\add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		$realpath        = (string) \realpath( __DIR__ );
-		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . 'plugin-name' . '.php' );
+		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . 'plugin-name.php' );
 		\add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 	}
 

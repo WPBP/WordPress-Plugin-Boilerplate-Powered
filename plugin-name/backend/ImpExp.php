@@ -111,12 +111,12 @@ class ImpExp extends Base {
 		// Retrieve the settings from the file and convert the json object to an array.
 		$settings_file = file_get_contents( $import_file );// phpcs:ignore
 
-		if ( $settings_file !== false ) {
+		if ( false !== $settings_file ) {
 			$settings = \json_decode( (string) $settings_file );
 
 			if ( \is_array( $settings ) ) {
 				\update_option( 'plugin-name-settings', \get_object_vars( $settings[ 0 ] ) );
-			\update_option( 'plugin-name-settings-second', \get_object_vars( $settings[ 1 ] ) );
+				\update_option( 'plugin-name-settings-second', \get_object_vars( $settings[ 1 ] ) );
 			}
 
 			\wp_safe_redirect( \admin_url( 'options-general.php?page=plugin-name' ) );

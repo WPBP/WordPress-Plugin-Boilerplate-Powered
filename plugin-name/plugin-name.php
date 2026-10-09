@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @package   Plugin_Name
- * @author    {{author_name}} <{{author_email}}>
+ * @package Plugin_Name
+ * @author {{author_name}} <{{author_email}}>
  * @copyright {{author_copyright}}
- * @license   {{author_license}}
- * @link      {{author_url}}
+ * @license {{author_license}}
+ * @link {{author_url}}
  *
  * Plugin Name:     {{plugin_name}}
  * Plugin URI:      @TODO

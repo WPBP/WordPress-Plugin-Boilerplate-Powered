@@ -288,3 +288,7 @@ jobs:
         uses: "wordpress/plugin-check-action@v1"
         with:
           build-dir: "./plugin-name"
+          # Dev artifacts the repo tracks but a plugin may not ship: PHARs in bin/,
+          # dotfiles used by local tooling. vendor/ is already ignored by PCP defaults.
+          exclude-files: ".editorconfig,.wp-env.json"
+          exclude-directories: "bin,.sass-cache"

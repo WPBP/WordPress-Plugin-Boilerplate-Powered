@@ -13,7 +13,7 @@ class CustomRestRouteCest {
 	 */
 	public function it_should_access_custom_endpoint( FunctionalTester $I ) {
 		$I->wantTo('access on the custom endpoint');
-		$I->sendGET( 'calc' );
+		$I->sendGET( 'plugin-name/v1/calc' );
 		$I->seeResponseCodeIs(HttpCode::OK); // 200
 		$I->seeResponseContains('{"result":11}');
 	}
@@ -24,7 +24,7 @@ class CustomRestRouteCest {
 	 */
 	public function it_should_access_custom_endpoint_with_parameters( FunctionalTester $I ) {
 		$I->wantTo('access on the custom endpoint');
-		$I->sendGET( 'calc', array( 'first' => 4, 'second' => 4 ) );
+		$I->sendGET( 'plugin-name/v1/calc', array( 'first' => 4, 'second' => 4 ) );
 		$I->seeResponseCodeIs(HttpCode::OK); // 200
 		$I->seeResponseContains('{"result":8}');
 	}

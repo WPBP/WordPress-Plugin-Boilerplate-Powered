@@ -49,12 +49,12 @@ class Example extends Base {
 	public function add_custom_field() {
 		\register_rest_field(
 			'demo',
-			PN_TEXTDOMAIN . '_text',
+			'plugin-name' . '_text',
 			array(
 				'get_callback'    => array( $this, 'get_text_field' ),
 				'update_callback' => array( $this, 'update_text_field' ),
 				'schema'          => array(
-					'description' => \__( 'Text field demo of Post type', PN_TEXTDOMAIN ),
+					'description' => \__( 'Text field demo of Post type', 'plugin-name' ),
 					'type'        => 'string',
 				),
 			)
@@ -65,16 +65,16 @@ class Example extends Base {
 	 * Examples
 	 *
 	 * @since {{plugin_version}}
-     *
-     *  Make an instance of this class somewhere, then
-     *  call this method and test on the command line with
-     * `curl http://example.com/wp-json/wp/v2/calc?first=1&second=2`
-     * @return void
+	 *
+	 * Make an instance of this class somewhere, then
+	 * call this method and test on the command line with
+	 * `curl http://example.com/wp-json/plugin-name/v1/calc?first=1&second=2`
+	 * @return void
 	 */
 	public function add_custom_ruote() {
 		// Only an example with 2 parameters
 		\register_rest_route(
-			'wp/v2',
+			'plugin-name/v1',
 			'calc',
 			array(
 				'methods'  => \WP_REST_Server::READABLE,
@@ -92,11 +92,13 @@ class Example extends Base {
 			)
 		);
 		\register_rest_route(
-			'wp/v2',
+			'plugin-name/v1',
 			'demo/example',
 			array(
 				'methods'             => 'POST',
-				'permission_callback' => '__return_true',
+				'permission_callback' => static function(): bool {
+					return \current_user_can( 'read' );
+				},
 				'callback'            => array( $this, 'demo_example' ),
 				'args'                => array(
 					'nonce' => array(
@@ -117,7 +119,7 @@ class Example extends Base {
 	public function get_text_field( array $post_obj ) {
 		$post_id = $post_obj['id'];
 
-		return \strval( \get_post_meta( $post_id, PN_TEXTDOMAIN . '_text', true ) );
+		return \strval( \get_post_meta( $post_id, 'plugin-name' . '_text', true ) );
 	}
 
 	/**
@@ -135,7 +137,7 @@ class Example extends Base {
 		if ( false === $post_id ) {
 			return new \WP_Error(
 				'rest_post_views_failed',
-				\__( 'Failed to update post views.', PN_TEXTDOMAIN ),
+				\__( 'Failed to update post views.', 'plugin-name' ),
 				array( 'status' => 500 )
 			);
 		}

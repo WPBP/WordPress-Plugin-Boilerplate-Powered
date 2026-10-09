@@ -22,7 +22,6 @@
 		"johnbillion/extended-cpts": "~5.0.8",
 		"julien731/wp-review-me": "dev-develop",
 		"micropackage/requirements": "^1.2",
-		"mte90/wp-super-duper": "dev-fork",
 		"origgami/cmb2-grid": "dev-master",
 		"seravo/wp-custom-bulk-actions": "dev-master",
 		"stevegrunwell/wp-cache-remember": "dev-master",
@@ -33,7 +32,6 @@
 		"wpbp/page-madness-detector": "^1.0",
 		"wpbp/pointerplus": "~1.0.0",
 		"wpbp/template": "~1.0.0",
-		"wpbp/widgets-helper": "~1.0.0",
 		"wpdesk/wp-notice": "^3.2",
 		"yahnis-elsts/plugin-update-checker": "^5.4"
 	},
@@ -60,7 +58,11 @@
 		"prefix-namespaces": [
 			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
 			"@php bin/strauss.phar",
-			"@php -d memory_limit=1G bin/strauss.phar --info",
+			"@composer dump-autoload"
+		],
+		"rewrite-call-sites": [
+			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+			"@php bin/strauss.phar --updateCallSites=true",
 			"@composer dump-autoload"
 		],
 		"post-install-cmd": [
@@ -73,25 +75,6 @@
 			"sh -c 'test -f ./bin/strauss.phar || exit 0; php bin/strauss.phar include-autoloader'"
 		]
 	},
-	"repositories": [
-		{
-			"type": "package",
-			"package": {
-				"name": "mte90/wp-super-duper",
-				"version": "dev-fork",
-				"autoload": {
-					"files": [
-						"wp-super-duper.php"
-					]
-				},
-				"source": {
-					"type": "git",
-					"url": "https://github.com/mte90/wp-super-duper.git",
-					"reference": "fork"
-				}
-			}
-		}
-	],
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"autoload": {
@@ -149,7 +132,6 @@
 				"wpbp/page-madness-detector",
 				"wpbp/pointerplus",
 				"wpbp/template",
-				"wpbp/widgets-helper",
 				"wpdesk/wp-notice",
 				"yahnis-elsts/plugin-update-checker",
 				"origgami/cmb2-grid",
@@ -161,15 +143,13 @@
 					"DecodeLabs"
 				],
 				"packages": [
-					"freemius/wordpress-sdk",
-					"mte90/wp-super-duper",
-					"julien731/wp-review-me"
+				"freemius/wordpress-sdk",
+				"julien731/wp-review-me"
 				]
 			},
 			"exclude_from_copy": {
 				"packages": [
 					"freemius/wordpress-sdk",
-					"mte90/wp-super-duper",
 					"julien731/wp-review-me",
 					"composer/installers",
 					"decodelabs/tagged",
@@ -184,7 +164,7 @@
 					"decodelabs/glitch-support"
 				]
 			},
-			"update_call_sites": true,
+			"update_call_sites": false,
 			"include_root_autoload": false,
 			"optimize_autoloader": true,
 			"delete_vendor_packages": false,

@@ -47,7 +47,7 @@
 		"@types/wordpress__blocks": "^12.5.0",
 		"@wordpress/block-editor": "^9.8.0",
 		"@wordpress/env": "^11.0.0",
-		"@wordpress/scripts": "^24.6.0",
+		"@wordpress/scripts": "^30.0.0",
 		"typescript": "^5.0.4"
 	},
 	"engines": {

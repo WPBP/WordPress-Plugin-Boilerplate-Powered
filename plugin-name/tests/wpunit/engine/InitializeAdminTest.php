@@ -36,9 +36,6 @@ class InitializeAdminTest extends \Codeception\TestCase\WPTestCase {
 		$classes[] = 'Plugin_Name\Internals\Shortcode';
 		$classes[] = 'Plugin_Name\Internals\Transient';
 		$classes[] = 'Plugin_Name\Integrations\CMB';
-		$classes[] = 'Plugin_Name\Integrations\Cron';
-		$classes[] = 'Plugin_Name\Integrations\Template';
-		$classes[] = 'Plugin_Name\Integrations\Widgets\My_Recent_Posts_Widget';
 		$classes[] = 'Plugin_Name\Backend\ActDeact';
 		$classes[] = 'Plugin_Name\Backend\Enqueue';
 		$classes[] = 'Plugin_Name\Backend\ImpExp';

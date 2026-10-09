@@ -1,0 +1,19 @@
+{
+	"$schema": "https://unpkg.com/@wordpress/block-generator@latest/dist/block.schema.json",
+	"apiVersion": 3,
+	"name": "plugin-name/hello-world",
+	"title": "Hello World",
+	"category": "widgets",
+	"icon": "welcome-write-blog",
+	"description": "A simple dynamic block example using the Interactivity API.",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "World"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"viewScript": "file:./view.js"
+}

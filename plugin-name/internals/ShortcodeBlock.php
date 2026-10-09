@@ -13,92 +13,12 @@
 namespace Plugin_Name\Internals;
 
 /**
- * Create Shortcode and Gutenberg Block with Widget support
+ * Dynamic block: Hello World with Interactivity API support
+ *
+ * Registers a block via register_block_type() with a block.json
+ * and a PHP render_callback that renders "Hello: {text}".
  */
-class ShortcodeBlock extends \WP_V2_Super_Duper {
-
-	/**
-	 * Parameters shared between methods
-	 *
-	 * @var array
-	 */
-	public $arguments;
-
-	/**
-	 * Sets up the widgets name etc
-	 */
-	public function __construct() { // phpcs:ignore
-		$options = array(
-			'textdomain'     => 'plugin-name',
-			// textdomain of the plugin/theme (used to prefix the Gutenberg block)
-			'block-icon'     => 'fas fa-globe-americas',
-			// Dash icon name for the block: https://developer.wordpress.org/resource/dashicons/#arrow-right
-			// OR font-awesome 5 class name: fas fa-globe-americas
-			'block-category' => 'widgets',
-			// the category for the block, 'common', 'formatting', 'layout', 'widgets', 'embed'.
-			'block-keywords' => "['hello','world']",
-			// used in the block search, MAX 3
-			'block-output'   => array( // the block visual output elements as an array
-				array(
-					'element' => 'p',
-					'title'   => \__( 'Placeholder', 'plugin-name' ),
-					'class'   => '[%className%]',
-					'content' => 'Hello: [%after_text%]', // block properties can be added by wrapping them in [%name%]
-				),
-			),
-			'block-wrap'     => '', // You can specify the type of element to wrap the block `div` or `span` etc.. Or blank for no wrap at all.
-			'class_name'     => self::class,
-			// The calling class name
-			'base_id'        => 'hello_world',
-			// this is used as the widget id and the shortcode id.
-			'name'           => \__( 'Hello World', 'plugin-name' ),
-			// the name of the widget/block
-			'widget_ops'     => array(
-				'classname'   => 'hello-world-class',
-				// widget class
-				'description' => \esc_html__( 'This is an example that will take a text parameter and output it after `Hello:`.', 'plugin-name' ),
-				// widget description
-			),
-			'no_wrap'        => true, // This will prevent the widget being wrapped in the containing widget class div.
-			'arguments'      => array( // these are the arguments that will be used in the widget, shortcode and block settings.
-				'after_text' => array( // this is the input name=''
-					'title'       => \__( 'Text after hello:', 'plugin-name' ),
-					// input title
-					'desc'        => \__( 'This is the text that will appear after `Hello:`.', 'plugin-name' ),
-					// input description
-					'type'        => 'text',
-					// the type of input, test, select, checkbox etc.
-					'placeholder' => 'World',
-					// the input placeholder text.
-					'desc_tip'    => true,
-					// if the input should show the widget description text as a tooltip.
-					'default'     => 'World',
-					// the input default value.
-					'advanced'    => false,
-					// not yet implemented
-				),
-			),
-		);
-
-		parent::__construct( $options );
-	}
-
-	/**
-	 * This is the output function for the widget, shortcode and block (front end).
-	 *
-	 * @param array  $args The arguments values.
-	 * @param array  $widget_args The widget arguments when used.
-	 * @param string $content The shortcode content argument.
-     * @return string
-	 */
-	public function output( $args = array(), $widget_args = array(), $content = '' ) { // phpcs:ignore
-		$after_text    = '';
-		$another_input = '';
-
-		\extract( $args, EXTR_SKIP ); // phpcs:ignore
-
-		return 'Hello: ' . $after_text . '' . $another_input; // phpcs:ignore
-	}
+class ShortcodeBlock {
 
 	/**
 	 * Initialize the class.
@@ -106,15 +26,36 @@ class ShortcodeBlock extends \WP_V2_Super_Duper {
 	 * @return void
 	 */
 	public function initialize() {
-		// To enable as widget
-		/*
-		\add_action(
-		'widgets_init',
-		static function() {
-			\register_widget( 'Plugin_Name\Internals\ShortCodeBlock' );
-		}
+		\register_block_type(
+			PN_PLUGIN_ROOT . 'assets/src/block/hello-world',
+			array(
+				'render_callback' => array( $this, 'render' ),
+			)
 		);
-		*/
 	}
+
+		/**
+	 * Render callback for the hello-world block.
+	 *
+	 * @param array         $attributes Block attributes.
+	 * @param string        $content    Block content (not used for dynamic blocks).
+	 * @param \WP_Block|null $block     Block instance.
+	 * @return string Rendered block HTML.
+	 */
+	public function render( array $attributes, string $content = '', ?\WP_Block $block = null ): string {
+		$text = isset( $attributes['text'] ) && \is_string( $attributes['text'] ) ? $attributes['text'] : 'World';
+
+		$context     = array( 'text' => 'Hello: ' . $text );
+		$class       = isset( $attributes['className'] ) ? ' class="' . \esc_attr( $attributes['className'] ) . '"' : '';
+		$interactive = 'plugin-name/hello-world';
+
+		return '<div data-wp-interactive="' . \esc_attr( $interactive ) . '" data-wp-context="' . \esc_attr( (string) \wp_json_encode( $context ) ) . '"' . $class . '>' .
+			'<button type="button" data-wp-on--click="actions.toggle">' . \esc_html__( 'Toggle', 'plugin-name' ) . '</button> ' .
+			'<span data-wp-text="context.text">' . \esc_html( $context['text'] ) . '</span>' .
+		'</div>';
+	}
+
+
+	
 
 }

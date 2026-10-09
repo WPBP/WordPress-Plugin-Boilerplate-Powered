@@ -14,11 +14,13 @@
 	"require": {
 		"php": ">=8.1",
 		"cmb2/cmb2": "~2.10.0",
+		"codeception/module-rest": "^3.4",
 		"composer/installers": "^1.0",
 		"decodelabs/tagged": "^0.13.0",
 		"freemius/wordpress-sdk": "~2.7.3",
 		"inpsyde/assets": "^2.8",
 		"inpsyde/wp-context": "~1.5.0",
+		"joanrodas/plubo-routes": "^0.8",
 		"johnbillion/extended-cpts": "~5.0.8",
 		"julien731/wp-review-me": "dev-develop",
 		"micropackage/requirements": "^1.2",
@@ -33,9 +35,7 @@
 		"wpbp/pointerplus": "~1.0.0",
 		"wpbp/template": "~1.0.0",
 		"wpdesk/wp-notice": "^3.2",
-		"yahnis-elsts/plugin-update-checker": "^5.4",
-		"joanrodas/plubo-routes": "^0.8",
-		"codeception/module-rest": "^3.4"
+		"yahnis-elsts/plugin-update-checker": "^5.4"
 	},
 	"require-dev": {
 		"codeatcode/codeatcs": "^1.0",

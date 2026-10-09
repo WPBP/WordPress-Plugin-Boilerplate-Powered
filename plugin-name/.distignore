@@ -13,6 +13,9 @@ assets/src/styles/
 
 # Testing and development
 tests/
+wp-config-test.php
+assets/.npmignore
+tests/_envs/
 .phpunit.result.cache
 .phpcs.xml
 .phpcs.xml.dist

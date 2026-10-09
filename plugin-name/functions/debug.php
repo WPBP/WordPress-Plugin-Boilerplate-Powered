@@ -9,6 +9,11 @@
  * @link      {{author_url}}
  */
 
+// If this file is called directly, abort.
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $pn_debug = new WPBP_Debug( __( 'Plugin Name', 'plugin-name' ) );
 
 /**

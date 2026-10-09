@@ -14,6 +14,11 @@ namespace Plugin_Name\Cli;
 
 use Plugin_Name\Engine\Base;
 
+// If this file is called directly, abort.
+if ( !defined( 'ABSPATH' ) ) {
+	return;
+}
+
 if ( \defined( 'WP_CLI' ) && WP_CLI ) {
 
 	/**

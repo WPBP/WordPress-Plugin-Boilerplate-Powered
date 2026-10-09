@@ -83,7 +83,7 @@ if ( !defined( 'ABSPATH' ) ) {
 		<div class="postbox">
 			<h3 class="hndle"><span><?php esc_html_e( 'Plugin Name.', 'plugin-name' ); ?></span></h3>
 			<div class="inside">
-				<a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered"><img src="https://raw.githubusercontent.com/WPBP/boilerplate-assets/master/icon-256x256.png" alt=""></a>
+				<a href="https://github.com/WPBP/WordPress-Plugin-Boilerplate-Powered"><?php esc_html_e( 'Plugin Boilerplate Powered', 'plugin-name' ); ?></a>
 			</div>
 		</div>
 	</div>

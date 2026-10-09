@@ -9,6 +9,11 @@
  * @link      {{author_url}}
  */
 
+// If this file is called directly, abort.
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Get the settings of the plugin in a filterable way
  *

@@ -54,27 +54,6 @@
 		"phpunit/phpunit": "^9.6",
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},
-	"scripts": {
-		"prefix-namespaces": [
-			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
-			"@php bin/strauss.phar",
-			"@composer dump-autoload"
-		],
-		"rewrite-call-sites": [
-			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
-			"@php bin/strauss.phar --updateCallSites=true",
-			"@composer dump-autoload"
-		],
-		"post-install-cmd": [
-			"@prefix-namespaces"
-		],
-		"post-update-cmd": [
-			"@prefix-namespaces"
-		],
-		"post-autoload-dump": [
-			"sh -c 'test -f ./bin/strauss.phar || exit 0; php bin/strauss.phar include-autoloader'"
-		]
-	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"autoload": {
@@ -100,8 +79,8 @@
 			"phpro/grumphp": true
 		},
 		"platform": {
-			"php": "8.0",
-			"ext-intl": "8.0.0"
+			"ext-intl": "8.0.0",
+			"php": "8.0"
 		}
 	},
 	"extra": {
@@ -114,10 +93,39 @@
 			]
 		},
 		"strauss": {
-			"target_directory": "vendor-prefixed",
-			"namespace_prefix": "WPBP\\Vendor\\",
 			"classmap_prefix": "WPBP_Vendor_",
 			"constant_prefix": "WPBP_VENDOR_",
+			"delete_vendor_packages": false,
+			"exclude_from_copy": {
+				"packages": [
+					"freemius/wordpress-sdk",
+					"julien731/wp-review-me",
+					"composer/installers",
+					"decodelabs/tagged",
+					"decodelabs/veneer",
+					"decodelabs/dictum",
+					"decodelabs/elementary",
+					"decodelabs/collections",
+					"decodelabs/coercion",
+					"decodelabs/exceptional",
+					"decodelabs/fluidity",
+					"decodelabs/gadgets",
+					"decodelabs/glitch-support"
+				]
+			},
+			"exclude_from_prefix": {
+				"namespaces": [
+					"DecodeLabs"
+				],
+				"packages": [
+					"freemius/wordpress-sdk",
+					"julien731/wp-review-me"
+				]
+			},
+			"exclude_git_files": true,
+			"include_root_autoload": false,
+			"namespace_prefix": "WPBP\\Vendor\\",
+			"optimize_autoloader": true,
 			"packages": [
 				"cmb2/cmb2",
 				"decodelabs/tagged",
@@ -138,37 +146,29 @@
 				"seravo/wp-custom-bulk-actions",
 				"stevegrunwell/wp-cache-remember"
 			],
-			"exclude_from_prefix": {
-				"namespaces": [
-					"DecodeLabs"
-				],
-				"packages": [
-				"freemius/wordpress-sdk",
-				"julien731/wp-review-me"
-				]
-			},
-			"exclude_from_copy": {
-				"packages": [
-					"freemius/wordpress-sdk",
-					"julien731/wp-review-me",
-					"composer/installers",
-					"decodelabs/tagged",
-					"decodelabs/veneer",
-					"decodelabs/dictum",
-					"decodelabs/elementary",
-					"decodelabs/collections",
-					"decodelabs/coercion",
-					"decodelabs/exceptional",
-					"decodelabs/fluidity",
-					"decodelabs/gadgets",
-					"decodelabs/glitch-support"
-				]
-			},
-			"update_call_sites": false,
-			"include_root_autoload": false,
-			"optimize_autoloader": true,
-			"delete_vendor_packages": false,
-			"exclude_git_files": true
+			"target_directory": "vendor-prefixed",
+			"update_call_sites": false
 		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"@prefix-namespaces"
+		],
+		"post-update-cmd": [
+			"@prefix-namespaces"
+		],
+		"post-autoload-dump": [
+			"sh -c 'test -f ./bin/strauss.phar || exit 0; php bin/strauss.phar include-autoloader'"
+		],
+		"prefix-namespaces": [
+			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+			"@php bin/strauss.phar",
+			"@composer dump-autoload"
+		],
+		"rewrite-call-sites": [
+			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+			"@php bin/strauss.phar --updateCallSites=true",
+			"@composer dump-autoload"
+		]
 	}
 }

@@ -281,6 +281,10 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "8.0"
 
+      - name: "Install dependencies"
+        working-directory: "./plugin-name"
+        run: "composer update --no-interaction --no-progress"
+
       # Known upstream issue (2026): action may fail on ubuntu-24.04 runner images; if the first CI run fails, pin to ubuntu-22.04
       - name: "Run WordPress Plugin Check"
         uses: "wordpress/plugin-check-action@v1"

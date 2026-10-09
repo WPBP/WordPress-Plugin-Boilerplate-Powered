@@ -9,7 +9,7 @@
 *.vi
 *~
 *.sass-cache
-*.lock
+
 
 # OS or Editor folders
 .DS_Store
@@ -25,7 +25,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 node_modules
-package-lock.json
+
 
 # Folders to ignore
 .hg
@@ -38,5 +38,4 @@ vendor
 tests/_output/
 plugin-name/vendor/
 tests/_support/_generated/
-plugin-name/assets/build/
-/assets/build/
+

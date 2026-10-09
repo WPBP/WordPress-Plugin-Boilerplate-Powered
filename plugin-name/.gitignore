@@ -1,7 +1,6 @@
 # Composer (dependencies and prefixed copies are rebuilt on install)
 vendor/
 vendor-prefixed/
-composer.lock
 
 # Strauss binary (downloaded by the prefix-namespaces composer script)
 bin/strauss.phar
@@ -11,10 +10,9 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
+
 
 # Build artifacts (built by npm run build / CI)
-assets/build/
 *.map
 
 # Test output

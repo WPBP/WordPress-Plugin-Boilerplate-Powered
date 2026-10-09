@@ -22,14 +22,17 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
+          - "8.3"
 
         dependencies:
           - "highest"
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.1"
+        uses: "actions/checkout@v4"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.37.1"
@@ -45,11 +48,11 @@ jobs:
       - name: "Determine composer cache directory"
         working-directory: "./plugin-name"
         id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        run: '{ echo "directory=$(composer config cache-dir)" >> "$GITHUB_OUTPUT"; }'
 
       - name: "Install highest dependencies from composer.json"
         working-directory: "./plugin-name"
-        run: "composer update --no-interaction --no-progress --no-suggest"
+        run: "composer update --no-interaction --no-progress"
 
       - name: "Run ergebnis/composer-normalize"
         working-directory: "./plugin-name"
@@ -60,13 +63,13 @@ jobs:
         run: "vendor/bin/phpcs -s --standard=CodeatCodingStandard --exclude=Squiz.PHP.CommentedOutCode,Generic.Commenting.Todo,SlevomatCodingStandard.Functions.UnusedParameter,SlevomatCodingStandard.Variables.UnusedVariable,Squiz.Commenting.FileComment ."
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v2.0.0"
+        uses: "actions/cache@v4"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
-     # - name: "Readme Validation"
+      # - name: "Readme Validation"
      #  run: |
      #   curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
      #   wp package install swissspidy/validate-readme-command:@stable --allow-root
@@ -80,14 +83,17 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
+          - "8.3"
 
         dependencies:
           - "highest"
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.1"
+        uses: "actions/checkout@v4"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.37.1"
@@ -99,19 +105,19 @@ jobs:
       - name: "Determine composer cache directory"
         working-directory: "./plugin-name"
         id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        run: '{ echo "directory=$(composer config cache-dir)" >> "$GITHUB_OUTPUT"; }'
 
       - name: "Install highest dependencies from composer.json"
         working-directory: "./plugin-name"
         if: "matrix.dependencies == 'highest'"
-        run: "composer update --no-interaction --no-progress --no-suggest"
+        run: "composer update --no-interaction --no-progress"
 
       - name: "Run phpstan/phpstan"
         working-directory: "./plugin-name"
         run: "vendor/bin/phpstan analyse"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v2.0.0"
+        uses: "actions/cache@v4"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
@@ -130,10 +136,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
 
       - name: "Install NodeJS"
-        uses: "actions/setup-node@v3"
+        uses: "actions/setup-node@v4"
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -148,10 +154,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
 
       - name: "Install NodeJS"
-        uses: "actions/setup-node@v3"
+        uses: "actions/setup-node@v4"
         with:
           node-version: '16'
 
@@ -171,15 +177,16 @@ jobs:
 
     strategy:
       matrix:
+        # Test stack bump (Codeception 5) is a planned change; matrix stays single-version until then
         php-version:
-          - "7.4"
+          - "8.0"
 
         dependencies:
           - "highest"
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2.3.1"
+        uses: "actions/checkout@v4"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.37.1"
@@ -191,15 +198,15 @@ jobs:
       - name: "Determine composer cache directory"
         working-directory: "./plugin-name"
         id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        run: '{ echo "directory=$(composer config cache-dir)" >> "$GITHUB_OUTPUT"; }'
 
       - name: "Install highest dependencies from composer.json"
         working-directory: "./plugin-name"
         if: "matrix.dependencies == 'highest'"
-        run: "composer update --no-interaction --no-progress --no-suggest"
+        run: "composer update --no-interaction --no-progress"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v2.0.0"
+        uses: "actions/cache@v4"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('plugin-name/composer.json') }}"
@@ -243,3 +250,24 @@ jobs:
         working-directory: "./plugin-name"
         run: |
           ./vendor/bin/codecept run wpunit
+
+  plugin-check:
+    name: "Plugin Check"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Install PHP with extensions"
+        uses: "shivammathur/setup-php@2.37.1"
+        with:
+          coverage: "none"
+          extensions: "${{ env.PHP_EXTENSIONS }}"
+          php-version: "8.0"
+
+      # Known upstream issue (2026): action may fail on ubuntu-24.04 runner images; if the first CI run fails, pin to ubuntu-22.04
+      - name: "Run WordPress Plugin Check"
+        uses: "wordpress/plugin-check-action@v1"
+        with:
+          build-dir: "./plugin-name"

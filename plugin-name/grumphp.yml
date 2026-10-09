@@ -8,6 +8,7 @@ grumphp:
             standard: CodeatCodingStandard
             ignore_patterns: ['/vendor/', '/tests/', '/assets/build']
         phpmd:
+            ruleset: ['phpmd.xml']
             exclude: ['/vendor/', '/tests/', '/assets/build']
         phpstan:
             configuration: phpstan.neon

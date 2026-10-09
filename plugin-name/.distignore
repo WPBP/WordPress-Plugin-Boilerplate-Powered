@@ -5,7 +5,10 @@
 
 # Node modules and build artifacts
 node_modules/
-assets/src/
+assets/src/plugin-admin.js
+assets/src/plugin-settings.js
+assets/src/plugin-public.js
+assets/src/styles/
 *.map
 
 # Testing and development

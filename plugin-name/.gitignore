@@ -1,0 +1,43 @@
+# Composer (dependencies and prefixed copies are rebuilt on install)
+vendor/
+vendor-prefixed/
+composer.lock
+
+# Strauss binary (downloaded by the prefix-namespaces composer script)
+bin/strauss.phar
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build artifacts (built by npm run build / CI)
+assets/build/
+*.map
+
+# Test output
+tests/_output/
+tests/_support/_generated/
+.phpunit.result.cache
+codeception.coverage.*
+coverage/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs / temporary
+*.log
+tmp/
+*.tmp

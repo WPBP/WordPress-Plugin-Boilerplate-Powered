@@ -1,0 +1,60 @@
+# Git metadata
+.git/
+.gitignore
+.gitattributes
+
+# Node modules and build artifacts
+node_modules/
+assets/src/
+*.map
+
+# Testing and development
+tests/
+.phpunit.result.cache
+.phpcs.xml
+.phpcs.xml.dist
+phpcs.xml
+phpcs.xml.dist
+phpstan.neon
+phpstan.neon.dist
+phpstan.dist.neon
+phpunit.xml
+phpunit.xml.dist
+phpunit.backup.xml
+grumphp.yml
+grumphp.yml.dist
+grumphp.yaml
+codeception.yml
+codeception.dist.yml
+codeception.yaml
+
+# GitHub workflows
+.github/
+
+# Composer dev tools
+composer-dev.json
+composer-dev.lock
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Documentation source (keep built docs only)
+docs-src/
+docs-source/
+
+# Localization source (keep compiled only)
+languages/src/
+
+# Build intermediate files
+*.log
+coverage/

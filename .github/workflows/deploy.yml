@@ -1,0 +1,92 @@
+# Release pipeline: build an installable ZIP on every tag, and (opt-in) deploy
+# to the WordPress.org plugin directory.
+#
+# REQUIRED FOR THE WP.ORG DEPLOY JOB (Repository Settings > Secrets and variables > Actions):
+#   - Secrets: SVN_USERNAME, SVN_PASSWORD (WordPress.org credentials)
+#   - Variable: WP_ORG_DEPLOY_ENABLED = true
+# The deploy job stays skipped until that variable is set.
+
+name: "Deploy"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-zip:
+    name: "Build ZIP"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Setup PHP"
+        uses: "shivammathur/setup-php@2.37.1"
+        with:
+          coverage: "none"
+          php-version: "8.0"
+
+      - name: "Setup Node"
+        uses: "actions/setup-node@v4"
+        with:
+          node-version: "20"
+
+      - name: "Build assets"
+        working-directory: "./plugin-name"
+        run: "npm install --no-audit --no-fund && npm run build"
+
+      - name: "Install PHP dependencies and run Strauss prefixing"
+        working-directory: "./plugin-name"
+        run: "composer update --no-dev --no-interaction --no-progress && composer run prefix-namespaces"
+
+      - name: "Generate ZIP"
+        uses: "10up/action-wordpress-plugin-build-zip@stable"
+        env:
+          SLUG: "plugin-name"
+          BUILD_DIR: "./plugin-name"
+
+      - name: "Upload artifact"
+        uses: "actions/upload-artifact@v4"
+        with:
+          name: "plugin-zip"
+          path: "plugin-name.zip"
+          retention-days: 5
+
+  wp-org-deploy:
+    name: "Deploy to WordPress.org"
+    runs-on: "ubuntu-latest"
+    needs: "build-zip"
+    if: "vars.WP_ORG_DEPLOY_ENABLED == 'true'"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Setup PHP"
+        uses: "shivammathur/setup-php@2.37.1"
+        with:
+          coverage: "none"
+          php-version: "8.0"
+
+      - name: "Setup Node"
+        uses: "actions/setup-node@v4"
+        with:
+          node-version: "20"
+
+      - name: "Build assets"
+        working-directory: "./plugin-name"
+        run: "npm install --no-audit --no-fund && npm run build"
+
+      - name: "Install PHP dependencies and run Strauss prefixing"
+        working-directory: "./plugin-name"
+        run: "composer update --no-dev --no-interaction --no-progress && composer run prefix-namespaces"
+
+      - name: "Deploy to WordPress.org"
+        uses: "10up/action-wordpress-plugin-deploy@stable"
+        env:
+          SLUG: "plugin-name"
+          SVN_USERNAME: "${{ secrets.SVN_USERNAME }}"
+          SVN_PASSWORD: "${{ secrets.SVN_PASSWORD }}"
+          BUILD_DIR: "./plugin-name"

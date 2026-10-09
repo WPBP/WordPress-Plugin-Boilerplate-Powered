@@ -57,6 +57,23 @@
 		"phpunit/phpunit": "^9.2",
 		"szepeviktor/phpstan-wordpress": "^1.1.6"
 	},
+	"scripts": {
+		"prefix-namespaces": [
+			"sh -c 'test -f ./bin/strauss.phar || mkdir -p bin && curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/latest/download/strauss.phar'",
+			"@php bin/strauss.phar",
+			"@php -d memory_limit=1G bin/strauss.phar --info",
+			"@composer dump-autoload"
+		],
+		"post-install-cmd": [
+			"@prefix-namespaces"
+		],
+		"post-update-cmd": [
+			"@prefix-namespaces"
+		],
+		"post-autoload-dump": [
+			"sh -c 'test -f ./bin/strauss.phar || exit 0; php bin/strauss.phar include-autoloader'"
+		]
+	},
 	"repositories": [
 		{
 			"type": "package",
@@ -109,6 +126,53 @@
 				"stevegrunwell/wp-cache-remember",
 				"seravo/wp-custom-bulk-actions"
 			]
+		},
+		"strauss": {
+			"target_directory": "vendor-prefixed",
+			"namespace_prefix": "WPBP\\\\Vendor\\\\",
+			"classmap_prefix": "WPBP_Vendor_",
+			"constant_prefix": "WPBP_VENDOR_",
+			"packages": [
+				"cmb2/cmb2",
+				"decodelabs/tagged",
+				"inpsyde/assets",
+				"inpsyde/wp-context",
+				"johnbillion/extended-cpts",
+				"micropackage/requirements",
+				"wpbp/cpt_columns",
+				"wpbp/cronplus",
+				"wpbp/debug",
+				"wpbp/i18n-notice",
+				"wpbp/page-madness-detector",
+				"wpbp/pointerplus",
+				"wpbp/template",
+				"wpbp/widgets-helper",
+				"wpdesk/wp-notice",
+				"yahnis-elsts/plugin-update-checker",
+				"origgami/cmb2-grid",
+				"seravo/wp-custom-bulk-actions",
+				"stevegrunwell/wp-cache-remember"
+			],
+			"exclude_from_prefix": {
+				"packages": [
+					"freemius/wordpress-sdk",
+					"mte90/wp-super-duper",
+					"julien731/wp-review-me"
+				]
+			},
+			"exclude_from_copy": {
+				"packages": [
+					"freemius/wordpress-sdk",
+					"mte90/wp-super-duper",
+					"julien731/wp-review-me",
+					"composer/installers"
+				]
+			},
+			"update_call_sites": false,
+			"include_root_autoload": false,
+			"optimize_autoloader": true,
+			"delete_vendor_packages": false,
+			"exclude_git_files": true
 		}
 	}
 }

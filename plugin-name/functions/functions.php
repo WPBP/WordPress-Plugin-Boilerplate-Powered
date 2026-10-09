@@ -16,5 +16,5 @@
  * @return array
  */
 function pn_get_settings() {
-	return apply_filters( 'pn_get_settings', get_option( 'plugin-name' . '-settings' ) );
+	return apply_filters( 'pn_get_settings', get_option( 'plugin-name-settings' ) );
 }

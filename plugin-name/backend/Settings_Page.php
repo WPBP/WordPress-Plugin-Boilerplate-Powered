@@ -82,7 +82,7 @@ class Settings_Page extends Base {
 	public function add_action_links( array $links ) {
 		return \array_merge(
 			array(
-				'settings' => '<a href="' . \admin_url( 'options-general.php?page=' . 'plugin-name' ) . '">' . \__( 'Settings', 'plugin-name' ) . '</a>',
+				'settings' => '<a href="' . \admin_url( 'options-general.php?page=plugin-name' ) . '">' . \__( 'Settings', 'plugin-name' ) . '</a>',
 				// WPBPGen{{#if backend_donate-link-plugin-list}}
 				'donate'   => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . \__( 'Donate', 'plugin-name' ) . '</a>',
 				// {{/if}}

@@ -29,7 +29,7 @@ class Pointers extends Base {
 		parent::initialize();
 
 		new \PointerPlus( array( 'prefix' => 'plugin-name' ) );
-		\add_filter( 'plugin-name' . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
+		\add_filter( 'plugin-name-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}
 
 	/**

@@ -126,8 +126,8 @@ PucFactory::buildUpdateChecker( 'https://github.com/user-name/repo-name/', __FIL
 
 if ( ! wp_installing() ) {
 	// WPBPGen{{#if act-deact_actdeact}}
-	register_activation_hook( 'plugin-name' . '/' . 'plugin-name' . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
-	register_deactivation_hook( 'plugin-name' . '/' . 'plugin-name' . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
+	register_activation_hook( 'plugin-name/plugin-name.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
+	register_deactivation_hook( 'plugin-name/plugin-name.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
 	// {{/if}}
 	add_action(
 		'plugins_loaded',

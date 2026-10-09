@@ -49,7 +49,7 @@ class Example extends Base {
 	public function add_custom_field() {
 		\register_rest_field(
 			'demo',
-			'plugin-name' . '_text',
+			'plugin-name_text',
 			array(
 				'get_callback'    => array( $this, 'get_text_field' ),
 				'update_callback' => array( $this, 'update_text_field' ),
@@ -119,7 +119,7 @@ class Example extends Base {
 	public function get_text_field( array $post_obj ) {
 		$post_id = $post_obj['id'];
 
-		return \strval( \get_post_meta( $post_id, 'plugin-name' . '_text', true ) );
+		return \strval( \get_post_meta( $post_id, 'plugin-name_text', true ) );
 	}
 
 	/**

@@ -58,8 +58,8 @@ class ImpExp extends Base {
 		}
 
 		$settings      = array();
-		$settings[ 0 ] = \get_option( 'plugin-name' . '-settings' );
-		$settings[ 1 ] = \get_option( 'plugin-name' . '-settings-second' );
+		$settings[ 0 ] = \get_option( 'plugin-name-settings' );
+		$settings[ 1 ] = \get_option( 'plugin-name-settings-second' );
 
 		\ignore_user_abort( true );
 
@@ -115,11 +115,11 @@ class ImpExp extends Base {
 			$settings = \json_decode( (string) $settings_file );
 
 			if ( \is_array( $settings ) ) {
-				\update_option( 'plugin-name' . '-settings', \get_object_vars( $settings[ 0 ] ) );
-				\update_option( 'plugin-name' . '-settings-second', \get_object_vars( $settings[ 1 ] ) );
+				\update_option( 'plugin-name-settings', \get_object_vars( $settings[ 0 ] ) );
+			\update_option( 'plugin-name-settings-second', \get_object_vars( $settings[ 1 ] ) );
 			}
 
-			\wp_safe_redirect( \admin_url( 'options-general.php?page=' . 'plugin-name' ) );
+			\wp_safe_redirect( \admin_url( 'options-general.php?page=plugin-name' ) );
 			exit;
 		}
 

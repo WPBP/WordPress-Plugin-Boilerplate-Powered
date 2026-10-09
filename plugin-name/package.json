@@ -44,7 +44,6 @@
 		"@types/jquery": "^3.5.16",
 		"@types/jqueryui": "^1.12.16",
 		"@types/wordpress__blocks": "^12.5.0",
-		"@wordpress/env": "^10.0.0",
 		"@wordpress/scripts": "^30.0.0",
 		"typescript": "^5.0.4"
 	},

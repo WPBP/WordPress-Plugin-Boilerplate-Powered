@@ -1,8 +1,14 @@
 <?php
+
+// If this file is called directly, abort.
+if ( !defined( 'ABSPATH' ) ) {
+	die( 'We\'re sorry, but you can not directly access this file.' );
+}
+
 /*
  * Retrieve these settings on front end in either of these ways:
- *   $my_setting = cmb2_get_option( PN_TEXTDOMAIN . '-settings', 'some_setting', 'default' );
- *   $my_settings = get_option( PN_TEXTDOMAIN . '-settings', 'default too' );
+ *   $my_setting = cmb2_get_option( 'plugin-name' . '-settings', 'some_setting', 'default' );
+ *   $my_settings = get_option( 'plugin-name' . '-settings', 'default too' );
  * CMB2 Snippet: https://github.com/CMB2/CMB2-Snippet-Library/blob/master/options-and-settings-pages/theme-options-cmb.php
  */
 ?>
@@ -11,16 +17,16 @@
 			// WPBPGen{{#if libraries_cmb2__cmb2}}
 			$cmb = new_cmb2_box(
 				array(
-					'id'         => PN_TEXTDOMAIN . '_options',
+					'id'         => 'plugin-name' . '_options',
 					'hookup'     => false,
-					'show_on'    => array( 'key' => 'options-page', 'value' => array( PN_TEXTDOMAIN ) ),
+					'show_on'    => array( 'key' => 'options-page', 'value' => array( 'plugin-name' ) ),
 					'show_names' => true,
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'    => __( 'Text', PN_TEXTDOMAIN ),
-					'desc'    => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'    => __( 'Text', 'plugin-name' ),
+					'desc'    => __( 'field description (optional)', 'plugin-name' ),
 					'id'      => 'text',
 					'type'    => 'text',
 					'default' => 'Default Text',
@@ -28,8 +34,8 @@
 			);
 			$cmb->add_field(
 				array(
-					'name'    => __( 'Color Picker', PN_TEXTDOMAIN ),
-					'desc'    => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'    => __( 'Color Picker', 'plugin-name' ),
+					'desc'    => __( 'field description (optional)', 'plugin-name' ),
 					'id'      => 'colorpicker',
 					'type'    => 'colorpicker',
 					'default' => '#bada55',
@@ -37,8 +43,8 @@
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Text Medium', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Text Medium', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_textmedium',
 					'type' => 'text_medium',
 					// 'repeatable' => true,
@@ -46,56 +52,56 @@
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Website URL', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Website URL', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_url',
 					'type' => 'text_url',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Text Email', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Text Email', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_email',
 					'type' => 'text_email',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Time', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Time', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_time',
 					'type' => 'text_time',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Date Picker', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Date Picker', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_textdate',
 					'type' => 'text_date',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Date Picker (UNIX timestamp)', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Date Picker (UNIX timestamp)', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_textdate_timestamp',
 					'type' => 'text_date_timestamp',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Date/Time Picker Combo (UNIX timestamp)', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Date/Time Picker Combo (UNIX timestamp)', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_datetime_timestamp',
 					'type' => 'text_datetime_timestamp',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'         => __( 'Test Money', PN_TEXTDOMAIN ),
-					'desc'         => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'         => __( 'Test Money', 'plugin-name' ),
+					'desc'         => __( 'field description (optional)', 'plugin-name' ),
 					'id'           => '_textmoney',
 					'type'         => 'text_money',
 					'before_field' => '€', // Override '$' symbol if needed
@@ -103,73 +109,73 @@
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Text Area', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Text Area', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_textarea',
 					'type' => 'textarea',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Text Area for Code', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Text Area for Code', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_textarea_code',
 					'type' => 'textarea_code',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Title Weeeee', PN_TEXTDOMAIN ),
-					'desc' => __( 'This is a title description', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Title Weeeee', 'plugin-name' ),
+					'desc' => __( 'This is a title description', 'plugin-name' ),
 					'id'   => '_title',
 					'type' => 'title',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'             => __( 'Test Select', PN_TEXTDOMAIN ),
-					'desc'             => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'             => __( 'Test Select', 'plugin-name' ),
+					'desc'             => __( 'field description (optional)', 'plugin-name' ),
 					'id'               => '_select',
 					'type'             => 'select',
 					'show_option_none' => true,
 					'options'          => array(
-						'standard' => __( 'Option One', PN_TEXTDOMAIN ),
-						'custom'   => __( 'Option Two', PN_TEXTDOMAIN ),
-						'none'     => __( 'Option Three', PN_TEXTDOMAIN ),
+						'standard' => __( 'Option One', 'plugin-name' ),
+						'custom'   => __( 'Option Two', 'plugin-name' ),
+						'none'     => __( 'Option Three', 'plugin-name' ),
 					),
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'             => __( 'Test Radio inline', PN_TEXTDOMAIN ),
-					'desc'             => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'             => __( 'Test Radio inline', 'plugin-name' ),
+					'desc'             => __( 'field description (optional)', 'plugin-name' ),
 					'id'               => '_radio_inline',
 					'type'             => 'radio_inline',
 					'show_option_none' => 'No Selection',
 					'options'          => array(
-						'standard' => __( 'Option One', PN_TEXTDOMAIN ),
-						'custom'   => __( 'Option Two', PN_TEXTDOMAIN ),
-						'none'     => __( 'Option Three', PN_TEXTDOMAIN ),
+						'standard' => __( 'Option One', 'plugin-name' ),
+						'custom'   => __( 'Option Two', 'plugin-name' ),
+						'none'     => __( 'Option Three', 'plugin-name' ),
 					),
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'    => __( 'Test Radio', PN_TEXTDOMAIN ),
-					'desc'    => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'    => __( 'Test Radio', 'plugin-name' ),
+					'desc'    => __( 'field description (optional)', 'plugin-name' ),
 					'id'      => '_radio',
 					'type'    => 'radio',
 					'options' => array(
-						'option1' => __( 'Option One', PN_TEXTDOMAIN ),
-						'option2' => __( 'Option Two', PN_TEXTDOMAIN ),
-						'option3' => __( 'Option Three', PN_TEXTDOMAIN ),
+						'option1' => __( 'Option One', 'plugin-name' ),
+						'option2' => __( 'Option Two', 'plugin-name' ),
+						'option3' => __( 'Option Three', 'plugin-name' ),
 					),
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'     => __( 'Test Taxonomy Radio', PN_TEXTDOMAIN ),
-					'desc'     => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'     => __( 'Test Taxonomy Radio', 'plugin-name' ),
+					'desc'     => __( 'field description (optional)', 'plugin-name' ),
 					'id'       => '_text_taxonomy_radio',
 					'type'     => 'taxonomy_radio',
 					'taxonomy' => 'category', // Taxonomy Slug
@@ -178,8 +184,8 @@
 			);
 			$cmb->add_field(
 				array(
-					'name'     => __( 'Test Taxonomy Select', PN_TEXTDOMAIN ),
-					'desc'     => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'     => __( 'Test Taxonomy Select', 'plugin-name' ),
+					'desc'     => __( 'field description (optional)', 'plugin-name' ),
 					'id'       => '_taxonomy_select',
 					'type'     => 'taxonomy_select',
 					'taxonomy' => 'category', // Taxonomy Slug
@@ -187,8 +193,8 @@
 			);
 			$cmb->add_field(
 				array(
-					'name'     => __( 'Test Taxonomy Multi Checkbox', PN_TEXTDOMAIN ),
-					'desc'     => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'     => __( 'Test Taxonomy Multi Checkbox', 'plugin-name' ),
+					'desc'     => __( 'field description (optional)', 'plugin-name' ),
 					'id'       => '_multitaxonomy',
 					'type'     => 'taxonomy_multicheck',
 					'taxonomy' => 'category', // Taxonomy Slug
@@ -196,29 +202,29 @@
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Checkbox', PN_TEXTDOMAIN ),
-					'desc' => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Checkbox', 'plugin-name' ),
+					'desc' => __( 'field description (optional)', 'plugin-name' ),
 					'id'   => '_checkbox',
 					'type' => 'checkbox',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'    => __( 'Test Multi Checkbox', PN_TEXTDOMAIN ),
-					'desc'    => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'    => __( 'Test Multi Checkbox', 'plugin-name' ),
+					'desc'    => __( 'field description (optional)', 'plugin-name' ),
 					'id'      => '_multicheckbox',
 					'type'    => 'multicheck',
 					'options' => array(
-						'check1' => __( 'Check One', PN_TEXTDOMAIN ),
-						'check2' => __( 'Check Two', PN_TEXTDOMAIN ),
-						'check3' => __( 'Check Three', PN_TEXTDOMAIN ),
+						'check1' => __( 'Check One', 'plugin-name' ),
+						'check2' => __( 'Check Two', 'plugin-name' ),
+						'check3' => __( 'Check Three', 'plugin-name' ),
 					),
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'    => __( 'Test wysiwyg', PN_TEXTDOMAIN ),
-					'desc'    => __( 'field description (optional)', PN_TEXTDOMAIN ),
+					'name'    => __( 'Test wysiwyg', 'plugin-name' ),
+					'desc'    => __( 'field description (optional)', 'plugin-name' ),
 					'id'      => '_wysiwyg',
 					'type'    => 'wysiwyg',
 					'options' => array( 'textarea_rows' => 5 ),
@@ -226,16 +232,16 @@
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'Test Image', PN_TEXTDOMAIN ),
-					'desc' => __( 'Upload an image or enter a URL.', PN_TEXTDOMAIN ),
+					'name' => __( 'Test Image', 'plugin-name' ),
+					'desc' => __( 'Upload an image or enter a URL.', 'plugin-name' ),
 					'id'   => '_image',
 					'type' => 'file',
 				)
 			);
 			$cmb->add_field(
 				array(
-					'name'         => __( 'Multiple Files', PN_TEXTDOMAIN ),
-					'desc'         => __( 'Upload or add multiple images/attachments.', PN_TEXTDOMAIN ),
+					'name'         => __( 'Multiple Files', 'plugin-name' ),
+					'desc'         => __( 'Upload or add multiple images/attachments.', 'plugin-name' ),
 					'id'           => '_file_list',
 					'type'         => 'file_list',
 					'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
@@ -243,8 +249,8 @@
 			);
 			$cmb->add_field(
 				array(
-					'name' => __( 'oEmbed', PN_TEXTDOMAIN ),
-					'desc' => __( 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.', PN_TEXTDOMAIN ),
+					'name' => __( 'oEmbed', 'plugin-name' ),
+					'desc' => __( 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.', 'plugin-name' ),
 					'id'   => '_embed',
 					'type' => 'oembed',
 				)
@@ -263,7 +269,7 @@
 				)
 			);
 
-			cmb2_metabox_form( PN_TEXTDOMAIN . '_options', PN_TEXTDOMAIN . '-settings' );
+			cmb2_metabox_form( 'plugin-name' . '_options', 'plugin-name' . '-settings' );
 			// {{/if}}
 			?>
 

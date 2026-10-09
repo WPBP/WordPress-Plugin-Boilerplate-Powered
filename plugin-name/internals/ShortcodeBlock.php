@@ -29,7 +29,7 @@ class ShortcodeBlock extends \WP_V2_Super_Duper {
 	 */
 	public function __construct() { // phpcs:ignore
 		$options = array(
-			'textdomain'     => PN_TEXTDOMAIN,
+			'textdomain'     => 'plugin-name',
 			// textdomain of the plugin/theme (used to prefix the Gutenberg block)
 			'block-icon'     => 'fas fa-globe-americas',
 			// Dash icon name for the block: https://developer.wordpress.org/resource/dashicons/#arrow-right
@@ -41,7 +41,7 @@ class ShortcodeBlock extends \WP_V2_Super_Duper {
 			'block-output'   => array( // the block visual output elements as an array
 				array(
 					'element' => 'p',
-					'title'   => \__( 'Placeholder', PN_TEXTDOMAIN ),
+					'title'   => \__( 'Placeholder', 'plugin-name' ),
 					'class'   => '[%className%]',
 					'content' => 'Hello: [%after_text%]', // block properties can be added by wrapping them in [%name%]
 				),
@@ -51,20 +51,20 @@ class ShortcodeBlock extends \WP_V2_Super_Duper {
 			// The calling class name
 			'base_id'        => 'hello_world',
 			// this is used as the widget id and the shortcode id.
-			'name'           => \__( 'Hello World', PN_TEXTDOMAIN ),
+			'name'           => \__( 'Hello World', 'plugin-name' ),
 			// the name of the widget/block
 			'widget_ops'     => array(
 				'classname'   => 'hello-world-class',
 				// widget class
-				'description' => \esc_html__( 'This is an example that will take a text parameter and output it after `Hello:`.', PN_TEXTDOMAIN ),
+				'description' => \esc_html__( 'This is an example that will take a text parameter and output it after `Hello:`.', 'plugin-name' ),
 				// widget description
 			),
 			'no_wrap'        => true, // This will prevent the widget being wrapped in the containing widget class div.
 			'arguments'      => array( // these are the arguments that will be used in the widget, shortcode and block settings.
 				'after_text' => array( // this is the input name=''
-					'title'       => \__( 'Text after hello:', PN_TEXTDOMAIN ),
+					'title'       => \__( 'Text after hello:', 'plugin-name' ),
 					// input title
-					'desc'        => \__( 'This is the text that will appear after `Hello:`.', PN_TEXTDOMAIN ),
+					'desc'        => \__( 'This is the text that will appear after `Hello:`.', 'plugin-name' ),
 					// input description
 					'type'        => 'text',
 					// the type of input, test, select, checkbox etc.

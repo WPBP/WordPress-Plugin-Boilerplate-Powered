@@ -38,9 +38,9 @@ class PostTypes extends Base {
 		$post_columns->add_column(
 			'cmb2_field',
 			array(
-				'label'    => \__( 'CMB2 Field', PN_TEXTDOMAIN ),
+				'label'    => \__( 'CMB2 Field', 'plugin-name' ),
 				'type'     => 'post_meta',
-				'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text', // phpcs:ignore WordPress.DB
+				'meta_key' => '_demo_' . 'plugin-name' . '_text', // phpcs:ignore WordPress.DB
 				'orderby'  => 'meta_value',
 				'sortable' => true,
 				'prefix'   => '<b>',
@@ -61,7 +61,7 @@ class PostTypes extends Base {
 				'admin_notice' => 'Written something on custom bulk meta',
 				'callback'     => static function( $post_ids ) {
 					foreach ( $post_ids as $post_id ) {
-						\update_post_meta( $post_id, '_demo_' . PN_TEXTDOMAIN . '_text', 'Random stuff' );
+						\update_post_meta( $post_id, '_demo_' . 'plugin-name' . '_text', 'Random stuff' );
 					}
 
 					return true;
@@ -135,7 +135,7 @@ class PostTypes extends Base {
 						),
 						'custom_field'   => array(
 							'title'    => 'By Lib',
-							'meta_key' => '_demo_' . PN_TEXTDOMAIN . '_text', // phpcs:ignore
+							'meta_key' => '_demo_' . 'plugin-name' . '_text', // phpcs:ignore
 							'cap'      => 'manage_options',
 						),
 						'date'           => array(
@@ -152,8 +152,8 @@ class PostTypes extends Base {
 			),
 			array(
 				// Override the base names used for labels:
-				'singular' => \__( 'Demo', PN_TEXTDOMAIN ),
-				'plural'   => \__( 'Demos', PN_TEXTDOMAIN ),
+				'singular' => \__( 'Demo', 'plugin-name' ),
+				'plural'   => \__( 'Demos', 'plugin-name' ),
 			)
 		);
 
@@ -187,8 +187,8 @@ class PostTypes extends Base {
 			),
 			array(
 				// Override the base names used for labels:
-				'singular' => \__( 'Demo Category', PN_TEXTDOMAIN ),
-				'plural'   => \__( 'Demo Categories', PN_TEXTDOMAIN ),
+				'singular' => \__( 'Demo Category', 'plugin-name' ),
+				'plural'   => \__( 'Demo Categories', 'plugin-name' ),
 			)
 		);
 	}

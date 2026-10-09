@@ -30,14 +30,14 @@ class Notices extends Base {
 		}
 
 		// WPBPGen{{#if libraries_wpdesk__wp-notice}}
-		\wpdesk_wp_notice( \__( 'Updated Messages', PN_TEXTDOMAIN ), 'updated' );
+		\wpdesk_wp_notice( \__( 'Updated Messages', 'plugin-name' ), 'updated' );
 		// {{/if}}
 
 		// WPBPGen{{#if libraries_wpbp__page-madness-detector && libraries_wpdesk__wp-notice}}
 		$builder = new \Page_Madness_Detector(); // phpcs:ignore
 
 		if ( $builder->has_entropy() ) {
-			\wpdesk_wp_notice( \__( 'A Page Builder/Visual Composer was found on this website!', PN_TEXTDOMAIN ), 'error', true );
+			\wpdesk_wp_notice( \__( 'A Page Builder/Visual Composer was found on this website!', 'plugin-name' ), 'error', true );
 		}
 
 		// {{/if}}
@@ -49,10 +49,10 @@ class Notices extends Base {
 			array(
 				'days_after' => 15,
 				'type'       => 'plugin',
-				'slug'       => PN_TEXTDOMAIN,
+				'slug'       => 'plugin-name',
 				'rating'     => 5,
-				'message'    => \__( 'Review me!', PN_TEXTDOMAIN ),
-				'link_label' => \__( 'Click here to review', PN_TEXTDOMAIN ),
+				'message'    => \__( 'Review me!', 'plugin-name' ),
+				'link_label' => \__( 'Click here to review', 'plugin-name' ),
 			)
 		);
 
@@ -65,7 +65,7 @@ class Notices extends Base {
 		if ( \apply_filters( 'plugin_name_alert_localization', true ) ) {
 			new I18n_Notice_WordPressOrg(
 			array(
-				'textdomain'  => PN_TEXTDOMAIN,
+				'textdomain'  => 'plugin-name',
 				'plugin_name' => PN_NAME,
 				'hook'        => 'admin_notices',
 			),

@@ -28,8 +28,8 @@ class Pointers extends Base {
 	public function initialize() {
 		parent::initialize();
 
-		new \PointerPlus( array( 'prefix' => PN_TEXTDOMAIN ) );
-		\add_filter( PN_TEXTDOMAIN . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
+		new \PointerPlus( array( 'prefix' => 'plugin-name' ) );
+		\add_filter( 'plugin-name' . '-pointerplus_list', array( $this, 'custom_initial_pointers' ), 10, 2 );
 	}
 
 	/**
@@ -47,8 +47,8 @@ class Pointers extends Base {
 			array(
 				$prefix . '_contextual_help' => array(
 					'selector'   => '.ui-tabs-anchor#ui-id-2',
-					'title'      => \__( 'Boilerplate Help', PN_TEXTDOMAIN ),
-					'text'       => \__( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', PN_TEXTDOMAIN ),
+					'title'      => \__( 'Boilerplate Help', 'plugin-name' ),
+					'text'       => \__( 'A pointer for help tab.<br>Go to Posts, Pages or Users for other pointers.', 'plugin-name' ),
 					'edge'       => 'top',
 					'align'      => 'left',
 					'icon_class' => 'dashicons-welcome-learn-more',

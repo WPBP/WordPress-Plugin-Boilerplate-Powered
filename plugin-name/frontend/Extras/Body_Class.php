@@ -37,7 +37,7 @@ class Body_Class extends Base {
 	 * @return array
 	 */
 	public static function add_pn_class( array $classes ) {
-		$classes[] = PN_TEXTDOMAIN;
+		$classes[] = 'plugin-name';
 
 		return $classes;
 	}

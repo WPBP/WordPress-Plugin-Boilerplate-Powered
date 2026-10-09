@@ -58,8 +58,8 @@ class ImpExp extends Base {
 		}
 
 		$settings      = array();
-		$settings[ 0 ] = \get_option( PN_TEXTDOMAIN . '-settings' );
-		$settings[ 1 ] = \get_option( PN_TEXTDOMAIN . '-settings-second' );
+		$settings[ 0 ] = \get_option( 'plugin-name' . '-settings' );
+		$settings[ 1 ] = \get_option( 'plugin-name' . '-settings-second' );
 
 		\ignore_user_abort( true );
 
@@ -99,13 +99,13 @@ class ImpExp extends Base {
 		$extension       = \end( $file_name_parts );
 
 		if ( 'json' !== $extension ) {
-			\wp_die( \esc_html__( 'Please upload a valid .json file', PN_TEXTDOMAIN ) );
+			\wp_die( \esc_html__( 'Please upload a valid .json file', 'plugin-name' ) );
 		}
 
 		$import_file = $_FILES[ 'pn_import_file' ][ 'tmp_name' ]; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 
 		if ( empty( $import_file ) ) {
-			\wp_die( \esc_html__( 'Please upload a file to import', PN_TEXTDOMAIN ) );
+			\wp_die( \esc_html__( 'Please upload a file to import', 'plugin-name' ) );
 		}
 
 		// Retrieve the settings from the file and convert the json object to an array.
@@ -115,17 +115,17 @@ class ImpExp extends Base {
 			$settings = \json_decode( (string) $settings_file );
 
 			if ( \is_array( $settings ) ) {
-				\update_option( PN_TEXTDOMAIN . '-settings', \get_object_vars( $settings[ 0 ] ) );
-				\update_option( PN_TEXTDOMAIN . '-settings-second', \get_object_vars( $settings[ 1 ] ) );
+				\update_option( 'plugin-name' . '-settings', \get_object_vars( $settings[ 0 ] ) );
+				\update_option( 'plugin-name' . '-settings-second', \get_object_vars( $settings[ 1 ] ) );
 			}
 
-			\wp_safe_redirect( \admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) );
+			\wp_safe_redirect( \admin_url( 'options-general.php?page=' . 'plugin-name' ) );
 			exit;
 		}
 
 		new \WP_Error(
 				'plugin_name_import_settings_failed',
-				\__( 'Failed to import the settings.', PN_TEXTDOMAIN )
+				\__( 'Failed to import the settings.', 'plugin-name' )
 			);
 	}
 

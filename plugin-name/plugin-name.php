@@ -17,7 +17,8 @@
  * License:         {{author_license}}
  * License URI:     http://www.gnu.org/licenses/gpl-3.0.txt
  * Domain Path:     /languages
- * Requires PHP:    7.4
+ * Requires at least: 6.0
+ * Requires PHP:    8.0
  * WordPress-Plugin-Boilerplate-Powered: v3.3.0
  */
 
@@ -27,18 +28,17 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 define( 'PN_VERSION', '{{plugin_version}}' );
-define( 'PN_TEXTDOMAIN', 'plugin-name' );
 define( 'PN_NAME', '{{plugin_name}}' );
 define( 'PN_PLUGIN_ROOT', plugin_dir_path( __FILE__ ) );
 define( 'PN_PLUGIN_ABSOLUTE', __FILE__ );
-define( 'PN_MIN_PHP_VERSION', '7.4' );
-define( 'PN_WP_VERSION', '5.3' );
+define( 'PN_MIN_PHP_VERSION', '8.0' );
+define( 'PN_WP_VERSION', '6.0' );
 
 // WPBPGen{{#if language-files}}
 add_action(
 	'init',
 	static function () {
-		load_plugin_textdomain( PN_TEXTDOMAIN, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'plugin-name', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 	);
 
@@ -126,8 +126,8 @@ PucFactory::buildUpdateChecker( 'https://github.com/user-name/repo-name/', __FIL
 
 if ( ! wp_installing() ) {
 	// WPBPGen{{#if act-deact_actdeact}}
-	register_activation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
-	register_deactivation_hook( PN_TEXTDOMAIN . '/' . PN_TEXTDOMAIN . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
+	register_activation_hook( 'plugin-name' . '/' . 'plugin-name' . '.php', array( new \Plugin_Name\Backend\ActDeact, 'activate' ) );
+	register_deactivation_hook( 'plugin-name' . '/' . 'plugin-name' . '.php', array( new \Plugin_Name\Backend\ActDeact, 'deactivate' ) );
 	// {{/if}}
 	add_action(
 		'plugins_loaded',

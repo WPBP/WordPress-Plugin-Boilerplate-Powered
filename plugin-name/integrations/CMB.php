@@ -47,7 +47,7 @@ class CMB extends Base {
 		$cmb_demo = \new_cmb2_box(
 			array(
 				'id'           => $prefix . 'metabox',
-				'title'        => \__( 'Demo Metabox', PN_TEXTDOMAIN ),
+				'title'        => \__( 'Demo Metabox', 'plugin-name' ),
 				'object_types' => array( 'demo' ),
 				'context'      => 'normal',
 				'priority'     => 'high',
@@ -60,34 +60,34 @@ class CMB extends Base {
 		// {{/if}}
 		$field1 = $cmb_demo->add_field(
 			array(
-				'name' => \__( 'Text', PN_TEXTDOMAIN ),
-				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-				'id'   => $prefix . PN_TEXTDOMAIN . '_text',
+				'name' => \__( 'Text', 'plugin-name' ),
+				'desc' => \__( 'field description (optional)', 'plugin-name' ),
+				'id'   => $prefix . 'plugin-name' . '_text',
 				'type' => 'text',
 				)
 			);
 		$field2 = $cmb_demo->add_field(
 			array(
-				'name' => \__( 'Text 2', PN_TEXTDOMAIN ),
-				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-				'id'   => $prefix . PN_TEXTDOMAIN . '_text2',
+				'name' => \__( 'Text 2', 'plugin-name' ),
+				'desc' => \__( 'field description (optional)', 'plugin-name' ),
+				'id'   => $prefix . 'plugin-name' . '_text2',
 				'type' => 'text',
 				)
 			);
 
 		$field3 = $cmb_demo->add_field(
 			array(
-				'name' => \__( 'Text Small', PN_TEXTDOMAIN ),
-				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-				'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall',
+				'name' => \__( 'Text Small', 'plugin-name' ),
+				'desc' => \__( 'field description (optional)', 'plugin-name' ),
+				'id'   => $prefix . 'plugin-name' . '_textsmall',
 				'type' => 'text_small',
 				)
 			);
 		$field4 = $cmb_demo->add_field(
 			array(
-				'name' => \__( 'Text Small 2', PN_TEXTDOMAIN ),
-				'desc' => \__( 'field description (optional)', PN_TEXTDOMAIN ),
-				'id'   => $prefix . PN_TEXTDOMAIN . '_textsmall2',
+				'name' => \__( 'Text Small 2', 'plugin-name' ),
+				'desc' => \__( 'field description (optional)', 'plugin-name' ),
+				'id'   => $prefix . 'plugin-name' . '_textsmall2',
 				'type' => 'text_small',
 		)
 			);

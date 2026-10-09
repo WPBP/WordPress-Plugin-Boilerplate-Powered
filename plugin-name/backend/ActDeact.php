@@ -214,7 +214,7 @@ class ActDeact extends Base {
 		}
 
 		\update_option( 'plugin-name-version', PN_VERSION );
-		\delete_option( PN_TEXTDOMAIN . '_fake-meta' );
+		\delete_option( 'plugin-name' . '_fake-meta' );
 	}
 	// {{/if}}
 

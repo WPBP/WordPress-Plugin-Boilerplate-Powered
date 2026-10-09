@@ -79,7 +79,7 @@ class Enqueue extends Base {
 	public function enqueue_styles() {
 		$styles = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
-		$styles[0] = new Style( PN_TEXTDOMAIN . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ) );
+		$styles[0] = new Style( 'plugin-name' . '-plugin-styles', \plugins_url( 'assets/build/plugin-public.css', PN_PLUGIN_ABSOLUTE ) );
 		$styles[0]->forLocation( Asset::FRONTEND )->useAsyncFilter()->withVersion( PN_VERSION );
 		$styles[0]->dependencies();
 		// {{/if}}
@@ -99,14 +99,14 @@ class Enqueue extends Base {
 	public static function enqueue_scripts() {
 		$scripts = array();
 		// WPBPGen{{#if libraries_inpsyde__assets}}
-		$scripts[0] = new Script( PN_TEXTDOMAIN . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ) );
+		$scripts[0] = new Script( 'plugin-name' . '-plugin-script', \plugins_url( 'assets/build/plugin-public.js', PN_PLUGIN_ABSOLUTE ) );
 		$scripts[0]->forLocation( Asset::FRONTEND )->useAsyncFilter()->withVersion( PN_VERSION );
 		$scripts[0]->dependencies();
 		// WPBPGen{{#if frontend_wp-localize-script}}
 		$scripts[0]->withLocalize(
 			'exampleDemo',
 			array(
-				'alert'   => \__( 'Error!', PN_TEXTDOMAIN ),
+				'alert'   => \__( 'Error!', 'plugin-name' ),
 				'nonce'   => \wp_create_nonce( 'demo_example' ),
 				'wp_rest' => \wp_create_nonce( 'wp_rest' ),
 			)

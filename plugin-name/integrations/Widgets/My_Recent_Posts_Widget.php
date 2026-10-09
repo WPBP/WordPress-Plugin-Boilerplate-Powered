@@ -23,8 +23,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 	 */
 	public function __construct() { // phpcs:ignore
 		$args = array(
-			'label'       => \__( 'My Recent Posts Example', PN_TEXTDOMAIN ),
-			'description' => \__( 'My Recent Posts Widget Description', PN_TEXTDOMAIN ),
+			'label'       => \__( 'My Recent Posts Example', 'plugin-name' ),
+			'description' => \__( 'My Recent Posts Widget Description', 'plugin-name' ),
 			'slug'        => 'recent-posts',
 			// 'options' => array( 'cache' => true )
 		);
@@ -33,9 +33,9 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			// Title field
 			array(
 				// Field name/label
-				'name'     => \__( 'Title', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Title', 'plugin-name' ),
 				// Field description
-				'desc'     => \__( 'Enter the widget title.', PN_TEXTDOMAIN ),
+				'desc'     => \__( 'Enter the widget title.', 'plugin-name' ),
 				// Field id
 				'id'       => 'title',
 				// Field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
@@ -43,7 +43,7 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 				// Class, rows, cols
 				'class'    => 'widefat',
 				// Default value
-				'std'      => \__( 'Recent Posts', PN_TEXTDOMAIN ),
+				'std'      => \__( 'Recent Posts', 'plugin-name' ),
 				/**
 				Set the field validation type/s
 				'alpha_dash'
@@ -74,16 +74,16 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Taxonomy Field
 			array(
-				'name'  => \__( 'Taxonomy', PN_TEXTDOMAIN ),
-				'desc'  => \__( 'Set the taxonomy.', PN_TEXTDOMAIN ),
+				'name'  => \__( 'Taxonomy', 'plugin-name' ),
+				'desc'  => \__( 'Set the taxonomy.', 'plugin-name' ),
 				'id'    => 'taxonomy',
 				'type'  => 'taxonomy',
 				'class' => 'widefat',
 			),
 			// Taxonomy Field
 			array(
-				'name'     => \__( 'Taxonomy terms', PN_TEXTDOMAIN ),
-				'desc'     => \__( 'Set the taxonomy terms.', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Taxonomy terms', 'plugin-name' ),
+				'desc'     => \__( 'Set the taxonomy terms.', 'plugin-name' ),
 				'id'       => 'taxonomyterm',
 				'type'     => 'taxonomyterm',
 				'taxonomy' => 'category',
@@ -91,16 +91,16 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Pages Field
 			array(
-				'name'  => \__( 'Pages', PN_TEXTDOMAIN ),
-				'desc'  => \__( 'Set the page.', PN_TEXTDOMAIN ),
+				'name'  => \__( 'Pages', 'plugin-name' ),
+				'desc'  => \__( 'Set the page.', 'plugin-name' ),
 				'id'    => 'pages',
 				'type'  => 'pages',
 				'class' => 'widefat',
 			),
 			// Post type Field
 			array(
-				'name'     => \__( 'Post type', PN_TEXTDOMAIN ),
-				'desc'     => \__( 'Set the post type.', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Post type', 'plugin-name' ),
+				'desc'     => \__( 'Set the post type.', 'plugin-name' ),
 				'id'       => 'posttype',
 				'type'     => 'posttype',
 				'posttype' => 'post',
@@ -108,22 +108,22 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Amount Field
 			array(
-				'name'     => \__( 'Amount', PN_TEXTDOMAIN ),
-				'desc'     => \__( 'Select how many posts to show.', PN_TEXTDOMAIN ),
+				'name'     => \__( 'Amount', 'plugin-name' ),
+				'desc'     => \__( 'Select how many posts to show.', 'plugin-name' ),
 				'id'       => 'amount',
 				'type'     => 'select',
 				// Selectbox fields
 				'fields'   => array(
 					array(
-						'name'  => \__( '1 Post', PN_TEXTDOMAIN ),
+						'name'  => \__( '1 Post', 'plugin-name' ),
 						'value' => '1',
 					),
 					array(
-						'name'  => \__( '2 Posts', PN_TEXTDOMAIN ),
+						'name'  => \__( '2 Posts', 'plugin-name' ),
 						'value' => '2',
 					),
 					array(
-						'name'  => \__( '3 Posts', PN_TEXTDOMAIN ),
+						'name'  => \__( '3 Posts', 'plugin-name' ),
 						'value' => '3',
 					),
 
@@ -134,8 +134,8 @@ class My_Recent_Posts_Widget extends \WPH_Widget {
 			),
 			// Output type checkbox
 			array(
-				'name'   => \__( 'Output as list', PN_TEXTDOMAIN ),
-				'desc'   => \__( 'Wraps posts with the <li> tag.', PN_TEXTDOMAIN ),
+				'name'   => \__( 'Output as list', 'plugin-name' ),
+			'desc'   => \__( 'Wraps posts with the <li> tag.', 'plugin-name' ),
 				'id'     => 'list',
 				'type'   => 'checkbox',
 				// Checked by default:

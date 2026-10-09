@@ -36,6 +36,6 @@ class ExtrasTest extends \Codeception\TestCase\WPTestCase {
 		// FunctionMocker::replace('get_option', 'another_function');
 		$sut = $this->make_instance();
 		$list = array('test', 'another-class');
-		$this->assertEquals( array_merge($list, array(PN_TEXTDOMAIN)), $sut->add_pn_class($list) );
+		$this->assertEquals( array_merge($list, array('plugin-name')), $sut->add_pn_class($list) );
 	}
 }

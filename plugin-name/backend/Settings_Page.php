@@ -33,7 +33,7 @@ class Settings_Page extends Base {
 		\add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
 
 		$realpath        = (string) \realpath( __DIR__ );
-		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . PN_TEXTDOMAIN . '.php' );
+		$plugin_basename = \plugin_basename( \plugin_dir_path( $realpath ) . 'plugin-name' . '.php' );
 		\add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 	}
 
@@ -52,14 +52,14 @@ class Settings_Page extends Base {
 		 * - Change 'manage_options' to the capability you see fit
 		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
 
-		add_options_page( __( 'Page Title', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ) );
+		add_options_page( __( 'Page Title', 'plugin-name' ), PN_NAME, 'manage_options', 'plugin-name', array( $this, 'display_plugin_admin_page' ) );
 		 *
 		 */
 		/*
 		 * Add a settings page for this plugin to the main menu
 		 *
 		 */
-		\add_menu_page( \__( '{{plugin_name}} Settings', PN_TEXTDOMAIN ), PN_NAME, 'manage_options', PN_TEXTDOMAIN, array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
+		\add_menu_page( \__( '{{plugin_name}} Settings', 'plugin-name' ), PN_NAME, 'manage_options', 'plugin-name', array( $this, 'display_plugin_admin_page' ), 'dashicons-hammer', 90 );
 	}
 
 	/**
@@ -82,9 +82,9 @@ class Settings_Page extends Base {
 	public function add_action_links( array $links ) {
 		return \array_merge(
 			array(
-				'settings' => '<a href="' . \admin_url( 'options-general.php?page=' . PN_TEXTDOMAIN ) . '">' . \__( 'Settings', PN_TEXTDOMAIN ) . '</a>',
+				'settings' => '<a href="' . \admin_url( 'options-general.php?page=' . 'plugin-name' ) . '">' . \__( 'Settings', 'plugin-name' ) . '</a>',
 				// WPBPGen{{#if backend_donate-link-plugin-list}}
-				'donate'   => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . \__( 'Donate', PN_TEXTDOMAIN ) . '</a>',
+				'donate'   => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=danielemte90@alice.it&item_name=Donation">' . \__( 'Donate', 'plugin-name' ) . '</a>',
 				// {{/if}}
 			),
 			$links

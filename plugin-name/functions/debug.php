@@ -9,7 +9,7 @@
  * @link      {{author_url}}
  */
 
-$pn_debug = new WPBP_Debug( __( 'Plugin Name', PN_TEXTDOMAIN ) );
+$pn_debug = new WPBP_Debug( __( 'Plugin Name', 'plugin-name' ) );
 
 /**
  * Log text inside the debugging plugins.

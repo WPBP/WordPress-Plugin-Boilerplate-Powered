@@ -16,5 +16,8 @@
 				"WP_TESTS_TITLE": "Test Blog"
 			}
 		}
+	},
+	"lifecycleScripts": {
+		"afterStart": "bash tests/_envs/install-pdo-mysql.sh"
 	}
 }

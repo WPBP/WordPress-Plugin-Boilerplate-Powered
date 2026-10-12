@@ -257,7 +257,7 @@ jobs:
       - name: "Run codeception wpunit via wp-env"
         working-directory: "./plugin-name"
         run: |
-          npx --yes @wordpress/env run tests-wordpress --env-cwd=wp-content/plugins/plugin-name -- php -d register_argc_argv=On vendor/bin/codecept run wpunit
+          npx --yes @wordpress/env run tests-cli --env-cwd=wp-content/plugins/plugin-name -- php -d register_argc_argv=On vendor/bin/codecept run wpunit
 
       - name: "Stop wp-env"
         working-directory: "./plugin-name"

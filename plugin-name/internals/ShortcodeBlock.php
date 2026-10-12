@@ -26,6 +26,23 @@ class ShortcodeBlock {
 	 * @return void
 	 */
 	public function initialize() {
+		\add_action( 'init', array( $this, 'register_block' ) );
+	}
+
+	/**
+	 * Register the hello-world block.
+	 *
+	 * Blocks must be registered at init or later; the guard keeps the
+	 * registration idempotent when plugins_loaded is fired more than once
+	 * (the test suite does this by design to exercise class discovery).
+	 *
+	 * @return void
+	 */
+	public function register_block() {
+		if ( \WP_Block_Type_Registry::get_instance()->is_registered( 'plugin-name/hello-world' ) ) {
+			return;
+		}
+
 		\register_block_type(
 			PN_PLUGIN_ROOT . 'assets/src/block/hello-world',
 			array(

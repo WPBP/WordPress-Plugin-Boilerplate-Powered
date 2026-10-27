@@ -22,7 +22,6 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
           - "8.2"
           - "8.3"
 
@@ -82,7 +81,6 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
           - "8.2"
           - "8.3"
 
@@ -175,9 +173,9 @@ jobs:
 
     strategy:
       matrix:
-        # PHP 8.1 single-version for Codeception CI compatibility
+        # PHP 8.2 single-version for Codeception CI compatibility
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "highest"
@@ -277,7 +275,7 @@ jobs:
         with:
           coverage: "none"
           extensions: "${{ env.PHP_EXTENSIONS }}"
-          php-version: "8.1"
+          php-version: "8.2"
 
       - name: "Install dependencies"
         working-directory: "./plugin-name"

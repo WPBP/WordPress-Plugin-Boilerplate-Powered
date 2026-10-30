@@ -5,6 +5,7 @@
  * @package Plugin_Name
  */
 
+// WPBPGen{{#if libraries_joanrodas__plubo-routes}}
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -19,3 +20,5 @@ get_header();
 </main>
 <?php
 get_footer();
+
+// {{/if}}

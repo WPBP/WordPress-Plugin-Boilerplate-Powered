@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0b8d14f8704b87c2630b7f028c43e5b",
+    "content-hash": "e62e3e5c3688f15101181b8c63758370",
     "packages": [
         {
             "name": "behat/gherkin",
@@ -6035,50 +6035,6 @@
                 }
             ],
             "time": "2025-11-17T20:03:58+00:00"
-        },
-        {
-            "name": "wpbp/cpt_columns",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WPBP/CPT_Columns.git",
-                "reference": "d711b9d54155a6684ac9d3435924fa9f74b0d2a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WPBP/CPT_Columns/zipball/d711b9d54155a6684ac9d3435924fa9f74b0d2a6",
-                "reference": "d711b9d54155a6684ac9d3435924fa9f74b0d2a6",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "CPT_Columns.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Daniele Scasciafratte",
-                    "email": "mte90net@gmail.com",
-                    "homepage": "http://mte90.net"
-                }
-            ],
-            "description": "Improve the CPT list in the backend for your CPTs",
-            "homepage": "https://github.com/WPBP/CPT_Columns",
-            "keywords": [
-                "custom post type",
-                "post",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/WPBP/CPT_Columns/issues",
-                "source": "https://github.com/WPBP/CPT_Columns/tree/1.0.3"
-            },
-            "time": "2023-08-21T12:39:51+00:00"
         },
         {
             "name": "wpbp/cronplus",

@@ -60,10 +60,14 @@ class CMB extends Base {
 		// {{/if}}
 		$field1 = $cmb_demo->add_field(
 			array(
-				'name' => \__( 'Text', 'plugin-name' ),
-				'desc' => \__( 'field description (optional)', 'plugin-name' ),
-				'id'   => $prefix . 'plugin-name_text',
-				'type' => 'text',
+				'name'   => \__( 'Text', 'plugin-name' ),
+				'desc'   => \__( 'field description (optional)', 'plugin-name' ),
+				'id'     => $prefix . 'plugin-name_text',
+				'type'   => 'text',
+				'column' => array(
+					'name'     => \__( 'Text', 'plugin-name' ),
+					'sortable' => true,
+				),
 				)
 			);
 		$field2 = $cmb_demo->add_field(
@@ -77,10 +81,12 @@ class CMB extends Base {
 
 		$field3 = $cmb_demo->add_field(
 			array(
-				'name' => \__( 'Text Small', 'plugin-name' ),
-				'desc' => \__( 'field description (optional)', 'plugin-name' ),
-				'id'   => $prefix . 'plugin-name_textsmall',
-				'type' => 'text_small',
+				'name'       => \__( 'Text Small', 'plugin-name' ),
+				'desc'       => \__( 'field description (optional)', 'plugin-name' ),
+				'id'         => $prefix . 'plugin-name_textsmall',
+				'type'       => 'text_small',
+				'column'     => array( 'name' => \__( 'Text Small', 'plugin-name' ) ),
+				'display_cb' => array( $this, 'render_textsmall_column' ),
 				)
 			);
 		$field4 = $cmb_demo->add_field(
@@ -96,6 +102,17 @@ class CMB extends Base {
 		$row = $cmb2Grid->addRow(); //phpcs:ignore WordPress.NamingConventions
 		$row->addColumns( array( $field3, $field4 ) );
 		// {{/if}}
+	}
+
+	/**
+	 * Custom rendering for the Text Small column in the post list table.
+	 *
+	 * @param \CMB2_Field $field The field object.
+	 * @return void
+	 */
+	public function render_textsmall_column( $field ) {
+		$value = $field->value();
+		echo \esc_html( \is_string( $value ) ? \strtoupper( $value ) : '' );
 	}
 
 }

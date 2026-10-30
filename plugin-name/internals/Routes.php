@@ -10,6 +10,8 @@
  * @link      {{author_url}}
  */
 
+// WPBPGen{{#if libraries_joanrodas__plubo-routes}}
+
 namespace Plugin_Name\Internals;
 
 use Plugin_Name\Engine\Base;
@@ -83,3 +85,5 @@ class Routes extends Base {
 	}
 
 }
+
+// {{/if}}

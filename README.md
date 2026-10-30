@@ -58,16 +58,15 @@ These are options in wpbp.json.
 | --------------- | --------------- |
 | [WPBP/PointerPlus](https://github.com/WPBP/PointerPlus)<br>Create a WP Admin wizard-like system.| [CMB2/CMB2](https://github.com/CMB2/CMB2)<br>CMB2 is a developer's toolkit for building metaboxes, custom fields, and forms.|
 | [WPBP/CronPlus](https://github.com/WPBP/CronPlus)<br>Add and remove cronjobs.| [micropackage/requirements](https://github.com/micropackage/requirements)<br>A requirements checker.|
-| [WPBP/Widgets-Helper](https://github.com/WPBP/Widgets-Helper)<br>A class to ease creating powered Widgets.| [inpsyde/assets](https://github.com/inpsyde/assets)<br>A Composer package to deal with scripts and styles.|
+| [joanrodas/plubo-routes](https://github.com/joanrodas/plubo-routes)<br>Simple routes for frontend virtual pages and redirects.| [inpsyde/assets](https://github.com/inpsyde/assets)<br>A Composer package to deal with scripts and styles.|
 | [WPBP/Page-Madness-Detector](https://github.com/WPBP/Page-Madness-Detector)<br>Detect if the website is using a pagebuilder/visual builder.| [origgami/CMB2-grid](https://github.com/origgami/cmb2-grid)<br>CMB2 grid columns.|
 | [WPBP/Template](https://github.com/WPBP/Template)<br>Load template files with autosearch and multilanguage folder for email template.| [johnbillion/extended-cpts](https://github.com/johnbillion/extended-cpts/)<br>A library which provides extended functionality to WordPress custom post types and taxonomies.|
 | [WPBP/Debug](https://github.com/WPBP/Debug)<br>Query Monitor Wrapper.| [Freemius/wordpress-sdk](https://github.com/Freemius/wordpress-sdk)<br>Freemius truly empowers developers to create prosperous subscription-based businesses.|
-| [WPBP/CPT_Columns](https://github.com/WPBP/CPT_Columns)<br>Improve the CPT list in the backend.| [wpdesk/wp-notice](https://packagist.org/packages/wpdesk/wp-notice)<br>Library to display notices in wp-admin.|
+| [wpdesk/wp-notice](https://packagist.org/packages/wpdesk/wp-notice)<br>Library to display notices in wp-admin.|                 |
 | [WPBP/i18n-notice](https://github.com/WPBP/i18n-notice)<br>Handle i18n for plugins, based on Yoast i18n-module.| [julien731/WP-Review-Me](https://github.com/julien731/WP-Review-Me)<br>A lightweight library to include in your WordPress theme/plugin to ask the user to review it on WordPress.org|
 |                 | [stevegrunwell/wp-cache-remember](https://github.com/stevegrunwell/wp-cache-remember)<br>Helper for the object cache and transients.|
 |                 | [Seravo/wp-custom-bulk-actions](https://github.com/Seravo/wp-custom-bulk-actions)<br>Custom bulk actions for any type of post.|
 |                 | [yahnis-elsts/plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker/)<br>A custom update checker that supports GitHub,GItlab and others.|
-|                 | [AyeCode/wp-super-duper](https://github.com/AyeCode/wp-super-duper)<br>A class to build a widget, shortcode and Gutenberg block.|
 |                 | [decodelabs/tagged](https://github.com/decodelabs/tagged)<br>PHP markup generation in... PHP.|
 
 ## Snippets
@@ -101,6 +100,7 @@ These are options in wpbp.json.
 * Dashicons as dependency of admin stylesheet
 * WP-CLI support
 * Support for CMB2 in the options page
+* Frontend virtual pages and redirects with [plubo-routes](https://github.com/joanrodas/plubo-routes)
 
 ## Other Tools
 

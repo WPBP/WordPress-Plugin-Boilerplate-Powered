@@ -30,26 +30,6 @@ class PostTypes extends Base {
 		// WPBPGen{{#if libraries_johnbillion__extended-cpts}}
 		\add_action( 'init', array( $this, 'load_cpts' ) );
 		// {{/if}}
-		// WPBPGen{{#if libraries_wpbp__cpt_columns}}
-		/*
-		 * Custom Columns
-		 */
-		$post_columns = new \WPBP_Vendor_CPT_columns( 'demo' );
-		$post_columns->add_column(
-			'cmb2_field',
-			array(
-				'label'    => \__( 'CMB2 Field', 'plugin-name' ),
-				'type'     => 'post_meta',
-				'meta_key' => '_demo_plugin-name_text', // phpcs:ignore WordPress.DB
-				'orderby'  => 'meta_value',
-				'sortable' => true,
-				'prefix'   => '<b>',
-				'suffix'   => '</b>',
-				'def'      => 'Not defined', // Default value in case post meta not found
-				'order'    => '-1',
-			)
-		);
-		// {{/if}}
 		// WPBPGen{{#if libraries_seravo__wp-custom-bulk-actions}}
 		/*
 		 * Custom Bulk Actions
